@@ -1,0 +1,14 @@
+git init
+git add .
+git commit -m "First commit"
+git remote add origin https://github.com/walidlawyer73-sketch/law-firm-website.git
+git branch -M main
+git push -u origin main
+
+
+
+https://github.com/walidlawyer73-sketch/law-firm-website.git
+
+
+
+
