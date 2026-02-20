@@ -1,0 +1,408 @@
+/* Global Styles */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #1A1A1A;
+    --accent-color: #FFD700;
+    --white: #FFFFFF;
+    --light-bg: #F8F9FA;
+    --dark-text: #2D3748;
+    --gray-text: #718096;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+    color: var(--dark-text);
+    padding-top: 80px;
+}
+
+/* RTL Support for Arabic */
+[dir="rtl"] {
+    font-family: 'Cairo', sans-serif;
+}
+
+[dir="rtl"] .ms-auto {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-2 {
+    margin-left: 0.5rem !important;
+    margin-right: 0 !important;
+}
+
+[dir="rtl"] .ms-2 {
+    margin-right: 0.5rem !important;
+    margin-left: 0 !important;
+}
+
+[dir="rtl"] .text-start {
+    text-align: right !important;
+}
+
+[dir="rtl"] .text-end {
+    text-align: left !important;
+}
+
+/* Language Switcher */
+.language-switcher {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.lang-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--white);
+    color: var(--primary-color);
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.lang-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.lang-btn.arabic {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.lang-btn.arabic:hover {
+    background: var(--white);
+    color: var(--primary-color);
+}
+
+/* Navigation */
+.navbar {
+    background: var(--primary-color);
+    padding: 15px 0;
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+    box-shadow: var(--shadow-lg);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color) !important;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 20px !important;
+    width: auto !important;
+    margin-right: 8px;
+    object-fit: contain;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+    padding: 8px 15px !important;
+    transition: var(--transition);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--accent-color);
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: var(--shadow-lg);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.dropdown-item {
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.dropdown-item:hover {
+    background: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 600px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') bottom no-repeat;
+    background-size: cover;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section .lead {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Feature Cards */
+.features-section {
+    padding: 80px 0;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--primary-color);
+    color: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 28px;
+    transition: var(--transition);
+}
+
+.feature-card:hover .feature-icon {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    transform: rotate(360deg);
+}
+
+.feature-card h4 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.btn-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-link:hover {
+    color: var(--accent-color);
+}
+
+.btn-link:hover i {
+    transform: translateX(5px);
+}
+
+[dir="rtl"] .btn-link:hover i {
+    transform: translateX(-5px);
+}
+
+/* Page Header */
+.page-header {
+    background: var(--primary-color);
+    padding: 60px 0;
+    margin-top: 80px;
+    color: white;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.page-header .lead {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Team Cards */
+.team-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.team-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.team-card .social-links a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: var(--light-bg);
+    color: var(--primary-color);
+    border-radius: 50%;
+    line-height: 35px;
+    margin: 0 5px;
+    transition: var(--transition);
+}
+
+.team-card .social-links a:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Footer */
+.footer-section {
+    background: var(--primary-color);
+    color: white;
+}
+
+.footer-section a {
+    color: rgba(255,255,255,0.8);
+    transition: var(--transition);
+}
+
+.footer-section a:hover {
+    color: var(--accent-color) !important;
+}
+
+.footer-section .social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    margin-right: 8px;
+    transition: var(--transition);
+}
+
+.footer-section .social-links a:hover {
+    background: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: var(--primary-color);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn-outline-light:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: var(--primary-color);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    
+    .hero-section {
+        min-height: 500px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    .language-switcher {
+        top: 80px;
+        right: 10px;
+    }
+    
+    .lang-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .feature-card {
+        padding: 20px;
+    }
+}

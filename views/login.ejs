@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= lang === 'ar' ? 'rtl' : 'ltr' %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= lang === 'ar' ? 'تسجيل الدخول - لوحة التحكم' : 'Admin Login - Law Firm CMS' %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .login-card {
+            max-width: 400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px 15px 0 0 !important;
+        }
+        .card-header h4 {
+            margin: 0;
+            font-weight: 600;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            padding: 12px;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .lang-switch a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        .lang-switch a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <% if (lang === 'ar') { %>
+            <a href="/admin/login?lang=en">English</a>
+        <% } else { %>
+            <a href="/admin/login?lang=ar">العربية</a>
+        <% } %>
+    </div>
+    
+    <div class="container">
+        <div class="login-card">
+            <div class="card">
+                <div class="card-header">
+                    <h4>⚖️ <%= lang === 'ar' ? 'تسجيل الدخول' : 'Admin Login' %></h4>
+                    <p class="mb-0 small">Walid Abo Al-Ela Law Firm</p>
+                </div>
+                <div class="card-body p-4">
+                    <% if (error) { %>
+                        <div class="alert alert-danger">
+                            <%= lang === 'ar' ? 'اسم المستخدم أو كلمة المرور غير صحيحة' : error %>
+                        </div>
+                    <% } %>
+                    
+                    <form method="POST" action="/admin/login">
+                        <input type="hidden" name="lang" value="<%= lang %>">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">
+                                <%= lang === 'ar' ? 'اسم المستخدم' : 'Username' %>
+                            </label>
+                            <input type="text" class="form-control" id="username" name="username" required 
+                                   placeholder="<%= lang === 'ar' ? 'أدخل اسم المستخدم' : 'Enter your username' %>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">
+                                <%= lang === 'ar' ? 'كلمة المرور' : 'Password' %>
+                            </label>
+                            <input type="password" class="form-control" id="password" name="password" required 
+                                   placeholder="<%= lang === 'ar' ? 'أدخل كلمة المرور' : 'Enter your password' %>">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">
+                            <%= lang === 'ar' ? 'دخول' : 'Login' %>
+                        </button>
+                    </form>
+                    
+                    <hr class="my-4">
+                    <div class="text-center text-muted small">
+                        <p><%= lang === 'ar' ? 'بيانات الدخول الافتراضية: admin / admin123' : 'Default credentials: admin / admin123' %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

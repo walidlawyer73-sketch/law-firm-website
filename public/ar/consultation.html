@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استشارة مدفوعة - وليد أبو العلا للمحاماة</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <a href="/consultation.html" class="lang-btn"><i class="fas fa-globe"></i> English</a>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="../images/logo arb ip.png" alt="وليد أبو العلا" style="height:20px; margin-left:8px;">
+                <span class="fw-bold">وليد أبو العلا للمحاماة</span>
+                <small class="d-block" style="font-size:12px; opacity:0.8;">تحكيم وملكية فكرية</small>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">الخدمات</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="arbitration.html">التحكيم</a></li>
+                            <li><a class="dropdown-item" href="trademark.html">العلامات التجارية</a></li>
+                            <li><a class="dropdown-item" href="patent.html">براءات الاختراع</a></li>
+                            <li><a class="dropdown-item" href="copyright.html">حقوق النشر</a></li>
+                            <li><a class="dropdown-item" href="litigation.html">القضايا</a></li>
+                            <li><a class="dropdown-item" href="licensing.html">الترخيص والعقود</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="services.html">جميع الخدمات</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="lawyers.html">فريق العمل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">المدونة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light btn-sm" href="client-portal.html"><i class="fas fa-lock me-1"></i>بوابة العميل</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header" style="background: var(--primary-color); padding: 60px 0; margin-top: 80px;">
+        <div class="container text-white text-center">
+            <h1 class="display-4">استشارة قانونية مدفوعة</h1>
+            <p class="lead">احصل على استشارة قانونية شخصية من محامٍ خبير.</p>
+        </div>
+    </header>
+
+    <!-- Consultation Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card shadow">
+                        <div class="card-body p-5">
+                            <h2 class="mb-4">احجز استشارتك</h2>
+                            <p>اختر من بين الخيارات التالية:</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">استشارة عادية</h5>
+                                            <h3 class="text-primary my-3">1000 جنيه</h3>
+                                            <p class="card-text small">مكالمة فيديو لمدة ساعة، نصيحة أولية، وملخص عبر البريد الإلكتروني.</p>
+                                            <button class="btn btn-primary w-100 checkout-btn" data-amount="1000">احجز الآن</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">استشارة ممتازة</h5>
+                                            <h3 class="text-primary my-3">2000 جنيه</h3>
+                                            <p class="card-text small">استشارة لمدة 1.5 ساعة، مراجعة مفصلة للقضية، ورأي قانوني مكتوب.</p>
+                                            <button class="btn btn-primary w-100 checkout-btn" data-amount="2000">احجز الآن</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 p-3 bg-light rounded">
+                                <h5>كيف تعمل الخدمة:</h5>
+                                <ol>
+                                    <li>اختر نوع الاستشارة واضغط "احجز الآن".</li>
+                                    <li>سيتم توجيهك إلى صفحة دفع آمنة من Stripe.</li>
+                                    <li>بعد الدفع، ستتلقى بريداً إلكترونياً بتأكيد الحجز وتعليمات تحديد الموعد.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="small text-white-50 mb-0">© 2025 وليد أبو العلا للمحاماة. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-md-start">
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، مصر</li>
+                        <li><i class="fas fa-phone me-2"></i> 01111257219</li>
+                        <li><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
+                        <li><i class="fas fa-clock me-2"></i> السبت - الخميس: 9 صباحاً - 8 مساءً</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const stripe = Stripe('pk_test_YOUR_PUBLIC_KEY'); // ضع مفتاحك العام هنا
+
+        document.querySelectorAll('.checkout-btn').forEach(button => {
+            button.addEventListener('click', async () => {
+                const amount = button.getAttribute('data-amount');
+                const response = await fetch('/create-checkout-session', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ amount })
+                });
+                const session = await response.json();
+                const result = await stripe.redirectToCheckout({ sessionId: session.id });
+                if (result.error) alert(result.error.message);
+            });
+        });
+    </script>
+</body>
+</html>

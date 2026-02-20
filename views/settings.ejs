@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= lang === 'ar' ? 'rtl' : 'ltr' %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= lang === 'ar' ? 'الإعدادات - لوحة التحكم' : 'Settings - Admin Panel' %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .lang-switch {
+            margin-right: 15px;
+        }
+        .lang-switch a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        .lang-switch a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/admin/dashboard">
+                <%= lang === 'ar' ? 'لوحة التحكم' : 'Admin Panel' %>
+            </a>
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <div class="lang-switch">
+                    <% if (lang === 'ar') { %>
+                        <a href="/admin/settings?lang=en">English</a>
+                    <% } else { %>
+                        <a href="/admin/settings?lang=ar">العربية</a>
+                    <% } %>
+                </div>
+                <a class="nav-link" href="/admin/dashboard">
+                    <i class="fas fa-tachometer-alt me-1"></i> <%= lang === 'ar' ? 'لوحة التحكم' : 'Dashboard' %>
+                </a>
+                <a class="nav-link" href="/admin/logout">
+                    <i class="fas fa-sign-out-alt me-1"></i> <%= lang === 'ar' ? 'تسجيل الخروج' : 'Logout' %>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-4">
+        <h1><%= lang === 'ar' ? 'تغيير كلمة المرور' : 'Change Password' %></h1>
+        
+        <% if (error) { %>
+            <div class="alert alert-danger"><%= error %></div>
+        <% } %>
+        
+        <% if (success) { %>
+            <div class="alert alert-success"><%= success %></div>
+        <% } %>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/admin/settings" method="POST">
+                            <div class="mb-3">
+                                <label for="currentPassword" class="form-label">
+                                    <%= lang === 'ar' ? 'كلمة المرور الحالية' : 'Current Password' %>
+                                </label>
+                                <input type="password" class="form-control" id="currentPassword" name="currentPassword" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="newPassword" class="form-label">
+                                    <%= lang === 'ar' ? 'كلمة المرور الجديدة' : 'New Password' %>
+                                </label>
+                                <input type="password" class="form-control" id="newPassword" name="newPassword" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">
+                                    <%= lang === 'ar' ? 'تأكيد كلمة المرور الجديدة' : 'Confirm New Password' %>
+                                </label>
+                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <%= lang === 'ar' ? 'تحديث كلمة المرور' : 'Update Password' %>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

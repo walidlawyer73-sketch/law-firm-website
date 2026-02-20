@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= lang === 'ar' ? 'rtl' : 'ltr' %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= lang === 'ar' ? 'إدارة الصفحات - لوحة التحكم' : 'Manage Pages - Admin Panel' %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .lang-switch {
+            margin-right: 15px;
+        }
+        .lang-switch a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        .lang-switch a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/admin/dashboard">
+                <%= lang === 'ar' ? 'لوحة التحكم' : 'Admin Panel' %>
+            </a>
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <div class="lang-switch">
+                    <% if (lang === 'ar') { %>
+                        <a href="/admin/pages?lang=en">English</a>
+                    <% } else { %>
+                        <a href="/admin/pages?lang=ar">العربية</a>
+                    <% } %>
+                </div>
+                <a class="nav-link" href="/admin/dashboard">
+                    <i class="fas fa-tachometer-alt me-1"></i> <%= lang === 'ar' ? 'لوحة التحكم' : 'Dashboard' %>
+                </a>
+                <a class="nav-link" href="/admin/logout">
+                    <i class="fas fa-sign-out-alt me-1"></i> <%= lang === 'ar' ? 'تسجيل الخروج' : 'Logout' %>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1><%= lang === 'ar' ? 'إدارة الصفحات' : 'Manage Pages' %></h1>
+            <a href="/admin/pages/new" class="btn btn-primary">
+                <i class="fas fa-plus me-2"></i> <%= lang === 'ar' ? 'إضافة صفحة جديدة' : 'Add New Page' %>
+            </a>
+        </div>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th><%= lang === 'ar' ? 'العنوان' : 'Title' %></th>
+                    <th><%= lang === 'ar' ? 'الرابط' : 'Slug' %></th>
+                    <th><%= lang === 'ar' ? 'اللغة' : 'Language' %></th>
+                    <th><%= lang === 'ar' ? 'منشور' : 'Published' %></th>
+                    <th><%= lang === 'ar' ? 'الإجراءات' : 'Actions' %></th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                for (var i = 0; i < pages.length; i++) {
+                    var page = pages[i];
+                %>
+                <tr>
+                    <td><%= page.title %></td>
+                    <td>/<%= page.slug %></td>
+                    <td>
+                        <% if (page.language === 'en') { %>
+                            <%= lang === 'ar' ? 'إنجليزي' : 'English' %>
+                        <% } else { %>
+                            <%= lang === 'ar' ? 'عربي' : 'Arabic' %>
+                        <% } %>
+                    </td>
+                    <td><%= page.published ? '✅' : '❌' %></td>
+                    <td>
+                        <a href="/admin/pages/<%= page._id %>/edit" class="btn btn-sm btn-warning">
+                            <i class="fas fa-edit"></i> <%= lang === 'ar' ? 'تعديل' : 'Edit' %>
+                        </a>
+                        <form action="/admin/pages/<%= page._id %>?_method=DELETE" method="POST" style="display:inline;">
+                                                    <a href="/admin/pages/<%= page._id %>/edit" class="btn btn-sm btn-warning">
+                                <i class="fas fa-trash"></i> <%= lang === 'ar' ? 'حذف' : 'Delete' %>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

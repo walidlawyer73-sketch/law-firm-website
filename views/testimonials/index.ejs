@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= lang === 'ar' ? 'rtl' : 'ltr' %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= lang === 'ar' ? 'إدارة الشهادات - لوحة التحكم' : 'Manage Testimonials - Admin Panel' %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .stars { color: #FFD700; }
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .lang-switch {
+            margin-right: 15px;
+        }
+        .lang-switch a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        .lang-switch a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/admin/dashboard">
+                <%= lang === 'ar' ? 'لوحة التحكم' : 'Admin Panel' %>
+            </a>
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <div class="lang-switch">
+                    <% if (lang === 'ar') { %>
+                        <a href="/admin/testimonials?lang=en">English</a>
+                    <% } else { %>
+                        <a href="/admin/testimonials?lang=ar">العربية</a>
+                    <% } %>
+                </div>
+                <a class="nav-link" href="/admin/dashboard">
+                    <i class="fas fa-tachometer-alt me-1"></i> <%= lang === 'ar' ? 'لوحة التحكم' : 'Dashboard' %>
+                </a>
+                <a class="nav-link" href="/admin/logout">
+                    <i class="fas fa-sign-out-alt me-1"></i> <%= lang === 'ar' ? 'تسجيل الخروج' : 'Logout' %>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1><%= lang === 'ar' ? 'إدارة شهادات العملاء' : 'Manage Testimonials' %></h1>
+            <a href="/admin/testimonials/new" class="btn btn-primary">
+                <i class="fas fa-plus me-2"></i> <%= lang === 'ar' ? 'إضافة شهادة جديدة' : 'Add New Testimonial' %>
+            </a>
+        </div>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th><%= lang === 'ar' ? 'اسم العميل' : 'Client Name' %></th>
+                    <th><%= lang === 'ar' ? 'الشركة' : 'Company' %></th>
+                    <th><%= lang === 'ar' ? 'التقييم' : 'Rating' %></th>
+                    <th><%= lang === 'ar' ? 'اللغة' : 'Language' %></th>
+                    <th><%= lang === 'ar' ? 'منشور' : 'Published' %></th>
+                    <th><%= lang === 'ar' ? 'الإجراءات' : 'Actions' %></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (var i = 0; i < testimonials.length; i++) { %>
+                <tr>
+                    <td><%= testimonials[i].clientName %></td>
+                    <td><%= testimonials[i].company || '-' %></td>
+                    <td class="stars">
+                        <% for (var j = 1; j <= 5; j++) { %>
+                            <i class="fa<%= j <= testimonials[i].rating ? 's' : 'r' %> fa-star"></i>
+                        <% } %>
+                    </td>
+                    <td>
+                        <% if (testimonials[i].language === 'en') { %>
+                            <%= lang === 'ar' ? 'إنجليزي' : 'English' %>
+                        <% } else { %>
+                            <%= lang === 'ar' ? 'عربي' : 'Arabic' %>
+                        <% } %>
+                    </td>
+                    <td><%= testimonials[i].published ? '✅' : '❌' %></td>
+                    <td>
+                        <a href="/admin/testimonials/<%= testimonials[i]._id %>/edit" class="btn btn-sm btn-warning">
+                            <i class="fas fa-edit"></i> <%= lang === 'ar' ? 'تعديل' : 'Edit' %>
+                        </a>
+                        <form action="/admin/testimonials/<%= testimonials[i]._id %>?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('<%= lang === 'ar' ? 'هل أنت متأكد؟' : 'Are you sure?' %>')">
+                                <i class="fas fa-trash"></i> <%= lang === 'ar' ? 'حذف' : 'Delete' %>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

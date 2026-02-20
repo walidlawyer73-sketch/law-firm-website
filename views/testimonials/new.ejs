@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>" dir="<%= lang === 'ar' ? 'rtl' : 'ltr' %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= lang === 'ar' ? 'إضافة شهادة جديدة - لوحة التحكم' : 'New Testimonial - Admin Panel' %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .lang-switch {
+            margin-right: 15px;
+        }
+        .lang-switch a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        .lang-switch a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/admin/dashboard">
+                <%= lang === 'ar' ? 'لوحة التحكم' : 'Admin Panel' %>
+            </a>
+            <div class="navbar-nav ms-auto d-flex align-items-center">
+                <div class="lang-switch">
+                    <% if (lang === 'ar') { %>
+                        <a href="/admin/testimonials/new?lang=en">English</a>
+                    <% } else { %>
+                        <a href="/admin/testimonials/new?lang=ar">العربية</a>
+                    <% } %>
+                </div>
+                <a class="nav-link" href="/admin/dashboard">
+                    <i class="fas fa-tachometer-alt me-1"></i> <%= lang === 'ar' ? 'لوحة التحكم' : 'Dashboard' %>
+                </a>
+                <a class="nav-link" href="/admin/logout">
+                    <i class="fas fa-sign-out-alt me-1"></i> <%= lang === 'ar' ? 'تسجيل الخروج' : 'Logout' %>
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-4">
+        <h1><%= lang === 'ar' ? 'إضافة شهادة جديدة' : 'Add New Testimonial' %></h1>
+        <form action="/admin/testimonials" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="clientName" class="form-label"><%= lang === 'ar' ? 'اسم العميل' : 'Client Name' %></label>
+                <input type="text" class="form-control" id="clientName" name="clientName" required>
+            </div>
+            <div class="mb-3">
+                <label for="clientPosition" class="form-label"><%= lang === 'ar' ? 'المنصب' : 'Client Position' %></label>
+                <input type="text" class="form-control" id="clientPosition" name="clientPosition" placeholder="<%= lang === 'ar' ? 'مثال: المدير التنفيذي' : 'e.g., CEO' %>">
+            </div>
+            <div class="mb-3">
+                <label for="company" class="form-label"><%= lang === 'ar' ? 'الشركة' : 'Company' %></label>
+                <input type="text" class="form-control" id="company" name="company">
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label"><%= lang === 'ar' ? 'نص الشهادة' : 'Testimonial Content' %></label>
+                <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="rating" class="form-label"><%= lang === 'ar' ? 'التقييم (1-5)' : 'Rating (1-5)' %></label>
+                <select class="form-control" id="rating" name="rating">
+                    <option value="5">5 - <%= lang === 'ar' ? 'ممتاز' : 'Excellent' %></option>
+                    <option value="4">4 - <%= lang === 'ar' ? 'جيد جداً' : 'Very Good' %></option>
+                    <option value="3">3 - <%= lang === 'ar' ? 'جيد' : 'Good' %></option>
+                    <option value="2">2 - <%= lang === 'ar' ? 'مقبول' : 'Fair' %></option>
+                    <option value="1">1 - <%= lang === 'ar' ? 'ضعيف' : 'Poor' %></option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label"><%= lang === 'ar' ? 'صورة العميل (اختياري)' : 'Client Image (optional)' %></label>
+                <input type="file" class="form-control" id="image" name="image" accept="image/*">
+            </div>
+            <div class="mb-3">
+                <label for="language" class="form-label"><%= lang === 'ar' ? 'اللغة' : 'Language' %></label>
+                <select class="form-control" id="language" name="language">
+                    <option value="en"><%= lang === 'ar' ? 'إنجليزي' : 'English' %></option>
+                    <option value="ar"><%= lang === 'ar' ? 'عربي' : 'Arabic' %></option>
+                </select>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="published" name="published" checked>
+                <label class="form-check-label" for="published"><%= lang === 'ar' ? 'منشور' : 'Published' %></label>
+            </div>
+            <button type="submit" class="btn btn-primary"><%= lang === 'ar' ? 'إنشاء الشهادة' : 'Create Testimonial' %></button>
+            <a href="/admin/testimonials" class="btn btn-secondary"><%= lang === 'ar' ? 'إلغاء' : 'Cancel' %></a>
+        </form>
+    </div>
+</body>
+</html>
