@@ -2,4 +2,4 @@ HY5YbmGyBuXqGCzd  - password
 walidlegalippro_db_user  -user
      بيانات مونجو دي بسmongo DB
 الرابط الخاص بي
-mongodb+srv://walidlegalippro_db_user:<HY5YbmGyBuXqGCzd>@cluster0.5gwdrqa.mongodb.net/?appName=Cluster0
+mongodb+srv://walidlegalippro_db_user:<HY5YbmGyBuXqGCzd>@cluster0.5gwdrqa.mongodb.net/lawfirm?appName=Cluster0
