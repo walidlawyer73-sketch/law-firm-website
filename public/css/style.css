@@ -441,3 +441,7 @@ body {
         max-width: 33.333333%;
     }
 }
+/* إخفاء أي زر مكرر */
+.text-center.mt-5 {
+    display: block;
+}
