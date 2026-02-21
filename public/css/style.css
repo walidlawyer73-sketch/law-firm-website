@@ -155,7 +155,6 @@ body {
     color: white;
 }
 
-/* طبقة شفافة سوداء فوق الصورة لتوضيح النص */
 .hero-section::before {
     content: "";
     position: absolute;
@@ -163,25 +162,13 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6); /* أسود شفاف 60% - يمكنك تغيير القيمة */
+        background-color: rgba(0, 0, 0, 0.4); /* 40% بدلاً من 60% */
     z-index: 1;
 }
 
-/* التأكد من أن المحتوى يظهر فوق الطبقة */
 .hero-section .container {
     position: relative;
     z-index: 2;
-}
-.hero-section h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-}
-
-.hero-section .lead {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
 }
 
 /* Feature Cards */
