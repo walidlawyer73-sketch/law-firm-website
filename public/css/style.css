@@ -445,3 +445,33 @@ body {
 .text-center.mt-5 {
     display: block;
 }
+/* خلفية الناف بار باللوجو */
+.navbar {
+    background-image: url('/images/logo arb ip.png');
+    background-repeat: repeat; /* يجعل الصورة تتكرر لتغطي المساحة */
+    background-size: 50px auto; /* حجم الصورة المكررة - غير الرقم حسب حجم لوجوك */
+    background-position: center;
+}
+
+/* طبقة شبه شفافة فوق الخلفية لضمان وضوح النص */
+.navbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* أسود شفاف 70% - غير الرقم حسب رغبتك */
+    z-index: 1;
+}
+
+/* التأكد من أن كل محتويات الناف بار تظهر فوق الطبقة */
+.navbar .container {
+    position: relative;
+    z-index: 2;
+}
+/* ضمان وضوح النصوص فوق الخلفية */
+.navbar .navbar-brand,
+.navbar .navbar-nav .nav-link {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* ظل للنص */
+}
