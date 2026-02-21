@@ -19,8 +19,8 @@ const port = process.env.PORT || 3000;
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
-    .then(() => console.log('✅ MongoDB connected'))
-    .catch(err => console.error('❌ MongoDB connection error:', err));
+  .then(() => console.log("✅ DB Connected"))
+  .catch((err) => console.log(err));
 
 // Middleware
 app.use(express.static('public'));
