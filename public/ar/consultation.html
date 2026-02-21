@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>استشارة مدفوعة - وليد أبو العلا للمحاماة</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
-    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
-    <!-- Language Switcher -->
     <div class="language-switcher">
         <a href="/consultation.html" class="lang-btn"><i class="fas fa-globe"></i> English</a>
     </div>
@@ -19,9 +20,11 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="../images/logo arb ip.png" alt="وليد أبو العلا" style="height:20px; margin-left:8px;">
-                <span class="fw-bold">وليد أبو العلا للمحاماة</span>
-                <small class="d-block" style="font-size:12px; opacity:0.8;">تحكيم وملكية فكرية</small>
+                <img src="../images/logo arb ip.png" alt="وليد أبو العلا" style="height:45px; width:auto; margin-left:10px;">
+                <div>
+                    <span class="fw-bold">وليد أبو العلا للمحاماة</span>
+                    <small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small>
+                </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -31,14 +34,25 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">الخدمات</a>
-                        <ul class="dropdown-menu">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">الخدمات</a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
                             <li><a class="dropdown-item" href="arbitration.html">التحكيم</a></li>
                             <li><a class="dropdown-item" href="trademark.html">العلامات التجارية</a></li>
                             <li><a class="dropdown-item" href="patent.html">براءات الاختراع</a></li>
-                            <li><a class="dropdown-item" href="copyright.html">حقوق النشر</a></li>
-                            <li><a class="dropdown-item" href="litigation.html">القضايا</a></li>
+                            <li><a class="dropdown-item" href="copyright.html">حقوق المؤلف</a></li>
+                            <li><a class="dropdown-item" href="litigation.html">قضايا الملكية الفكرية</a></li>
                             <li><a class="dropdown-item" href="licensing.html">الترخيص والعقود</a></li>
+                            <li><a class="dropdown-item" href="corporate-formation">تأسيس الشركات</a></li>
+                            <li><a class="dropdown-item" href="criminal-litigation">القضايا الجنائية</a></li>
+                            <li><a class="dropdown-item" href="civil-litigation">القضايا المدنية</a></li>
+                            <li><a class="dropdown-item" href="state-council-cases">قضايا مجلس الدولة</a></li>
+                            <li><a class="dropdown-item" href="family-law">قضايا الأسرة</a></li>
+                            <li><a class="dropdown-item" href="economic-cases">القضايا الاقتصادية</a></li>
+                            <li><a class="dropdown-item" href="industrial-designs">التصميمات الصناعية</a></li>
+                            <li><a class="dropdown-item" href="integrated-circuits">الدوائر المتكاملة</a></li>
+                            <li><a class="dropdown-item" href="utility-models">نماذج المنفعة</a></li>
+                            <li><a class="dropdown-item" href="geographical-indications">المؤشرات الجغرافية</a></li>
+                            <li><a class="dropdown-item" href="plant-varieties">الأصناف النباتية</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="services.html">جميع الخدمات</a></li>
                         </ul>
@@ -46,6 +60,7 @@
                     <li class="nav-item"><a class="nav-link" href="lawyers.html">فريق العمل</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">المدونة</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="consultation.html">استشارة مدفوعة</a></li>
                     <li class="nav-item ms-lg-3">
                         <a class="btn btn-outline-light btn-sm" href="client-portal.html"><i class="fas fa-lock me-1"></i>بوابة العميل</a>
                     </li>
@@ -55,10 +70,10 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="page-header" style="background: var(--primary-color); padding: 60px 0; margin-top: 80px;">
+    <header class="page-header">
         <div class="container text-white text-center">
             <h1 class="display-4">استشارة قانونية مدفوعة</h1>
-            <p class="lead">احصل على استشارة قانونية شخصية من محامٍ خبير.</p>
+            <p class="lead">احصل على استشارة قانونية شخصية من محامٍ خبير في الملكية الفكرية والتحكيم</p>
         </div>
     </header>
 
@@ -69,42 +84,230 @@
                 <div class="col-lg-8 mx-auto">
                     <div class="card shadow">
                         <div class="card-body p-5">
-                            <h2 class="mb-4">احجز استشارتك</h2>
-                            <p>اختر من بين الخيارات التالية:</p>
+                            <h2 class="mb-4">احجز استشارتك القانونية</h2>
+                            <p class="lead mb-4">اختر نوع الاستشارة التي تناسب احتياجاتك، وسيقوم فريقنا بالتواصل معك لتأكيد الموعد.</p>
                             
                             <div class="row mt-4">
-                                <div class="col-md-6 mb-3">
-                                    <div class="card h-100">
-                                        <div class="card-body text-center">
-                                            <h5 class="card-title">استشارة عادية</h5>
-                                            <h3 class="text-primary my-3">1000 جنيه</h3>
-                                            <p class="card-text small">مكالمة فيديو لمدة ساعة، نصيحة أولية، وملخص عبر البريد الإلكتروني.</p>
-                                            <button class="btn btn-primary w-100 checkout-btn" data-amount="1000">احجز الآن</button>
+                                <!-- الاستشارة العادية -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100 border-2">
+                                        <div class="card-body text-center p-4">
+                                            <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; font-size:30px;">
+                                                <i class="fas fa-phone-alt"></i>
+                                            </div>
+                                            <h3 class="card-title h4">استشارة عادية</h3>
+                                            <div class="display-6 text-primary fw-bold my-3">1000 ج.م</div>
+                                            <ul class="list-unstyled text-muted mb-4">
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> مكالمة فيديو لمدة ساعة</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> نصيحة أولية حول القضية</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> ملخص مكتوب بالبريد الإلكتروني</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> إجابة على أسئلتك المباشرة</li>
+                                            </ul>
+                                            <button class="btn btn-primary w-100 py-3" onclick="alert('للاستفسار والحجز، يرجى الاتصال بنا مباشرة على 01111257219 أو عبر البريد الإلكتروني walidlegal.ippro@gmail.com')">
+                                                <i class="fas fa-calendar-check me-2"></i>احجز الآن
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <div class="card h-100">
-                                        <div class="card-body text-center">
-                                            <h5 class="card-title">استشارة ممتازة</h5>
-                                            <h3 class="text-primary my-3">2000 جنيه</h3>
-                                            <p class="card-text small">استشارة لمدة 1.5 ساعة، مراجعة مفصلة للقضية، ورأي قانوني مكتوب.</p>
-                                            <button class="btn btn-primary w-100 checkout-btn" data-amount="2000">احجز الآن</button>
+
+                                <!-- الاستشارة الممتازة -->
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100 border-2 border-primary">
+                                        <div class="card-body text-center p-4">
+                                            <div class="position-absolute top-0 start-50 translate-middle badge bg-primary rounded-pill px-3 py-2" style="font-size:14px;">
+                                                الأكثر طلباً
+                                            </div>
+                                            <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; font-size:30px;">
+                                                <i class="fas fa-file-alt"></i>
+                                            </div>
+                                            <h3 class="card-title h4">استشارة ممتازة</h3>
+                                            <div class="display-6 text-primary fw-bold my-3">2000 ج.م</div>
+                                            <ul class="list-unstyled text-muted mb-4">
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> استشارة لمدة 1.5 ساعة</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> مراجعة مفصلة للقضية</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> رأي قانوني مكتوب</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> مراجعة المستندات</li>
+                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> متابعة عبر البريد لمدة 3 أيام</li>
+                                            </ul>
+                                            <button class="btn btn-primary w-100 py-3" onclick="alert('للاستفسار والحجز، يرجى الاتصال بنا مباشرة على 01111257219 أو عبر البريد الإلكتروني walidlegal.ippro@gmail.com')">
+                                                <i class="fas fa-calendar-check me-2"></i>احجز الآن
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="mt-4 p-3 bg-light rounded">
-                                <h5>كيف تعمل الخدمة:</h5>
-                                <ol>
-                                    <li>اختر نوع الاستشارة واضغط "احجز الآن".</li>
-                                    <li>سيتم توجيهك إلى صفحة دفع آمنة من Stripe.</li>
-                                    <li>بعد الدفع، ستتلقى بريداً إلكترونياً بتأكيد الحجز وتعليمات تحديد الموعد.</li>
-                                </ol>
+                            <!-- استشارة متخصصة -->
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <div class="card bg-light border-0">
+                                        <div class="card-body p-4">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-8">
+                                                    <h4><i class="fas fa-star text-warning me-2"></i> استشارة متخصصة في الملكية الفكرية</h4>
+                                                    <p class="mb-md-0">للاستشارات المتعلقة ببراءات الاختراع، العلامات التجارية، أو حقوق النشر المعقدة</p>
+                                                </div>
+                                                <div class="col-md-4 text-md-start text-center mt-3 mt-md-0">
+                                                    <span class="h5 text-primary d-block mb-2">3000 ج.م</span>
+                                                    <button class="btn btn-outline-primary" onclick="alert('للاستفسار، يرجى الاتصال بنا مباشرة')">
+                                                        <i class="fas fa-phone-alt me-2"></i>اتصل بنا
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 p-4 bg-light rounded-4">
+                                <h5 class="mb-3"><i class="fas fa-info-circle text-primary me-2"></i> كيف تعمل الخدمة:</h5>
+                                <div class="row">
+                                    <div class="col-md-3 mb-3 mb-md-0">
+                                        <div class="text-center">
+                                            <div class="bg-white rounded-circle d-inline-flex p-3 mb-2">
+                                                <i class="fas fa-1 fa-2x text-primary"></i>
+                                            </div>
+                                            <h6>اختر الاستشارة</h6>
+                                            <p class="small text-muted">حدد نوع الاستشارة المناسبة لقضيتك</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3 mb-md-0">
+                                        <div class="text-center">
+                                            <div class="bg-white rounded-circle d-inline-flex p-3 mb-2">
+                                                <i class="fas fa-2 fa-2x text-primary"></i>
+                                            </div>
+                                            <h6>تواصل معنا</h6>
+                                            <p class="small text-muted">اتصل بنا أو أرسل بريداً للحجز</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-3 mb-md-0">
+                                        <div class="text-center">
+                                            <div class="bg-white rounded-circle d-inline-flex p-3 mb-2">
+                                                <i class="fas fa-3 fa-2x text-primary"></i>
+                                            </div>
+                                            <h6>تأكيد الموعد</h6>
+                                            <p class="small text-muted">سنؤكد موعد الاستشارة عبر الهاتف</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="text-center">
+                                            <div class="bg-white rounded-circle d-inline-flex p-3 mb-2">
+                                                <i class="fas fa-4 fa-2x text-primary"></i>
+                                            </div>
+                                            <h6>الاستشارة</h6>
+                                            <p class="small text-muted">احصل على استشارتك عبر الفيديو</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-5">
+                                <div class="alert alert-info">
+                                    <i class="fas fa-shield-alt me-2"></i>
+                                    <strong>سرية تامة:</strong> جميع الاستشارات محمية بسرية المحامي والموكل ولا يتم مشاركة أي معلومات مع أطراف ثالثة.
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="fw-bold">لماذا تختار استشاراتنا المدفوعة؟</h2>
+                    <p class="text-muted">نقدم خدمات استشارية متميزة تلبي احتياجاتك القانونية بدقة واحترافية</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fas fa-user-tie fa-3x text-primary mb-3"></i>
+                        <h5>خبرة قانونية</h5>
+                        <p class="text-muted">استشارات مع محامٍ رئيسي ذو خبرة منذ 2016</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fas fa-clock fa-3x text-primary mb-3"></i>
+                        <h5>مرونة المواعيد</h5>
+                        <p class="text-muted">نوفر مواعيد مرنة تناسب جدول أعمالك</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fas fa-file-contract fa-3x text-primary mb-3"></i>
+                        <h5>مخرجات مكتوبة</h5>
+                        <p class="text-muted">تقرير مكتوب يلخص الاستشارة والخطوات المقترحة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center mb-4">الأسئلة الشائعة</h2>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    كيف تتم الاستشارة؟
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    تتم الاستشارة عبر مكالمة فيديو (Zoom/Google Meet) أو هاتفياً حسب رغبتك. بعد التأكيد، سنرسل لك رابط الاجتماع.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    كيف يمكنني الدفع؟
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    للاستفسار عن طرق الدفع المتاحة، يرجى الاتصال بنا مباشرة على الرقم 01111257219.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    ماذا أحتاج للتحضير للاستشارة؟
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    يفضل تجهيز جميع المستندات المتعلقة بقضيتك (عقود، مراسلات، إخطارات) وإرسالها قبل الاستشارة إن أمكن.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h3 class="mb-3">لمعرفة المزيد أو للحجز المباشر</h3>
+                    <p class="lead mb-md-0">تواصل معنا وسنرد عليك في أقرب وقت</p>
+                </div>
+                <div class="col-md-4 text-md-start text-center">
+                    <a href="contact.html" class="btn btn-light btn-lg">اتصل بنا</a>
                 </div>
             </div>
         </div>
@@ -119,7 +322,7 @@
                 </div>
                 <div class="col-md-6 text-md-start">
                     <ul class="list-unstyled">
-                        <li><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، مصر</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، القاهرة، مصر</li>
                         <li><i class="fas fa-phone me-2"></i> 01111257219</li>
                         <li><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
                         <li><i class="fas fa-clock me-2"></i> السبت - الخميس: 9 صباحاً - 8 مساءً</li>
@@ -129,23 +332,9 @@
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const stripe = Stripe('pk_test_YOUR_PUBLIC_KEY'); // ضع مفتاحك العام هنا
-
-        document.querySelectorAll('.checkout-btn').forEach(button => {
-            button.addEventListener('click', async () => {
-                const amount = button.getAttribute('data-amount');
-                const response = await fetch('/create-checkout-session', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ amount })
-                });
-                const session = await response.json();
-                const result = await stripe.redirectToCheckout({ sessionId: session.id });
-                if (result.error) alert(result.error.message);
-            });
-        });
-    </script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
 </body>
 </html>
