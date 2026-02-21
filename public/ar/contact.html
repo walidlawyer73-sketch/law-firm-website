@@ -16,9 +16,11 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="../images/logo arb ip.png" alt="وليد أبو العلا" style="height:20px; margin-left:8px;">
-                <span class="fw-bold">وليد أبو العلا للمحاماة</span>
-                <small class="d-block" style="font-size:12px; opacity:0.8;">تحكيم وملكية فكرية</small>
+                <img src="../images/logo arb ip.png" alt="وليد أبو العلا" style="height:45px; width:auto; margin-left:10px;">
+                <div>
+                    <span class="fw-bold">وليد أبو العلا للمحاماة</span>
+                    <small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small>
+                </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -28,14 +30,25 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">الخدمات</a>
-                        <ul class="dropdown-menu">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">الخدمات</a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
                             <li><a class="dropdown-item" href="arbitration.html">التحكيم</a></li>
                             <li><a class="dropdown-item" href="trademark.html">العلامات التجارية</a></li>
                             <li><a class="dropdown-item" href="patent.html">براءات الاختراع</a></li>
-                            <li><a class="dropdown-item" href="copyright.html">حقوق النشر</a></li>
-                            <li><a class="dropdown-item" href="litigation.html">القضايا</a></li>
+                            <li><a class="dropdown-item" href="copyright.html">حقوق المؤلف</a></li>
+                            <li><a class="dropdown-item" href="litigation.html">قضايا الملكية الفكرية</a></li>
                             <li><a class="dropdown-item" href="licensing.html">الترخيص والعقود</a></li>
+                            <li><a class="dropdown-item" href="corporate-formation">تأسيس الشركات</a></li>
+                            <li><a class="dropdown-item" href="criminal-litigation">القضايا الجنائية</a></li>
+                            <li><a class="dropdown-item" href="civil-litigation">القضايا المدنية</a></li>
+                            <li><a class="dropdown-item" href="state-council-cases">قضايا مجلس الدولة</a></li>
+                            <li><a class="dropdown-item" href="family-law">قضايا الأسرة</a></li>
+                            <li><a class="dropdown-item" href="economic-cases">القضايا الاقتصادية</a></li>
+                            <li><a class="dropdown-item" href="industrial-designs">التصميمات الصناعية</a></li>
+                            <li><a class="dropdown-item" href="integrated-circuits">الدوائر المتكاملة</a></li>
+                            <li><a class="dropdown-item" href="utility-models">نماذج المنفعة</a></li>
+                            <li><a class="dropdown-item" href="geographical-indications">المؤشرات الجغرافية</a></li>
+                            <li><a class="dropdown-item" href="plant-varieties">الأصناف النباتية</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="services.html">جميع الخدمات</a></li>
                         </ul>
@@ -67,19 +80,19 @@
                     <form id="contactForm">
                         <div class="mb-3">
                             <label for="name" class="form-label">الاسم الكامل *</label>
-                            <input type="text" class="form-control" id="name" required>
+                            <input type="text" class="form-control" id="name" name="name" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">البريد الإلكتروني *</label>
-                            <input type="email" class="form-control" id="email" required>
+                            <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="mb-3">
                             <label for="phone" class="form-label">رقم الهاتف</label>
-                            <input type="tel" class="form-control" id="phone">
+                            <input type="tel" class="form-control" id="phone" name="phone">
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">الرسالة *</label>
-                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-100">إرسال الرسالة</button>
                         <div id="formStatus" class="mt-3"></div>
