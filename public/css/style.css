@@ -85,7 +85,6 @@ body {
 }
 
 /* Navigation */
-/* Navigation */
 .navbar {
     background: var(--primary-color);
     padding: 15px 0;
@@ -106,9 +105,9 @@ body {
 }
 
 .navbar-brand img {
-    height: 20px !important;
+    height: 45px !important;  /* تم التكبير */
     width: auto !important;
-    margin-right: 8px;
+    margin-right: 10px;
     object-fit: contain;
 }
 
@@ -143,12 +142,11 @@ body {
     color: var(--primary-color);
 }
 
-/* Hero Section */
-/* Hero Section */
+/* Hero Section - موحد لجميع الصفحات */
 .hero-section {
     min-height: 600px;
-    background: url('/images/logo arb ip.png') no-repeat center center;
-    background-size: cover;
+    background: url('/images/logo arb ip.png') no-repeat center top;  /* الجزء العلوي من الصورة */
+    background-size: 120% auto;
     display: flex;
     align-items: center;
     position: relative;
@@ -162,7 +160,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-        background-color: rgba(0, 0, 0, 0.4); /* 40% بدلاً من 60% */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
