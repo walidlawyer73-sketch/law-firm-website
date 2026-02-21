@@ -72,3 +72,44 @@ document.addEventListener('DOMContentLoaded', function() {
         new bootstrap.Dropdown(dropdown);
     });
 });
+// زر العودة إلى الأعلى
+const backToTopButton = document.createElement('button');
+backToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
+backToTopButton.setAttribute('id', 'backToTop');
+backToTopButton.setAttribute('title', 'العودة إلى الأعلى');
+backToTopButton.style.cssText = `
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #FFD700;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s;
+`;
+backToTopButton.onmouseover = () => {
+    backToTopButton.style.transform = 'scale(1.1)';
+};
+backToTopButton.onmouseout = () => {
+    backToTopButton.style.transform = 'scale(1)';
+};
+
+document.body.appendChild(backToTopButton);
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
