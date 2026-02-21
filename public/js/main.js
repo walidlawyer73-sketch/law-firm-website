@@ -64,3 +64,11 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+// إعادة تهيئة Bootstrap dropdown بعد تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+    // تفعيل جميع القوائم المنسدلة
+    var dropdowns = document.querySelectorAll('.dropdown-toggle');
+    dropdowns.forEach(function(dropdown) {
+        new bootstrap.Dropdown(dropdown);
+    });
+});
