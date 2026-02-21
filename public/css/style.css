@@ -435,7 +435,7 @@ body {
 .text-center.mt-5 {
     display: block;
 }
-/* تحسين شكل أيقونات التواصل الاجتماعي */
+/* تحسين أيقونات التواصل الاجتماعي - أضف هذا في نهاية الملف */
 .social-links a {
     display: inline-flex;
     align-items: center;
@@ -445,15 +445,29 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
     border-radius: 50%;
-    margin: 0 5px;
     transition: all 0.3s ease;
     text-decoration: none;
+    margin: 0 5px;
 }
 
 .social-links a:hover {
     background-color: var(--accent-color);
     color: var(--primary-color);
     transform: translateY(-3px);
+}
+
+/* تنسيق خاص لأيقونات صفحة فريق العمل */
+.team-card .social-links a {
+    width: 35px;
+    height: 35px;
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    margin: 0 3px;
+}
+
+.team-card .social-links a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
 }
 
 /* تنسيق خاص للنسخة العربية */
