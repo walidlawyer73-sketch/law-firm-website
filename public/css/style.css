@@ -105,7 +105,7 @@ body {
 }
 
 .navbar-brand img {
-    height: 45px !important;  /* تم التكبير */
+    height: 45px !important;
     width: auto !important;
     margin-right: 10px;
     object-fit: contain;
@@ -124,6 +124,7 @@ body {
     background: rgba(255,255,255,0.1);
     border-radius: 5px;
 }
+
 .dropdown-menu {
     border: none;
     box-shadow: var(--shadow-lg);
@@ -142,12 +143,12 @@ body {
     color: var(--primary-color);
 }
 
-/* Hero Section - حل نهائي للصورة */
+/* Hero Section */
 .hero-section {
     min-height: 600px;
     background: url('/images/logo arb ip.png') no-repeat center center;
-    background-size: contain;  /* الصورة تظهر كاملة */
-    background-color: var(--primary-color); /* لون خلفية احتياطي */
+    background-size: contain;
+    background-color: var(--primary-color);
     background-position: center center;
     background-repeat: no-repeat;
     display: flex;
@@ -163,13 +164,25 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* 50% شفافية */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
 .hero-section .container {
     position: relative;
     z-index: 2;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section .lead {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
 }
 
 /* Feature Cards */
@@ -185,6 +198,7 @@ body {
     transition: var(--transition);
     text-align: center;
     border: 1px solid rgba(0,0,0,0.05);
+    height: 100%;
 }
 
 .feature-card:hover {
@@ -355,87 +369,7 @@ body {
     color: var(--primary-color);
 }
 
-/* Responsive Design */
-@media (max-width: 991px) {
-    .navbar-collapse {
-        background: var(--primary-color);
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 10px;
-    }
-    
-    .hero-section {
-        min-height: 500px;
-    }
-    
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 70px;
-    }
-    
-    .language-switcher {
-        top: 80px;
-        right: 10px;
-    }
-    
-    .lang-btn {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-    }
-    
-    .hero-section h1 {
-        font-size: 2rem;
-    }
-    
-    .feature-card {
-        padding: 20px;
-    }
-}
-/* حل مؤقت لمشاكل Bootstrap */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
-
-.col-md-4 {
-    position: relative;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-@media (min-width: 768px) {
-    .col-md-4 {
-        flex: 0 0 33.333333%;
-        max-width: 33.333333%;
-    }
-}
-/* إخفاء أي زر مكرر */
-.text-center.mt-5 {
-    display: block;
-}
-/* تحسين أيقونات التواصل الاجتماعي - أضف هذا في نهاية الملف */
+/* Social Links */
 .social-links a {
     display: inline-flex;
     align-items: center;
@@ -456,21 +390,208 @@ body {
     transform: translateY(-3px);
 }
 
-/* تنسيق خاص لأيقونات صفحة فريق العمل */
-.team-card .social-links a {
-    width: 35px;
-    height: 35px;
-    background-color: var(--light-bg);
-    color: var(--primary-color);
-    margin: 0 3px;
+/* ========== تحسينات الموبايل والاستجابة ========== */
+
+/* شاشات صغيرة (موبايل) */
+@media (max-width: 768px) {
+    /* تقليل المسافة العلوية */
+    body {
+        padding-top: 60px;
+    }
+
+    /* تعديل الـ Navbar */
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar-brand img {
+        height: 35px !important;
+    }
+
+    .navbar-brand small {
+        font-size: 10px !important;
+    }
+
+    /* تحسين Language Switcher */
+    .language-switcher {
+        top: 70px;
+        right: 10px;
+    }
+
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* تعديل Hero Section */
+    .hero-section {
+        min-height: 400px;
+        padding: 40px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0 !important;
+    }
+
+    /* كروت الخدمات */
+    .features-section {
+        padding: 40px 0;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    /* Page Header */
+    .page-header {
+        padding: 40px 0;
+        margin-top: 60px;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .page-header .lead {
+        font-size: 1rem;
+    }
+
+    /* Team Card */
+    .team-card {
+        padding: 20px;
+    }
+
+    .team-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Footer */
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section .col-md-6 {
+        margin-bottom: 20px;
+    }
+
+    .footer-section .text-md-end,
+    .footer-section .text-md-start {
+        text-align: center !important;
+    }
+
+    /* تعديل أزرار الفوتر */
+    .footer-section .social-links a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 0.9rem;
+        margin: 0 4px;
+    }
 }
 
-.team-card .social-links a:hover {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
+/* شاشات صغيرة جداً (اقل من 576px) */
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .feature-card {
+        padding: 15px;
+    }
+
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    /* تحسين عرض القائمة المنسدلة */
+    .dropdown-menu {
+        position: static !important;
+        float: none;
+        width: 100%;
+        margin-top: 0;
+        background-color: rgba(255,255,255,0.1);
+        border: none;
+        box-shadow: none;
+    }
+
+    .dropdown-item {
+        color: white !important;
+    }
+
+    .dropdown-item:hover {
+        background: var(--accent-color);
+        color: var(--primary-color) !important;
+    }
 }
 
-/* تنسيق خاص للنسخة العربية */
-[dir="rtl"] .social-links a {
-    margin: 0 5px;
+/* شاشات متوسطة (تابلت) */
+@media (min-width: 769px) and (max-width: 991px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .feature-card {
+        padding: 25px;
+    }
+
+    .footer-section .col-lg-3,
+    .footer-section .col-lg-2 {
+        margin-bottom: 30px;
+    }
+}
+
+/* Bootstrap container تعديل هوامش الـ */
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Row تعديل هوامش الـ */
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/* التأكد من أن الصور لا تتجاوز عرض الحاوية */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* تحسين عرض الجداول على الموبايل */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* تحسين الأزرار */
+.btn-block {
+    display: block;
+    width: 100%;
 }
