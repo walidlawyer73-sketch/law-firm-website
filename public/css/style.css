@@ -625,3 +625,31 @@ img {
         font-size: 14px;
     }
 }
+/* Why Choose Us Section */
+.why-choose-us .feature-icon {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: var(--transition);
+}
+
+.why-choose-us .feature-icon i {
+    font-size: 32px;
+}
+
+.why-choose-us .col-md-4:hover .feature-icon {
+    background: var(--primary-color);
+    color: var(--accent-color);
+    transform: rotateY(180deg);
+}
+
+.why-choose-us h4 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
