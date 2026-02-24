@@ -50,7 +50,7 @@ body {
 /* Language Switcher */
 .language-switcher {
     position: fixed;
-    top: 100px;
+    top: 100px; /* افتراضي للشاشات الكبيرة */
     right: 20px;
     z-index: 1000;
 }
@@ -58,32 +58,56 @@ body {
 .lang-btn {
     display: inline-block;
     padding: 10px 20px;
-    background: var(--white);
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: var(--accent-color); /* ذهبي */
     border-radius: 30px;
     text-decoration: none;
     font-weight: 500;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid var(--accent-color);
 }
 
 .lang-btn:hover {
-    background: var(--primary-color);
-    color: var(--white);
+    background: var(--accent-color);
+    color: var(--primary-color);
     transform: translateY(-2px);
 }
 
 .lang-btn.arabic {
     background: var(--primary-color);
-    color: var(--white);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 .lang-btn.arabic:hover {
-    background: var(--white);
+    background: var(--accent-color);
     color: var(--primary-color);
 }
 
+/* تحسينات للموبايل */
+@media (max-width: 768px) {
+    .language-switcher {
+        top: 80px; /* أنزل الزر تحت النافبار */
+        right: 10px;
+    }
+    
+    .lang-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .language-switcher {
+        top: 70px; /* للشاشات الصغيرة جداً */
+    }
+    
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
 /* Navigation */
 .navbar {
     background: var(--primary-color);
@@ -594,4 +618,10 @@ img {
 .btn-block {
     display: block;
     width: 100%;
+}
+@media (max-width: 768px) {
+    /* استهداف عنصر معين */
+    .your-class-name {
+        font-size: 14px;
+    }
 }
