@@ -1042,75 +1042,8 @@ Plant variety protection incentivizes agricultural innovation, supports food sec
         metaDescription: 'تسجيل الأصناف النباتية في مصر. أصناف جديدة ومتميزة ومتجانسـة ومستقرة. حقوق المربين وامتياز المزارعين.',
         language: 'ar',
         published: true
-    },
-    
-    // ==================== NEWLY ADDED SERVICES (CONTRACT DRAFTING) ====================
-    
-    // Contract Drafting & Review - English
-    {
-        title: 'Contract Drafting & Review',
-        slug: 'contract-drafting',
-        content: `Our contract drafting and review services ensure that your agreements protect your interests and comply with applicable laws. We provide comprehensive support for all types of commercial and legal contracts.
-
-## Why Professional Contract Drafting Matters
-
-A well-drafted contract prevents disputes, clarifies obligations, and protects your rights. Our team ensures that your agreements are clear, comprehensive, and enforceable.
-
-## Our Contract Services Include:
-
-- **Commercial Contracts:** Drafting and reviewing distribution agreements, supply contracts, agency agreements, and joint venture agreements
-- **Employment Contracts:** Employment agreements, non-disclosure agreements (NDAs), and non-compete clauses
-- **Service Agreements:** Professional service contracts, consulting agreements, and outsourcing arrangements
-- **Real Estate Contracts:** Lease agreements, sale-purchase agreements, and property management contracts
-- **Corporate Documents:** Shareholders' agreements, partnership deeds, and articles of association
-- **IP Related Agreements:** Licensing agreements, technology transfer agreements, and assignment deeds
-
-## Our Process
-
-1. **Initial Consultation:** We discuss your needs and the specific requirements of your contract
-2. **Drafting/Review:** We prepare or review the contract, identifying risks and suggesting improvements
-3. **Negotiation Support:** We assist in negotiating terms with the other party
-4. **Finalization:** We prepare the final version for execution
-
-Contact us to ensure your contracts are legally sound and protect your interests.`,
-        metaTitle: 'Contract Drafting & Review Services - Walid Abo Al-Ela Law Firm',
-        metaDescription: 'Expert contract drafting and review services. Commercial contracts, employment agreements, NDAs, and more. Protect your interests with professionally drafted contracts.',
-        language: 'en',
-        published: true
-    },
-    // Contract Drafting & Review - Arabic
-    {
-        title: 'صياغة ومراجعة العقود',
-        slug: 'contract-drafting-ar',
-        content: `تضمن خدمات صياغة ومراجعة العقود لدينا أن اتفاقياتك تحمي مصالحك وتتوافق مع القوانين السارية. نقدم دعماً شاملاً لجميع أنواع العقود التجارية والقانونية.
-
-## لماذا تعتبر الصياغة الاحترافية للعقود مهمة؟
-
-العقد المصاغ جيداً يمنع النزاعات، ويوضح الالتزامات، ويحمي حقوقك. يضمن فريقنا أن اتفاقياتك واضحة وشاملة وقابلة للتنفيذ.
-
-## خدماتنا في العقود تشمل:
-
-- **العقود التجارية:** صياغة ومراجعة اتفاقيات التوزيع، عقود التوريد، اتفاقيات الوكالة، وعقود المشاريع المشتركة
-- **عقود العمل:** اتفاقيات التوظيف، اتفاقيات عدم الإفصاح (NDAs)، وبنود عدم المنافسة
-- **اتفاقيات الخدمات:** عقود الخدمات المهنية، اتفاقيات الاستشارات، وترتيبات الاستعانة بمصادر خارجية
-- **العقود العقارية:** عقود الإيجار، عقود البيع والشراء، وعقود إدارة الممتلكات
-- **وثائق الشركات:** اتفاقيات المساهمين، عقود الشراكة، وأنظمة الشركات
-- **اتفاقيات الملكية الفكرية:** اتفاقيات الترخيص، اتفاقيات نقل التكنولوجيا، وعقود التنازل
-
-## خطوات العمل
-
-1. **استشارة أولية:** نناقش احتياجاتك والمتطلبات الخاصة بعقدك
-2. **الصياغة/المراجعة:** نقوم بإعداد أو مراجعة العقد، وتحديد المخاطر واقتراح التحسينات
-3. **دعم التفاوض:** نساعد في التفاوض على الشروط مع الطرف الآخر
-4. **الإنهاء:** نقوم بإعداد النسخة النهائية للتوقيع
-
-اتصل بنا لضمان أن عقودك سليمة قانونياً وتحمي مصالحك.`,
-        metaTitle: 'صياغة ومراجعة العقود - وليد أبو العلا للمحاماة',
-        metaDescription: 'خدمات صياغة ومراجعة العقود الاحترافية. عقود تجارية، اتفاقيات عمل، عقود خدمات، والمزيد. احمِ مصالحك بعقود مصاغة بشكل قانوني سليم.',
-        language: 'ar',
-        published: true
     }
-];
+];  // <-- تم إغلاق مصفوفة pagesData بشكل صحيح
 
 // ==================== BLOG POSTS DATA ====================
 const blogPostsData = [

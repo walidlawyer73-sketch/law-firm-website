@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وليد أبو العلا للمحاماة - التحكيم والملكية الفكرية</title>
+    <title>وليد أبو العلا للمحاماة - والتحكيم والملكية الفكرية</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -18,6 +18,49 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
+    <!-- إضافات CSS لحل مشكلة زر اللغة والقائمة -->
+    <style>
+        /* تحسين ظهور زر تغيير اللغة */
+        .language-switcher {
+            position: fixed;
+            top: 70px;
+            left: 20px;
+            z-index: 9999;
+        }
+        .language-switcher .lang-btn {
+            background-color: #0d6efd;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .language-switcher .lang-btn:hover {
+            background-color: #0b5ed7;
+            transform: scale(1.05);
+        }
+        /* تعويض مساحة الـ fixed navbar */
+        body {
+            padding-top: 70px;
+        }
+        @media (max-width: 768px) {
+            .language-switcher {
+                top: 60px;
+                left: 10px;
+            }
+            .language-switcher .lang-btn {
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+        }
+        /* تحسين عرض القائمة المنسدلة */
+        .dropdown-menu {
+            min-width: 220px;
+        }
+    </style>
 </head>
 <body>
     <!-- Language Switcher -->
@@ -32,7 +75,7 @@
                 <img src="/images/logo arb ip.png" alt="وليد أبو العلا للمحاماة" style="height:45px; width:auto; margin-left:10px;">
                 <div>
                     <span class="fw-bold">وليد أبو العلا للمحاماة</span>
-                    <small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">وليد ابوالعلا للمحاماة والتحكيم والملكية الفكرية</small>
+                    <small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -51,7 +94,6 @@
                             <li><a class="dropdown-item" href="/ar/patent">براءات الاختراع</a></li>
                             <li><a class="dropdown-item" href="/ar/copyright">حقوق المؤلف</a></li>
                             <li><a class="dropdown-item" href="/ar/litigation">قضايا الملكية الفكرية</a></li>
-                            <li><a class="dropdown-item" href="/ar/licensing">صياغة ومراجعة العقود</a></li>
                             <li><a class="dropdown-item" href="/ar/corporate-formation">تأسيس الشركات</a></li>
                             <li><a class="dropdown-item" href="/ar/criminal-litigation">القضايا الجنائية</a></li>
                             <!-- فاصل ورابط جميع الخدمات -->
@@ -404,5 +446,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="/js/main.js"></script>
+    <!-- كود JavaScript لتحديد الرابط النشط -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -18,11 +18,54 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
+    <!-- Additional CSS for language switcher and dropdown -->
+    <style>
+        /* Language switcher styling */
+        .language-switcher {
+            position: fixed;
+            top: 70px;
+            left: 20px;
+            z-index: 9999;
+        }
+        .language-switcher .lang-btn {
+            background-color: #0d6efd;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .language-switcher .lang-btn:hover {
+            background-color: #0b5ed7;
+            transform: scale(1.05);
+        }
+        /* Compensate for fixed navbar */
+        body {
+            padding-top: 70px;
+        }
+        @media (max-width: 768px) {
+            .language-switcher {
+                top: 60px;
+                left: 10px;
+            }
+            .language-switcher .lang-btn {
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+        }
+        /* Improve dropdown width */
+        .dropdown-menu {
+            min-width: 220px;
+        }
+    </style>
 </head>
 <body>
     <!-- Language Switcher -->
     <div class="language-switcher">
-        <a href="/ar/index.html" class="lang-btn arabic"><i class="fas fa-globe"></i> العربية</a>
+        <a href="/ar/index.html" class="lang-btn"><i class="fas fa-globe"></i> العربية</a>
     </div>
 
     <!-- Navigation Bar -->
@@ -40,7 +83,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
@@ -51,7 +94,6 @@
                             <li><a class="dropdown-item" href="/patent">Patent Protection</a></li>
                             <li><a class="dropdown-item" href="/copyright">Copyright</a></li>
                             <li><a class="dropdown-item" href="/litigation">IP Litigation</a></li>
-                            <li><a class="dropdown-item" href="/licensing">Licensing & Contracts</a></li>
                             <li><a class="dropdown-item" href="/corporate-formation">Corporate Formation</a></li>
                             <li><a class="dropdown-item" href="/criminal-litigation">Criminal Litigation</a></li>
                             <!-- Divider and All Services -->
@@ -373,7 +415,7 @@
                 <div class="col-lg-3">
                     <h6 class="mb-4">Contact Info</h6>
                     <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، القاهرة، مصر</li>
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 10th of Ramadan, Cairo, Egypt</li>
                         <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
                         <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
                         <li class="mb-2"><i class="fas fa-clock me-2"></i> Sat - Thu: 9am - 8pm</li>
@@ -383,9 +425,9 @@
                 <div class="col-lg-3">
                     <h6 class="mb-4">Legal</h6>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/privacy-policy" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
-                        <li class="mb-2"><a href="/terms-of-service" class="text-white-50 text-decoration-none">Terms of Use</a></li>
-                        <li class="mb-2"><a href="/cookie-policy" class="text-white-50 text-decoration-none">Cookie Policy</a></li>
+                        <li class="mb-2"><a href="/privacy-policy.html" class="text-white-50 text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="/terms-of-service.html" class="text-white-50 text-decoration-none">Terms of Use</a></li>
+                        <li class="mb-2"><a href="/cookie-policy.html" class="text-white-50 text-decoration-none">Cookie Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -404,5 +446,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="/js/main.js"></script>
+    <!-- JavaScript to set active link -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
