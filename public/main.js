@@ -64,58 +64,121 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ========== 3. إصلاح زر اللغة ليعمل في كل الصفحات ==========
-    // ========== حل مشكلة تبديل اللغة ==========
-/**
- * حل مشكلة زر اللغة - التوجيه الذكي إلى نفس الصفحة في اللغة الأخرى
+   /**
+ * ================================================
+ * حل نهائي لمشكلة أزرار اللغة
+ * ================================================
  */
+/**
+ * main.js - الوظائف العامة للموقع
+ * آخر تحديث: إصلاح مشاكل الأقواس والتنسيق
+ */
+
+// ================================================
+// حل مشكلة أزرار اللغة - التوجيه الذكي
+// ================================================
 document.addEventListener('DOMContentLoaded', function() {
-    // البحث عن أزرار اللغة
+    setTimeout(fixLanguageButtons, 100);
+});
+
+function fixLanguageButtons() {
     const langButtons = document.querySelectorAll('.language-switcher .lang-btn');
     
-    langButtons.forEach(btn => {
+    langButtons.forEach(function(btn) {
+        btn.removeAttribute('href'); // إزالة الرابط الثابت
+        btn.style.cursor = 'pointer';
         btn.addEventListener('click', function(e) {
-            e.preventDefault(); // منع الرابط الافتراضي مؤقتاً
-            
-            // الحصول على مسار الصفحة الحالية
-            const currentPath = window.location.pathname;
-            const currentLang = document.documentElement.lang; // 'ar' أو 'en'
-            
-            let newPath;
-            
-            if (currentLang === 'ar') {
-                // إذا كنا في النسخة العربية، ننتقل إلى الإنجليزية
-                if (currentPath === '/ar/' || currentPath === '/ar/index.html' || currentPath === '/ar') {
-                    newPath = '/'; // الصفحة الرئيسية الإنجليزية
-                } else if (currentPath.startsWith('/ar/')) {
-                    // إزالة /ar/ من البداية
-                    newPath = currentPath.substring(3);
-                } else {
-                    newPath = '/'; // افتراضي
-                }
-            } else {
-                // إذا كنا في الإنجليزية، ننتقل إلى العربية
-                if (currentPath === '/' || currentPath === '/index.html') {
-                    newPath = '/ar/'; // الصفحة الرئيسية العربية
-                } else {
-                    // نضيف /ar/ في البداية
-                    newPath = '/ar' + currentPath;
-                }
-            }
-            
-            // توجيه المتصفح إلى المسار الجديد
-            window.location.href = newPath;
+            e.preventDefault();
+            switchLanguage();
         });
     });
-});
+}
 
-// تحديث روابط أزرار اللغة
+function switchLanguage() {
+    const currentPath = window.location.pathname;
+    const currentLang = document.documentElement.lang; // 'ar' أو 'en'
+    let newPath;
+    
+    if (currentLang === 'ar') {
+        // من العربية إلى الإنجليزية
+        if (currentPath === '/ar/' || currentPath === '/ar/index.html' || currentPath === '/ar') {
+            newPath = '/'; // الصفحة الرئيسية الإنجليزية
+        } else if (currentPath.startsWith('/ar/')) {
+            // إزالة /ar/ من البداية
+            newPath = currentPath.substring(3);
+            if (newPath === '' || newPath === 'index.html') {
+                newPath = '/';
+            }
+        } else {
+            newPath = '/';
+        }
+    } else {
+        // من الإنجليزية إلى العربية
+        if (currentPath === '/' || currentPath === '/index.html') {
+            newPath = '/ar/'; // الصفحة الرئيسية العربية
+        } else {
+            newPath = '/ar' + currentPath;
+        }
+    }
+    
+    window.location.href = newPath;
+}
+
+// ================================================
+// حل مشكلة صورة المحامي الرئيسي
+// ================================================
 document.addEventListener('DOMContentLoaded', function() {
-  const langSwitcherLinks = document.querySelectorAll('.language-switcher a.lang-btn');
-  langSwitcherLinks.forEach(link => {
-    link.href = getLanguageSwitchUrl();
-  });
+    setTimeout(fixLawyerImage, 200);
 });
 
+function fixLawyerImage() {
+    // البحث عن جميع الصور التي قد تكون للمحامي
+    const possibleImages = document.querySelectorAll(
+        'img[alt*="وليد أبو العلا"], ' +
+        'img[alt*="Walid Abo Al-Ela"], ' +
+        '.team-card img, ' +
+        'img[src*="walid"]'
+    );
+    
+    // قائمة المسارات المحتملة للصورة (عدلها حسب موقعك)
+    const possiblePaths = [
+        '/images/team/walid-profile.jpg',
+        '/images/team/walid-abouelela.jpg',
+        '/images/walid-profile.jpg',
+        '/ar/images/team/walid-profile.jpg',
+        '/images/lawyers/walid.jpg'
+    ];
+    
+    possibleImages.forEach(function(img) {
+        // تجاهل الصور الصغيرة جداً (أيقونات)
+        if (img.width && img.width < 50) return;
+        
+        // بدء محاولة تحميل الصورة من المسارات
+        tryLoadImage(img, possiblePaths, 0);
+    });
+}
+
+function tryLoadImage(imgElement, pathsArray, index) {
+    if (index >= pathsArray.length) {
+        console.log('لم يتم العثور على الصورة في أي مسار');
+        return;
+    }
+    
+    var testImg = new Image();
+    testImg.src = pathsArray[index];
+    
+    testImg.onload = function() {
+        // تم العثور على الصورة
+        imgElement.src = pathsArray[index];
+        imgElement.onerror = null;
+        console.log('✅ تم تحميل الصورة من: ' + pathsArray[index]);
+    };
+    
+    testImg.onerror = function() {
+        // جرب المسار التالي
+        tryLoadImage(imgElement, pathsArray, index + 1);
+    };
+}
 // ========== حل مشكلة الاسكرول ==========
 // هذا الكود يضمن أن خاصية التمرير تعمل بشكل طبيعي
 document.documentElement.style.overflow = 'auto';
