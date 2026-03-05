@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>تعليمات الإصلاح النهائي</title>
+    <style>
+        body { font-family: Arial; line-height: 1.6; max-width: 800px; margin: 20px auto; padding: 20px; }
+        h1 { color: #c9a227; border-bottom: 2px solid #000; }
+        h2 { color: #333; margin-top: 30px; }
+        code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; }
+        pre { background: #1e1e1e; color: #fff; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        .step { background: #e8f4fd; padding: 15px; border-right: 4px solid #0d6efd; margin: 20px 0; }
+        .warning { background: #fff3cd; border-right-color: #ffc107; }
+    </style>
+</head>
+<body>
+    <h1>🔧 الإصلاح النهائي لموقع المحاماة</h1>
+    
+    <div class="step">
+        <h2>الخطوة 1: استبدال ملف main.js</h2>
+        <p>انسخ الكود التالي والصقه في ملف <code>public/main.js</code> (احذف كل المحتوى القديم):</p>
+        <pre>// @ts-nocheck
+document.addEventListener('DOMContentLoaded',function(){
+    'use strict';
+    document.querySelectorAll('.language-switcher .lang-btn').forEach(b=>{
+        b.removeAttribute('href');
+        b.style.cursor='pointer';
+        b.onclick=function(e){
+            e.preventDefault();
+            let p=window.location.pathname;
+            let d=document.documentElement.lang;
+            let n='/';
+            if(d==='ar'){
+                if(p==='/ar/'||p==='/ar/index.html') n='/';
+                else if(p.startsWith('/ar/')) n=p.replace('/ar','')||'/';
+            }else{
+                if(p==='/'||p==='/index.html') n='/ar/';
+                else n='/ar'+p;
+            }
+            window.location.href=n;
+        };
+    });
+    let i=document.querySelectorAll('img[alt*="وليد"],img[alt*="Walid"],.team-card img');
+    i.forEach(img=>{
+        if(img.complete&&img.naturalWidth===0) img.src='/images/team/walid-profile.jpg';
+        else img.onerror=function(){this.src='/images/team/walid-profile.jpg';this.onerror=null;};
+    });
+});</pre>
+    </div>
+    
+    <div class="step">
+        <h2>الخطوة 2: تعديل أزرار اللغة في HTML</h2>
+        <p>افتح كل ملف HTML (عربي وإنجليزي) وقم بتعديل أزرار اللغة بهذا الشكل:</p>
+        <h3>في الصفحات العربية (داخل مجلد /ar/):</h3>
+        <pre>&lt;div class="language-switcher"&gt;
+    &lt;a class="lang-btn"&gt;&lt;i class="fas fa-globe"&gt;&lt;/i&gt; English&lt;/a&gt;
+&lt;/div&gt;</pre>
+        <h3>في الصفحات الإنجليزية (المجلد الرئيسي):</h3>
+        <pre>&lt;div class="language-switcher"&gt;
+    &lt;a class="lang-btn"&gt;&lt;i class="fas fa-globe"&gt;&lt;/i&gt; العربية&lt;/a&gt;
+&lt;/div&gt;</pre>
+        <p class="warning"><strong>⚠️ مهم:</strong> تأكد من إزالة <code>href</code> تماماً.</p>
+    </div>
+    
+    <div class="step">
+        <h2>الخطوة 3: رفع الصورة الصحيحة</h2>
+        <p>تأكد من وجود صورة المحامي في هذا المسار بالضبط:</p>
+        <pre><code>/images/team/walid-profile.jpg</code></pre>
+        <p>إذا لم يكن المجلد <code>team</code> موجوداً، أنشئه وارفع الصورة فيه.</p>
+        <p>يمكنك اختبار المسار عبر الرابط: <code>https://yourdomain.com/images/team/walid-profile.jpg</code></p>
+    </div>
+    
+    <div class="step">
+        <h2>الخطوة 4: التأكد من تحميل main.js في كل الصفحات</h2>
+        <p>في كل صفحة HTML، قبل إغلاق <code>&lt;/body&gt;</code>، تأكد من وجود هذا السطر:</p>
+        <pre>&lt;script src="/main.js"&gt;&lt;/script&gt;</pre>
+        <p>إذا كان ملف <code>main.js</code> في مجلد <code>public</code>، استخدم:</p>
+        <pre>&lt;script src="/public/main.js"&gt;&lt;/script&gt;</pre>
+    </div>
+    
+    <div class="step">
+        <h2>الخطوة 5: رفع الملفات إلى السيرفر</h2>
+        <p>بعد تنفيذ الخطوات السابقة، ارفع الملفات التالية إلى السيرفر:</p>
+        <ul>
+            <li><code>/public/main.js</code> (أو <code>/main.js</code> حسب موقعك)</li>
+            <li>جميع صفحات HTML التي عدلت فيها أزرار اللغة</li>
+            <li>صورة <code>walid-profile.jpg</code> في <code>/images/team/</code></li>
+        </ul>
+    </div>
+    
+    <div class="step">
+        <h2>✅ اختبار الحل</h2>
+        <ol>
+            <li>افتح أي صفحة عربية (مثل /ar/about.html) وانقر على زر اللغة → يجب أن تنتقل لنفس الصفحة بالإنجليزية.</li>
+            <li>افتح أي صفحة إنجليزية وانقر على زر العربية → تنتقل لنفس الصفحة بالعربية.</li>
+            <li>في الصفحة الرئيسية وصفحة فريق العمل، يجب أن تظهر صورة المحامي الحقيقية.</li>
+        </ol>
+    </div>
+</body>
+</html>
