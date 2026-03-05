@@ -50,22 +50,22 @@ body {
 /* Language Switcher */
 .language-switcher {
     position: fixed;
-    top: 20px;  /* غيّرناها من 100px إلى 20px */
+    top: 20px;
     right: 20px;
-    z-index: 9999;  /* قيمة عالية جداً لضمان ظهوره فوق كل شيء */
+    z-index: 9999;
 }
 
 .lang-btn {
     display: inline-block;
-    padding: 8px 16px;  /* تصغير الحجم قليلاً */
-    background: var(--accent-color) !important;  /* لون ذهبي */
-    color: var(--primary-color) !important;  /* نص أسود */
+    padding: 8px 16px;
+    background: var(--accent-color) !important;
+    color: var(--primary-color) !important;
     border-radius: 30px;
     text-decoration: none;
-    font-weight: 600;  /* أغلق قليلاً */
+    font-weight: 600;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
-    border: none;  /* إزالة الحدود */
+    border: none;
     font-size: 0.9rem;
 }
 
@@ -75,7 +75,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* تنسيق خاص للنسخة العربية (الزر نفسه مشترك، لكن نحافظ على التباين) */
 .lang-btn.arabic {
     background: var(--accent-color) !important;
     color: var(--primary-color) !important;
@@ -85,52 +84,10 @@ body {
     background: var(--primary-color) !important;
     color: var(--accent-color) !important;
 }
-@media (max-width: 768px) {
-    .language-switcher {
-        top: 10px;  /* أقرب للأعلى في الموبايل */
-        right: 10px;
-    }
 
-    .lang-btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-}
-/* تحسينات للموبايل */
-@media (max-width: 768px) {
-    .language-switcher {
-        top: 80px; /* أنزل الزر تحت النافبار */
-        right: 10px;
-    }
-    
-    .lang-btn {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .language-switcher {
-        top: 70px; /* للشاشات الصغيرة جداً */
-    }
-    
-    .lang-btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-}
-/* في قسم الإضافات CSS */
-.language-switcher .lang-btn {
-    background-color: #0d6efd !important;  /* قوة override */
-    color: white !important;
-    border: none !important;
-}
-.language-switcher .lang-btn:hover {
-    background-color: #0b5ed7 !important;
-}
 /* Navigation */
 .navbar {
-    background: var(--primary-color);
+    background: var(--primary-color) !important;
     padding: 15px 0;
     transition: var(--transition);
 }
@@ -153,6 +110,11 @@ body {
     width: auto !important;
     margin-right: 10px;
     object-fit: contain;
+}
+
+[dir="rtl"] .navbar-brand img {
+    margin-right: 0;
+    margin-left: 10px;
 }
 
 .navbar-nav .nav-link {
@@ -413,7 +375,7 @@ body {
     color: var(--primary-color);
 }
 
-/* Social Links */
+/* Social Links (general) */
 .social-links a {
     display: inline-flex;
     align-items: center;
@@ -434,66 +396,54 @@ body {
     transform: translateY(-3px);
 }
 
-/* ========== تحسينات الموبايل والاستجابة ========== */
+/* Responsive */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: var(--primary-color);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
 
-/* شاشات صغيرة (موبايل) */
 @media (max-width: 768px) {
-    /* تقليل المسافة العلوية */
     body {
-        padding-top: 60px;
+        padding-top: 70px;
+    }
+    
+    .language-switcher {
+        top: 10px;
+        right: 10px;
     }
 
-    /* تعديل الـ Navbar */
-    .navbar-brand {
-        font-size: 1.2rem;
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .hero-section {
+        min-height: 400px;
+        padding: 40px 0;
     }
 
-    .navbar-brand img {
-        height: 35px !important;
+    .hero-section h1 {
+        font-size: 2rem;
     }
 
-    .navbar-brand small {
-        font-size: 10px !important;
+    .hero-section .lead {
+        font-size: 1rem;
     }
 
-/* زر اللغة - أسود وذهبي */
-.language-switcher {
-    position: fixed;
-    top: 70px;
-    z-index: 9999;
-}
-html[dir="rtl"] .language-switcher {
-    right: 20px;
-    left: auto;
-}
-html:not([dir="rtl"]) .language-switcher {
-    left: 20px;
-    right: auto;
-}
-.language-switcher .lang-btn {
-    background-color: #000000 !important;
-    color: #ffd700 !important;
-    padding: 8px 16px !important;
-    border-radius: 30px !important;
-    text-decoration: none !important;
-    font-weight: bold !important;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
-    transition: 0.3s !important;
-    display: inline-block !important;
-    border: 1px solid #ffd700 !important;
-}
-.language-switcher .lang-btn:hover {
-    background-color: #1a1a1a !important;
-    color: #ffd700 !important;
-    transform: scale(1.05) !important;
-}
-@media (max-width: 768px) {
-    .language-switcher { top: 60px; }
-    html[dir="rtl"] .language-switcher { right: 10px; }
-    html:not([dir="rtl"]) .language-switcher { left: 10px; }
-    .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
-}
-    /* كروت الخدمات */
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0 !important;
+    }
+
     .features-section {
         padding: 40px 0;
     }
@@ -508,7 +458,6 @@ html:not([dir="rtl"]) .language-switcher {
         font-size: 24px;
     }
 
-    /* Page Header */
     .page-header {
         padding: 40px 0;
         margin-top: 60px;
@@ -522,7 +471,6 @@ html:not([dir="rtl"]) .language-switcher {
         font-size: 1rem;
     }
 
-    /* Team Card */
     .team-card {
         padding: 20px;
     }
@@ -532,7 +480,6 @@ html:not([dir="rtl"]) .language-switcher {
         height: 120px;
     }
 
-    /* Footer */
     .footer-section {
         text-align: center;
     }
@@ -546,7 +493,6 @@ html:not([dir="rtl"]) .language-switcher {
         text-align: center !important;
     }
 
-    /* تعديل أزرار الفوتر */
     .footer-section .social-links a {
         width: 35px;
         height: 35px;
@@ -556,7 +502,6 @@ html:not([dir="rtl"]) .language-switcher {
     }
 }
 
-/* شاشات صغيرة جداً (اقل من 576px) */
 @media (max-width: 576px) {
     .hero-section h1 {
         font-size: 1.8rem;
@@ -577,7 +522,6 @@ html:not([dir="rtl"]) .language-switcher {
         font-size: 1rem;
     }
 
-    /* تحسين عرض القائمة المنسدلة */
     .dropdown-menu {
         position: static !important;
         float: none;
@@ -598,7 +542,6 @@ html:not([dir="rtl"]) .language-switcher {
     }
 }
 
-/* شاشات متوسطة (تابلت) */
 @media (min-width: 769px) and (max-width: 991px) {
     .hero-section h1 {
         font-size: 2.5rem;
@@ -607,14 +550,9 @@ html:not([dir="rtl"]) .language-switcher {
     .feature-card {
         padding: 25px;
     }
-
-    .footer-section .col-lg-3,
-    .footer-section .col-lg-2 {
-        margin-bottom: 30px;
-    }
 }
 
-/* Bootstrap container تعديل هوامش الـ */
+/* Bootstrap container */
 .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -622,60 +560,23 @@ html:not([dir="rtl"]) .language-switcher {
     margin-left: auto;
 }
 
-/* Row تعديل هوامش الـ */
+/* Row */
 .row {
     margin-right: -15px;
     margin-left: -15px;
 }
 
-/* التأكد من أن الصور لا تتجاوز عرض الحاوية */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* تحسين عرض الجداول على الموبايل */
 .table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
 
-/* تحسين الأزرار */
 .btn-block {
     display: block;
     width: 100%;
-}
-@media (max-width: 768px) {
-    /* استهداف عنصر معين */
-    .your-class-name {
-        font-size: 14px;
-    }
-}
-/* Why Choose Us Section */
-.why-choose-us .feature-icon {
-    background: var(--accent-color);
-    color: var(--primary-color);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    transition: var(--transition);
-}
-
-.why-choose-us .feature-icon i {
-    font-size: 32px;
-}
-
-.why-choose-us .col-md-4:hover .feature-icon {
-    background: var(--primary-color);
-    color: var(--accent-color);
-    transform: rotateY(180deg);
-}
-
-.why-choose-us h4 {
-    margin-bottom: 15px;
-    font-weight: 600;
 }
