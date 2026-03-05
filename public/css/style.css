@@ -580,3 +580,25 @@ img {
     display: block;
     width: 100%;
 }
+/* حل مشكلة التمرير */
+html, body {
+    overflow: auto !important;
+    height: auto !important;
+}
+
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+/* منع أي عنصر من منع التمرير */
+* {
+    overflow: visible !important;
+}
+/* التأكد من عدم وجود عناصر شفافة تغطي الصفحة */
+body > *:not(.language-switcher) {
+    pointer-events: auto;
+}
