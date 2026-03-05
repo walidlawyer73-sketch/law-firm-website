@@ -12,7 +12,9 @@
 <body>
     <!-- Language Switcher -->
     <div class="language-switcher">
-<a href="/ar/index.html" class="lang-btn arabic"><i class="fas fa-globe"></i> العربية</a>
+    <a href="/ar/index.html" class="lang-btn arabic">
+        <i class="fas fa-globe"></i> العربية
+    </a>
 </div>
 
     <!-- Navigation Bar -->
@@ -200,3 +202,23 @@
   gtag('js', new Date());
   gtag('config', 'G-WQ0CPXRK2F');
 </script>
+document.addEventListener('DOMContentLoaded', function() {
+    const langSwitch = document.querySelector('.language-switcher a');
+    if (langSwitch) {
+        const currentPath = window.location.pathname;
+        // إذا كان المسار يبدأ بـ /ar، نذهب للإنجليزية، وإلا نذهب للعربية
+        if (currentPath.startsWith('/ar/')) {
+            // الصفحة الحالية عربية، نذهب للإنجليزية
+            const englishPath = currentPath.replace('/ar/', '/');
+            langSwitch.href = englishPath || '/';
+            langSwitch.classList.remove('arabic');
+            langSwitch.innerHTML = '<i class="fas fa-globe"></i> English';
+        } else {
+            // الصفحة الحالية إنجليزية، نذهب للعربية
+            const arabicPath = currentPath === '/' ? '/ar/' : `/ar${currentPath}`;
+            langSwitch.href = arabicPath;
+            langSwitch.classList.add('arabic');
+            langSwitch.innerHTML = '<i class="fas fa-globe"></i> العربية';
+        }
+    }
+});
