@@ -12,15 +12,52 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <script>
+// ========== حل نهائي لصورة المحامي ==========
 (function() {
-    const img = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-    if (!img) return;
-    const correctPath = '/images/team/walid-profile.jpg'; // المسار الصحيح لصورتك
+    // المسار الصحيح للصورة (عدله إذا كان مختلفاً)
+    const correctImagePath = '/images/team/walid-profile.jpg';
+    
+    // البحث عن الصورة بعدة طرق
+    const possibleSelectors = [
+        'img[alt*="وليد"]',
+        'img[alt*="Walid"]',
+        '.team-card img',
+        'img[src*="walid"]',
+        'img[src*="team"]'
+    ];
+    
+    const imgElement = document.querySelector(possibleSelectors.join(','));
+    
+    if (!imgElement) {
+        console.log('❌ لم يتم العثور على صورة المحامي');
+        return;
+    }
+    
+    // تعطيل معالج الأخطاء القديم
+    imgElement.onerror = null;
+    
+    // اختبار إذا كانت الصورة الحالية تعمل
     const testImg = new Image();
-    testImg.src = correctPath;
-    testImg.onload = function() { img.src = correctPath; };
+    testImg.src = correctImagePath;
+    
+    testImg.onload = function() {
+        // الصورة موجودة في المسار الصحيح
+        if (imgElement.src !== correctImagePath) {
+            imgElement.src = correctImagePath;
+            console.log('✅ تم تحديث صورة المحامي إلى: ' + correctImagePath);
+        }
+    };
+    
+    testImg.onerror = function() {
+        console.log('❌ الصورة غير موجودة في المسار: ' + correctImagePath);
+        console.log('⚠️ يرجى رفع الصورة إلى هذا المسار أو تعديل المسار في الكود.');
+    };
 })();
 </script>
+<!-- Banner تجريبي للموقع - يظهر في كل الصفحات -->
+<div style="background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; position: sticky; top: 0; z-index: 9998; border-bottom: 2px solid #000;">
+    <i class="fas fa-tools" style="margin-left: 8px;"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools" style="margin-right: 8px;"></i>
+</div>
 <body>
     <div class="language-switcher">
     <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>
