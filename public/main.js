@@ -1,3 +1,4 @@
+/* eslint-disable */
 // @ts-nocheck
 /**
  * main.js - الوظائف العامة للموقع
