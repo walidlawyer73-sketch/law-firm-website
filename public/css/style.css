@@ -592,6 +592,9 @@ html, body {
     right: 20px;
     z-index: 9999;
     pointer-events: auto;
+    }
+    .language-switcher {
+    z-index: 10001 !important;
 }
 
 /* منع أي عنصر من منع التمرير */
