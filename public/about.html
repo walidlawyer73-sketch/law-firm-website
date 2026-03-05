@@ -10,10 +10,29 @@
 </head>
 <body>
     <div class="language-switcher">
-    <a href="/ar/index.html" class="lang-btn arabic">
-        <i class="fas fa-globe"></i> العربية
-    </a>
+    <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> العربية</a>
 </div>
+
+<script>
+(function() {
+    const langLink = document.getElementById('langSwitch');
+    if (!langLink) return;
+    const currentPath = window.location.pathname;
+    // إذا كنا في صفحة إنجليزية (لا تبدأ بـ /ar/)
+    if (!currentPath.startsWith('/ar/')) {
+        let arabicPath;
+        if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
+            arabicPath = '/ar/';
+        } else {
+            arabicPath = '/ar' + currentPath;
+        }
+        langLink.href = arabicPath;
+    } else {
+        // لو الصفحة عربية بالخطأ (مثلاً في الإنجليزية)، نوجه للعربية الرئيسية
+        langLink.href = '/ar/';
+    }
+})();
+</script>
 <script src="/js/main.js"></script>
     <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">

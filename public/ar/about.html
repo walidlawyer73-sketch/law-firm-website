@@ -10,10 +10,27 @@
 </head>
 <body>
     <div class="language-switcher">
-    <a href="/index.html" class="lang-btn">
-        <i class="fas fa-globe"></i> English
-    </a>
+    <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>
 </div>
+
+<script>
+(function() {
+    const langLink = document.getElementById('langSwitch');
+    if (!langLink) return;
+    const currentPath = window.location.pathname;
+    // إذا كنا في صفحة عربية (المسار يبدأ بـ /ar/)
+    if (currentPath.startsWith('/ar/')) {
+        let englishPath = currentPath.replace('/ar', '');
+        if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') {
+            englishPath = '/';
+        }
+        langLink.href = englishPath;
+    } else {
+        // لو الصفحة مش عربية لأي سبب، نوجه للإنجليزية الرئيسية
+        langLink.href = '/';
+    }
+})();
+</script>
 <script src="/js/main.js"></script>
     <!-- Navigation Bar -->
     <!-- Navigation Bar -->
