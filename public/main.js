@@ -1,6 +1,38 @@
 // Main JavaScript File - تحكم موحد في كل الصفحات
 
+// تأكد من وجود الصورة الصحيحة للمحامي الرئيسي
+/**
+ * حل مشكلة صورة المحامي الرئيسي
+ */
 document.addEventListener('DOMContentLoaded', function() {
+    // تحديد الصور التي تخص المحامي الرئيسي (يمكنك تعديل المحدد حسب الحاجة)
+    const lawyerImages = document.querySelectorAll(
+        'img[alt*="وليد أبو العلا"], ' +      // للعربية
+        'img[alt*="Walid Abo Al-Ela"], ' +   // للإنجليزية
+        '.team-card img'                      // أي صورة داخل بطاقة الفريق
+    );
+    
+    // المسار الصحيح للصورة (عدله حسب موقع الصورة الفعلي)
+    const correctImagePath = '/images/team/walid-profile.jpg';
+    
+    lawyerImages.forEach(img => {
+        // إنشاء كائن Image لاختبار تحميل الصورة
+        const testImage = new Image();
+        testImage.src = correctImagePath;
+        
+        testImage.onload = function() {
+            // إذا تحمّلت الصورة بنجاح، استبدل مصدر الصورة بها
+            img.src = correctImagePath;
+            img.onerror = null; // إلغاء أي معالج أخطاء سابق
+        };
+        
+        testImage.onerror = function() {
+            console.warn('⚠️ الصورة غير موجودة في المسار: ' + correctImagePath);
+            // يمكنك ترك الصورة الافتراضية أو وضع صورة بديلة
+            // img.src = '/images/default-avatar.jpg';
+        };
+    });
+});
     // ========== 1. تغيير لون النافبار إلى الأسود (إذا كان أزرق) ==========
     const navbar = document.querySelector('.navbar');
     if (navbar) {
@@ -33,38 +65,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ========== 3. إصلاح زر اللغة ليعمل في كل الصفحات ==========
     // ========== حل مشكلة تبديل اللغة ==========
+/**
+ * حل مشكلة زر اللغة - التوجيه الذكي إلى نفس الصفحة في اللغة الأخرى
+ */
 document.addEventListener('DOMContentLoaded', function() {
-    // نختار جميع أزرار اللغة
-    const langSwitcher = document.querySelector('.language-switcher');
-    if (!langSwitcher) return;
-
-    const langLinks = langSwitcher.querySelectorAll('a');
+    // البحث عن أزرار اللغة
+    const langButtons = document.querySelectorAll('.language-switcher .lang-btn');
     
-    langLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault(); // نمنع السلوك الافتراضي للرابط
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault(); // منع الرابط الافتراضي مؤقتاً
             
+            // الحصول على مسار الصفحة الحالية
             const currentPath = window.location.pathname;
-            const isArabicPage = currentPath.startsWith('/ar/');
-            const targetLang = this.classList.contains('arabic') ? 'ar' : 'en';
+            const currentLang = document.documentElement.lang; // 'ar' أو 'en'
             
             let newPath;
-            if (targetLang === 'ar') {
-                // إذا كنا نريد العربية
-                if (isArabicPage) return; // نحن بالفعل في العربية
-                // نحول المسار الحالي إلى العربية
-                newPath = '/ar' + currentPath;
+            
+            if (currentLang === 'ar') {
+                // إذا كنا في النسخة العربية، ننتقل إلى الإنجليزية
+                if (currentPath === '/ar/' || currentPath === '/ar/index.html' || currentPath === '/ar') {
+                    newPath = '/'; // الصفحة الرئيسية الإنجليزية
+                } else if (currentPath.startsWith('/ar/')) {
+                    // إزالة /ar/ من البداية
+                    newPath = currentPath.substring(3);
+                } else {
+                    newPath = '/'; // افتراضي
+                }
             } else {
-                // إذا كنا نريد الإنجليزية
-                if (!isArabicPage) return; // نحن بالفعل في الإنجليزية
-                // نزيل /ar من المسار
-                newPath = currentPath.replace('/ar', '') || '/';
+                // إذا كنا في الإنجليزية، ننتقل إلى العربية
+                if (currentPath === '/' || currentPath === '/index.html') {
+                    newPath = '/ar/'; // الصفحة الرئيسية العربية
+                } else {
+                    // نضيف /ar/ في البداية
+                    newPath = '/ar' + currentPath;
+                }
             }
             
-            // ننقل المستخدم إلى الصفحة الجديدة (هذا سيحدث إعادة تحميل طبيعية)
+            // توجيه المتصفح إلى المسار الجديد
             window.location.href = newPath;
         });
     });
+});
+
+// تحديث روابط أزرار اللغة
+document.addEventListener('DOMContentLoaded', function() {
+  const langSwitcherLinks = document.querySelectorAll('.language-switcher a.lang-btn');
+  langSwitcherLinks.forEach(link => {
+    link.href = getLanguageSwitchUrl();
+  });
 });
 
 // ========== حل مشكلة الاسكرول ==========
