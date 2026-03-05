@@ -1,12 +1,10 @@
 // @ts-nocheck
 /**
- * main.js - الحل النهائي لجميع مشاكل الموقع
- * الإصدار: 3.0
+ * main.js - الوظائف العامة للموقع
+ * الإصدار: 4.0
  */
 
-// ================================================
-// بداية: حل مشكلة أزرار اللغة
-// ================================================
+// انتظار تحميل الصفحة
 document.addEventListener('DOMContentLoaded', function() {
     'use strict';
     
@@ -15,38 +13,38 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // إصلاح صور المحامين
     fixLawyerImages();
+    
+    // إصلاح روابط السياسات
+    fixPolicyLinks();
 });
 
+// ================================================
+// حل مشكلة أزرار اللغة - التوجيه الذكي
+// ================================================
 function fixLanguageButtons() {
-    const buttons = document.querySelectorAll('.language-switcher .lang-btn');
+    const langButtons = document.querySelectorAll('.language-switcher .lang-btn');
     
-    buttons.forEach(btn => {
-        // إزالة أي رابط قديم
+    langButtons.forEach(btn => {
         btn.removeAttribute('href');
         btn.style.cursor = 'pointer';
         
-        // إضافة حدث النقر
         btn.addEventListener('click', function(e) {
             e.preventDefault();
-            e.stopPropagation();
             
             const currentPath = window.location.pathname;
-            const isArabic = document.documentElement.lang === 'ar';
-            
+            const currentLang = document.documentElement.lang; // 'ar' أو 'en'
             let newPath = '/';
             
-            if (isArabic) {
-                // من العربية للإنجليزية
+            if (currentLang === 'ar') {
+                // من العربية إلى الإنجليزية
                 if (currentPath === '/ar/' || currentPath === '/ar/index.html') {
                     newPath = '/';
                 } else if (currentPath.startsWith('/ar/')) {
-                    newPath = currentPath.replace('/ar', '');
-                    if (newPath === '' || newPath === '/index.html') {
-                        newPath = '/';
-                    }
+                    newPath = currentPath.replace('/ar', '') || '/';
+                    if (newPath === '' || newPath === '/index.html') newPath = '/';
                 }
             } else {
-                // من الإنجليزية للعربية
+                // من الإنجليزية إلى العربية
                 if (currentPath === '/' || currentPath === '/index.html') {
                     newPath = '/ar/';
                 } else {
@@ -60,25 +58,20 @@ function fixLanguageButtons() {
 }
 
 // ================================================
-// حل مشكلة صور المحامين
+// حل مشكلة صورة المحامي الرئيسي
 // ================================================
 function fixLawyerImages() {
-    // البحث عن جميع الصور التي تحمل صفات المحامي
-    const selectors = [
-        'img[alt*="وليد أبو العلا"]',
-        'img[alt*="Walid Abo Al-Ela"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
+    const possibleImages = document.querySelectorAll(
+        'img[alt*="وليد أبو العلا"], ' +
+        'img[alt*="Walid Abo Al-Ela"], ' +
+        '.team-card img, ' +
+        'img[src*="walid"]'
+    );
     
-    const images = document.querySelectorAll(selectors.join(','));
-    
-    // المسار الصحيح للصورة (تأكد من وجود الصورة في هذا المسار)
     const correctPath = '/images/team/walid-profile.jpg';
     
-    images.forEach(img => {
-        // تجاهل الصور التالفة أو الصغيرة
+    possibleImages.forEach(img => {
+        // إذا كانت الصورة فشلت في التحميل، نستخدم المسار الصحيح
         if (img.complete && img.naturalWidth === 0) {
             img.src = correctPath;
         } else {
@@ -91,10 +84,14 @@ function fixLawyerImages() {
 }
 
 // ================================================
-// إصلاح روابط السياسات (تضمن عملها في كل الصفحات)
+// إصلاح روابط السياسات
 // ================================================
-document.addEventListener('DOMContentLoaded', function() {
-    const policyLinks = document.querySelectorAll('footer a[href*="privacy"], footer a[href*="terms"], footer a[href*="cookie"]');
+function fixPolicyLinks() {
+    const policyLinks = document.querySelectorAll(
+        'footer a[href*="privacy"], ' +
+        'footer a[href*="terms"], ' +
+        'footer a[href*="cookie"]'
+    );
     
     policyLinks.forEach(link => {
         let href = link.getAttribute('href');
@@ -102,4 +99,4 @@ document.addEventListener('DOMContentLoaded', function() {
             link.setAttribute('href', '/' + href);
         }
     });
-});
+}
