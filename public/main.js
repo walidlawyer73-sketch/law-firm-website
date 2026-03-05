@@ -1,38 +1,114 @@
-// Main JavaScript File - تحكم موحد في كل الصفحات
-
-// تأكد من وجود الصورة الصحيحة للمحامي الرئيسي
+// @ts-nocheck
 /**
- * حل مشكلة صورة المحامي الرئيسي
+ * main.js - الوظائف العامة للموقع
+ * آخر تحديث: إصلاح مشكلة تكرار onload والأقواس
  */
+
+// ================================================
+// حل مشكلة أزرار اللغة - التوجيه الذكي
+// ================================================
 document.addEventListener('DOMContentLoaded', function() {
-    // تحديد الصور التي تخص المحامي الرئيسي (يمكنك تعديل المحدد حسب الحاجة)
-    const lawyerImages = document.querySelectorAll(
-        'img[alt*="وليد أبو العلا"], ' +      // للعربية
-        'img[alt*="Walid Abo Al-Ela"], ' +   // للإنجليزية
-        '.team-card img'                      // أي صورة داخل بطاقة الفريق
+    setTimeout(fixLanguageButtons, 100);
+});
+
+function fixLanguageButtons() {
+    const langButtons = document.querySelectorAll('.language-switcher .lang-btn');
+    
+    langButtons.forEach(function(btn) {
+        btn.removeAttribute('href'); // إزالة الرابط الثابت
+        btn.style.cursor = 'pointer';
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            switchLanguage();
+        });
+    });
+}
+
+function switchLanguage() {
+    const currentPath = window.location.pathname;
+    const currentLang = document.documentElement.lang; // 'ar' أو 'en'
+    let newPath;
+    
+    if (currentLang === 'ar') {
+        // من العربية إلى الإنجليزية
+        if (currentPath === '/ar/' || currentPath === '/ar/index.html' || currentPath === '/ar') {
+            newPath = '/'; // الصفحة الرئيسية الإنجليزية
+        } else if (currentPath.startsWith('/ar/')) {
+            // إزالة /ar/ من البداية
+            newPath = currentPath.substring(3);
+            if (newPath === '' || newPath === 'index.html') {
+                newPath = '/';
+            }
+        } else {
+            newPath = '/';
+        }
+    } else {
+        // من الإنجليزية إلى العربية
+        if (currentPath === '/' || currentPath === '/index.html') {
+            newPath = '/ar/'; // الصفحة الرئيسية العربية
+        } else {
+            newPath = '/ar' + currentPath;
+        }
+    }
+    
+    window.location.href = newPath;
+}
+
+// ================================================
+// حل مشكلة صورة المحامي الرئيسي
+// ================================================
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(fixLawyerImage, 200);
+});
+
+function fixLawyerImage() {
+    // البحث عن جميع الصور التي قد تكون للمحامي
+    const possibleImages = document.querySelectorAll(
+        'img[alt*="وليد أبو العلا"], ' +
+        'img[alt*="Walid Abo Al-Ela"], ' +
+        '.team-card img, ' +
+        'img[src*="walid"]'
     );
     
-    // المسار الصحيح للصورة (عدله حسب موقع الصورة الفعلي)
-    const correctImagePath = '/images/team/walid-profile.jpg';
+    // قائمة المسارات المحتملة للصورة (عدلها حسب موقعك)
+    const possiblePaths = [
+        '/images/team/walid-profile.jpg',
+        '/images/team/walid-abouelela.jpg',
+        '/images/walid-profile.jpg',
+        '/ar/images/team/walid-profile.jpg',
+        '/images/lawyers/walid.jpg'
+    ];
     
-    lawyerImages.forEach(img => {
-        // إنشاء كائن Image لاختبار تحميل الصورة
-        const testImage = new Image();
-        testImage.src = correctImagePath;
+    possibleImages.forEach(function(img) {
+        // تجاهل الصور الصغيرة جداً (أيقونات)
+        if (img.width && img.width < 50) return;
         
-        testImage.onload = function() {
-            // إذا تحمّلت الصورة بنجاح، استبدل مصدر الصورة بها
-            img.src = correctImagePath;
-            img.onerror = null; // إلغاء أي معالج أخطاء سابق
-        };
-        
-        testImage.onerror = function() {
-            console.warn('⚠️ الصورة غير موجودة في المسار: ' + correctImagePath);
-            // يمكنك ترك الصورة الافتراضية أو وضع صورة بديلة
-            // img.src = '/images/default-avatar.jpg';
-        };
+        // بدء محاولة تحميل الصورة من المسارات
+        tryLoadImage(img, possiblePaths, 0);
     });
-});
+}
+
+function tryLoadImage(imgElement, pathsArray, index) {
+    if (index >= pathsArray.length) {
+        console.log('لم يتم العثور على الصورة في أي مسار');
+        return;
+    }
+    
+    var testImg = new Image();
+    testImg.src = pathsArray[index];
+    
+    testImg.onload = function() {
+        // تم العثور على الصورة
+        imgElement.src = pathsArray[index];
+        imgElement.onerror = null;
+        console.log('✅ تم تحميل الصورة من: ' + pathsArray[index]);
+    };
+    
+    testImg.onerror = function() {
+        // جرب المسار التالي
+        tryLoadImage(imgElement, pathsArray, index + 1);
+    };
+}
     // ========== 1. تغيير لون النافبار إلى الأسود (إذا كان أزرق) ==========
     const navbar = document.querySelector('.navbar');
     if (navbar) {
@@ -240,7 +316,6 @@ document.body.style.overflow = 'auto';
             link.classList.add('active');
         }
     });
-});
 
 // ========== 7. إصلاح مشكلة النافبار الأزرق عبر CSS إضافي ==========
 // إضافة CSS ديناميكي لفرض اللون الأسود
