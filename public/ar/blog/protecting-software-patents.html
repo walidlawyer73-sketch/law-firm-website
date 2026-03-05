@@ -11,8 +11,7 @@
 </head>
 <body>
     <div class="language-switcher">
-<a href="/about.html" class="lang-btn"><i class="fas fa-globe"></i> English</a></div>
-
+<a href="#" id="english-link" class="lang-btn"><i class="fas fa-globe"></i> English</a>
     <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
     <div class="container">
@@ -155,9 +154,9 @@
             <div class="col-lg-3">
     <h6 class="mb-4">قانوني</h6>
     <ul class="list-unstyled">
-        <a href="/ar/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">سياسة الخصوصية</a>
-<a href="/ar/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">شروط الاستخدام</a>
-<a href="/ar/cookie-policy.html" class="text-white-50 small text-decoration-none">سياسة ملفات تعريف الارتباط</a>
+        <a href="../privacy-policy.html">سياسة الخصوصية</a>
+<a href="../terms-of-service.html">شروط الاستخدام</a>
+<a href="../cookie-policy.html">سياسة ملفات تعريف الارتباط</a>
     </ul>
 </div>
             </div>
@@ -176,4 +175,11 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-WQ0CPXRK2F');
+</script>
+<script>
+    // الحصول على اسم الملف الحالي
+    var currentPage = window.location.pathname.split('/').pop();
+    // إنشاء الرابط إلى النسخة الإنجليزية
+    var englishLink = '/' + currentPage;
+    document.getElementById('english-link').href = englishLink;
 </script>

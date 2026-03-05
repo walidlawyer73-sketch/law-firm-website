@@ -28,4 +28,11 @@
   gtag('config', 'G-WQ0CPXRK2F');
 </script>
 <div class="language-switcher">
-<a href="/about.html" class="lang-btn"><i class="fas fa-globe"></i> English</a></div>
+<a href="#" id="english-link" class="lang-btn"><i class="fas fa-globe"></i> English</a>
+<script>
+    // الحصول على اسم الملف الحالي
+    var currentPage = window.location.pathname.split('/').pop();
+    // إنشاء الرابط إلى النسخة الإنجليزية
+    var englishLink = '/' + currentPage;
+    document.getElementById('english-link').href = englishLink;
+</script>
