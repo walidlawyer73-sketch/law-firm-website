@@ -11,6 +11,16 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
+<script>
+(function() {
+    const img = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
+    if (!img) return;
+    const correctPath = '/images/team/walid-profile.jpg'; // المسار الصحيح لصورتك
+    const testImg = new Image();
+    testImg.src = correctPath;
+    testImg.onload = function() { img.src = correctPath; };
+})();
+</script>
 <body>
     <div class="language-switcher">
     <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>

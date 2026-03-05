@@ -49,6 +49,16 @@
         .dropdown-menu { min-width: 220px; }
     </style>
 </head>
+<script>
+(function() {
+    const img = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
+    if (!img) return;
+    const correctPath = '/images/team/walid-profile.jpg'; // المسار الصحيح لصورتك
+    const testImg = new Image();
+    testImg.src = correctPath;
+    testImg.onload = function() { img.src = correctPath; };
+})();
+</script>
 <body>
     <!-- Banner للتجريبي -->
 <div style="background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; position: sticky; top: 0; z-index: 10000; border-bottom: 2px solid #000;">

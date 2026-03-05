@@ -49,11 +49,18 @@
         .dropdown-menu { min-width: 220px; }
     </style>
 </head>
+<script>
+(function() {
+    const img = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
+    if (!img) return;
+    const correctPath = '/images/team/walid-profile.jpg'; // المسار الصحيح لصورتك
+    const testImg = new Image();
+    testImg.src = correctPath;
+    testImg.onload = function() { img.src = correctPath; };
+})();
+</script>
 <body>
-    <!-- Banner للتجريبي -->
-<div style="background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; position: sticky; top: 0; z-index: 10000; border-bottom: 2px solid #000;">
-  <i class="fas fa-tools" style="margin-left: 8px;"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools" style="margin-right: 8px;"></i>
-</div>
+    
     <!-- Language Switcher -->
     <div class="language-switcher">
     <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>

@@ -219,6 +219,16 @@
     tryLoadImage(0);
   })();
 </script>
+<script>
+(function() {
+    const img = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
+    if (!img) return;
+    const correctPath = '/images/team/walid-profile.jpg'; // المسار الصحيح لصورتك
+    const testImg = new Image();
+    testImg.src = correctPath;
+    testImg.onload = function() { img.src = correctPath; };
+})();
+</script>
 </body>
 </html>
 <!-- Google tag (gtag.js) -->
