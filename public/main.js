@@ -165,6 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
 /**
  * main.js - النسخة النهائية المستقرة
  */
+
 // إصلاح صورة المحامي الرئيسي
 (function fixLawyerImages() {
     const correctPath = '/images/team/walid-profile.jpg';
@@ -182,6 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 })();
+
 // إصلاح روابط السياسات (جعلها مطلقة)
 (function fixPolicyLinks() {
     const links = document.querySelectorAll(
@@ -194,21 +196,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 })();
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') {
-            e.preventDefault();
-            return; // لا تفعل شيء للروابط الفارغة
-        }
-        const target = document.querySelector(targetId);
-        if (target) {
-            e.preventDefault();
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+
+// أزرار اللغة: (نتركها تعمل كروابط عادية، لا داعي لتدخل JS)
+// تأكد أن أزرار اللغة تستخدم روابط مباشرة مثل /index.html و /ar/index.html
