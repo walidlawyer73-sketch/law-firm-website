@@ -16,8 +16,9 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
     color: var(--dark-text);
-    padding-top: 70px; /* يتم ضبطه لاحقاً بواسطة JS */
-}
+body {
+    padding-top: 100px; /* اجعلها أكبر قليلاً من مجموع ارتفاعات الشريط + النافبار */
+}}
 
 /* RTL Support for Arabic */
 [dir="rtl"] {
@@ -692,4 +693,49 @@ body {
     padding: 10px;
     font-weight: bold;
     border-bottom: 2px solid #000;
+}
+/* جعل النافبار يبدأ بعد شريط التجريبي مباشرة */
+.navbar.fixed-top {
+    top: 50px; /* اضبط القيمة حسب ارتفاع الشريط الفعلي (عادة 50-60px) */
+    transition: top 0.3s ease;
+}
+#trial-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    background-color: #ffc107;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    line-height: 1.5; /* يضمن ثبات الارتفاع */
+}
+.navbar {
+    margin-top: 0 !important;
+}
+/* ========== تعديل النافبار لينزل أسفل شريط التجريبي ========== */
+.navbar.fixed-top {
+    top: 50px; /* ارتفاع الشريط التقريبي */
+    transition: top 0.2s;
+}
+#trial-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    background-color: #ffc107;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+body {
+    padding-top: 100px; /* اختياري: لدفع المحتوى الكلي */
 }
