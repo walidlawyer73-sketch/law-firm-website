@@ -137,3 +137,43 @@ document.addEventListener('DOMContentLoaded', function() {
     updateBannerText();
 });
 window.addEventListener('resize', adjustForBanner);
+// ========== إدارة شريط التجريبي ==========
+(function() {
+    // إنشاء عنصر الشريط
+    const banner = document.createElement('div');
+    banner.id = 'trial-banner';
+    
+    // أيقونات ونص مرن
+    const iconLeft = document.createElement('i');
+    iconLeft.className = 'fas fa-tools';
+    const iconRight = document.createElement('i');
+    iconRight.className = 'fas fa-tools';
+    const textSpan = document.createElement('span');
+    textSpan.className = 'banner-text';
+    
+    banner.appendChild(iconLeft);
+    banner.appendChild(textSpan);
+    banner.appendChild(iconRight);
+    
+    // تحديد النص حسب لغة الصفحة
+    const isArabic = document.documentElement.lang === 'ar';
+    textSpan.innerText = isArabic 
+        ? 'هذا إصدار تجريبي للموقع - جاري التطوير والتحديث'
+        : 'This is a trial version - site under development and updates';
+    
+    // إضافة الشريط إلى أعلى الصفحة (قبل أي محتوى آخر)
+    document.body.insertBefore(banner, document.body.firstChild);
+    
+    // ضبط padding-top للـ body حسب ارتفاع الشريط
+    function adjustBodyPadding() {
+        const bannerHeight = banner.offsetHeight;
+        document.body.style.paddingTop = bannerHeight + 'px';
+        // التأكد من أن النافبار يبدأ بعد الشريط مباشرة
+        const navbar = document.querySelector('.navbar');
+        if (navbar) navbar.style.marginTop = '0';
+    }
+    
+    // تنفيذ الضبط بعد تحميل الصفحة وبعد أي تغيير في الحجم
+    window.addEventListener('load', adjustBodyPadding);
+    window.addEventListener('resize', adjustBodyPadding);
+})();

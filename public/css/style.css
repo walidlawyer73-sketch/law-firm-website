@@ -604,3 +604,23 @@ body > *:not(.language-switcher) {
     font-weight: bold;
     border-bottom: 2px solid #000;
 }
+/* شريط التجريبي */
+#trial-banner {
+    position: sticky;
+    top: 0;
+    z-index: 9998;
+    background-color: #ffc107;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#trial-banner i {
+    font-size: 1.1rem;
+}
