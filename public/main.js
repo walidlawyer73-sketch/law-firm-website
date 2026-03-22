@@ -1,23 +1,19 @@
 // @ts-nocheck
 /**
- * main.js - الإصدار النهائي الشامل
- * يتضمن: شريط تجريبي ثنائي اللغة، أزرار لغة ذكية، إصلاح الصور والروابط
+ * main.js - الإصدار النهائي المتكامل
  */
 
 // ================================================
-// 1. إنشاء شريط التجريبي (يتم تنفيذه فورًا)
+// 1. شريط تجريبي (يضاف تلقائياً)
 // ================================================
 (function createTrialBanner() {
-    // منع التكرار
     if (document.getElementById('trial-banner')) return;
 
-    // تحديد لغة الصفحة من سمة lang
     const isArabic = document.documentElement.lang === 'ar';
     const bannerText = isArabic
         ? 'هذا إصدار تجريبي للموقع - جاري التطوير والتحديث'
         : 'This is a trial version - site under development and updates';
 
-    // إنشاء عنصر الشريط
     const banner = document.createElement('div');
     banner.id = 'trial-banner';
     banner.style.cssText = `
@@ -37,7 +33,6 @@
         align-items: center;
         gap: 10px;
         box-sizing: border-box;
-        font-family: inherit;
     `;
 
     const iconLeft = document.createElement('i');
@@ -52,14 +47,11 @@
     banner.appendChild(textSpan);
     banner.appendChild(iconRight);
 
-    // إضافة الشريط إلى بداية الـ body
     document.body.insertBefore(banner, document.body.firstChild);
 
-    // ضبط المسافة أعلى الصفحة
     function adjustPadding() {
         const height = banner.offsetHeight;
         document.body.style.paddingTop = height + 'px';
-        // التأكد من أن النافبار ليس له مسافة إضافية
         const navbar = document.querySelector('.navbar');
         if (navbar) navbar.style.marginTop = '0';
     }
@@ -73,14 +65,13 @@
 })();
 
 // ================================================
-// 2. إصلاح أزرار اللغة (تحويل ذكي مع الحفاظ على التفاعل)
+// 2. أزرار اللغة (توجيه ذكي إلى نفس الصفحة)
 // ================================================
 function fixLanguageButtons() {
     const langButtons = document.querySelectorAll('.language-switcher .lang-btn');
     if (!langButtons.length) return;
 
     langButtons.forEach(btn => {
-        // نمنع الرابط الأصلي من التنفيذ الفوري
         btn.addEventListener('click', function(event) {
             event.preventDefault();
 
@@ -95,8 +86,6 @@ function fixLanguageButtons() {
                 } else if (currentPath.startsWith('/ar/')) {
                     newPath = currentPath.replace('/ar', '') || '/';
                     if (newPath === '' || newPath === '/index.html') newPath = '/';
-                } else {
-                    newPath = '/'; // افتراضي
                 }
             } else {
                 // من الإنجليزية إلى العربية
@@ -113,7 +102,7 @@ function fixLanguageButtons() {
 }
 
 // ================================================
-// 3. إصلاح صورة المحامي الرئيسي (البحث عن المسار الصحيح)
+// 3. إصلاح صورة المحامي
 // ================================================
 function fixLawyerImages() {
     const correctPath = '/images/team/walid-profile.jpg';
@@ -123,7 +112,6 @@ function fixLawyerImages() {
     if (!images.length) return;
 
     images.forEach(img => {
-        // إذا كانت الصورة فشلت في التحميل
         if (img.complete && img.naturalWidth === 0) {
             img.src = correctPath;
         } else {
@@ -136,7 +124,7 @@ function fixLawyerImages() {
 }
 
 // ================================================
-// 4. إصلاح روابط السياسات (تأكيد أنها مطلقة)
+// 4. إصلاح روابط السياسات (جعلها مطلقة)
 // ================================================
 function fixPolicyLinks() {
     const policyLinks = document.querySelectorAll(
@@ -153,7 +141,7 @@ function fixPolicyLinks() {
 }
 
 // ================================================
-// 5. تنفيذ جميع الإصلاحات عند اكتمال تحميل الصفحة
+// 5. تشغيل الإصلاحات بعد تحميل الصفحة
 // ================================================
 document.addEventListener('DOMContentLoaded', function() {
     fixLanguageButtons();
