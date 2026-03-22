@@ -1,115 +1,75 @@
-// Main JavaScript File
-document.addEventListener('DOMContentLoaded', function() {
-    // Navbar scroll effect
-    const navbar = document.getElementById('mainNav');
-    if (navbar) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    }
+// @ts-nocheck
+/**
+ * main.js - الإصدار النظيف
+ */
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+// ================================================
+// 1. ضبط المسافة بسبب الشريط
+// ================================================
+function adjustForBanner() {
+    const banner = document.getElementById('trial-banner');
+    if (!banner) return;
+    const height = banner.offsetHeight;
+    document.body.style.paddingTop = height + 'px';
+    const navbar = document.querySelector('.navbar');
+    if (navbar) navbar.style.top = height + 'px';
+}
+document.addEventListener('DOMContentLoaded', adjustForBanner);
+window.addEventListener('resize', adjustForBanner);
 
-    // Scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fadeInUp');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    document.querySelectorAll('.feature-card, .team-card, .testimonial-card, .blog-card').forEach(el => {
-        observer.observe(el);
-    });
-});
+// ================================================
+// 2. أزرار اللغة
+// ================================================
+(function fixLanguage() {
+    const btn = document.querySelector('.language-switcher .lang-btn');
+    if (!btn) return;
 
-// Add fadeInUp animation to CSS
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
+    const currentPath = window.location.pathname;
+    const isArabic = currentPath.startsWith('/ar/');
+
+    if (isArabic) {
+        let englishPath = currentPath.replace('/ar', '');
+        if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') {
+            englishPath = '/';
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    .fadeInUp {
-        animation: fadeInUp 0.6s ease forwards;
-    }
-`;
-document.head.appendChild(style);
-// إعادة تهيئة Bootstrap dropdown بعد تحميل الصفحة
-document.addEventListener('DOMContentLoaded', function() {
-    // تفعيل جميع القوائم المنسدلة
-    var dropdowns = document.querySelectorAll('.dropdown-toggle');
-    dropdowns.forEach(function(dropdown) {
-        new bootstrap.Dropdown(dropdown);
-    });
-});
-// زر العودة إلى الأعلى
-const backToTopButton = document.createElement('button');
-backToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
-backToTopButton.setAttribute('id', 'backToTop');
-backToTopButton.setAttribute('title', 'العودة إلى الأعلى');
-backToTopButton.style.cssText = `
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #FFD700;
-    color: #000000;
-    border: none;
-    cursor: pointer;
-    display: none;
-    z-index: 999;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: all 0.3s;
-`;
-backToTopButton.onmouseover = () => {
-    backToTopButton.style.transform = 'scale(1.1)';
-};
-backToTopButton.onmouseout = () => {
-    backToTopButton.style.transform = 'scale(1)';
-};
-
-document.body.appendChild(backToTopButton);
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
+        btn.href = englishPath;
+        btn.innerHTML = '<i class="fas fa-globe"></i> English';
     } else {
-        backToTopButton.style.display = 'none';
+        let arabicPath;
+        if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
+            arabicPath = '/ar/';
+        } else {
+            arabicPath = '/ar' + currentPath;
+        }
+        btn.href = arabicPath;
+        btn.innerHTML = '<i class="fas fa-globe"></i> العربية';
     }
-});
+})();
 
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+// ================================================
+// 3. إصلاح صورة المحامي
+// ================================================
+(function fixImages() {
+    const correct = '/images/team/walid-profile.jpg';
+    const imgs = document.querySelectorAll('img[alt*="وليد"], img[alt*="Walid"], .team-card img, img[src*="walid"]');
+    imgs.forEach(img => {
+        if (img.complete && img.naturalWidth === 0) {
+            img.src = correct;
+        } else {
+            img.onerror = function() { this.src = correct; };
+        }
+    });
+})();
+
+// ================================================
+// 4. إصلاح روابط السياسات
+// ================================================
+(function fixLinks() {
+    const links = document.querySelectorAll('footer a[href*="privacy"], footer a[href*="terms"], footer a[href*="cookie"]');
+    links.forEach(link => {
+        let href = link.getAttribute('href');
+        if (href && !href.startsWith('/')) {
+            link.setAttribute('href', '/' + href);
+        }
+    });
+})();
