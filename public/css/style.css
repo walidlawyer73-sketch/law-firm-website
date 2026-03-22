@@ -739,3 +739,6 @@ body {
 body {
     padding-top: 100px; /* اختياري: لدفع المحتوى الكلي */
 }
+.navbar .nav-link, .dropdown-item, .btn {
+    pointer-events: auto !important;
+}
