@@ -624,3 +624,7 @@ body > *:not(.language-switcher) {
 #trial-banner i {
     font-size: 1.1rem;
 }
+body {
+    margin: 0 !important;
+    padding-top: 0 !important; /* سيتم ضبطه بواسطة JS */
+}
