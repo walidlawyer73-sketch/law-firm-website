@@ -1,17 +1,22 @@
 // @ts-nocheck
 /**
- * main.js - الوظائف العامة للموقع
- * الإصدار: 5.0 - شريط تجريبي ثنائي اللغة + الإصلاحات
+ * main.js - الإصدار النهائي
+ * شريط تجريبي ثنائي اللغة يعتمد على المسار
  */
 
 // ================================================
-// 1. إنشاء وإدارة شريط التجريبي (يتم أولاً)
+// 1. إنشاء وإدارة شريط التجريبي
 // ================================================
 (function() {
-    // تجنب التكرار إذا كان الشريط موجوداً مسبقاً
     if (document.getElementById('trial-banner')) return;
 
-    // إنشاء عناصر الشريط
+    // تحديد اللغة من المسار أو من سمة lang
+    const currentPath = window.location.pathname;
+    const isArabic = currentPath.startsWith('/ar/') || document.documentElement.lang === 'ar';
+    const bannerText = isArabic 
+        ? 'هذا إصدار تجريبي للموقع - جاري التطوير والتحديث'
+        : 'This is a trial version - site under development and updates';
+
     const banner = document.createElement('div');
     banner.id = 'trial-banner';
     banner.style.cssText = `
@@ -39,30 +44,21 @@
     iconRight.className = 'fas fa-tools';
     const textSpan = document.createElement('span');
     textSpan.className = 'banner-text';
+    textSpan.innerText = bannerText;
 
     banner.appendChild(iconLeft);
     banner.appendChild(textSpan);
     banner.appendChild(iconRight);
 
-    // تحديد النص حسب لغة الصفحة (من <html lang>)
-    const isArabic = document.documentElement.lang === 'ar';
-    textSpan.innerText = isArabic 
-        ? 'هذا إصدار تجريبي للموقع - جاري التطوير والتحديث'
-        : 'This is a trial version - site under development and updates';
-
-    // إضافة الشريط إلى بداية body
     document.body.insertBefore(banner, document.body.firstChild);
 
-    // دالة ضبط padding-top للـ body
     function adjustBodyPadding() {
         const bannerHeight = banner.offsetHeight;
         document.body.style.paddingTop = bannerHeight + 'px';
-        // تأكيد أن النافبار ليس له مسافة إضافية
         const navbar = document.querySelector('.navbar');
         if (navbar) navbar.style.marginTop = '0';
     }
 
-    // تنفيذ الضبط فوراً وبعد تحميل الصفحة وبعد تغيير الحجم
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', adjustBodyPadding);
     } else {
@@ -72,7 +68,7 @@
 })();
 
 // ================================================
-// 2. حل مشكلة أزرار اللغة - التوجيه الذكي
+// 2. أزرار اللغة (بدون تغيير)
 // ================================================
 function fixLanguageButtons() {
     const langButtons = document.querySelectorAll('.language-switcher .lang-btn');
@@ -84,7 +80,7 @@ function fixLanguageButtons() {
             const currentPath = window.location.pathname;
             const currentLang = document.documentElement.lang;
             let newPath = '/';
-            if (currentLang === 'ar') {
+            if (currentLang === 'ar' || currentPath.startsWith('/ar/')) {
                 if (currentPath === '/ar/' || currentPath === '/ar/index.html') {
                     newPath = '/';
                 } else if (currentPath.startsWith('/ar/')) {
@@ -104,7 +100,7 @@ function fixLanguageButtons() {
 }
 
 // ================================================
-// 3. حل مشكلة صورة المحامي الرئيسي
+// 3. باقي الإصلاحات (صورة المحامي، روابط السياسات)
 // ================================================
 function fixLawyerImages() {
     const possibleImages = document.querySelectorAll(
@@ -123,9 +119,6 @@ function fixLawyerImages() {
     });
 }
 
-// ================================================
-// 4. إصلاح روابط السياسات (تضمن أنها مطلقة)
-// ================================================
 function fixPolicyLinks() {
     const policyLinks = document.querySelectorAll(
         'footer a[href*="privacy"], footer a[href*="terms"], footer a[href*="cookie"]'
@@ -138,9 +131,6 @@ function fixPolicyLinks() {
     });
 }
 
-// ================================================
-// 5. تشغيل جميع الإصلاحات عند تحميل الصفحة
-// ================================================
 document.addEventListener('DOMContentLoaded', function() {
     fixLanguageButtons();
     fixLawyerImages();
