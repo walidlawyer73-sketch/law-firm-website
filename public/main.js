@@ -110,3 +110,30 @@ function updateTrialBanner() {
 }
 
 document.addEventListener('DOMContentLoaded', updateTrialBanner);
+// ضبط المسافة أعلى الصفحة حسب ارتفاع شريط التجريبي
+function adjustForBanner() {
+    const banner = document.getElementById('trial-banner');
+    if (banner) {
+        const bannerHeight = banner.offsetHeight;
+        document.body.style.paddingTop = bannerHeight + 'px';
+        const navbar = document.querySelector('.navbar');
+        if (navbar) navbar.style.marginTop = '0';
+    }
+}
+
+// تحديث نص الشريط حسب اللغة
+function updateBannerText() {
+    const bannerSpan = document.querySelector('#trial-banner .banner-text');
+    if (!bannerSpan) return;
+    const isArabic = document.documentElement.lang === 'ar';
+    bannerSpan.innerText = isArabic 
+        ? 'هذا إصدار تجريبي للموقع - جاري التطوير والتحديث'
+        : 'This is a trial version - site under development and updates';
+}
+
+// تشغيل الوظائف عند تحميل الصفحة وعند تغيير حجم النافذة
+document.addEventListener('DOMContentLoaded', function() {
+    adjustForBanner();
+    updateBannerText();
+});
+window.addEventListener('resize', adjustForBanner);
