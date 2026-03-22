@@ -628,3 +628,31 @@ body {
     margin: 0 !important;
     padding-top: 0 !important; /* سيتم ضبطه بواسطة JS */
 }
+/* شريط التجريبي - ثابت في الأعلى */
+#trial-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    background-color: #ffc107;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+#trial-banner i {
+    font-size: 1.1rem;
+}
+
+/* تعويض المسافة للـ body */
+body {
+    padding-top: 50px; /* سيتم تعديله بواسطة JS لاحقاً */
+}

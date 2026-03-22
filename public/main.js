@@ -1,42 +1,90 @@
 // @ts-nocheck
 /**
  * main.js - الوظائف العامة للموقع
- * الإصدار: 4.0
+ * الإصدار: 5.0 - شريط تجريبي ثنائي اللغة + الإصلاحات
  */
 
-// انتظار تحميل الصفحة
-document.addEventListener('DOMContentLoaded', function() {
-    'use strict';
-    
-    // إصلاح أزرار اللغة
-    fixLanguageButtons();
-    
-    // إصلاح صور المحامين
-    fixLawyerImages();
-    
-    // إصلاح روابط السياسات
-    fixPolicyLinks();
-});
+// ================================================
+// 1. إنشاء وإدارة شريط التجريبي (يتم أولاً)
+// ================================================
+(function() {
+    // تجنب التكرار إذا كان الشريط موجوداً مسبقاً
+    if (document.getElementById('trial-banner')) return;
+
+    // إنشاء عناصر الشريط
+    const banner = document.createElement('div');
+    banner.id = 'trial-banner';
+    banner.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10000;
+        background-color: #ffc107;
+        color: #000;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        border-bottom: 2px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        box-sizing: border-box;
+    `;
+
+    const iconLeft = document.createElement('i');
+    iconLeft.className = 'fas fa-tools';
+    const iconRight = document.createElement('i');
+    iconRight.className = 'fas fa-tools';
+    const textSpan = document.createElement('span');
+    textSpan.className = 'banner-text';
+
+    banner.appendChild(iconLeft);
+    banner.appendChild(textSpan);
+    banner.appendChild(iconRight);
+
+    // تحديد النص حسب لغة الصفحة (من <html lang>)
+    const isArabic = document.documentElement.lang === 'ar';
+    textSpan.innerText = isArabic 
+        ? 'هذا إصدار تجريبي للموقع - جاري التطوير والتحديث'
+        : 'This is a trial version - site under development and updates';
+
+    // إضافة الشريط إلى بداية body
+    document.body.insertBefore(banner, document.body.firstChild);
+
+    // دالة ضبط padding-top للـ body
+    function adjustBodyPadding() {
+        const bannerHeight = banner.offsetHeight;
+        document.body.style.paddingTop = bannerHeight + 'px';
+        // تأكيد أن النافبار ليس له مسافة إضافية
+        const navbar = document.querySelector('.navbar');
+        if (navbar) navbar.style.marginTop = '0';
+    }
+
+    // تنفيذ الضبط فوراً وبعد تحميل الصفحة وبعد تغيير الحجم
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', adjustBodyPadding);
+    } else {
+        adjustBodyPadding();
+    }
+    window.addEventListener('resize', adjustBodyPadding);
+})();
 
 // ================================================
-// حل مشكلة أزرار اللغة - التوجيه الذكي
+// 2. حل مشكلة أزرار اللغة - التوجيه الذكي
 // ================================================
 function fixLanguageButtons() {
     const langButtons = document.querySelectorAll('.language-switcher .lang-btn');
-    
     langButtons.forEach(btn => {
         btn.removeAttribute('href');
         btn.style.cursor = 'pointer';
-        
         btn.addEventListener('click', function(e) {
             e.preventDefault();
-            
             const currentPath = window.location.pathname;
-            const currentLang = document.documentElement.lang; // 'ar' أو 'en'
+            const currentLang = document.documentElement.lang;
             let newPath = '/';
-            
             if (currentLang === 'ar') {
-                // من العربية إلى الإنجليزية
                 if (currentPath === '/ar/' || currentPath === '/ar/index.html') {
                     newPath = '/';
                 } else if (currentPath.startsWith('/ar/')) {
@@ -44,34 +92,26 @@ function fixLanguageButtons() {
                     if (newPath === '' || newPath === '/index.html') newPath = '/';
                 }
             } else {
-                // من الإنجليزية إلى العربية
                 if (currentPath === '/' || currentPath === '/index.html') {
                     newPath = '/ar/';
                 } else {
                     newPath = '/ar' + currentPath;
                 }
             }
-            
             window.location.href = newPath;
         });
     });
 }
 
 // ================================================
-// حل مشكلة صورة المحامي الرئيسي
+// 3. حل مشكلة صورة المحامي الرئيسي
 // ================================================
 function fixLawyerImages() {
     const possibleImages = document.querySelectorAll(
-        'img[alt*="وليد أبو العلا"], ' +
-        'img[alt*="Walid Abo Al-Ela"], ' +
-        '.team-card img, ' +
-        'img[src*="walid"]'
+        'img[alt*="وليد أبو العلا"], img[alt*="Walid Abo Al-Ela"], .team-card img, img[src*="walid"]'
     );
-    
     const correctPath = '/images/team/walid-profile.jpg';
-    
     possibleImages.forEach(img => {
-        // إذا كانت الصورة فشلت في التحميل، نستخدم المسار الصحيح
         if (img.complete && img.naturalWidth === 0) {
             img.src = correctPath;
         } else {
@@ -84,15 +124,12 @@ function fixLawyerImages() {
 }
 
 // ================================================
-// إصلاح روابط السياسات
+// 4. إصلاح روابط السياسات (تضمن أنها مطلقة)
 // ================================================
 function fixPolicyLinks() {
     const policyLinks = document.querySelectorAll(
-        'footer a[href*="privacy"], ' +
-        'footer a[href*="terms"], ' +
-        'footer a[href*="cookie"]'
+        'footer a[href*="privacy"], footer a[href*="terms"], footer a[href*="cookie"]'
     );
-    
     policyLinks.forEach(link => {
         let href = link.getAttribute('href');
         if (href && !href.startsWith('/')) {
@@ -100,80 +137,12 @@ function fixPolicyLinks() {
         }
     });
 }
-function updateTrialBanner() {
-    const bannerSpan = document.getElementById('banner-text');
-    if (!bannerSpan) return;
-    const isArabic = document.documentElement.lang === 'ar';
-    bannerSpan.innerText = isArabic 
-        ? 'هذا إصدار تجريبي للموقع - جاري التطوير والتحديث'
-        : 'This is a trial version - site under development and updates';
-}
 
-document.addEventListener('DOMContentLoaded', updateTrialBanner);
-// ضبط المسافة أعلى الصفحة حسب ارتفاع شريط التجريبي
-function adjustForBanner() {
-    const banner = document.getElementById('trial-banner');
-    if (banner) {
-        const bannerHeight = banner.offsetHeight;
-        document.body.style.paddingTop = bannerHeight + 'px';
-        const navbar = document.querySelector('.navbar');
-        if (navbar) navbar.style.marginTop = '0';
-    }
-}
-
-// تحديث نص الشريط حسب اللغة
-function updateBannerText() {
-    const bannerSpan = document.querySelector('#trial-banner .banner-text');
-    if (!bannerSpan) return;
-    const isArabic = document.documentElement.lang === 'ar';
-    bannerSpan.innerText = isArabic 
-        ? 'هذا إصدار تجريبي للموقع - جاري التطوير والتحديث'
-        : 'This is a trial version - site under development and updates';
-}
-
-// تشغيل الوظائف عند تحميل الصفحة وعند تغيير حجم النافذة
+// ================================================
+// 5. تشغيل جميع الإصلاحات عند تحميل الصفحة
+// ================================================
 document.addEventListener('DOMContentLoaded', function() {
-    adjustForBanner();
-    updateBannerText();
+    fixLanguageButtons();
+    fixLawyerImages();
+    fixPolicyLinks();
 });
-window.addEventListener('resize', adjustForBanner);
-// ========== إدارة شريط التجريبي ==========
-(function() {
-    // إنشاء عنصر الشريط
-    const banner = document.createElement('div');
-    banner.id = 'trial-banner';
-    
-    // أيقونات ونص مرن
-    const iconLeft = document.createElement('i');
-    iconLeft.className = 'fas fa-tools';
-    const iconRight = document.createElement('i');
-    iconRight.className = 'fas fa-tools';
-    const textSpan = document.createElement('span');
-    textSpan.className = 'banner-text';
-    
-    banner.appendChild(iconLeft);
-    banner.appendChild(textSpan);
-    banner.appendChild(iconRight);
-    
-    // تحديد النص حسب لغة الصفحة
-    const isArabic = document.documentElement.lang === 'ar';
-    textSpan.innerText = isArabic 
-        ? 'هذا إصدار تجريبي للموقع - جاري التطوير والتحديث'
-        : 'This is a trial version - site under development and updates';
-    
-    // إضافة الشريط إلى أعلى الصفحة (قبل أي محتوى آخر)
-    document.body.insertBefore(banner, document.body.firstChild);
-    
-    // ضبط padding-top للـ body حسب ارتفاع الشريط
-    function adjustBodyPadding() {
-        const bannerHeight = banner.offsetHeight;
-        document.body.style.paddingTop = bannerHeight + 'px';
-        // التأكد من أن النافبار يبدأ بعد الشريط مباشرة
-        const navbar = document.querySelector('.navbar');
-        if (navbar) navbar.style.marginTop = '0';
-    }
-    
-    // تنفيذ الضبط بعد تحميل الصفحة وبعد أي تغيير في الحجم
-    window.addEventListener('load', adjustBodyPadding);
-    window.addEventListener('resize', adjustBodyPadding);
-})();
