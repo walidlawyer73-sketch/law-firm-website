@@ -100,3 +100,16 @@ function fixPolicyLinks() {
         }
     });
 }
+// تحديث نص الشريط التجريبي حسب اللغة
+function updateTrialBanner() {
+    const bannerSpan = document.getElementById('banner-text');
+    if (!bannerSpan) return;
+    
+    const isArabic = document.documentElement.lang === 'ar';
+    bannerSpan.innerText = isArabic 
+        ? 'هذا إصدار تجريبي للموقع - جاري التطوير والتحديث'
+        : 'This is a trial version - site under development and updates';
+}
+
+// تنفيذ عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', updateTrialBanner);
