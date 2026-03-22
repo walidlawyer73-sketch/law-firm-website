@@ -616,3 +616,35 @@ body > *:not(.language-switcher) {
 body {
     padding-top: 70px; /* اضبط حسب ارتفاع البانر الفعلي (حوالي 50-60px) */
 }
+/* إزالة أي padding-top مسبق وضبطه تلقائياً */
+body {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* جعل النافبار يبدأ بعد الشريط مباشرة */
+.navbar {
+    position: sticky;
+    top: 0;
+    margin-top: 0;
+    z-index: 9999;
+}
+
+/* تعويض المسافة للصفحة بسبب الشريط الثابت */
+#trial-banner {
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+}
+function adjustForBanner() {
+    const banner = document.getElementById('trial-banner');
+    if (banner) {
+        const bannerHeight = banner.offsetHeight;
+        document.body.style.paddingTop = bannerHeight + 'px';
+        // تأكد من أن النافبار ليس له padding-top مضاعف
+        const navbar = document.querySelector('.navbar');
+        if (navbar) navbar.style.marginTop = '0';
+    }
+}
+document.addEventListener('DOMContentLoaded', adjustForBanner);
+window.addEventListener('resize', adjustForBanner);
