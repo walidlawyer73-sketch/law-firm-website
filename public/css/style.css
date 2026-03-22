@@ -16,7 +16,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
     color: var(--dark-text);
-    padding-top: 50px; /* سيتم ضبطه بواسطة JS إذا لزم الأمر */
+    padding-top: 50px; /* سيتم ضبطه بواسطة JS */
+    margin: 0;
 }
 
 /* RTL Support for Arabic */
@@ -34,14 +35,14 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 10001 !important;
+    z-index: 10001;
     pointer-events: auto;
 }
 .lang-btn {
     display: inline-block;
     padding: 8px 16px;
-    background: var(--accent-color) !important;
-    color: var(--primary-color) !important;
+    background: var(--accent-color);
+    color: var(--primary-color);
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
@@ -52,8 +53,8 @@ body {
     cursor: pointer;
 }
 .lang-btn:hover {
-    background: var(--primary-color) !important;
-    color: var(--accent-color) !important;
+    background: var(--primary-color);
+    color: var(--accent-color);
     transform: translateY(-2px);
 }
 
@@ -63,7 +64,7 @@ body {
     padding: 15px 0;
     transition: var(--transition);
     position: fixed;
-    top: 50px; /* يتم ضبطه بواسطة JS */
+    top: 50px;
     width: 100%;
     z-index: 9999;
 }
@@ -295,7 +296,7 @@ body {
     color: var(--primary-color);
 }
 
-/* General Social Links */
+/* Social Links (general) */
 .social-links a {
     display: inline-flex;
     align-items: center;
@@ -363,7 +364,7 @@ body {
     .feature-card { padding: 25px; }
 }
 
-/* Utility classes */
+/* Utility */
 .container {
     padding-right: 15px;
     padding-left: 15px;
