@@ -1,24 +1,27 @@
-
 // @ts-nocheck
 /**
- * main.js - الإصدار النهائي الشامل
- * يتضمن: شريط تجريبي ثنائي اللغة، أزرار لغة ذكية، إصلاح الصور والروابط
+ * main.js - النسخة النهائية بعد التعديلات
+ * يتضمن:
+ * - شريط تجريبي ثنائي اللغة
+ * - إصلاح صورة المحامي الرئيسي
+ * - إصلاح روابط السياسات
+ * - Navbar scroll effect
+ * - Smooth scroll للروابط
+ * - Animations للبطاقات
+ * - زر العودة للأعلى
  */
 
 // ================================================
-// 1. إنشاء شريط التجريبي (يتم تنفيذه فورًا)
+// 1. إنشاء شريط التجريبي
 // ================================================
 (function createTrialBanner() {
-    // منع التكرار
     if (document.getElementById('trial-banner')) return;
 
-    // تحديد لغة الصفحة من سمة lang
     const isArabic = document.documentElement.lang === 'ar';
     const bannerText = isArabic
         ? 'هذا إصدار تجريبي للموقع - جاري التطوير والتحديث'
         : 'This is a trial version - site under development and updates';
 
-    // إنشاء عنصر الشريط
     const banner = document.createElement('div');
     banner.id = 'trial-banner';
     banner.style.cssText = `
@@ -53,14 +56,16 @@
     banner.appendChild(textSpan);
     banner.appendChild(iconRight);
 
-    // إضافة الشريط إلى بداية الـ body
     document.body.insertBefore(banner, document.body.firstChild);
 
-    // ضبط المسافة أعلى الصفحة
+    // ضبط المسافة أعلى الصفحة بشكل صحيح
     function adjustPadding() {
         const height = banner.offsetHeight;
-        document.body.style.paddingTop = height + 'px';
-        // التأكد من أن النافبار ليس له مسافة إضافية
+        document.body.style.paddingTop = '0px';
+        setTimeout(() => {
+            document.body.style.paddingTop = height + 'px';
+        }, 10);
+
         const navbar = document.querySelector('.navbar');
         if (navbar) navbar.style.marginTop = '0';
     }
@@ -74,117 +79,28 @@
 })();
 
 // ================================================
-// 2. إصلاح أزرار اللغة (تحويل ذكي مع الحفاظ على التفاعل)
+// 2. إصلاح صورة المحامي الرئيسي
 // ================================================
-function fixLanguageButtons() {
-    const langButtons = document.querySelectorAll('.language-switcher .lang-btn');
-    if (!langButtons.length) return;
-
-    langButtons.forEach(btn => {
-        // نمنع الرابط الأصلي من التنفيذ الفوري
-        btn.addEventListener('click', function(event) {
-            event.preventDefault();
-
-            const currentPath = window.location.pathname;
-            const currentLang = document.documentElement.lang; // 'ar' أو 'en'
-            let newPath = '/';
-
-            if (currentLang === 'ar') {
-                // من العربية إلى الإنجليزية
-                if (currentPath === '/ar/' || currentPath === '/ar/index.html') {
-                    newPath = '/';
-                } else if (currentPath.startsWith('/ar/')) {
-                    newPath = currentPath.replace('/ar', '') || '/';
-                    if (newPath === '' || newPath === '/index.html') newPath = '/';
-                } else {
-                    newPath = '/'; // افتراضي
-                }
-            } else {
-                // من الإنجليزية إلى العربية
-                if (currentPath === '/' || currentPath === '/index.html') {
-                    newPath = '/ar/';
-                } else {
-                    newPath = '/ar' + currentPath;
-                }
-            }
-
-            window.location.href = newPath;
-        });
-    });
-}
-
-// ================================================
-// 3. إصلاح صورة المحامي الرئيسي (البحث عن المسار الصحيح)
-// ================================================
-function fixLawyerImages() {
-    const correctPath = '/images/team/walid-profile.jpg';
-    const images = document.querySelectorAll(
-        'img[alt*="وليد أبو العلا"], img[alt*="Walid Abo Al-Ela"], .team-card img, img[src*="walid"]'
-    );
-    if (!images.length) return;
-
-    images.forEach(img => {
-        // إذا كانت الصورة فشلت في التحميل
-        if (img.complete && img.naturalWidth === 0) {
-            img.src = correctPath;
-        } else {
-            img.onerror = function() {
-                this.src = correctPath;
-                this.onerror = null;
-            };
-        }
-    });
-}
-
-// ================================================
-// 4. إصلاح روابط السياسات (تأكيد أنها مطلقة)
-// ================================================
-function fixPolicyLinks() {
-    const policyLinks = document.querySelectorAll(
-        'footer a[href*="privacy"], footer a[href*="terms"], footer a[href*="cookie"]'
-    );
-    if (!policyLinks.length) return;
-
-    policyLinks.forEach(link => {
-        let href = link.getAttribute('href');
-        if (href && !href.startsWith('/')) {
-            link.setAttribute('href', '/' + href);
-        }
-    });
-}
-
-// ================================================
-// 5. تنفيذ جميع الإصلاحات عند اكتمال تحميل الصفحة
-// ================================================
-document.addEventListener('DOMContentLoaded', function() {
-    fixLanguageButtons();
-    fixLawyerImages();
-    fixPolicyLinks();
-});
-// @ts-nocheck
-/**
- * main.js - النسخة النهائية المستقرة
- */
-
-// إصلاح صورة المحامي الرئيسي
 (function fixLawyerImages() {
-    const correctPath = '/images/team/walid-profile.jpg';
+    const correctPath = 'images/team/walid-profile.jpg';
     const images = document.querySelectorAll(
         'img[alt*="وليد أبو العلا"], img[alt*="Walid Abo Al-Ela"], .team-card img, img[src*="walid"]'
     );
+
     images.forEach(img => {
+        img.onerror = function() {
+            this.onerror = null;
+            this.src = correctPath;
+        };
         if (img.complete && img.naturalWidth === 0) {
             img.src = correctPath;
-        } else {
-            img.onerror = function() {
-                this.src = correctPath;
-                this.onerror = null;
-            };
         }
     });
 })();
 
-// إصلاح روابط السياسات (جعلها مطلقة)
+// ================================================
+// 3. إصلاح روابط السياسات
+// ================================================
 (function fixPolicyLinks() {
     const links = document.querySelectorAll(
         'footer a[href*="privacy"], footer a[href*="terms"], footer a[href*="cookie"]'
@@ -197,5 +113,111 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 })();
 
-// أزرار اللغة: (نتركها تعمل كروابط عادية، لا داعي لتدخل JS)
-// تأكد أن أزرار اللغة تستخدم روابط مباشرة مثل /index.html و /ar/index.html
+// ================================================
+// 4. Navbar scroll effect
+// ================================================
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.getElementById('mainNav');
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
+
+    // Smooth scroll للروابط
+    document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+
+    // Animations للبطاقات
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fadeInUp');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    document.querySelectorAll('.feature-card, .team-card, .testimonial-card, .blog-card').forEach(el => {
+        observer.observe(el);
+    });
+});
+
+// ================================================
+// 5. إضافة style ديناميكي للأنيميشن (مرة واحدة)
+// ================================================
+if (!document.querySelector('#dynamic-styles')) {
+    const style = document.createElement('style');
+    style.id = 'dynamic-styles';
+    style.textContent = `
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fadeInUp { animation: fadeInUp 0.6s ease forwards; }
+    `;
+    document.head.appendChild(style);
+}
+
+// ================================================
+// 6. زر العودة للأعلى
+// ================================================
+(function addBackToTopButton() {
+    if (document.getElementById('backToTop')) return;
+
+    const backToTopButton = document.createElement('button');
+    backToTopButton.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    backToTopButton.id = 'backToTop';
+    backToTopButton.title = 'العودة إلى الأعلى';
+    backToTopButton.style.cssText = `
+        position: fixed; bottom: 30px; right: 30px;
+        width: 50px; height: 50px; border-radius: 50%;
+        background: #FFD700; color: #000; border: none;
+        cursor: pointer; display: none; z-index: 999;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        transition: all 0.3s; font-size: 20px;
+        display: flex; align-items: center; justify-content: center;
+    `;
+    
+    backToTopButton.onmouseover = () => {
+        backToTopButton.style.transform = 'scale(1.1)';
+        backToTopButton.style.background = '#000';
+        backToTopButton.style.color = '#FFD700';
+    };
+    backToTopButton.onmouseout = () => {
+        backToTopButton.style.transform = 'scale(1)';
+        backToTopButton.style.background = '#FFD700';
+        backToTopButton.style.color = '#000';
+    };
+
+    document.body.appendChild(backToTopButton);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) backToTopButton.style.display = 'flex';
+        else backToTopButton.style.display = 'none';
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
