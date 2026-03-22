@@ -16,7 +16,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
     color: var(--dark-text);
-    padding-top: 80px;
+    padding-top: 70px;
 }
 
 /* RTL Support for Arabic */
@@ -52,7 +52,8 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 9999;
+    z-index: 10001 !important;
+    pointer-events: auto;
 }
 
 .lang-btn {
@@ -67,6 +68,7 @@ body {
     transition: var(--transition);
     border: none;
     font-size: 0.9rem;
+    cursor: pointer;
 }
 
 .lang-btn:hover {
@@ -580,27 +582,18 @@ img {
     display: block;
     width: 100%;
 }
+
 /* حل مشكلة التمرير */
 html, body {
     overflow: auto !important;
     height: auto !important;
 }
 
-.language-switcher {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 9999;
-    pointer-events: auto;
-    }
-    .language-switcher {
-    z-index: 10001 !important;
-}
-
 /* منع أي عنصر من منع التمرير */
 * {
     overflow: visible !important;
 }
+
 /* التأكد من عدم وجود عناصر شفافة تغطي الصفحة */
 body > *:not(.language-switcher) {
     pointer-events: auto;
