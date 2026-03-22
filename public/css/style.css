@@ -13,37 +13,35 @@
     --transition: all 0.3s ease;
 }
 
+/* Base Body */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
     color: var(--dark-text);
-body {
-    padding-top: 100px; /* اجعلها أكبر قليلاً من مجموع ارتفاعات الشريط + النافبار */
-}}
+    margin: 0;
+    padding-top: 50px; /* يتم تعديله بواسطة JS حسب شريط التجريبي */
+    background-color: var(--white);
+    overflow-x: hidden;
+}
 
 /* RTL Support for Arabic */
 [dir="rtl"] {
     font-family: 'Cairo', sans-serif;
 }
-
 [dir="rtl"] .ms-auto {
     margin-right: auto !important;
     margin-left: 0 !important;
 }
-
 [dir="rtl"] .me-2 {
     margin-left: 0.5rem !important;
     margin-right: 0 !important;
 }
-
 [dir="rtl"] .ms-2 {
     margin-right: 0.5rem !important;
     margin-left: 0 !important;
 }
-
 [dir="rtl"] .text-start {
     text-align: right !important;
 }
-
 [dir="rtl"] .text-end {
     text-align: left !important;
 }
@@ -51,12 +49,11 @@ body {
 /* Language Switcher */
 .language-switcher {
     position: fixed;
-    top: 20px;
+    top: 70px;
     right: 20px;
     z-index: 10001 !important;
     pointer-events: auto;
 }
-
 .lang-btn {
     display: inline-block;
     padding: 8px 16px;
@@ -71,7 +68,6 @@ body {
     font-size: 0.9rem;
     cursor: pointer;
 }
-
 .lang-btn:hover {
     background: var(--primary-color) !important;
     color: var(--accent-color) !important;
@@ -83,16 +79,15 @@ body {
     background: var(--primary-color) !important;
     padding: 15px 0;
     transition: var(--transition);
-    position: sticky;
-    top: 0;
+    position: fixed;
+    top: 50px; /* يبدأ بعد شريط التجريبي مباشرة */
+    width: 100%;
     z-index: 9999;
 }
-
 .navbar.scrolled {
     padding: 10px 0;
     box-shadow: var(--shadow-lg);
 }
-
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: 700;
@@ -100,46 +95,39 @@ body {
     display: flex;
     align-items: center;
 }
-
 .navbar-brand img {
     height: 45px !important;
     width: auto !important;
     margin-right: 10px;
     object-fit: contain;
 }
-
 [dir="rtl"] .navbar-brand img {
     margin-right: 0;
     margin-left: 10px;
 }
-
 .navbar-nav .nav-link {
     color: rgba(255,255,255,0.9);
     font-weight: 500;
     padding: 8px 15px !important;
     transition: var(--transition);
 }
-
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
     color: var(--accent-color);
     background: rgba(255,255,255,0.1);
     border-radius: 5px;
 }
-
 .dropdown-menu {
     border: none;
     box-shadow: var(--shadow-lg);
     border-radius: 10px;
     padding: 10px;
 }
-
 .dropdown-item {
     padding: 8px 15px;
     border-radius: 5px;
     transition: var(--transition);
 }
-
 .dropdown-item:hover {
     background: var(--accent-color);
     color: var(--primary-color);
@@ -158,7 +146,6 @@ body {
     position: relative;
     color: white;
 }
-
 .hero-section::before {
     content: "";
     position: absolute;
@@ -169,29 +156,25 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
-
 .hero-section .container {
     position: relative;
     z-index: 2;
 }
-
 .hero-section h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
 }
-
 .hero-section .lead {
     font-size: 1.25rem;
     margin-bottom: 2rem;
     opacity: 0.9;
 }
 
-/* Feature Cards */
+/* Features Section */
 .features-section {
     padding: 80px 0;
 }
-
 .feature-card {
     background: var(--white);
     padding: 30px;
@@ -202,12 +185,10 @@ body {
     border: 1px solid rgba(0,0,0,0.05);
     height: 100%;
 }
-
 .feature-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
 }
-
 .feature-icon {
     width: 70px;
     height: 70px;
@@ -221,18 +202,15 @@ body {
     font-size: 28px;
     transition: var(--transition);
 }
-
 .feature-card:hover .feature-icon {
     background: var(--accent-color);
     color: var(--primary-color);
     transform: rotate(360deg);
 }
-
 .feature-card h4 {
     margin-bottom: 15px;
     font-weight: 600;
 }
-
 .btn-link {
     color: var(--primary-color);
     text-decoration: none;
@@ -241,15 +219,12 @@ body {
     display: inline-flex;
     align-items: center;
 }
-
 .btn-link:hover {
     color: var(--accent-color);
 }
-
 .btn-link:hover i {
     transform: translateX(5px);
 }
-
 [dir="rtl"] .btn-link:hover i {
     transform: translateX(-5px);
 }
@@ -262,13 +237,11 @@ body {
     color: white;
     text-align: center;
 }
-
 .page-header h1 {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
-
 .page-header .lead {
     font-size: 1.25rem;
     opacity: 0.9;
@@ -285,12 +258,10 @@ body {
     transition: var(--transition);
     text-align: center;
 }
-
 .team-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
 }
-
 .team-card img {
     width: 150px;
     height: 150px;
@@ -300,7 +271,6 @@ body {
     border: 3px solid var(--white);
     box-shadow: var(--shadow-md);
 }
-
 .team-card .social-links a {
     display: inline-block;
     width: 35px;
@@ -312,7 +282,6 @@ body {
     margin: 0 5px;
     transition: var(--transition);
 }
-
 .team-card .social-links a:hover {
     background: var(--primary-color);
     color: var(--white);
@@ -323,16 +292,13 @@ body {
     background: var(--primary-color);
     color: white;
 }
-
 .footer-section a {
     color: rgba(255,255,255,0.8);
     transition: var(--transition);
 }
-
 .footer-section a:hover {
     color: var(--accent-color) !important;
 }
-
 .footer-section .social-links a {
     display: inline-block;
     width: 40px;
@@ -345,7 +311,6 @@ body {
     margin-right: 8px;
     transition: var(--transition);
 }
-
 .footer-section .social-links a:hover {
     background: var(--accent-color);
     color: var(--primary-color);
@@ -358,20 +323,18 @@ body {
     color: var(--primary-color);
     font-weight: 600;
 }
-
 .btn-primary:hover {
     background: var(--primary-color);
     border-color: var(--accent-color);
     color: var(--accent-color);
 }
-
 .btn-outline-light:hover {
     background: var(--accent-color);
     border-color: var(--accent-color);
     color: var(--primary-color);
 }
 
-/* Social Links (general) */
+/* Social Links (General) */
 .social-links a {
     display: inline-flex;
     align-items: center;
@@ -385,228 +348,13 @@ body {
     text-decoration: none;
     margin: 0 5px;
 }
-
 .social-links a:hover {
     background-color: var(--accent-color);
     color: var(--primary-color);
     transform: translateY(-3px);
 }
 
-/* Responsive */
-@media (max-width: 991px) {
-    .navbar-collapse {
-        background: var(--primary-color);
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 10px;
-    }
-    
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 70px;
-    }
-    
-    .language-switcher {
-        top: 10px;
-        right: 10px;
-    }
-
-    .lang-btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-    
-    .hero-section {
-        min-height: 400px;
-        padding: 40px 0;
-    }
-
-    .hero-section h1 {
-        font-size: 2rem;
-    }
-
-    .hero-section .lead {
-        font-size: 1rem;
-    }
-
-    .hero-buttons .btn {
-        display: block;
-        width: 100%;
-        margin: 10px 0 !important;
-    }
-
-    .features-section {
-        padding: 40px 0;
-    }
-
-    .feature-card {
-        padding: 20px;
-    }
-
-    .feature-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 24px;
-    }
-
-    .page-header {
-        padding: 40px 0;
-        margin-top: 60px;
-    }
-
-    .page-header h1 {
-        font-size: 2rem;
-    }
-
-    .page-header .lead {
-        font-size: 1rem;
-    }
-
-    .team-card {
-        padding: 20px;
-    }
-
-    .team-card img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .footer-section {
-        text-align: center;
-    }
-
-    .footer-section .col-md-6 {
-        margin-bottom: 20px;
-    }
-
-    .footer-section .text-md-end,
-    .footer-section .text-md-start {
-        text-align: center !important;
-    }
-
-    .footer-section .social-links a {
-        width: 35px;
-        height: 35px;
-        line-height: 35px;
-        font-size: 0.9rem;
-        margin: 0 4px;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-section h1 {
-        font-size: 1.8rem;
-    }
-
-    .feature-card {
-        padding: 15px;
-    }
-
-    .feature-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-    }
-
-    .btn-lg {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-    }
-
-    .dropdown-menu {
-        position: static !important;
-        float: none;
-        width: 100%;
-        margin-top: 0;
-        background-color: rgba(255,255,255,0.1);
-        border: none;
-        box-shadow: none;
-    }
-
-    .dropdown-item {
-        color: white !important;
-    }
-
-    .dropdown-item:hover {
-        background: var(--accent-color);
-        color: var(--primary-color) !important;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 991px) {
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-
-    .feature-card {
-        padding: 25px;
-    }
-}
-
-/* Bootstrap container */
-.container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-/* Row */
-.row {
-    margin-right: -15px;
-    margin-left: -15px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.btn-block {
-    display: block;
-    width: 100%;
-}
-/* حل مشكلة التمرير */
-html, body {
-    overflow: auto !important;
-    height: auto !important;
-/* التأكد من عدم وجود عناصر شفافة تغطي الصفحة */
-body > *:not(.language-switcher) {
-    pointer-events: auto;
-}
-/* ========== شريط البث التجريبي ========== */
-#trial-banner {
-    position: sticky;
-    top: 0;
-    z-index: 9998;
-    background-color: #ffc107;
-    color: #000;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    border-bottom: 2px solid #000;
-}
-#trial-banner i {
-    font-size: 1.1rem;
-}
-body {
-    margin: 0 !important;
-    padding-top: 0 !important; /* سيتم ضبطه بواسطة JS */
-}
-#trial-banner i {
-    font-size: 1.1rem;
-}
-/* تعويض المسافة للـ body */
+/* Trial Banner */
 #trial-banner {
     position: fixed;
     top: 0;
@@ -625,11 +373,161 @@ body {
     gap: 10px;
     box-sizing: border-box;
 }
-body {
-    padding-top: 50px; /* ارتفاع الشريط التقريبي */
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: var(--primary-color);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
 }
-/* جعل النافبار يبدأ بعد شريط التجريبي مباشرة */
-.navbar.fixed-top {
-    top: 50px; /* اضبط القيمة حسب ارتفاع الشريط الفعلي (عادة 50-60px) */
-    transition: top 0.3s ease;
+@media (max-width: 768px) {
+    .language-switcher {
+        top: 10px;
+        right: 10px;
+    }
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    .navbar {
+        top: 40px;
+    }
+    .hero-section {
+        min-height: 400px;
+        padding: 40px 0;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0 !important;
+    }
+    .features-section {
+        padding: 40px 0;
+    }
+    .feature-card {
+        padding: 20px;
+    }
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    .page-header {
+        padding: 40px 0;
+        margin-top: 60px;
+    }
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    .page-header .lead {
+        font-size: 1rem;
+    }
+    .team-card {
+        padding: 20px;
+    }
+    .team-card img {
+        width: 120px;
+        height: 120px;
+    }
+    .footer-section {
+        text-align: center;
+    }
+    .footer-section .col-md-6 {
+        margin-bottom: 20px;
+    }
+    .footer-section .text-md-end,
+    .footer-section .text-md-start {
+        text-align: center !important;
+    }
+    .footer-section .social-links a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 0.9rem;
+        margin: 0 4px;
+    }
+}
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    .feature-card {
+        padding: 15px;
+    }
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+    .dropdown-menu {
+        position: static !important;
+        float: none;
+        width: 100%;
+        margin-top: 0;
+        background-color: rgba(255,255,255,0.1);
+        border: none;
+        box-shadow: none;
+    }
+    .dropdown-item {
+        color: white !important;
+    }
+    .dropdown-item:hover {
+        background: var(--accent-color);
+        color: var(--primary-color) !important;
+    }
+}
+@media (min-width: 769px) and (max-width: 991px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .feature-card {
+        padding: 25px;
+    }
+}
+
+/* Additional Utility */
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+html, body {
+    overflow: auto !important;
+    height: auto !important;
+}
+body > *:not(.language-switcher) {
+    pointer-events: auto;
 }
