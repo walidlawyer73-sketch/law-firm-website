@@ -1,22 +1,23 @@
 // @ts-nocheck
 /**
- * main.js - الإصدار النهائي
- * شريط تجريبي ثنائي اللغة يعتمد على المسار
+ * main.js - الإصدار النهائي الشامل
+ * يتضمن: شريط تجريبي ثنائي اللغة، أزرار لغة ذكية، إصلاح الصور والروابط
  */
 
 // ================================================
-// 1. إنشاء وإدارة شريط التجريبي
+// 1. إنشاء شريط التجريبي (يتم تنفيذه فورًا)
 // ================================================
-(function() {
+(function createTrialBanner() {
+    // منع التكرار
     if (document.getElementById('trial-banner')) return;
 
-    // تحديد اللغة من المسار أو من سمة lang
-    const currentPath = window.location.pathname;
-    const isArabic = currentPath.startsWith('/ar/') || document.documentElement.lang === 'ar';
-    const bannerText = isArabic 
+    // تحديد لغة الصفحة من سمة lang
+    const isArabic = document.documentElement.lang === 'ar';
+    const bannerText = isArabic
         ? 'هذا إصدار تجريبي للموقع - جاري التطوير والتحديث'
         : 'This is a trial version - site under development and updates';
 
+    // إنشاء عنصر الشريط
     const banner = document.createElement('div');
     banner.id = 'trial-banner';
     banner.style.cssText = `
@@ -24,7 +25,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 10000;
+        z-index: 9999;
         background-color: #ffc107;
         color: #000;
         text-align: center;
@@ -36,6 +37,7 @@
         align-items: center;
         gap: 10px;
         box-sizing: border-box;
+        font-family: inherit;
     `;
 
     const iconLeft = document.createElement('i');
@@ -44,70 +46,84 @@
     iconRight.className = 'fas fa-tools';
     const textSpan = document.createElement('span');
     textSpan.className = 'banner-text';
-    textSpan.innerText = bannerText;
+    textSpan.textContent = bannerText;
 
     banner.appendChild(iconLeft);
     banner.appendChild(textSpan);
     banner.appendChild(iconRight);
 
+    // إضافة الشريط إلى بداية الـ body
     document.body.insertBefore(banner, document.body.firstChild);
 
-    function adjustBodyPadding() {
-        const bannerHeight = banner.offsetHeight;
-        document.body.style.paddingTop = bannerHeight + 'px';
+    // ضبط المسافة أعلى الصفحة
+    function adjustPadding() {
+        const height = banner.offsetHeight;
+        document.body.style.paddingTop = height + 'px';
+        // التأكد من أن النافبار ليس له مسافة إضافية
         const navbar = document.querySelector('.navbar');
         if (navbar) navbar.style.marginTop = '0';
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', adjustBodyPadding);
+        document.addEventListener('DOMContentLoaded', adjustPadding);
     } else {
-        adjustBodyPadding();
+        adjustPadding();
     }
-    window.addEventListener('resize', adjustBodyPadding);
+    window.addEventListener('resize', adjustPadding);
 })();
 
 // ================================================
-// 2. أزرار اللغة (بدون تغيير)
+// 2. إصلاح أزرار اللغة (تحويل ذكي مع الحفاظ على التفاعل)
 // ================================================
 function fixLanguageButtons() {
     const langButtons = document.querySelectorAll('.language-switcher .lang-btn');
+    if (!langButtons.length) return;
+
     langButtons.forEach(btn => {
-        btn.removeAttribute('href');
-        btn.style.cursor = 'pointer';
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
+        // نمنع الرابط الأصلي من التنفيذ الفوري
+        btn.addEventListener('click', function(event) {
+            event.preventDefault();
+
             const currentPath = window.location.pathname;
-            const currentLang = document.documentElement.lang;
+            const currentLang = document.documentElement.lang; // 'ar' أو 'en'
             let newPath = '/';
-            if (currentLang === 'ar' || currentPath.startsWith('/ar/')) {
+
+            if (currentLang === 'ar') {
+                // من العربية إلى الإنجليزية
                 if (currentPath === '/ar/' || currentPath === '/ar/index.html') {
                     newPath = '/';
                 } else if (currentPath.startsWith('/ar/')) {
                     newPath = currentPath.replace('/ar', '') || '/';
                     if (newPath === '' || newPath === '/index.html') newPath = '/';
+                } else {
+                    newPath = '/'; // افتراضي
                 }
             } else {
+                // من الإنجليزية إلى العربية
                 if (currentPath === '/' || currentPath === '/index.html') {
                     newPath = '/ar/';
                 } else {
                     newPath = '/ar' + currentPath;
                 }
             }
+
             window.location.href = newPath;
         });
     });
 }
 
 // ================================================
-// 3. باقي الإصلاحات (صورة المحامي، روابط السياسات)
+// 3. إصلاح صورة المحامي الرئيسي (البحث عن المسار الصحيح)
 // ================================================
 function fixLawyerImages() {
-    const possibleImages = document.querySelectorAll(
+    const correctPath = '/images/team/walid-profile.jpg';
+    const images = document.querySelectorAll(
         'img[alt*="وليد أبو العلا"], img[alt*="Walid Abo Al-Ela"], .team-card img, img[src*="walid"]'
     );
-    const correctPath = '/images/team/walid-profile.jpg';
-    possibleImages.forEach(img => {
+    if (!images.length) return;
+
+    images.forEach(img => {
+        // إذا كانت الصورة فشلت في التحميل
         if (img.complete && img.naturalWidth === 0) {
             img.src = correctPath;
         } else {
@@ -119,10 +135,15 @@ function fixLawyerImages() {
     });
 }
 
+// ================================================
+// 4. إصلاح روابط السياسات (تأكيد أنها مطلقة)
+// ================================================
 function fixPolicyLinks() {
     const policyLinks = document.querySelectorAll(
         'footer a[href*="privacy"], footer a[href*="terms"], footer a[href*="cookie"]'
     );
+    if (!policyLinks.length) return;
+
     policyLinks.forEach(link => {
         let href = link.getAttribute('href');
         if (href && !href.startsWith('/')) {
@@ -131,6 +152,9 @@ function fixPolicyLinks() {
     });
 }
 
+// ================================================
+// 5. تنفيذ جميع الإصلاحات عند اكتمال تحميل الصفحة
+// ================================================
 document.addEventListener('DOMContentLoaded', function() {
     fixLanguageButtons();
     fixLawyerImages();
