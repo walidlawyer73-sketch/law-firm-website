@@ -1,15 +1,6 @@
 // @ts-nocheck
 /**
- * main.js - النسخة النهائية بعد التعديلات الكاملة
- * يتضمن:
- * - شريط تجريبي ثنائي اللغة مع ضبط المسافات
- * - أزرار لغة ذكية (تحافظ على الصفحة الحالية)
- * - إصلاح صورة المحامي الرئيسي (مسار مطلق)
- * - إصلاح روابط السياسات
- * - Navbar scroll effect
- * - Smooth scroll للروابط
- * - Animations للبطاقات
- * - زر العودة للأعلى
+ * main.js - النسخة النهائية المتكاملة
  */
 
 // ================================================
@@ -59,12 +50,9 @@
 
     document.body.insertBefore(banner, document.body.firstChild);
 
-    // ضبط المسافة للـ body وللنافبار
     function adjustPositions() {
         const bannerHeight = banner.offsetHeight;
-        // ضبط padding-top للـ body لدفع المحتوى
         document.body.style.paddingTop = bannerHeight + 'px';
-        // ضبط النافبار لأسفل بمقدار ارتفاع الشريط (لأنه fixed أيضًا)
         const navbar = document.querySelector('.navbar');
         if (navbar) navbar.style.top = bannerHeight + 'px';
     }
@@ -78,11 +66,15 @@
 })();
 
 // ================================================
-// 2. أزرار اللغة (توجيه ذكي إلى نفس الصفحة)
+// 2. إصلاح أزرار اللغة (توجيه ذكي إلى نفس الصفحة)
 // ================================================
 (function fixLanguageButtons() {
     const langLink = document.getElementById('langSwitch');
     if (!langLink) return;
+
+    // إزالة أي رابط ثابت وضبطه ديناميكيًا
+    langLink.removeAttribute('href');
+    langLink.style.cursor = 'pointer';
 
     langLink.addEventListener('click', function(e) {
         e.preventDefault();
@@ -108,23 +100,48 @@
         window.location.href = newPath;
     });
 
-    // تحديث نص الزر ونمطه (اختياري)
-    const updateButtonAppearance = () => {
+    // تحديث النص المعروض حسب اللغة الحالية
+    const updateButtonText = () => {
         const isArabic = document.documentElement.lang === 'ar';
-        if (isArabic) {
-            langLink.innerHTML = '<i class="fas fa-globe"></i> English';
-        } else {
-            langLink.innerHTML = '<i class="fas fa-globe"></i> العربية';
-        }
+        langLink.innerHTML = isArabic
+            ? '<i class="fas fa-globe"></i> English'
+            : '<i class="fas fa-globe"></i> العربية';
     };
-    updateButtonAppearance();
+    updateButtonText();
 })();
 
 // ================================================
-// 3. إصلاح صورة المحامي الرئيسي (مسار مطلق)
+// 3. إصلاح جميع الروابط الداخلية (الخدمات، الفوتر، إلخ)
+// ================================================
+(function fixAllInternalLinks() {
+    // قائمة الروابط التي قد تكون بدون .html أو مسار مطلق
+    const allLinks = document.querySelectorAll('a[href]');
+    allLinks.forEach(link => {
+        let href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+            return;
+        }
+
+        // تصحيح الروابط التي تنتهي بدون .html وتحتوي على /ar/ أو لا تحتوي
+        if (!href.includes('.html') && !href.endsWith('/')) {
+            // إضافة .html فقط إذا كان الرابط يشير إلى صفحة داخلية (لا يحتوي على علامة استفهام أو علامات خاصة)
+            if (!href.includes('?') && !href.includes('#')) {
+                link.setAttribute('href', href + '.html');
+            }
+        }
+
+        // التأكد من أن الروابط المطلقة تبدأ بـ /
+        if (!href.startsWith('/') && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+            link.setAttribute('href', '/' + href);
+        }
+    });
+})();
+
+// ================================================
+// 4. إصلاح صورة المحامي الرئيسي (مسار مطلق)
 // ================================================
 (function fixLawyerImages() {
-    const correctPath = '/images/team/walid-profile.jpg'; // مسار مطلق
+    const correctPath = '/images/team/walid-profile.jpg';
     const images = document.querySelectorAll(
         'img[alt*="وليد أبو العلا"], img[alt*="Walid Abo Al-Ela"], .team-card img, img[src*="walid"]'
     );
@@ -141,7 +158,7 @@
 })();
 
 // ================================================
-// 4. إصلاح روابط السياسات (جعلها مطلقة)
+// 5. إصلاح روابط السياسات
 // ================================================
 (function fixPolicyLinks() {
     const links = document.querySelectorAll(
@@ -156,7 +173,7 @@
 })();
 
 // ================================================
-// 5. Navbar scroll effect + smooth scroll + animations
+// 6. Navbar scroll effect + smooth scroll + animations
 // ================================================
 document.addEventListener('DOMContentLoaded', function() {
     // Navbar scroll effect
@@ -207,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ================================================
-// 6. إضافة style ديناميكي للأنيميشن
+// 7. إضافة style ديناميكي للأنيميشن
 // ================================================
 if (!document.querySelector('#dynamic-styles')) {
     const style = document.createElement('style');
@@ -223,7 +240,7 @@ if (!document.querySelector('#dynamic-styles')) {
 }
 
 // ================================================
-// 7. زر العودة للأعلى
+// 8. زر العودة للأعلى
 // ================================================
 (function addBackToTopButton() {
     if (document.getElementById('backToTop')) return;
@@ -266,10 +283,9 @@ if (!document.querySelector('#dynamic-styles')) {
 })();
 
 // ================================================
-// 8. منع أي عناصر شفافة من منع النقر (تحسين إضافي)
+// 9. منع أي عناصر شفافة من منع النقر
 // ================================================
 (function fixPointerEvents() {
-    // تأكد أن كل العناصر التي قد تمنع النقر (مثل الأقسام الكبيرة) لا تعيق الأزرار
     const allElements = document.querySelectorAll('*');
     allElements.forEach(el => {
         if (el.style.pointerEvents === 'none' && el !== document.getElementById('trial-banner')) {
