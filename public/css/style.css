@@ -11,19 +11,12 @@
     --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
     --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
     --transition: all 0.3s ease;
-    --trial-banner-height: 0px;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
     color: var(--dark-text);
-    padding-top: 0;
-    margin: 0;
-    overflow-x: hidden;
+    padding-top: 100px; /* اجعلها أكبر قليلاً من مجموع ارتفاعات الشريط + النافبار */
 }
 
 /* RTL Support for Arabic */
@@ -59,7 +52,7 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 10002 !important;
+    z-index: 10001 !important;
     pointer-events: auto;
 }
 
@@ -84,39 +77,14 @@ body {
     transform: translateY(-2px);
 }
 
-/* Trial Banner */
-#trial-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10000;
-    background-color: #ffc107;
-    color: #000;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-    border-bottom: 2px solid #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    box-sizing: border-box;
-    pointer-events: none;
-}
-
-#trial-banner i {
-    font-size: 1.1rem;
-}
-
 /* Navigation */
 .navbar {
     background: var(--primary-color) !important;
     padding: 15px 0;
     transition: var(--transition);
     position: sticky;
-    top: var(--trial-banner-height, 0px);
-    z-index: 10001;
+    top: 0;
+    z-index: 9999;
 }
 
 .navbar.scrolled {
@@ -149,8 +117,6 @@ body {
     font-weight: 500;
     padding: 8px 15px !important;
     transition: var(--transition);
-    cursor: pointer;
-    pointer-events: auto;
 }
 
 .navbar-nav .nav-link:hover,
@@ -171,8 +137,6 @@ body {
     padding: 8px 15px;
     border-radius: 5px;
     transition: var(--transition);
-    cursor: pointer;
-    pointer-events: auto;
 }
 
 .dropdown-item:hover {
@@ -183,23 +147,26 @@ body {
 /* Hero Section */
 .hero-section {
     min-height: 600px;
-    background: var(--primary-color) url('images/logo-arb-ip.png') no-repeat center center;
+    background: url('/images/logo arb ip.png') no-repeat center center;
     background-size: contain;
+    background-color: var(--primary-color);
+    background-position: center center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
     color: white;
-    text-align: center;
 }
 
 .hero-section::before {
     content: "";
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
-    pointer-events: none;
 }
 
 .hero-section .container {
@@ -217,17 +184,6 @@ body {
     font-size: 1.25rem;
     margin-bottom: 2rem;
     opacity: 0.9;
-}
-
-.hero-buttons {
-    position: relative;
-    z-index: 3;
-}
-
-.hero-buttons .btn {
-    margin: 5px;
-    cursor: pointer;
-    pointer-events: auto;
 }
 
 /* Feature Cards */
@@ -283,7 +239,6 @@ body {
     transition: var(--transition);
     display: inline-flex;
     align-items: center;
-    pointer-events: auto;
 }
 
 .btn-link:hover {
@@ -302,7 +257,7 @@ body {
 .page-header {
     background: var(--primary-color);
     padding: 60px 0;
-    margin-top: 0;
+    margin-top: 80px;
     color: white;
     text-align: center;
 }
@@ -355,7 +310,6 @@ body {
     line-height: 35px;
     margin: 0 5px;
     transition: var(--transition);
-    text-align: center;
 }
 
 .team-card .social-links a:hover {
@@ -429,22 +383,12 @@ body {
     transition: all 0.3s ease;
     text-decoration: none;
     margin: 0 5px;
-    pointer-events: auto;
 }
 
 .social-links a:hover {
     background-color: var(--accent-color);
     color: var(--primary-color);
     transform: translateY(-3px);
-}
-
-/* Utility Fixes */
-.navbar-nav .nav-link,
-.hero-buttons .btn,
-.dropdown-item,
-.btn-link {
-    pointer-events: auto !important;
-    cursor: pointer !important;
 }
 
 /* Responsive */
@@ -455,7 +399,7 @@ body {
         border-radius: 10px;
         margin-top: 10px;
     }
-
+    
     .hero-section h1 {
         font-size: 2.5rem;
     }
@@ -463,9 +407,9 @@ body {
 
 @media (max-width: 768px) {
     body {
-        padding-top: 0;
+        padding-top: 70px;
     }
-
+    
     .language-switcher {
         top: 10px;
         right: 10px;
@@ -475,7 +419,7 @@ body {
         padding: 6px 12px;
         font-size: 0.8rem;
     }
-
+    
     .hero-section {
         min-height: 400px;
         padding: 40px 0;
@@ -511,6 +455,7 @@ body {
 
     .page-header {
         padding: 40px 0;
+        margin-top: 60px;
     }
 
     .page-header h1 {
@@ -590,4 +535,92 @@ body {
         background: var(--accent-color);
         color: var(--primary-color) !important;
     }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .feature-card {
+        padding: 25px;
+    }
+}
+
+/* Bootstrap container */
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Row */
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* حل مشكلة التمرير */
+html, body {
+    overflow: auto !important;
+    height: auto !important;
+}
+
+/* التأكد من عدم وجود عناصر شفافة تغطي الصفحة */
+body > *:not(.language-switcher) {
+    pointer-events: auto;
+}
+
+/* ========== شريط البث التجريبي ========== */
+#trial-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    background-color: #ffc107;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+#trial-banner i {
+    font-size: 1.1rem;
+}
+
+body {
+    padding-top: 50px; /* ارتفاع الشريط التقريبي */
+}
+
+/* جعل النافبار يبدأ بعد شريط التجريبي مباشرة */
+.navbar.fixed-top {
+    top: 50px; /* اضبط القيمة حسب ارتفاع الشريط الفعلي (عادة 50-60px) */
+    transition: top 0.3s ease;
+}
+.hero-buttons .btn {
+    position: relative;
+    z-index: 10001;
 }
