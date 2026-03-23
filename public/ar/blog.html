@@ -9,78 +9,97 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="description" content="مدونة مكتب وليد أبوالعلا للمحاماة: مقالات وتحليلات قانونية في مجالات التحكيم الدولي والملكية الفكرية والتشريعات المصرية.">
 </head>
-<!-- Banner تجريبي للموقع - يظهر في كل الصفحات -->
+<script>
+// ========== حل نهائي لصورة المحامي (للاحتياط) ==========
+(function() {
+    const correctImagePath = '/images/team/walid-profile.jpg';
+    const possibleSelectors = [
+        'img[alt*="وليد"]',
+        'img[alt*="Walid"]',
+        '.team-card img',
+        'img[src*="walid"]',
+        'img[src*="team"]'
+    ];
+    const imgElement = document.querySelector(possibleSelectors.join(','));
+    if (!imgElement) return;
+    imgElement.onerror = null;
+    const testImg = new Image();
+    testImg.src = correctImagePath;
+    testImg.onload = function() {
+        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
+    };
+})();
+</script>
+<!-- Banner تجريبي للموقع -->
 <div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
     <i class="fas fa-tools"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools"></i>
 </div>
 <body>
+    <!-- Language Switcher -->
     <div class="language-switcher">
-    <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>
-</div>
-
-<script>
-(function() {
-    const langLink = document.getElementById('langSwitch');
-    if (!langLink) return;
-    const currentPath = window.location.pathname;
-    // إذا كنا في صفحة عربية (المسار يبدأ بـ /ar/)
-    if (currentPath.startsWith('/ar/')) {
-        let englishPath = currentPath.replace('/ar', '');
-        if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') {
-            englishPath = '/';
-        }
-        langLink.href = englishPath;
-    } else {
-        // لو الصفحة مش عربية لأي سبب، نوجه للإنجليزية الرئيسية
-        langLink.href = '/';
-    }
-})();
-</script>
-<script src="/js/main.js"></script>
-    <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="/images/logo arb ip.png" alt="وليد أبوالعلا للمحاماة" style="height:45px; width:auto; margin-left:10px;">
-            <div>
-                <span class="fw-bold">وليد أبوالعلا للمحاماة</span>
-                <small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small>
-            </div>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">الخدمات</a>
-                    <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                        <li><a class="dropdown-item" href="/ar/arbitration">التحكيم الدولي</a></li>
-                        <li><a class="dropdown-item" href="/ar/trademark">تسجيل العلامات التجارية</a></li>
-                        <li><a class="dropdown-item" href="/ar/patent">براءات الاختراع</a></li>
-                        <li><a class="dropdown-item" href="/ar/copyright">حقوق المؤلف</a></li>
-                        <li><a class="dropdown-item" href="/ar/litigation">قضايا الملكية الفكرية</a></li>
-                        <li><a class="dropdown-item" href="/ar/corporate-formation">تأسيس الشركات</a></li>
-                        <li><a class="dropdown-item" href="/ar/criminal-litigation">القضايا الجنائية</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="/ar/services">جميع الخدمات</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="/ar/lawyers">فريق العمل</a></li>
-                <li class="nav-item"><a class="nav-link" href="/ar/blog">المدونة</a></li>
-                <li class="nav-item"><a class="nav-link" href="/ar/contact">اتصل بنا</a></li>
-                <li class="nav-item"><a class="nav-link" href="/ar/consultation">استشارة مدفوعة</a></li>
-                <li class="nav-item ms-lg-3">
-                    <a class="btn btn-outline-light btn-sm" href="/ar/client-portal"><i class="fas fa-lock me-1"></i>بوابة العميل</a>
-                </li>
-            </ul>
-        </div>
+        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>
     </div>
-</nav>
+
+    <script>
+    (function() {
+        const langLink = document.getElementById('langSwitch');
+        if (!langLink) return;
+        const currentPath = window.location.pathname;
+        if (currentPath.startsWith('/ar/')) {
+            let englishPath = currentPath.replace('/ar', '');
+            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') englishPath = '/';
+            langLink.href = englishPath;
+        } else {
+            langLink.href = '/';
+        }
+    })();
+    </script>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="/images/logo arb ip.png" alt="وليد أبوالعلا للمحاماة" style="height:45px; width:auto; margin-left:10px;">
+                <div>
+                    <span class="fw-bold">وليد أبوالعلا للمحاماة</span>
+                    <small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">الخدمات</a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="/ar/arbitration.html">التحكيم الدولي</a></li>
+                            <li><a class="dropdown-item" href="/ar/trademark.html">تسجيل العلامات التجارية</a></li>
+                            <li><a class="dropdown-item" href="/ar/patent.html">براءات الاختراع</a></li>
+                            <li><a class="dropdown-item" href="/ar/copyright.html">حقوق المؤلف</a></li>
+                            <li><a class="dropdown-item" href="/ar/litigation.html">قضايا الملكية الفكرية</a></li>
+                            <li><a class="dropdown-item" href="/ar/corporate-formation.html">تأسيس الشركات</a></li>
+                            <li><a class="dropdown-item" href="/ar/criminal-litigation.html">القضايا الجنائية</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/ar/services.html">جميع الخدمات</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/lawyers.html">فريق العمل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/blog.html">المدونة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/contact.html">اتصل بنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/consultation.html">استشارة مدفوعة</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html"><i class="fas fa-lock me-1"></i>بوابة العميل</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <header class="page-header">
         <div class="container text-white text-center">
@@ -91,38 +110,69 @@
 
     <section class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="../images/blog/blog1.jpg" class="card-img-top" style="height:200px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/400x200'">
+            <div class="row g-4">
+                <!-- المقال الأول -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden hover-lift">
+                        <img src="/images/blog/blog1.jpg" class="card-img-top" style="height:220px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/400x220?text=IP+Law'">
                         <div class="card-body">
-                            <div class="small text-muted mb-2"><i class="far fa-calendar me-1"></i> 10 فبراير 2025</div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-primary">الملكية الفكرية</span>
+                                <small class="text-muted"><i class="far fa-calendar me-1"></i> 10 فبراير 2025</small>
+                            </div>
                             <h5 class="card-title">تعديلات جديدة في قانون الملكية الفكرية المصري</h5>
-                            <p class="card-text">نظرة عامة على التغييرات الأخيرة وتأثيرها على حماية العلامات التجارية وبراءات الاختراع...</p>
-                            <a href="blog/amendments-egyptian-ip-law.html" class="btn btn-primary btn-sm">اقرأ المزيد</a>
+                            <p class="card-text text-muted">نظرة عامة على التغييرات الأخيرة وتأثيرها على حماية العلامات التجارية وبراءات الاختراع...</p>
+                            <a href="/ar/blog/amendments-egyptian-ip-law.html" class="btn btn-outline-primary btn-sm mt-2">اقرأ المزيد <i class="fas fa-arrow-left me-1"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="../images/blog/blog2.jpg" class="card-img-top" style="height:200px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/400x200'">
+                <!-- المقال الثاني -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <img src="/images/blog/blog2.jpg" class="card-img-top" style="height:220px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/400x220?text=Arbitration'">
                         <div class="card-body">
-                            <div class="small text-muted mb-2"><i class="far fa-calendar me-1"></i> 25 يناير 2025</div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-primary">التحكيم الدولي</span>
+                                <small class="text-muted"><i class="far fa-calendar me-1"></i> 25 يناير 2025</small>
+                            </div>
                             <h5 class="card-title">اتجاهات التحكيم الدولي 2025</h5>
-                            <p class="card-text">تطورات رئيسية في تسوية المنازعات عبر الحدود وما تعنيه للشركات...</p>
-                            <a href="blog/arbitration-trends-2025.html" class="btn btn-primary btn-sm">اقرأ المزيد</a>
+                            <p class="card-text text-muted">تطورات رئيسية في تسوية المنازعات عبر الحدود وما تعنيه للشركات...</p>
+                            <a href="/ar/blog/arbitration-trends-2025.html" class="btn btn-outline-primary btn-sm mt-2">اقرأ المزيد <i class="fas fa-arrow-left me-1"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="../images/blog/blog3.jpg" class="card-img-top" style="height:200px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/400x200'">
+                <!-- المقال الثالث -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <img src="/images/blog/blog3.jpg" class="card-img-top" style="height:220px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/400x220?text=Software+Patent'">
                         <div class="card-body">
-                            <div class="small text-muted mb-2"><i class="far fa-calendar me-1"></i> 5 يناير 2025</div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-primary">براءات الاختراع</span>
+                                <small class="text-muted"><i class="far fa-calendar me-1"></i> 5 يناير 2025</small>
+                            </div>
                             <h5 class="card-title">حماية البرمجيات ببراءات الاختراع</h5>
-                            <p class="card-text">التعامل مع تعقيدات حماية براءات الاختراع للاختراعات المنفذة بالحاسوب...</p>
-                            <a href="blog/protecting-software-patents.html" class="btn btn-primary btn-sm">اقرأ المزيد</a>
+                            <p class="card-text text-muted">التعامل مع تعقيدات حماية براءات الاختراع للاختراعات المنفذة بالحاسوب...</p>
+                            <a href="/ar/blog/protecting-software-patents.html" class="btn btn-outline-primary btn-sm mt-2">اقرأ المزيد <i class="fas fa-arrow-left me-1"></i></a>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الاشتراك في النشرة البريدية -->
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="bg-light p-4 p-md-5 rounded-4 text-center">
+                        <h3 class="mb-3">اشترك في نشرتنا البريدية</h3>
+                        <p class="text-muted mb-4">احصل على أحدث المقالات والتحديثات القانونية مباشرة إلى بريدك الإلكتروني.</p>
+                        <form class="row g-2 justify-content-center">
+                            <div class="col-md-6">
+                                <input type="email" class="form-control form-control-lg" placeholder="بريدك الإلكتروني">
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary btn-lg px-4" type="button">اشترك الآن</button>
+                            </div>
+                        </form>
+                        <p class="small text-muted mt-3">لن نرسل لك بريداً مزعجاً. يمكنك إلغاء الاشتراك في أي وقت.</p>
                     </div>
                 </div>
             </div>
@@ -130,110 +180,110 @@
     </section>
 
     <!-- Footer -->
-<footer class="footer-section py-5 bg-dark text-white">
-    <div class="container">
-        <div class="row g-4">
-            <!-- معلومات المكتب -->
-            <div class="col-lg-5">
-                <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>وليد أبوالعلا للمحاماة</h5>
-                <p class="text-white-50">متخصصون في التحكيم وحماية الملكية الفكرية بلمسة شخصية منذ 2016.</p>
-                <div class="social-links mt-3">
-                    <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="فيسبوك"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
+    <footer class="footer-section py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>وليد أبوالعلا للمحاماة</h5>
+                    <p class="text-white-50">متخصصون في التحكيم وحماية الملكية الفكرية بلمسة شخصية منذ 2016.</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="فيسبوك"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-4">روابط سريعة</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/ar/index.html" class="text-white-50 text-decoration-none">الرئيسية</a></li>
+                        <li class="mb-2"><a href="/ar/about.html" class="text-white-50 text-decoration-none">من نحن</a></li>
+                        <li class="mb-2"><a href="/ar/services.html" class="text-white-50 text-decoration-none">الخدمات</a></li>
+                        <li class="mb-2"><a href="/ar/lawyers.html" class="text-white-50 text-decoration-none">فريق العمل</a></li>
+                        <li class="mb-2"><a href="/ar/blog.html" class="text-white-50 text-decoration-none">المدونة</a></li>
+                        <li class="mb-2"><a href="/ar/contact.html" class="text-white-50 text-decoration-none">اتصل بنا</a></li>
+                        <li class="mb-2"><a href="/ar/consultation.html" class="text-white-50 text-decoration-none">استشارة مدفوعة</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="mb-4">معلومات الاتصال</h6>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، القاهرة، مصر</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
+                        <li class="mb-2"><i class="fas fa-clock me-2"></i> السبت - الخميس: 9 صباحاً - 8 مساءً</li>
+                    </ul>
                 </div>
             </div>
-            
-            <!-- روابط سريعة -->
-            <div class="col-lg-3">
-                <h6 class="mb-4">روابط سريعة</h6>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">الرئيسية</a></li>
-                    <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">من نحن</a></li>
-                    <li class="mb-2"><a href="services.html" class="text-white-50 text-decoration-none">الخدمات</a></li>
-                    <li class="mb-2"><a href="lawyers.html" class="text-white-50 text-decoration-none">فريق العمل</a></li>
-                    <li class="mb-2"><a href="blog.html" class="text-white-50 text-decoration-none">المدونة</a></li>
-                    <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">اتصل بنا</a></li>
-                    <li class="mb-2"><a href="consultation.html" class="text-white-50 text-decoration-none">استشارة مدفوعة</a></li>
-                </ul>
-            </div>
-            
-            <!-- معلومات الاتصال -->
-            <div class="col-lg-4">
-                <h6 class="mb-4">معلومات الاتصال</h6>
-                <ul class="list-unstyled text-white-50">
-                    <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، القاهرة، مصر</li>
-                    <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                    <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                    <li class="mb-2"><i class="fas fa-clock me-2"></i> السبت - الخميس: 9 صباحاً - 8 مساءً</li>
-                </ul>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="small text-white-50 mb-0">© 2025 وليد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6">
+                    <h6 class="mb-2 text-white-50">قانوني</h6>
+                    <ul class="list-unstyled d-flex gap-3">
+                        <li><a href="/privacy-policy.html" class="text-white-50 text-decoration-none">سياسة الخصوصية</a></li>
+                        <li><a href="/terms-of-service.html" class="text-white-50 text-decoration-none">شروط الاستخدام</a></li>
+                        <li><a href="/cookie-policy.html" class="text-white-50 text-decoration-none">سياسة ملفات تعريف الارتباط</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        
-        <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
-        
-        <div class="row">
-            <div class="col-md-6">
-                <p class="small text-white-50 mb-0">© 2025 وليد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
-            </div>
-           <div class="col-lg-3">
-    <h6 class="mb-4">قانوني</h6>
-    <ul class="list-unstyled">
-        <a href="/ar/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">سياسة الخصوصية</a>
-<a href="/ar/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">شروط الاستخدام</a>
-<a href="/ar/cookie-policy.html" class="text-white-50 small text-decoration-none">سياسة ملفات تعريف الارتباط</a>
-    </ul>
-</div>
-          </footer>
+    </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WQ0CPXRK2F');
+    </script>
+    <!-- كود إضافي لحل مشكلة صورة المحامي -->
+    <script>
+    (function() {
+        const possiblePaths = [
+            '/images/team/walid-profile.jpg',
+            '/images/team/walid-abouelela.jpg',
+            '/images/walid-profile.jpg',
+            '/ar/images/team/walid-profile.jpg',
+            '/images/lawyers/walid.jpg'
+        ];
+        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
+        if (!imgElement) return;
+        function tryLoadImage(index) {
+            if (index >= possiblePaths.length) return;
+            const testImg = new Image();
+            testImg.src = possiblePaths[index];
+            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
+            testImg.onerror = function() { tryLoadImage(index + 1); };
+        }
+        tryLoadImage(0);
+    })();
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const langSwitcher = document.querySelector('.language-switcher');
+        if (!langSwitcher) return;
+        const langLink = langSwitcher.querySelector('a');
+        if (!langLink) return;
+        const currentPath = window.location.pathname;
+        if (currentPath.startsWith('/ar/')) {
+            let englishPath = currentPath.replace('/ar/', '/');
+            if (englishPath === '' || englishPath === '/') englishPath = '/';
+            langLink.href = englishPath;
+            langLink.innerHTML = '<i class="fas fa-globe"></i> English';
+        } else {
+            let arabicPath;
+            if (currentPath === '/' || currentPath === '') arabicPath = '/ar/';
+            else arabicPath = '/ar' + currentPath;
+            langLink.href = arabicPath;
+            langLink.innerHTML = '<i class="fas fa-globe"></i> العربية';
+        }
+    });
+    </script>
 </body>
 </html>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-WQ0CPXRK2F');
-</script>
-<script>
-  // ==================== حل مشكلة زر اللغة (سويشر) ====================
-document.addEventListener('DOMContentLoaded', function() {
-    // نبحث عن زر اللغة - نفترض أنه داخل عنصر يحمل كلاس language-switcher
-    const langSwitcher = document.querySelector('.language-switcher');
-    if (!langSwitcher) return;
-
-    const langLink = langSwitcher.querySelector('a');
-    if (!langLink) return;
-
-    const currentPath = window.location.pathname;
-
-    // التحقق: هل نحن في صفحة عربية؟
-    if (currentPath.startsWith('/ar/')) {
-        // نحن في صفحة عربية -> نريد رابط النسخة الإنجليزية
-        let englishPath = currentPath.replace('/ar/', '/');
-        // إذا كان المسار بعد الحذف فارغاً، نذهب للصفحة الرئيسية
-        if (englishPath === '' || englishPath === '/') {
-            englishPath = '/';
-        }
-        langLink.href = englishPath;
-        langLink.classList.remove('arabic');
-        langLink.innerHTML = '<i class="fas fa-globe"></i> English';
-    } else {
-        // نحن في صفحة إنجليزية -> نريد رابط النسخة العربية
-        let arabicPath;
-        if (currentPath === '/' || currentPath === '') {
-            arabicPath = '/ar/';
-        } else {
-            arabicPath = '/ar' + currentPath;
-        }
-        langLink.href = arabicPath;
-        langLink.classList.add('arabic');
-        langLink.innerHTML = '<i class="fas fa-globe"></i> العربية';
-    }
-});

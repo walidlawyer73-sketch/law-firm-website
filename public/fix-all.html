@@ -2,99 +2,131 @@
 <html dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <title>تعليمات الإصلاح النهائي</title>
+    <title>تعليمات الإصلاح النهائي - النسخة الكاملة</title>
     <style>
         body { font-family: Arial; line-height: 1.6; max-width: 800px; margin: 20px auto; padding: 20px; }
         h1 { color: #c9a227; border-bottom: 2px solid #000; }
         h2 { color: #333; margin-top: 30px; }
+        h3 { color: #0d6efd; }
         code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; }
         pre { background: #1e1e1e; color: #fff; padding: 15px; border-radius: 5px; overflow-x: auto; }
         .step { background: #e8f4fd; padding: 15px; border-right: 4px solid #0d6efd; margin: 20px 0; }
         .warning { background: #fff3cd; border-right-color: #ffc107; }
+        ul { margin: 10px 0; }
+        li { margin: 5px 0; }
     </style>
 </head>
 <body>
-    <h1>🔧 الإصلاح النهائي لموقع المحاماة</h1>
-    
+    <h1>🔧 الإصلاح النهائي لموقع المحاماة (النسخة الكاملة بعد التعديلات)</h1>
+
     <div class="step">
-        <h2>الخطوة 1: استبدال ملف main.js</h2>
-        <p>انسخ الكود التالي والصقه في ملف <code>public/main.js</code> (احذف كل المحتوى القديم):</p>
-        <pre>// @ts-nocheck
-document.addEventListener('DOMContentLoaded',function(){
-    'use strict';
-    document.querySelectorAll('.language-switcher .lang-btn').forEach(b=>{
-        b.removeAttribute('href');
-        b.style.cursor='pointer';
-        b.onclick=function(e){
-            e.preventDefault();
-            let p=window.location.pathname;
-            let d=document.documentElement.lang;
-            let n='/';
-            if(d==='ar'){
-                if(p==='/ar/'||p==='/ar/index.html') n='/';
-                else if(p.startsWith('/ar/')) n=p.replace('/ar','')||'/';
-            }else{
-                if(p==='/'||p==='/index.html') n='/ar/';
-                else n='/ar'+p;
-            }
-            window.location.href=n;
-        };
-    });
-    let i=document.querySelectorAll('img[alt*="وليد"],img[alt*="Walid"],.team-card img');
-    i.forEach(img=>{
-        if(img.complete&&img.naturalWidth===0) img.src='/images/team/walid-profile.jpg';
-        else img.onerror=function(){this.src='/images/team/walid-profile.jpg';this.onerror=null;};
-    });
-});</pre>
+        <h2>📁 هيكل الملفات النهائي</h2>
+        <ul>
+            <li><strong>المجلد الرئيسي (public_html):</strong> يحتوي على الصفحات الإنجليزية (<code>index.html</code>, <code>about.html</code>, <code>services.html</code>, <code>arbitration.html</code>, ...) وجميع صفحات الخدمات والمدونة والسياسات.</li>
+            <li><strong>مجلد /ar/:</strong> يحتوي على الصفحات العربية بنفس الأسماء.</li>
+            <li><strong>مجلد /css/:</strong> يحتوي على <code>style.css</code> (النسخة النهائية).</li>
+            <li><strong>مجلد /js/:</strong> يحتوي على <code>main.js</code> (النسخة النهائية المتطورة).</li>
+            <li><strong>مجلد /images/:</strong> يحتوي على الصور، بما في ذلك <code>/images/team/walid-profile.jpg</code>.</li>
+        </ul>
     </div>
-    
+
     <div class="step">
-        <h2>الخطوة 2: تعديل أزرار اللغة في HTML</h2>
-        <p>افتح كل ملف HTML (عربي وإنجليزي) وقم بتعديل أزرار اللغة بهذا الشكل:</p>
+        <h2>1️⃣ ملف main.js (الإصدار النهائي)</h2>
+        <p>ملف <code>/js/main.js</code> يحتوي على جميع الوظائف التالية، ولا يجب استبداله إلا إذا كنت تريد إضافة ميزات جديدة:</p>
+        <ul>
+            <li>إنشاء شريط تجريبي ثنائي اللغة (يظهر في كل الصفحات).</li>
+            <li>ضبط المسافة أعلى الصفحة ديناميكياً حسب ارتفاع الشريط.</li>
+            <li>أزرار لغة ذكية: تحافظ على نفس الصفحة عند التبديل بين اللغتين.</li>
+            <li>إصلاح صورة المحامي (ثلاث نسخ احتياطية).</li>
+            <li>إصلاح روابط السياسات (جعلها مطلقة).</li>
+            <li>تأثير تمرير (scroll) على النافبار.</li>
+            <li>أنيميشن للبطاقات عند ظهورها.</li>
+            <li>زر العودة للأعلى.</li>
+        </ul>
+        <p><strong>لا تقم بتعديل هذا الملف إلا إذا كنت متأكداً من التغيير.</strong></p>
+    </div>
+
+    <div class="step">
+        <h2>2️⃣ أزرار اللغة في HTML</h2>
+        <p>جميع أزرار اللغة في كل صفحة (عربية وإنجليزية) موحدة بهذا الشكل:</p>
         <h3>في الصفحات العربية (داخل مجلد /ar/):</h3>
         <pre>&lt;div class="language-switcher"&gt;
-    &lt;a class="lang-btn"&gt;&lt;i class="fas fa-globe"&gt;&lt;/i&gt; English&lt;/a&gt;
+    &lt;a href="#" class="lang-btn" id="langSwitch"&gt;&lt;i class="fas fa-globe"&gt;&lt;/i&gt; English&lt;/a&gt;
 &lt;/div&gt;</pre>
         <h3>في الصفحات الإنجليزية (المجلد الرئيسي):</h3>
         <pre>&lt;div class="language-switcher"&gt;
-    &lt;a class="lang-btn"&gt;&lt;i class="fas fa-globe"&gt;&lt;/i&gt; العربية&lt;/a&gt;
+    &lt;a href="#" class="lang-btn" id="langSwitch"&gt;&lt;i class="fas fa-globe"&gt;&lt;/i&gt; العربية&lt;/a&gt;
 &lt;/div&gt;</pre>
-        <p class="warning"><strong>⚠️ مهم:</strong> تأكد من إزالة <code>href</code> تماماً.</p>
+        <p class="warning"><strong>✓ ملاحظة:</strong> تم الاحتفاظ بـ <code>href="#"</code> ويتم التحكم في التوجيه عبر <code>main.js</code>.</p>
     </div>
-    
+
     <div class="step">
-        <h2>الخطوة 3: رفع الصورة الصحيحة</h2>
-        <p>تأكد من وجود صورة المحامي في هذا المسار بالضبط:</p>
+        <h2>3️⃣ صورة المحامي الرئيسي</h2>
+        <p>الصورة موجودة في المسار:</p>
         <pre><code>/images/team/walid-profile.jpg</code></pre>
-        <p>إذا لم يكن المجلد <code>team</code> موجوداً، أنشئه وارفع الصورة فيه.</p>
-        <p>يمكنك اختبار المسار عبر الرابط: <code>https://yourdomain.com/images/team/walid-profile.jpg</code></p>
+        <p>تمت إضافة أكواد احتياطية (ثلاث نسخ) في كل صفحة لضمان ظهور الصورة حتى لو فشل تحميلها. يمكنك اختبار المسار عبر الرابط:</p>
+        <pre><code>https://yourdomain.com/images/team/walid-profile.jpg</code></pre>
     </div>
-    
+
     <div class="step">
-        <h2>الخطوة 4: التأكد من تحميل main.js في كل الصفحات</h2>
-        <p>في كل صفحة HTML، قبل إغلاق <code>&lt;/body&gt;</code>، تأكد من وجود هذا السطر:</p>
-        <pre>&lt;script src="/main.js"&gt;&lt;/script&gt;</pre>
-        <p>إذا كان ملف <code>main.js</code> في مجلد <code>public</code>، استخدم:</p>
-        <pre>&lt;script src="/public/main.js"&gt;&lt;/script&gt;</pre>
+        <h2>4️⃣ روابط CSS و JS في كل صفحة</h2>
+        <p>جميع الصفحات تحتوي على الروابط التالية داخل <code>&lt;head&gt;</code>:</p>
+        <pre>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"&gt;
+&lt;link rel="stylesheet" href="/css/style.css"&gt;</pre>
+        <p>وقبل إغلاق <code>&lt;/body&gt;</code>:</p>
+        <pre>&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;script src="/js/main.js"&gt;&lt;/script&gt;</pre>
     </div>
-    
+
     <div class="step">
-        <h2>الخطوة 5: رفع الملفات إلى السيرفر</h2>
-        <p>بعد تنفيذ الخطوات السابقة، ارفع الملفات التالية إلى السيرفر:</p>
+        <h2>5️⃣ قائمة الصفحات المعدلة (كاملة)</h2>
+        <p>تم تعديل جميع الصفحات التالية في كل من النسخة العربية (داخل <code>/ar/</code>) والنسخة الإنجليزية (الجذر):</p>
         <ul>
-            <li><code>/public/main.js</code> (أو <code>/main.js</code> حسب موقعك)</li>
-            <li>جميع صفحات HTML التي عدلت فيها أزرار اللغة</li>
-            <li>صورة <code>walid-profile.jpg</code> في <code>/images/team/</code></li>
+            <li><strong>الصفحات الرئيسية:</strong> <code>index.html</code>, <code>about.html</code>, <code>services.html</code>, <code>lawyers.html</code>, <code>blog.html</code>, <code>contact.html</code>, <code>consultation.html</code>, <code>client-portal.html</code>, <code>privacy-policy.html</code>, <code>terms-of-service.html</code>, <code>cookie-policy.html</code>, <code>cancel.html</code>, <code>success.html</code> (إن وجدت).</li>
+            <li><strong>صفحات الخدمات:</strong> <code>arbitration.html</code>, <code>trademark.html</code>, <code>patent.html</code>, <code>copyright.html</code>, <code>litigation.html</code>, <code>licensing.html</code>, <code>corporate-formation.html</code>, <code>criminal-litigation.html</code>, <code>civil-litigation.html</code>, <code>state-council-cases.html</code>, <code>family-law.html</code>, <code>economic-cases.html</code>, <code>industrial-designs.html</code>, <code>integrated-circuits.html</code>, <code>utility-models.html</code>, <code>geographical-indications.html</code>, <code>plant-varieties.html</code>.</li>
+            <li><strong>مقالات المدونة:</strong> <code>amendments-egyptian-ip-law.html</code>, <code>arbitration-trends-2025.html</code>, <code>protecting-software-patents.html</code> (ضمن مجلد <code>/blog/</code>).</li>
         </ul>
+        <p>جميع الروابط الداخلية أصبحت مطلقة وتنتهي بـ <code>.html</code>.</p>
     </div>
-    
+
     <div class="step">
-        <h2>✅ اختبار الحل</h2>
+        <h2>6️⃣ إصلاح الفوتر (قسم Legal)</h2>
+        <p>في الصفحات العربية، تم إصلاح روابط السياسات لتكون مطلقة على الجذر:</p>
+        <pre>&lt;div class="col-md-6"&gt;
+    &lt;a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3"&gt;سياسة الخصوصية&lt;/a&gt;
+    &lt;a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3"&gt;شروط الاستخدام&lt;/a&gt;
+    &lt;a href="/cookie-policy.html" class="text-white-50 small text-decoration-none"&gt;سياسة ملفات تعريف الارتباط&lt;/a&gt;
+&lt;/div&gt;</pre>
+        <p>في الصفحات الإنجليزية:</p>
+        <pre>&lt;div class="col-md-6 text-md-end"&gt;
+    &lt;a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3"&gt;Privacy Policy&lt;/a&gt;
+    &lt;a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3"&gt;Terms of Use&lt;/a&gt;
+    &lt;a href="/cookie-policy.html" class="text-white-50 small text-decoration-none"&gt;Cookie Policy&lt;/a&gt;
+&lt;/div&gt;</pre>
+    </div>
+
+    <div class="step">
+        <h2>✅ اختبار الحل النهائي</h2>
         <ol>
-            <li>افتح أي صفحة عربية (مثل /ar/about.html) وانقر على زر اللغة → يجب أن تنتقل لنفس الصفحة بالإنجليزية.</li>
+            <li>افتح أي صفحة عربية (مثل <code>/ar/about.html</code>) وانقر على زر اللغة → يجب أن تنتقل لنفس الصفحة بالإنجليزية.</li>
             <li>افتح أي صفحة إنجليزية وانقر على زر العربية → تنتقل لنفس الصفحة بالعربية.</li>
             <li>في الصفحة الرئيسية وصفحة فريق العمل، يجب أن تظهر صورة المحامي الحقيقية.</li>
+            <li>اضغط على أي رابط في القائمة المنسدلة للخدمات – يجب أن يعمل وينتقل إلى صفحة الخدمة الصحيحة.</li>
+            <li>جرب روابط السياسات في الفوتر – يجب أن تعمل في كل اللغات.</li>
+            <li>اختبر أزرار الهيرو (استشارة مجانية، اعرف أكثر) – يجب أن تنقل إلى الصفحات الصحيحة.</li>
+            <li>تأكد من ظهور شريط التجريبي في الأعلى وعدم تغطيته للنافبار.</li>
         </ol>
+    </div>
+
+    <div class="step">
+        <h2>📌 ملاحظات مهمة</h2>
+        <ul>
+            <li>جميع الصفحات تستخدم مسارات مطلقة مع <code>.html</code> لتجنب أخطاء 404.</li>
+            <li>تم إضافة أكواد صورة المحامي (ثلاث نسخ) في كل صفحة لضمان عملها حتى لو فشل أحدها.</li>
+            <li>تم إضافة كود تحديد الرابط النشط في كل صفحة لتحسين تجربة المستخدم.</li>
+            <li>تم تحسين السيو بإضافة <code>meta description</code> فريدة لكل صفحة.</li>
+        </ul>
     </div>
 </body>
 </html>

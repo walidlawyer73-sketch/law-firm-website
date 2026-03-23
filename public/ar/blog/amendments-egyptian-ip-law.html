@@ -4,37 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تعديلات جديدة في قانون الملكية الفكرية المصري - وليد أبوالعلا للمحاماة</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
-    <meta name="description" content="مكتب وليد أبوالعلا للمحاماة متخصص في التحكيم الدولي والملكية الفكرية، تسجيل علامات تجارية، براءات اختراع، وقضايا. استشارات قانونية خبرة منذ 2016.">
+    <meta name="description" content="تحليل شامل للتعديلات الأخيرة في قانون الملكية الفكرية المصري وتأثيرها على حماية العلامات التجارية وبراءات الاختراع وحقوق المؤلف.">
 </head>
+<script>
+// ========== حل نهائي لصورة المحامي ==========
+(function() {
+    const correctImagePath = '/images/team/walid-profile.jpg';
+    const possibleSelectors = [
+        'img[alt*="وليد"]',
+        'img[alt*="Walid"]',
+        '.team-card img',
+        'img[src*="walid"]',
+        'img[src*="team"]'
+    ];
+    const imgElement = document.querySelector(possibleSelectors.join(','));
+    if (!imgElement) return;
+    imgElement.onerror = null;
+    const testImg = new Image();
+    testImg.src = correctImagePath;
+    testImg.onload = function() {
+        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
+    };
+})();
+</script>
+<!-- Banner تجريبي للموقع -->
+<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
+    <i class="fas fa-tools"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools"></i>
+</div>
 <body>
-    <!-- Banner تجريبي للموقع -->
-    <div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-        <i class="fas fa-tools"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools"></i>
-    </div>
-
     <!-- Language Switcher -->
     <div class="language-switcher">
         <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>
     </div>
 
     <script>
-        (function() {
-            const langLink = document.getElementById('langSwitch');
-            if (!langLink) return;
-            const currentPath = window.location.pathname;
-            if (currentPath.startsWith('/ar/')) {
-                let englishPath = currentPath.replace('/ar', '');
-                if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') {
-                    englishPath = '/';
-                }
-                langLink.href = englishPath;
-            } else {
-                langLink.href = '/';
-            }
-        })();
+    (function() {
+        const langLink = document.getElementById('langSwitch');
+        if (!langLink) return;
+        const currentPath = window.location.pathname;
+        if (currentPath.startsWith('/ar/')) {
+            let englishPath = currentPath.replace('/ar', '');
+            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') englishPath = '/';
+            langLink.href = englishPath;
+        } else {
+            langLink.href = '/';
+        }
+    })();
     </script>
 
     <!-- Navigation Bar -->
@@ -91,31 +112,48 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <img src="/images/blog/blog1.jpg" class="img-fluid rounded-4 mb-4" onerror="this.src='https://via.placeholder.com/800x400'">
+                    <img src="/images/blog/blog1.jpg" class="img-fluid rounded-4 shadow mb-4" style="width:100%; max-height:400px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/800x400?text=IP+Law'">
                     
-                    <p>أدخل المشرع المصري مؤخراً تعديلات هامة على قانون الملكية الفكرية، بهدف تحديث الإطار القانوني ومواءمته مع المعايير الدولية. تؤثر هذه التغييرات على جوانب مختلفة من حماية الملكية الفكرية، بما في ذلك العلامات التجارية وبراءات الاختراع والمؤلف والحقوق المجاورة.</p>
+                    <p>أدخل المشرع المصري مؤخراً تعديلات هامة على قانون الملكية الفكرية، بهدف تحديث الإطار القانوني ومواءمته مع المعايير الدولية. تؤثر هذه التغييرات على جوانب مختلفة من حماية الملكية الفكرية، بما في ذلك العلامات التجارية وبراءات الاختراع وحقوق المؤلف والحقوق المجاورة.</p>
                     
-                    <h3>أبرز التعديلات</h3>
+                    <h3 class="mt-5">أبرز التعديلات</h3>
                     
-                    <h4>1. العلامات التجارية</h4>
+                    <h4 class="mt-4">1. العلامات التجارية</h4>
                     <p>تقدم التعديلات أحكاماً لتسجيل العلامات غير التقليدية، مثل العلامات الصوتية وعلامات الحركة. بالإضافة إلى ذلك، تم تمديد فترة المعارضة إلى 60 يوماً، مما يمنح الغير مزيداً من الوقت للاعتراض على الطلبات. كما يوضح القانون إجراءات تسجيل العلامات المشهورة، مما يوفر حماية معززة ضد التخفيف.</p>
+                    <div class="bg-light p-3 rounded-3 my-3">
+                        <i class="fas fa-lightbulb text-warning me-2"></i> <strong>نصيحة قانونية:</strong> إذا كنت تمتلك علامة تجارية مشهورة، ينصح بتسجيلها رسمياً للاستفادة من الحماية المعززة التي يوفرها القانون الجديد.
+                    </div>
                     
-                    <h4>2. براءات الاختراع</h4>
+                    <h4 class="mt-4">2. براءات الاختراع</h4>
                     <p>تتضمن التغييرات في قانون براءات الاختراع إدخال نظام الفحص الموضوعي لبراءات الاختراع الصيدلانية، بهدف ضمان حماية الابتكارات الحقيقية فقط. كما تنص التعديلات على إمكانية تمديد مدة براءة الاختراع في حالات معينة، مثل التأخير التنظيمي في الحصول على موافقة التسويق.</p>
                     
-                    <h4>3. حقوق المؤلف والحقوق المجاورة</h4>
+                    <h4 class="mt-4">3. حقوق المؤلف والحقوق المجاورة</h4>
                     <p>تتناول تعديلات حقوق المؤلف والحقوق المجاورة تحديات العصر الرقمي، بما في ذلك أحكام حماية الأعمال الرقمية ومسؤولية مقدمي الخدمات عبر الإنترنت. يغطي القانون الآن صراحة البرمجيات وقواعد البيانات كأعمال محمية، ويقدم إجراءات الإشعار والإزالة للمحتوى المخالف عبر الإنترنت.</p>
                     
-                    <h4>4. الإنفاذ</h4>
+                    <h4 class="mt-4">4. الإنفاذ</h4>
                     <p>تعزز التعديلات الإجراءات الحدودية لمنع استيراد السلع المقلدة. تُمنح سلطات الجمارك الآن صلاحية تعليق الإفراج عن البضائع المشتبه في انتهاكها بحكم منصبها، دون الحاجة إلى أمر قضائي. كما يزيد القانون العقوبات الجنائية لانتهاك الملكية الفكرية، بما في ذلك الغرامات والسجن.</p>
                     
-                    <h3>ماذا يعني هذا لأصحاب الحقوق؟</h3>
+                    <h3 class="mt-5">ماذا يعني هذا لأصحاب الحقوق؟</h3>
                     <p>تمثل هذه التعديلات خطوة هامة إلى الأمام في حماية الملكية الفكرية في مصر. أصبح لدى أصحاب الحقوق الآن أدوات أقوى لإنفاذ حقوقهم ومكافحة الانتهاك. ومع ذلك، تتطلب الأحكام الجديدة أيضاً تعاملاً دقيقاً لضمان الامتثال وتعظيم الحماية.</p>
+                    
+                    <div class="alert alert-primary mt-4">
+                        <i class="fas fa-chart-line me-2"></i> <strong>تأثير متوقع:</strong> من المتوقع أن تسهم هذه التعديلات في تحسين بيئة الأعمال وجذب المزيد من الاستثمارات الأجنبية التي تعتمد على الابتكار وحماية الملكية الفكرية.
+                    </div>
                     
                     <p>يتبع مكتبنا عن كثب تنفيذ هذه التعديلات وهو على استعداد لمساعدة العملاء في التكيف مع المشهد القانوني الجديد. للحصول على استشارة شخصية حول كيفية تأثير هذه التغييرات على محفظة الملكية الفكرية الخاصة بك، يرجى الاتصال بفريقنا.</p>
                     
-                    <div class="mt-5">
-                        <a href="/ar/blog.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left me-2"></i>العودة إلى المدونة</a>
+                    <div class="mt-5 pt-3 border-top">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            <div>
+                                <a href="/ar/blog.html" class="btn btn-outline-primary"><i class="fas fa-arrow-right me-2"></i>العودة إلى المدونة</a>
+                            </div>
+                            <div class="mt-2 mt-sm-0">
+                                <span class="text-muted me-2">شارك المقال:</span>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://law-arb-ip-walid.vercel.app/ar/blog/amendments-egyptian-ip-law.html" target="_blank" class="btn btn-sm btn-outline-primary me-1"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://twitter.com/intent/tweet?url=https://law-arb-ip-walid.vercel.app/ar/blog/amendments-egyptian-ip-law.html&text=تعديلات جديدة في قانون الملكية الفكرية المصري" target="_blank" class="btn btn-sm btn-outline-primary me-1"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://law-arb-ip-walid.vercel.app/ar/blog/amendments-egyptian-ip-law.html&title=تعديلات جديدة في قانون الملكية الفكرية المصري" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -136,7 +174,6 @@
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
-                
                 <div class="col-lg-3">
                     <h6 class="mb-4">روابط سريعة</h6>
                     <ul class="list-unstyled">
@@ -149,7 +186,6 @@
                         <li class="mb-2"><a href="/ar/consultation.html" class="text-white-50 text-decoration-none">استشارة مدفوعة</a></li>
                     </ul>
                 </div>
-                
                 <div class="col-lg-4">
                     <h6 class="mb-4">معلومات الاتصال</h6>
                     <ul class="list-unstyled text-white-50">
@@ -160,9 +196,7 @@
                     </ul>
                 </div>
             </div>
-            
             <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
-            
             <div class="row">
                 <div class="col-md-6">
                     <p class="small text-white-50 mb-0">© 2025 وليد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
@@ -181,16 +215,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <script>
-        // إضافة دعم إضافي لزر اللغة (للتأكد من عدم وجود تعارض)
-        document.addEventListener('DOMContentLoaded', function() {
-            const langLink = document.getElementById('langSwitch');
-            if (langLink && !langLink.hasAttribute('data-processed')) {
-                langLink.setAttribute('data-processed', 'true');
-                // الكود الموجود في main.js سيتولى الباقي، لكن نضمن عدم التداخل
-            }
-        });
-    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
@@ -198,6 +222,49 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
+    </script>
+    <!-- كود إضافي لحل مشكلة صورة المحامي -->
+    <script>
+    (function() {
+        const possiblePaths = [
+            '/images/team/walid-profile.jpg',
+            '/images/team/walid-abouelela.jpg',
+            '/images/walid-profile.jpg',
+            '/ar/images/team/walid-profile.jpg',
+            '/images/lawyers/walid.jpg'
+        ];
+        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
+        if (!imgElement) return;
+        function tryLoadImage(index) {
+            if (index >= possiblePaths.length) return;
+            const testImg = new Image();
+            testImg.src = possiblePaths[index];
+            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
+            testImg.onerror = function() { tryLoadImage(index + 1); };
+        }
+        tryLoadImage(0);
+    })();
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const langSwitcher = document.querySelector('.language-switcher');
+        if (!langSwitcher) return;
+        const langLink = langSwitcher.querySelector('a');
+        if (!langLink) return;
+        const currentPath = window.location.pathname;
+        if (currentPath.startsWith('/ar/')) {
+            let englishPath = currentPath.replace('/ar/', '/');
+            if (englishPath === '' || englishPath === '/') englishPath = '/';
+            langLink.href = englishPath;
+            langLink.innerHTML = '<i class="fas fa-globe"></i> English';
+        } else {
+            let arabicPath;
+            if (currentPath === '/' || currentPath === '') arabicPath = '/ar/';
+            else arabicPath = '/ar' + currentPath;
+            langLink.href = arabicPath;
+            langLink.innerHTML = '<i class="fas fa-globe"></i> العربية';
+        }
+    });
     </script>
 </body>
 </html>

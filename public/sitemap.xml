@@ -1,100 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- الصفحات الرئيسية -->
+    <!-- ==================== الصفحات الرئيسية (الإنجليزية) ==================== -->
     <url>
-        <loc>https://law-arb-ip-walid.vercel.app/</loc>
-        <lastmod>2025-03-22</lastmod>
+        <loc>https://law-arb-ip-walid.vercel.app/index.html</loc>
+        <lastmod>2025-03-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://law-arb-ip-walid.vercel.app/about</loc>
-        <lastmod>2025-03-22</lastmod>
+        <loc>https://law-arb-ip-walid.vercel.app/about.html</loc>
+        <lastmod>2025-03-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://law-arb-ip-walid.vercel.app/services</loc>
-        <lastmod>2025-03-22</lastmod>
+        <loc>https://law-arb-ip-walid.vercel.app/services.html</loc>
+        <lastmod>2025-03-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://law-arb-ip-walid.vercel.app/lawyers</loc>
-        <lastmod>2025-03-22</lastmod>
+        <loc>https://law-arb-ip-walid.vercel.app/lawyers.html</loc>
+        <lastmod>2025-03-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://law-arb-ip-walid.vercel.app/blog</loc>
-        <lastmod>2025-03-22</lastmod>
+        <loc>https://law-arb-ip-walid.vercel.app/blog.html</loc>
+        <lastmod>2025-03-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://law-arb-ip-walid.vercel.app/contact</loc>
-        <lastmod>2025-03-22</lastmod>
+        <loc>https://law-arb-ip-walid.vercel.app/contact.html</loc>
+        <lastmod>2025-03-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://law-arb-ip-walid.vercel.app/consultation</loc>
-        <lastmod>2025-03-22</lastmod>
+        <loc>https://law-arb-ip-walid.vercel.app/consultation.html</loc>
+        <lastmod>2025-03-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://law-arb-ip-walid.vercel.app/client-portal</loc>
-        <lastmod>2025-03-22</lastmod>
+        <loc>https://law-arb-ip-walid.vercel.app/client-portal.html</loc>
+        <lastmod>2025-03-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
+    <url>
+        <loc>https://law-arb-ip-walid.vercel.app/cancel.html</loc>
+        <lastmod>2025-03-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://law-arb-ip-walid.vercel.app/success.html</loc>
+        <lastmod>2025-03-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
 
-    <!-- صفحات الخدمات (مع إضافة changefreq ورفع أولوية الخدمات الأساسية) -->
-    <url><loc>https://law-arb-ip-walid.vercel.app/arbitration</loc><lastmod>2025-03-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/trademark</loc><lastmod>2025-03-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/patent</loc><lastmod>2025-03-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/copyright</loc><lastmod>2025-03-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/litigation</loc><lastmod>2025-03-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/licensing</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/corporate-formation</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/criminal-litigation</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/civil-litigation</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/state-council-cases</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/family-law</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/economic-cases</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/industrial-designs</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/integrated-circuits</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/utility-models</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/geographical-indications</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/plant-varieties</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <!-- ==================== سياسات الموقع ==================== -->
+    <url>
+        <loc>https://law-arb-ip-walid.vercel.app/privacy-policy.html</loc>
+        <lastmod>2025-03-23</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://law-arb-ip-walid.vercel.app/terms-of-service.html</loc>
+        <lastmod>2025-03-23</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://law-arb-ip-walid.vercel.app/cookie-policy.html</loc>
+        <lastmod>2025-03-23</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
 
-    <!-- النسخ العربية -->
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar</loc><lastmod>2025-03-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/about</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/services</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/lawyers</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/blog</loc><lastmod>2025-03-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/contact</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/consultation</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/client-portal</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <!-- ==================== صفحات الخدمات (الإنجليزية) ==================== -->
+    <url><loc>https://law-arb-ip-walid.vercel.app/arbitration.html</loc><lastmod>2025-03-23</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/trademark.html</loc><lastmod>2025-03-23</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/patent.html</loc><lastmod>2025-03-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/copyright.html</loc><lastmod>2025-03-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/litigation.html</loc><lastmod>2025-03-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/licensing.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/corporate-formation.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/criminal-litigation.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/civil-litigation.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/state-council-cases.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/family-law.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/economic-cases.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/industrial-designs.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/integrated-circuits.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/utility-models.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/geographical-indications.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/plant-varieties.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/contract-drafting.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+    <!-- ==================== مقالات المدونة (الإنجليزية) ==================== -->
+    <url><loc>https://law-arb-ip-walid.vercel.app/blog/amendments-egyptian-ip-law.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/blog/arbitration-trends-2025.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/blog/protecting-software-patents.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+    <!-- ==================== الصفحات العربية ==================== -->
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/index.html</loc><lastmod>2025-03-23</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/about.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/services.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/lawyers.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/blog.html</loc><lastmod>2025-03-23</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/contact.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/consultation.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/client-portal.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/cancel.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/success.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+
+    <!-- صفحات سياسات بالعربية -->
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/privacy-policy.html</loc><lastmod>2025-03-23</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/terms-of-service.html</loc><lastmod>2025-03-23</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/cookie-policy.html</loc><lastmod>2025-03-23</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
 
     <!-- خدمات النسخة العربية -->
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/arbitration</loc><lastmod>2025-03-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/trademark</loc><lastmod>2025-03-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/patent</loc><lastmod>2025-03-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/copyright</loc><lastmod>2025-03-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/litigation</loc><lastmod>2025-03-22</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/licensing</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/corporate-formation</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/criminal-litigation</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/civil-litigation</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/state-council-cases</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/family-law</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/economic-cases</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/industrial-designs</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/integrated-circuits</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/utility-models</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/geographical-indications</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://law-arb-ip-walid.vercel.app/ar/plant-varieties</loc><lastmod>2025-03-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/arbitration.html</loc><lastmod>2025-03-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/trademark.html</loc><lastmod>2025-03-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/patent.html</loc><lastmod>2025-03-23</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/copyright.html</loc><lastmod>2025-03-23</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/litigation.html</loc><lastmod>2025-03-23</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/licensing.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/corporate-formation.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/criminal-litigation.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/civil-litigation.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/state-council-cases.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/family-law.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/economic-cases.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/industrial-designs.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/integrated-circuits.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/utility-models.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/geographical-indications.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/plant-varieties.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/contract-drafting.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+    <!-- مقالات المدونة العربية -->
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/blog/amendments-egyptian-ip-law.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/blog/arbitration-trends-2025.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <url><loc>https://law-arb-ip-walid.vercel.app/ar/blog/protecting-software-patents.html</loc><lastmod>2025-03-23</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
