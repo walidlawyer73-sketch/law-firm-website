@@ -1,9 +1,10 @@
 // @ts-nocheck
 /**
- * main.js - النسخة النهائية بعد التعديلات
+ * main.js - النسخة النهائية بعد التعديلات الكاملة
  * يتضمن:
- * - شريط تجريبي ثنائي اللغة
- * - إصلاح صورة المحامي الرئيسي
+ * - شريط تجريبي ثنائي اللغة مع ضبط المسافات
+ * - أزرار لغة ذكية (تحافظ على الصفحة الحالية)
+ * - إصلاح صورة المحامي الرئيسي (مسار مطلق)
  * - إصلاح روابط السياسات
  * - Navbar scroll effect
  * - Smooth scroll للروابط
@@ -12,7 +13,7 @@
  */
 
 // ================================================
-// 1. إنشاء شريط التجريبي
+// 1. إنشاء شريط التجريبي وضبط المسافات
 // ================================================
 (function createTrialBanner() {
     if (document.getElementById('trial-banner')) return;
@@ -29,7 +30,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 9999;
+        z-index: 10000;
         background-color: #ffc107;
         color: #000;
         text-align: center;
@@ -58,31 +59,72 @@
 
     document.body.insertBefore(banner, document.body.firstChild);
 
-    // ضبط المسافة أعلى الصفحة بشكل صحيح
-    function adjustPadding() {
-        const height = banner.offsetHeight;
-        document.body.style.paddingTop = '0px';
-        setTimeout(() => {
-            document.body.style.paddingTop = height + 'px';
-        }, 10);
-
+    // ضبط المسافة للـ body وللنافبار
+    function adjustPositions() {
+        const bannerHeight = banner.offsetHeight;
+        // ضبط padding-top للـ body لدفع المحتوى
+        document.body.style.paddingTop = bannerHeight + 'px';
+        // ضبط النافبار لأسفل بمقدار ارتفاع الشريط (لأنه fixed أيضًا)
         const navbar = document.querySelector('.navbar');
-        if (navbar) navbar.style.marginTop = '0';
+        if (navbar) navbar.style.top = bannerHeight + 'px';
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', adjustPadding);
+        document.addEventListener('DOMContentLoaded', adjustPositions);
     } else {
-        adjustPadding();
+        adjustPositions();
     }
-    window.addEventListener('resize', adjustPadding);
+    window.addEventListener('resize', adjustPositions);
 })();
 
 // ================================================
-// 2. إصلاح صورة المحامي الرئيسي
+// 2. أزرار اللغة (توجيه ذكي إلى نفس الصفحة)
+// ================================================
+(function fixLanguageButtons() {
+    const langLink = document.getElementById('langSwitch');
+    if (!langLink) return;
+
+    langLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        const currentPath = window.location.pathname;
+        const isArabic = document.documentElement.lang === 'ar' || currentPath.startsWith('/ar/');
+        let newPath = '/';
+
+        if (isArabic) {
+            // من العربية إلى الإنجليزية
+            let englishPath = currentPath.replace('/ar', '');
+            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') {
+                englishPath = '/';
+            }
+            newPath = englishPath;
+        } else {
+            // من الإنجليزية إلى العربية
+            if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
+                newPath = '/ar/';
+            } else {
+                newPath = '/ar' + currentPath;
+            }
+        }
+        window.location.href = newPath;
+    });
+
+    // تحديث نص الزر ونمطه (اختياري)
+    const updateButtonAppearance = () => {
+        const isArabic = document.documentElement.lang === 'ar';
+        if (isArabic) {
+            langLink.innerHTML = '<i class="fas fa-globe"></i> English';
+        } else {
+            langLink.innerHTML = '<i class="fas fa-globe"></i> العربية';
+        }
+    };
+    updateButtonAppearance();
+})();
+
+// ================================================
+// 3. إصلاح صورة المحامي الرئيسي (مسار مطلق)
 // ================================================
 (function fixLawyerImages() {
-    const correctPath = 'images/team/walid-profile.jpg';
+    const correctPath = '/images/team/walid-profile.jpg'; // مسار مطلق
     const images = document.querySelectorAll(
         'img[alt*="وليد أبو العلا"], img[alt*="Walid Abo Al-Ela"], .team-card img, img[src*="walid"]'
     );
@@ -99,7 +141,7 @@
 })();
 
 // ================================================
-// 3. إصلاح روابط السياسات
+// 4. إصلاح روابط السياسات (جعلها مطلقة)
 // ================================================
 (function fixPolicyLinks() {
     const links = document.querySelectorAll(
@@ -114,9 +156,10 @@
 })();
 
 // ================================================
-// 4. Navbar scroll effect
+// 5. Navbar scroll effect + smooth scroll + animations
 // ================================================
 document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
     const navbar = document.getElementById('mainNav');
     if (navbar) {
         window.addEventListener('scroll', function() {
@@ -128,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Smooth scroll للروابط
+    // Smooth scroll للروابط الداخلية
     document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -145,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Animations للبطاقات
+    // Animations للبطاقات عند الظهور
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -164,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ================================================
-// 5. إضافة style ديناميكي للأنيميشن (مرة واحدة)
+// 6. إضافة style ديناميكي للأنيميشن
 // ================================================
 if (!document.querySelector('#dynamic-styles')) {
     const style = document.createElement('style');
@@ -180,7 +223,7 @@ if (!document.querySelector('#dynamic-styles')) {
 }
 
 // ================================================
-// 6. زر العودة للأعلى
+// 7. زر العودة للأعلى
 // ================================================
 (function addBackToTopButton() {
     if (document.getElementById('backToTop')) return;
@@ -219,5 +262,18 @@ if (!document.querySelector('#dynamic-styles')) {
 
     backToTopButton.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
+
+// ================================================
+// 8. منع أي عناصر شفافة من منع النقر (تحسين إضافي)
+// ================================================
+(function fixPointerEvents() {
+    // تأكد أن كل العناصر التي قد تمنع النقر (مثل الأقسام الكبيرة) لا تعيق الأزرار
+    const allElements = document.querySelectorAll('*');
+    allElements.forEach(el => {
+        if (el.style.pointerEvents === 'none' && el !== document.getElementById('trial-banner')) {
+            el.style.pointerEvents = 'auto';
+        }
     });
 })();

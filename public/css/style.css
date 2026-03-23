@@ -11,12 +11,15 @@
     --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
     --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
     --transition: all 0.3s ease;
+    --banner-height: 50px; /* سيتم تحديثها بواسطة JS */
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
     color: var(--dark-text);
-    padding-top: 100px; /* اجعلها أكبر قليلاً من مجموع ارتفاعات الشريط + النافبار */
+    padding-top: var(--banner-height); /* يعتمد على ارتفاع الشريط الفعلي */
+    margin: 0;
+    overflow-x: hidden;
 }
 
 /* RTL Support for Arabic */
@@ -56,6 +59,14 @@ body {
     pointer-events: auto;
 }
 
+/* عند العرض على الجوال، نضبط موقعه قليلاً */
+@media (max-width: 768px) {
+    .language-switcher {
+        top: 10px;
+        right: 10px;
+    }
+}
+
 .lang-btn {
     display: inline-block;
     padding: 8px 16px;
@@ -69,6 +80,7 @@ body {
     border: none;
     font-size: 0.9rem;
     cursor: pointer;
+    line-height: 1.5;
 }
 
 .lang-btn:hover {
@@ -82,9 +94,16 @@ body {
     background: var(--primary-color) !important;
     padding: 15px 0;
     transition: var(--transition);
-    position: sticky;
+    position: fixed; /* نجعله fixed لكي يتحرك مع الشريط */
     top: 0;
+    width: 100%;
     z-index: 9999;
+}
+
+/* عند وجود شريط التجريبي، نضبط top بواسطة JS، وهذا القاعدة كقيمة افتراضية */
+.navbar.fixed-top {
+    top: 50px; /* سيتم تجاوزها بواسطة JS إذا لزم الأمر */
+    transition: top 0.3s ease;
 }
 
 .navbar.scrolled {
@@ -117,6 +136,8 @@ body {
     font-weight: 500;
     padding: 8px 15px !important;
     transition: var(--transition);
+    position: relative;
+    z-index: 2; /* التأكد من أن الروابط قابلة للنقر */
 }
 
 .navbar-nav .nav-link:hover,
@@ -131,12 +152,15 @@ body {
     box-shadow: var(--shadow-lg);
     border-radius: 10px;
     padding: 10px;
+    background: white;
+    z-index: 10002; /* أعلى من الشريط */
 }
 
 .dropdown-item {
     padding: 8px 15px;
     border-radius: 5px;
     transition: var(--transition);
+    color: var(--dark-text);
 }
 
 .dropdown-item:hover {
@@ -156,6 +180,7 @@ body {
     align-items: center;
     position: relative;
     color: white;
+    z-index: 1; /* أسفل النافبار */
 }
 
 .hero-section::before {
@@ -321,6 +346,7 @@ body {
 .footer-section {
     background: var(--primary-color);
     color: white;
+    margin-top: 50px;
 }
 
 .footer-section a {
@@ -398,6 +424,8 @@ body {
         padding: 20px;
         border-radius: 10px;
         margin-top: 10px;
+        max-height: 80vh;
+        overflow-y: auto;
     }
     
     .hero-section h1 {
@@ -407,7 +435,7 @@ body {
 
 @media (max-width: 768px) {
     body {
-        padding-top: 70px;
+        padding-top: 70px; /* زيادة المسافة في الجوال */
     }
     
     .language-switcher {
@@ -519,7 +547,6 @@ body {
 
     .dropdown-menu {
         position: static !important;
-        float: none;
         width: 100%;
         margin-top: 0;
         background-color: rgba(255,255,255,0.1);
@@ -578,12 +605,23 @@ img {
 
 /* حل مشكلة التمرير */
 html, body {
-    overflow: auto !important;
-    height: auto !important;
+    overflow-x: hidden;
+    width: 100%;
+    height: auto;
 }
 
-/* التأكد من عدم وجود عناصر شفافة تغطي الصفحة */
-body > *:not(.language-switcher) {
+/* التأكد من أن جميع الأزرار قابلة للنقر */
+.navbar-nav .nav-link,
+.dropdown-item,
+.btn,
+.hero-buttons .btn,
+.language-switcher .lang-btn {
+    pointer-events: auto !important;
+    cursor: pointer;
+}
+
+/* منع أي عناصر شفافة من التغطية */
+body > *:not(.language-switcher):not(.navbar):not(#trial-banner) {
     pointer-events: auto;
 }
 
@@ -605,18 +643,50 @@ body > *:not(.language-switcher) {
     align-items: center;
     gap: 10px;
     box-sizing: border-box;
+    font-size: 0.9rem;
 }
 
 #trial-banner i {
     font-size: 1.1rem;
 }
 
+/* ضبط المسافة الأساسية للـ body عندما لا يتم ضبطها بواسطة JS */
 body {
-    padding-top: 50px; /* ارتفاع الشريط التقريبي */
+    padding-top: 50px;
 }
 
-/* جعل النافبار يبدأ بعد شريط التجريبي مباشرة */
+/* جعل النافبار يبدأ بعد الشريط مباشرة (سيتم ضبطه بواسطة JS أيضاً) */
 .navbar.fixed-top {
-    top: 50px; /* اضبط القيمة حسب ارتفاع الشريط الفعلي (عادة 50-60px) */
+    top: 50px;
     transition: top 0.3s ease;
+}
+
+/* تحسين ظهور القائمة المنسدلة في الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+    .dropdown-menu {
+        background: rgba(0,0,0,0.9);
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+    .dropdown-item {
+        color: white !important;
+        padding: 10px 20px;
+    }
+    .dropdown-item:hover {
+        background: var(--accent-color);
+        color: var(--primary-color) !important;
+    }
+}
+
+/* حل مشكلة اختفاء الأزرار بسبب التداخل */
+.navbar .navbar-toggler {
+    z-index: 2;
+}
+
+/* تحسين المسافات بين أزرار الهيرو */
+.hero-buttons .btn {
+    margin: 0.5rem;
 }
