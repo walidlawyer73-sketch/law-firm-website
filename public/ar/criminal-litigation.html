@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>القضايا الجنائية - وليد أبوالعلا للمحاماة</title>
+    <meta name="description" content="تمثيل قانوني قوي في القضايا الجنائية بجميع أنواعها: جرائم العنف، جرائم الأموال، جرائم المخدرات، والجرائم الإلكترونية. دفاع شرس وخبرة منذ 2016.">
+    <meta name="keywords" content="محامي جنائي, قضايا جنائية, جرائم عنف, جرائم أموال, مخدرات, جرائم إلكترونية, محامي خبرة, الدفاع الجنائي">
+    <meta name="author" content="وليد أبوالعلا للمحاماة">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="القضايا الجنائية - وليد أبوالعلا للمحاماة">
+    <meta property="og:description" content="تمثيل قانوني قوي في القضايا الجنائية بجميع أنواعها. دفاع شرس وخبرة منذ 2016.">
+    <meta property="og:image" content="/images/logo arb ip.png">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/ar/criminal-litigation.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WQ0CPXRK2F');
+    </script>
+    <style>
+        .language-switcher {
+            position: fixed;
+            top: 70px;
+            left: 20px;
+            z-index: 9999;
+        }
+        .language-switcher .lang-btn {
+            background-color: #0d6efd;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .language-switcher .lang-btn:hover {
+            background-color: #0b5ed7;
+            transform: scale(1.05);
+        }
+        body { padding-top: 70px; }
+        @media (max-width: 768px) {
+            .language-switcher { top: 60px; left: 10px; }
+            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
+        }
+        .dropdown-menu { min-width: 220px; }
+        .criminal-hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); position: relative; overflow: hidden; }
+        .criminal-hero::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('/images/justice-scale.png') no-repeat center center; opacity: 0.05; pointer-events: none; }
+        .stat-card { transition: transform 0.3s ease, box-shadow 0.3s ease; border: none; border-radius: 1rem; }
+        .stat-card:hover { transform: translateY(-5px); box-shadow: 0 1rem 2rem rgba(0,0,0,0.1); }
+        .service-icon { width: 70px; height: 70px; background: #0d6efd10; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; transition: all 0.3s; }
+        .service-card:hover .service-icon { background: #0d6efd; color: white; transform: scale(1.1); }
+        .testimonial-card { border-left: 4px solid #0d6efd; transition: all 0.3s; }
+        .testimonial-card:hover { transform: translateX(-5px); box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1); }
+    </style>
+</head>
+<script>
+(function() {
+    const correctImagePath = '/images/team/walid-profile.jpg';
+    const possibleSelectors = ['img[alt*="وليد"]','img[alt*="Walid"]','.team-card img','img[src*="walid"]','img[src*="team"]'];
+    const imgElement = document.querySelector(possibleSelectors.join(','));
+    if (!imgElement) return;
+    imgElement.onerror = null;
+    const testImg = new Image();
+    testImg.src = correctImagePath;
+    testImg.onload = function() { if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath; };
+})();
+</script>
+<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
+    <i class="fas fa-tools"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools"></i>
+</div>
+<body>
+    <div class="language-switcher">
+        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>
+    </div>
+    <script>
+    (function() {
+        const langLink = document.getElementById('langSwitch');
+        if (!langLink) return;
+        const currentPath = window.location.pathname;
+        if (currentPath.startsWith('/ar/')) {
+            let englishPath = currentPath.replace('/ar', '');
+            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') englishPath = '/';
+            langLink.href = englishPath;
+        } else { langLink.href = '/'; }
+    })();
+    </script>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="/images/logo arb ip.png" alt="وليد أبوالعلا للمحاماة" style="height:45px; width:auto; margin-left:10px;">
+                <div><span class="fw-bold">وليد أبوالعلا للمحاماة</span><small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small></div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">الخدمات</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/ar/arbitration.html">التحكيم الدولي</a></li>
+                            <li><a class="dropdown-item" href="/ar/trademark.html">تسجيل العلامات التجارية</a></li>
+                            <li><a class="dropdown-item" href="/ar/patent.html">براءات الاختراع</a></li>
+                            <li><a class="dropdown-item" href="/ar/copyright.html">حقوق المؤلف</a></li>
+                            <li><a class="dropdown-item" href="/ar/litigation.html">قضايا الملكية الفكرية</a></li>
+                            <li><a class="dropdown-item" href="/ar/corporate-formation.html">تأسيس الشركات</a></li>
+                            <li><a class="dropdown-item" href="/ar/criminal-litigation.html">القضايا الجنائية</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/ar/services.html">جميع الخدمات</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/lawyers.html">فريق العمل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/blog.html">المدونة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/contact.html">اتصل بنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/consultation.html">استشارة مدفوعة</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html"><i class="fas fa-lock me-1"></i>بوابة العميل</a></li>
+                </ul>
+            </div>
+        </div>
+        <script>
+        (function() {
+            const possiblePaths = ['/images/team/walid-profile.jpg','/images/team/walid-abouelela.jpg','/images/walid-profile.jpg','/ar/images/team/walid-profile.jpg','/images/lawyers/walid.jpg'];
+            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
+            if (!imgElement) return;
+            function tryLoadImage(index) {
+                if (index >= possiblePaths.length) return;
+                const testImg = new Image();
+                testImg.src = possiblePaths[index];
+                testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
+                testImg.onerror = function() { tryLoadImage(index + 1); };
+            }
+            tryLoadImage(0);
+        })();
+        </script>
+    </nav>
+
+    <header class="criminal-hero page-header" style="background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 100%); padding: 80px 0; margin-top: 0;">
+        <div class="container text-white text-center position-relative">
+            <h1 class="display-3 fw-bold mb-3 animate__animated animate__fadeInUp">القضايا الجنائية</h1>
+            <p class="lead mb-4">دفاع شرس وحماية الحقوق أمام جميع المحاكم</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#services" class="btn btn-primary btn-lg px-4">خدماتنا</a>
+                <a href="/ar/contact.html" class="btn btn-outline-light btn-lg px-4">استشارة فورية</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <span class="badge bg-primary-soft text-primary mb-3">خبرة جنائية</span>
+                    <h2 class="fw-bold">نحن نحمي حريتك وكرامتك</h2>
+                    <p class="text-muted">فريقنا يمتلك خبرة واسعة في التعامل مع جميع أنواع القضايا الجنائية، من مرحلة التحقيق حتى الطعن بالنقض</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="stat-card bg-white p-4 rounded-4 text-center h-100 shadow-sm">
+                        <i class="fas fa-gavel fa-3x text-primary mb-3"></i>
+                        <h3 class="h2 fw-bold text-primary">9+</h3>
+                        <p class="mb-0">سنوات خبرة في الدفاع الجنائي</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card bg-white p-4 rounded-4 text-center h-100 shadow-sm">
+                        <i class="fas fa-balance-scale fa-3x text-primary mb-3"></i>
+                        <h3 class="h2 fw-bold text-primary">500+</h3>
+                        <p class="mb-0">قضية جنائية تم التعامل معها</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card bg-white p-4 rounded-4 text-center h-100 shadow-sm">
+                        <i class="fas fa-handcuffs fa-3x text-primary mb-3"></i>
+                        <h3 class="h2 fw-bold text-primary">95%</h3>
+                        <p class="mb-0">نسبة نجاح في قضايانا</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <span class="badge bg-primary-soft text-primary mb-3">مجالات خبرتنا</span>
+                    <h2 class="fw-bold">نغطي جميع أنواع القضايا الجنائية</h2>
+                    <p class="text-muted">نقدم دفاعاً قوياً واستراتيجياً في جميع مراحل الدعوى الجنائية</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm transition">
+                        <div class="service-icon mx-auto"><i class="fas fa-fist-raised fa-2x text-primary"></i></div>
+                        <h4>جرائم العنف</h4>
+                        <p class="text-muted">الاعتداء، الضرب، إيذاء العمد، الشروع في القتل، وجميع جرائم العنف الجسدي</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm">
+                        <div class="service-icon mx-auto"><i class="fas fa-money-bill-wave fa-2x text-primary"></i></div>
+                        <h4>جرائم الأموال</h4>
+                        <p class="text-muted">الاختلاس، الرشوة، التزوير، إصدار شيكات بدون رصيد، النصب والاحتيال</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm">
+                        <div class="service-icon mx-auto"><i class="fas fa-cannabis fa-2x text-primary"></i></div>
+                        <h4>جرائم المخدرات</h4>
+                        <p class="text-muted">الاتجار، التعاطي، حيازة المواد المخدرة والمؤثرات العقلية</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm">
+                        <div class="service-icon mx-auto"><i class="fas fa-laptop-code fa-2x text-primary"></i></div>
+                        <h4>الجرائم الإلكترونية</h4>
+                        <p class="text-muted">القرصنة، الاحتيال الإلكتروني، انتهاك الخصوصية، الابتزاز الإلكتروني</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm">
+                        <div class="service-icon mx-auto"><i class="fas fa-car fa-2x text-primary"></i></div>
+                        <h4>جرائم المرور</h4>
+                        <p class="text-muted">الدهس، القيادة تحت تأثير المخدر، الحوادث المميتة، القيادة بدون رخصة</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm">
+                        <div class="service-icon mx-auto"><i class="fas fa-child fa-2x text-primary"></i></div>
+                        <h4>جرائم الأسرة</h4>
+                        <p class="text-muted">العنف الأسري، هروب الأحداث، إهمال الأطفال، جرائم الشرف</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="/images/criminal-defense.jpg" alt="الدفاع الجنائي" class="img-fluid rounded-4 shadow-lg" onerror="this.src='https://via.placeholder.com/600x400?text=Criminal+Defense'">
+                </div>
+                <div class="col-lg-6">
+                    <span class="badge bg-primary-soft text-primary mb-3">كيف نعمل</span>
+                    <h2 class="fw-bold mb-4">خطة دفاع متكاملة</h2>
+                    <div class="d-flex mb-4">
+                        <div class="me-3"><i class="fas fa-search fa-2x text-primary"></i></div>
+                        <div><h5>تحليل القضية</h5><p class="text-muted">ندرس ملف القضية بدقة ونحدد نقاط القوة والضعف</p></div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="me-3"><i class="fas fa-gavel fa-2x text-primary"></i></div>
+                        <div><h5>استراتيجية الدفاع</h5><p class="text-muted">نضع خطة دفاع قانونية متكاملة تناسب ظروف قضيتك</p></div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="me-3"><i class="fas fa-users fa-2x text-primary"></i></div>
+                        <div><h5>تمثيل أمام المحاكم</h5><p class="text-muted">نحضر جميع جلسات المحاكمة وندافع بشراسة عن حقوقك</p></div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="me-3"><i class="fas fa-chart-line fa-2x text-primary"></i></div>
+                        <div><h5>الاستئناف والنقض</h5><p class="text-muted">نطعن في الأحكام غير العادلة أمام محاكم الاستئناف والنقض</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <span class="badge bg-primary-soft text-primary mb-3">شهادات العملاء</span>
+                    <h2 class="fw-bold">ماذا يقول عملاؤنا في القضايا الجنائية؟</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card bg-white p-4 rounded-4 h-100 shadow-sm">
+                        <i class="fas fa-quote-right fa-2x text-primary mb-3 opacity-50"></i>
+                        <p class="mb-4">"فضلًا لفريق وليد أبوالعلا، تم إسقاط التهم عني في قضية خطيرة. دفاع قوي ومهني."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="/images/clients/client1.jpg" alt="عميل" class="rounded-circle me-3" width="50" height="50" onerror="this.src='https://via.placeholder.com/50'">
+                            <div><h6 class="mb-0">م. خالد</h6><small class="text-muted">عميل في قضية جنائية</small></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card bg-white p-4 rounded-4 h-100 shadow-sm">
+                        <i class="fas fa-quote-right fa-2x text-primary mb-3 opacity-50"></i>
+                        <p class="mb-4">"أثناء التحقيق، قدم المحامي استشارات قانونية حاسمة ساعدت في تبرئتي. شكرًا جزيلًا."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="/images/clients/client2.jpg" alt="عميلة" class="rounded-circle me-3" width="50" height="50" onerror="this.src='https://via.placeholder.com/50'">
+                            <div><h6 class="mb-0">ن. هاني</h6><small class="text-muted">عميلة في قضية احتيال</small></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card bg-white p-4 rounded-4 h-100 shadow-sm">
+                        <i class="fas fa-quote-right fa-2x text-primary mb-3 opacity-50"></i>
+                        <p class="mb-4">"سرعة الاستجابة والتفاني في الدفاع جعلاني أشعر بالأمان. أوصي به بشدة."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="/images/clients/client3.jpg" alt="عميل" class="rounded-circle me-3" width="50" height="50" onerror="this.src='https://via.placeholder.com/50'">
+                            <div><h6 class="mb-0">ع. يوسف</h6><small class="text-muted">عميل في قضية عنف</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3">تحتاج دفاعاً قوياً في قضية جنائية؟</h2>
+            <p class="lead mb-4">لا تتردد في الاتصال بنا. فريقنا على أهبة الاستعداد لحماية حقوقك.</p>
+            <a href="/ar/contact.html" class="btn btn-light btn-lg px-5"><i class="fas fa-phone-alt me-2"></i>اتصل بنا الآن</a>
+        </div>
+    </section>
+
+    <footer class="footer-section py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>وليد أبوالعلا للمحاماة</h5>
+                    <p class="text-white-50">متخصصون في التحكيم وحماية الملكية الفكرية بلمسة شخصية منذ 2016.</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-4">روابط سريعة</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/ar/index.html" class="text-white-50">الرئيسية</a></li>
+                        <li class="mb-2"><a href="/ar/about.html" class="text-white-50">من نحن</a></li>
+                        <li class="mb-2"><a href="/ar/services.html" class="text-white-50">الخدمات</a></li>
+                        <li class="mb-2"><a href="/ar/lawyers.html" class="text-white-50">فريق العمل</a></li>
+                        <li class="mb-2"><a href="/ar/blog.html" class="text-white-50">المدونة</a></li>
+                        <li class="mb-2"><a href="/ar/contact.html" class="text-white-50">اتصل بنا</a></li>
+                        <li class="mb-2"><a href="/ar/consultation.html" class="text-white-50">استشارة مدفوعة</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="mb-4">معلومات الاتصال</h6>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، القاهرة، مصر</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
+                        <li class="mb-2"><i class="fas fa-clock me-2"></i> السبت - الخميس: 9 صباحاً - 8 مساءً</li>
+                    </ul>
+                </div>
+                <div class="col-lg-12 mt-3"><hr class="my-3" style="border-color: rgba(255,255,255,0.1);"><div class="row"><div class="col-md-6"><p class="small text-white-50 mb-0">© 2025 وليد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p></div><div class="col-md-6 text-md-end"><a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">سياسة الخصوصية</a><a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">شروط الاستخدام</a><a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">سياسة ملفات تعريف الارتباط</a></div></div></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+    (function() {
+        const possiblePaths = ['/images/team/walid-profile.jpg','/images/team/walid-abouelela.jpg','/images/walid-profile.jpg','/ar/images/team/walid-profile.jpg','/images/lawyers/walid.jpg'];
+        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
+        if (!imgElement) return;
+        function tryLoadImage(index) {
+            if (index >= possiblePaths.length) return;
+            const testImg = new Image();
+            testImg.src = possiblePaths[index];
+            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
+            testImg.onerror = function() { tryLoadImage(index + 1); };
+        }
+        tryLoadImage(0);
+    })();
+    </script>
+    <script>document.addEventListener('DOMContentLoaded', function() { const currentPath = window.location.pathname; document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => { if (link.getAttribute('href') === currentPath) link.classList.add('active'); }); });</script>
+</body>
+</html>
