@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Law Services - Walid Abo Al-Ela Law Firm</title>
+    <meta name="description" content="Compassionate and effective family law representation in divorce, child custody, child support, alimony, adoption, and marital agreements. Trusted since 2016.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WQ0CPXRK2F');
+    </script>
+    <style>
+        .language-switcher {
+            position: fixed;
+            top: 70px;
+            left: 20px;
+            z-index: 9999;
+        }
+        .language-switcher .lang-btn {
+            background-color: #0d6efd;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .language-switcher .lang-btn:hover {
+            background-color: #0b5ed7;
+            transform: scale(1.05);
+        }
+        body { padding-top: 70px; }
+        @media (max-width: 768px) {
+            .language-switcher { top: 60px; left: 10px; }
+            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
+        }
+        .dropdown-menu { min-width: 220px; }
+        .hero-section {
+            background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+        .service-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .icon-bg {
+            width: 80px;
+            height: 80px;
+            background: #e9ecef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: #0d6efd;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<script>
+// حل صورة المحامي (احتياطي)
+(function() {
+    const correctImagePath = '/images/team/walid-profile.jpg';
+    const possibleSelectors = [
+        'img[alt*="وليد"]',
+        'img[alt*="Walid"]',
+        '.team-card img',
+        'img[src*="walid"]',
+        'img[src*="team"]'
+    ];
+    const imgElement = document.querySelector(possibleSelectors.join(','));
+    if (!imgElement) return;
+    imgElement.onerror = null;
+    const testImg = new Image();
+    testImg.src = correctImagePath;
+    testImg.onload = function() {
+        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
+    };
+})();
+</script>
+<!-- Banner تجريبي -->
+<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
+    <i class="fas fa-tools"></i> This is a trial version - site under development and updates <i class="fas fa-tools"></i>
+</div>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> العربية</a>
+    </div>
+    <script>
+    (function() {
+        const langLink = document.getElementById('langSwitch');
+        if (!langLink) return;
+        const currentPath = window.location.pathname;
+        if (!currentPath.startsWith('/ar/')) {
+            let arabicPath;
+            if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
+                arabicPath = '/ar/';
+            } else {
+                arabicPath = '/ar' + currentPath;
+            }
+            langLink.href = arabicPath;
+        } else {
+            langLink.href = '/ar/';
+        }
+    })();
+    </script>
+
+    <!-- Navigation Bar (مثل باقي الصفحات) -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="/images/logo arb ip.png" alt="Walid Abo Al-Ela Law Firm" style="height:45px; width:auto; margin-right:10px;">
+                <div>
+                    <span class="fw-bold">Walid Abo Al-Ela Law Firm</span>
+                    <small class="d-block" style="font-size:16px; opacity:0.9; margin-top:5px; font-weight:500;">For Arbitration and Intellectual Property</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
+                            <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
+                            <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
+                            <li><a class="dropdown-item" href="/copyright.html">Copyright</a></li>
+                            <li><a class="dropdown-item" href="/litigation.html">IP Litigation</a></li>
+                            <li><a class="dropdown-item" href="/corporate-formation.html">Corporate Formation</a></li>
+                            <li><a class="dropdown-item" href="/criminal-litigation.html">Criminal Litigation</a></li>
+                            <li><a class="dropdown-item" href="/family-law.html">Family Law</a></li>
+                            <li><a class="dropdown-item" href="/economic-cases.html">Economic Cases</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/services.html">All Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/consultation.html">Paid Consultation</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html"><i class="fas fa-lock me-1"></i>Client Portal</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script>
+        // حل إضافي لصورة المحامي
+        (function() {
+            const possiblePaths = [
+                '/images/team/walid-profile.jpg',
+                '/images/team/walid-abouelela.jpg',
+                '/images/walid-profile.jpg',
+                '/ar/images/team/walid-profile.jpg',
+                '/images/lawyers/walid.jpg'
+            ];
+            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
+            if (!imgElement) return;
+            function tryLoadImage(index) {
+                if (index >= possiblePaths.length) return;
+                const testImg = new Image();
+                testImg.src = possiblePaths[index];
+                testImg.onload = function() {
+                    imgElement.src = possiblePaths[index];
+                    imgElement.onerror = null;
+                };
+                testImg.onerror = function() {
+                    tryLoadImage(index + 1);
+                };
+            }
+            tryLoadImage(0);
+        })();
+        </script>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Family Law</h1>
+            <p class="lead">Compassionate legal support for you and your family</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center mb-5">Our Family Law Services</h2>
+                    <div class="row g-4">
+                        <!-- Divorce -->
+                        <div class="col-md-6">
+                            <div class="service-card bg-white p-4 shadow-sm h-100">
+                                <div class="icon-bg"><i class="fas fa-heart-broken fa-2x"></i></div>
+                                <h4>Divorce</h4>
+                                <p>Expert representation in all types of divorce proceedings, including contested and uncontested cases.</p>
+                            </div>
+                        </div>
+                        <!-- Child Custody -->
+                        <div class="col-md-6">
+                            <div class="service-card bg-white p-4 shadow-sm h-100">
+                                <div class="icon-bg"><i class="fas fa-child fa-2x"></i></div>
+                                <h4>Child Custody</h4>
+                                <p>Negotiating and litigating custody arrangements that prioritize the best interests of the child.</p>
+                            </div>
+                        </div>
+                        <!-- Child Support -->
+                        <div class="col-md-6">
+                            <div class="service-card bg-white p-4 shadow-sm h-100">
+                                <div class="icon-bg"><i class="fas fa-money-bill-wave fa-2x"></i></div>
+                                <h4>Child Support</h4>
+                                <p>Establishing and modifying child support obligations to ensure fair financial support.</p>
+                            </div>
+                        </div>
+                        <!-- Alimony -->
+                        <div class="col-md-6">
+                            <div class="service-card bg-white p-4 shadow-sm h-100">
+                                <div class="icon-bg"><i class="fas fa-hand-holding-heart fa-2x"></i></div>
+                                <h4>Alimony (Spousal Support)</h4>
+                                <p>Securing fair spousal support arrangements during and after divorce.</p>
+                            </div>
+                        </div>
+                        <!-- Paternity -->
+                        <div class="col-md-6">
+                            <div class="service-card bg-white p-4 shadow-sm h-100">
+                                <div class="icon-bg"><i class="fas fa-dna fa-2x"></i></div>
+                                <h4>Paternity</h4>
+                                <p>Establishing paternity and related rights and obligations.</p>
+                            </div>
+                        </div>
+                        <!-- Guardianship -->
+                        <div class="col-md-6">
+                            <div class="service-card bg-white p-4 shadow-sm h-100">
+                                <div class="icon-bg"><i class="fas fa-user-shield fa-2x"></i></div>
+                                <h4>Guardianship</h4>
+                                <p>Appointment of guardians for minors or incapacitated adults.</p>
+                            </div>
+                        </div>
+                        <!-- Adoption -->
+                        <div class="col-md-6">
+                            <div class="service-card bg-white p-4 shadow-sm h-100">
+                                <div class="icon-bg"><i class="fas fa-hand-holding-heart fa-2x"></i></div>
+                                <h4>Adoption</h4>
+                                <p>Assisting with the legal process of adoption.</p>
+                            </div>
+                        </div>
+                        <!-- Marital Agreements -->
+                        <div class="col-md-6">
+                            <div class="service-card bg-white p-4 shadow-sm h-100">
+                                <div class="icon-bg"><i class="fas fa-file-signature fa-2x"></i></div>
+                                <h4>Marital Agreements</h4>
+                                <p>Drafting prenuptial and postnuptial agreements.</p>
+                            </div>
+                        </div>
+                        <!-- Domestic Violence -->
+                        <div class="col-md-12">
+                            <div class="service-card bg-white p-4 shadow-sm h-100">
+                                <div class="icon-bg"><i class="fas fa-shield-alt fa-2x"></i></div>
+                                <h4>Domestic Violence</h4>
+                                <p>Obtaining protection orders and other remedies for victims of domestic violence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose Our Family Law Team?</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <i class="fas fa-heart fa-3x text-primary mb-3"></i>
+                    <h5>Compassionate Approach</h5>
+                    <p>We understand the sensitivity of family matters and handle your case with care.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-gavel fa-3x text-primary mb-3"></i>
+                    <h5>Experienced Representation</h5>
+                    <p>Years of experience in family courts with a proven track record.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
+                    <h5>Amicable Resolution</h5>
+                    <p>We strive for amicable solutions, but we are ready to litigate when necessary.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h3>Need legal assistance with a family matter?</h3>
+            <p class="lead mb-4">Contact us today for a confidential consultation.</p>
+            <a href="/contact.html" class="btn btn-light btn-lg">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer (نفس الموجود في الموقع) -->
+    <footer class="footer-section py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>Walid Abo Al-Ela Law Firm</h5>
+                    <p class="text-white-50">Specialized in arbitration and intellectual property protection with a personal touch since 2016.</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-4">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/about.html" class="text-white-50 text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="/services.html" class="text-white-50 text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="/lawyers.html" class="text-white-50 text-decoration-none">Our Team</a></li>
+                        <li class="mb-2"><a href="/blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="/consultation.html" class="text-white-50 text-decoration-none">Paid Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="mb-4">Contact Info</h6>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
+                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Sat - Thu: 9am - 8pm</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="small text-white-50 mb-0">© 2025 Walid Abo Al-Ela Law Firm. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
+                    <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">Terms of Use</a>
+                    <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        // تحديد الرابط النشط
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
+                if (link.getAttribute('href') === currentPath) link.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
