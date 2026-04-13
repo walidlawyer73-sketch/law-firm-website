@@ -1,20 +1,13 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>القضايا المدنية - وليد أبوالعلا للمحاماة</title>
-    <meta name="description" content="تمثيل قانوني متخصص في القضايا المدنية: العقود، الملكية، التعويضات، تحصيل الديون، والميراث. خبرة منذ 2016.">
-    <meta name="keywords" content="محامي مدني, قضايا مدنية, عقود, ملكية, تعويضات, ديون, ميراث">
-    <meta name="author" content="وليد أبوالعلا للمحاماة">
+    <title>Civil Litigation - Walid Abo Al-Ela Law Firm</title>
+    <meta name="description" content="Comprehensive civil litigation services in Egypt. Contract disputes, property disputes, tort claims, debt recovery, inheritance, and more. Experienced representation since 2016.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
-    <meta property="og:title" content="القضايا المدنية - وليد أبوالعلا للمحاماة">
-    <meta property="og:description" content="تمثيل قانوني متخصص في القضايا المدنية. خبرة منذ 2016.">
-    <meta property="og:image" content="/images/logo arb ip.png">
-    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/ar/civil-litigation.html">
-    <meta property="og:type" content="website">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -23,155 +16,301 @@
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
     <style>
-        .language-switcher { position: fixed; top: 70px; left: 20px; z-index: 9999; }
-        .language-switcher .lang-btn { background-color: #0d6efd; color: white; padding: 8px 16px; border-radius: 30px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: 0.3s; display: inline-block; }
-        .language-switcher .lang-btn:hover { background-color: #0b5ed7; transform: scale(1.05); }
+        .language-switcher {
+            position: fixed;
+            top: 70px;
+            left: 20px;
+            z-index: 9999;
+        }
+        .language-switcher .lang-btn {
+            background-color: #0d6efd;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .language-switcher .lang-btn:hover {
+            background-color: #0b5ed7;
+            transform: scale(1.05);
+        }
         body { padding-top: 70px; }
-        @media (max-width: 768px) { .language-switcher { top: 60px; left: 10px; } .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; } }
+        @media (max-width: 768px) {
+            .language-switcher { top: 60px; left: 10px; }
+            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
+        }
         .dropdown-menu { min-width: 220px; }
-        .civil-hero { background: linear-gradient(135deg, #1a2a3a 0%, #0f1a24 100%); }
-        .stat-card { transition: transform 0.3s ease; border: none; border-radius: 1rem; }
-        .stat-card:hover { transform: translateY(-5px); box-shadow: 0 1rem 2rem rgba(0,0,0,0.1); }
-        .service-icon { width: 70px; height: 70px; background: #0d6efd10; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; transition: all 0.3s; }
-        .service-card:hover .service-icon { background: #0d6efd; color: white; transform: scale(1.1); }
     </style>
 </head>
 <script>
 (function() {
     const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = ['img[alt*="وليد"]','img[alt*="Walid"]','.team-card img','img[src*="walid"]','img[src*="team"]'];
+    const possibleSelectors = [
+        'img[alt*="وليد"]',
+        'img[alt*="Walid"]',
+        '.team-card img',
+        'img[src*="walid"]',
+        'img[src*="team"]'
+    ];
     const imgElement = document.querySelector(possibleSelectors.join(','));
     if (!imgElement) return;
     imgElement.onerror = null;
     const testImg = new Image();
     testImg.src = correctImagePath;
-    testImg.onload = function() { if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath; };
+    testImg.onload = function() {
+        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
+    };
 })();
 </script>
 <div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools"></i>
+    <i class="fas fa-tools"></i> This is a trial version - site under development and updates <i class="fas fa-tools"></i>
 </div>
 <body>
-    <div class="language-switcher"><a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a></div>
+    <div class="language-switcher">
+        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> العربية</a>
+    </div>
     <script>
     (function() {
         const langLink = document.getElementById('langSwitch');
         if (!langLink) return;
         const currentPath = window.location.pathname;
-        if (currentPath.startsWith('/ar/')) {
-            let englishPath = currentPath.replace('/ar', '');
-            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') englishPath = '/';
-            langLink.href = englishPath;
-        } else { langLink.href = '/'; }
+        if (!currentPath.startsWith('/ar/')) {
+            let arabicPath;
+            if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
+                arabicPath = '/ar/';
+            } else {
+                arabicPath = '/ar' + currentPath;
+            }
+            langLink.href = arabicPath;
+        } else {
+            langLink.href = '/ar/';
+        }
     })();
     </script>
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="/images/logo arb ip.png" alt="وليد أبوالعلا للمحاماة" style="height:45px; width:auto; margin-left:10px;"><div><span class="fw-bold">وليد أبوالعلا للمحاماة</span><small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small></div></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="index.html">
+                <img src="/images/logo arb ip.png" alt="Walid Abo Al-Ela Law Firm" style="height:45px; width:auto; margin-right:10px;">
+                <div>
+                    <span class="fw-bold">Walid Abo Al-Ela Law Firm</span>
+                    <small class="d-block" style="font-size:16px; opacity:0.9; margin-top:5px; font-weight:500;">For Arbitration and Intellectual Property</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">الخدمات</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/ar/arbitration.html">التحكيم الدولي</a></li>
-                            <li><a class="dropdown-item" href="/ar/trademark.html">تسجيل العلامات التجارية</a></li>
-                            <li><a class="dropdown-item" href="/ar/patent.html">براءات الاختراع</a></li>
-                            <li><a class="dropdown-item" href="/ar/copyright.html">حقوق المؤلف</a></li>
-                            <li><a class="dropdown-item" href="/ar/litigation.html">قضايا الملكية الفكرية</a></li>
-                            <li><a class="dropdown-item" href="/ar/corporate-formation.html">تأسيس الشركات</a></li>
-                            <li><a class="dropdown-item" href="/ar/criminal-litigation.html">القضايا الجنائية</a></li>
-                            <li><a class="dropdown-item" href="/ar/civil-litigation.html">القضايا المدنية</a></li>
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
+                            <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
+                            <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
+                            <li><a class="dropdown-item" href="/copyright.html">Copyright</a></li>
+                            <li><a class="dropdown-item" href="/litigation.html">IP Litigation</a></li>
+                            <li><a class="dropdown-item" href="/corporate-formation.html">Corporate Formation</a></li>
+                            <li><a class="dropdown-item" href="/criminal-litigation.html">Criminal Litigation</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/ar/services.html">جميع الخدمات</a></li>
+                            <li><a class="dropdown-item" href="/services.html">All Services</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/lawyers.html">فريق العمل</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/blog.html">المدونة</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/contact.html">اتصل بنا</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/consultation.html">استشارة مدفوعة</a></li>
-                    <li class="nav-item ms-lg-3"><a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html"><i class="fas fa-lock me-1"></i>بوابة العميل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/consultation.html">Paid Consultation</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html"><i class="fas fa-lock me-1"></i>Client Portal</a>
+                    </li>
                 </ul>
             </div>
         </div>
         <script>
         (function() {
-            const possiblePaths = ['/images/team/walid-profile.jpg','/images/team/walid-abouelela.jpg','/images/walid-profile.jpg','/ar/images/team/walid-profile.jpg','/images/lawyers/walid.jpg'];
+            const possiblePaths = [
+                '/images/team/walid-profile.jpg',
+                '/images/team/walid-abouelela.jpg',
+                '/images/walid-profile.jpg',
+                '/ar/images/team/walid-profile.jpg',
+                '/images/lawyers/walid.jpg'
+            ];
             const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
             if (!imgElement) return;
             function tryLoadImage(index) {
                 if (index >= possiblePaths.length) return;
                 const testImg = new Image();
                 testImg.src = possiblePaths[index];
-                testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-                testImg.onerror = function() { tryLoadImage(index + 1); };
+                testImg.onload = function() {
+                    imgElement.src = possiblePaths[index];
+                    imgElement.onerror = null;
+                };
+                testImg.onerror = function() {
+                    tryLoadImage(index + 1);
+                };
             }
             tryLoadImage(0);
         })();
         </script>
     </nav>
 
-    <header class="civil-hero page-header" style="padding: 80px 0; margin-top: 0; background: linear-gradient(135deg, #0b2b3b, #1a4a5a);">
+    <header class="page-header">
         <div class="container text-white text-center">
-            <h1 class="display-3 fw-bold mb-3">القضايا المدنية</h1>
-            <p class="lead mb-4">حماية حقوقك في العقود، الملكية، والتعويضات</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#services" class="btn btn-primary btn-lg px-4">خدماتنا</a>
-                <a href="/ar/contact.html" class="btn btn-outline-light btn-lg px-4">استشارة مجانية</a>
-            </div>
+            <h1 class="display-4">Civil Litigation</h1>
+            <p class="lead">Comprehensive representation in civil disputes</p>
         </div>
     </header>
 
-    <section class="py-5 bg-light">
+    <section class="py-5">
         <div class="container">
-            <div class="row text-center mb-5">
+            <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <span class="badge bg-primary-soft text-primary mb-3">خبرة مدنية</span>
-                    <h2 class="fw-bold">نحن ندافع عن حقوقك المدنية</h2>
-                    <p class="text-muted">نقدم تمثيلاً قانونياً متخصصاً في جميع أنواع القضايا المدنية أمام المحاكم المصرية.</p>
+                    <h2>Resolving Civil Disputes Effectively</h2>
+                    <p>Civil disputes can arise in various aspects of life and business. Our civil litigation practice provides comprehensive representation in a wide range of civil matters before Egyptian courts, ensuring your rights are protected and your interests are advanced.</p>
                 </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4"><div class="stat-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><i class="fas fa-file-contract fa-3x text-primary mb-3"></i><h3 class="h2 fw-bold text-primary">800+</h3><p class="mb-0">قضية مدنية تم التعامل معها</p></div></div>
-                <div class="col-md-4"><div class="stat-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><i class="fas fa-hand-holding-usd fa-3x text-primary mb-3"></i><h3 class="h2 fw-bold text-primary">100M+</h3><p class="mb-0">قيمة التعويضات المحصلة (جنيه)</p></div></div>
-                <div class="col-md-4"><div class="stat-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><i class="fas fa-gavel fa-3x text-primary mb-3"></i><h3 class="h2 fw-bold text-primary">98%</h3><p class="mb-0">نسبة نجاح في قضايانا</p></div></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-5">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-lg-8 mx-auto">
-                    <span class="badge bg-primary-soft text-primary mb-3">مجالات خبرتنا</span>
-                    <h2 class="fw-bold">نغطي جميع أنواع القضايا المدنية</h2>
-                    <p class="text-muted">فريقنا يمتلك الخبرة اللازمة لحماية حقوقك في كافة المنازعات المدنية.</p>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4"><div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><div class="service-icon mx-auto"><i class="fas fa-file-signature fa-2x text-primary"></i></div><h4>منازعات العقود</h4><p class="text-muted">الإخلال بالعقود، التنفيذ العيني، الفسخ، التعويضات.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><div class="service-icon mx-auto"><i class="fas fa-home fa-2x text-primary"></i></div><h4>منازعات الملكية</h4><p class="text-muted">نزاعات الملكية، الحدود، الشفعة، الحيازة.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><div class="service-icon mx-auto"><i class="fas fa-hand-holding-usd fa-2x text-primary"></i></div><h4>تحصيل الديون</h4><p class="text-muted">المطالبة بالديون، الأوراق التجارية، التنفيذ الجبري.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><div class="service-icon mx-auto"><i class="fas fa-car-crash fa-2x text-primary"></i></div><h4>دعاوى التعويض</h4><p class="text-muted">التعويض عن الأضرار المادية والأدبية.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><div class="service-icon mx-auto"><i class="fas fa-chalkboard-user fa-2x text-primary"></i></div><h4>قضايا الميراث</h4><p class="text-muted">تقسيم التركات، الوصايا، توزيع الأنصبة الشرعية.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><div class="service-icon mx-auto"><i class="fas fa-building fa-2x text-primary"></i></div><h4>النزاعات التجارية</h4><p class="text-muted">نزاعات الشراكة، المساهمين، العقود التجارية.</p></div></div>
             </div>
         </div>
     </section>
 
     <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Civil Litigation Services Include</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center p-3">
+                        <i class="fas fa-file-contract fa-3x text-primary mb-3"></i>
+                        <h5>Contract Disputes</h5>
+                        <p>Breach of contract, specific performance, and damages claims.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-3">
+                        <i class="fas fa-home fa-3x text-primary mb-3"></i>
+                        <h5>Property Disputes</h5>
+                        <p>Ownership disputes, boundary conflicts, and landlord-tenant issues.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-3">
+                        <i class="fas fa-car-crash fa-3x text-primary mb-3"></i>
+                        <h5>Tort Claims</h5>
+                        <p>Personal injury, defamation, and negligence cases.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-3">
+                        <i class="fas fa-money-bill-wave fa-3x text-primary mb-3"></i>
+                        <h5>Debt Recovery</h5>
+                        <p>Collection of outstanding debts and enforcement of payment obligations.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-3">
+                        <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
+                        <h5>Commercial Disputes</h5>
+                        <p>Partnership disputes, shareholder conflicts, and business torts.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-3">
+                        <i class="fas fa-building fa-3x text-primary mb-3"></i>
+                        <h5>Construction Disputes</h5>
+                        <p>Claims related to construction contracts and defects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0"><img src="/images/civil-litigation.jpg" alt="القضايا المدنية" class="img-fluid rounded-4 shadow-lg" onerror="this.src='https://via.placeholder.com/600x400?text=Civil+Litigation'"></div>
                 <div class="col-lg-6">
-                    <span class="badge bg-primary-soft text-primary mb-3">كيف نعمل</span>
-                    <h2 class="fw-bold mb-4">خطوات التقاضي المدني</h2>
-                    <div class="d-flex mb-4"><div class="me-3"><i class="fas fa-search fa-2x text-primary"></i></div><div><h5>دراسة القضية</h5><p class="text-muted">نحلل قضيتك بدقة ونضع خطة عمل.</p></div></div>
-                    <div class="d-flex mb-4"><div class="me-3"><i class="fas fa-file-alt fa-2x text-primary"></i></div><div><h5>إعداد المذكرات</h5><p class="text-muted">نصيغ المذكرات القانونية والأدلة.</p></div></div>
-                    <div class="d-flex mb-4"><div class="me-3"><i class="fas fa-gavel fa-2x text-primary"></i></div><div><h5>التمثيل أمام المحكمة</h5><p class="text-muted">نحضر الجلسات وندافع عن حقوقك.</p></div></div>
-                    <div class="d-flex"><div class="me-3"><i class="fas fa-chart-line fa-2x text-primary"></i></div><div><h5>تنفيذ الأحكام</h5><p class="text-muted">نتابع تنفيذ الأحكام لصالحك.</p></div></div>
+                    <h2>Our Strategic Approach</h2>
+                    <p>We combine strategic thinking with deep procedural knowledge to achieve the best possible outcomes for our clients. From pre-litigation counseling to appeals, we provide clear advice and vigorous representation.</p>
+                    <p>With years of courtroom experience and a track record of success, we are well-equipped to handle even the most complex civil litigation matters. We are committed to protecting your rights and achieving favorable results.</p>
+                    <div class="alert alert-primary mt-4">
+                        <i class="fas fa-chart-line me-2"></i> <strong>90% of our civil cases are resolved successfully</strong> – either through favorable settlements or court judgments.
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/images/civil-litigation.jpg" alt="Civil Litigation" class="img-fluid rounded-4 shadow" onerror="this.src='https://via.placeholder.com/600x400?text=Civil+Litigation'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <h2 class="display-4 fw-bold">200+</h2>
+                    <p>Civil Cases Handled</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h2 class="display-4 fw-bold">92%</h2>
+                    <p>Settlement Success Rate</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h2 class="display-4 fw-bold">9+</h2>
+                    <p>Years Experience</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h2 class="display-4 fw-bold">24/7</h2>
+                    <p>Client Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How long does a civil lawsuit take?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    The duration varies depending on the complexity of the case, the court's schedule, and whether a settlement is reached. We strive to resolve matters efficiently.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Do I need a lawyer for a small claims case?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    While not always required, having a lawyer can significantly improve your chances of success and ensure you understand your rights and obligations.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Can we settle a civil dispute without going to court?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we always explore alternative dispute resolution methods such as negotiation and mediation to reach a favorable settlement without the need for litigation.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -179,19 +318,60 @@
 
     <section class="py-5 bg-primary text-white">
         <div class="container text-center">
-            <h2 class="fw-bold mb-3">تحتاج مساعدة في قضية مدنية؟</h2>
-            <p class="lead mb-4">احصل على استشارة قانونية متخصصة اليوم.</p>
-            <a href="/ar/contact.html" class="btn btn-light btn-lg px-5"><i class="fas fa-phone-alt me-2"></i>اتصل بنا الآن</a>
+            <h2 class="mb-4">Need to resolve a civil dispute?</h2>
+            <p class="lead mb-4">Contact our civil litigation team for a confidential consultation.</p>
+            <a href="/contact.html" class="btn btn-light btn-lg">Contact Us Now</a>
         </div>
     </section>
 
+    <!-- Footer (مطابق للصفحات السابقة) -->
     <footer class="footer-section py-5 bg-dark text-white">
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5"><h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>وليد أبوالعلا للمحاماة</h5><p class="text-white-50">متخصصون في التحكيم وحماية الملكية الفكرية بلمسة شخصية منذ 2016.</p><div class="social-links mt-3"><a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank"><i class="fab fa-facebook"></i></a><a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank"><i class="fab fa-linkedin"></i></a><a href="https://wa.me/20111257219" target="_blank"><i class="fab fa-whatsapp"></i></a><a href="https://t.me/+20111257219" target="_blank"><i class="fab fa-telegram"></i></a></div></div>
-                <div class="col-lg-3"><h6 class="mb-4">روابط سريعة</h6><ul class="list-unstyled"><li class="mb-2"><a href="/ar/index.html" class="text-white-50">الرئيسية</a></li><li class="mb-2"><a href="/ar/about.html" class="text-white-50">من نحن</a></li><li class="mb-2"><a href="/ar/services.html" class="text-white-50">الخدمات</a></li><li class="mb-2"><a href="/ar/lawyers.html" class="text-white-50">فريق العمل</a></li><li class="mb-2"><a href="/ar/blog.html" class="text-white-50">المدونة</a></li><li class="mb-2"><a href="/ar/contact.html" class="text-white-50">اتصل بنا</a></li><li class="mb-2"><a href="/ar/consultation.html" class="text-white-50">استشارة مدفوعة</a></li></ul></div>
-                <div class="col-lg-4"><h6 class="mb-4">معلومات الاتصال</h6><ul class="list-unstyled text-white-50"><li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، القاهرة، مصر</li><li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li><li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li><li class="mb-2"><i class="fas fa-clock me-2"></i> السبت - الخميس: 9 صباحاً - 8 مساءً</li></ul></div>
-                <div class="col-lg-12 mt-3"><hr class="my-3" style="border-color: rgba(255,255,255,0.1);"><div class="row"><div class="col-md-6"><p class="small text-white-50 mb-0">© 2025 وليد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p></div><div class="col-md-6 text-md-end"><a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">سياسة الخصوصية</a><a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">شروط الاستخدام</a><a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">سياسة ملفات تعريف الارتباط</a></div></div></div>
+                <div class="col-lg-5">
+                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>Walid Abo Al-Ela Law Firm</h5>
+                    <p class="text-white-50">Specialized in arbitration and intellectual property protection with a personal touch since 2016.</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="mb-4">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/about.html" class="text-white-50 text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="/services.html" class="text-white-50 text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="/lawyers.html" class="text-white-50 text-decoration-none">Our Team</a></li>
+                        <li class="mb-2"><a href="/blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="/consultation.html" class="text-white-50 text-decoration-none">Paid Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="mb-4">Contact Info</h6>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
+                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Sat - Thu: 9am - 8pm</li>
+                    </ul>
+                </div>
+                <div class="col-lg-12 mt-3">
+                    <hr class="my-3" style="border-color: rgba(255,255,255,0.1);">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="small text-white-50 mb-0">© 2025 Walid Abo Al-Ela Law Firm. All rights reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
+                            <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">Terms of Use</a>
+                            <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">Cookie Policy</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
@@ -199,8 +379,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
+                if (link.getAttribute('href') === currentPath) link.classList.add('active');
+            });
+        });
+    </script>
+    <script>
     (function() {
-        const possiblePaths = ['/images/team/walid-profile.jpg','/images/team/walid-abouelela.jpg','/images/walid-profile.jpg','/ar/images/team/walid-profile.jpg','/images/lawyers/walid.jpg'];
+        const possiblePaths = [
+            '/images/team/walid-profile.jpg',
+            '/images/team/walid-abouelela.jpg',
+            '/images/walid-profile.jpg',
+            '/ar/images/team/walid-profile.jpg',
+            '/images/lawyers/walid.jpg'
+        ];
         const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
         if (!imgElement) return;
         function tryLoadImage(index) {
@@ -213,6 +407,5 @@
         tryLoadImage(0);
     })();
     </script>
-    <script>document.addEventListener('DOMContentLoaded', function() { const currentPath = window.location.pathname; document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => { if (link.getAttribute('href') === currentPath) link.classList.add('active'); }); });</script>
 </body>
 </html>

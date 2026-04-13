@@ -4,18 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criminal Litigation - Walid Abo Al-Ela Law Firm</title>
-    <meta name="description" content="Aggressive criminal defense representation for all types of criminal cases: violent crimes, financial crimes, drug offenses, cyber crimes, and more. Since 2016.">
-    <meta name="keywords" content="criminal lawyer, criminal defense, violent crimes, financial crimes, drug offenses, cyber crimes, experienced attorney">
-    <meta name="author" content="Walid Abo Al-Ela Law Firm">
+    <meta name="description" content="Experienced criminal defense representation in Egypt. Pre-trial, trial, appeals, white-collar crime, drug offenses, and more. Protecting your rights since 2016.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
-    <meta property="og:title" content="Criminal Litigation - Walid Abo Al-Ela Law Firm">
-    <meta property="og:description" content="Aggressive criminal defense representation for all types of criminal cases. Since 2016.">
-    <meta property="og:image" content="/images/logo arb ip.png">
-    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/criminal-litigation.html">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -24,66 +17,105 @@
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
     <style>
-        .language-switcher { position: fixed; top: 70px; left: 20px; z-index: 9999; }
-        .language-switcher .lang-btn { background-color: #0d6efd; color: white; padding: 8px 16px; border-radius: 30px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: 0.3s; display: inline-block; }
-        .language-switcher .lang-btn:hover { background-color: #0b5ed7; transform: scale(1.05); }
+        .language-switcher {
+            position: fixed;
+            top: 70px;
+            left: 20px;
+            z-index: 9999;
+        }
+        .language-switcher .lang-btn {
+            background-color: #0d6efd;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .language-switcher .lang-btn:hover {
+            background-color: #0b5ed7;
+            transform: scale(1.05);
+        }
         body { padding-top: 70px; }
-        @media (max-width: 768px) { .language-switcher { top: 60px; left: 10px; } .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; } }
+        @media (max-width: 768px) {
+            .language-switcher { top: 60px; left: 10px; }
+            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
+        }
         .dropdown-menu { min-width: 220px; }
-        .criminal-hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); position: relative; overflow: hidden; }
-        .criminal-hero::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('/images/justice-scale.png') no-repeat center center; opacity: 0.05; pointer-events: none; }
-        .stat-card { transition: transform 0.3s ease, box-shadow 0.3s ease; border: none; border-radius: 1rem; }
-        .stat-card:hover { transform: translateY(-5px); box-shadow: 0 1rem 2rem rgba(0,0,0,0.1); }
-        .service-icon { width: 70px; height: 70px; background: #0d6efd10; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; transition: all 0.3s; }
-        .service-card:hover .service-icon { background: #0d6efd; color: white; transform: scale(1.1); }
-        .testimonial-card { border-left: 4px solid #0d6efd; transition: all 0.3s; }
-        .testimonial-card:hover { transform: translateX(-5px); box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1); }
     </style>
 </head>
 <script>
+// حل احتياطي لصورة المحامي
 (function() {
     const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = ['img[alt*="وليد"]','img[alt*="Walid"]','.team-card img','img[src*="walid"]','img[src*="team"]'];
+    const possibleSelectors = [
+        'img[alt*="وليد"]',
+        'img[alt*="Walid"]',
+        '.team-card img',
+        'img[src*="walid"]',
+        'img[src*="team"]'
+    ];
     const imgElement = document.querySelector(possibleSelectors.join(','));
     if (!imgElement) return;
     imgElement.onerror = null;
     const testImg = new Image();
     testImg.src = correctImagePath;
-    testImg.onload = function() { if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath; };
+    testImg.onload = function() {
+        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
+    };
 })();
 </script>
+<!-- Banner تجريبي -->
 <div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
     <i class="fas fa-tools"></i> This is a trial version - site under development and updates <i class="fas fa-tools"></i>
 </div>
 <body>
+    <!-- Language Switcher -->
     <div class="language-switcher">
         <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> العربية</a>
     </div>
+
     <script>
     (function() {
         const langLink = document.getElementById('langSwitch');
         if (!langLink) return;
         const currentPath = window.location.pathname;
         if (!currentPath.startsWith('/ar/')) {
-            let arabicPath = (currentPath === '/' || currentPath === '/index.html' || currentPath === '') ? '/ar/' : '/ar' + currentPath;
+            let arabicPath;
+            if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
+                arabicPath = '/ar/';
+            } else {
+                arabicPath = '/ar' + currentPath;
+            }
             langLink.href = arabicPath;
-        } else { langLink.href = '/ar/'; }
+        } else {
+            langLink.href = '/ar/';
+        }
     })();
     </script>
+
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="/images/logo arb ip.png" alt="Walid Abo Al-Ela Law Firm" style="height:45px; width:auto; margin-right:10px;">
-                <div><span class="fw-bold">Walid Abo Al-Ela Law Firm</span><small class="d-block" style="font-size:16px; opacity:0.9; margin-top:5px; font-weight:500;">For Arbitration and Intellectual Property</small></div>
+                <div>
+                    <span class="fw-bold">Walid Abo Al-Ela Law Firm</span>
+                    <small class="d-block" style="font-size:16px; opacity:0.9; margin-top:5px; font-weight:500;">For Arbitration and Intellectual Property</small>
+                </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
                             <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
                             <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
                             <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
@@ -99,115 +131,218 @@
                     <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="/consultation.html">Paid Consultation</a></li>
-                    <li class="nav-item ms-lg-3"><a class="btn btn-outline-light btn-sm" href="/client-portal.html"><i class="fas fa-lock me-1"></i>Client Portal</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html"><i class="fas fa-lock me-1"></i>Client Portal</a>
+                    </li>
                 </ul>
             </div>
         </div>
         <script>
+        // نسخة احتياطية أخرى لصورة المحامي
         (function() {
-            const possiblePaths = ['/images/team/walid-profile.jpg','/images/team/walid-abouelela.jpg','/images/walid-profile.jpg','/ar/images/team/walid-profile.jpg','/images/lawyers/walid.jpg'];
+            const possiblePaths = [
+                '/images/team/walid-profile.jpg',
+                '/images/team/walid-abouelela.jpg',
+                '/images/walid-profile.jpg',
+                '/ar/images/team/walid-profile.jpg',
+                '/images/lawyers/walid.jpg'
+            ];
             const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
             if (!imgElement) return;
             function tryLoadImage(index) {
                 if (index >= possiblePaths.length) return;
                 const testImg = new Image();
                 testImg.src = possiblePaths[index];
-                testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-                testImg.onerror = function() { tryLoadImage(index + 1); };
+                testImg.onload = function() {
+                    imgElement.src = possiblePaths[index];
+                    imgElement.onerror = null;
+                };
+                testImg.onerror = function() {
+                    tryLoadImage(index + 1);
+                };
             }
             tryLoadImage(0);
         })();
         </script>
     </nav>
 
-    <header class="criminal-hero page-header" style="background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 100%); padding: 80px 0; margin-top: 0;">
+    <!-- Page Header -->
+    <header class="page-header">
         <div class="container text-white text-center">
-            <h1 class="display-3 fw-bold mb-3">Criminal Litigation</h1>
-            <p class="lead mb-4">Aggressive defense and protection of rights in all courts</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#services" class="btn btn-primary btn-lg px-4">Our Services</a>
-                <a href="/contact.html" class="btn btn-outline-light btn-lg px-4">Free Consultation</a>
-            </div>
+            <h1 class="display-4">Criminal Litigation</h1>
+            <p class="lead">Vigorous defense representation in criminal cases at all court levels</p>
         </div>
     </header>
 
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-lg-8 mx-auto">
-                    <span class="badge bg-primary-soft text-primary mb-3">Criminal Expertise</span>
-                    <h2 class="fw-bold">We Protect Your Freedom and Dignity</h2>
-                    <p class="text-muted">Our team has extensive experience handling all types of criminal cases, from investigation to appeal.</p>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4"><div class="stat-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><i class="fas fa-gavel fa-3x text-primary mb-3"></i><h3 class="h2 fw-bold text-primary">9+</h3><p class="mb-0">Years of Criminal Defense Experience</p></div></div>
-                <div class="col-md-4"><div class="stat-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><i class="fas fa-balance-scale fa-3x text-primary mb-3"></i><h3 class="h2 fw-bold text-primary">500+</h3><p class="mb-0">Criminal Cases Handled</p></div></div>
-                <div class="col-md-4"><div class="stat-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><i class="fas fa-handcuffs fa-3x text-primary mb-3"></i><h3 class="h2 fw-bold text-primary">95%</h3><p class="mb-0">Success Rate</p></div></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-5">
-        <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-lg-8 mx-auto">
-                    <span class="badge bg-primary-soft text-primary mb-3">Our Expertise Areas</span>
-                    <h2 class="fw-bold">We Cover All Types of Criminal Cases</h2>
-                    <p class="text-muted">Providing strong, strategic defense at every stage of criminal proceedings.</p>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4"><div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><div class="service-icon mx-auto"><i class="fas fa-fist-raised fa-2x text-primary"></i></div><h4>Violent Crimes</h4><p class="text-muted">Assault, battery, manslaughter, attempted murder, and all physical violence cases.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><div class="service-icon mx-auto"><i class="fas fa-money-bill-wave fa-2x text-primary"></i></div><h4>Financial Crimes</h4><p class="text-muted">Embezzlement, bribery, forgery, bad checks, fraud, and money laundering.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><div class="service-icon mx-auto"><i class="fas fa-cannabis fa-2x text-primary"></i></div><h4>Drug Offenses</h4><p class="text-muted">Trafficking, possession, use of narcotics and psychotropic substances.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><div class="service-icon mx-auto"><i class="fas fa-laptop-code fa-2x text-primary"></i></div><h4>Cyber Crimes</h4><p class="text-muted">Hacking, online fraud, privacy violations, cyber extortion, and digital identity theft.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><div class="service-icon mx-auto"><i class="fas fa-car fa-2x text-primary"></i></div><h4>Traffic Offenses</h4><p class="text-muted">Hit and run, DUI/DWI, fatal accidents, driving without a license.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="service-card bg-white p-4 rounded-4 text-center h-100 shadow-sm"><div class="service-icon mx-auto"><i class="fas fa-child fa-2x text-primary"></i></div><h4>Family Crimes</h4><p class="text-muted">Domestic violence, juvenile delinquency, child neglect, honor crimes.</p></div></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0"><img src="/images/criminal-defense.jpg" alt="Criminal Defense" class="img-fluid rounded-4 shadow-lg" onerror="this.src='https://via.placeholder.com/600x400?text=Criminal+Defense'"></div>
-                <div class="col-lg-6">
-                    <span class="badge bg-primary-soft text-primary mb-3">How We Work</span>
-                    <h2 class="fw-bold mb-4">Integrated Defense Strategy</h2>
-                    <div class="d-flex mb-4"><div class="me-3"><i class="fas fa-search fa-2x text-primary"></i></div><div><h5>Case Analysis</h5><p class="text-muted">We examine your case thoroughly to identify strengths and weaknesses.</p></div></div>
-                    <div class="d-flex mb-4"><div class="me-3"><i class="fas fa-gavel fa-2x text-primary"></i></div><div><h5>Defense Strategy</h5><p class="text-muted">We craft a tailored defense plan that fits your specific situation.</p></div></div>
-                    <div class="d-flex mb-4"><div class="me-3"><i class="fas fa-users fa-2x text-primary"></i></div><div><h5>Court Representation</h5><p class="text-muted">We attend all hearings and fight fiercely for your rights.</p></div></div>
-                    <div class="d-flex"><div class="me-3"><i class="fas fa-chart-line fa-2x text-primary"></i></div><div><h5>Appeals & Cassation</h5><p class="text-muted">We challenge unfair verdicts before higher courts.</p></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Introduction -->
     <section class="py-5">
         <div class="container">
-            <div class="row text-center mb-5">
+            <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <span class="badge bg-primary-soft text-primary mb-3">Client Testimonials</span>
-                    <h2 class="fw-bold">What Our Criminal Clients Say</h2>
+                    <h2>Protecting Your Rights and Freedom</h2>
+                    <p>Facing criminal charges can be one of the most challenging experiences in life. Our criminal defense team provides vigorous representation to protect your rights and freedom throughout all stages of the criminal justice process. With over 9 years of experience, we have successfully defended clients in a wide range of criminal matters.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Key Services with Icons -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Criminal Defense Services Include</h2>
             <div class="row g-4">
-                <div class="col-md-4"><div class="testimonial-card bg-white p-4 rounded-4 h-100 shadow-sm"><i class="fas fa-quote-right fa-2x text-primary mb-3 opacity-50"></i><p class="mb-4">"Thanks to Walid Abo Al-Ela's team, serious charges against me were dropped. Strong and professional defense."</p><div class="d-flex align-items-center"><img src="/images/clients/client1.jpg" alt="Client" class="rounded-circle me-3" width="50" height="50" onerror="this.src='https://via.placeholder.com/50'"><div><h6 class="mb-0">K. Khaled</h6><small class="text-muted">Criminal Client</small></div></div></div></div>
-                <div class="col-md-4"><div class="testimonial-card bg-white p-4 rounded-4 h-100 shadow-sm"><i class="fas fa-quote-right fa-2x text-primary mb-3 opacity-50"></i><p class="mb-4">"During the investigation, the lawyer provided critical legal advice that helped clear my name. Very grateful."</p><div class="d-flex align-items-center"><img src="/images/clients/client2.jpg" alt="Client" class="rounded-circle me-3" width="50" height="50" onerror="this.src='https://via.placeholder.com/50'"><div><h6 class="mb-0">N. Hany</h6><small class="text-muted">Fraud Case Client</small></div></div></div></div>
-                <div class="col-md-4"><div class="testimonial-card bg-white p-4 rounded-4 h-100 shadow-sm"><i class="fas fa-quote-right fa-2x text-primary mb-3 opacity-50"></i><p class="mb-4">"Fast response and dedication made me feel safe. Highly recommended for any criminal matter."</p><div class="d-flex align-items-center"><img src="/images/clients/client3.jpg" alt="Client" class="rounded-circle me-3" width="50" height="50" onerror="this.src='https://via.placeholder.com/50'"><div><h6 class="mb-0">A. Youssef</h6><small class="text-muted">Violence Case Client</small></div></div></div></div>
+                <div class="col-md-4">
+                    <div class="text-center p-3">
+                        <i class="fas fa-gavel fa-3x text-primary mb-3"></i>
+                        <h5>Pre-Trial Representation</h5>
+                        <p>Legal advice during police investigations, bail applications, and negotiating with prosecutors.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-3">
+                        <i class="fas fa-balance-scale fa-3x text-primary mb-3"></i>
+                        <h5>Trial Defense</h5>
+                        <p>Aggressive representation in criminal courts at all levels, including misdemeanor and felony courts.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-3">
+                        <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+                        <h5>Appeals</h5>
+                        <p>Challenging convictions and sentences before appellate courts to seek justice.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-3">
+                        <i class="fas fa-briefcase fa-3x text-primary mb-3"></i>
+                        <h5>White-Collar Crime</h5>
+                        <p>Defense in cases involving fraud, embezzlement, bribery, and financial crimes.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-3">
+                        <i class="fas fa-capsules fa-3x text-primary mb-3"></i>
+                        <h5>Drug Offenses</h5>
+                        <p>Representation in drug-related cases, from possession to trafficking.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-3">
+                        <i class="fas fa-user-shield fa-3x text-primary mb-3"></i>
+                        <h5>Juvenile Defense</h5>
+                        <p>Specialized representation for minors facing criminal charges, focusing on rehabilitation.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5 bg-primary text-white">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-3">Need Strong Criminal Defense?</h2>
-            <p class="lead mb-4">Don't hesitate to contact us. Our team is ready to protect your rights.</p>
-            <a href="/contact.html" class="btn btn-light btn-lg px-5"><i class="fas fa-phone-alt me-2"></i>Contact Us Now</a>
+    <!-- Why Choose Us -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2>Why Choose Our Criminal Defense Team?</h2>
+                    <ul class="list-unstyled mt-4">
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> <strong>Experience:</strong> Years of experience in criminal courts at all levels.</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> <strong>Personal Attention:</strong> Each case receives dedicated attention from the lead attorney.</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> <strong>Strategic Defense:</strong> Tailored defense strategies based on the specifics of your case.</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> <strong>Confidentiality:</strong> All communications are protected by attorney-client privilege.</li>
+                    </ul>
+                    <div class="alert alert-primary mt-4">
+                        <i class="fas fa-hourglass-half me-2"></i> <strong>Early intervention can make a significant difference</strong> – Contact us immediately if you or a loved one is facing criminal charges.
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/images/criminal-defense.jpg" alt="Criminal Defense" class="img-fluid rounded-4 shadow" onerror="this.src='https://via.placeholder.com/600x400?text=Criminal+Defense'">
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Statistics / Trust Indicators -->
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <h2 class="display-4 fw-bold">100+</h2>
+                    <p>Criminal Cases Handled</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h2 class="display-4 fw-bold">85%</h2>
+                    <p>Success Rate in Appeals</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h2 class="display-4 fw-bold">9+</h2>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h2 class="display-4 fw-bold">24/7</h2>
+                    <p>Emergency Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    What should I do if I am arrested?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Remain silent and ask for a lawyer immediately. Do not answer any questions without your attorney present. Contact our firm as soon as possible.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    How long does a criminal case take?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    The duration varies depending on the complexity of the case, but we work diligently to resolve matters as quickly as possible while ensuring the best outcome.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Can you help with expungement?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we assist clients in clearing their criminal records where permitted by law. Contact us to discuss your eligibility.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Need Immediate Legal Assistance?</h2>
+            <p class="lead mb-4">Contact our criminal defense team for a confidential consultation.</p>
+            <a href="/contact.html" class="btn btn-light btn-lg">Contact Us Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer-section py-5 bg-dark text-white">
         <div class="container">
             <div class="row g-4">
@@ -215,22 +350,22 @@
                     <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>Walid Abo Al-Ela Law Firm</h5>
                     <p class="text-white-50">Specialized in arbitration and intellectual property protection with a personal touch since 2016.</p>
                     <div class="social-links mt-3">
-                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://wa.me/20111257219" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://t.me/+20111257219" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <h6 class="mb-4">Quick Links</h6>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/index.html" class="text-white-50">Home</a></li>
-                        <li class="mb-2"><a href="/about.html" class="text-white-50">About</a></li>
-                        <li class="mb-2"><a href="/services.html" class="text-white-50">Services</a></li>
-                        <li class="mb-2"><a href="/lawyers.html" class="text-white-50">Our Team</a></li>
-                        <li class="mb-2"><a href="/blog.html" class="text-white-50">Blog</a></li>
-                        <li class="mb-2"><a href="/contact.html" class="text-white-50">Contact</a></li>
-                        <li class="mb-2"><a href="/consultation.html" class="text-white-50">Paid Consultation</a></li>
+                        <li class="mb-2"><a href="/index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/about.html" class="text-white-50 text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="/services.html" class="text-white-50 text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="/lawyers.html" class="text-white-50 text-decoration-none">Our Team</a></li>
+                        <li class="mb-2"><a href="/blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="/consultation.html" class="text-white-50 text-decoration-none">Paid Consultation</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
@@ -242,16 +377,44 @@
                         <li class="mb-2"><i class="fas fa-clock me-2"></i> Sat - Thu: 9am - 8pm</li>
                     </ul>
                 </div>
-                <div class="col-lg-12 mt-3"><hr class="my-3" style="border-color: rgba(255,255,255,0.1);"><div class="row"><div class="col-md-6"><p class="small text-white-50 mb-0">© 2025 Walid Abo Al-Ela Law Firm. All rights reserved.</p></div><div class="col-md-6 text-md-end"><a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a><a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">Terms of Use</a><a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">Cookie Policy</a></div></div></div>
+                <div class="col-lg-12 mt-3">
+                    <hr class="my-3" style="border-color: rgba(255,255,255,0.1);">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="small text-white-50 mb-0">© 2025 Walid Abo Al-Ela Law Firm. All rights reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
+                            <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">Terms of Use</a>
+                            <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">Cookie Policy</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
+    <!-- كود تحديد الرابط النشط -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
+                if (link.getAttribute('href') === currentPath) link.classList.add('active');
+            });
+        });
+    </script>
+    <!-- نسخة ثالثة احتياطية لصورة المحامي -->
     <script>
     (function() {
-        const possiblePaths = ['/images/team/walid-profile.jpg','/images/team/walid-abouelela.jpg','/images/walid-profile.jpg','/ar/images/team/walid-profile.jpg','/images/lawyers/walid.jpg'];
+        const possiblePaths = [
+            '/images/team/walid-profile.jpg',
+            '/images/team/walid-abouelela.jpg',
+            '/images/walid-profile.jpg',
+            '/ar/images/team/walid-profile.jpg',
+            '/images/lawyers/walid.jpg'
+        ];
         const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
         if (!imgElement) return;
         function tryLoadImage(index) {
@@ -264,6 +427,5 @@
         tryLoadImage(0);
     })();
     </script>
-    <script>document.addEventListener('DOMContentLoaded', function() { const currentPath = window.location.pathname; document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => { if (link.getAttribute('href') === currentPath) link.classList.add('active'); }); });</script>
 </body>
 </html>
