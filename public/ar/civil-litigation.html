@@ -90,24 +90,25 @@
         }
     })();
     <script>
-(function() {
-    const langLink = document.getElementById('langSwitch');
-    if (!langLink) return;
-    const currentPath = window.location.pathname;
-    // إذا كنا في صفحة عربية (المسار يبدأ بـ /ar/)
-    if (currentPath.startsWith('/ar/')) {
-        let englishPath = currentPath.replace('/ar', '');
-        if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') {
-            englishPath = '/';
+    (function() {
+        var langLink = document.getElementById('langSwitch');
+        if (!langLink) return;
+        var currentPath = window.location.pathname;
+        // إذا كنا في صفحة عربية (المسار يبدأ بـ /ar/)
+        if (currentPath.startsWith('/ar/')) {
+            // نوجه إلى الإنجليزية بإزالة /ar/ من البداية
+            var englishPath = currentPath.replace('/ar', '');
+            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') {
+                englishPath = '/';
+            }
+            langLink.href = englishPath;
+            langLink.innerHTML = '<i class="fas fa-globe"></i> English';
+        } else {
+            // لو الصفحة بالخطأ ليست عربية، نوجه إلى العربية الرئيسية
+            langLink.href = '/ar/';
         }
-        langLink.href = englishPath;
-        langLink.innerHTML = '<i class="fas fa-globe"></i> English';
-    } else {
-        langLink.href = '/';
-    }
-})();
-    </script>
-
+    })();
+</script>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="index.html">
