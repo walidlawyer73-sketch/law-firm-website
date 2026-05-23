@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Walid Abo Al-Ela Law Firm</title>
-    <meta name="description" content="Contact Walid Abo Al-Ela Law Firm for expert legal advice in international arbitration and intellectual property. Call, email, or use our online form. We respond within 24 hours.">
+    <meta name="description" content="Contact Walid Abo Al-Ela Law Firm for expert legal advice in international arbitration and intellectual property. Call, email, or use our online form with file attachment.">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -47,10 +47,27 @@
             .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
         }
         .dropdown-menu { min-width: 220px; }
+        /* Custom style for form status */
+        .form-status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .form-status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .form-status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
     </style>
 </head>
 <script>
-// ========== حل نهائي لصورة المحامي ==========
+// ========== حل نهائي لصورة المحامي (النسخة الأولى) ==========
 (function() {
     const correctImagePath = '/images/team/walid-profile.jpg';
     const possibleSelectors = [
@@ -173,7 +190,7 @@
     <header class="page-header">
         <div class="container text-white text-center">
             <h1 class="display-4">Contact Us</h1>
-            <p class="lead">We're here to help. Send us a message and we'll respond within 24 hours</p>
+            <p class="lead">We're here to help. Send us a message with your documents and we'll respond within 24 hours.</p>
         </div>
     </header>
 
@@ -185,8 +202,7 @@
                     <div class="card border-0 shadow-lg rounded-4 h-100">
                         <div class="card-body p-4 p-lg-5">
                             <h2 class="mb-4"><i class="fas fa-envelope text-primary me-2"></i>Send a Message</h2>
-                            <!-- التعديل الأساسي: إزالة method و action ومنع الإرسال الحقيقي -->
-                            <form id="contactForm" onsubmit="return false;">
+                            <form id="contactForm" action="https://formspree.io/f/mgoqzlpb" method="POST" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="name" class="form-label fw-bold">Full Name *</label>
                                     <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="Enter your full name">
@@ -199,12 +215,17 @@
                                     <label for="phone" class="form-label fw-bold">Phone Number</label>
                                     <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="e.g., +20 111257219">
                                 </div>
-                                <div class="mb-4">
+                                <div class="mb-3">
                                     <label for="message" class="form-label fw-bold">Message *</label>
                                     <textarea class="form-control form-control-lg" id="message" name="message" rows="5" required placeholder="Please describe your inquiry..."></textarea>
                                 </div>
+                                <div class="mb-4">
+                                    <label for="attachment" class="form-label fw-bold">Attach File (optional)</label>
+                                    <input type="file" class="form-control form-control-lg" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.jpg,.png">
+                                    <div class="form-text">Max size 10MB. Allowed: PDF, DOC, JPG, PNG.</div>
+                                </div>
                                 <button type="submit" class="btn btn-primary w-100 py-3"><i class="fas fa-paper-plane me-2"></i>Send Message</button>
-                                <div id="formStatus" class="mt-3 text-center"></div>
+                                <div id="formStatus" class="form-status"></div>
                             </form>
                         </div>
                     </div>
@@ -300,18 +321,40 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <!-- Form handling without actual POST submission -->
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Form submission handling with confirmation message and reset
+        const form = document.getElementById('contactForm');
+        const statusDiv = document.getElementById('formStatus');
+
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
-            alert('Thank you for contacting us. We will respond as soon as possible.');
-            this.reset();
-            const statusDiv = document.getElementById('formStatus');
-            statusDiv.innerHTML = '<div class="alert alert-success">Your message has been sent successfully! We will get back to you shortly.</div>';
-            setTimeout(() => { statusDiv.innerHTML = ''; }, 5000);
+            statusDiv.style.display = 'block';
+            statusDiv.innerHTML = 'Sending...';
+            statusDiv.className = 'form-status';
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    statusDiv.innerHTML = '✅ Thank you for contacting us. We will respond as soon as possible.';
+                    statusDiv.classList.add('success');
+                    form.reset();
+                } else {
+                    const errorData = await response.json();
+                    statusDiv.innerHTML = '❌ Oops! There was a problem. Please try again.';
+                    statusDiv.classList.add('error');
+                }
+            } catch (error) {
+                statusDiv.innerHTML = '❌ Network error. Please check your connection.';
+                statusDiv.classList.add('error');
+            }
         });
     </script>
-    <!-- كود إضافي لحل مشكلة صورة المحامي -->
     <script>
     (function() {
         const possiblePaths = [
