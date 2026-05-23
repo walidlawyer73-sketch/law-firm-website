@@ -102,7 +102,6 @@
         const langLink = document.getElementById('langSwitch');
         if (!langLink) return;
         const currentPath = window.location.pathname;
-        // إذا كنا في صفحة إنجليزية (لا تبدأ بـ /ar/)
         if (!currentPath.startsWith('/ar/')) {
             let arabicPath;
             if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
@@ -111,15 +110,8 @@
                 arabicPath = '/ar' + currentPath;
             }
             langLink.href = arabicPath;
-            langLink.innerHTML = '<i class="fas fa-globe"></i> العربية';
         } else {
-            // لو الصفحة عربية بالخطأ (مثلاً في الإنجليزية)، نوجه للعربية الرئيسية
-            let englishPath = currentPath.replace('/ar', '');
-            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') {
-                englishPath = '/';
-            }
-            langLink.href = englishPath;
-            langLink.innerHTML = '<i class="fas fa-globe"></i> English';
+            langLink.href = '/ar/';
         }
     })();
     </script>
@@ -203,6 +195,8 @@
     </header>
 
     <!-- Contact Form and Info -->
+     <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value=value="https://www.google.com">
     <section class="py-5">
         <div class="container">
             <div class="row g-5">
@@ -210,12 +204,7 @@
                     <div class="card border-0 shadow-lg rounded-4 h-100">
                         <div class="card-body p-4 p-lg-5">
                             <h2 class="mb-4"><i class="fas fa-envelope text-primary me-2"></i>Send a Message</h2>
-
-                            <!-- نموذج Netlify مع رفع الملفات -->
-                            <form method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" action="/contact-success.html" name="contact">
-                                <input type="hidden" name="form-name" value="contact" />
-                                <input type="hidden" name="bot-field" />
-
+                            <form id="contactForm" action="https://formsubmit.co/walidlegal.ippro@gmail.com" method="POST" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="name" class="form-label fw-bold">Full Name *</label>
                                     <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="Enter your full name">
@@ -232,16 +221,13 @@
                                     <label for="message" class="form-label fw-bold">Message *</label>
                                     <textarea class="form-control form-control-lg" id="message" name="message" rows="5" required placeholder="Please describe your inquiry..."></textarea>
                                 </div>
-
-                                <!-- حقل رفع الملفات -->
                                 <div class="mb-4">
                                     <label for="attachment" class="form-label fw-bold">Attach File (optional)</label>
-                                    <input type="file" class="form-control form-control-lg" id="attachment" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
-                                    <div class="form-text">Max size: 10MB. Allowed: PDF, JPG, PNG, DOC.</div>
+                                    <input type="file" class="form-control form-control-lg" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.jpg,.png">
+                                    <div class="form-text">Max size 10MB. Allowed: PDF, DOC, JPG, PNG.</div>
                                 </div>
-
                                 <button type="submit" class="btn btn-primary w-100 py-3"><i class="fas fa-paper-plane me-2"></i>Send Message</button>
-                                <div id="formStatus" class="form-status mt-3"></div>
+                                <div id="formStatus" class="form-status"></div>
                             </form>
                         </div>
                     </div>
@@ -337,21 +323,39 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <!-- إظهار رسالة نجاح بعد إرسال النموذج (اختياري) -->
     <script>
-        // التعامل مع إرسال النموذج عبر Netlify (سيتم إعادة التوجيه إلى صفحة الشكر)
-        const contactForm = document.querySelector('form[data-netlify="true"]');
+        // Form submission handling with confirmation message and reset
+        const form = document.getElementById('contactForm');
         const statusDiv = document.getElementById('formStatus');
-        if (contactForm && statusDiv) {
-            contactForm.addEventListener('submit', function(e) {
-                // يمكن إظهار رسالة "جاري الإرسال" ولكن سيتم إعادة التوجيه بواسطة Netlify
-                statusDiv.style.display = 'block';
-                statusDiv.innerHTML = 'Sending... Please wait.';
-                statusDiv.classList.add('success');
-                // لا نستخدم preventDefault() هنا حتى يقوم Netlify بإعادة التوجيه بشكل طبيعي
-                // نسمح للنموذج بالإرسال العادي
-            });
-        }
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            statusDiv.style.display = 'block';
+            statusDiv.innerHTML = 'Sending...';
+            statusDiv.className = 'form-status';
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    statusDiv.innerHTML = '✅ Thank you for contacting us. We will respond as soon as possible.';
+                    statusDiv.classList.add('success');
+                    form.reset();
+                } else {
+                    const errorData = await response.json();
+                    statusDiv.innerHTML = '❌ Oops! There was a problem. Please try again.';
+                    statusDiv.classList.add('error');
+                }
+            } catch (error) {
+                statusDiv.innerHTML = '❌ Network error. Please check your connection.';
+                statusDiv.classList.add('error');
+            }
+        });
     </script>
     <script>
     (function() {
@@ -375,7 +379,6 @@
     })();
     </script>
     <script>
-        // تحديد الرابط النشط في القائمة
         document.addEventListener('DOMContentLoaded', function() {
             const currentPath = window.location.pathname;
             document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
