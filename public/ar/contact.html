@@ -108,34 +108,44 @@
         </div>
     </header>
 
-    <section class="py-5">
-        <div class="container">
-            <div class="row g-5">
-                <!-- نموذج الاتصال -->
-                <div class="col-lg-6">
-                    <div class="card border-0 shadow-lg rounded-4">
-                        <div class="card-body p-4 p-lg-5">
-                            <h2 class="mb-4"><i class="fas fa-envelope text-primary me-2"></i>أرسل رسالة</h2>
-                            <form id="contactForm">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label fw-bold">الاسم الكامل *</label>
-                                    <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="أدخل اسمك الكامل">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label fw-bold">البريد الإلكتروني *</label>
-                                    <input type="email" class="form-control form-control-lg" id="email" name="email" required placeholder="name@example.com">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="phone" class="form-label fw-bold">رقم الهاتف</label>
-                                    <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="مثال: 0123456789">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="message" class="form-label fw-bold">الرسالة *</label>
-                                    <textarea class="form-control form-control-lg" id="message" name="message" rows="5" required placeholder="اكتب تفاصيل استفسارك..."></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg w-100 py-3"><i class="fas fa-paper-plane me-2"></i>إرسال الرسالة</button>
-                                <div id="formStatus" class="mt-3 text-center"></div>
-                            </form>
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-md-6">
+                <div class="card border-0 shadow-lg rounded-4 h-100">
+                    <div class="card-body p-4 p-lg-5">
+                        <h2 class="mb-4"><i class="fas fa-envelope text-primary me-2"></i>أرسل رسالة</h2>
+                        <form action="https://forminit.com/thank-you" method="POST" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold">الاسم الكامل *</label>
+                                <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="أدخل اسمك الكامل">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-bold">البريد الإلكتروني *</label>
+                                <input type="email" class="form-control form-control-lg" id="email" name="email" required placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label fw-bold">رقم الهاتف</label>
+                                <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="مثال: +20 111257219">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label fw-bold">الرسالة *</label>
+                                <textarea class="form-control form-control-lg" id="message" name="message" rows="5" required placeholder="اكتب تفاصيل استفسارك..."></textarea>
+                            </div>
+                            <div class="mb-4">
+                                <label for="attachment" class="form-label fw-bold">إرفاق ملف (اختياري)</label>
+                                <input type="file" class="form-control" id="attachment" name="attachment" accept=".jpg,.png,.pdf,.doc,.docx">
+                                <div class="form-text text-muted">يمكنك رفع صور، ملفات PDF، أو مستندات (حد أقصى 10 ميجابايت).</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-3"><i class="fas fa-paper-plane me-2"></i>إرسال الرسالة</button>
+                            <div id="formStatus" class="mt-3 text-center"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
                         </div>
                     </div>
                 </div>
@@ -292,10 +302,10 @@
     <script>
         // معالجة النموذج
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('شكراً لتواصلك معنا. سنرد عليك في أقرب وقت.');
-            this.reset();
-        });
+    e.preventDefault();
+    alert('Thank you for contacting us...');
+    this.reset();
+});
     </script>
 </body>
 </html>
