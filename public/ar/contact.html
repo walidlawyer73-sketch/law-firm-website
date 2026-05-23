@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اتصل بنا - وليد أبوالعلا للمحاماة</title>
-    <meta name="description" content="تواصل مع مكتب وليد أبوالعلا للمحاماة. أرسل رسالتك مع المرفقات وسنرد خلال 24 ساعة.">
+    <title>Contact Us - Walid Abo Al-Ela Law Firm</title>
+    <meta name="description" content="Contact Walid Abo Al-Ela Law Firm for expert legal advice in international arbitration and intellectual property. Call, email, or use our online form with file attachment.">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -66,6 +66,7 @@
     </style>
 </head>
 <script>
+// حل نهائي لصورة المحامي (النسخة الأولى)
 (function() {
     const correctImagePath = '/images/team/walid-profile.jpg';
     const possibleSelectors = [
@@ -85,12 +86,14 @@
     };
 })();
 </script>
+<!-- Banner تجريبي للموقع -->
 <div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools"></i>
+    <i class="fas fa-tools"></i> This is a trial version - site under development and updates <i class="fas fa-tools"></i>
 </div>
 <body>
+    <!-- Language Switcher -->
     <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>
+        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> العربية</a>
     </div>
 
     <script>
@@ -98,14 +101,16 @@
         const langLink = document.getElementById('langSwitch');
         if (!langLink) return;
         const currentPath = window.location.pathname;
-        if (currentPath.startsWith('/ar/')) {
-            let englishPath = currentPath.replace('/ar', '');
-            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') {
-                englishPath = '/';
+        if (!currentPath.startsWith('/ar/')) {
+            let arabicPath;
+            if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
+                arabicPath = '/ar/';
+            } else {
+                arabicPath = '/ar' + currentPath;
             }
-            langLink.href = englishPath;
+            langLink.href = arabicPath;
         } else {
-            langLink.href = '/';
+            langLink.href = '/ar/';
         }
     })();
     </script>
@@ -114,10 +119,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="وليد أبوالعلا للمحاماة" style="height:45px; width:auto; margin-left:10px;">
+                <img src="/images/logo arb ip.png" alt="Walid Abo Al-Ela Law Firm" style="height:45px; width:auto; margin-right:10px;">
                 <div>
-                    <span class="fw-bold">وليد أبوالعلا للمحاماة</span>
-                    <small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small>
+                    <span class="fw-bold">Walid Abo Al-Ela Law Firm</span>
+                    <small class="d-block" style="font-size:16px; opacity:0.9; margin-top:5px; font-weight:500;">For Arbitration and Intellectual Property</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -125,33 +130,34 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">الخدمات</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
                         <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li><a class="dropdown-item" href="/ar/arbitration.html">التحكيم الدولي</a></li>
-                            <li><a class="dropdown-item" href="/ar/trademark.html">تسجيل العلامات التجارية</a></li>
-                            <li><a class="dropdown-item" href="/ar/patent.html">براءات الاختراع</a></li>
-                            <li><a class="dropdown-item" href="/ar/copyright.html">حقوق المؤلف</a></li>
-                            <li><a class="dropdown-item" href="/ar/litigation.html">قضايا الملكية الفكرية</a></li>
-                            <li><a class="dropdown-item" href="/ar/corporate-formation.html">تأسيس الشركات</a></li>
-                            <li><a class="dropdown-item" href="/ar/criminal-litigation.html">القضايا الجنائية</a></li>
+                            <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
+                            <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
+                            <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
+                            <li><a class="dropdown-item" href="/copyright.html">Copyright</a></li>
+                            <li><a class="dropdown-item" href="/litigation.html">IP Litigation</a></li>
+                            <li><a class="dropdown-item" href="/corporate-formation.html">Corporate Formation</a></li>
+                            <li><a class="dropdown-item" href="/criminal-litigation.html">Criminal Litigation</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/ar/services.html">جميع الخدمات</a></li>
+                            <li><a class="dropdown-item" href="/services.html">All Services</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/lawyers.html">فريق العمل</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/blog.html">المدونة</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/contact.html">اتصل بنا</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/consultation.html">استشارة مدفوعة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/consultation.html">Paid Consultation</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html"><i class="fas fa-lock me-1"></i>بوابة العميل</a>
+                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html"><i class="fas fa-lock me-1"></i>Client Portal</a>
                     </li>
                 </ul>
             </div>
         </div>
         <script>
+        // حل مشكلة صورة المحامي - البحث عن المسار الصحيح (نسخة إضافية للاحتياط)
         (function() {
             const possiblePaths = [
                 '/images/team/walid-profile.jpg',
@@ -179,43 +185,48 @@
         </script>
     </nav>
 
+    <!-- Page Header -->
     <header class="page-header">
         <div class="container text-white text-center">
-            <h1 class="display-4">اتصل بنا</h1>
-            <p class="lead">نحن هنا لمساعدتك. أرسل رسالتك مع مستنداتك وسنرد خلال 24 ساعة.</p>
+            <h1 class="display-4">Contact Us</h1>
+            <p class="lead">We're here to help. Send us a message with your documents and we'll respond within 24 hours.</p>
         </div>
     </header>
 
+    <!-- Contact Form and Info -->
     <section class="py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-md-6">
                     <div class="card border-0 shadow-lg rounded-4 h-100">
                         <div class="card-body p-4 p-lg-5">
-                            <h2 class="mb-4"><i class="fas fa-envelope text-primary me-2"></i>أرسل رسالة</h2>
-                            <form id="contactForm" action="https://formspree.io/f/mgoqzlpb" method="POST" enctype="multipart/form-data">
+                            <h2 class="mb-4"><i class="fas fa-envelope text-primary me-2"></i>Send a Message</h2>
+                            <!-- ✅ تم تعديل action و إضافة الحقول المخفية -->
+                            <form id="contactForm" action="https://formsubmit.co/walidlegal.ippro@gmail.com" method="POST" enctype="multipart/form-data">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
                                 <div class="mb-3">
-                                    <label for="name" class="form-label fw-bold">الاسم الكامل *</label>
-                                    <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="أدخل اسمك الكامل">
+                                    <label for="name" class="form-label fw-bold">Full Name *</label>
+                                    <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="Enter your full name">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label fw-bold">البريد الإلكتروني *</label>
+                                    <label for="email" class="form-label fw-bold">Email *</label>
                                     <input type="email" class="form-control form-control-lg" id="email" name="email" required placeholder="name@example.com">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="phone" class="form-label fw-bold">رقم الهاتف</label>
-                                    <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="مثال: 0123456789">
+                                    <label for="phone" class="form-label fw-bold">Phone Number</label>
+                                    <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="e.g., +20 111257219">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="message" class="form-label fw-bold">الرسالة *</label>
-                                    <textarea class="form-control form-control-lg" id="message" name="message" rows="5" required placeholder="اكتب تفاصيل استفسارك..."></textarea>
+                                    <label for="message" class="form-label fw-bold">Message *</label>
+                                    <textarea class="form-control form-control-lg" id="message" name="message" rows="5" required placeholder="Please describe your inquiry..."></textarea>
                                 </div>
                                 <div class="mb-4">
-                                    <label for="attachment" class="form-label fw-bold">إرفاق ملف (اختياري)</label>
+                                    <label for="attachment" class="form-label fw-bold">Attach File (optional)</label>
                                     <input type="file" class="form-control form-control-lg" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.jpg,.png">
-                                    <div class="form-text">الحجم الأقصى 10 ميجابايت. الصيغ المسموحة: PDF، DOC، JPG، PNG.</div>
+                                    <div class="form-text">Max size 10MB. Allowed: PDF, DOC, JPG, PNG.</div>
                                 </div>
-                                <button type="submit" class="btn btn-primary w-100 py-3"><i class="fas fa-paper-plane me-2"></i>إرسال الرسالة</button>
+                                <button type="submit" class="btn btn-primary w-100 py-3"><i class="fas fa-paper-plane me-2"></i>Send Message</button>
                                 <div id="formStatus" class="form-status"></div>
                             </form>
                         </div>
@@ -224,32 +235,32 @@
                 <div class="col-md-6">
                     <div class="card border-0 shadow-lg rounded-4 h-100">
                         <div class="card-body p-4 p-lg-5">
-                            <h2 class="mb-4"><i class="fas fa-address-card text-primary me-2"></i>معلومات الاتصال</h2>
+                            <h2 class="mb-4"><i class="fas fa-address-card text-primary me-2"></i>Contact Information</h2>
                             <ul class="list-unstyled">
                                 <li class="mb-4 d-flex">
                                     <i class="fas fa-map-marker-alt fa-2x text-primary me-3"></i>
-                                    <div><strong class="d-block">العنوان</strong> العاشر من رمضان، القاهرة، مصر</div>
+                                    <div><strong class="d-block">Address</strong> 10th of Ramadan, Cairo, Egypt</div>
                                 </li>
                                 <li class="mb-4 d-flex">
                                     <i class="fas fa-phone fa-2x text-primary me-3"></i>
-                                    <div><strong class="d-block">الهاتف</strong> <a href="tel:+20111257219" class="text-decoration-none">01111257219</a><br><small class="text-muted">متاح خلال ساعات العمل</small></div>
+                                    <div><strong class="d-block">Phone</strong> <a href="tel:+20111257219" class="text-decoration-none">+20 111257219</a><br><small class="text-muted">Available during business hours</small></div>
                                 </li>
                                 <li class="mb-4 d-flex">
                                     <i class="fas fa-envelope fa-2x text-primary me-3"></i>
-                                    <div><strong class="d-block">البريد الإلكتروني</strong> <a href="mailto:walidlegal.ippro@gmail.com" class="text-decoration-none">walidlegal.ippro@gmail.com</a></div>
+                                    <div><strong class="d-block">Email</strong> <a href="mailto:walidlegal.ippro@gmail.com" class="text-decoration-none">walidlegal.ippro@gmail.com</a></div>
                                 </li>
                                 <li class="mb-4 d-flex">
                                     <i class="fas fa-clock fa-2x text-primary me-3"></i>
-                                    <div><strong class="d-block">ساعات العمل</strong> السبت - الخميس: 9 صباحاً - 8 مساءً</div>
+                                    <div><strong class="d-block">Business Hours</strong> Saturday - Thursday: 9am - 8pm</div>
                                 </li>
                             </ul>
                             <div class="mt-4">
-                                <h5><i class="fab fa-whatsapp text-success me-2"></i>واتساب مباشر</h5>
-                                <a href="https://wa.me/20111257219" class="btn btn-outline-success w-100 py-2" target="_blank"><i class="fab fa-whatsapp me-2"></i>تواصل عبر واتساب</a>
+                                <h5><i class="fab fa-whatsapp text-success me-2"></i>WhatsApp Direct</h5>
+                                <a href="https://wa.me/20111257219" class="btn btn-outline-success w-100 py-2" target="_blank"><i class="fab fa-whatsapp me-2"></i>Message on WhatsApp</a>
                             </div>
                             <div class="mt-4">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.7890!2d31.0000!3d30.0000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAwJzAwLjAiTiAzMcKwMDAnMDAuMCJF!5e0!3m2!1sen!2seg!4v1234567890" width="100%" height="250" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
-                                <p class="text-muted small mt-2">📍 موقع المكتب على الخريطة</p>
+                                <p class="text-muted small mt-2">📍 Our office location on the map</p>
                             </div>
                         </div>
                     </div>
@@ -263,46 +274,46 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>وليد أبوالعلا للمحاماة</h5>
-                    <p class="text-white-50">متخصصون في التحكيم وحماية الملكية الفكرية بلمسة شخصية منذ 2016.</p>
+                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>Walid Abo Al-Ela Law Firm</h5>
+                    <p class="text-white-50">Specialized in arbitration and intellectual property protection with a personal touch since 2016.</p>
                     <div class="social-links mt-3">
-                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="فيسبوك"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <h6 class="mb-4">روابط سريعة</h6>
+                    <h6 class="mb-4">Quick Links</h6>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/ar/index.html" class="text-white-50 text-decoration-none">الرئيسية</a></li>
-                        <li class="mb-2"><a href="/ar/about.html" class="text-white-50 text-decoration-none">من نحن</a></li>
-                        <li class="mb-2"><a href="/ar/services.html" class="text-white-50 text-decoration-none">الخدمات</a></li>
-                        <li class="mb-2"><a href="/ar/lawyers.html" class="text-white-50 text-decoration-none">فريق العمل</a></li>
-                        <li class="mb-2"><a href="/ar/blog.html" class="text-white-50 text-decoration-none">المدونة</a></li>
-                        <li class="mb-2"><a href="/ar/contact.html" class="text-white-50 text-decoration-none">اتصل بنا</a></li>
-                        <li class="mb-2"><a href="/ar/consultation.html" class="text-white-50 text-decoration-none">استشارة مدفوعة</a></li>
+                        <li class="mb-2"><a href="/index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/about.html" class="text-white-50 text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="/services.html" class="text-white-50 text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="/lawyers.html" class="text-white-50 text-decoration-none">Our Team</a></li>
+                        <li class="mb-2"><a href="/blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="/consultation.html" class="text-white-50 text-decoration-none">Paid Consultation</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
-                    <h6 class="mb-4">معلومات الاتصال</h6>
+                    <h6 class="mb-4">Contact Info</h6>
                     <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، القاهرة، مصر</li>
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 10th of Ramadan, Cairo, Egypt</li>
                         <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
                         <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> السبت - الخميس: 9 صباحاً - 8 مساءً</li>
+                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Sat - Thu: 9am - 8pm</li>
                     </ul>
                 </div>
                 <div class="col-lg-12 mt-3">
                     <hr class="my-3" style="border-color: rgba(255,255,255,0.1);">
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="small text-white-50 mb-0">© 2025 وليد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
+                            <p class="small text-white-50 mb-0">© 2025 Walid Abo Al-Ela Law Firm. All rights reserved.</p>
                         </div>
                         <div class="col-md-6 text-md-end">
-                            <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">سياسة الخصوصية</a>
-                            <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">شروط الاستخدام</a>
-                            <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">سياسة ملفات تعريف الارتباط</a>
+                            <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
+                            <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">Terms of Use</a>
+                            <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">Cookie Policy</a>
                         </div>
                     </div>
                 </div>
@@ -313,13 +324,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
     <script>
+        // ✅ تم تعديل كود الإرسال ليعمل مع FormSubmit
         const form = document.getElementById('contactForm');
         const statusDiv = document.getElementById('formStatus');
 
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
             statusDiv.style.display = 'block';
-            statusDiv.innerHTML = 'جاري الإرسال...';
+            statusDiv.innerHTML = 'Sending...';
             statusDiv.className = 'form-status';
 
             const formData = new FormData(form);
@@ -327,19 +339,18 @@
             try {
                 const response = await fetch(form.action, {
                     method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
+                    body: formData
                 });
                 if (response.ok) {
-                    statusDiv.innerHTML = '✅ شكراً لتواصلك معنا. سنرد عليك في أقرب وقت.';
+                    statusDiv.innerHTML = '✅ Thank you for contacting us. We will respond as soon as possible.';
                     statusDiv.classList.add('success');
                     form.reset();
                 } else {
-                    statusDiv.innerHTML = '❌ حدث خطأ. يرجى المحاولة مرة أخرى.';
+                    statusDiv.innerHTML = '❌ Oops! There was a problem. Please try again.';
                     statusDiv.classList.add('error');
                 }
             } catch (error) {
-                statusDiv.innerHTML = '❌ خطأ في الشبكة. يرجى التحقق من اتصالك بالإنترنت.';
+                statusDiv.innerHTML = '❌ Network error. Please check your connection.';
                 statusDiv.classList.add('error');
             }
         });
