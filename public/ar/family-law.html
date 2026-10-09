@@ -3,12 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قضايا الأسرة - وليد أبوالعلا للمحاماة</title>
-    <meta name="description" content="تمثيل متعاطف وفعال في قضايا الأسرة: الطلاق، الحضانة، النفقة، المؤخر، النسب، الوصاية، التبني، والعنف الأسري. خبرة منذ 2016.">
+    <title>خدمات الأحوال الشخصية - مكتب وليد محمد أبوالعلا للمحاماة | مصر</title>
+    <meta name="description" content="خدمات الأحوال الشخصية في مصر — الطلاق، والخلع، والنفقة، والحضانة، والرؤية، والميراث، والولاية على المال. التمثيل أمام محاكم الأسرة المصرية.">
+    <meta name="keywords" content="الأحوال الشخصية مصر, الطلاق مصر, الخلع, النفقة مصر, الحضانة مصر, الميراث مصر, محامي أحوال شخصية, قانون الأحوال الشخصية">
+    <meta name="author" content="وليد محمد أبوالعلا">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/ar/family-law.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/ar/family-law.html">
+    <meta property="og:title" content="خدمات الأحوال الشخصية - مكتب وليد محمد أبوالعلا للمحاماة">
+    <meta property="og:description" content="التمثيل في قضايا الطلاق والخلع والنفقة والحضانة والميراث أمام محاكم الأسرة المصرية.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta property="og:locale" content="ar_EG">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/family-law.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/family-law.html">
+
+    <link rel="icon" type="image/png" href="/images/logo arb ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -16,116 +36,340 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
-    <style>
-        .language-switcher {
-            position: fixed;
-            top: 70px;
-            left: 20px;
-            z-index: 9999;
-        }
-        .language-switcher .lang-btn {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .language-switcher .lang-btn:hover {
-            background-color: #0b5ed7;
-            transform: scale(1.05);
-        }
-        body { padding-top: 70px; }
-        @media (max-width: 768px) {
-            .language-switcher { top: 60px; left: 10px; }
-            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
-        }
-        .dropdown-menu { min-width: 220px; }
-        .hero-section {
-            background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
-            padding: 80px 0;
-            color: white;
-            text-align: center;
-        }
-        .service-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-radius: 1rem;
-            overflow: hidden;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        .icon-bg {
-            width: 80px;
-            height: 80px;
-            background: #e9ecef;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            color: #0d6efd;
-            font-size: 2rem;
-        }
-    </style>
-</head>
-<script>
-// حل صورة المحامي (احتياطي)
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools"></i>
-</div>
-<body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>
-    </div>
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (currentPath.startsWith('/ar/')) {
-            let englishPath = currentPath.replace('/ar', '');
-            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') englishPath = '/';
-            langLink.href = englishPath;
-        } else {
-            langLink.href = '/';
-        }
-    })();
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "خدمات الأحوال الشخصية",
+        "url": "https://law-arb-ip-walid.vercel.app/ar/family-law.html",
+        "provider": {
+            "@type": "LegalService",
+            "name": "مكتب وليد محمد أبوالعلا للمحاماة",
+            "url": "https://law-arb-ip-walid.vercel.app/ar/",
+            "telephone": "+20111257219",
+            "email": "walidlegal.ippro@gmail.com"
+        },
+        "areaServed": {"@type": "Country", "name": "مصر"},
+        "serviceType": "الأحوال الشخصية",
+        "description": "الطلاق، والخلع، والنفقة، والحضانة، والرؤية، والميراث، والولاية على المال أمام محاكم الأسرة المصرية.",
+        "inLanguage": "ar"
+    }
     </script>
 
-    <!-- Navigation Bar (عربي) -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://law-arb-ip-walid.vercel.app/ar/"},
+            {"@type": "ListItem", "position": 2, "name": "الخدمات", "item": "https://law-arb-ip-walid.vercel.app/ar/services.html"},
+            {"@type": "ListItem", "position": 3, "name": "الأحوال الشخصية"}
+        ]
+    }
+    </script>
+
+    <style>
+        .service-hero {
+            position: relative;
+            margin-top: calc(var(--banner-height) + var(--navbar-height));
+            min-height: 520px;
+            background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+        }
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 80% 30%, rgba(201,169,97,0.15), transparent 55%),
+                radial-gradient(circle at 20% 70%, rgba(201,169,97,0.10), transparent 55%);
+            pointer-events: none;
+        }
+        .service-hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            max-width: 850px;
+        }
+        .sh-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(201,169,97,0.15);
+            border: 1px solid rgba(201,169,97,0.4);
+            border-radius: 999px;
+            color: #C9A961;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+        }
+        .service-hero h1 {
+            font-family: 'Cairo', sans-serif;
+            font-size: clamp(1.7rem, 3.8vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.35;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+        .service-hero h1 .text-gold {
+            background: linear-gradient(135deg, #C9A961, #D4B872);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .service-hero p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.95;
+            max-width: 700px;
+            margin-bottom: 35px;
+        }
+        .hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
+
+        .features-rich { padding: 90px 0; background: #F8F9FA; }
+        .svc-feature-card {
+            background: #fff; border: 1px solid #E9ECEF; border-radius: 18px;
+            padding: 32px 28px; transition: all 0.4s ease; height: 100%;
+            position: relative; overflow: hidden;
+        }
+        .svc-feature-card::before {
+            content: ''; position: absolute; top: 0; right: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(270deg, #C9A961, #A88947);
+            transform: scaleX(0); transform-origin: right; transition: transform 0.4s ease;
+        }
+        .svc-feature-card:hover::before { transform: scaleX(1); }
+        .svc-feature-card:hover {
+            transform: translateY(-6px); border-color: #C9A961;
+            box-shadow: 0 25px 50px -20px rgba(201,169,97,0.25);
+        }
+        .svc-feature-icon {
+            width: 60px; height: 60px;
+            background: linear-gradient(135deg, #000, #1A1A1A);
+            color: #C9A961; border-radius: 14px; display: flex;
+            align-items: center; justify-content: center; font-size: 1.5rem;
+            margin-bottom: 20px; transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .svc-feature-card:hover .svc-feature-icon {
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000; transform: rotate(6deg) scale(1.05);
+        }
+        .svc-feature-card h3 {
+            font-family: 'Cairo', sans-serif; font-size: 1.1rem;
+            font-weight: 800; color: #212529; margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .svc-feature-card p { font-size: 0.92rem; color: #6C757D; line-height: 1.9; margin: 0; }
+
+        .handles-list {
+            list-style: none; padding: 0; margin: 0;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 14px;
+        }
+        .handles-list li {
+            display: flex; align-items: flex-start; gap: 14px;
+            padding: 18px 22px; background: #fff; border: 1px solid #E9ECEF;
+            border-radius: 12px; font-size: 0.92rem; color: #495057;
+            line-height: 1.85; transition: all 0.3s ease;
+        }
+        .handles-list li:hover {
+            border-color: #C9A961; transform: translateY(-3px);
+            box-shadow: 0 15px 30px -12px rgba(201,169,97,0.2);
+        }
+        .handles-list li i {
+            color: #C9A961; font-size: 0.85rem; width: 22px; height: 22px;
+            background: rgba(201,169,97,0.12); border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            flex-shrink: 0; margin-top: 4px;
+        }
+
+        .info-note {
+            display: flex; gap: 16px; padding: 22px 26px;
+            background: linear-gradient(160deg, #FAF6EC 0%, #fff 100%);
+            border-right: 4px solid #C9A961; border-radius: 12px; margin-top: 30px;
+        }
+        .info-note i {
+            color: #C9A961; font-size: 1.4rem; flex-shrink: 0; margin-top: 3px;
+        }
+        .info-note div p {
+            margin: 0; font-size: 0.92rem; color: #495057; line-height: 1.9;
+        }
+        .info-note div p:first-child {
+            font-weight: 700; color: #212529; margin-bottom: 4px;
+        }
+
+        .type-card {
+            background: #fff; border: 1px solid #E9ECEF; border-radius: 14px;
+            padding: 24px 26px; transition: all 0.4s ease;
+            position: relative; overflow: hidden; height: 100%;
+        }
+        .type-card::before {
+            content: ''; position: absolute; top: 0; right: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(270deg, #C9A961, #A88947);
+            transform: scaleX(0); transform-origin: right; transition: transform 0.4s ease;
+        }
+        .type-card:hover::before { transform: scaleX(1); }
+        .type-card:hover {
+            transform: translateY(-5px); border-color: #C9A961;
+            box-shadow: 0 20px 40px -15px rgba(201,169,97,0.25);
+        }
+        .type-card > i {
+            color: #C9A961; font-size: 1.6rem; margin-bottom: 14px; display: inline-block;
+        }
+        .type-card h4 {
+            font-size: 1.05rem; font-weight: 800; color: #212529;
+            margin-bottom: 8px; line-height: 1.45;
+        }
+        .type-card p {
+            font-size: 0.85rem; color: #6C757D; line-height: 1.85; margin: 0;
+        }
+
+        .process-rich {
+            padding: 90px 0;
+            background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+            position: relative; overflow: hidden;
+        }
+        .process-rich::before {
+            content: ''; position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(201,169,97,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201,169,97,0.04) 1px, transparent 1px);
+            background-size: 60px 60px; pointer-events: none;
+        }
+        .process-timeline {
+            display: grid; grid-template-columns: repeat(5, 1fr);
+            gap: 24px; position: relative; padding-top: 30px;
+        }
+        @media (max-width: 900px) { .process-timeline { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 500px) { .process-timeline { grid-template-columns: 1fr; } }
+        .pt-step { text-align: center; position: relative; z-index: 1; }
+        .pt-node {
+            width: 90px; height: 90px; margin: 0 auto 18px;
+            background: linear-gradient(135deg, #1A1A1A, #000);
+            border: 2px solid #C9A961; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; color: #C9A961; position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3); transition: all 0.4s ease;
+        }
+        .pt-step:hover .pt-node {
+            transform: scale(1.08) rotate(5deg);
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000; box-shadow: 0 20px 40px rgba(201,169,97,0.4);
+        }
+        .pt-num {
+            position: absolute; top: -8px; left: -8px;
+            width: 30px; height: 30px; background: #C9A961;
+            color: #000; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center;
+            font-size: 0.72rem; font-weight: 800;
+            font-family: 'Inter', sans-serif; border: 3px solid #000;
+        }
+        .pt-step h6 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+        .pt-step p {
+            font-size: 0.82rem; color: rgba(255,255,255,0.65);
+            margin: 0; line-height: 1.85;
+        }
+
+        .practice-areas-rich { padding: 90px 0; }
+        .pa-card {
+            background: #fff; border: 1px solid #E9ECEF; border-radius: 18px;
+            overflow: hidden; transition: all 0.4s ease; height: 100%;
+            display: flex; flex-direction: column;
+        }
+        .pa-card:hover {
+            transform: translateY(-6px); border-color: #C9A961;
+            box-shadow: 0 25px 50px -20px rgba(0,0,0,0.12);
+        }
+        .pa-card-head {
+            padding: 26px 26px 18px;
+            background: linear-gradient(160deg, #FAF6EC 0%, #fff 100%);
+            border-bottom: 1px solid #F1F3F5;
+        }
+        .pa-card-head i.pa-icon {
+            font-size: 1.8rem; color: #C9A961; margin-bottom: 12px; display: inline-block;
+        }
+        .pa-card-head h3 {
+            font-family: 'Cairo', sans-serif; font-size: 1.1rem;
+            font-weight: 800; color: #212529; margin: 0; line-height: 1.5;
+        }
+        .pa-card-body {
+            padding: 22px 26px 26px; flex: 1; display: flex; flex-direction: column;
+        }
+        .pa-card-body p {
+            font-size: 0.9rem; color: #6C757D; line-height: 1.9;
+            margin-bottom: 16px; flex: 1;
+        }
+        .pa-card-body ul { list-style: none; padding: 0; margin: 0 0 18px; }
+        .pa-card-body ul li {
+            display: flex; align-items: flex-start; gap: 10px;
+            padding: 5px 0; font-size: 0.85rem; color: #495057;
+            line-height: 1.75;
+        }
+        .pa-card-body ul li i { color: #C9A961; font-size: 0.7rem; margin-top: 6px; flex-shrink: 0; }
+        .pa-card-body .pa-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: #A88947; font-weight: 700; font-size: 0.88rem;
+            text-decoration: none; margin-top: auto; transition: all 0.3s ease;
+        }
+        .pa-card-body .pa-link:hover { color: #000; gap: 14px; }
+
+        .faq-rich-accordion .accordion-item {
+            background: #fff; border: 1px solid #E9ECEF;
+            border-radius: 14px !important; margin-bottom: 12px;
+            overflow: hidden; transition: all 0.3s ease;
+        }
+        .faq-rich-accordion .accordion-item:hover { border-color: #C9A961; }
+        .faq-rich-accordion .accordion-button {
+            font-weight: 700; font-size: 0.95rem; padding: 22px 26px;
+            color: #212529; background: #fff; border: none; box-shadow: none;
+            text-align: right;
+            line-height: 1.6;
+        }
+        .faq-rich-accordion .accordion-button:not(.collapsed) {
+            background: linear-gradient(135deg, rgba(201,169,97,0.08), rgba(201,169,97,0.02));
+            color: #A88947;
+        }
+        .faq-rich-accordion .accordion-button:focus { box-shadow: none; }
+        .faq-rich-accordion .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23C9A961'%3e%3cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            margin-right: auto;
+            margin-left: 0;
+        }
+        .faq-rich-accordion .accordion-body {
+            padding: 0 26px 22px; color: #6C757D; line-height: 1.95; font-size: 0.9rem;
+        }
+
+        [dir="rtl"] .language-switcher { right: auto; left: 20px; }
+    </style>
+</head>
+
+<body>
+    <div id="trial-banner">
+        <i class="fas fa-tools"></i>
+        <span>هذا إصدار تجريبي للموقع - جاري التطوير والتحديث</span>
+        <i class="fas fa-tools"></i>
+    </div>
+
+    <div class="language-switcher">
+        <a href="/family-law.html" class="lang-btn"><i class="fas fa-globe"></i> English</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="وليد أبوالعلا للمحاماة" style="height:45px; width:auto; margin-left:10px;">
+            <a class="navbar-brand" href="/ar/">
+                <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة">
                 <div>
-                    <span class="fw-bold">وليد أبوالعلا للمحاماة</span>
-                    <small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small>
+                    <span class="firm-name">وليد محمد أبوالعلا</span>
+                    <small class="firm-sub">مكتب محاماة · تحكيم · ملكية فكرية</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -133,20 +377,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/about.html">من نحن</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">الخدمات</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">الخدمات</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/ar/arbitration.html">التحكيم الدولي</a></li>
                             <li><a class="dropdown-item" href="/ar/trademark.html">تسجيل العلامات التجارية</a></li>
                             <li><a class="dropdown-item" href="/ar/patent.html">براءات الاختراع</a></li>
                             <li><a class="dropdown-item" href="/ar/copyright.html">حقوق المؤلف</a></li>
                             <li><a class="dropdown-item" href="/ar/litigation.html">قضايا الملكية الفكرية</a></li>
+                            <li><a class="dropdown-item" href="/ar/licensing.html">الترخيص والعقود</a></li>
                             <li><a class="dropdown-item" href="/ar/corporate-formation.html">تأسيس الشركات</a></li>
                             <li><a class="dropdown-item" href="/ar/criminal-litigation.html">القضايا الجنائية</a></li>
-                            <li><a class="dropdown-item" href="/ar/family-law.html">قضايا الأسرة</a></li>
-                            <li><a class="dropdown-item" href="/ar/economic-cases.html">القضايا الاقتصادية</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="/ar/services.html">جميع الخدمات</a></li>
                         </ul>
@@ -154,119 +397,333 @@
                     <li class="nav-item"><a class="nav-link" href="/ar/lawyers.html">فريق العمل</a></li>
                     <li class="nav-item"><a class="nav-link" href="/ar/blog.html">المدونة</a></li>
                     <li class="nav-item"><a class="nav-link" href="/ar/contact.html">اتصل بنا</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/consultation.html">استشارة مدفوعة</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html"><i class="fas fa-lock me-1"></i>بوابة العميل</a>
+                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>بوابة العميل
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script>
-        // حل إضافي لصورة المحامي
-        (function() {
-            const possiblePaths = [
-                '/images/team/walid-profile.jpg',
-                '/images/team/walid-abouelela.jpg',
-                '/images/walid-profile.jpg',
-                '/ar/images/team/walid-profile.jpg',
-                '/images/lawyers/walid.jpg'
-            ];
-            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-            if (!imgElement) return;
-            function tryLoadImage(index) {
-                if (index >= possiblePaths.length) return;
-                const testImg = new Image();
-                testImg.src = possiblePaths[index];
-                testImg.onload = function() {
-                    imgElement.src = possiblePaths[index];
-                    imgElement.onerror = null;
-                };
-                testImg.onerror = function() {
-                    tryLoadImage(index + 1);
-                };
-            }
-            tryLoadImage(0);
-        })();
-        </script>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-section">
+    <header class="service-hero">
         <div class="container">
-            <h1 class="display-4 fw-bold">قضايا الأسرة</h1>
-            <p class="lead">دعم قانوني متعاطف لك ولأسرتك</p>
+            <div class="service-hero-content">
+                <span class="sh-badge">
+                    <i class="fas fa-people-roof"></i>
+                    ممارسة أسرية
+                </span>
+                <h1>خدمات <span class="text-gold">الأحوال الشخصية</span></h1>
+                <p>
+                    تمثيل إنساني واستراتيجي في قضايا الأحوال الشخصية — الطلاق، والخلع، والنفقة،
+                    والحضانة، والرؤية، والميراث، والولاية على المال. أمام محاكم الأسرة المصرية،
+                    بحساسية تجاه الطبيعة الشخصية لكل قضية.
+                </p>
+                <div class="hero-actions">
+                    <a href="/ar/consultation.html" class="btn-rich-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>احجز استشارة</span>
+                    </a>
+                    <a href="/ar/contact.html" class="btn-rich-outline" style="border-color: rgba(255,255,255,0.4); color: #fff;">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>ناقش قضيتك</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <section class="py-5">
+    <div style="background: #F8F9FA; padding: 16px 0; border-bottom: 1px solid #E9ECEF;">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="text-center mb-5">خدماتنا في قضايا الأسرة</h2>
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="service-card bg-white p-4 shadow-sm h-100">
-                                <div class="icon-bg"><i class="fas fa-heart-broken fa-2x"></i></div>
-                                <h4>الطلاق</h4>
-                                <p>تمثيل متخصص في جميع إجراءات الطلاق، بما في ذلك الطلاق بالتراضي والطلاق للضرر.</p>
-                            </div>
+            <nav style="font-size: 0.85rem; color: #6C757D;">
+                <a href="/ar/" style="color: #6C757D; text-decoration: none;">الرئيسية</a>
+                <span style="margin: 0 10px; color: #ADB5BD;">/</span>
+                <a href="/ar/services.html" style="color: #6C757D; text-decoration: none;">الخدمات</a>
+                <span style="margin: 0 10px; color: #ADB5BD;">/</span>
+                <span style="color: #212529; font-weight: 600;">الأحوال الشخصية</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- المزايا -->
+    <section class="features-rich">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">ممارستنا في الأحوال الشخصية</span>
+                <h2 class="sh-title">ما الذي <span class="text-gold">نقدّمه</span></h2>
+                <p class="sh-desc">خدمات أحوال شخصية شاملة — من عقود الزواج إلى منازعات الميراث.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="svc-feature-card">
+                        <div class="svc-feature-icon"><i class="fas fa-file-signature"></i></div>
+                        <h3>عقود الزواج</h3>
+                        <p>صياغة ومراجعة عقود الزواج — بما في ذلك الشروط الخاصة التي تحمي حقوق الطرفين.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="svc-feature-card">
+                        <div class="svc-feature-icon"><i class="fas fa-heart-broken"></i></div>
+                        <h3>الطلاق والخلع</h3>
+                        <p>التمثيل في جميع صور انحلال الزواج — الطلاق من الزوج، والطلاق القضائي، والخلع.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="svc-feature-card">
+                        <div class="svc-feature-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+                        <h3>دعاوى النفقة</h3>
+                        <p>دعاوى النفقة الزوجية ونفقة الأولاد — بما في ذلك أوامر النفقة المستعجلة والتنفيذ.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="svc-feature-card">
+                        <div class="svc-feature-icon"><i class="fas fa-baby"></i></div>
+                        <h3>الحضانة والرؤية</h3>
+                        <p>ترتيبات الحضانة وحقوق الرؤية — بمصلحة الطفل الفضلى كمبدأ موجّه.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="svc-feature-card">
+                        <div class="svc-feature-icon"><i class="fas fa-scale-balanced"></i></div>
+                        <h3>الميراث والتركات</h3>
+                        <p>منازعات الميراث، وقسمة التركات، ودعاوى الفروض الإلزامية وفقاً لقانون الميراث.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="svc-feature-card">
+                        <div class="svc-feature-icon"><i class="fas fa-user-shield"></i></div>
+                        <h3>الولاية على المال</h3>
+                        <p>الولاية على القُصّر وأموالهم — بما في ذلك التعيين والإشراف وتسوية المنازعات.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- أنواع القضايا الأسرية -->
+    <section class="py-5" style="background: #fff;">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">الأحوال الشخصية في مصر</span>
+                <h2 class="sh-title">أنواع <span class="text-gold">المنازعات الأسرية</span></h2>
+                <p class="sh-desc">تُنظَّم الأحوال الشخصية في مصر بمجموعة من القوانين — أهمها القانون رقم 25 لسنة 1920، والقانون رقم 25 لسنة 1929، والقانون رقم 100 لسنة 1985 — بالإضافة إلى قوانين الأحوال الشخصية لغير المسلمين.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="type-card">
+                        <i class="fas fa-file-signature"></i>
+                        <h4>الزواج والخطبة</h4>
+                        <p>عقود الزواج، ومنازعات الخطبة، وردّ هدايا الخطبة — وفقاً لقانون الأحوال الشخصية والتعديلات الحديثة.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="type-card">
+                        <i class="fas fa-heart-broken"></i>
+                        <h4>الطلاق</h4>
+                        <p>الطلاق من الزوج، والطلاق القضائي للضرر، والطلاق بالتراضي — لكل منها إجراءاته وآثاره المختلفة.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="type-card">
+                        <i class="fas fa-handshake"></i>
+                        <h4>الخلع</h4>
+                        <p>طلاق دون إبداء أسباب تطلبه الزوجة — مقابل تنازلها عن بعض حقوقها المالية، بما في ذلك ردّ المهر.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="type-card">
+                        <i class="fas fa-coins"></i>
+                        <h4>النفقة</h4>
+                        <p>النفقة الزوجية ونفقة الأولاد — وتشمل الطعام والكسوة والسكنى والعلاج. والنفقة دين في ذمة الزوج من تاريخ الامتناع.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="type-card">
+                        <i class="fas fa-baby"></i>
+                        <h4>الحضانة والرؤية</h4>
+                        <p>ترتيبات الحضانة — الأم أولاً ثم الأب مباشرةً. وتعديلات 2025 تُقدّم مصلحة الطفل الفضلى.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="type-card">
+                        <i class="fas fa-home"></i>
+                        <h4>الميراث والوصايا</h4>
+                        <p>يحكمها القانون رقم 77 لسنة 1943 بشأن الميراث، والقانون رقم 71 لسنة 1946 بشأن الوصايا — بتطبيق أحكام الفروض الشرعية.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-note">
+                <i class="fas fa-info-circle"></i>
+                <div>
+                    <p>ملاحظة بشأن تعديلات قانون الأحوال الشخصية 2025</p>
+                    <p>
+                        أُدخلت مصر مؤخراً تعديلات جوهرية على قوانين الأحوال الشخصية، بتركيز على
+                        <strong>مصلحة الطفل الفضلى</strong>، و<strong>توحيد النظر في القضايا الأسرية</strong>،
+                        و<strong>توثيق الطلاق</strong>. ومن أبرز التعديلات: منح القضاة سلطات جديدة
+                        للنظر في الحالات المستعجلة؛ وإنشاء محكمة واحدة لكل أسرة تنظر في جميع
+                        منازعاتها؛ وإلزام توثيق الطلاق الشفهي خلال 15 يوماً؛ وإعادة ترتيب أولويات
+                        الحضانة. ويُتابع مكتبنا هذه التطورات بشكل كامل لتقديم مشورة محدّثة.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- القضايا التي نتعامل معها -->
+    <section class="py-5" style="background: #F8F9FA;">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">القضايا التي نتعامل معها</span>
+                <h2 class="sh-title">نطاق واسع من <span class="text-gold">القضايا الأسرية</span></h2>
+                <p class="sh-desc">من المسائل الإدارية غير المتنازع عليها إلى المنازعات المعقدة متعددة الأطراف.</p>
+            </div>
+
+            <ul class="handles-list">
+                <li><i class="fas fa-check"></i> الطلاق وآثاره</li>
+                <li><i class="fas fa-check"></i> الطلاق القضائي للضرر</li>
+                <li><i class="fas fa-check"></i> دعاوى الخلع</li>
+                <li><i class="fas fa-check"></i> النفقة الزوجية</li>
+                <li><i class="fas fa-check"></i> نفقة الأولاد ومصاريف التعليم</li>
+                <li><i class="fas fa-check"></i> الحضانة والرؤية</li>
+                <li><i class="fas fa-check"></i> دعاوى الميراث وقسمة التركات</li>
+                <li><i class="fas fa-check"></i> الوصايا والتصرفات الموصى بها</li>
+                <li><i class="fas fa-check"></i> الولاية على القُصّر وأموالهم</li>
+                <li><i class="fas fa-check"></i> دعاوى إثبات النسب والنفي</li>
+                <li><i class="fas fa-check"></i> شروط عقد الزواج وتنفيذها</li>
+                <li><i class="fas fa-check"></i> منازعات الأحوال الشخصية لغير المسلمين</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- العملية -->
+    <section class="process-rich">
+        <div class="container">
+            <div class="section-head-rich light">
+                <div class="sh-line"></div>
+                <span class="sh-label">كيف نعمل</span>
+                <h2 class="sh-title">عمليتنا في <span class="text-gold">الأحوال الشخصية</span></h2>
+                <p class="sh-desc">مقاربة من خمس خطوات منظمة من الاستشارة الأولية إلى الحل النهائي.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="pt-step">
+                    <div class="pt-node">
+                        <i class="fas fa-comments"></i>
+                        <span class="pt-num">01</span>
+                    </div>
+                    <h6>استشارة سرية</h6>
+                    <p>استشارة خاصة لفهم موقفك وأولوياتك وأهدافك — بسرية تامة.</p>
+                </div>
+                <div class="pt-step">
+                    <div class="pt-node">
+                        <i class="fas fa-search"></i>
+                        <span class="pt-num">02</span>
+                    </div>
+                    <h6>التقييم القانوني</h6>
+                    <p>تقييم الموقف القانوني، والسبل المتاحة، والنتائج الواقعية — بما في ذلك إمكانية التسوية.</p>
+                </div>
+                <div class="pt-step">
+                    <div class="pt-node">
+                        <i class="fas fa-chess"></i>
+                        <span class="pt-num">03</span>
+                    </div>
+                    <h6>الاستراتيجية والإيداع</h6>
+                    <p>تحديد المحكمة المختصة وإيداع الدعوى — سواء للطلاق أو النفقة أو الحضانة.</p>
+                </div>
+                <div class="pt-step">
+                    <div class="pt-node">
+                        <i class="fas fa-gavel"></i>
+                        <span class="pt-num">04</span>
+                    </div>
+                    <h6>الوساطة والمرافعة</h6>
+                    <p>تمثيلك في الوساطة التي تأمر بها المحكمة — وإذا لزم الأمر، المرافعة في الجلسات.</p>
+                </div>
+                <div class="pt-step">
+                    <div class="pt-node">
+                        <i class="fas fa-award"></i>
+                        <span class="pt-num">05</span>
+                    </div>
+                    <h6>الحكم والتنفيذ</h6>
+                    <p>تأمين الحكم — وإذا لزم الأمر، السعي لتنفيذ أوامر النفقة أو الحضانة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- خدمات ذات صلة -->
+    <section class="practice-areas-rich">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">مجالات ممارسة ذات صلة</span>
+                <h2 class="sh-title">قد تحتاج أيضاً <span class="text-gold">هذه الخدمات</span></h2>
+                <p class="sh-desc">غالباً ما تتقاطع قضايا الأحوال الشخصية مع مجالات ممارسة قانونية أخرى.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="pa-card">
+                        <div class="pa-card-head">
+                            <i class="fas fa-scale-balanced pa-icon"></i>
+                            <h3>التقاضي المدني والتجاري</h3>
                         </div>
-                        <div class="col-md-6">
-                            <div class="service-card bg-white p-4 shadow-sm h-100">
-                                <div class="icon-bg"><i class="fas fa-child fa-2x"></i></div>
-                                <h4>الحضانة</h4>
-                                <p>التفاوض وتقاضي ترتيبات الحضانة التي تراعي المصالح الفضلى للطفل.</p>
-                            </div>
+                        <div class="pa-card-body">
+                            <p>التمثيل أمام المحاكم المصرية، والمحاكم الاقتصادية، ومجلس الدولة.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> منازعات العقود</li>
+                                <li><i class="fas fa-check"></i> منازعات المساهمين</li>
+                                <li><i class="fas fa-check"></i> التنفيذ</li>
+                            </ul>
+                            <a href="/ar/litigation.html" class="pa-link">
+                                اعرف المزيد <i class="fas fa-arrow-left"></i>
+                            </a>
                         </div>
-                        <div class="col-md-6">
-                            <div class="service-card bg-white p-4 shadow-sm h-100">
-                                <div class="icon-bg"><i class="fas fa-money-bill-wave fa-2x"></i></div>
-                                <h4>النفقة</h4>
-                                <p>تحديد وتعديل التزامات نفقة الزوجة والأبناء.</p>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="pa-card">
+                        <div class="pa-card-head">
+                            <i class="fas fa-gavel pa-icon"></i>
+                            <h3>التقاضي الجنائي</h3>
                         </div>
-                        <div class="col-md-6">
-                            <div class="service-card bg-white p-4 shadow-sm h-100">
-                                <div class="icon-bg"><i class="fas fa-hand-holding-heart fa-2x"></i></div>
-                                <h4>المؤخر والصداق</h4>
-                                <p>تحصيل حقوق الزوجة المالية.</p>
-                            </div>
+                        <div class="pa-card-body">
+                            <p>الدفاع في القضايا الجنائية — بما في ذلك القضايا المتعلقة بالأسرة.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> دفاع ذوي الياقات البيضاء</li>
+                                <li><i class="fas fa-check"></i> الجرائم الاقتصادية</li>
+                                <li><i class="fas fa-check"></i> الجرائم المتعلقة بالأسرة</li>
+                            </ul>
+                            <a href="/ar/criminal-litigation.html" class="pa-link">
+                                اعرف المزيد <i class="fas fa-arrow-left"></i>
+                            </a>
                         </div>
-                        <div class="col-md-6">
-                            <div class="service-card bg-white p-4 shadow-sm h-100">
-                                <div class="icon-bg"><i class="fas fa-dna fa-2x"></i></div>
-                                <h4>النسب</h4>
-                                <p>إثبات النسب والحقوق والالتزامات ذات الصلة.</p>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="pa-card">
+                        <div class="pa-card-head">
+                            <i class="fas fa-handshake pa-icon"></i>
+                            <h3>التحكيم الدولي</h3>
                         </div>
-                        <div class="col-md-6">
-                            <div class="service-card bg-white p-4 shadow-sm h-100">
-                                <div class="icon-bg"><i class="fas fa-user-shield fa-2x"></i></div>
-                                <h4>الوصاية</h4>
-                                <p>تعيين أوصياء على القاصرين أو البالغين غير المؤهلين.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-card bg-white p-4 shadow-sm h-100">
-                                <div class="icon-bg"><i class="fas fa-hand-holding-heart fa-2x"></i></div>
-                                <h4>التبني</h4>
-                                <p>المساعدة في الإجراءات القانونية للتبني.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-card bg-white p-4 shadow-sm h-100">
-                                <div class="icon-bg"><i class="fas fa-file-signature fa-2x"></i></div>
-                                <h4>اتفاقيات الزواج</h4>
-                                <p>صياغة اتفاقيات ما قبل الزواج وأثناءه.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="service-card bg-white p-4 shadow-sm h-100">
-                                <div class="icon-bg"><i class="fas fa-shield-alt fa-2x"></i></div>
-                                <h4>العنف الأسري</h4>
-                                <p>الحصول على أوامر الحماية وغيرها من سبل الانتصاف لضحايا العنف الأسري.</p>
-                            </div>
+                        <div class="pa-card-body">
+                            <p>التمثيل في التحكيم التجاري والمتعلق بالملكية الفكرية — محلياً وعبر الحدود.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> التحكيم التجاري</li>
+                                <li><i class="fas fa-check"></i> تحكيم الملكية الفكرية</li>
+                                <li><i class="fas fa-check"></i> تنفيذ أحكام التحكيم</li>
+                            </ul>
+                            <a href="/ar/arbitration.html" class="pa-link">
+                                اعرف المزيد <i class="fas fa-arrow-left"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -274,98 +731,183 @@
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="py-5 bg-light">
+    <!-- الأسئلة الشائعة -->
+    <section class="py-5" style="background: #F8F9FA;">
         <div class="container">
-            <h2 class="text-center mb-5">لماذا تختار فريقنا في قضايا الأسرة؟</h2>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <i class="fas fa-heart fa-3x text-primary mb-3"></i>
-                    <h5>نهج متعاطف</h5>
-                    <p>نحن نتفهم حساسية قضايا الأسرة ونتعامل مع قضيتك برعاية.</p>
-                </div>
-                <div class="col-md-4">
-                    <i class="fas fa-gavel fa-3x text-primary mb-3"></i>
-                    <h5>خبرة قانونية</h5>
-                    <p>سنوات من الخبرة في محاكم الأسرة مع سجل حافل.</p>
-                </div>
-                <div class="col-md-4">
-                    <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
-                    <h5>حلول ودية</h5>
-                    <p>نسعى للحلول الودية، لكننا مستعدون للتقاضي عند الضرورة.</p>
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">أسئلة شائعة</span>
+                <h2 class="sh-title">أسئلة حول <span class="text-gold">الأحوال الشخصية</span></h2>
+            </div>
+
+            <div class="faq-rich-accordion mx-auto" style="max-width: 900px;">
+                <div class="accordion" id="flFaq">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flf1">
+                                ما الفرق بين الطلاق والخلع؟
+                            </button>
+                        </h3>
+                        <div id="flf1" class="accordion-collapse collapse" data-bs-parent="#flFaq">
+                            <div class="accordion-body">
+                                <strong>الطلاق</strong> يبدأ من الزوج ولا يحتاج إلى موافقة الزوجة أو حكم
+                                قضائي — وإن كان التوثيق مطلوباً الآن. أما <strong>الخلع</strong> فهو طلاق
+                                دون إبداء أسباب تطلبه الزوجة من خلال المحكمة. وفي الخلع، تتنازل الزوجة
+                                عن بعض حقوقها المالية — بما في ذلك ردّ المهر، وسقوط النفقة خلال فترة
+                                العدة، وسقوط المتعة.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flf2">
+                                كيف تُحتسب النفقة في مصر؟
+                            </button>
+                        </h3>
+                        <div id="flf2" class="accordion-collapse collapse" data-bs-parent="#flFaq">
+                            <div class="accordion-body">
+                                تشمل النفقة الطعام والكسوة والسكنى والعلاج. وبموجب تعديلات 2025، تُلزَم
+                                المحكمة بتحديد <strong>الدخل الحقيقي</strong> للزوج — بما في ذلك البدلات
+                                والمكافآت وعناصر الدخل الأخرى — بدلاً من الاعتماد على مفردات المرتب فقط.
+                                وقد أُدخل نظام جديد لتوحيد جميع دعاوى النفقة في <strong>قضية واحدة</strong>،
+                                وتُقدَّر بما يصل إلى <strong>40% من دخل الزوج</strong>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flf3">
+                                من له الأولوية في حضانة الأطفال؟
+                            </button>
+                        </h3>
+                        <div id="flf3" class="accordion-collapse collapse" data-bs-parent="#flFaq">
+                            <div class="accordion-body">
+                                بموجب تعديلات 2025، تُمنح الحضانة أولاً <strong>للأم</strong>، ثم
+                                <strong>للأب</strong> مباشرةً (بعد أن كان الأب في المرتبة التالية لأكثر
+                                من 15 قريباً). وتحتفظ المحكمة بسلطة تمديد الحضانة بعد السن المعتاد حيث
+                                يحقق ذلك مصلحة الطفل. ويجوز للطفل أن يختار مكان إقامته عند بلوغه 15 عاماً.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flf4">
+                                ما قواعد الميراث في مصر؟
+                            </button>
+                        </h3>
+                        <div id="flf4" class="accordion-collapse collapse" data-bs-parent="#flFaq">
+                            <div class="accordion-body">
+                                يُنظَّم الميراث في مصر بموجب <strong>القانون رقم 77 لسنة 1943</strong>،
+                                الذي يطبّق أحكام الفروض الشرعية. ويحصل الوارث الذكر عموماً على ضعف نصيب
+                                الأنثى. وتنشأ حقوق الميراث عند الوفاة، وهناك قواعد محددة بشأن من يُحجَب
+                                (مثل من يقتل المورّث عمداً). وتُجرّم التعديلات الحديثة حجب نصيب الميراث.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flf5">
+                                هل لغير المسلمين في مصر قوانين أحوال شخصية خاصة؟
+                            </button>
+                        </h3>
+                        <div id="flf5" class="accordion-collapse collapse" data-bs-parent="#flFaq">
+                            <div class="accordion-body">
+                                نعم — صدر مؤخراً في مصر <strong>قانون أحوال شخصية للمسيحيين</strong>
+                                يتضمن قواعد إجرائية وموضوعية للطوائف المسيحية بمختلف مذاهبها. وتحتفظ
+                                كل طائفة بقواعدها العقائدية حيث تنطبق. أما القواعد الإجرائية — مثل
+                                المحكمة التي تنظر القضية — فهي موحّدة لجميع المصريين، مسلمين ومسيحيين.
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-5 bg-primary text-white text-center">
+    <!-- دعوة نهائية -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
         <div class="container">
-            <h3>هل تحتاج مساعدة قانونية في قضية أسرة؟</h3>
-            <p class="lead mb-4">اتصل بنا اليوم لاستشارة سرية.</p>
-            <a href="/ar/contact.html" class="btn btn-light btn-lg">اتصل بنا</a>
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-handshake"></i></div>
+                <h2>تواجه قضية أحوال شخصية؟</h2>
+                <p>يقدّم مكتبنا تمثيلاً إنسانياً واستراتيجياً أمام محاكم الأسرة المصرية.</p>
+                <div class="fcr-buttons">
+                    <a href="/ar/consultation.html" class="btn-rich-primary light">
+                        <span>احجز استشارة</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <a href="/ar/contact.html" class="btn-rich-ghost">
+                        <i class="fas fa-envelope"></i>
+                        <span>تواصل معنا</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer (عربي) -->
-    <footer class="footer-section py-5 bg-dark text-white">
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>وليد أبوالعلا للمحاماة</h5>
-                    <p class="text-white-50">متخصصون في التحكيم وحماية الملكية الفكرية بلمسة شخصية منذ 2016.</p>
-                    <div class="social-links mt-3">
+                <div class="col-lg-4">
+                    <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">مكتب وليد محمد أبوالعلا للمحاماة</h5>
+                    <p class="footer-desc">محاماة · تحكيم · ملكية فكرية. نخدم عملاءنا بتفانٍ منذ 2016.</p>
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="فيسبوك"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
                         <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <h6 class="mb-4">روابط سريعة</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/ar/index.html" class="text-white-50 text-decoration-none">الرئيسية</a></li>
-                        <li class="mb-2"><a href="/ar/about.html" class="text-white-50 text-decoration-none">من نحن</a></li>
-                        <li class="mb-2"><a href="/ar/services.html" class="text-white-50 text-decoration-none">الخدمات</a></li>
-                        <li class="mb-2"><a href="/ar/lawyers.html" class="text-white-50 text-decoration-none">فريق العمل</a></li>
-                        <li class="mb-2"><a href="/ar/blog.html" class="text-white-50 text-decoration-none">المدونة</a></li>
-                        <li class="mb-2"><a href="/ar/contact.html" class="text-white-50 text-decoration-none">اتصل بنا</a></li>
-                        <li class="mb-2"><a href="/ar/consultation.html" class="text-white-50 text-decoration-none">استشارة مدفوعة</a></li>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">روابط سريعة</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/">الرئيسية</a></li>
+                        <li><a href="/ar/about.html">من نحن</a></li>
+                        <li><a href="/ar/services.html">الخدمات</a></li>
+                        <li><a href="/ar/lawyers.html">فريق العمل</a></li>
+                        <li><a href="/ar/blog.html">المدونة</a></li>
+                        <li><a href="/ar/contact.html">اتصل بنا</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h6 class="mb-4">معلومات الاتصال</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، القاهرة، مصر</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> السبت - الخميس: 9 صباحاً - 8 مساءً</li>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">معلومات الاتصال</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> العاشر من رمضان، القاهرة، مصر</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;" dir="ltr">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;" dir="ltr">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> السبت - الخميس: 9 ص - 8 م</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="footer-heading">قانوني</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/privacy-policy.html">سياسة الخصوصية</a></li>
+                        <li><a href="/ar/terms-of-service.html">شروط الاستخدام</a></li>
+                        <li><a href="/ar/cookie-policy.html">سياسة ملفات تعريف الارتباط</a></li>
                     </ul>
                 </div>
             </div>
-            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="small text-white-50 mb-0">© 2025 وليد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">سياسة الخصوصية</a>
-                    <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">شروط الاستخدام</a>
-                    <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">سياسة ملفات تعريف الارتباط</a>
-                </div>
+            <div class="footer-bottom">
+                <p>© 2026 مكتب وليد محمد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
 
+    <button id="backToTop" title="العودة إلى الأعلى"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
-                if (link.getAttribute('href') === currentPath) link.classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>

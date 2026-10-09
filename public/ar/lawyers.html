@@ -3,253 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فريق العمل - وليد أبوالعلا للمحاماة</title>
-    <!-- Bootstrap CSS -->
+    <title>فريق العمل - مكتب وليد محمد أبوالعلا للمحاماة | الملكية الفكرية والتحكيم والتقاضي</title>
+    <meta name="description" content="تعرّف على مؤسس ومحامي مكتب وليد محمد أبوالعلا للمحاماة — محكّم معتمد في الملكية الفكرية، ووكيل براءات مسجّل، وباحث ماجستير في الملكية الفكرية. خبرة تتجاوز 10 سنوات منذ 2016.">
+    <meta name="keywords" content="فريق العمل, محامي ملكية فكرية, محكّم معتمد, وكيل براءات, وليد محمد أبوالعلا, مكتب محاماة مصر, باحث ماجستير ملكية فكرية">
+    <meta name="author" content="وليد محمد أبوالعلا">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/ar/lawyers.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/ar/lawyers.html">
+    <meta property="og:title" content="فريق العمل - مكتب وليد محمد أبوالعلا للمحاماة">
+    <meta property="og:description" content="بقيادة محكّم معتمد في الملكية الفكرية، ووكيل براءات مسجّل، وباحث ماجستير في IP.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta property="og:locale" content="ar_EG">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/lawyers.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/lawyers.html">
+
+    <link rel="icon" type="image/png" href="/images/logo arb ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <meta name="description" content="فريق عمل مكتب وليد أبوالعلا للمحاماة، بقيادة المحامي وليد أبوالعلا، متخصص في التحكيم الدولي والملكية الفكرية. خبرة منذ 2016.">
-</head>
-<script>
-// ========== حل نهائي لصورة المحامي (النسخة الأولى) ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) {
-            imgElement.src = correctImagePath;
-        }
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools"></i>
-</div>
-<body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>
-    </div>
 
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (currentPath.startsWith('/ar/')) {
-            let englishPath = currentPath.replace('/ar', '');
-            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') {
-                englishPath = '/';
-            }
-            langLink.href = englishPath;
-        } else {
-            langLink.href = '/';
-        }
-    })();
-    </script>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="وليد أبوالعلا للمحاماة" style="height:45px; width:auto; margin-left:10px;">
-                <div>
-                    <span class="fw-bold">وليد أبوالعلا للمحاماة</span>
-                    <small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small>
-                </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">الخدمات</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li><a class="dropdown-item" href="/ar/arbitration.html">التحكيم الدولي</a></li>
-                            <li><a class="dropdown-item" href="/ar/trademark.html">تسجيل العلامات التجارية</a></li>
-                            <li><a class="dropdown-item" href="/ar/patent.html">براءات الاختراع</a></li>
-                            <li><a class="dropdown-item" href="/ar/copyright.html">حقوق المؤلف</a></li>
-                            <li><a class="dropdown-item" href="/ar/litigation.html">قضايا الملكية الفكرية</a></li>
-                            <li><a class="dropdown-item" href="/ar/corporate-formation.html">تأسيس الشركات</a></li>
-                            <li><a class="dropdown-item" href="/ar/criminal-litigation.html">القضايا الجنائية</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/ar/services.html">جميع الخدمات</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/lawyers.html">فريق العمل</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/blog.html">المدونة</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/contact.html">اتصل بنا</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/consultation.html">استشارة مدفوعة</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html"><i class="fas fa-lock me-1"></i>بوابة العميل</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <header class="page-header">
-        <div class="container text-white text-center">
-            <h1 class="display-4">فريق العمل</h1>
-            <p class="lead">تعرف على المحامي الرئيسي وفريق الخبراء القانونيين</p>
-        </div>
-    </header>
-
-    <section class="py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-5 col-md-8 mb-5">
-                    <div class="team-card text-center shadow-lg rounded-4 p-4 border-0">
-                        <div class="position-relative d-inline-block">
-                            <img src="/images/team/walid-profile.png" alt="وليد محمد أبوالعلا" 
-                                 style="width:180px; height:180px; object-fit:cover; border-radius:50%; border:4px solid var(--accent-color); box-shadow:0 8px 20px rgba(0,0,0,0.1);"
-                                 onerror="this.onerror=null; this.src='/images/team/walid-profile.jpg';">
-                            <div class="position-absolute bottom-0 end-0 bg-success rounded-circle p-2 border border-white">
-                                <i class="fas fa-check-circle text-white"></i>
-                            </div>
-                        </div>
-                        <h3 class="mt-4">وليد محمد أبوالعلا</h3>
-                        <p class="text-primary fw-bold mb-1">المؤسس والمحامي الرئيسي</p>
-                        <p class="text-muted small mb-3">عضو نقابة المحامين المصرية | مُحكّم معتمد</p>
-                        <div class="d-flex justify-content-center gap-2 flex-wrap mb-3">
-                            <span class="badge bg-primary px-3 py-2">التحكيم الدولي</span>
-                            <span class="badge bg-primary px-3 py-2">الملكية الفكرية</span>
-                            <span class="badge bg-primary px-3 py-2">المنازعات التجارية</span>
-                        </div>
-                        <p class="text-muted">خبرة قانونية تمتد لأكثر من 9 سنوات في التحكيم الدولي وقانون الملكية الفكرية. يتولى جميع القضايا شخصياً بمتابعة دقيقة وتفانٍ لتحقيق أفضل النتائج للعملاء. عمل مع شركات محلية ودولية في نزاعات معقدة وحقق نجاحات بارزة.</p>
-                        <div class="social-links mt-4">
-                            <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary rounded-circle mx-1" style="width:40px; height:40px;"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary rounded-circle mx-1" style="width:40px; height:40px;"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary rounded-circle mx-1" style="width:40px; height:40px;"><i class="fab fa-whatsapp"></i></a>
-                            <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary rounded-circle mx-1" style="width:40px; height:40px;"><i class="fab fa-telegram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- إضافة قسم رؤية الفريق -->
-            <div class="row mt-5 pt-4">
-                <div class="col-12 text-center">
-                    <h2 class="fw-bold mb-3">فلسفتنا في العمل</h2>
-                    <p class="lead text-muted mx-auto" style="max-width:800px;">نحن نؤمن بأن التميز القانوني يبدأ من الفرد، ونتعامل مع كل قضية وكأنها الأولى والأهم. نضع خبرتنا تحت تصرفك لتحقيق أفضل النتائج.</p>
-                </div>
-            </div>
-            <div class="row mt-4 g-4">
-                <div class="col-md-4">
-                    <div class="text-center p-3">
-                        <i class="fas fa-gavel fa-3x text-primary mb-3"></i>
-                        <h5>خبرة متخصصة</h5>
-                        <p class="text-muted">أكثر من 9 سنوات في مجالي التحكيم والملكية الفكرية</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center p-3">
-                        <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
-                        <h5>نهج شخصي</h5>
-                        <p class="text-muted">كل قضية تحظى باهتمام مباشر من المؤسس شخصياً</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center p-3">
-                        <i class="fas fa-globe fa-3x text-primary mb-3"></i>
-                        <h5>شبكة دولية</h5>
-                        <p class="text-muted">شراكات مع مكاتب قانونية حول العالم لخدمتك أينما كنت</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- إضافة قسم دعوة للتواصل -->
-            <div class="row mt-5">
-                <div class="col-12 text-center">
-                    <div class="bg-light p-5 rounded-4">
-                        <h3 class="mb-3">هل تحتاج استشارة قانونية متخصصة؟</h3>
-                        <p class="mb-4">فريقنا جاهز للإجابة على استفساراتك وتقديم الدعم القانوني اللازم.</p>
-                        <a href="/ar/contact.html" class="btn btn-primary btn-lg px-4"><i class="fas fa-phone-alt me-2"></i>تواصل معنا الآن</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>وليد أبوالعلا للمحاماة</h5>
-                    <p class="text-white-50">متخصصون في التحكيم وحماية الملكية الفكرية بلمسة شخصية منذ 2016.</p>
-                    <div class="social-links mt-3">
-                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="فيسبوك"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3">
-                    <h6 class="mb-4">روابط سريعة</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/ar/index.html" class="text-white-50 text-decoration-none">الرئيسية</a></li>
-                        <li class="mb-2"><a href="/ar/about.html" class="text-white-50 text-decoration-none">من نحن</a></li>
-                        <li class="mb-2"><a href="/ar/services.html" class="text-white-50 text-decoration-none">الخدمات</a></li>
-                        <li class="mb-2"><a href="/ar/lawyers.html" class="text-white-50 text-decoration-none">فريق العمل</a></li>
-                        <li class="mb-2"><a href="/ar/blog.html" class="text-white-50 text-decoration-none">المدونة</a></li>
-                        <li class="mb-2"><a href="/ar/contact.html" class="text-white-50 text-decoration-none">اتصل بنا</a></li>
-                        <li class="mb-2"><a href="/ar/consultation.html" class="text-white-50 text-decoration-none">استشارة مدفوعة</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-4">
-                    <h6 class="mb-4">معلومات الاتصال</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، القاهرة، مصر</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> السبت - الخميس: 9 صباحاً - 8 مساءً</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="small text-white-50 mb-0">© 2025 وليد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
-                </div>
-                <div class="col-md-6">
-                    <h6 class="mb-2 text-white-50">قانوني</h6>
-                    <ul class="list-unstyled d-flex gap-3">
-                        <li><a href="/privacy-policy.html" class="text-white-50 text-decoration-none">سياسة الخصوصية</a></li>
-                        <li><a href="/terms-of-service.html" class="text-white-50 text-decoration-none">شروط الاستخدام</a></li>
-                        <li><a href="/cookie-policy.html" class="text-white-50 text-decoration-none">سياسة ملفات تعريف الارتباط</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="/js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -257,54 +36,890 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
-    <!-- كود إضافي لحل مشكلة صورة المحامي (النسخة الثانية) -->
-    <script>
-    (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() {
-                imgElement.src = possiblePaths[index];
-                imgElement.onerror = null;
-            };
-            testImg.onerror = function() {
-                tryLoadImage(index + 1);
-            };
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "فريق العمل - مكتب وليد محمد أبوالعلا للمحاماة",
+        "url": "https://law-arb-ip-walid.vercel.app/ar/lawyers.html",
+        "mainEntity": {
+            "@type": "Person",
+            "name": "وليد محمد أبوالعلا",
+            "jobTitle": "المؤسس والمحامي الرئيسي",
+            "worksFor": {
+                "@type": "LegalService",
+                "name": "مكتب وليد محمد أبوالعلا للمحاماة"
+            },
+            "alumniOf": "جامعة الأزهر (أسيوط)",
+            "knowsAbout": ["الملكية الفكرية", "التحكيم", "براءات الاختراع", "العلامات التجارية", "قانون الشركات", "التقاضي"],
+            "hasCredential": [
+                "محكّم معتمد في الملكية الفكرية — المعهد القومي للملكية الفكرية (2025)",
+                "محكّم معتمد — الغرفة المصرية للوساطة والتحكيم (منذ 2013)",
+                "وكيل براءات مسجّل — السجل الرسمي (2023)",
+                "باحث ماجستير في الملكية الفكرية"
+            ]
         }
-        tryLoadImage(0);
-    })();
+    }
     </script>
-    <!-- كود حل مشكلة زر اللغة الإضافي (لضمان العمل) -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const langSwitcher = document.querySelector('.language-switcher');
-        if (!langSwitcher) return;
-        const langLink = langSwitcher.querySelector('a');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (currentPath.startsWith('/ar/')) {
-            let englishPath = currentPath.replace('/ar/', '/');
-            if (englishPath === '' || englishPath === '/') englishPath = '/';
-            langLink.href = englishPath;
-            langLink.innerHTML = '<i class="fas fa-globe"></i> English';
-        } else {
-            let arabicPath;
-            if (currentPath === '/' || currentPath === '') arabicPath = '/ar/';
-            else arabicPath = '/ar' + currentPath;
-            langLink.href = arabicPath;
-            langLink.innerHTML = '<i class="fas fa-globe"></i> العربية';
+
+    <style>
+        /* الخط الزمني للمسيرة */
+        .milestone-timeline {
+            position: relative;
+            padding: 20px 0;
         }
-    });
-    </script>
+        .milestone-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, transparent, #C9A961, transparent);
+            transform: translateX(-50%);
+        }
+        .milestone-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .milestone-item:nth-child(odd) {
+            flex-direction: row-reverse;
+            text-align: left;
+        }
+        .milestone-item:nth-child(even) {
+            text-align: right;
+        }
+        .milestone-item .milestone-content {
+            width: 45%;
+            background: #fff;
+            padding: 24px 28px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+            border: 1px solid #E9ECEF;
+            transition: all 0.3s ease;
+        }
+        .milestone-item .milestone-content:hover {
+            transform: translateY(-5px);
+            border-color: #C9A961;
+            box-shadow: 0 20px 40px -15px rgba(201,169,97,0.3);
+        }
+        .milestone-item .milestone-year {
+            width: 10%;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #C9A961;
+            background: #fff;
+            padding: 12px 0;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 0 0 6px #F8F9FA, 0 0 0 8px #C9A961;
+        }
+        .milestone-item .milestone-year.small {
+            font-size: 0.72rem;
+            letter-spacing: 0.3px;
+            font-weight: 800;
+        }
+        .milestone-item .milestone-content h4 {
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .milestone-item .milestone-content p {
+            color: #6C757D;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        .milestone-item .milestone-content .ms-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .milestone-item .milestone-content .ms-tags span {
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            background: rgba(201,169,97,0.12);
+            color: #A88947;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .milestone-timeline::before { left: 20px; }
+            .milestone-item,
+            .milestone-item:nth-child(odd),
+            .milestone-item:nth-child(even) {
+                flex-direction: row;
+                text-align: right;
+            }
+            .milestone-item .milestone-content { width: calc(100% - 60px); }
+            .milestone-item .milestone-year {
+                width: 40px;
+                font-size: 0.85rem;
+                box-shadow: 0 0 0 4px #F8F9FA, 0 0 0 6px #C9A961;
+            }
+            .milestone-item .milestone-year.small { font-size: 0.5rem; }
+        }
+
+        /* شبكة مجالات الخبرة */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 30px;
+        }
+        .expertise-item {
+            padding: 20px 22px;
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .expertise-item:hover {
+            border-color: #C9A961;
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -10px rgba(201,169,97,0.2);
+        }
+        .expertise-item i {
+            color: #C9A961;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        .expertise-item strong {
+            display: block;
+            color: #212529;
+            font-weight: 700;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+        .expertise-item small {
+            color: #6C757D;
+            font-size: 0.82rem;
+            line-height: 1.6;
+        }
+
+        /* RTL: مبدل اللغة */
+        [dir="rtl"] .language-switcher { right: auto; left: 20px; }
+        @media (max-width: 768px) {
+            [dir="rtl"] .language-switcher { right: auto; left: 10px; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- الشريط التجريبي -->
+    <div id="trial-banner">
+        <i class="fas fa-tools"></i>
+        <span>هذا إصدار تجريبي للموقع - جاري التطوير والتحديث</span>
+        <i class="fas fa-tools"></i>
+    </div>
+
+    <!-- مبدل اللغة -->
+    <div class="language-switcher">
+        <a href="/lawyers.html" class="lang-btn"><i class="fas fa-globe"></i> English</a>
+    </div>
+
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="/ar/">
+                <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة">
+                <div>
+                    <span class="firm-name">وليد محمد أبوالعلا</span>
+                    <small class="firm-sub">مكتب محاماة · تحكيم · ملكية فكرية</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/ar/">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/about.html">من نحن</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">الخدمات</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/ar/arbitration.html">التحكيم الدولي</a></li>
+                            <li><a class="dropdown-item" href="/ar/trademark.html">تسجيل العلامات التجارية</a></li>
+                            <li><a class="dropdown-item" href="/ar/patent.html">براءات الاختراع</a></li>
+                            <li><a class="dropdown-item" href="/ar/copyright.html">حقوق المؤلف</a></li>
+                            <li><a class="dropdown-item" href="/ar/litigation.html">قضايا الملكية الفكرية</a></li>
+                            <li><a class="dropdown-item" href="/ar/licensing.html">الترخيص والعقود</a></li>
+                            <li><a class="dropdown-item" href="/ar/corporate-formation.html">تأسيس الشركات</a></li>
+                            <li><a class="dropdown-item" href="/ar/criminal-litigation.html">القضايا الجنائية</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/ar/services.html">جميع الخدمات</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="/ar/lawyers.html">فريق العمل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/blog.html">المدونة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/contact.html">اتصل بنا</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>بوابة العميل
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- رأس الصفحة -->
+    <header class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4">فريق العمل</h1>
+            <p class="lead">بقيادة متخصص في الملكية الفكرية والتحكيم وقانون الشركات</p>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         ملف المؤسس - Featured
+         ============================================================ -->
+    <section class="team-featured">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">المؤسس والمحامي الرئيسي</span>
+                <h2 class="sh-title">تعرّف على المحامي خلف المكتب</h2>
+                <p class="sh-desc">كل قضية يتولاها شخصياً بتفانٍ وخبرة.</p>
+            </div>
+
+            <div class="team-featured-card">
+                <div class="tfc-portrait">
+                    <div class="tfc-image-wrap">
+                        <img src="/images/team/walid-profile.jpg"
+                             alt="وليد محمد أبوالعلا - المؤسس والمحامي الرئيسي"
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='/images/team/walid-profile.png';">
+                    </div>
+                    <div class="tfc-badge-top"><i class="fas fa-award"></i></div>
+                    <div class="tfc-badge-bottom"><i class="fas fa-gavel"></i></div>
+                </div>
+
+                <div class="tfc-content">
+                    <span class="tfc-role">المؤسس والمحامي الرئيسي</span>
+                    <h3 class="tfc-name">وليد محمد أبوالعلا</h3>
+                    <div class="tfc-tags">
+                        <span><i class="fas fa-check"></i> محكّم ملكية فكرية</span>
+                        <span><i class="fas fa-check"></i> محكّم معتمد</span>
+                        <span><i class="fas fa-check"></i> وكيل براءات</span>
+                        <span><i class="fas fa-check"></i> باحث ماجستير</span>
+                    </div>
+                    <p class="tfc-bio">
+                        محامٍ ومستشار قانوني بخبرة تتجاوز 10 سنوات في الملكية الفكرية،
+                        والتحكيم، وخدمات الشركات، والتقاضي، ومنازعات الاستثمار. محكّم معتمد
+                        في الملكية الفكرية (2025)، ومحكّم معتمد منذ 2013، ووكيل براءات مسجّل
+                        (2023)، وباحث ماجستير مقيّد في الملكية الفكرية بالمعهد القومي
+                        للملكية الفكرية.
+                    </p>
+                    <div class="tfc-actions">
+                        <a href="#career-timeline" class="btn-rich-primary">
+                            <span>استعرض المسيرة المهنية</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                        <div class="tfc-social">
+                            <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="فيسبوك"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         الملخص المهني
+         ============================================================ -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">الملخص المهني</span>
+                <h2 class="sh-title">عقد من الممارسة المتخصصة</h2>
+                <p class="sh-desc">خبرة مركّزة في الملكية الفكرية والتحكيم وخدمات الشركات والتقاضي.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="about-content-rich">
+                        <p class="about-lead">
+                            <strong>وليد محمد أبوالعلا</strong> يمارس المحاماة منذ عام
+                            <strong>2016</strong>، حين قُيّد في نقابة المحامين المصرية. منذ ذلك
+                            الحين، بنى ممارسة متخصصة في الملكية الفكرية والتحكيم وخدمات
+                            الشركات والمنازعات التجارية.
+                        </p>
+                        <p class="about-text">
+                            هو <strong>محكّم معتمد في الملكية الفكرية</strong> بالمعهد القومي
+                            للملكية الفكرية، و<strong>محكّم معتمد</strong> منذ 2013 (بموجب
+                            ترخيص مزاولة مهنة التحكيم الصادر عن الغرفة المصرية للوساطة
+                            والتحكيم)، و<strong>وكيل براءات مسجّل</strong> منذ 2023.
+                        </p>
+                        <p class="about-text">
+                            كما أنه <strong>باحث ماجستير مقيّد في الملكية الفكرية</strong>
+                            بالمعهد القومي للملكية الفكرية، وهو المؤلف المنفرد لبحث علمي عن
+                            أثر الذكاء الاصطناعي على حقوق الملكية الفكرية لمؤلفي المحتوى —
+                            قُدّم في المؤتمر العلمي التاسع للملكية الفكرية.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="expertise-grid">
+                        <div class="expertise-item">
+                            <i class="fas fa-trademark"></i>
+                            <div>
+                                <strong>+350 علامة تجارية</strong>
+                                <small>أُديرت حتى إتمام التسجيل لعملاء محليين ودوليين</small>
+                            </div>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-gavel"></i>
+                            <div>
+                                <strong>+500 قضية</strong>
+                                <small>مدنية وتجارية واقتصادية — بالإضافة إلى مجلس الدولة</small>
+                            </div>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-building"></i>
+                            <div>
+                                <strong>+50 شركة</strong>
+                                <small>تأسيس وتعديل بمختلف الأشكال القانونية</small>
+                            </div>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <strong>+20 عميل شركة</strong>
+                                <small>شركات محلية وأجنبية — امتثال وحوكمة</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         مجالات الخبرة
+         ============================================================ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">مجالات الخبرة</span>
+                <h2 class="sh-title">أين نقدّم القيمة</h2>
+                <p class="sh-desc">خبرة مركّزة عبر الطيف الكامل للملكية الفكرية والتحكيم وقانون الشركات.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon mx-auto"><i class="fas fa-trademark"></i></div>
+                        <h4>الملكية الفكرية</h4>
+                        <p class="text-muted">
+                            تسجيل العلامات التجارية، وبراءات الاختراع، والنماذج الصناعية،
+                            وحقوق المؤلف، والأسرار التجارية، وصياغة اتفاقيات NDA، وتحكيم
+                            الملكية الفكرية.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon mx-auto"><i class="fas fa-scale-balanced"></i></div>
+                        <h4>التحكيم والوساطة</h4>
+                        <p class="text-muted">
+                            التحكيم التجاري المحلي والعابر للحدود، وتحكيم منازعات الملكية
+                            الفكرية، والتفاوض على التسويات.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon mx-auto"><i class="fas fa-building"></i></div>
+                        <h4>خدمات الشركات</h4>
+                        <p class="text-muted">
+                            تأسيس الشركات وتعديلها، والدمج والتقسيم، والتراخيص التشغيلية،
+                            وحوكمة الشركات، والامتثال القانوني.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon mx-auto"><i class="fas fa-file-contract"></i></div>
+                        <h4>العقود والترخيص</h4>
+                        <p class="text-muted">
+                            صياغة ومراجعة العقود التجارية والاستثمارية، وعقود الفرنشايز
+                            والوكالة التجارية، واتفاقيات الترخيص.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon mx-auto"><i class="fas fa-gavel"></i></div>
+                        <h4>التقاضي المدني والتجاري</h4>
+                        <p class="text-muted">
+                            التمثيل أمام المحاكم المصرية، بما في ذلك المحاكم الاقتصادية
+                            ومجلس الدولة.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon mx-auto"><i class="fas fa-passport"></i></div>
+                        <h4>خدمات الأجانب</h4>
+                        <p class="text-muted">
+                            تراخيص العمل والإقامة، وملفات الجنسية المصرية (بالاستثمار أو
+                            التملك)، والمعاملات عبر الحدود.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         المسيرة المهنية — شاملة
+         ============================================================ -->
+    <section class="py-5 bg-light" id="career-timeline">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">المسيرة المهنية</span>
+                <h2 class="sh-title">المحطات والإنجازات</h2>
+                <p class="sh-desc">أهم المحطات في عقد من الممارسة القانونية.</p>
+            </div>
+
+            <div class="milestone-timeline">
+
+                <!-- 2013 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>ترخيص مزاولة مهنة التحكيم</h4>
+                        <p>الحصول على ترخيص مزاولة مهنة التحكيم من الغرفة المصرية للوساطة والتحكيم — والقيد في جدول محكّمي الغرفة.</p>
+                        <div class="ms-tags">
+                            <span>تحكيم</span>
+                            <span>الغرفة المصرية</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2013</div>
+                </div>
+
+                <!-- 2014 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>ليسانس الشريعة والقانون</h4>
+                        <p>التخرج من كلية الشريعة والقانون — جامعة الأزهر (أسيوط).</p>
+                        <div class="ms-tags">
+                            <span>جامعة الأزهر</span>
+                            <span>ليسانس</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2014</div>
+                </div>
+
+                <!-- 2016 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>القيد في نقابة المحامين وبداية الممارسة</h4>
+                        <p>القيد في نقابة المحامين المصرية وبداية الممارسة القانونية المستقلة — بتركيز على خدمات الشركات والتقاضي والمنازعات التجارية.</p>
+                        <div class="ms-tags">
+                            <span>نقابة المحامين</span>
+                            <span>بداية الممارسة</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2016</div>
+                </div>
+
+                <!-- 2019 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>انطلاق ممارسة وكالة الملكية الفكرية</h4>
+                        <p>انطلاق ممارسة وكالة الملكية الفكرية المتخصصة — لإدارة محافظ العلامات التجارية وبراءات الاختراع والنماذج الصناعية للعملاء المحليين والدوليين.</p>
+                        <div class="ms-tags">
+                            <span>علامات تجارية</span>
+                            <span>براءات اختراع</span>
+                            <span>نماذج صناعية</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2019</div>
+                </div>
+
+                <!-- 2021 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>شهادة إعداد خبير ملكية فكرية — المستوى الثالث</h4>
+                        <p>اجتياز البرنامج التدريبي المتخصص في "العلامات التجارية والمؤشرات الجغرافية وأعمال المنافسة غير المشروعة" — المعهد القومي للملكية الفكرية.</p>
+                        <div class="ms-tags">
+                            <span>المعهد القومي</span>
+                            <span>المستوى الثالث</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2021</div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>وكيل براءات مسجّل + شهادة WIPO العامة</h4>
+                        <p>التسجيل في السجل الرسمي لوكلاء البراءات، مع إتمام الدورة العامة للملكية الفكرية من المنظمة العالمية للملكية الفكرية (WIPO).</p>
+                        <div class="ms-tags">
+                            <span>وكيل براءات</span>
+                            <span>WIPO</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2023</div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>محكّم معتمد في منازعات الملكية الفكرية</h4>
+                        <p>الحصول على اعتماد محكّم متخصص في منازعات الملكية الفكرية من المعهد القومي للملكية الفكرية — مع إتمام الدورة العامة للملكية الفكرية الخاصة بمصر (WIPO).</p>
+                        <div class="ms-tags">
+                            <span>تحكيم IP</span>
+                            <span>المعهد القومي</span>
+                            <span>WIPO مصر</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2025</div>
+                </div>
+
+                <!-- 2026 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>شهادات WIPO المتخصصة</h4>
+                        <p>إتمام ثلاثة برامج متخصصة من WIPO: أساسيات براءات الاختراع، مدخل إلى معاهدة التعاون بشأن البراءات (PCT)، وبرنامج استخدام معلومات البراءات.</p>
+                        <div class="ms-tags">
+                            <span>براءات اختراع</span>
+                            <span>PCT</span>
+                            <span>معلومات البراءات</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2026</div>
+                </div>
+
+                <!-- مستمر -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>باحث ماجستير في الملكية الفكرية + بحث علمي منشور</h4>
+                        <p>التقييد كباحث ماجستير في الملكية الفكرية بالمعهد القومي للملكية الفكرية. أعدّ منفرداً بحثاً علمياً عن "أثر التوسع في استخدام الذكاء الاصطناعي كمعلم رقمي على حقوق الملكية الفكرية لمؤلفي المحتوى المستخدم" — قُدّم في المؤتمر العلمي التاسع للملكية الفكرية، وحصل على موافقة النشر بمجلة المعهد القومي.</p>
+                        <div class="ms-tags">
+                            <span>ماجستير</span>
+                            <span>الذكاء الاصطناعي و IP</span>
+                            <span>نشر علمي</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year small">مستمر</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         الاعتمادات
+         ============================================================ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">الاعتمادات</span>
+                <h2 class="sh-title">معتمد ومُوثّق</h2>
+                <p class="sh-desc">الاعتمادات الموثقة للمؤسس والمحامي الرئيسي.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="cred-card">
+                        <div class="cc-icon"><i class="fas fa-award"></i></div>
+                        <div class="cc-content">
+                            <h5>محكّم معتمد في الملكية الفكرية</h5>
+                            <span>المعهد القومي للملكية الفكرية · 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="cred-card">
+                        <div class="cc-icon"><i class="fas fa-gavel"></i></div>
+                        <div class="cc-content">
+                            <h5>محكّم معتمد</h5>
+                            <span>الغرفة المصرية للوساطة والتحكيم · منذ 2013</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="cred-card">
+                        <div class="cc-icon"><i class="fas fa-certificate"></i></div>
+                        <div class="cc-content">
+                            <h5>وكيل براءات مسجّل</h5>
+                            <span>السجل الرسمي لوكلاء البراءات · 2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="cred-card">
+                        <div class="cc-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="cc-content">
+                            <h5>باحث ماجستير في الملكية الفكرية</h5>
+                            <span>مقيّد بالمعهد القومي للملكية الفكرية</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="cred-card">
+                        <div class="cc-icon"><i class="fas fa-globe"></i></div>
+                        <div class="cc-content">
+                            <h5>5 شهادات WIPO</h5>
+                            <span>الدورة العامة · مصر · البراءات · PCT · معلومات البراءات</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="cred-card">
+                        <div class="cc-icon"><i class="fas fa-scale-balanced"></i></div>
+                        <div class="cc-content">
+                            <h5>شهادات التحكيم السويسري</h5>
+                            <span>شهادتان دوليتان · جمعية التحكيم السويسرية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         منهج العمل
+         ============================================================ -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">منهج العمل</span>
+                <h2 class="sh-title">ممارسة مركّزة، لا مصنع</h2>
+                <p class="sh-desc">كل قضية تُتولى شخصياً — بإشراف مباشر من البداية للنهاية.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-comments"></i></div>
+                        <h4>استشارة مباشرة</h4>
+                        <p class="text-muted">
+                            كل قضية تبدأ باستشارة مباشرة — بدون حواجز أو موظفين
+                            وسيطين.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-clipboard-check"></i></div>
+                        <h4>تقييم صادق</h4>
+                        <p class="text-muted">
+                            تقييم قانوني صريح — حتى لو كانت الإجابة ليست ما يأمله
+                            العميل.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-file-signature"></i></div>
+                        <h4>نطاق واضح</h4>
+                        <p class="text-muted">
+                            نطاق وجدول زمني وأتعاب مكتوبة — متفق عليها قبل بدء أي
+                            عمل.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-shield-halved"></i></div>
+                        <h4>سرية تامة</h4>
+                        <p class="text-muted">
+                            التزام صارم بالسرية في كل التعاملات — بخطاب ارتباط
+                            موقّع من اليوم الأول.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         أسئلة شائعة
+         ============================================================ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">أسئلة شائعة</span>
+                <h2 class="sh-title">أسئلة عن العمل معنا</h2>
+            </div>
+
+            <div class="faq-rich-accordion mx-auto" style="max-width: 900px;">
+                <div class="accordion" id="teamFaq">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tf1">
+                                من سيتولى قضيتي؟
+                            </button>
+                        </h3>
+                        <div id="tf1" class="accordion-collapse collapse" data-bs-parent="#teamFaq">
+                            <div class="accordion-body">
+                                كل قضية يراجعها ويتولاها المؤسس شخصياً — بإشراف مباشر من
+                                البداية للنهاية. لا توجد طبقة وسيطة من مديري الحسابات بينك
+                                وبين محاميك.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tf2">
+                                هل تقبلون قضايا من خارج مصر؟
+                            </button>
+                        </h3>
+                        <div id="tf2" class="accordion-collapse collapse" data-bs-parent="#teamFaq">
+                            <div class="accordion-body">
+                                نعم. نعمل مع عملاء دوليين على الإيداعات في مصر، ونتعاون مع
+                                مكاتب شركاء بالخارج للإيداع في ولايات قضائية أخرى — بما في
+                                ذلك إيداعات بروتوكول مدريد حيث ينطبق.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tf3">
+                                كيف يتم تحديد الأتعاب؟
+                            </button>
+                        </h3>
+                        <div id="tf3" class="accordion-collapse collapse" data-bs-parent="#teamFaq">
+                            <div class="accordion-body">
+                                الأتعاب تعتمد على طبيعة الملف ونطاقه. نقدّم دائماً عرض سعر
+                                مكتوب وواضح قبل بدء العمل — بدون أي مصاريف خفية أو مفاجئة.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tf4">
+                                هل يمكنني التحدث مباشرة مع المحامي؟
+                            </button>
+                        </h3>
+                        <div id="tf4" class="accordion-collapse collapse" data-bs-parent="#teamFaq">
+                            <div class="accordion-body">
+                                نعم. كل استشارة هي حوار مباشر مع المحامي — ستناقشان التقييم
+                                الأولي والخطوات التالية مباشرة، بدون وسطاء.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         دعوة نهائية
+         ============================================================ -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-handshake"></i></div>
+                <h2>مستعد للتحدث مع محامينا؟</h2>
+                <p>احجز استشارة سرية ودعنا نقيّم حالتك بوضوح وصدق.</p>
+                <div class="fcr-buttons">
+                    <a href="/ar/consultation.html" class="btn-rich-primary light">
+                        <span>احجز استشارة</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <a href="/ar/contact.html" class="btn-rich-ghost">
+                        <i class="fas fa-envelope"></i>
+                        <span>تواصل معنا</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         الفوتر
+         ============================================================ -->
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">مكتب وليد محمد أبوالعلا للمحاماة</h5>
+                    <p class="footer-desc">محاماة · تحكيم · ملكية فكرية. نخدم عملاءنا بتفانٍ منذ 2016.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="فيسبوك"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">روابط سريعة</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/">الرئيسية</a></li>
+                        <li><a href="/ar/about.html">من نحن</a></li>
+                        <li><a href="/ar/services.html">الخدمات</a></li>
+                        <li><a href="/ar/lawyers.html">فريق العمل</a></li>
+                        <li><a href="/ar/blog.html">المدونة</a></li>
+                        <li><a href="/ar/contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">معلومات الاتصال</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> العاشر من رمضان، القاهرة، مصر</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> السبت - الخميس: 9 ص - 8 م</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="footer-heading">قانوني</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/privacy-policy.html">سياسة الخصوصية</a></li>
+                        <li><a href="/ar/terms-of-service.html">شروط الاستخدام</a></li>
+                        <li><a href="/ar/cookie-policy.html">سياسة ملفات تعريف الارتباط</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 مكتب وليد محمد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="العودة إلى الأعلى"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

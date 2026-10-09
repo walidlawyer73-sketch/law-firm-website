@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Walid Abo Al-Ela Law Firm</title>
-    <meta name="description" content="Privacy Policy of Walid Abo Al-Ela Law Firm. Learn how we collect, use, and protect your personal information when you visit our website.">
-    <!-- Bootstrap CSS -->
+    <title>Privacy Policy - Walid Mohamed Abu Al-Ela Law Firm</title>
+    <meta name="description" content="Privacy Policy of Walid Mohamed Abu Al-Ela Law Firm — how we collect, use, and protect your personal information in accordance with Egyptian data protection principles.">
+    <meta name="keywords" content="privacy policy, data protection, law firm privacy, GDPR, Egyptian data protection">
+    <meta name="author" content="Walid Mohamed Abu Al-Ela">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/privacy-policy.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/privacy-policy.html">
+    <meta property="og:title" content="Privacy Policy - Walid Mohamed Abu Al-Ela Law Firm">
+    <meta property="og:description" content="How we collect, use, and protect your personal information.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/privacy-policy.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/privacy-policy.html">
+
+    <link rel="icon" type="image/png" href="/images/logo%20arb%20ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,94 +35,311 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
-    <style>
-        .language-switcher {
-            position: fixed;
-            top: 70px;
-            left: 20px;
-            z-index: 9999;
-        }
-        .language-switcher .lang-btn {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .language-switcher .lang-btn:hover {
-            background-color: #0b5ed7;
-            transform: scale(1.05);
-        }
-        body { padding-top: 70px; }
-        @media (max-width: 768px) {
-            .language-switcher { top: 60px; left: 10px; }
-            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
-        }
-        .dropdown-menu { min-width: 220px; }
-    </style>
-</head>
-<script>
-// ========== حل نهائي لصورة المحامي (النسخة الأولى) ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> This is a trial version - site under development and updates <i class="fas fa-tools"></i>
-</div>
-<body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> العربية</a>
-    </div>
 
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (!currentPath.startsWith('/ar/')) {
-            let arabicPath;
-            if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
-                arabicPath = '/ar/';
-            } else {
-                arabicPath = '/ar' + currentPath;
-            }
-            langLink.href = arabicPath;
-        } else {
-            langLink.href = '/ar/';
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Privacy Policy - Walid Mohamed Abu Al-Ela Law Firm",
+        "url": "https://law-arb-ip-walid.vercel.app/privacy-policy.html",
+        "isPartOf": {
+            "@type": "LegalService",
+            "name": "Walid Mohamed Abu Al-Ela Law Firm",
+            "url": "https://law-arb-ip-walid.vercel.app/"
         }
-    })();
+    }
     </script>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+    <style>
+        /* Legal Page Wrapper */
+        .legal-wrap {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 24px;
+            padding: 55px 50px;
+            box-shadow: 0 30px 60px -30px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        .legal-wrap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #C9A961, #A88947, #C9A961);
+        }
+        @media (max-width: 768px) {
+            .legal-wrap { padding: 32px 24px; border-radius: 16px; }
+        }
+
+        /* Legal Table of Contents */
+        .legal-toc {
+            background: linear-gradient(160deg, #FAF6EC 0%, #fff 100%);
+            border: 1px solid rgba(201,169,97,0.25);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 45px;
+        }
+        .legal-toc h4 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #212529;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legal-toc h4 i {
+            color: #C9A961;
+        }
+        .legal-toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: toc-counter;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 24px;
+        }
+        @media (max-width: 600px) {
+            .legal-toc ol { grid-template-columns: 1fr; }
+            .legal-toc { padding: 22px 22px; }
+        }
+        .legal-toc li {
+            counter-increment: toc-counter;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .legal-toc li::before {
+            content: counter(toc-counter, decimal-leading-zero);
+            color: #C9A961;
+            font-weight: 800;
+            margin-right: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+        }
+        .legal-toc a {
+            color: #495057;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .legal-toc a:hover {
+            color: #A88947;
+        }
+
+        /* Legal Content */
+        .legal-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: #212529;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #F1F3F5;
+            position: relative;
+            letter-spacing: -0.01em;
+            scroll-margin-top: 120px;
+        }
+        .legal-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #C9A961, #A88947);
+        }
+        .legal-content h2:first-of-type { margin-top: 0; }
+
+        .legal-content h3 {
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: #212529;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        .legal-content p {
+            font-size: 0.95rem;
+            color: #495057;
+            line-height: 1.85;
+            margin-bottom: 15px;
+        }
+
+        .legal-content ul,
+        .legal-content ol {
+            padding-left: 22px;
+            margin-bottom: 18px;
+        }
+        .legal-content li {
+            font-size: 0.95rem;
+            color: #495057;
+            line-height: 1.85;
+            margin-bottom: 8px;
+        }
+        .legal-content strong {
+            color: #212529;
+            font-weight: 700;
+        }
+        .legal-content a {
+            color: #A88947;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .legal-content a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        /* Info box */
+        .legal-info-box {
+            background: linear-gradient(160deg, #F8F9FA 0%, #fff 100%);
+            border-left: 4px solid #C9A961;
+            border-radius: 12px;
+            padding: 22px 26px;
+            margin: 24px 0;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .legal-info-box i {
+            color: #C9A961;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        .legal-info-box div p {
+            margin: 0;
+            font-size: 0.92rem;
+        }
+        .legal-info-box div p:first-child {
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 4px;
+        }
+
+        /* Last updated stamp */
+        .last-updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: #6C757D;
+            font-weight: 600;
+            padding: 8px 16px;
+            background: #F8F9FA;
+            border-radius: 999px;
+            margin-bottom: 25px;
+        }
+        .last-updated i {
+            color: #C9A961;
+        }
+
+        /* Contact Card */
+        .contact-mini-card {
+            background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+            border-radius: 20px;
+            padding: 35px 32px;
+            color: #fff;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-mini-card::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(201,169,97,0.18), transparent 70%);
+            border-radius: 50%;
+        }
+        .contact-mini-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-mini-card p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.92rem;
+            line-height: 1.75;
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-mini-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 24px;
+        }
+        @media (max-width: 600px) {
+            .contact-mini-list { grid-template-columns: 1fr; }
+        }
+        .contact-mini-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.88rem;
+        }
+        .contact-mini-list i {
+            color: #C9A961;
+            width: 18px;
+        }
+        .contact-mini-list a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-mini-list a:hover { color: #C9A961; }
+
+        /* RTL fixes */
+        [dir="rtl"] .legal-info-box {
+            border-left: none;
+            border-right: 4px solid #C9A961;
+        }
+        [dir="rtl"] .legal-toc li::before {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="trial-banner">
+        <i class="fas fa-tools"></i>
+        <span>This is a trial version - site under development and updates</span>
+        <i class="fas fa-tools"></i>
+    </div>
+
+    <div class="language-switcher">
+        <a href="/ar/privacy-policy.html" class="lang-btn"><i class="fas fa-globe"></i> العربية</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="Walid Abo Al-Ela Law Firm" style="height:45px; width:auto; margin-right:10px;">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm">
                 <div>
-                    <span class="fw-bold">Walid Abo Al-Ela Law Firm</span>
-                    <small class="d-block" style="font-size:16px; opacity:0.9; margin-top:5px; font-weight:500;">For Arbitration and Intellectual Property</small>
+                    <span class="firm-name">Walid Mohamed Abu Al-Ela</span>
+                    <small class="firm-sub">Law Firm · Arbitration · IP</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -114,16 +347,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
                             <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
                             <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
                             <li><a class="dropdown-item" href="/copyright.html">Copyright</a></li>
                             <li><a class="dropdown-item" href="/litigation.html">IP Litigation</a></li>
+                            <li><a class="dropdown-item" href="/licensing.html">Licensing &amp; Contracts</a></li>
                             <li><a class="dropdown-item" href="/corporate-formation.html">Corporate Formation</a></li>
                             <li><a class="dropdown-item" href="/criminal-litigation.html">Criminal Litigation</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -133,174 +367,338 @@
                     <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/consultation.html">Paid Consultation</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html"><i class="fas fa-lock me-1"></i>Client Portal</a>
+                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>Client Portal
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script>
-        // حل مشكلة صورة المحامي - البحث عن المسار الصحيح (نسخة إضافية للاحتياط)
-        (function() {
-            const possiblePaths = [
-                '/images/team/walid-profile.jpg',
-                '/images/team/walid-abouelela.jpg',
-                '/images/walid-profile.jpg',
-                '/ar/images/team/walid-profile.jpg',
-                '/images/lawyers/walid.jpg'
-            ];
-            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-            if (!imgElement) return;
-            function tryLoadImage(index) {
-                if (index >= possiblePaths.length) return;
-                const testImg = new Image();
-                testImg.src = possiblePaths[index];
-                testImg.onload = function() {
-                    imgElement.src = possiblePaths[index];
-                    imgElement.onerror = null;
-                };
-                testImg.onerror = function() {
-                    tryLoadImage(index + 1);
-                };
-            }
-            tryLoadImage(0);
-        })();
-        </script>
     </nav>
 
-    <!-- Page Header -->
     <header class="page-header">
-        <div class="container text-white text-center">
+        <div class="container text-center">
             <h1 class="display-4">Privacy Policy</h1>
-            <p class="lead">Last updated: February 2025</p>
+            <p class="lead">How we collect, use, and protect your personal information</p>
         </div>
     </header>
 
-    <!-- Page Content -->
+    <!-- ============================================================
+         LEGAL CONTENT
+         ============================================================ -->
     <section class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>Introduction</h2>
-                    <p>Walid Abo Al-Ela Law Firm ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website.</p>
-                    
-                    <h2 class="mt-4">Information We Collect</h2>
-                    <p>We may collect personal information such as your name, email address, phone number, and any other information you voluntarily provide when you contact us through our forms.</p>
-                    
-                    <h2 class="mt-4">How We Use Your Information</h2>
-                    <p>We use the information we collect to:</p>
+            <div class="legal-wrap">
+
+                <span class="last-updated">
+                    <i class="fas fa-calendar-check"></i>
+                    Last Updated: January 2026
+                </span>
+
+                <div class="legal-info-box">
+                    <i class="fas fa-shield-halved"></i>
+                    <div>
+                        <p>Your privacy matters to us.</p>
+                        <p>
+                            This Privacy Policy explains how <strong>Walid Mohamed Abu Al-Ela Law Firm</strong>
+                            ("we", "us", "our") collects, uses, and protects personal information when you
+                            interact with our website, submit a contact form, or engage our legal services.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- TOC -->
+                <div class="legal-toc">
+                    <h4><i class="fas fa-list-ul"></i> Table of Contents</h4>
+                    <ol>
+                        <li><a href="#section-1">Information We Collect</a></li>
+                        <li><a href="#section-2">How We Use Your Information</a></li>
+                        <li><a href="#section-3">Legal Basis for Processing</a></li>
+                        <li><a href="#section-4">Sharing and Disclosure</a></li>
+                        <li><a href="#section-5">Data Retention</a></li>
+                        <li><a href="#section-6">Data Security</a></li>
+                        <li><a href="#section-7">Your Rights</a></li>
+                        <li><a href="#section-8">Cookies and Analytics</a></li>
+                        <li><a href="#section-9">Third-Party Links</a></li>
+                        <li><a href="#section-10">Children's Privacy</a></li>
+                        <li><a href="#section-11">Changes to This Policy</a></li>
+                        <li><a href="#section-12">Contact Us</a></li>
+                    </ol>
+                </div>
+
+                <div class="legal-content">
+
+                    <!-- Section 1 -->
+                    <h2 id="section-1">1. Information We Collect</h2>
+                    <p>
+                        We collect personal information that you voluntarily provide to us when you
+                        interact with our website or engage our services. This may include:
+                    </p>
+
+                    <h3>Information You Provide Directly</h3>
                     <ul>
-                        <li>Respond to your inquiries and provide legal consultations</li>
-                        <li>Improve our website and services</li>
-                        <li>Comply with legal obligations</li>
+                        <li><strong>Contact details:</strong> name, email address, phone number, company/organization.</li>
+                        <li><strong>Matter details:</strong> any information you share through our contact, consultation, or newsletter forms — including the description of your legal matter.</li>
+                        <li><strong>Correspondence:</strong> any messages, documents, or files you send to us by email, WhatsApp, or through our website.</li>
                     </ul>
-                    
-                    <h2 class="mt-4">Data Security</h2>
-                    <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
-                    
-                    <h2 class="mt-4">Third-Party Links</h2>
-                    <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of these websites.</p>
-                    
-                    <h2 class="mt-4">Contact Us</h2>
-                    <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:walidlegal.ippro@gmail.com">walidlegal.ippro@gmail.com</a> or call +20 111257219.</p>
+
+                    <h3>Information Collected Automatically</h3>
+                    <ul>
+                        <li><strong>Usage data:</strong> pages visited, time spent, and referring URLs, collected through analytics tools (see Section 8).</li>
+                        <li><strong>Technical data:</strong> IP address, browser type, device type, and operating system, for security and analytics purposes.</li>
+                    </ul>
+
+                    <!-- Section 2 -->
+                    <h2 id="section-2">2. How We Use Your Information</h2>
+                    <p>We use the information we collect for the following purposes:</p>
+                    <ul>
+                        <li>To respond to your inquiries, consultation requests, and messages.</li>
+                        <li>To provide legal services you have engaged us for.</li>
+                        <li>To communicate with you about your matter, including updates, documents, and next steps.</li>
+                        <li>To send you occasional updates or legal insights (only if you have subscribed — you may unsubscribe at any time).</li>
+                        <li>To comply with our legal, ethical, and regulatory obligations as a law firm.</li>
+                        <li>To improve our website, services, and client experience.</li>
+                        <li>To prevent fraud and ensure the security of our systems.</li>
+                    </ul>
+
+                    <!-- Section 3 -->
+                    <h2 id="section-3">3. Legal Basis for Processing</h2>
+                    <p>
+                        We process your personal information based on one or more of the following legal bases:
+                    </p>
+                    <ul>
+                        <li><strong>Your consent</strong> — for example, when you submit a contact form or subscribe to our newsletter.</li>
+                        <li><strong>Performance of a contract</strong> — when we provide legal services you have engaged us for.</li>
+                        <li><strong>Legal obligations</strong> — including anti-money laundering, record-keeping, and professional conduct requirements.</li>
+                        <li><strong>Legitimate interests</strong> — such as improving our services and ensuring the security of our website.</li>
+                    </ul>
+
+                    <!-- Section 4 -->
+                    <h2 id="section-4">4. Sharing and Disclosure</h2>
+                    <p>
+                        We do <strong>not</strong> sell, rent, or trade your personal information. We may share
+                        your information only in the following limited circumstances:
+                    </p>
+                    <ul>
+                        <li><strong>Service providers:</strong> trusted third parties who assist us with email delivery, hosting, analytics, or document management — under strict confidentiality agreements.</li>
+                        <li><strong>Professional advisors:</strong> when required to coordinate with other lawyers, experts, or consultants on your matter.</li>
+                        <li><strong>Legal compliance:</strong> when required by law, court order, or professional obligation.</li>
+                        <li><strong>With your consent:</strong> in any other case, only with your explicit authorization.</li>
+                    </ul>
+
+                    <!-- Section 5 -->
+                    <h2 id="section-5">5. Data Retention</h2>
+                    <p>
+                        We retain personal information only for as long as necessary to fulfill the purposes
+                        described in this policy, or as required by law. For client matters, we retain files
+                        for the period required by Egyptian professional conduct rules and applicable
+                        record-keeping obligations.
+                    </p>
+                    <p>
+                        When information is no longer needed, we securely delete or anonymize it.
+                    </p>
+
+                    <!-- Section 6 -->
+                    <h2 id="section-6">6. Data Security</h2>
+                    <p>
+                        We take reasonable technical and organizational measures to protect your personal
+                        information against unauthorized access, alteration, disclosure, or destruction.
+                        These measures include:
+                    </p>
+                    <ul>
+                        <li>Encrypted transmission of data (HTTPS/TLS) across our website.</li>
+                        <li>Access controls limiting who within our firm can view your information.</li>
+                        <li>Secure storage for documents and correspondence.</li>
+                        <li>Regular review of our security practices.</li>
+                    </ul>
+
+                    <div class="legal-info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <div>
+                            <p>Important note</p>
+                            <p>
+                                No method of transmission over the internet or electronic storage is 100%
+                                secure. While we take strong precautions, we cannot guarantee absolute
+                                security. Please avoid sending highly sensitive information through
+                                unsecured channels (such as initial contact forms).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 7 -->
+                    <h2 id="section-7">7. Your Rights</h2>
+                    <p>
+                        Subject to applicable law, you may have the following rights regarding your
+                        personal information:
+                    </p>
+                    <ul>
+                        <li><strong>Right to access:</strong> request a copy of the personal information we hold about you.</li>
+                        <li><strong>Right to correction:</strong> request correction of inaccurate or incomplete information.</li>
+                        <li><strong>Right to deletion:</strong> request deletion of your information, subject to legal retention obligations.</li>
+                        <li><strong>Right to restrict processing:</strong> request that we limit how we use your information.</li>
+                        <li><strong>Right to object:</strong> object to processing based on legitimate interests.</li>
+                        <li><strong>Right to withdraw consent:</strong> withdraw consent at any time, where consent is the legal basis for processing.</li>
+                    </ul>
+                    <p>
+                        To exercise any of these rights, please contact us using the details in Section 12.
+                        We will respond within a reasonable timeframe and in accordance with applicable law.
+                    </p>
+
+                    <!-- Section 8 -->
+                    <h2 id="section-8">8. Cookies and Analytics</h2>
+                    <p>
+                        Our website uses cookies and similar technologies for functionality, security, and
+                        analytics purposes. We use <strong>Google Analytics</strong> to understand how
+                        visitors use our site — the data collected is aggregated and anonymized where
+                        possible.
+                    </p>
+                    <p>
+                        You can control or disable cookies through your browser settings. Please note that
+                        disabling certain cookies may affect website functionality. For more information,
+                        see our <a href="/cookie-policy.html">Cookie Policy</a>.
+                    </p>
+
+                    <!-- Section 9 -->
+                    <h2 id="section-9">9. Third-Party Links</h2>
+                    <p>
+                        Our website may contain links to third-party websites (such as WhatsApp, LinkedIn,
+                        Facebook, or Google Maps). We are not responsible for the privacy practices of
+                        those websites. We encourage you to review their privacy policies before providing
+                        any personal information.
+                    </p>
+
+                    <!-- Section 10 -->
+                    <h2 id="section-10">10. Children's Privacy</h2>
+                    <p>
+                        Our services are intended for adults and businesses. We do not knowingly collect
+                        personal information from children under 18. If you believe a child has provided
+                        us with personal information, please contact us so we can take appropriate action.
+                    </p>
+
+                    <!-- Section 11 -->
+                    <h2 id="section-11">11. Changes to This Policy</h2>
+                    <p>
+                        We may update this Privacy Policy from time to time to reflect changes in our
+                        practices, technology, or legal requirements. When we make material changes, we
+                        will update the "Last Updated" date at the top of this page. We encourage you to
+                        review this policy periodically.
+                    </p>
+
+                    <!-- Section 12 -->
+                    <h2 id="section-12">12. Contact Us</h2>
+                    <p>
+                        If you have any questions, concerns, or requests regarding this Privacy Policy
+                        or the way we handle your personal information, please contact us:
+                    </p>
+                </div>
+
+                <!-- Contact Card -->
+                <div class="contact-mini-card">
+                    <h3>Privacy Inquiries</h3>
+                    <p>
+                        For any privacy-related matter, please reach out through one of the following
+                        channels — we take all inquiries seriously and will respond promptly.
+                    </p>
+                    <ul class="contact-mini-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219">+20 111 257 219</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li><i class="fas fa-globe"></i> <a href="/contact.html">Contact Page</a></li>
+                    </ul>
+                    <a href="/contact.html" class="btn-rich-primary">
+                        <span>Contact Us</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FINAL CTA
+         ============================================================ -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-shield-halved"></i></div>
+                <h2>Questions About Your Privacy?</h2>
+                <p>We're happy to clarify any point in this policy — just reach out.</p>
+                <div class="fcr-buttons">
+                    <a href="/contact.html" class="btn-rich-primary light">
+                        <span>Contact Us</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/terms-of-service.html" class="btn-rich-ghost">
+                        <i class="fas fa-file-contract"></i>
+                        <span>Terms of Service</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>Walid Abo Al-Ela Law Firm</h5>
-                    <p class="text-white-50">Specialized in arbitration and intellectual property protection with a personal touch since 2016.</p>
-                    <div class="social-links mt-3">
+                <div class="col-lg-4">
+                    <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">Walid Mohamed Abu Al-Ela Law Firm</h5>
+                    <p class="footer-desc">Law · Arbitration · Intellectual Property. Serving clients with dedication since 2016.</p>
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">Quick Links</h6>
+                    <ul class="footer-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/lawyers.html">Our Team</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">Contact</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Sat - Thu: 9am - 8pm</li>
+                    </ul>
+                </div>
                 <div class="col-lg-3">
-                    <h6 class="mb-4">Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/index.html" class="text-white-50 text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="/about.html" class="text-white-50 text-decoration-none">About</a></li>
-                        <li class="mb-2"><a href="/services.html" class="text-white-50 text-decoration-none">Services</a></li>
-                        <li class="mb-2"><a href="/lawyers.html" class="text-white-50 text-decoration-none">Our Team</a></li>
-                        <li class="mb-2"><a href="/blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
-                        <li class="mb-2"><a href="/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
-                        <li class="mb-2"><a href="/consultation.html" class="text-white-50 text-decoration-none">Paid Consultation</a></li>
+                    <h6 class="footer-heading">Legal</h6>
+                    <ul class="footer-list">
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Use</a></li>
+                        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h6 class="mb-4">Contact Info</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 10th of Ramadan, Cairo, Egypt</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Sat - Thu: 9am - 8pm</li>
-                    </ul>
-                </div>
-                <div class="col-lg-12 mt-3">
-                    <hr class="my-3" style="border-color: rgba(255,255,255,0.1);">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="small text-white-50 mb-0">© 2025 Walid Abo Al-Ela Law Firm. All rights reserved.</p>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
-                            <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">Terms of Use</a>
-                            <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">Cookie Policy</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Walid Mohamed Abu Al-Ela Law Firm. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-WQ0CPXRK2F');
-    </script>
-    <!-- كود إضافي لحل مشكلة صورة المحامي (النسخة الثالثة) -->
-    <script>
-    (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-            testImg.onerror = function() { tryLoadImage(index + 1); };
-        }
-        tryLoadImage(0);
-    })();
-    </script>
-    <script>
-        // تحديد الرابط النشط
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
-                if (link.getAttribute('href') === currentPath) link.classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>

@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contract Drafting & Review - Walid Abo Al-Ela Law Firm</title>
-    <meta name="description" content="Professional contract drafting and review services for commercial contracts, employment agreements, IP licensing, NDAs, and more. Protect your interests with expertly drafted contracts.">
-    <!-- Bootstrap CSS -->
+    <title>IP Licensing & Technology Transfer - Walid Mohamed Abu Al-Ela Law Firm</title>
+    <meta name="description" content="Drafting and negotiating IP licensing agreements and technology transfer contracts in Egypt — patents, trademarks, copyrights, know-how, and franchise agreements. Trusted since 2013.">
+    <meta name="keywords" content="IP licensing Egypt, technology transfer, patent license, trademark license, copyright license, know-how, franchise agreement">
+    <meta name="author" content="Walid Mohamed Abu Al-Ela">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/licensing.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/licensing.html">
+    <meta property="og:title" content="IP Licensing & Technology Transfer - Walid Mohamed Abu Al-Ela Law Firm">
+    <meta property="og:description" content="Full-service IP licensing and technology transfer — from drafting to enforcement.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/licensing.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/licensing.html">
+
+    <link rel="icon" type="image/png" href="/images/logo arb ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,94 +36,205 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
-    <style>
-        .language-switcher {
-            position: fixed;
-            top: 70px;
-            left: 20px;
-            z-index: 9999;
-        }
-        .language-switcher .lang-btn {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .language-switcher .lang-btn:hover {
-            background-color: #0b5ed7;
-            transform: scale(1.05);
-        }
-        body { padding-top: 70px; }
-        @media (max-width: 768px) {
-            .language-switcher { top: 60px; left: 10px; }
-            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
-        }
-        .dropdown-menu { min-width: 220px; }
-    </style>
-</head>
-<script>
-// ========== حل نهائي لصورة المحامي (النسخة الأولى) ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> This is a trial version - site under development and updates <i class="fas fa-tools"></i>
-</div>
-<body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> العربية</a>
-    </div>
 
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (!currentPath.startsWith('/ar/')) {
-            let arabicPath;
-            if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
-                arabicPath = '/ar/';
-            } else {
-                arabicPath = '/ar' + currentPath;
-            }
-            langLink.href = arabicPath;
-        } else {
-            langLink.href = '/ar/';
-        }
-    })();
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "IP Licensing & Technology Transfer",
+        "provider": {
+            "@type": "LegalService",
+            "name": "Walid Mohamed Abu Al-Ela Law Firm",
+            "url": "https://law-arb-ip-walid.vercel.app/"
+        },
+        "areaServed": {"@type": "Country", "name": "Egypt"},
+        "description": "Drafting and negotiating IP licensing agreements and technology transfer contracts — patents, trademarks, copyrights, know-how, and franchise agreements."
+    }
     </script>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+    <style>
+        .svc-detail-hero { padding: 90px 0 70px; background: #fff; }
+        .svc-detail-intro { padding: 40px 0 60px; }
+        .svc-detail-intro .lead-block {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--dark-text);
+            border-inline-start: 4px solid var(--accent-color);
+            padding-inline-start: 24px;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+        .svc-features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .svc-feature-card {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 18px;
+            padding: 30px 26px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .svc-feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-dark));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .svc-feature-card:hover::before { transform: scaleX(1); }
+        .svc-feature-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-color);
+            box-shadow: 0 25px 50px -15px rgba(0,0,0,0.1);
+        }
+        .sfc-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #F8F9FA, #fff);
+            border: 1px solid #E9ECEF;
+            color: var(--accent-dark);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+        }
+        .svc-feature-card:hover .sfc-icon {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: var(--primary-color);
+            border-color: transparent;
+            transform: rotate(-8deg) scale(1.08);
+            box-shadow: 0 10px 25px rgba(201,169,97,0.3);
+        }
+        .svc-feature-card h4 {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--dark-text);
+            margin-bottom: 12px;
+        }
+        .svc-feature-card p {
+            font-size: 0.9rem;
+            color: #6C757D;
+            line-height: 1.65;
+            margin: 0;
+        }
+        .svc-info-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin: 30px 0;
+        }
+        .svc-info-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 16px 20px;
+            background: #F8F9FA;
+            border-radius: 12px;
+            border-inline-start: 3px solid var(--accent-color);
+        }
+        .svc-info-item i {
+            color: var(--accent-dark);
+            font-size: 1.1rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .svc-info-item span {
+            font-size: 0.92rem;
+            color: var(--dark-text);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        .svc-process { padding: 80px 0; background: #F8F9FA; }
+        .svc-process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 50px;
+        }
+        .svc-process-step { text-align: center; position: relative; }
+        .sps-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin: 0 auto 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+        }
+        .svc-process-step:hover .sps-number {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: var(--primary-color);
+            transform: scale(1.08) rotate(-5deg);
+            box-shadow: 0 20px 40px rgba(201,169,97,0.35);
+        }
+        .svc-process-step h5 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--dark-text);
+            margin-bottom: 8px;
+        }
+        .svc-process-step p {
+            font-size: 0.85rem;
+            color: #6C757D;
+            line-height: 1.55;
+            margin: 0;
+        }
+        .svc-faq { padding: 80px 0; background: #fff; }
+        @media (max-width: 991px) {
+            .svc-features-grid { grid-template-columns: repeat(2, 1fr); }
+            .svc-process-steps { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 576px) {
+            .svc-features-grid { grid-template-columns: 1fr; }
+            .svc-info-list { grid-template-columns: 1fr; }
+            .svc-process-steps { grid-template-columns: 1fr; }
+            .svc-detail-hero { padding: 60px 0 40px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background: linear-gradient(90deg, #FFC107 0%, #FFB300 100%); color: #000; text-align: center; padding: 10px 15px; font-weight: 600; border-bottom: 2px solid #000; display: flex; justify-content: center; align-items: center; gap: 10px; box-sizing: border-box; font-size: 0.9rem; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+        <i class="fas fa-tools" style="font-size: 1.1rem; animation: pulse-icon 2s ease-in-out infinite;"></i>
+        <span>This is a trial version - site under development and updates</span>
+        <i class="fas fa-tools" style="font-size: 1.1rem; animation: pulse-icon 2s ease-in-out infinite;"></i>
+    </div>
+    <style>@keyframes pulse-icon { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }</style>
+
+    <div class="language-switcher">
+        <a href="/ar/licensing.html" class="lang-btn"><i class="fas fa-globe"></i> العربية</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="Walid Abo Al-Ela Law Firm" style="height:45px; width:auto; margin-right:10px;">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo arb ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm">
                 <div>
-                    <span class="fw-bold">Walid Abo Al-Ela Law Firm</span>
-                    <small class="d-block" style="font-size:16px; opacity:0.9; margin-top:5px; font-weight:500;">For Arbitration and Intellectual Property</small>
+                    <span class="firm-name">Walid Mohamed Abu Al-Ela</span>
+                    <small class="firm-sub">Law · Arbitration · IP</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -114,16 +242,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
                             <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
                             <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
                             <li><a class="dropdown-item" href="/copyright.html">Copyright</a></li>
                             <li><a class="dropdown-item" href="/litigation.html">IP Litigation</a></li>
+                            <li><a class="dropdown-item" href="/licensing.html">Licensing & Contracts</a></li>
                             <li><a class="dropdown-item" href="/corporate-formation.html">Corporate Formation</a></li>
                             <li><a class="dropdown-item" href="/criminal-litigation.html">Criminal Litigation</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -133,338 +262,299 @@
                     <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/consultation.html">Paid Consultation</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html"><i class="fas fa-lock me-1"></i>Client Portal</a>
+                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>Client Portal
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script>
-        // حل مشكلة صورة المحامي - البحث عن المسار الصحيح (نسخة إضافية للاحتياط)
-        (function() {
-            const possiblePaths = [
-                '/images/team/walid-profile.jpg',
-                '/images/team/walid-abouelela.jpg',
-                '/images/walid-profile.jpg',
-                '/ar/images/team/walid-profile.jpg',
-                '/images/lawyers/walid.jpg'
-            ];
-            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-            if (!imgElement) return;
-            function tryLoadImage(index) {
-                if (index >= possiblePaths.length) return;
-                const testImg = new Image();
-                testImg.src = possiblePaths[index];
-                testImg.onload = function() {
-                    imgElement.src = possiblePaths[index];
-                    imgElement.onerror = null;
-                };
-                testImg.onerror = function() {
-                    tryLoadImage(index + 1);
-                };
-            }
-            tryLoadImage(0);
-        })();
-        </script>
     </nav>
 
     <!-- Page Header -->
     <header class="page-header">
-        <div class="container text-white text-center">
-            <h1 class="display-4">Contract Drafting & Review</h1>
-            <p class="lead">Comprehensive legal support for all types of contracts, from intellectual property to commercial agreements</p>
+        <div class="container text-center">
+            <div class="sh-line" style="margin: 0 auto 18px;"></div>
+            <span class="sh-label" style="color: var(--accent-light);">Contracts & Agreements</span>
+            <h1 class="display-4">IP Licensing & Technology Transfer</h1>
+            <p class="lead">Commercializing your intellectual property through well-structured agreements</p>
         </div>
     </header>
 
-    <!-- Introduction -->
-    <section class="py-5">
+    <!-- INTRO -->
+    <section class="svc-detail-intro">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>The Importance of Professional Contract Drafting</h2>
-                    <p>A well-drafted contract is the foundation of any successful business relationship. It clarifies rights, obligations, and remedies, preventing disputes and protecting your interests. Our team ensures your contracts are clear, enforceable, and tailored to your specific needs.</p>
+                <div class="col-lg-10 mx-auto">
+                    <p class="lead-block">
+                        Licensing is how intellectual property becomes revenue. A well-drafted license agreement allows you to monetize your patents, trademarks, and copyrights while keeping ownership — but a poorly drafted one can cost you control of your most valuable assets.
+                    </p>
+                    <p class="about-text">
+                        Our firm drafts, negotiates, and enforces IP licensing agreements and technology transfer contracts across industries. From patent and trademark licenses to software licensing, know-how transfer, and franchise agreements — we structure deals that protect your rights and maximize the value of your IP.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Types of Contracts -->
-    <section class="py-5 bg-light">
+    <!-- OUR SERVICES -->
+    <section class="svc-detail-hero">
         <div class="container">
-            <h2 class="text-center mb-5">Types of Contracts We Handle</h2>
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">What We Handle</span>
+                <h2 class="sh-title">Licensing & Tech Transfer Services</h2>
+                <p class="sh-desc">Full lifecycle support — from term sheet to enforcement.</p>
+            </div>
+
+            <div class="svc-features-grid">
+                <div class="svc-feature-card">
+                    <div class="sfc-icon"><i class="fas fa-trademark"></i></div>
+                    <h4>Trademark Licensing</h4>
+                    <p>Exclusive and non-exclusive trademark licenses, co-branding arrangements, and merchandising agreements.</p>
+                </div>
+
+                <div class="svc-feature-card">
+                    <div class="sfc-icon"><i class="fas fa-microchip"></i></div>
+                    <h4>Patent Licensing</h4>
+                    <p>Patent licenses, cross-licenses, and patent pooling arrangements — with royalty structures and territory protections.</p>
+                </div>
+
+                <div class="svc-feature-card">
+                    <div class="sfc-icon"><i class="fas fa-copyright"></i></div>
+                    <h4>Copyright Licensing</h4>
+                    <p>Publishing agreements, software licenses, content licensing, and distribution agreements for creative works.</p>
+                </div>
+
+                <div class="svc-feature-card">
+                    <div class="sfc-icon"><i class="fas fa-flask"></i></div>
+                    <h4>Technology Transfer</h4>
+                    <p>Know-how transfer, technical assistance, R&D collaboration, and technology development agreements.</p>
+                </div>
+
+                <div class="svc-feature-card">
+                    <div class="sfc-icon"><i class="fas fa-store"></i></div>
+                    <h4>Franchise Agreements</h4>
+                    <p>Franchise and master franchise agreements — brand standards, fees, training, and territory rights.</p>
+                </div>
+
+                <div class="svc-feature-card">
+                    <div class="sfc-icon"><i class="fas fa-box"></i></div>
+                    <h4>Software Licensing</h4>
+                    <p>SaaS agreements, EULA licenses, on-premise software licenses, and open-source compliance.</p>
+                </div>
+
+                <div class="svc-feature-card">
+                    <div class="sfc-icon"><i class="fas fa-users-cog"></i></div>
+                    <h4>Joint Development</h4>
+                    <p>Joint development agreements, IP ownership clauses, and shared commercialization arrangements.</p>
+                </div>
+
+                <div class="svc-feature-card">
+                    <div class="sfc-icon"><i class="fas fa-signature"></i></div>
+                    <h4>IP Assignment</h4>
+                    <p>Assignment agreements transferring IP ownership — full or partial, with clear scope and consideration.</p>
+                </div>
+
+                <div class="svc-feature-card">
+                    <div class="sfc-icon"><i class="fas fa-gavel"></i></div>
+                    <h4>Licensing Disputes</h4>
+                    <p>Representation in royalty disputes, breach of license actions, and unauthorized use of licensed IP.</p>
+                </div>
+            </div>
+
+            <div class="svc-info-list">
+                <div class="svc-info-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Bilingual drafting (Arabic & English) for both local and international deals</span>
+                </div>
+                <div class="svc-info-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Royalty structures optimized for tax and commercial considerations</span>
+                </div>
+                <div class="svc-info-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Enforcement clauses built-in from day one — not as an afterthought</span>
+                </div>
+                <div class="svc-info-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Experience across tech, pharma, media, retail, and industrial sectors</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="svc-process">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">How It Works</span>
+                <h2 class="sh-title">Our Licensing Process</h2>
+                <p class="sh-desc">Structured approach from terms to enforcement.</p>
+            </div>
+
+            <div class="svc-process-steps">
+                <div class="svc-process-step">
+                    <div class="sps-number">01</div>
+                    <h5>Assessment</h5>
+                    <p>Review the IP, parties, commercial terms, and regulatory environment.</p>
+                </div>
+                <div class="svc-process-step">
+                    <div class="sps-number">02</div>
+                    <h5>Term Sheet</h5>
+                    <p>Draft and negotiate the term sheet that captures the core deal.</p>
+                </div>
+                <div class="svc-process-step">
+                    <div class="sps-number">03</div>
+                    <h5>Agreement Drafting</h5>
+                    <p>Draft the full license or transfer agreement with all protective clauses.</p>
+                </div>
+                <div class="svc-process-step">
+                    <div class="sps-number">04</div>
+                    <h5>Execution & Enforcement</h5>
+                    <p>Support signing, then monitor compliance and enforce if needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="svc-faq">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">FAQ</span>
+                <h2 class="sh-title">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion faq-rich-accordion" id="faqLic">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#lic1">
+                                    Do I need to register a license agreement?
+                                </button>
+                            </h2>
+                            <div id="lic1" class="accordion-collapse collapse show" data-bs-parent="#faqLic">
+                                <div class="accordion-body">
+                                    For trademark and patent licenses in Egypt, recording the license with the relevant office strengthens enforceability against third parties. We advise based on your specific IP and jurisdiction.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#lic2">
+                                    Can I license my IP internationally?
+                                </button>
+                            </h2>
+                            <div id="lic2" class="accordion-collapse collapse" data-bs-parent="#faqLic">
+                                <div class="accordion-body">
+                                    Yes — cross-border licenses are common, especially for trademarks (Madrid Protocol) and patents (PCT). We draft bilingual agreements with enforceable choice of law and dispute resolution clauses.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#lic3">
+                                    What happens if a licensee breaches the agreement?
+                                </button>
+                            </h2>
+                            <div id="lic3" class="accordion-collapse collapse" data-bs-parent="#faqLic">
+                                <div class="accordion-body">
+                                    Remedies depend on the breach — unpaid royalties, unauthorized sublicensing, quality failures. We handle all cases from cease-and-desist to termination to litigation, depending on severity.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-file-signature"></i></div>
+                <h2>Ready to License Your IP?</h2>
+                <p>Talk to us before you sign — the right license structure protects your rights for years.</p>
+                <div class="fcr-buttons">
+                    <a href="/contact.html" class="btn-rich-primary light">
+                        <span>Contact Us</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/services.html" class="btn-rich-ghost">
+                        <i class="fas fa-th-large"></i>
+                        <span>All Services</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
+        <div class="container">
             <div class="row g-4">
-                <!-- Intellectual Property Contracts -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4">
-                        <div class="card-body p-4">
-                            <i class="fas fa-copyright fa-2x text-primary mb-3"></i>
-                            <h3 class="h5 card-title fw-bold">Intellectual Property Contracts</h3>
-                            <ul class="list-unstyled mt-3">
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Trademark licensing and assignment agreements</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Patent licensing and technology transfer</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Copyright licenses and publishing agreements</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Confidentiality and non-disclosure agreements (NDAs)</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Franchise agreements</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Employment & HR Contracts -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4">
-                        <div class="card-body p-4">
-                            <i class="fas fa-users fa-2x text-primary mb-3"></i>
-                            <h3 class="h5 card-title fw-bold">Employment & HR Contracts</h3>
-                            <ul class="list-unstyled mt-3">
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Employment contracts (executives and employees)</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Consultancy and independent contractor agreements</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Non-compete and non-solicitation clauses</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Employee handbooks and HR policies</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Commercial & Business Agreements -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4">
-                        <div class="card-body p-4">
-                            <i class="fas fa-building fa-2x text-primary mb-3"></i>
-                            <h3 class="h5 card-title fw-bold">Commercial & Business Agreements</h3>
-                            <ul class="list-unstyled mt-3">
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Partnership and joint venture agreements</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Shareholders' agreements</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Distribution and agency agreements</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Supply and purchase agreements</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Service level agreements (SLAs)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Real Estate Contracts -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4">
-                        <div class="card-body p-4">
-                            <i class="fas fa-home fa-2x text-primary mb-3"></i>
-                            <h3 class="h5 card-title fw-bold">Real Estate Contracts</h3>
-                            <ul class="list-unstyled mt-3">
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Lease agreements (residential and commercial)</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Property sale and purchase contracts</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Construction and contractor agreements</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Property management agreements</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Industrial Contracts (Factories) -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4">
-                        <div class="card-body p-4">
-                            <i class="fas fa-industry fa-2x text-primary mb-3"></i>
-                            <h3 class="h5 card-title fw-bold">Industrial Contracts (Factories)</h3>
-                            <ul class="list-unstyled mt-3">
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Supply chain and procurement agreements</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Equipment leasing and maintenance contracts</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Manufacturing and tolling agreements</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Quality control and compliance agreements</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Factory sale and purchase agreements</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Additional Contracts -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4">
-                        <div class="card-body p-4">
-                            <i class="fas fa-file-signature fa-2x text-primary mb-3"></i>
-                            <h3 class="h5 card-title fw-bold">Other Commercial Contracts</h3>
-                            <ul class="list-unstyled mt-3">
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Professional services agreements</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Supply and distribution contracts</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Purchase and sale agreements</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Business cooperation agreements</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Each Category Matters -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="text-center mb-4">Why Each Contract Category Matters</h2>
-                    <div class="accordion" id="contractImportance">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIP">
-                                    Intellectual Property Contracts
-                                </button>
-                            </h2>
-                            <div id="collapseIP" class="accordion-collapse collapse show" data-bs-parent="#contractImportance">
-                                <div class="accordion-body">
-                                    These contracts protect your intangible assets. Licensing agreements generate revenue, while confidentiality agreements safeguard trade secrets. Properly drafted contracts prevent unauthorized use and ensure you retain control over your creations.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEmployment">
-                                    Employment Contracts
-                                </button>
-                            </h2>
-                            <div id="collapseEmployment" class="accordion-collapse collapse" data-bs-parent="#contractImportance">
-                                <div class="accordion-body">
-                                    Clear employment contracts set expectations for both parties, reducing the risk of disputes. They cover compensation, duties, confidentiality, and termination conditions, protecting the company's interests while ensuring fair treatment of employees.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCommercial">
-                                    Commercial Contracts
-                                </button>
-                            </h2>
-                            <div id="collapseCommercial" class="accordion-collapse collapse" data-bs-parent="#contractImportance">
-                                <div class="accordion-body">
-                                    These contracts form the backbone of business operations. Well-drafted commercial agreements clarify roles, responsibilities, and remedies, minimizing the risk of costly litigation and fostering long-term partnerships.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRealEstate">
-                                    Real Estate Contracts
-                                </button>
-                            </h2>
-                            <div id="collapseRealEstate" class="accordion-collapse collapse" data-bs-parent="#contractImportance">
-                                <div class="accordion-body">
-                                    Real estate transactions involve significant value and complexity. A robust contract ensures all terms are clear, protects against hidden liabilities, and provides a framework for resolving disputes.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIndustrial">
-                                    Industrial Contracts (Factories)
-                                </button>
-                            </h2>
-                            <div id="collapseIndustrial" class="accordion-collapse collapse" data-bs-parent="#contractImportance">
-                                <div class="accordion-body">
-                                    Industrial operations rely on complex supply chains, equipment, and manufacturing agreements. Properly drafted industrial contracts ensure smooth operations, quality control, and risk allocation between parties, protecting your investment and production capabilities.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="py-5 bg-primary text-white">
-        <div class="container text-center">
-            <h2 class="mb-4">Need a Contract Drafted or Reviewed?</h2>
-            <p class="lead mb-4">Contact us to discuss your specific needs. We provide customized contract solutions that protect your interests and ensure legal compliance.</p>
-            <a href="/contact.html" class="btn btn-light btn-lg">Contact Us Now</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>Walid Abo Al-Ela Law Firm</h5>
-                    <p class="text-white-50">Specialized in arbitration and intellectual property protection with a personal touch since 2016.</p>
-                    <div class="social-links mt-3">
+                <div class="col-lg-4">
+                    <img src="/images/logo arb ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">Walid Mohamed Abu Al-Ela</h5>
+                    <p class="footer-desc">Law · Arbitration · Intellectual Property. Serving clients with dedication since 2013.</p>
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">Quick Links</h6>
+                    <ul class="footer-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/lawyers.html">Our Team</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">Contact</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Sat - Thu: 9am - 8pm</li>
+                    </ul>
+                </div>
                 <div class="col-lg-3">
-                    <h6 class="mb-4">Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/index.html" class="text-white-50 text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="/about.html" class="text-white-50 text-decoration-none">About</a></li>
-                        <li class="mb-2"><a href="/services.html" class="text-white-50 text-decoration-none">Services</a></li>
-                        <li class="mb-2"><a href="/lawyers.html" class="text-white-50 text-decoration-none">Our Team</a></li>
-                        <li class="mb-2"><a href="/blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
-                        <li class="mb-2"><a href="/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
-                        <li class="mb-2"><a href="/consultation.html" class="text-white-50 text-decoration-none">Paid Consultation</a></li>
+                    <h6 class="footer-heading">Legal</h6>
+                    <ul class="footer-list">
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Use</a></li>
+                        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h6 class="mb-4">Contact Info</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 10th of Ramadan, Cairo, Egypt</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Sat - Thu: 9am - 8pm</li>
-                    </ul>
-                </div>
-                <div class="col-lg-12 mt-3">
-                    <hr class="my-3" style="border-color: rgba(255,255,255,0.1);">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="small text-white-50 mb-0">© 2025 Walid Abo Al-Ela Law Firm. All rights reserved.</p>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
-                            <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">Terms of Use</a>
-                            <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">Cookie Policy</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Walid Mohamed Abu Al-Ela Law Firm. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-WQ0CPXRK2F');
-    </script>
-    <!-- كود إضافي لحل مشكلة صورة المحامي (النسخة الثالثة) -->
-    <script>
-    (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-            testImg.onerror = function() { tryLoadImage(index + 1); };
-        }
-        tryLoadImage(0);
-    })();
-    </script>
-    <script>
-        // تحديد الرابط النشط
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
-                if (link.getAttribute('href') === currentPath) link.classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>

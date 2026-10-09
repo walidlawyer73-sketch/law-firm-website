@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية - وليد أبوالعلا للمحاماة</title>
-    <meta name="description" content="سياسة خصوصية مكتب وليد أبوالعلا للمحاماة. تعرف على كيفية جمع وحماية واستخدام معلوماتك الشخصية عند زيارة موقعنا.">
-    <!-- Bootstrap CSS -->
+    <title>سياسة الخصوصية - مكتب وليد محمد أبوالعلا للمحاماة</title>
+    <meta name="description" content="سياسة الخصوصية لمكتب وليد محمد أبوالعلا للمحاماة — كيف نجمع ونستخدم ونحمي معلوماتك الشخصية وفقاً لمبادئ حماية البيانات.">
+    <meta name="keywords" content="سياسة الخصوصية, حماية البيانات, خصوصية مكتب محاماة, حماية المعلومات">
+    <meta name="author" content="وليد محمد أبوالعلا">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/ar/privacy-policy.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/ar/privacy-policy.html">
+    <meta property="og:title" content="سياسة الخصوصية - مكتب وليد محمد أبوالعلا للمحاماة">
+    <meta property="og:description" content="كيف نجمع ونستخدم ونحمي معلوماتك الشخصية.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta property="og:locale" content="ar_EG">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/privacy-policy.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/privacy-policy.html">
+
+    <link rel="icon" type="image/png" href="/images/logo arb ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,90 +36,309 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
-    <style>
-        .language-switcher {
-            position: fixed;
-            top: 70px;
-            left: 20px;
-            z-index: 9999;
-        }
-        .language-switcher .lang-btn {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .language-switcher .lang-btn:hover {
-            background-color: #0b5ed7;
-            transform: scale(1.05);
-        }
-        body { padding-top: 70px; }
-        @media (max-width: 768px) {
-            .language-switcher { top: 60px; left: 10px; }
-            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
-        }
-        .dropdown-menu { min-width: 220px; }
-    </style>
-</head>
-<script>
-// ========== حل نهائي لصورة المحامي (النسخة الأولى) ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools"></i>
-</div>
-<body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>
-    </div>
 
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (currentPath.startsWith('/ar/')) {
-            let englishPath = currentPath.replace('/ar', '');
-            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') englishPath = '/';
-            langLink.href = englishPath;
-        } else {
-            langLink.href = '/';
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "سياسة الخصوصية - مكتب وليد محمد أبوالعلا للمحاماة",
+        "url": "https://law-arb-ip-walid.vercel.app/ar/privacy-policy.html",
+        "inLanguage": "ar",
+        "isPartOf": {
+            "@type": "LegalService",
+            "name": "مكتب وليد محمد أبوالعلا للمحاماة",
+            "url": "https://law-arb-ip-walid.vercel.app/ar/"
         }
-    })();
+    }
     </script>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+    <style>
+        /* غلاف الصفحة القانونية */
+        .legal-wrap {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 24px;
+            padding: 55px 50px;
+            box-shadow: 0 30px 60px -30px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        .legal-wrap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #C9A961, #A88947, #C9A961);
+        }
+        @media (max-width: 768px) {
+            .legal-wrap { padding: 32px 24px; border-radius: 16px; }
+        }
+
+        /* فهرس المحتويات */
+        .legal-toc {
+            background: linear-gradient(160deg, #FAF6EC 0%, #fff 100%);
+            border: 1px solid rgba(201,169,97,0.25);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 45px;
+        }
+        .legal-toc h4 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #212529;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legal-toc h4 i {
+            color: #C9A961;
+        }
+        .legal-toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: toc-counter;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 24px;
+        }
+        @media (max-width: 600px) {
+            .legal-toc ol { grid-template-columns: 1fr; }
+            .legal-toc { padding: 22px 22px; }
+        }
+        .legal-toc li {
+            counter-increment: toc-counter;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .legal-toc li::before {
+            content: counter(toc-counter, decimal-leading-zero);
+            color: #C9A961;
+            font-weight: 800;
+            margin-left: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+        }
+        .legal-toc a {
+            color: #495057;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .legal-toc a:hover {
+            color: #A88947;
+        }
+
+        /* المحتوى القانوني */
+        .legal-content h2 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #212529;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #F1F3F5;
+            position: relative;
+            scroll-margin-top: 120px;
+        }
+        .legal-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(270deg, #C9A961, #A88947);
+        }
+        .legal-content h2:first-of-type { margin-top: 0; }
+
+        .legal-content h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #212529;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        .legal-content p {
+            font-size: 0.95rem;
+            color: #495057;
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
+
+        .legal-content ul,
+        .legal-content ol {
+            padding-right: 22px;
+            padding-left: 0;
+            margin-bottom: 18px;
+        }
+        .legal-content li {
+            font-size: 0.95rem;
+            color: #495057;
+            line-height: 1.9;
+            margin-bottom: 8px;
+        }
+        .legal-content strong {
+            color: #212529;
+            font-weight: 700;
+        }
+        .legal-content a {
+            color: #A88947;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .legal-content a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        /* صندوق تنبيه */
+        .legal-info-box {
+            background: linear-gradient(160deg, #F8F9FA 0%, #fff 100%);
+            border-right: 4px solid #C9A961;
+            border-left: none;
+            border-radius: 12px;
+            padding: 22px 26px;
+            margin: 24px 0;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .legal-info-box i {
+            color: #C9A961;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        .legal-info-box div p {
+            margin: 0;
+            font-size: 0.92rem;
+        }
+        .legal-info-box div p:first-child {
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 4px;
+        }
+
+        /* ختم آخر تحديث */
+        .last-updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: #6C757D;
+            font-weight: 600;
+            padding: 8px 16px;
+            background: #F8F9FA;
+            border-radius: 999px;
+            margin-bottom: 25px;
+        }
+        .last-updated i {
+            color: #C9A961;
+        }
+
+        /* بطاقة التواصل */
+        .contact-mini-card {
+            background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+            border-radius: 20px;
+            padding: 35px 32px;
+            color: #fff;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-mini-card::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: -60px;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(201,169,97,0.18), transparent 70%);
+            border-radius: 50%;
+        }
+        .contact-mini-card h3 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-mini-card p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.92rem;
+            line-height: 1.85;
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-mini-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 24px;
+        }
+        @media (max-width: 600px) {
+            .contact-mini-list { grid-template-columns: 1fr; }
+        }
+        .contact-mini-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.88rem;
+        }
+        .contact-mini-list i {
+            color: #C9A961;
+            width: 18px;
+        }
+        .contact-mini-list a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-mini-list a:hover { color: #C9A961; }
+
+        /* RTL */
+        [dir="rtl"] .language-switcher { right: auto; left: 20px; }
+        @media (max-width: 768px) {
+            [dir="rtl"] .language-switcher { right: auto; left: 10px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="trial-banner">
+        <i class="fas fa-tools"></i>
+        <span>هذا إصدار تجريبي للموقع - جاري التطوير والتحديث</span>
+        <i class="fas fa-tools"></i>
+    </div>
+
+    <div class="language-switcher">
+        <a href="/privacy-policy.html" class="lang-btn"><i class="fas fa-globe"></i> English</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="وليد أبوالعلا للمحاماة" style="height:45px; width:auto; margin-left:10px;">
+            <a class="navbar-brand" href="/ar/">
+                <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة">
                 <div>
-                    <span class="fw-bold">وليد أبوالعلا للمحاماة</span>
-                    <small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small>
+                    <span class="firm-name">وليد محمد أبوالعلا</span>
+                    <small class="firm-sub">مكتب محاماة · تحكيم · ملكية فكرية</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -110,16 +346,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/about.html">من نحن</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">الخدمات</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">الخدمات</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/ar/arbitration.html">التحكيم الدولي</a></li>
                             <li><a class="dropdown-item" href="/ar/trademark.html">تسجيل العلامات التجارية</a></li>
                             <li><a class="dropdown-item" href="/ar/patent.html">براءات الاختراع</a></li>
                             <li><a class="dropdown-item" href="/ar/copyright.html">حقوق المؤلف</a></li>
                             <li><a class="dropdown-item" href="/ar/litigation.html">قضايا الملكية الفكرية</a></li>
+                            <li><a class="dropdown-item" href="/ar/licensing.html">الترخيص والعقود</a></li>
                             <li><a class="dropdown-item" href="/ar/corporate-formation.html">تأسيس الشركات</a></li>
                             <li><a class="dropdown-item" href="/ar/criminal-litigation.html">القضايا الجنائية</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -129,175 +366,335 @@
                     <li class="nav-item"><a class="nav-link" href="/ar/lawyers.html">فريق العمل</a></li>
                     <li class="nav-item"><a class="nav-link" href="/ar/blog.html">المدونة</a></li>
                     <li class="nav-item"><a class="nav-link" href="/ar/contact.html">اتصل بنا</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/consultation.html">استشارة مدفوعة</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html"><i class="fas fa-lock me-1"></i>بوابة العميل</a>
+                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>بوابة العميل
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script>
-        // حل مشكلة صورة المحامي - البحث عن المسار الصحيح (نسخة إضافية للاحتياط)
-        (function() {
-            const possiblePaths = [
-                '/images/team/walid-profile.jpg',
-                '/images/team/walid-abouelela.jpg',
-                '/images/walid-profile.jpg',
-                '/ar/images/team/walid-profile.jpg',
-                '/images/lawyers/walid.jpg'
-            ];
-            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-            if (!imgElement) return;
-            function tryLoadImage(index) {
-                if (index >= possiblePaths.length) return;
-                const testImg = new Image();
-                testImg.src = possiblePaths[index];
-                testImg.onload = function() {
-                    imgElement.src = possiblePaths[index];
-                    imgElement.onerror = null;
-                };
-                testImg.onerror = function() {
-                    tryLoadImage(index + 1);
-                };
-            }
-            tryLoadImage(0);
-        })();
-        </script>
     </nav>
 
-    <!-- Page Header -->
     <header class="page-header">
-        <div class="container text-white text-center">
+        <div class="container text-center">
             <h1 class="display-4">سياسة الخصوصية</h1>
-            <p class="lead">آخر تحديث: فبراير 2025</p>
+            <p class="lead">كيف نجمع ونستخدم ونحمي معلوماتك الشخصية</p>
         </div>
     </header>
 
-    <!-- Page Content -->
+    <!-- ============================================================
+         المحتوى القانوني
+         ============================================================ -->
     <section class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>مقدمة</h2>
-                    <p>مكتب وليد أبوالعلا للمحاماة ("نحن" أو "لنا") ملتزم بحماية خصوصيتك. توضح سياسة الخصوصية هذه كيف نجمع ونستخدم ونحمي معلوماتك عند زيارة موقعنا.</p>
-                    
-                    <h2 class="mt-4">المعلومات التي نجمعها</h2>
-                    <p>قد نجمع معلومات شخصية مثل اسمك، بريدك الإلكتروني، رقم هاتفك، وأي معلومات أخرى تقدمها طواعية عند التواصل معنا عبر نماذج الموقع.</p>
-                    
-                    <h2 class="mt-4">كيف نستخدم معلوماتك</h2>
-                    <p>نستخدم المعلومات التي نجمعها من أجل:</p>
+            <div class="legal-wrap">
+
+                <span class="last-updated">
+                    <i class="fas fa-calendar-check"></i>
+                    آخر تحديث: يناير 2026
+                </span>
+
+                <div class="legal-info-box">
+                    <i class="fas fa-shield-halved"></i>
+                    <div>
+                        <p>خصوصيتك تهمّنا.</p>
+                        <p>
+                            توضح سياسة الخصوصية هذه كيف يقوم <strong>مكتب وليد محمد أبوالعلا للمحاماة</strong>
+                            ("نحن" أو "المكتب") بجمع واستخدام وحماية المعلومات الشخصية عند تفاعلك مع
+                            موقعنا الإلكتروني، أو إرسال نموذج تواصل، أو التعاقد معنا للحصول على خدمات
+                            قانونية.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- الفهرس -->
+                <div class="legal-toc">
+                    <h4><i class="fas fa-list-ul"></i> فهرس المحتويات</h4>
+                    <ol>
+                        <li><a href="#section-1">المعلومات التي نجمعها</a></li>
+                        <li><a href="#section-2">كيف نستخدم معلوماتك</a></li>
+                        <li><a href="#section-3">الأساس القانوني للمعالجة</a></li>
+                        <li><a href="#section-4">المشاركة والإفصاح</a></li>
+                        <li><a href="#section-5">الاحتفاظ بالبيانات</a></li>
+                        <li><a href="#section-6">أمن البيانات</a></li>
+                        <li><a href="#section-7">حقوقك</a></li>
+                        <li><a href="#section-8">ملفات تعريف الارتباط والتحليلات</a></li>
+                        <li><a href="#section-9">روابط الأطراف الثالثة</a></li>
+                        <li><a href="#section-10">خصوصية الأطفال</a></li>
+                        <li><a href="#section-11">التغييرات على هذه السياسة</a></li>
+                        <li><a href="#section-12">تواصل معنا</a></li>
+                    </ol>
+                </div>
+
+                <div class="legal-content">
+
+                    <!-- 1 -->
+                    <h2 id="section-1">1. المعلومات التي نجمعها</h2>
+                    <p>
+                        نجمع المعلومات الشخصية التي تقدّمها لنا طوعاً عند تفاعلك مع موقعنا الإلكتروني
+                        أو عند التعاقد معنا للحصول على خدماتنا. قد تشمل:
+                    </p>
+
+                    <h3>معلومات تقدّمها مباشرة</h3>
                     <ul>
-                        <li>الرد على استفساراتك وتقديم الاستشارات القانونية</li>
-                        <li>تحسين موقعنا وخدماتنا</li>
-                        <li>الامتثال للالتزامات القانونية</li>
+                        <li><strong>بيانات الاتصال:</strong> الاسم، البريد الإلكتروني، رقم الهاتف، الشركة/المؤسسة.</li>
+                        <li><strong>تفاصيل الموضوع:</strong> أي معلومات تشاركها عبر نماذج التواصل أو الاستشارة أو النشرة البريدية — بما في ذلك وصف موضوعك القانوني.</li>
+                        <li><strong>المراسلات:</strong> أي رسائل أو مستندات أو ملفات ترسلها إلينا بالبريد الإلكتروني أو واتساب أو عبر موقعنا.</li>
                     </ul>
-                    
-                    <h2 class="mt-4">أمن البيانات</h2>
-                    <p>نطبق إجراءات فنية وتنظيمية مناسبة لحماية معلوماتك الشخصية من الوصول غير المصرح به أو التعديل أو الإفصاح أو التدمير.</p>
-                    
-                    <h2 class="mt-4">روابط خارجية</h2>
-                    <p>قد يحتوي موقعنا على روابط لمواقع خارجية. لسنا مسؤولين عن ممارسات الخصوصية لتلك المواقع.</p>
-                    
-                    <h2 class="mt-4">اتصل بنا</h2>
-                    <p>إذا كان لديك أي استفسار حول سياسة الخصوصية هذه، يرجى الاتصال بنا على <a href="mailto:walidlegal.ippro@gmail.com">walidlegal.ippro@gmail.com</a> أو الاتصال على +20 111257219.</p>
+
+                    <h3>معلومات تُجمَع تلقائياً</h3>
+                    <ul>
+                        <li><strong>بيانات الاستخدام:</strong> الصفحات التي تزورها، والوقت المستغرق، ومصادر الزيارات، التي تُجمَع عبر أدوات التحليلات (انظر البند 8).</li>
+                        <li><strong>بيانات تقنية:</strong> عنوان IP، نوع المتصفح، نوع الجهاز، ونظام التشغيل، لأغراض الأمن والتحليلات.</li>
+                    </ul>
+
+                    <!-- 2 -->
+                    <h2 id="section-2">2. كيف نستخدم معلوماتك</h2>
+                    <p>نستخدم المعلومات التي نجمعها للأغراض التالية:</p>
+                    <ul>
+                        <li>الرد على استفساراتك وطلبات الاستشارة ورسائلك.</li>
+                        <li>تقديم الخدمات القانونية التي تعاقدت معنا عليها.</li>
+                        <li>التواصل معك بشأن ملفك، بما في ذلك التحديثات والمستندات والخطوات التالية.</li>
+                        <li>إرسال تحديثات أو رؤى قانونية من وقت لآخر (فقط إذا اشتركت في النشرة — ويمكنك إلغاء الاشتراك في أي وقت).</li>
+                        <li>الامتثال لالتزاماتنا القانونية والأخلاقية والتنظيمية كمكتب محاماة.</li>
+                        <li>تحسين موقعنا وخدماتنا وتجربة العميل.</li>
+                        <li>منع الاحتيال وضمان أمن أنظمتنا.</li>
+                    </ul>
+
+                    <!-- 3 -->
+                    <h2 id="section-3">3. الأساس القانوني للمعالجة</h2>
+                    <p>
+                        نعالج معلوماتك الشخصية استناداً إلى واحد أو أكثر من الأسس القانونية التالية:
+                    </p>
+                    <ul>
+                        <li><strong>موافقتك</strong> — على سبيل المثال عند إرسال نموذج تواصل أو اشتراكك في النشرة البريدية.</li>
+                        <li><strong>تنفيذ عقد</strong> — عند تقديم خدمات قانونية تعاقدت معنا عليها.</li>
+                        <li><strong>الالتزامات القانونية</strong> — بما في ذلك متطلبات مكافحة غسل الأموال، وحفظ السجلات، والسلوك المهني.</li>
+                        <li><strong>المصالح المشروعة</strong> — مثل تحسين خدماتنا وضمان أمن موقعنا الإلكتروني.</li>
+                    </ul>
+
+                    <!-- 4 -->
+                    <h2 id="section-4">4. المشاركة والإفصاح</h2>
+                    <p>
+                        نحن <strong>لا</strong> نبيع أو نؤجّر أو نتاجر بمعلوماتك الشخصية. قد نشارك
+                        معلوماتك فقط في الحالات المحدودة التالية:
+                    </p>
+                    <ul>
+                        <li><strong>مقدّمو الخدمات:</strong> أطراف ثالثة موثوقة تساعدنا في إرسال البريد الإلكتروني أو الاستضافة أو التحليلات أو إدارة المستندات — بموجب اتفاقيات سرية صارمة.</li>
+                        <li><strong>المستشارون المهنيون:</strong> عند الحاجة للتنسيق مع محامين أو خبراء أو مستشارين آخرين بشأن ملفك.</li>
+                        <li><strong>الامتثال القانوني:</strong> عند الطلب بموجب القانون أو أمر قضائي أو التزام مهني.</li>
+                        <li><strong>بموافقتك:</strong> في أي حالة أخرى، فقط بإذنك الصريح.</li>
+                    </ul>
+
+                    <!-- 5 -->
+                    <h2 id="section-5">5. الاحتفاظ بالبيانات</h2>
+                    <p>
+                        نحتفظ بالمعلومات الشخصية فقط للمدة اللازمة لتحقيق الأغراض الموضّحة في هذه
+                        السياسة، أو كما يقتضي القانون. بالنسبة لملفات العملاء، نحتفظ بالملفات للمدة
+                        التي تقتضيها قواعد السلوك المهني المصرية والتزامات حفظ السجلات المعمول بها.
+                    </p>
+                    <p>
+                        عندما تصبح المعلومات غير ضرورية، نحذفها أو نجعلها مجهولة الهوية بشكل آمن.
+                    </p>
+
+                    <!-- 6 -->
+                    <h2 id="section-6">6. أمن البيانات</h2>
+                    <p>
+                        نتخذ إجراءات تقنية وتنظيمية معقولة لحماية معلوماتك الشخصية من الوصول غير
+                        المصرّح به أو التعديل أو الإفصاح أو الإتلاف. تشمل هذه الإجراءات:
+                    </p>
+                    <ul>
+                        <li>نقل البيانات مشفّراً (HTTPS/TLS) عبر موقعنا.</li>
+                        <li>ضوابط وصول تحدّد من يمكنه داخل مكتبنا الاطلاع على معلوماتك.</li>
+                        <li>تخزين آمن للمستندات والمراسلات.</li>
+                        <li>مراجعة دورية لممارساتنا الأمنية.</li>
+                    </ul>
+
+                    <div class="legal-info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <div>
+                            <p>ملاحظة مهمة</p>
+                            <p>
+                                لا توجد وسيلة نقل عبر الإنترنت أو تخزين إلكتروني آمنة بنسبة 100%.
+                                وبينما نتخذ احتياطات قوية، لا يمكننا ضمان الأمن المطلق. يُرجى تجنّب
+                                إرسال معلومات شديدة الحساسية عبر قنوات غير آمنة (مثل نماذج التواصل
+                                الأولي).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 7 -->
+                    <h2 id="section-7">7. حقوقك</h2>
+                    <p>
+                        وفقاً للقانون المعمول به، قد تكون لك الحقوق التالية فيما يتعلق بمعلوماتك
+                        الشخصية:
+                    </p>
+                    <ul>
+                        <li><strong>حق الوصول:</strong> طلب نسخة من المعلومات الشخصية التي نحتفظ بها عنك.</li>
+                        <li><strong>حق التصحيح:</strong> طلب تصحيح المعلومات غير الدقيقة أو غير الكاملة.</li>
+                        <li><strong>حق الحذف:</strong> طلب حذف معلوماتك، مع مراعاة التزامات الاحتفاظ القانونية.</li>
+                        <li><strong>حق تقييد المعالجة:</strong> طلب أن نحدّ من كيفية استخدامنا لمعلوماتك.</li>
+                        <li><strong>حق الاعتراض:</strong> الاعتراض على المعالجة القائمة على المصالح المشروعة.</li>
+                        <li><strong>حق سحب الموافقة:</strong> سحب الموافقة في أي وقت، حيث تكون الموافقة هي الأساس القانوني للمعالجة.</li>
+                    </ul>
+                    <p>
+                        لممارسة أي من هذه الحقوق، يُرجى التواصل معنا عبر البيانات الواردة في البند 12.
+                        سنرد في إطار زمني معقول ووفقاً للقانون المعمول به.
+                    </p>
+
+                    <!-- 8 -->
+                    <h2 id="section-8">8. ملفات تعريف الارتباط والتحليلات</h2>
+                    <p>
+                        يستخدم موقعنا ملفات تعريف الارتباط (cookies) وتقنيات مشابهة لأغراض الأداء
+                        والأمن والتحليلات. نستخدم <strong>Google Analytics</strong> لفهم كيفية
+                        استخدام الزوار لموقعنا — والبيانات التي نجمعها مُجمّعة ومجهولة الهوية حيثما
+                        أمكن.
+                    </p>
+                    <p>
+                        يمكنك التحكم في ملفات تعريف الارتباط أو تعطيلها من خلال إعدادات متصفحك. يرجى
+                        ملاحظة أن تعطيل بعض ملفات تعريف الارتباط قد يؤثر على وظائف الموقع. لمزيد من
+                        المعلومات، راجع <a href="/ar/cookie-policy.html">سياسة ملفات تعريف الارتباط</a>.
+                    </p>
+
+                    <!-- 9 -->
+                    <h2 id="section-9">9. روابط الأطراف الثالثة</h2>
+                    <p>
+                        قد يحتوي موقعنا على روابط لمواقع طرف ثالث (مثل واتساب أو LinkedIn أو Facebook
+                        أو خرائط Google). نحن غير مسؤولين عن ممارسات الخصوصية لتلك المواقع. نشجعك على
+                        مراجعة سياسات الخصوصية الخاصة بها قبل تقديم أي معلومات شخصية.
+                    </p>
+
+                    <!-- 10 -->
+                    <h2 id="section-10">10. خصوصية الأطفال</h2>
+                    <p>
+                        خدماتنا موجّهة للبالغين والشركات. نحن لا نجمع عن قصد معلومات شخصية من أطفال
+                        تحت 18 عاماً. إذا كنت تعتقد أن طفلاً قدّم لنا معلومات شخصية، يُرجى التواصل
+                        معنا لاتخاذ الإجراء المناسب.
+                    </p>
+
+                    <!-- 11 -->
+                    <h2 id="section-11">11. التغييرات على هذه السياسة</h2>
+                    <p>
+                        قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر لتعكس التغييرات في ممارساتنا أو
+                        التقنية أو المتطلبات القانونية. عند إجراء تغييرات جوهرية، سنحدّث تاريخ "آخر
+                        تحديث" أعلى هذه الصفحة. نشجعك على مراجعة هذه السياسة بشكل دوري.
+                    </p>
+
+                    <!-- 12 -->
+                    <h2 id="section-12">12. تواصل معنا</h2>
+                    <p>
+                        إذا كان لديك أي أسئلة أو استفسارات أو طلبات بشأن سياسة الخصوصية هذه أو طريقة
+                        تعاملنا مع معلوماتك الشخصية، يُرجى التواصل معنا:
+                    </p>
+                </div>
+
+                <!-- بطاقة التواصل -->
+                <div class="contact-mini-card">
+                    <h3>استفسارات الخصوصية</h3>
+                    <p>
+                        لأي أمر يتعلق بالخصوصية، يُرجى التواصل معنا عبر إحدى القنوات التالية — نأخذ
+                        جميع الاستفسارات على محمل الجد وسنرد فوراً.
+                    </p>
+                    <ul class="contact-mini-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" dir="ltr">+20 111 257 219</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> العاشر من رمضان، القاهرة، مصر</li>
+                        <li><i class="fas fa-globe"></i> <a href="/ar/contact.html">صفحة التواصل</a></li>
+                    </ul>
+                    <a href="/ar/contact.html" class="btn-rich-primary">
+                        <span>تواصل معنا</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         دعوة نهائية
+         ============================================================ -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-shield-halved"></i></div>
+                <h2>أسئلة عن خصوصيتك؟</h2>
+                <p>يسعدنا توضيح أي نقطة في هذه السياسة — تواصل معنا مباشرة.</p>
+                <div class="fcr-buttons">
+                    <a href="/ar/contact.html" class="btn-rich-primary light">
+                        <span>تواصل معنا</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <a href="/ar/terms-of-service.html" class="btn-rich-ghost">
+                        <i class="fas fa-file-contract"></i>
+                        <span>شروط الاستخدام</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
+    <!-- ============================================================
+         الفوتر
+         ============================================================ -->
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>وليد أبوالعلا للمحاماة</h5>
-                    <p class="text-white-50">متخصصون في التحكيم وحماية الملكية الفكرية بلمسة شخصية منذ 2016.</p>
-                    <div class="social-links mt-3">
+                <div class="col-lg-4">
+                    <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">مكتب وليد محمد أبوالعلا للمحاماة</h5>
+                    <p class="footer-desc">محاماة · تحكيم · ملكية فكرية. نخدم عملاءنا بتفانٍ منذ 2016.</p>
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="فيسبوك"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
                         <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <h6 class="mb-4">روابط سريعة</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/ar/index.html" class="text-white-50 text-decoration-none">الرئيسية</a></li>
-                        <li class="mb-2"><a href="/ar/about.html" class="text-white-50 text-decoration-none">من نحن</a></li>
-                        <li class="mb-2"><a href="/ar/services.html" class="text-white-50 text-decoration-none">الخدمات</a></li>
-                        <li class="mb-2"><a href="/ar/lawyers.html" class="text-white-50 text-decoration-none">فريق العمل</a></li>
-                        <li class="mb-2"><a href="/ar/blog.html" class="text-white-50 text-decoration-none">المدونة</a></li>
-                        <li class="mb-2"><a href="/ar/contact.html" class="text-white-50 text-decoration-none">اتصل بنا</a></li>
-                        <li class="mb-2"><a href="/ar/consultation.html" class="text-white-50 text-decoration-none">استشارة مدفوعة</a></li>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">روابط سريعة</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/">الرئيسية</a></li>
+                        <li><a href="/ar/about.html">من نحن</a></li>
+                        <li><a href="/ar/services.html">الخدمات</a></li>
+                        <li><a href="/ar/lawyers.html">فريق العمل</a></li>
+                        <li><a href="/ar/blog.html">المدونة</a></li>
+                        <li><a href="/ar/contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">معلومات الاتصال</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> العاشر من رمضان، القاهرة، مصر</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;" dir="ltr">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;" dir="ltr">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> السبت - الخميس: 9 ص - 8 م</li>
                     </ul>
                 </div>
                 <div class="col-lg-3">
-                    <h6 class="mb-4">معلومات الاتصال</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، القاهرة، مصر</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> السبت - الخميس: 9 صباحاً - 8 مساءً</li>
-                    </ul>
-                </div>
-                <div class="col-lg-2">
-                    <h6 class="mb-4">قانوني</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/privacy-policy.html" class="text-white-50 text-decoration-none">سياسة الخصوصية</a></li>
-                        <li class="mb-2"><a href="/terms-of-service.html" class="text-white-50 text-decoration-none">شروط الاستخدام</a></li>
-                        <li class="mb-2"><a href="/cookie-policy.html" class="text-white-50 text-decoration-none">سياسة ملفات تعريف الارتباط</a></li>
+                    <h6 class="footer-heading">قانوني</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/privacy-policy.html">سياسة الخصوصية</a></li>
+                        <li><a href="/ar/terms-of-service.html">شروط الاستخدام</a></li>
+                        <li><a href="/ar/cookie-policy.html">سياسة ملفات تعريف الارتباط</a></li>
                     </ul>
                 </div>
             </div>
-            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="small text-white-50 mb-0">© 2025 وليد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
-                </div>
+            <div class="footer-bottom">
+                <p>© 2026 مكتب وليد محمد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
 
+    <button id="backToTop" title="العودة إلى الأعلى"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-WQ0CPXRK2F');
-    </script>
-    <!-- كود إضافي لحل مشكلة صورة المحامي (النسخة الثالثة) -->
-    <script>
-    (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-            testImg.onerror = function() { tryLoadImage(index + 1); };
-        }
-        tryLoadImage(0);
-    })();
-    </script>
-    <script>
-        // تحديد الرابط النشط
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
-                if (link.getAttribute('href') === currentPath) link.classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>

@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>استشارة مدفوعة - وليد أبوالعلا للمحاماة</title>
-    <meta name="description" content="احصل على استشارة قانونية مدفوعة من محامٍ خبير في الملكية الفكرية والتحكيم. استشارات سريعة وسرية بأسعار تنافسية.">
-    <!-- Bootstrap CSS -->
+    <title>احجز استشارة - مكتب وليد محمد أبوالعلا للمحاماة | ملكية فكرية وتحكيم وشركات</title>
+    <meta name="description" content="احجز استشارة سرية مع مكتب وليد محمد أبوالعلا للمحاماة — متخصص في الملكية الفكرية والتحكيم وقانون الشركات. نطاق واضح وأتعاب شفافة.">
+    <meta name="keywords" content="استشارة قانونية مصر, استشارة ملكية فكرية, استشارة تحكيم, احجز محامي, استشارة علامات تجارية, استشارة براءات اختراع, استشارة قانونية">
+    <meta name="author" content="وليد محمد أبوالعلا">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/ar/consultation.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/ar/consultation.html">
+    <meta property="og:title" content="احجز استشارة - مكتب وليد محمد أبوالعلا للمحاماة">
+    <meta property="og:description" content="احجز استشارة سرية مع متخصص في الملكية الفكرية والتحكيم وقانون الشركات.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta property="og:locale" content="ar_EG">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/consultation.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/consultation.html">
+
+    <link rel="icon" type="image/png" href="/images/logo arb ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,139 +36,342 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "احجز استشارة - مكتب وليد محمد أبوالعلا للمحاماة",
+        "url": "https://law-arb-ip-walid.vercel.app/ar/consultation.html",
+        "mainEntity": {
+            "@type": "LegalService",
+            "name": "مكتب وليد محمد أبوالعلا للمحاماة",
+            "url": "https://law-arb-ip-walid.vercel.app/ar/",
+            "telephone": "+20111257219",
+            "email": "walidlegal.ippro@gmail.com",
+            "areaServed": {"@type": "Country", "name": "مصر"},
+            "availableLanguage": ["العربية", "الإنجليزية"]
+        }
+    }
+    </script>
+
     <style>
-        .language-switcher {
-            position: fixed;
-            top: 70px;
-            left: 20px;
-            z-index: 9999;
-        }
-        .language-switcher .lang-btn {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .language-switcher .lang-btn:hover {
-            background-color: #0b5ed7;
-            transform: scale(1.05);
-        }
-        body { padding-top: 70px; }
-        @media (max-width: 768px) {
-            .language-switcher { top: 60px; left: 10px; }
-            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
-        }
-        .dropdown-menu { min-width: 220px; }
-        /* تنسيق خاص لبطاقة استشارة الملكية الفكرية */
-        .ip-consultation-card {
-            background: linear-gradient(135deg, #1a2a3a 0%, #0f1a24 100%);
-            border: 1px solid rgba(255,215,0,0.3);
+        /* نموذج الاستشارة */
+        .consultation-form-wrap {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 24px;
+            padding: 45px 40px;
+            box-shadow: 0 30px 60px -30px rgba(0,0,0,0.1);
             position: relative;
             overflow: hidden;
         }
-        .ip-consultation-card::before {
+        .consultation-form-wrap::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #C9A961, #A88947, #C9A961);
         }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        @media (max-width: 768px) {
+            .consultation-form-wrap { padding: 30px 22px; }
         }
-        .ip-consultation-card .card-body {
-            position: relative;
-            z-index: 2;
+
+        .cf-field {
+            margin-bottom: 20px;
         }
-        .ip-consultation-card h4, .ip-consultation-card .h5 {
-            color: #FFD700;
+        .cf-field label {
+            display: block;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
         }
-        .ip-consultation-card .btn-outline-primary {
-            border-color: #FFD700;
-            color: #FFD700;
+        .cf-field label .req {
+            color: #DC3545;
+            margin-right: 4px;
+            margin-left: 0;
         }
-        .ip-consultation-card .btn-outline-primary:hover {
-            background-color: #FFD700;
-            color: #000;
+        .cf-field input,
+        .cf-field select,
+        .cf-field textarea {
+            width: 100%;
+            padding: 13px 18px;
+            border: 2px solid #E9ECEF;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: #fff;
+            color: #212529;
         }
-        .badge-ip {
-            background: #FFD700;
-            color: #000;
+        .cf-field input:focus,
+        .cf-field select:focus,
+        .cf-field textarea:focus {
+            border-color: #C9A961;
+            box-shadow: 0 0 0 4px rgba(201,169,97,0.15);
+            outline: none;
+        }
+        .cf-field textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+        .cf-field small {
+            display: block;
+            margin-top: 6px;
+            color: #6C757D;
             font-size: 0.8rem;
-            padding: 5px 12px;
-            border-radius: 30px;
         }
-        .feature-icon {
-            transition: transform 0.3s;
+
+        .cf-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
         }
-        .feature-icon:hover {
-            transform: scale(1.1);
+        @media (max-width: 600px) {
+            .cf-row { grid-template-columns: 1fr; gap: 0; }
+        }
+
+        /* بطاقات اختيار نوع الخدمة */
+        .cf-service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .cf-service-option {
+            position: relative;
+            padding: 14px 16px;
+            border: 2px solid #E9ECEF;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #212529;
+            background: #fff;
+        }
+        .cf-service-option:hover {
+            border-color: #C9A961;
+            background: rgba(201,169,97,0.05);
+        }
+        .cf-service-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .cf-service-option i {
+            display: block;
+            font-size: 1.3rem;
+            color: #C9A961;
+            margin-bottom: 6px;
+        }
+        .cf-service-option:has(input[type="radio"]:checked) {
+            border-color: #C9A961;
+            background: rgba(201,169,97,0.1);
+            box-shadow: 0 8px 20px -8px rgba(201,169,97,0.3);
+        }
+
+        .cf-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 12px 30px rgba(201,169,97,0.35);
+            margin-top: 10px;
+            font-family: inherit;
+        }
+        .cf-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(201,169,97,0.5);
+            color: #000;
+        }
+        .cf-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .cf-status {
+            margin-top: 18px;
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: none;
+        }
+        .cf-status.success {
+            background: #D4EDDA;
+            color: #155724;
+            border: 1px solid #C3E6CB;
+            display: block;
+        }
+        .cf-status.error {
+            background: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+            display: block;
+        }
+
+        /* بطاقات جانبية */
+        .side-info-card {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 22px;
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+        .side-info-card:hover {
+            border-color: #C9A961;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -12px rgba(0,0,0,0.08);
+        }
+        .side-info-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .side-info-card h5 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 4px;
+        }
+        .side-info-card p {
+            font-size: 0.85rem;
+            color: #6C757D;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* بطاقات الأسعار */
+        .pricing-card {
+            background: #fff;
+            border: 2px solid #E9ECEF;
+            border-radius: 20px;
+            padding: 32px 26px;
+            height: 100%;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .pricing-card:hover {
+            border-color: #C9A961;
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px -25px rgba(201,169,97,0.3);
+        }
+        .pricing-card.featured {
+            border-color: #C9A961;
+            background: linear-gradient(160deg, #fff 0%, #FAF6EC 100%);
+        }
+        .pricing-card.featured::before {
+            content: 'الأكثر طلباً';
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            padding: 6px 18px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 20px rgba(201,169,97,0.4);
+            white-space: nowrap;
+        }
+        .pricing-card h4 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .pricing-card .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #A88947;
+            margin: 15px 0;
+            line-height: 1;
+            direction: rtl;
+        }
+        .pricing-card .price small {
+            font-size: 0.85rem;
+            color: #6C757D;
+            font-weight: 500;
+            font-family: 'Cairo', sans-serif;
+        }
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 22px 0 25px;
+        }
+        .pricing-card ul li {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: #495057;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .pricing-card ul li i {
+            color: #C9A961;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        /* RTL: مبدل اللغة */
+        [dir="rtl"] .language-switcher { right: auto; left: 20px; }
+        @media (max-width: 768px) {
+            [dir="rtl"] .language-switcher { right: auto; left: 10px; }
         }
     </style>
 </head>
-<script>
-// ========== حل نهائي لصورة المحامي ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools"></i>
-</div>
+
 <body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>
+    <!-- الشريط التجريبي -->
+    <div id="trial-banner">
+        <i class="fas fa-tools"></i>
+        <span>هذا إصدار تجريبي للموقع - جاري التطوير والتحديث</span>
+        <i class="fas fa-tools"></i>
     </div>
 
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (currentPath.startsWith('/ar/')) {
-            let englishPath = currentPath.replace('/ar', '');
-            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') englishPath = '/';
-            langLink.href = englishPath;
-        } else {
-            langLink.href = '/';
-        }
-    })();
-    </script>
+    <!-- مبدل اللغة -->
+    <div class="language-switcher">
+        <a href="/consultation.html" class="lang-btn"><i class="fas fa-globe"></i> English</a>
+    </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="وليد أبوالعلا للمحاماة" style="height:45px; width:auto; margin-left:10px;">
+            <a class="navbar-brand" href="/ar/">
+                <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة">
                 <div>
-                    <span class="fw-bold">وليد أبوالعلا للمحاماة</span>
-                    <small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small>
+                    <span class="firm-name">وليد محمد أبوالعلا</span>
+                    <small class="firm-sub">مكتب محاماة · تحكيم · ملكية فكرية</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -159,16 +379,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/about.html">من نحن</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">الخدمات</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">الخدمات</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/ar/arbitration.html">التحكيم الدولي</a></li>
                             <li><a class="dropdown-item" href="/ar/trademark.html">تسجيل العلامات التجارية</a></li>
                             <li><a class="dropdown-item" href="/ar/patent.html">براءات الاختراع</a></li>
                             <li><a class="dropdown-item" href="/ar/copyright.html">حقوق المؤلف</a></li>
                             <li><a class="dropdown-item" href="/ar/litigation.html">قضايا الملكية الفكرية</a></li>
+                            <li><a class="dropdown-item" href="/ar/licensing.html">الترخيص والعقود</a></li>
                             <li><a class="dropdown-item" href="/ar/corporate-formation.html">تأسيس الشركات</a></li>
                             <li><a class="dropdown-item" href="/ar/criminal-litigation.html">القضايا الجنائية</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -178,360 +399,582 @@
                     <li class="nav-item"><a class="nav-link" href="/ar/lawyers.html">فريق العمل</a></li>
                     <li class="nav-item"><a class="nav-link" href="/ar/blog.html">المدونة</a></li>
                     <li class="nav-item"><a class="nav-link" href="/ar/contact.html">اتصل بنا</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/consultation.html">استشارة مدفوعة</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html"><i class="fas fa-lock me-1"></i>بوابة العميل</a>
+                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>بوابة العميل
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script>
-        // حل مشكلة صورة المحامي - البحث عن المسار الصحيح (نسخة إضافية)
-        (function() {
-            const possiblePaths = [
-                '/images/team/walid-profile.jpg',
-                '/images/team/walid-abouelela.jpg',
-                '/images/walid-profile.jpg',
-                '/ar/images/team/walid-profile.jpg',
-                '/images/lawyers/walid.jpg'
-            ];
-            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-            if (!imgElement) return;
-            function tryLoadImage(index) {
-                if (index >= possiblePaths.length) return;
-                const testImg = new Image();
-                testImg.src = possiblePaths[index];
-                testImg.onload = function() {
-                    imgElement.src = possiblePaths[index];
-                    imgElement.onerror = null;
-                };
-                testImg.onerror = function() {
-                    tryLoadImage(index + 1);
-                };
-            }
-            tryLoadImage(0);
-        })();
-        </script>
     </nav>
 
+    <!-- رأس الصفحة -->
     <header class="page-header">
-        <div class="container text-white text-center">
-            <h1 class="display-4">استشارة قانونية مدفوعة</h1>
-            <p class="lead">احصل على استشارة قانونية شخصية من محامٍ خبير في الملكية الفكرية والتحكيم</p>
+        <div class="container text-center">
+            <h1 class="display-4">احجز استشارة</h1>
+            <p class="lead">حوار سرّي ومباشر مع محامينا — بدون وسطاء</p>
         </div>
     </header>
 
+    <!-- ============================================================
+         مقدمة + النموذج
+         ============================================================ -->
     <section class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="card shadow-lg border-0 rounded-4">
-                        <div class="card-body p-4 p-lg-5">
-                            <div class="text-center mb-5">
-                                <i class="fas fa-gavel fa-3x text-primary mb-3"></i>
-                                <h2 class="mb-3">اختر باقة الاستشارة المناسبة لك</h2>
-                                <p class="text-muted">نقدم خدمات استشارية مرنة تناسب احتياجاتك وميزانيتك</p>
-                            </div>
+            <div class="row g-5">
 
-                            <div class="row g-4">
-                                <!-- الاستشارة العادية -->
-                                <div class="col-md-6">
-                                    <div class="card h-100 border-2 shadow-sm rounded-4">
-                                        <div class="card-body text-center p-4">
-                                            <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                                                <i class="fas fa-phone-alt text-primary"></i>
-                                            </div>
-                                            <h3 class="card-title h4">استشارة عادية</h3>
-                                            <div class="display-6 text-primary fw-bold my-3">1000 ج.م</div>
-                                            <ul class="list-unstyled text-muted mb-4 text-start">
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> مكالمة فيديو لمدة <strong>نصف ساعة</strong></li>
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> نصيحة أولية حول القضية</li>
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> ملخص مكتوب بالبريد الإلكتروني</li>
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> إجابة على أسئلتك المباشرة</li>
-                                            </ul>
-                                            <a href="/ar/contact.html" class="btn btn-primary w-100 py-2"><i class="fas fa-calendar-check me-2"></i>احجز الآن</a>
-                                        </div>
-                                    </div>
-                                </div>
+                <!-- النموذج -->
+                <div class="col-lg-7">
+                    <div class="consultation-form-wrap">
+                        <div class="sh-line-left"></div>
+                        <span class="sh-label">طلب استشارة</span>
+                        <h2 class="sh-title text-start mb-3" style="font-size: 1.75rem;">أخبرنا عن موضوعك</h2>
+                        <p class="text-muted mb-4" style="font-size: 0.95rem;">
+                            املأ النموذج أدناه وسنعاود التواصل معك خلال يوم عمل واحد.
+                            كل المعلومات تُعامَل بسرية تامة.
+                        </p>
 
-                                <!-- الاستشارة الممتازة -->
-                                <div class="col-md-6">
-                                    <div class="card h-100 border-2 border-primary shadow-lg rounded-4 position-relative">
-                                        <div class="position-absolute top-0 start-50 translate-middle badge bg-primary rounded-pill px-3 py-2">
-                                            الأكثر طلباً
-                                        </div>
-                                        <div class="card-body text-center p-4">
-                                            <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                                                <i class="fas fa-file-alt text-primary"></i>
-                                            </div>
-                                            <h3 class="card-title h4">استشارة ممتازة</h3>
-                                            <div class="display-6 text-primary fw-bold my-3">2000 ج.م</div>
-                                            <ul class="list-unstyled text-muted mb-4 text-start">
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> مكالمة فيديو لمدة <strong>ساعة</strong></li>
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> مراجعة مفصلة للقضية</li>
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> رأي قانوني مكتوب</li>
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> مراجعة المستندات</li>
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> متابعة عبر البريد لمدة 3 أيام</li>
-                                            </ul>
-                                            <a href="/ar/contact.html" class="btn btn-primary w-100 py-2"><i class="fas fa-calendar-check me-2"></i>احجز الآن</a>
-                                        </div>
-                                    </div>
+                        <form id="consultationForm" novalidate>
+
+                            <!-- نوع الخدمة -->
+                            <div class="cf-field">
+                                <label>كيف يمكننا مساعدتك؟ <span class="req">*</span></label>
+                                <div class="cf-service-grid">
+                                    <label class="cf-service-option">
+                                        <input type="radio" name="serviceType" value="الملكية الفكرية" required>
+                                        <i class="fas fa-trademark"></i>
+                                        الملكية الفكرية
+                                    </label>
+                                    <label class="cf-service-option">
+                                        <input type="radio" name="serviceType" value="التحكيم">
+                                        <i class="fas fa-scale-balanced"></i>
+                                        التحكيم
+                                    </label>
+                                    <label class="cf-service-option">
+                                        <input type="radio" name="serviceType" value="تأسيس الشركات">
+                                        <i class="fas fa-building"></i>
+                                        الشركات
+                                    </label>
+                                    <label class="cf-service-option">
+                                        <input type="radio" name="serviceType" value="التقاضي">
+                                        <i class="fas fa-gavel"></i>
+                                        التقاضي
+                                    </label>
+                                    <label class="cf-service-option">
+                                        <input type="radio" name="serviceType" value="العقود والترخيص">
+                                        <i class="fas fa-file-contract"></i>
+                                        العقود
+                                    </label>
+                                    <label class="cf-service-option">
+                                        <input type="radio" name="serviceType" value="أخرى">
+                                        <i class="fas fa-ellipsis"></i>
+                                        أخرى
+                                    </label>
                                 </div>
                             </div>
 
-                            <!-- استشارة متخصصة في الملكية الفكرية (ملفوفة بتصميم مميز) -->
-                            <div class="row mt-5">
-                                <div class="col-12">
-                                    <div class="card ip-consultation-card rounded-4 border-0">
-                                        <div class="card-body p-4 p-md-5">
-                                            <div class="row align-items-center">
-                                                <div class="col-md-8">
-                                                    <div class="d-flex align-items-center gap-2 mb-2">
-                                                        <span class="badge-ip"><i class="fas fa-star me-1"></i> خدمة متخصصة</span>
-                                                        <span class="badge-ip"><i class="fas fa-certificate me-1"></i> خبراء الملكية الفكرية</span>
-                                                    </div>
-                                                    <h3 class="h2 mb-3" style="color: #FFD700;"><i class="fas fa-crown me-2"></i>استشارة متخصصة في الملكية الفكرية</h3>
-                                                    <p class="text-white-50 mb-md-0">استشارة معمقة مع محامٍ متخصص في براءات الاختراع، العلامات التجارية، حقوق المؤلف، وجميع حقوق الملكية الفكرية. تشمل مراجعة شاملة للمستندات ودراسة قانونية متكاملة.</p>
-                                                    <div class="mt-3 d-flex flex-wrap gap-2">
-                                                        <span class="badge bg-light text-dark">براءات الاختراع</span>
-                                                        <span class="badge bg-light text-dark">العلامات التجارية</span>
-                                                        <span class="badge bg-light text-dark">حقوق المؤلف</span>
-                                                        <span class="badge bg-light text-dark">الأسرار التجارية</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 text-md-start text-center mt-4 mt-md-0">
-                                                    <div class="display-5 fw-bold text-warning mb-2">3000 ج.م</div>
-                                                    <p class="small text-white-50 mb-3">تقييم قانوني شامل + تقرير مفصل</p>
-                                                    <a href="/ar/contact.html" class="btn btn-outline-primary btn-lg w-100" style="border-color:#FFD700; color:#FFD700;"><i class="fas fa-phone-alt me-2"></i>احجز الآن</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <!-- الاسم -->
+                            <div class="cf-row">
+                                <div class="cf-field">
+                                    <label for="fullName">الاسم الكامل <span class="req">*</span></label>
+                                    <input type="text" id="fullName" name="fullName" required minlength="2" placeholder="مثال: أحمد محمد">
+                                </div>
+                                <div class="cf-field">
+                                    <label for="company">الشركة / المؤسسة</label>
+                                    <input type="text" id="company" name="company" placeholder="اختياري">
                                 </div>
                             </div>
 
-                            <!-- كيف تعمل الخدمة -->
-                            <div class="mt-5 p-4 bg-light rounded-4">
-                                <h5 class="mb-3"><i class="fas fa-info-circle text-primary me-2"></i> كيف تعمل الخدمة:</h5>
-                                <div class="row g-4">
-                                    <div class="col-md-3 text-center">
-                                        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:60px; height:60px;"><i class="fas fa-1 fa-2x text-primary"></i></div>
-                                        <h6>اختر الاستشارة</h6>
-                                        <p class="small text-muted">حدد نوع الاستشارة المناسبة لقضيتك</p>
-                                    </div>
-                                    <div class="col-md-3 text-center">
-                                        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:60px; height:60px;"><i class="fas fa-2 fa-2x text-primary"></i></div>
-                                        <h6>تواصل معنا</h6>
-                                        <p class="small text-muted">اتصل بنا أو أرسل بريداً للحجز</p>
-                                    </div>
-                                    <div class="col-md-3 text-center">
-                                        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:60px; height:60px;"><i class="fas fa-3 fa-2x text-primary"></i></div>
-                                        <h6>تأكيد الموعد</h6>
-                                        <p class="small text-muted">سنؤكد موعد الاستشارة عبر الهاتف</p>
-                                    </div>
-                                    <div class="col-md-3 text-center">
-                                        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:60px; height:60px;"><i class="fas fa-4 fa-2x text-primary"></i></div>
-                                        <h6>الاستشارة</h6>
-                                        <p class="small text-muted">احصل على استشارتك عبر الفيديو</p>
-                                    </div>
+                            <!-- الإيميل / الهاتف -->
+                            <div class="cf-row">
+                                <div class="cf-field">
+                                    <label for="email">البريد الإلكتروني <span class="req">*</span></label>
+                                    <input type="email" id="email" name="email" required placeholder="you@example.com" dir="ltr">
+                                </div>
+                                <div class="cf-field">
+                                    <label for="phone">رقم الهاتف <span class="req">*</span></label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+20 1XX XXX XXXX" dir="ltr">
                                 </div>
                             </div>
 
-                            <!-- سرية تامة -->
-                            <div class="mt-4 alert alert-info border-0 rounded-4">
-                                <i class="fas fa-shield-alt me-2"></i>
-                                <strong>سرية تامة:</strong> جميع الاستشارات محمية بسرية المحامي والموكل ولا يتم مشاركة أي معلومات مع أطراف ثالثة.
+                            <!-- طريقة التواصل -->
+                            <div class="cf-field">
+                                <label for="contactMethod">طريقة التواصل المفضلة</label>
+                                <select id="contactMethod" name="contactMethod">
+                                    <option value="البريد الإلكتروني">البريد الإلكتروني</option>
+                                    <option value="مكالمة هاتفية">مكالمة هاتفية</option>
+                                    <option value="واتساب">واتساب</option>
+                                    <option value="أي طريقة">أي طريقة</option>
+                                </select>
                             </div>
+
+                            <!-- الرسالة -->
+                            <div class="cf-field">
+                                <label for="message">وصف موجز للموضوع <span class="req">*</span></label>
+                                <textarea id="message" name="message" required minlength="20" placeholder="يرجى وصف موضوعك القانوني في بضعة أسطر — كلما زادت التفاصيل، استطعنا الاستعداد بشكل أفضل."></textarea>
+                                <small>الحد الأدنى 20 حرفاً. يُفضّل تجنّب مشاركة تفاصيل شديدة الحساسية في هذا النموذج الأولي.</small>
+                            </div>
+
+                            <!-- الموافقة -->
+                            <div class="cf-field" style="display:flex;gap:10px;align-items:flex-start;">
+                                <input type="checkbox" id="consent" name="consent" required style="width:auto;margin-top:5px;">
+                                <label for="consent" style="font-weight:500;font-size:0.88rem;color:#495057;margin:0;cursor:pointer;">
+                                    أوافق على أن يتواصل معي المكتب بخصوص هذا الطلب، وأفهم أن إرسال هذا النموذج
+                                    لا يُنشئ علاقة محامٍ-موكّل.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="cf-submit" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>إرسال طلب الاستشارة</span>
+                            </button>
+
+                            <div id="formStatus" class="cf-status"></div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- المعلومات الجانبية -->
+                <div class="col-lg-5">
+                    <div class="sh-line-left"></div>
+                    <span class="sh-label">ماذا تتوقع</span>
+                    <h2 class="sh-title text-start mb-4" style="font-size: 1.75rem;">كيف نتعامل مع طلبك</h2>
+
+                    <div class="side-info-card">
+                        <div class="side-info-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h5>رد خلال يوم عمل واحد</h5>
+                            <p>نراجع كل طلب شخصياً ونرد خلال يوم عمل واحد — وغالباً أسرع بكثير.</p>
                         </div>
                     </div>
+
+                    <div class="side-info-card">
+                        <div class="side-info-icon"><i class="fas fa-user-tie"></i></div>
+                        <div>
+                            <h5>مباشرة مع المحامي</h5>
+                            <p>استشارتك حوار مباشر مع المحامي المسؤول عن ملفك — بدون حواجز ولا موظفين وسيطين.</p>
+                        </div>
+                    </div>
+
+                    <div class="side-info-card">
+                        <div class="side-info-icon"><i class="fas fa-shield-halved"></i></div>
+                        <div>
+                            <h5>سرية تامة</h5>
+                            <p>كل المعلومات التي تشاركها معنا تُعامَل بسرية صارمة، من أول رسالة.</p>
+                        </div>
+                    </div>
+
+                    <div class="side-info-card">
+                        <div class="side-info-icon"><i class="fas fa-file-signature"></i></div>
+                        <div>
+                            <h5>نطاق وأتعاب واضحة قبل أي عمل</h5>
+                            <p>ستستلم خطاب ارتباط مكتوب بنطاق وجدول زمني وأتعاب واضحة — قبل بدء أي عمل.</p>
+                        </div>
+                    </div>
+
+                    <div class="side-info-card">
+                        <div class="side-info-icon"><i class="fas fa-comment-dots"></i></div>
+                        <div>
+                            <h5>خدمة ثنائية اللغة</h5>
+                            <p>الاستشارات متاحة بالعربية والإنجليزية — أيّهما تفضل.</p>
+                        </div>
+                    </div>
+
+                    <div class="side-info-card">
+                        <div class="side-info-icon"><i class="fas fa-handshake"></i></div>
+                        <div>
+                            <h5>تقييم صادق</h5>
+                            <p>لو كان موضوعك خارج نطاق تخصصنا، سنخبرك بصراحة — ونوجّهك لمن يستطيع المساعدة.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- لماذا تختار استشاراتنا -->
+    <!-- ============================================================
+         خيارات الاستشارة
+         ============================================================ -->
     <section class="py-5 bg-light">
         <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="fw-bold">لماذا تختار استشاراتنا المدفوعة؟</h2>
-                    <p class="text-muted">نقدم خدمات استشارية متميزة تلبي احتياجاتك القانونية بدقة واحترافية</p>
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">خيارات الاستشارة</span>
+                <h2 class="sh-title">اختر العمق الذي يناسب موضوعك</h2>
+                <p class="sh-desc">ثلاث صيغ استشارية — من مكالمة سريعة 30 دقيقة إلى رأي قانوني مكتوب مفصّل.</p>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-4">
+                    <div class="pricing-card">
+                        <h4>تقييم سريع</h4>
+                        <p class="text-muted" style="font-size: 0.88rem;">للأسئلة الأولية والتوجيه المختصر</p>
+                        <div class="price">مجاني <small>— أول 15 دقيقة</small></div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> حتى 15 دقيقة</li>
+                            <li><i class="fas fa-check"></i> هاتف أو واتساب</li>
+                            <li><i class="fas fa-check"></i> توجيه قانوني أولي</li>
+                            <li><i class="fas fa-check"></i> توصية بالخطوة التالية</li>
+                        </ul>
+                        <a href="#consultationForm" class="btn-rich-outline" style="width:100%;justify-content:center;">
+                            <span>اطلب الآن</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="pricing-card featured">
+                        <h4>استشارة معيارية</h4>
+                        <p class="text-muted" style="font-size: 0.88rem;">للموضوعات الجدّية التي تحتاج مراجعة مناسبة</p>
+                        <div class="price">عند الطلب <small>— 45-60 دقيقة</small></div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> جلسة من 45 إلى 60 دقيقة</li>
+                            <li><i class="fas fa-check"></i> حضوري أو هاتف أو فيديو</li>
+                            <li><i class="fas fa-check"></i> مراجعة المستندات إن وُجدت</li>
+                            <li><i class="fas fa-check"></i> ملخص مكتوب وخطوات تالية</li>
+                            <li><i class="fas fa-check"></i> متابعة 7 أيام</li>
+                        </ul>
+                        <a href="#consultationForm" class="btn-rich-primary" style="width:100%;justify-content:center;">
+                            <span>احجز الآن</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="pricing-card">
+                        <h4>رأي قانوني مفصّل</h4>
+                        <p class="text-muted" style="font-size: 0.88rem;">للحالات المعقّدة التي تحتاج رأياً مكتوباً</p>
+                        <div class="price">عند الطلب <small>— نطاق مخصص</small></div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> تحليل كامل للمستندات</li>
+                            <li><i class="fas fa-check"></i> رأي قانوني مكتوب</li>
+                            <li><i class="fas fa-check"></i> تقرير تقييم المخاطر</li>
+                            <li><i class="fas fa-check"></i> استراتيجية قانونية موصى بها</li>
+                            <li><i class="fas fa-check"></i> جلسة متابعة مشمولة</li>
+                        </ul>
+                        <a href="#consultationForm" class="btn-rich-outline" style="width:100%;justify-content:center;">
+                            <span>اطلب عرض سعر</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="row g-4">
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-user-tie fa-3x text-primary mb-3"></i>
-                    <h5>خبرة قانونية</h5>
-                    <p class="text-muted">استشارات مع محامٍ رئيسي ذو خبرة منذ 2016</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-clock fa-3x text-primary mb-3"></i>
-                    <h5>مرونة المواعيد</h5>
-                    <p class="text-muted">نوفر مواعيد مرنة تناسب جدول أعمالك</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-file-contract fa-3x text-primary mb-3"></i>
-                    <h5>مخرجات مكتوبة</h5>
-                    <p class="text-muted">تقرير مكتوب يلخص الاستشارة والخطوات المقترحة</p>
-                </div>
-            </div>
+
+            <p class="text-center mt-4 mb-0" style="color:#6C757D;font-size:0.85rem;">
+                <i class="fas fa-info-circle" style="color:#C9A961;"></i>
+                أتعاب الاستشارة تُؤكَّد كتابياً <strong>قبل</strong> الجلسة. بدون مفاجآت.
+            </p>
         </div>
     </section>
 
-    <!-- الأسئلة الشائعة -->
+    <!-- ============================================================
+         خطوات العملية
+         ============================================================ -->
     <section class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="text-center mb-4">الأسئلة الشائعة</h2>
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                    كيف تتم الاستشارة؟
-                                </button>
-                            </h2>
-                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    تتم الاستشارة عبر مكالمة فيديو (Zoom/Google Meet) أو هاتفياً حسب رغبتك. بعد التأكيد، سنرسل لك رابط الاجتماع.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                    كيف يمكنني الدفع؟
-                                </button>
-                            </h2>
-                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    للاستفسار عن طرق الدفع المتاحة، يرجى الاتصال بنا مباشرة على الرقم +20 111257219.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                    ماذا أحتاج للتحضير للاستشارة؟
-                                </button>
-                            </h2>
-                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    يفضل تجهيز جميع المستندات المتعلقة بقضيتك (عقود، مراسلات، إخطارات) وإرسالها قبل الاستشارة إن أمكن.
-                                </div>
-                            </div>
-                        </div>
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">ماذا يحدث بعد ذلك</span>
+                <h2 class="sh-title">من الطلب إلى الحل</h2>
+                <p class="sh-desc">عملية بسيطة وشفافة من أربع خطوات.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-paper-plane"></i></div>
+                        <h4>1. ترسل الطلب</h4>
+                        <p class="text-muted">
+                            املأ النموذج بالتفاصيل الأساسية عن موضوعك.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-envelope-open-text"></i></div>
+                        <h4>2. نرد عليك</h4>
+                        <p class="text-muted">
+                            تستلم رداً مباشراً خلال يوم عمل واحد — بطريقة التواصل التي فضّلتها.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-comments"></i></div>
+                        <h4>3. نستشير</h4>
+                        <p class="text-muted">
+                            جلسة مجدولة لمراجعة موضوعك، وتقييم الموقف القانوني، ورسم الخطوات التالية.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-file-signature"></i></div>
+                        <h4>4. مسار واضح للأمام</h4>
+                        <p class="text-muted">
+                            تخرج بنطاق وجدول زمني وأتعاب مكتوبة بوضوح — أو تحويلة إن لم نكن الخيار المناسب.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- لمعرفة المزيد -->
-    <section class="py-5 bg-primary text-white">
+    <!-- ============================================================
+         أسئلة شائعة
+         ============================================================ -->
+    <section class="py-5 bg-light">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h3 class="mb-3">لمعرفة المزيد أو للحجز المباشر</h3>
-                    <p class="lead mb-md-0">تواصل معنا وسنرد عليك في أقرب وقت</p>
-                </div>
-                <div class="col-md-4 text-md-start text-center">
-                    <a href="/ar/contact.html" class="btn btn-light btn-lg">اتصل بنا</a>
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">أسئلة شائعة</span>
+                <h2 class="sh-title">أسئلة قبل الحجز</h2>
+            </div>
+
+            <div class="faq-rich-accordion mx-auto" style="max-width: 900px;">
+                <div class="accordion" id="consultFaq">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf1">
+                                هل الاستشارة سرية؟
+                            </button>
+                        </h3>
+                        <div id="cf1" class="accordion-collapse collapse" data-bs-parent="#consultFaq">
+                            <div class="accordion-body">
+                                نعم. كل المعلومات التي تُشارك خلال الاستشارة تُعامَل بسرية صارمة.
+                                سرّية المحامي-الموكّل الرسمية تبدأ فور توقيع خطاب الارتباط.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf2">
+                                كم تكلفة الاستشارة؟
+                            </button>
+                        </h3>
+                        <div id="cf2" class="accordion-collapse collapse" data-bs-parent="#consultFaq">
+                            <div class="accordion-body">
+                                أول 15 دقيقة للتوجيه مجانية. الاستشارات المعيارية والمفصّلة
+                                يُقدَّر سعرها بناءً على النطاق ويُؤكَّد كتابياً قبل الجلسة —
+                                بدون أي مصاريف خفية.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf3">
+                                هل يمكنني الاستشارة بالعربية أو الإنجليزية؟
+                            </button>
+                        </h3>
+                        <div id="cf3" class="accordion-collapse collapse" data-bs-parent="#consultFaq">
+                            <div class="accordion-body">
+                                نعم — خدمة كاملة بالعربية والإنجليزية، بما في ذلك الصياغة
+                                القانونية والمراسلات بأي من اللغتين.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf4">
+                                هل تقبلون قضايا من خارج مصر؟
+                            </button>
+                        </h3>
+                        <div id="cf4" class="accordion-collapse collapse" data-bs-parent="#consultFaq">
+                            <div class="accordion-body">
+                                نعم. نعمل مع عملاء دوليين على الإيداعات في مصر، ونتعاون
+                                مع مكاتب شركاء بالخارج للقضايا العابرة للحدود.
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
+    <!-- ============================================================
+         دعوة نهائية
+         ============================================================ -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-handshake"></i></div>
+                <h2>تفضّل التواصل المباشر؟</h2>
+                <p>اتصل، أو راسلنا على واتساب، أو الإيميل — بأي طريقة تريحك.</p>
+                <div class="fcr-buttons">
+                    <a href="tel:+20111257219" class="btn-rich-primary light">
+                        <i class="fas fa-phone"></i>
+                        <span dir="ltr">+20 111 257 219</span>
+                    </a>
+                    <a href="https://wa.me/20111257219" target="_blank" rel="noopener" class="btn-rich-ghost">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>واتساب</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         الفوتر
+         ============================================================ -->
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>وليد أبوالعلا للمحاماة</h5>
-                    <p class="text-white-50">متخصصون في التحكيم وحماية الملكية الفكرية بلمسة شخصية منذ 2016.</p>
-                    <div class="social-links mt-3">
+                <div class="col-lg-4">
+                    <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">مكتب وليد محمد أبوالعلا للمحاماة</h5>
+                    <p class="footer-desc">محاماة · تحكيم · ملكية فكرية. نخدم عملاءنا بتفانٍ منذ 2016.</p>
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="فيسبوك"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
                         <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">روابط سريعة</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/">الرئيسية</a></li>
+                        <li><a href="/ar/about.html">من نحن</a></li>
+                        <li><a href="/ar/services.html">الخدمات</a></li>
+                        <li><a href="/ar/lawyers.html">فريق العمل</a></li>
+                        <li><a href="/ar/blog.html">المدونة</a></li>
+                        <li><a href="/ar/contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">معلومات الاتصال</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> العاشر من رمضان، القاهرة، مصر</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> السبت - الخميس: 9 ص - 8 م</li>
+                    </ul>
+                </div>
                 <div class="col-lg-3">
-                    <h6 class="mb-4">روابط سريعة</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/ar/index.html" class="text-white-50 text-decoration-none">الرئيسية</a></li>
-                        <li class="mb-2"><a href="/ar/about.html" class="text-white-50 text-decoration-none">من نحن</a></li>
-                        <li class="mb-2"><a href="/ar/services.html" class="text-white-50 text-decoration-none">الخدمات</a></li>
-                        <li class="mb-2"><a href="/ar/lawyers.html" class="text-white-50 text-decoration-none">فريق العمل</a></li>
-                        <li class="mb-2"><a href="/ar/blog.html" class="text-white-50 text-decoration-none">المدونة</a></li>
-                        <li class="mb-2"><a href="/ar/contact.html" class="text-white-50 text-decoration-none">اتصل بنا</a></li>
-                        <li class="mb-2"><a href="/ar/consultation.html" class="text-white-50 text-decoration-none">استشارة مدفوعة</a></li>
+                    <h6 class="footer-heading">قانوني</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/privacy-policy.html">سياسة الخصوصية</a></li>
+                        <li><a href="/ar/terms-of-service.html">شروط الاستخدام</a></li>
+                        <li><a href="/ar/cookie-policy.html">سياسة ملفات تعريف الارتباط</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h6 class="mb-4">معلومات الاتصال</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، القاهرة، مصر</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> السبت - الخميس: 9 صباحاً - 8 مساءً</li>
-                    </ul>
-                </div>
-                <div class="col-lg-12 mt-3">
-                    <hr class="my-3" style="border-color: rgba(255,255,255,0.1);">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="small text-white-50 mb-0">© 2025 وليد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">سياسة الخصوصية</a>
-                            <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">شروط الاستخدام</a>
-                            <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">سياسة ملفات تعريف الارتباط</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 مكتب وليد محمد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
 
+    <button id="backToTop" title="العودة إلى الأعلى"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-WQ0CPXRK2F');
-    </script>
+
+    <!-- ============================================================
+         معالج النموذج
+         ============================================================ -->
     <script>
     (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-            testImg.onerror = function() { tryLoadImage(index + 1); };
+        const form = document.getElementById('consultationForm');
+        const statusDiv = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+
+        if (!form) return;
+
+        function showStatus(type, message) {
+            statusDiv.className = 'cf-status ' + type;
+            statusDiv.textContent = message;
+            statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-        tryLoadImage(0);
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const fullName = form.fullName.value.trim();
+            const email = form.email.value.trim();
+            const phone = form.phone.value.trim();
+            const message = form.message.value.trim();
+            const serviceType = form.querySelector('input[name="serviceType"]:checked');
+            const consent = form.consent.checked;
+
+            if (!serviceType) {
+                showStatus('error', 'يرجى اختيار نوع الخدمة.');
+                return;
+            }
+            if (fullName.length < 2) {
+                showStatus('error', 'يرجى إدخال الاسم الكامل.');
+                return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showStatus('error', 'يرجى إدخال بريد إلكتروني صحيح.');
+                return;
+            }
+            if (phone.length < 6) {
+                showStatus('error', 'يرجى إدخال رقم هاتف صحيح.');
+                return;
+            }
+            if (message.length < 20) {
+                showStatus('error', 'يرجى وصف موضوعك بما لا يقل عن 20 حرفاً.');
+                return;
+            }
+            if (!consent) {
+                showStatus('error', 'يرجى الموافقة على مربع الإقرار للمتابعة.');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            const originalHTML = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>جارٍ الإرسال...</span>';
+
+            try {
+                const payload = {
+                    name: fullName,
+                    email: email,
+                    phone: phone,
+                    company: form.company.value.trim(),
+                    subject: 'طلب استشارة — ' + serviceType.value,
+                    message: message + '\n\n---\nطريقة التواصل المفضلة: ' + form.contactMethod.value + '\nالخدمة: ' + serviceType.value,
+                    type: 'consultation'
+                };
+
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await res.json().catch(() => ({}));
+
+                if (res.ok) {
+                    showStatus('success', 'شكراً لك! تم استلام طلب استشارتك. سنعاود التواصل معك خلال يوم عمل واحد.');
+                    form.reset();
+                } else {
+                    showStatus('error', data.error || 'حدث خطأ ما. يرجى المحاولة مرة أخرى أو التواصل معنا مباشرة.');
+                }
+            } catch (err) {
+                showStatus('error', 'خطأ في الشبكة. يرجى التحقق من اتصالك أو التواصل معنا مباشرة على walidlegal.ippro@gmail.com');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalHTML;
+            }
+        });
     })();
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
-                if (link.getAttribute('href') === currentPath) link.classList.add('active');
-            });
-        });
-    </script>
+
 </body>
 </html>

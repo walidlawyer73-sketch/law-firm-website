@@ -3,12 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protecting Software with Patents - Walid Abo Al-Ela Law Firm</title>
-    <meta name="description" content="Learn how to protect your software innovations through patents. Strategies for software patentability, claim drafting, and alternative protection methods.">
+    <title>Protecting Software in Egypt: Copyright, Patents, or Trade Secrets? | Walid Mohamed Abu Al-Ela Law Firm</title>
+    <meta name="description" content="A breakdown of the three main legal paths for protecting software and SaaS products in Egypt — and how to choose the right strategy for your business.">
+    <meta name="keywords" content="software protection Egypt, software copyright, software patents Egypt, trade secrets software, SaaS legal protection, IP for software">
+    <meta name="author" content="Walid Mohamed Abu Al-Ela">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/blog/protecting-software-patents.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/blog/protecting-software-patents.html">
+    <meta property="og:title" content="Protecting Software in Egypt: Copyright, Patents, or Trade Secrets?">
+    <meta property="og:description" content="The three legal paths for protecting software and SaaS products in Egypt.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/blog/software-patents.jpg">
+    <meta property="article:published_time" content="2026-02-15">
+    <meta property="article:author" content="Walid Mohamed Abu Al-Ela">
+    <meta property="article:section" content="Intellectual Property">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/blog/protecting-software-patents.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/blog/protecting-software-patents.html">
+
+    <link rel="icon" type="image/png" href="/images/logo%20arb%20ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -16,94 +38,568 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
-    <style>
-        .language-switcher {
-            position: fixed;
-            top: 70px;
-            left: 20px;
-            z-index: 9999;
-        }
-        .language-switcher .lang-btn {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .language-switcher .lang-btn:hover {
-            background-color: #0b5ed7;
-            transform: scale(1.05);
-        }
-        body { padding-top: 70px; }
-        @media (max-width: 768px) {
-            .language-switcher { top: 60px; left: 10px; }
-            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
-        }
-        .dropdown-menu { min-width: 220px; }
-    </style>
-</head>
-<script>
-// ========== حل نهائي لصورة المحامي (النسخة الأولى) ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> This is a trial version - site under development and updates <i class="fas fa-tools"></i>
-</div>
-<body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> العربية</a>
-    </div>
 
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (!currentPath.startsWith('/ar/')) {
-            let arabicPath;
-            if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
-                arabicPath = '/ar/';
-            } else {
-                arabicPath = '/ar' + currentPath;
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Protecting Software in Egypt: Copyright, Patents, or Trade Secrets?",
+        "url": "https://law-arb-ip-walid.vercel.app/blog/protecting-software-patents.html",
+        "image": "https://law-arb-ip-walid.vercel.app/images/blog/software-patents.jpg",
+        "datePublished": "2026-02-15",
+        "dateModified": "2026-02-15",
+        "inLanguage": "en",
+        "author": {
+            "@type": "Person",
+            "name": "Walid Mohamed Abu Al-Ela",
+            "url": "https://law-arb-ip-walid.vercel.app/lawyers.html"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Walid Mohamed Abu Al-Ela Law Firm",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://law-arb-ip-walid.vercel.app/images/logo.png"
             }
-            langLink.href = arabicPath;
-        } else {
-            langLink.href = '/ar/';
-        }
-    })();
+        },
+        "about": ["Software Protection", "Copyright", "Patents", "Trade Secrets", "SaaS"],
+        "articleSection": "Intellectual Property"
+    }
     </script>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://law-arb-ip-walid.vercel.app/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://law-arb-ip-walid.vercel.app/blog.html"},
+            {"@type": "ListItem", "position": 3, "name": "Protecting Software in Egypt"}
+        ]
+    }
+    </script>
+
+    <style>
+        #reading-progress {
+            position: fixed;
+            top: var(--banner-height);
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #C9A961, #A88947);
+            width: 0%;
+            z-index: 1050;
+            transition: width 0.15s ease;
+            box-shadow: 0 0 10px rgba(201,169,97,0.5);
+        }
+
+        .article-hero {
+            position: relative;
+            margin-top: calc(var(--banner-height) + var(--navbar-height));
+            min-height: 520px;
+            background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+        }
+        .article-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(201,169,97,0.15), transparent 55%),
+                radial-gradient(circle at 80% 70%, rgba(201,169,97,0.10), transparent 55%);
+            pointer-events: none;
+        }
+        .article-hero-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.25;
+            z-index: 0;
+        }
+        .article-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 100%);
+            z-index: 1;
+        }
+        .article-hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .ah-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(201,169,97,0.15);
+            border: 1px solid rgba(201,169,97,0.4);
+            border-radius: 999px;
+            color: #C9A961;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .article-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+
+        .article-hero-meta {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.75);
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            margin-top: 25px;
+        }
+        .article-hero-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .article-hero-meta i { color: #C9A961; }
+
+        .breadcrumb-bar {
+            background: #F8F9FA;
+            padding: 16px 0;
+            border-bottom: 1px solid #E9ECEF;
+        }
+        .breadcrumb-bar nav { font-size: 0.85rem; color: #6C757D; }
+        .breadcrumb-bar a {
+            color: #6C757D;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .breadcrumb-bar a:hover { color: #A88947; }
+        .breadcrumb-bar .separator { margin: 0 10px; color: #ADB5BD; }
+        .breadcrumb-bar .current { color: #212529; font-weight: 600; }
+
+        .article-wrap { padding: 70px 0; }
+
+        .article-content {
+            max-width: 780px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: #212529;
+        }
+
+        .article-content .lead {
+            font-size: 1.2rem;
+            color: #495057;
+            line-height: 1.8;
+            font-weight: 500;
+            margin-bottom: 40px;
+            padding-left: 25px;
+            border-left: 4px solid #C9A961;
+            font-style: italic;
+        }
+
+        .article-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+            font-weight: 800;
+            color: #212529;
+            margin-top: 55px;
+            margin-bottom: 22px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid #F1F3F5;
+            position: relative;
+            letter-spacing: -0.02em;
+            scroll-margin-top: 120px;
+        }
+        .article-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 70px;
+            height: 2px;
+            background: linear-gradient(90deg, #C9A961, #A88947);
+        }
+
+        .article-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #212529;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            color: #343A40;
+        }
+
+        .article-content strong { color: #000; font-weight: 700; }
+
+        .article-content a {
+            color: #A88947;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            transition: all 0.3s ease;
+        }
+        .article-content a:hover { color: #000; text-decoration-thickness: 2px; }
+
+        .article-content ul,
+        .article-content ol {
+            padding-left: 25px;
+            margin-bottom: 22px;
+        }
+        .article-content li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .article-content blockquote {
+            margin: 30px 0;
+            padding: 24px 30px;
+            background: linear-gradient(160deg, #FAF6EC 0%, #fff 100%);
+            border-left: 4px solid #C9A961;
+            border-radius: 12px;
+            font-style: italic;
+            color: #495057;
+            font-size: 1.02rem;
+            line-height: 1.8;
+        }
+        .article-content blockquote p { margin: 0; }
+
+        .article-callout {
+            display: flex;
+            gap: 18px;
+            padding: 24px 28px;
+            background: linear-gradient(160deg, #F8F9FA 0%, #fff 100%);
+            border-left: 4px solid #C9A961;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        .article-callout i {
+            color: #C9A961;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        .article-callout div p:first-child {
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+        .article-callout div p { margin: 0; font-size: 0.95rem; }
+
+        .article-toc {
+            background: linear-gradient(160deg, #FAF6EC 0%, #fff 100%);
+            border: 1px solid rgba(201,169,97,0.25);
+            border-radius: 16px;
+            padding: 26px 30px;
+            margin: 35px 0;
+        }
+        .article-toc h4 {
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #212529;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .article-toc h4 i { color: #C9A961; }
+        .article-toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: atoc;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 22px;
+        }
+        @media (max-width: 600px) {
+            .article-toc ol { grid-template-columns: 1fr; }
+        }
+        .article-toc li {
+            counter-increment: atoc;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+        .article-toc li::before {
+            content: counter(atoc, decimal-leading-zero) ".";
+            color: #C9A961;
+            font-weight: 800;
+            margin-right: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+        .article-toc a {
+            color: #495057;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .article-toc a:hover { color: #A88947; }
+
+        /* Comparison Table */
+        .compare-table-wrap {
+            overflow-x: auto;
+            margin: 25px 0 30px;
+            border-radius: 12px;
+            border: 1px solid #E9ECEF;
+        }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            min-width: 700px;
+        }
+        .compare-table thead {
+            background: linear-gradient(135deg, #000, #1A1A1A);
+        }
+        .compare-table thead th {
+            color: #C9A961;
+            font-weight: 700;
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border: none;
+        }
+        .compare-table tbody td {
+            padding: 14px 16px;
+            color: #495057;
+            border-bottom: 1px solid #F1F3F5;
+            vertical-align: top;
+            line-height: 1.7;
+        }
+        .compare-table tbody tr:last-child td { border-bottom: none; }
+        .compare-table tbody tr:hover { background: #FAF6EC; }
+        .compare-table strong { color: #212529; }
+
+        .author-card {
+            background: linear-gradient(160deg, #fff 0%, #FAFAFA 100%);
+            border: 1px solid #E9ECEF;
+            border-radius: 20px;
+            padding: 32px 30px;
+            margin: 60px 0 40px;
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+        .author-card-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            padding: 4px;
+            box-shadow: 0 10px 25px rgba(201,169,97,0.3);
+        }
+        .author-card-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #fff;
+        }
+        .author-card-info h5 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #212529;
+            margin-bottom: 4px;
+        }
+        .author-card-info .role {
+            font-size: 0.82rem;
+            color: #A88947;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .author-card-info p {
+            font-size: 0.9rem;
+            color: #6C757D;
+            line-height: 1.7;
+            margin: 0;
+        }
+        @media (max-width: 600px) {
+            .author-card { flex-direction: column; text-align: center; padding: 26px 22px; }
+        }
+
+        .share-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 22px 0;
+            border-top: 1px solid #E9ECEF;
+            border-bottom: 1px solid #E9ECEF;
+            margin: 30px 0;
+        }
+        .share-row strong {
+            font-size: 0.88rem;
+            color: #495057;
+            margin-right: 8px;
+        }
+        .share-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #F8F9FA;
+            border: 1px solid #E9ECEF;
+            color: #495057;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        .share-btn:hover {
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            transform: translateY(-3px);
+            border-color: transparent;
+            box-shadow: 0 10px 20px rgba(201,169,97,0.3);
+        }
+
+        .citation-box {
+            background: #F8F9FA;
+            border: 1px solid #E9ECEF;
+            border-radius: 12px;
+            padding: 22px 26px;
+            margin: 40px 0;
+            font-size: 0.88rem;
+            color: #495057;
+            line-height: 1.75;
+        }
+        .citation-box strong {
+            color: #212529;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        .citation-box code {
+            background: #fff;
+            padding: 10px 14px;
+            border-radius: 6px;
+            display: block;
+            font-family: 'Inter', monospace;
+            font-size: 0.82rem;
+            color: #495057;
+            border: 1px solid #E9ECEF;
+            white-space: pre-wrap;
+            word-break: break-word;
+            line-height: 1.6;
+        }
+
+        .related-section { padding: 70px 0; background: #F8F9FA; }
+        .related-card {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .related-card:hover {
+            transform: translateY(-6px);
+            border-color: #C9A961;
+            box-shadow: 0 25px 50px -20px rgba(0,0,0,0.12);
+            color: inherit;
+        }
+        .related-card-img {
+            height: 160px;
+            background: linear-gradient(135deg, #000, #1A1A1A);
+            overflow: hidden;
+            position: relative;
+        }
+        .related-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .related-card:hover .related-card-img img { transform: scale(1.08); }
+        .related-card-body {
+            padding: 22px 22px 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .related-card-cat {
+            font-size: 0.72rem;
+            color: #A88947;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .related-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #212529;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+        .related-card:hover h4 { color: #A88947; }
+        .related-card .meta {
+            font-size: 0.75rem;
+            color: #ADB5BD;
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid #F1F3F5;
+        }
+
+        [dir="rtl"] .language-switcher { right: auto; left: 20px; }
+    </style>
+</head>
+
+<body>
+    <div id="reading-progress"></div>
+
+    <div id="trial-banner">
+        <i class="fas fa-tools"></i>
+        <span>This is a trial version - site under development and updates</span>
+        <i class="fas fa-tools"></i>
+    </div>
+
+    <div class="language-switcher">
+        <a href="/ar/blog/protecting-software-patents.html" class="lang-btn"><i class="fas fa-globe"></i> العربية</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="Walid Abo Al-Ela Law Firm" style="height:45px; width:auto; margin-right:10px;">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm">
                 <div>
-                    <span class="fw-bold">Walid Abo Al-Ela Law Firm</span>
-                    <small class="d-block" style="font-size:16px; opacity:0.9; margin-top:5px; font-weight:500;">For Arbitration and Intellectual Property</small>
+                    <span class="firm-name">Walid Mohamed Abu Al-Ela</span>
+                    <small class="firm-sub">Law Firm · Arbitration · IP</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -111,16 +607,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
                             <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
                             <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
                             <li><a class="dropdown-item" href="/copyright.html">Copyright</a></li>
                             <li><a class="dropdown-item" href="/litigation.html">IP Litigation</a></li>
+                            <li><a class="dropdown-item" href="/licensing.html">Licensing &amp; Contracts</a></li>
                             <li><a class="dropdown-item" href="/corporate-formation.html">Corporate Formation</a></li>
                             <li><a class="dropdown-item" href="/criminal-litigation.html">Criminal Litigation</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -128,202 +625,571 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/consultation.html">Paid Consultation</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html"><i class="fas fa-lock me-1"></i>Client Portal</a>
+                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>Client Portal
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script>
-        // حل مشكلة صورة المحامي - البحث عن المسار الصحيح (نسخة إضافية للاحتياط)
-        (function() {
-            const possiblePaths = [
-                '/images/team/walid-profile.jpg',
-                '/images/team/walid-abouelela.jpg',
-                '/images/walid-profile.jpg',
-                '/ar/images/team/walid-profile.jpg',
-                '/images/lawyers/walid.jpg'
-            ];
-            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-            if (!imgElement) return;
-            function tryLoadImage(index) {
-                if (index >= possiblePaths.length) return;
-                const testImg = new Image();
-                testImg.src = possiblePaths[index];
-                testImg.onload = function() {
-                    imgElement.src = possiblePaths[index];
-                    imgElement.onerror = null;
-                };
-                testImg.onerror = function() {
-                    tryLoadImage(index + 1);
-                };
-            }
-            tryLoadImage(0);
-        })();
-        </script>
     </nav>
 
-    <header class="page-header">
-        <div class="container text-white text-center">
-            <h1 class="display-4">Protecting Software with Patents</h1>
-            <p class="lead">January 5, 2025 | by Walid Abo Al-Ela</p>
+    <div class="breadcrumb-bar">
+        <div class="container">
+            <nav>
+                <a href="/">Home</a>
+                <span class="separator">/</span>
+                <a href="/blog.html">Blog</a>
+                <span class="separator">/</span>
+                <span class="current">Protecting Software in Egypt</span>
+            </nav>
+        </div>
+    </div>
+
+    <header class="article-hero">
+        <img src="/images/blog/software-patents.jpg" alt="Protecting software in Egypt" class="article-hero-img" onerror="this.style.display='none';">
+        <div class="article-hero-overlay"></div>
+        <div class="container">
+            <div class="article-hero-content">
+                <span class="ah-badge">
+                    <i class="fas fa-code"></i>
+                    Practical Guide
+                </span>
+                <h1>Protecting Software in Egypt: Copyright, Patents, or Trade Secrets?</h1>
+                <div class="article-hero-meta">
+                    <span><i class="fas fa-user-tie"></i> Walid Mohamed Abu Al-Ela</span>
+                    <span><i class="fas fa-calendar"></i> February 2026</span>
+                    <span><i class="fas fa-clock"></i> 8 min read</span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section class="py-5">
+    <article class="article-wrap">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <img src="/images/blog/blog3.jpg" class="img-fluid rounded-4 shadow mb-4" style="width:100%; max-height:400px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/800x400?text=Software+Patents'">
-                    
-                    <p>In the digital age, software is at the heart of innovation. From artificial intelligence to blockchain, software drives progress across industries. Protecting software innovations through patents can provide a competitive edge, but navigating the complexities of software patentability requires specialized knowledge.</p>
-                    
-                    <div class="bg-light p-3 rounded-3 my-3">
-                        <i class="fas fa-globe text-primary me-2"></i> <strong>Global Perspective:</strong> While the US and Europe impose strict requirements for software patents, jurisdictions like Japan and South Korea offer more flexible protection for computer-implemented inventions.
+            <div class="article-content">
+
+                <p class="lead">
+                    Software is one of the most valuable — and most difficult to protect — forms of
+                    intellectual property. In Egypt, developers, SaaS founders, and tech companies
+                    have three main legal paths available: copyright, patents, and trade secrets. Each
+                    offers different protections, different costs, and different strategic value. This
+                    guide breaks down when and how to use each.
+                </p>
+
+                <div class="article-toc">
+                    <h4><i class="fas fa-list-ul"></i> In This Article</h4>
+                    <ol>
+                        <li><a href="#why-different">Why Software Protection Is Unique</a></li>
+                        <li><a href="#copyright">Path 1: Copyright</a></li>
+                        <li><a href="#patents">Path 2: Patents</a></li>
+                        <li><a href="#trade-secrets">Path 3: Trade Secrets</a></li>
+                        <li><a href="#comparison">Side-by-Side Comparison</a></li>
+                        <li><a href="#strategy">Building a Layered Strategy</a></li>
+                        <li><a href="#conclusion">Conclusion</a></li>
+                    </ol>
+                </div>
+
+                <!-- 1 -->
+                <h2 id="why-different">Why Software Protection Is Unique</h2>
+                <p>
+                    Software is unusual in the intellectual property world because it combines several
+                    different types of creative and technical output in a single product:
+                </p>
+                <ul>
+                    <li><strong>Source code</strong> — which is a form of written expression;</li>
+                    <li><strong>User interface</strong> — which has visual and design elements;</li>
+                    <li><strong>Algorithms and methods</strong> — which are functional and technical;</li>
+                    <li><strong>Data structures and architecture</strong> — which may be novel or inventive;</li>
+                    <li><strong>Business logic and processes</strong> — which may constitute trade secrets.</li>
+                </ul>
+                <p>
+                    Because of this complexity, no single legal tool covers all aspects of software. A
+                    well-designed IP strategy typically combines <strong>multiple forms of protection</strong>
+                    — each addressing a different layer of the product.
+                </p>
+
+                <!-- 2 -->
+                <h2 id="copyright">Path 1: Copyright</h2>
+                <p>
+                    Copyright is the most common — and most accessible — form of software protection
+                    in Egypt. Under <strong>Law No. 82 of 2002 on the Protection of Intellectual
+                    Property Rights</strong>, computer programs are explicitly protected as literary
+                    works.
+                </p>
+
+                <h3>What Copyright Protects</h3>
+                <ul>
+                    <li>The <strong>source code</strong> — as originally written;</li>
+                    <li>The <strong>object code</strong> — the compiled version;</li>
+                    <li>The <strong>structure, sequence, and organization</strong> of the program, in certain cases;</li>
+                    <li>The <strong>user interface elements</strong> — where they constitute original expression.</li>
+                </ul>
+
+                <h3>What Copyright Does NOT Protect</h3>
+                <ul>
+                    <li><strong>Ideas, algorithms, or methods</strong> — as such;</li>
+                    <li><strong>Functional aspects</strong> of the software;</li>
+                    <li><strong>Business logic</strong> — unless expressed in a protected form.</li>
+                </ul>
+
+                <h3>Key Advantages</h3>
+                <ul>
+                    <li><strong>Automatic</strong> — protection arises upon creation, no registration required (though registration is available);</li>
+                    <li><strong>Long duration</strong> — protection lasts for the life of the author plus 50 years in Egypt;</li>
+                    <li><strong>Low cost</strong> — no formal fees required to obtain protection;</li>
+                    <li><strong>International recognition</strong> — protected in most countries via the Berne Convention.</li>
+                </ul>
+
+                <h3>Key Limitations</h3>
+                <ul>
+                    <li>Protects <strong>expression, not function</strong> — a competitor can write different code that performs the same function;</li>
+                    <li>Difficult to enforce against reverse engineering in some cases;</li>
+                    <li>Does not protect the underlying idea or method.</li>
+                </ul>
+
+                <div class="article-callout">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <p>Practical tip for developers</p>
+                        <p>
+                            Even though copyright is automatic, consider <strong>registering</strong> your
+                            software with the Egyptian Patent Office / relevant authority. Registration
+                            provides a formal record of authorship, which can be valuable evidence if
+                            you ever need to enforce your rights in court.
+                        </p>
                     </div>
-                    
-                    <h3>Can Software Be Patented?</h3>
-                    <p>The patentability of software varies by jurisdiction. In the United States, the Supreme Court's Alice decision has made it more difficult to obtain patents for abstract ideas implemented on a computer. However, software that produces a "technical effect" or solves a technical problem may still be patentable. In Europe, the European Patent Office (EPO) requires a "technical character" for software inventions. In Egypt, software per se is not patentable, but software that is part of a larger technical invention may be protected.</p>
-                    
-                    <h3>Strategies for Protecting Software</h3>
-                    
-                    <h4>1. Focus on Technical Improvements</h4>
-                    <p>To overcome patentability hurdles, focus on the technical aspects of your software. Describe how the software improves computer functionality, solves a technical problem, or achieves a technical effect. Avoid claiming abstract ideas or business methods alone.</p>
-                    
-                    <h4>2. Use Method Claims</h4>
-                    <p>Method claims that describe the steps performed by the software can be effective. These claims should focus on the technical process rather than the underlying idea.</p>
-                    
-                    <h4>3. Consider System Claims</h4>
-                    <p>System claims that include the computer or processor executing the software can also be valuable. These claims should recite the components of the system and how they interact to achieve the technical result.</p>
-                    
-                    <h4>4. Draft Clear and Specific Claims</h4>
-                    <p>Avoid overly broad or vague language. Draft claims that are clear, specific, and supported by a detailed description in the specification. This helps overcome rejections and strengthens the patent against challenges.</p>
-                    
-                    <div class="alert alert-info mt-4">
-                        <i class="fas fa-lightbulb me-2"></i> <strong>Strategic Tip:</strong> For startups, consider filing a provisional patent application early to establish priority while you refine your invention and seek funding.
+                </div>
+
+                <!-- 3 -->
+                <h2 id="patents">Path 2: Patents</h2>
+                <p>
+                    Patents protect <strong>inventions</strong> — new, non-obvious, and industrially
+                    applicable technical solutions. In some jurisdictions, software-related inventions
+                    can be patented if they meet these criteria. In Egypt, patenting software is more
+                    complex.
+                </p>
+
+                <h3>Software Patents in Egypt</h3>
+                <p>
+                    Under Egyptian law, "<strong>computer programs</strong>" as such are excluded from
+                    patentability. However, this exclusion does not necessarily extend to inventions that
+                    <em>use</em> software to solve a technical problem — for example:
+                </p>
+                <ul>
+                    <li>A novel algorithm applied to a specific technical process (such as image processing or encryption);</li>
+                    <li>A hardware-software combination that solves a technical problem in a new way;</li>
+                    <li>A method that produces a technical effect beyond normal computer operation.</li>
+                </ul>
+                <p>
+                    In practice, obtaining a software-related patent in Egypt requires careful drafting
+                    to position the invention as a <strong>technical solution</strong>, not merely as a
+                    computer program. This is a specialist task that should be handled by a registered
+                    patent agent.
+                </p>
+
+                <h3>Key Advantages</h3>
+                <ul>
+                    <li><strong>Strong protection</strong> — protects the underlying invention, not just the expression;</li>
+                    <li><strong>Excludes competitors</strong> — others cannot use the patented method, even with different code;</li>
+                    <li><strong>Commercial value</strong> — patents are valuable assets for licensing and investment.</li>
+                </ul>
+
+                <h3>Key Limitations</h3>
+                <ul>
+                    <li><strong>High cost</strong> — patent filing is expensive, and prosecution can take years;</li>
+                    <li><strong>Disclosure requirement</strong> — a patent must publicly disclose the invention, ending secrecy;</li>
+                    <li><strong>Limited term</strong> — 20 years from filing, then protection expires;</li>
+                    <li><strong>Hard to obtain</strong> — software inventions face stricter examination.</li>
+                </ul>
+
+                <!-- 4 -->
+                <h2 id="trade-secrets">Path 3: Trade Secrets</h2>
+                <p>
+                    Trade secrets protect <strong>confidential business information</strong> that gives
+                    its owner a competitive advantage — including software source code, algorithms,
+                    and technical know-how.
+                </p>
+                <p>
+                    In Egypt, trade secrets are protected under Law No. 82 of 2002 and by contract
+                    (through NDAs and confidentiality clauses). There is no formal registration process
+                    — protection arises from <strong>maintaining secrecy</strong>.
+                </p>
+
+                <h3>What Trade Secrets Protect</h3>
+                <ul>
+                    <li><strong>Source code</strong> that is not publicly disclosed;</li>
+                    <li><strong>Proprietary algorithms</strong> and business logic;</li>
+                    <li><strong>Technical know-how</strong> — including methods, processes, and experience;</li>
+                    <li><strong>Customer data, pricing models, and business strategies</strong>.</li>
+                </ul>
+
+                <h3>Key Advantages</h3>
+                <ul>
+                    <li><strong>No registration cost</strong> — protection is free, provided secrecy is maintained;</li>
+                    <li><strong>No disclosure requirement</strong> — you do not need to reveal how your technology works;</li>
+                    <li><strong>Unlimited duration</strong> — protection lasts as long as secrecy is maintained (think of the Coca-Cola formula);</li>
+                    <li><strong>Broad scope</strong> — can protect things that copyright and patents cannot.</li>
+                </ul>
+
+                <h3>Key Limitations</h3>
+                <ul>
+                    <li><strong>Requires strict confidentiality</strong> — protection is lost if the secret becomes public;</li>
+                    <li><strong>Vulnerable to reverse engineering</strong> — if a competitor can legally discover the secret from your product, protection is lost;</li>
+                    <li><strong>Enforcement challenges</strong> — proving misappropriation can be difficult;</li>
+                    <li><strong>Employee risk</strong> — requires strong internal controls and exit procedures.</li>
+                </ul>
+
+                <blockquote>
+                    <p>
+                        Trade secret protection is only as strong as the discipline behind it. A perfect
+                        confidentiality clause is useless without the operational practice to enforce it.
+                    </p>
+                </blockquote>
+
+                <!-- 5 -->
+                <h2 id="comparison">Side-by-Side Comparison</h2>
+                <p>The following table summarizes the key differences between the three paths:</p>
+
+                <div class="compare-table-wrap">
+                    <table class="compare-table">
+                        <thead>
+                            <tr>
+                                <th>Factor</th>
+                                <th>Copyright</th>
+                                <th>Patent</th>
+                                <th>Trade Secret</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>What it protects</strong></td>
+                                <td>Expression (code, UI)</td>
+                                <td>Technical invention</td>
+                                <td>Confidential information</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Registration</strong></td>
+                                <td>Automatic (optional)</td>
+                                <td>Required</td>
+                                <td>Not required (secrecy)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cost</strong></td>
+                                <td>Low</td>
+                                <td>High</td>
+                                <td>Low (but operational cost)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Duration</strong></td>
+                                <td>Life + 50 years (Egypt)</td>
+                                <td>20 years</td>
+                                <td>As long as secret is maintained</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Disclosure</strong></td>
+                                <td>Not required</td>
+                                <td>Required</td>
+                                <td>Must remain secret</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Protects function?</strong></td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Yes (if kept secret)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Enforcement difficulty</strong></td>
+                                <td>Moderate</td>
+                                <td>Moderate-High</td>
+                                <td>High</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 6 -->
+                <h2 id="strategy">Building a Layered Strategy</h2>
+                <p>
+                    The most effective approach for most software companies is a <strong>layered
+                    strategy</strong> — combining multiple forms of protection to cover different
+                    aspects of the product. Here's a practical framework:
+                </p>
+
+                <h3>Layer 1: Copyright (Always)</h3>
+                <ul>
+                    <li>Protect your source code and UI as original expression;</li>
+                    <li>Register the software for additional evidence of authorship;</li>
+                    <li>Include clear copyright notices in your code and documentation.</li>
+                </ul>
+
+                <h3>Layer 2: Trade Secrets (Almost Always)</h3>
+                <ul>
+                    <li>Keep proprietary algorithms and business logic confidential;</li>
+                    <li>Use NDAs with employees, contractors, and partners;</li>
+                    <li>Implement access controls and clear exit procedures;</li>
+                    <li>Document your confidentiality practices.</li>
+                </ul>
+
+                <h3>Layer 3: Patents (When Applicable)</h3>
+                <ul>
+                    <li>Consider patent protection for genuinely novel technical solutions;</li>
+                    <li>Work with a registered patent agent to assess patentability;</li>
+                    <li>Balance the cost and disclosure requirements against the strategic value;</li>
+                    <li>Consider international filings where commercial value justifies it.</li>
+                </ul>
+
+                <h3>Layer 4: Contracts</h3>
+                <ul>
+                    <li>Use strong end-user license agreements (EULAs);</li>
+                    <li>Include anti-reverse-engineering clauses where enforceable;</li>
+                    <li>Protect against unauthorized use in SaaS terms of service;</li>
+                    <li>Address IP ownership clearly in development agreements.</li>
+                </ul>
+
+                <div class="article-callout">
+                    <i class="fas fa-shield-halved"></i>
+                    <div>
+                        <p>The layered principle</p>
+                        <p>
+                            No single form of protection is sufficient for software. The strongest
+                            position comes from combining copyright, trade secrets, patents (where
+                            available), and contracts — each covering what the others cannot.
+                        </p>
                     </div>
-                    
-                    <h3>Alternative Forms of Protection</h3>
-                    <p>In addition to patents, software can be protected by copyright (protecting the code itself) and trade secret law (protecting algorithms and source code). Often, a combination of these forms of protection provides the strongest safeguard.</p>
-                    
-                    <h3>Working with a Patent Attorney</h3>
-                    <p>Given the complexity of software patent law, working with an experienced patent attorney is essential. An attorney can help assess patentability, draft robust applications, and navigate the prosecution process.</p>
-                    
-                    <p>Our firm has extensive experience in software patent prosecution. Contact us to discuss your software innovation and how best to protect it.</p>
-                    
-                    <div class="mt-5 pt-3 border-top">
-                        <div class="d-flex justify-content-between align-items-center flex-wrap">
-                            <div>
-                                <a href="/blog.html" class="btn btn-outline-primary"><i class="fas fa-arrow-left me-2"></i>Back to Blog</a>
-                            </div>
-                            <div class="mt-2 mt-sm-0">
-                                <span class="text-muted me-2">Share this article:</span>
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://law-arb-ip-walid.vercel.app/blog/protecting-software-patents.html" target="_blank" class="btn btn-sm btn-outline-primary me-1"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://twitter.com/intent/tweet?url=https://law-arb-ip-walid.vercel.app/blog/protecting-software-patents.html&text=Protecting Software with Patents" target="_blank" class="btn btn-sm btn-outline-primary me-1"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://law-arb-ip-walid.vercel.app/blog/protecting-software-patents.html&title=Protecting Software with Patents" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
+                </div>
+
+                <!-- 7 -->
+                <h2 id="conclusion">Conclusion</h2>
+                <p>
+                    Software protection in Egypt is not a matter of choosing one legal tool — it's about
+                    building a strategy that covers the multiple dimensions of your product. Copyright
+                    protects your expression, trade secrets protect your know-how, patents protect your
+                    technical inventions, and contracts tie it all together.
+                </p>
+                <p>
+                    For developers, SaaS founders, and tech companies, the practical implications are:
+                </p>
+                <ul>
+                    <li><strong>Start early</strong> — protection should be built into development, not added after;</li>
+                    <li><strong>Document everything</strong> — ownership records, confidentiality practices, and authorship evidence matter;</li>
+                    <li><strong>Consult a specialist</strong> — the interplay of copyright, patents, and trade secrets requires professional guidance;</li>
+                    <li><strong>Think internationally</strong> — if your product operates globally, your IP strategy should reflect that.</li>
+                </ul>
+                <p>
+                    Software is a strategic asset. Protecting it properly is not an expense — it's an
+                    investment in your competitive position.
+                </p>
+
+                <div class="citation-box">
+                    <strong>How to cite this article:</strong>
+                    <code>Abu Al-Ela, W. M. (2026). "Protecting Software in Egypt: Copyright, Patents, or Trade Secrets?" Walid Mohamed Abu Al-Ela Law Firm Blog. law-arb-ip-walid.vercel.app/blog/protecting-software-patents.html</code>
+                </div>
+
+                <div class="share-row">
+                    <strong>Share this article:</strong>
+                    <a href="#" class="share-btn" onclick="shareArticle('twitter'); return false;" title="Share on Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="share-btn" onclick="shareArticle('linkedin'); return false;" title="Share on LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="share-btn" onclick="shareArticle('facebook'); return false;" title="Share on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="share-btn" onclick="shareArticle('whatsapp'); return false;" title="Share on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="share-btn" onclick="copyLink(); return false;" title="Copy link">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+
+                <div class="author-card">
+                    <div class="author-card-avatar">
+                        <img src="/images/team/walid-profile.jpg" alt="Walid Mohamed Abu Al-Ela" onerror="this.src='/images/team/walid-profile.png';">
+                    </div>
+                    <div class="author-card-info">
+                        <h5>Walid Mohamed Abu Al-Ela</h5>
+                        <span class="role">Founder &amp; Lead Attorney</span>
+                        <p>
+                            Accredited IP Arbitrator (2025), Registered Patent Agent (2023), and a
+                            registered Master's researcher in Intellectual Property at the National
+                            Institute of Intellectual Property.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    <section class="related-section">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">Related Reading</span>
+                <h2 class="sh-title">More From Our <span class="text-gold">Blog</span></h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <a href="/blog/ai-digital-educator-ip-rights.html" class="related-card">
+                        <div class="related-card-img">
+                            <img src="/images/blog/ai-ip-cover.jpg" alt="AI and IP rights" loading="lazy" onerror="this.style.opacity=0;">
                         </div>
-                    </div>
+                        <div class="related-card-body">
+                            <span class="related-card-cat">Research</span>
+                            <h4>The Impact of AI as a Digital Educator on the IP Rights of Content Creators</h4>
+                            <div class="meta">January 2026 · 9 min read</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <a href="/blog/egyptian-ip-law-amendments-2026.html" class="related-card">
+                        <div class="related-card-img">
+                            <img src="/images/blog/ip-law-amendments.jpg" alt="Egyptian IP law amendments" loading="lazy" onerror="this.style.opacity=0;">
+                        </div>
+                        <div class="related-card-body">
+                            <span class="related-card-cat">Intellectual Property</span>
+                            <h4>Recent Amendments to the Egyptian IP Law: What Business Owners Should Know</h4>
+                            <div class="meta">March 2026 · 6 min read</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <a href="/blog/arbitration-trends-2026.html" class="related-card">
+                        <div class="related-card-img">
+                            <img src="/images/blog/arbitration-trends.jpg" alt="Arbitration trends 2026" loading="lazy" onerror="this.style.opacity=0;">
+                        </div>
+                        <div class="related-card-body">
+                            <span class="related-card-cat">Arbitration</span>
+                            <h4>Arbitration Trends to Watch in 2026: Egypt and the Region</h4>
+                            <div class="meta">February 2026 · 7 min read</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-handshake"></i></div>
+                <h2>Need Help Protecting Your Software?</h2>
+                <p>Our firm can help you build a layered IP strategy tailored to your product.</p>
+                <div class="fcr-buttons">
+                    <a href="/consultation.html" class="btn-rich-primary light">
+                        <span>Book Consultation</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/contact.html" class="btn-rich-ghost">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact Us</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>Walid Abo Al-Ela Law Firm</h5>
-                    <p class="text-white-50">Specialized in arbitration and intellectual property protection with a personal touch since 2016.</p>
-                    <div class="social-links mt-3">
+                <div class="col-lg-4">
+                    <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">Walid Mohamed Abu Al-Ela Law Firm</h5>
+                    <p class="footer-desc">Law · Arbitration · Intellectual Property. Serving clients with dedication since 2016.</p>
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">Quick Links</h6>
+                    <ul class="footer-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/lawyers.html">Our Team</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">Contact</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Sat - Thu: 9am - 8pm</li>
+                    </ul>
+                </div>
                 <div class="col-lg-3">
-                    <h6 class="mb-4">Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/index.html" class="text-white-50 text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="/about.html" class="text-white-50 text-decoration-none">About</a></li>
-                        <li class="mb-2"><a href="/services.html" class="text-white-50 text-decoration-none">Services</a></li>
-                        <li class="mb-2"><a href="/lawyers.html" class="text-white-50 text-decoration-none">Our Team</a></li>
-                        <li class="mb-2"><a href="/blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
-                        <li class="mb-2"><a href="/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
-                        <li class="mb-2"><a href="/consultation.html" class="text-white-50 text-decoration-none">Paid Consultation</a></li>
+                    <h6 class="footer-heading">Legal</h6>
+                    <ul class="footer-list">
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Use</a></li>
+                        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h6 class="mb-4">Contact Info</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 10th of Ramadan, Cairo, Egypt</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Sat - Thu: 9am - 8pm</li>
-                    </ul>
-                </div>
-                <div class="col-lg-12 mt-3">
-                    <hr class="my-3" style="border-color: rgba(255,255,255,0.1);">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="small text-white-50 mb-0">© 2025 Walid Abo Al-Ela Law Firm. All rights reserved.</p>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
-                            <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">Terms of Use</a>
-                            <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">Cookie Policy</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Walid Mohamed Abu Al-Ela Law Firm. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-WQ0CPXRK2F');
-    </script>
-    <!-- كود إضافي لحل مشكلة صورة المحامي (النسخة الثالثة) -->
+
     <script>
     (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-            testImg.onerror = function() { tryLoadImage(index + 1); };
+        const progress = document.getElementById('reading-progress');
+        if (progress) {
+            window.addEventListener('scroll', function() {
+                const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.scrollY / docHeight) * 100;
+                progress.style.width = Math.min(scrolled, 100) + '%';
+            });
         }
-        tryLoadImage(0);
+
+        window.shareArticle = function(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            let shareUrl = '';
+            switch(platform) {
+                case 'twitter': shareUrl = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title; break;
+                case 'linkedin': shareUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url; break;
+                case 'facebook': shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url; break;
+                case 'whatsapp': shareUrl = 'https://wa.me/?text=' + title + '%20' + url; break;
+            }
+            if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=500');
+        };
+
+        window.copyLink = function() {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                alert('Link copied to clipboard!');
+            }).catch(function() {
+                alert('Could not copy link. Please copy manually.');
+            });
+        };
     })();
     </script>
-    <script>
-        // تحديد الرابط النشط
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
-                if (link.getAttribute('href') === currentPath) link.classList.add('active');
-            });
-        });
-    </script>
+
 </body>
 </html>

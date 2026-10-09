@@ -1,3 +1,75 @@
+# ============================================================
+# robots.txt — Walid Mohamed Abu Al-Ela Law Firm
+# https://law-arb-ip-walid.vercel.app
+# ============================================================
+
+# Allow all standard search engines
 User-agent: *
 Allow: /
+
+# Block the client portal (private area, noindex)
+Disallow: /client-portal.html
+Disallow: /ar/client-portal.html
+Disallow: /client-portal/
+
+# Block API endpoints
+Disallow: /api/
+
+# Block any admin/private paths (defensive)
+Disallow: /admin/
+Disallow: /dashboard/
+
+# ============================================================
+# Sitemap
+# ============================================================
 Sitemap: https://law-arb-ip-walid.vercel.app/sitemap.xml
+
+# ============================================================
+# Specific Bots — Friendly Configuration
+# ============================================================
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Twitter
+User-agent: Twitterbot
+Allow: /
+
+# Facebook
+User-agent: facebookexternalhit
+Allow: /
+
+# LinkedIn
+User-agent: LinkedInBot
+Allow: /
+
+# WhatsApp (for link previews)
+User-agent: WhatsApp
+Allow: /
+
+# Telegram
+User-agent: TelegramBot
+Allow: /
+
+# ============================================================
+# Block aggressive SEO crawlers (optional)
+# ============================================================
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10

@@ -3,12 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - Walid Abo Al-Ela Law Firm</title>
-    <meta name="description" content="Comprehensive legal services including international arbitration, trademark registration, patent protection, IP litigation, corporate formation, and more. Trusted since 2016.">
+    <title>Our Services - Walid Mohamed Abu Al-Ela Law Firm</title>
+    <meta name="description" content="Comprehensive legal services across 23 practice areas: intellectual property, litigation & arbitration, corporate services, and contracts. Trusted since 2013.">
+    <meta name="keywords" content="legal services Egypt, IP law, arbitration, trademark, patent, copyright, corporate law, contracts">
+    <meta name="author" content="Walid Mohamed Abu Al-Ela">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/services.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/services.html">
+    <meta property="og:title" content="Our Services - Walid Mohamed Abu Al-Ela Law Firm">
+    <meta property="og:description" content="23 specialized practice areas across IP, litigation, corporate, and contracts.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/services.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/services.html">
+
+    <link rel="icon" type="image/png" href="/images/logo arb ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -16,94 +36,356 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
-    <style>
-        .language-switcher {
-            position: fixed;
-            top: 70px;
-            left: 20px;
-            z-index: 9999;
-        }
-        .language-switcher .lang-btn {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .language-switcher .lang-btn:hover {
-            background-color: #0b5ed7;
-            transform: scale(1.05);
-        }
-        body { padding-top: 70px; }
-        @media (max-width: 768px) {
-            .language-switcher { top: 60px; left: 10px; }
-            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
-        }
-        .dropdown-menu { min-width: 220px; }
-    </style>
-</head>
-<script>
-// ========== حل نهائي لصورة المحامي (النسخة الأولى) ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> This is a trial version - site under development and updates <i class="fas fa-tools"></i>
-</div>
-<body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> العربية</a>
-    </div>
 
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (!currentPath.startsWith('/ar/')) {
-            let arabicPath;
-            if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
-                arabicPath = '/ar/';
-            } else {
-                arabicPath = '/ar' + currentPath;
-            }
-            langLink.href = arabicPath;
-        } else {
-            langLink.href = '/ar/';
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "Walid Mohamed Abu Al-Ela Law Firm",
+        "url": "https://law-arb-ip-walid.vercel.app/services.html",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Legal Services",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Trademark Registration"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Patent Protection"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Copyright"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "International Arbitration"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Corporate Formation"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "IP Licensing"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Other Contracts"}}
+            ]
         }
-    })();
+    }
     </script>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+    <style>
+        /* ============================================================
+           SERVICES TABS - Luxury Tabbed Interface
+           ============================================================ */
+        .svc-tabs-section {
+            padding: 90px 0 70px;
+            background: #fff;
+        }
+
+        .svc-tabs-nav {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 55px;
+        }
+
+        .svc-tab-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 22px 16px;
+            background: #fff;
+            border: 2px solid #E9ECEF;
+            border-radius: 20px;
+            color: var(--dark-text);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: inherit;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .svc-tab-btn i {
+            color: var(--accent-dark);
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+        }
+
+        .svc-tab-btn span {
+            font-weight: 700;
+            font-size: 0.9rem;
+            line-height: 1.3;
+        }
+
+        .svc-tab-btn small {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 26px;
+            height: 26px;
+            background: rgba(201,169,97,0.15);
+            color: var(--accent-dark);
+            border-radius: 50%;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 0 6px;
+            transition: all 0.3s ease;
+        }
+
+        .svc-tab-btn:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -8px rgba(201,169,97,0.3);
+        }
+
+        .svc-tab-btn.active {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            border-color: var(--accent-color);
+            color: var(--primary-color);
+            box-shadow: 0 15px 35px rgba(201,169,97,0.35);
+        }
+
+        .svc-tab-btn.active i,
+        .svc-tab-btn.active small {
+            color: var(--primary-color);
+        }
+
+        .svc-tab-btn.active small {
+            background: rgba(0,0,0,0.15);
+        }
+
+        .svc-tab-content {
+            display: none;
+            animation: svcFadeIn 0.5s ease;
+        }
+
+        .svc-tab-content.active {
+            display: block;
+        }
+
+        @keyframes svcFadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .svc-grid-item {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            padding: 28px 24px;
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 18px;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            min-height: 230px;
+        }
+
+        .svc-grid-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-dark));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .svc-grid-item:hover::before { transform: scaleX(1); }
+
+        .svc-grid-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-color);
+            box-shadow: 0 25px 50px -15px rgba(0,0,0,0.12);
+            color: inherit;
+        }
+
+        .svc-item-icon {
+            width: 58px;
+            height: 58px;
+            background: linear-gradient(135deg, #F8F9FA, #fff);
+            border: 1px solid #E9ECEF;
+            color: var(--accent-dark);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            transition: all 0.4s ease;
+            flex-shrink: 0;
+        }
+
+        .svc-grid-item:hover .svc-item-icon {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: var(--primary-color);
+            border-color: transparent;
+            transform: rotate(-8deg) scale(1.08);
+            box-shadow: 0 10px 25px rgba(201,169,97,0.3);
+        }
+
+        .svc-item-title {
+            font-size: 1.02rem;
+            font-weight: 800;
+            color: var(--dark-text);
+            margin: 0;
+            line-height: 1.3;
+            font-family: var(--font-serif);
+        }
+
+        .svc-item-desc {
+            font-size: 0.85rem;
+            color: #6C757D;
+            line-height: 1.55;
+            margin: 0;
+            flex: 1;
+        }
+
+        .svc-item-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-dark);
+            font-weight: 700;
+            font-size: 0.82rem;
+            transition: all 0.3s ease;
+            margin-top: auto;
+            padding-top: 8px;
+        }
+
+        .svc-grid-item:hover .svc-item-link {
+            color: var(--primary-color);
+            gap: 14px;
+        }
+
+        .svc-grid-item.svc-featured {
+            grid-column: span 4;
+            background: linear-gradient(160deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            border-color: var(--accent-color);
+            min-height: auto;
+            flex-direction: row;
+            align-items: center;
+            gap: 30px;
+            padding: 38px 42px;
+        }
+
+        .svc-grid-item.svc-featured .svc-item-icon {
+            width: 80px;
+            height: 80px;
+            font-size: 2rem;
+            background: rgba(201,169,97,0.15);
+            border-color: rgba(201,169,97,0.3);
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+
+        .svc-grid-item.svc-featured:hover .svc-item-icon {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: var(--primary-color);
+        }
+
+        .svc-featured-body { flex: 1; }
+
+        .svc-grid-item.svc-featured .svc-item-title {
+            color: #fff;
+            font-size: 1.55rem;
+            margin-bottom: 10px;
+        }
+
+        .svc-grid-item.svc-featured .svc-item-desc {
+            color: rgba(255,255,255,0.78);
+            font-size: 0.95rem;
+            max-width: 750px;
+            margin-bottom: 12px;
+        }
+
+        .svc-grid-item.svc-featured .svc-item-link { color: var(--accent-color); }
+        .svc-grid-item.svc-featured:hover .svc-item-link { color: var(--accent-light); }
+
+        .svc-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(201,169,97,0.15);
+            color: var(--accent-color);
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            align-self: flex-start;
+            border: 1px solid rgba(201,169,97,0.3);
+        }
+
+        @media (max-width: 991px) {
+            .svc-tabs-section { padding: 60px 0 50px; }
+            .svc-tabs-nav {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                margin-bottom: 40px;
+            }
+            .svc-tab-btn { padding: 18px 14px; }
+            .svc-tab-btn i { font-size: 1.35rem; }
+            .svc-tab-btn span { font-size: 0.82rem; }
+
+            .svc-grid { grid-template-columns: repeat(2, 1fr); }
+            .svc-grid-item.svc-featured {
+                grid-column: span 2;
+                flex-direction: column;
+                text-align: center;
+                padding: 32px 28px;
+            }
+            .svc-grid-item.svc-featured .svc-item-icon { margin: 0 auto; }
+            .svc-grid-item.svc-featured .svc-item-desc { max-width: 100%; }
+        }
+
+        @media (max-width: 576px) {
+            .svc-tabs-nav {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .svc-tab-btn {
+                flex-direction: row;
+                justify-content: flex-start;
+                padding: 14px 18px;
+                text-align: left;
+            }
+            .svc-tab-btn i { font-size: 1.15rem; }
+            .svc-tab-btn small { margin-left: auto; }
+
+            .svc-grid { grid-template-columns: 1fr; }
+            .svc-grid-item.svc-featured { grid-column: span 1; }
+            .svc-grid-item { padding: 22px 20px; min-height: auto; }
+            .svc-grid-item.svc-featured .svc-item-title { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- TRIAL BANNER -->
+    <div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background: linear-gradient(90deg, #FFC107 0%, #FFB300 100%); color: #000; text-align: center; padding: 10px 15px; font-weight: 600; border-bottom: 2px solid #000; display: flex; justify-content: center; align-items: center; gap: 10px; box-sizing: border-box; font-size: 0.9rem; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+        <i class="fas fa-tools" style="font-size: 1.1rem; animation: pulse-icon 2s ease-in-out infinite;"></i>
+        <span>This is a trial version - site under development and updates</span>
+        <i class="fas fa-tools" style="font-size: 1.1rem; animation: pulse-icon 2s ease-in-out infinite;"></i>
+    </div>
+    <style>
+        @keyframes pulse-icon { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+    </style>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <a href="/ar/services.html" class="lang-btn"><i class="fas fa-globe"></i> العربية</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="Walid Abo Al-Ela Law Firm" style="height:45px; width:auto; margin-right:10px;">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo arb ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm">
                 <div>
-                    <span class="fw-bold">Walid Abo Al-Ela Law Firm</span>
-                    <small class="d-block" style="font-size:16px; opacity:0.9; margin-top:5px; font-weight:500;">For Arbitration and Intellectual Property</small>
+                    <span class="firm-name">Walid Mohamed Abu Al-Ela</span>
+                    <small class="firm-sub">Law · Arbitration · IP</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -111,16 +393,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
                             <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
                             <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
                             <li><a class="dropdown-item" href="/copyright.html">Copyright</a></li>
                             <li><a class="dropdown-item" href="/litigation.html">IP Litigation</a></li>
+                            <li><a class="dropdown-item" href="/licensing.html">Licensing & Contracts</a></li>
                             <li><a class="dropdown-item" href="/corporate-formation.html">Corporate Formation</a></li>
                             <li><a class="dropdown-item" href="/criminal-litigation.html">Criminal Litigation</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -130,335 +413,393 @@
                     <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/consultation.html">Paid Consultation</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html"><i class="fas fa-lock me-1"></i>Client Portal</a>
+                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>Client Portal
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script>
-        // حل مشكلة صورة المحامي - البحث عن المسار الصحيح (نسخة إضافية للاحتياط)
-        (function() {
-            const possiblePaths = [
-                '/images/team/walid-profile.jpg',
-                '/images/team/walid-abouelela.jpg',
-                '/images/walid-profile.jpg',
-                '/ar/images/team/walid-profile.jpg',
-                '/images/lawyers/walid.jpg'
-            ];
-            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-            if (!imgElement) return;
-            function tryLoadImage(index) {
-                if (index >= possiblePaths.length) return;
-                const testImg = new Image();
-                testImg.src = possiblePaths[index];
-                testImg.onload = function() {
-                    imgElement.src = possiblePaths[index];
-                    imgElement.onerror = null;
-                };
-                testImg.onerror = function() {
-                    tryLoadImage(index + 1);
-                };
-            }
-            tryLoadImage(0);
-        })();
-        </script>
     </nav>
 
+    <!-- Page Header -->
     <header class="page-header">
-        <div class="container text-white text-center">
+        <div class="container text-center">
             <h1 class="display-4">Our Services</h1>
-            <p class="lead">Comprehensive legal solutions tailored to your needs</p>
+            <p class="lead">23 specialized practice areas across four core disciplines</p>
         </div>
     </header>
 
-    <section class="py-5">
+    <!-- ============================================================
+         SERVICES TABS
+         ============================================================ -->
+    <section class="svc-tabs-section">
         <div class="container">
-            <div class="row g-4">
-                <!-- International Arbitration -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-gavel fa-2x text-primary"></i>
-                        </div>
-                        <h4>International Arbitration</h4>
-                        <p class="text-muted">Expert representation in commercial disputes, cross-border arbitration, and enforcement of awards under ICC, LCIA, UNCITRAL rules.</p>
-                        <a href="/arbitration.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">Practice Areas</span>
+                <h2 class="sh-title">Complete Legal Solutions</h2>
+                <p class="sh-desc">A full-service practice organized into four core disciplines.</p>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="svc-tabs-nav" role="tablist">
+                <button class="svc-tab-btn active" data-tab="ip" role="tab" aria-selected="true">
+                    <i class="fas fa-trademark"></i>
+                    <span>Intellectual Property</span>
+                    <small>8</small>
+                </button>
+                <button class="svc-tab-btn" data-tab="disputes" role="tab" aria-selected="false">
+                    <i class="fas fa-scale-balanced"></i>
+                    <span>Litigation & Arbitration</span>
+                    <small>6</small>
+                </button>
+                <button class="svc-tab-btn" data-tab="corporate" role="tab" aria-selected="false">
+                    <i class="fas fa-building"></i>
+                    <span>Corporate Services</span>
+                    <small>4</small>
+                </button>
+                <button class="svc-tab-btn" data-tab="contracts" role="tab" aria-selected="false">
+                    <i class="fas fa-file-signature"></i>
+                    <span>Contracts & Agreements</span>
+                    <small>5</small>
+                </button>
+            </div>
+
+            <!-- ============================================================
+                 Tab 1: Intellectual Property (8)
+                 ============================================================ -->
+            <div class="svc-tab-content active" data-content="ip" role="tabpanel">
+                <div class="svc-grid">
+                    <a href="/trademark.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-trademark"></i></div>
+                        <h4 class="svc-item-title">Trademark Registration</h4>
+                        <p class="svc-item-desc">Full-service trademark protection — search, filing, opposition, and portfolio management, locally and internationally.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/patent.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-microchip"></i></div>
+                        <h4 class="svc-item-title">Patent Protection</h4>
+                        <p class="svc-item-desc">Complete patent lifecycle — from prior art search and drafting to prosecution, PCT filing, and portfolio strategy.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/copyright.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-copyright"></i></div>
+                        <h4 class="svc-item-title">Copyright</h4>
+                        <p class="svc-item-desc">Protection for authors, performers, and producers — registration, licensing, and enforcement.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/industrial-designs.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-palette"></i></div>
+                        <h4 class="svc-item-title">Industrial Designs</h4>
+                        <p class="svc-item-desc">Protection for the ornamental aspect of products — locally and internationally via The Hague System.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/integrated-circuits.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-memory"></i></div>
+                        <h4 class="svc-item-title">Integrated Circuit Layouts</h4>
+                        <p class="svc-item-desc">Protection for semiconductor chip topographies as a distinct IP category under Egyptian law.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/utility-models.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h4 class="svc-item-title">Utility Models</h4>
+                        <p class="svc-item-desc">Cost-effective protection for minor innovations — faster grant, lower fees, no inventive step required.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/geographical-indications.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <h4 class="svc-item-title">Geographical Indications</h4>
+                        <p class="svc-item-desc">Protection for products with specific geographical origin — agricultural goods, handicrafts, and traditional products.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/plant-varieties.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-seedling"></i></div>
+                        <h4 class="svc-item-title">Plant Varieties</h4>
+                        <p class="svc-item-desc">Breeders' rights for new, distinct, uniform, and stable plant varieties — registration and enforcement.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
                 </div>
-                <!-- Trademark Registration -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-trademark fa-2x text-primary"></i>
+            </div>
+
+            <!-- ============================================================
+                 Tab 2: Litigation & Arbitration (6)
+                 ============================================================ -->
+            <div class="svc-tab-content" data-content="disputes" role="tabpanel">
+                <div class="svc-grid">
+                    <!-- Featured: Arbitration -->
+                    <a href="/arbitration.html" class="svc-grid-item svc-featured">
+                        <div class="svc-item-icon"><i class="fas fa-gavel"></i></div>
+                        <div class="svc-featured-body">
+                            <span class="svc-counter"><i class="fas fa-star"></i> Accredited Arbitrator since 2013</span>
+                            <h4 class="svc-item-title">International Arbitration</h4>
+                            <p class="svc-item-desc">Representation in cross-border commercial and investment disputes under ICC, LCIA, UNCITRAL, and CRCICA rules — with expertise in emergency proceedings, interim measures, and award enforcement.</p>
+                            <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
                         </div>
-                        <h4>Trademark Registration</h4>
-                        <p class="text-muted">Full-service trademark protection from search and filing to opposition and portfolio management, locally and internationally.</p>
-                        <a href="/trademark.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
+                    </a>
+
+                    <a href="/litigation.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-shield-halved"></i></div>
+                        <h4 class="svc-item-title">IP Litigation</h4>
+                        <p class="svc-item-desc">Enforcement and defense in patent, trademark, and copyright disputes — including anti-counterfeiting and injunctions.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/civil-litigation.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-balance-scale"></i></div>
+                        <h4 class="svc-item-title">Civil Litigation</h4>
+                        <p class="svc-item-desc">Contract, property, tort, and debt recovery disputes before Egyptian civil courts — from pre-litigation through appeals.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/criminal-litigation.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-user-shield"></i></div>
+                        <h4 class="svc-item-title">Criminal Litigation</h4>
+                        <p class="svc-item-desc">Defense in white-collar, financial, and general criminal cases at all court levels — with strict confidentiality.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/state-council-cases.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-landmark"></i></div>
+                        <h4 class="svc-item-title">State Council Cases</h4>
+                        <p class="svc-item-desc">Administrative disputes, government contract claims, public tender challenges, and disciplinary cases.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/economic-cases.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-chart-line"></i></div>
+                        <h4 class="svc-item-title">Economic Cases</h4>
+                        <p class="svc-item-desc">Commercial, banking, investment, and bankruptcy disputes before the Egyptian Economic Courts.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
                 </div>
-                <!-- Patent Protection -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-microchip fa-2x text-primary"></i>
+            </div>
+
+            <!-- ============================================================
+                 Tab 3: Corporate Services (4)
+                 ============================================================ -->
+            <div class="svc-tab-content" data-content="corporate" role="tabpanel">
+                <div class="svc-grid">
+                    <!-- Featured: Corporate Formation -->
+                    <a href="/corporate-formation.html" class="svc-grid-item svc-featured">
+                        <div class="svc-item-icon"><i class="fas fa-building"></i></div>
+                        <div class="svc-featured-body">
+                            <span class="svc-counter"><i class="fas fa-star"></i> 50+ Companies Founded</span>
+                            <h4 class="svc-item-title">Corporate Formation</h4>
+                            <p class="svc-item-desc">Full-service company establishment in Egypt — LLC, JSC, branch offices, and free zone companies. Legal structure advisory, commercial registry, tax card, and ongoing compliance from day one.</p>
+                            <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
                         </div>
-                        <h4>Patent Protection</h4>
-                        <p class="text-muted">Comprehensive patent services including prosecution, freedom-to-operate, and portfolio strategy for local and international protection.</p>
-                        <a href="/patent.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
+                    </a>
+
+                    <a href="/operating-licenses.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-id-card"></i></div>
+                        <h4 class="svc-item-title">Operating Licenses</h4>
+                        <p class="svc-item-desc">Obtaining and renewing operational permits — commercial registry, tax cards, VAT, import/export licenses, and sector-specific approvals.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/corporate-governance.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-sitemap"></i></div>
+                        <h4 class="svc-item-title">Corporate Governance</h4>
+                        <p class="svc-item-desc">Board structures, shareholder agreements, general assemblies, and ongoing compliance advisory for corporate entities.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/ma-mergers-acquisitions.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-handshake"></i></div>
+                        <h4 class="svc-item-title">Mergers & Acquisitions</h4>
+                        <p class="svc-item-desc">Due diligence, deal structuring, contract negotiation, and regulatory approvals for M&A transactions.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
                 </div>
-                <!-- Copyright & Digital Rights -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-copyright fa-2x text-primary"></i>
+            </div>
+
+            <!-- ============================================================
+                 Tab 4: Contracts & Agreements (5) — UPDATED
+                 ============================================================ -->
+            <div class="svc-tab-content" data-content="contracts" role="tabpanel">
+                <div class="svc-grid">
+                    <!-- Featured: IP Licensing -->
+                    <a href="/licensing.html" class="svc-grid-item svc-featured">
+                        <div class="svc-item-icon"><i class="fas fa-file-signature"></i></div>
+                        <div class="svc-featured-body">
+                            <span class="svc-counter"><i class="fas fa-star"></i> Full Lifecycle Contracts</span>
+                            <h4 class="svc-item-title">IP Licensing & Technology Transfer</h4>
+                            <p class="svc-item-desc">Drafting and negotiation of IP licensing agreements, technology transfer, patent/trademark licenses, copyright licensing, and franchise agreements — with enforcement strategy built in.</p>
+                            <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
                         </div>
-                        <h4>Copyright & Digital Rights</h4>
-                        <p class="text-muted">Protection for literary works, software, artistic creations, and digital content, with registration and enforcement services.</p>
-                        <a href="/copyright.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
+                    </a>
+
+                    <a href="/commercial-contracts.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-file-contract"></i></div>
+                        <h4 class="svc-item-title">Commercial Contracts</h4>
+                        <p class="svc-item-desc">Distribution, supply, agency, service, and construction agreements — drafted to protect your commercial interests.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/investment-contracts.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-chart-pie"></i></div>
+                        <h4 class="svc-item-title">Investment Contracts</h4>
+                        <p class="svc-item-desc">Joint venture agreements, shareholders' agreements, partnership contracts, and foreign investment structures.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="/ndas-confidentiality.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-user-secret"></i></div>
+                        <h4 class="svc-item-title">NDAs & Confidentiality</h4>
+                        <p class="svc-item-desc">Non-disclosure agreements, confidentiality contracts, and trade secret protection tailored to your business.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <!-- NEW: Other Contracts -->
+                    <a href="/other-contracts.html" class="svc-grid-item">
+                        <div class="svc-item-icon"><i class="fas fa-question-circle"></i></div>
+                        <h4 class="svc-item-title">Other Contracts</h4>
+                        <p class="svc-item-desc">Agency, employment, lease, loan, settlement, mediation, and any other contract type — choose your type and tell us what you need.</p>
+                        <span class="svc-item-link">Learn More <i class="fas fa-arrow-right"></i></span>
+                    </a>
                 </div>
-                <!-- Licensing & Contracts -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-file-signature fa-2x text-primary"></i>
-                        </div>
-                        <h4>Licensing & Contracts</h4>
-                        <p class="text-muted">Drafting and negotiation of IP licensing agreements, technology transfers, and commercial contracts.</p>
-                        <a href="/licensing.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
-                <!-- IP Litigation -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-gavel fa-2x text-primary"></i>
-                        </div>
-                        <h4>IP Litigation</h4>
-                        <p class="text-muted">Specialized litigation in patent, trademark, copyright infringement cases and IP disputes before Egyptian courts.</p>
-                        <a href="/litigation.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
-                <!-- Corporate Formation -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-building fa-2x text-primary"></i>
-                        </div>
-                        <h4>Corporate Formation</h4>
-                        <p class="text-muted">Expert guidance in establishing your company in Egypt with full legal compliance and registration.</p>
-                        <a href="/corporate-formation.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
-                <!-- Criminal Litigation -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-handcuffs fa-2x text-primary"></i>
-                        </div>
-                        <h4>Criminal Litigation</h4>
-                        <p class="text-muted">Vigorous defense representation in criminal cases at all court levels, including white-collar crime and drug offenses.</p>
-                        <a href="/criminal-litigation.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
-                <!-- Civil Litigation -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-balance-scale fa-2x text-primary"></i>
-                        </div>
-                        <h4>Civil Litigation</h4>
-                        <p class="text-muted">Comprehensive representation in civil disputes including contracts, property, torts, and debt recovery.</p>
-                        <a href="/civil-litigation.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
-                <!-- State Council Cases -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-landmark fa-2x text-primary"></i>
-                        </div>
-                        <h4>State Council Cases</h4>
-                        <p class="text-muted">Expert representation before the State Council in administrative disputes and government contract matters.</p>
-                        <a href="/state-council-cases.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
-                <!-- Family Law -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-heart fa-2x text-primary"></i>
-                        </div>
-                        <h4>Family Law</h4>
-                        <p class="text-muted">Compassionate legal support for divorce, custody, child support, alimony, and family matters.</p>
-                        <a href="/family-law.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
-                <!-- Economic Cases -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-chart-line fa-2x text-primary"></i>
-                        </div>
-                        <h4>Economic Cases</h4>
-                        <p class="text-muted">Specialized litigation before Economic Courts for commercial and financial disputes, banking, and investment matters.</p>
-                        <a href="/economic-cases.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
-                <!-- Industrial Designs -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-palette fa-2x text-primary"></i>
-                        </div>
-                        <h4>Industrial Designs</h4>
-                        <p class="text-muted">Protect the ornamental and aesthetic aspects of your products with registration in Egypt and internationally via the Hague System.</p>
-                        <a href="/industrial-designs.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
-                <!-- Integrated Circuits -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-microchip fa-2x text-primary"></i>
-                        </div>
-                        <h4>Integrated Circuits</h4>
-                        <p class="text-muted">Protection for layout-designs of integrated circuits as a distinct IP category under Egyptian law.</p>
-                        <a href="/integrated-circuits.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
-                <!-- Utility Models -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-lightbulb fa-2x text-primary"></i>
-                        </div>
-                        <h4>Utility Models</h4>
-                        <p class="text-muted">Cost-effective protection for minor innovations and incremental improvements with faster grant.</p>
-                        <a href="/utility-models.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
-                <!-- Geographical Indications -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-map-marked-alt fa-2x text-primary"></i>
-                        </div>
-                        <h4>Geographical Indications</h4>
-                        <p class="text-muted">Protect products with specific geographical origin and qualities, such as agricultural goods and handicrafts.</p>
-                        <a href="/geographical-indications.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
-                </div>
-                <!-- Plant Varieties -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100 border-0 shadow-sm rounded-4">
-                        <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                            <i class="fas fa-seedling fa-2x text-primary"></i>
-                        </div>
-                        <h4>Plant Varieties</h4>
-                        <p class="text-muted">Protection for new, distinct, uniform, and stable plant varieties under plant breeders' rights.</p>
-                        <a href="/plant-varieties.html" class="btn btn-outline-primary btn-sm mt-2">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
-                    </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- STATS MARQUEE -->
+    <section class="stats-marquee">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <div class="marquee-item"><span class="mq-num">500+</span><span class="mq-txt">Cases Litigated</span></div>
+                <div class="marquee-item"><span class="mq-num">350+</span><span class="mq-txt">Trademarks Registered</span></div>
+                <div class="marquee-item"><span class="mq-num">50+</span><span class="mq-txt">Companies Founded</span></div>
+                <div class="marquee-item"><span class="mq-num">23</span><span class="mq-txt">Practice Areas</span></div>
+                <div class="marquee-item"><span class="mq-num">5</span><span class="mq-txt">WIPO Certifications</span></div>
+                <div class="marquee-item"><span class="mq-num">10+</span><span class="mq-txt">Years Experience</span></div>
+                <div class="marquee-item"><span class="mq-num">500+</span><span class="mq-txt">Cases Litigated</span></div>
+                <div class="marquee-item"><span class="mq-num">350+</span><span class="mq-txt">Trademarks Registered</span></div>
+                <div class="marquee-item"><span class="mq-num">50+</span><span class="mq-txt">Companies Founded</span></div>
+                <div class="marquee-item"><span class="mq-num">23</span><span class="mq-txt">Practice Areas</span></div>
+                <div class="marquee-item"><span class="mq-num">5</span><span class="mq-txt">WIPO Certifications</span></div>
+                <div class="marquee-item"><span class="mq-num">10+</span><span class="mq-txt">Years Experience</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-handshake"></i></div>
+                <h2>Not Sure Which Service You Need?</h2>
+                <p>Schedule a confidential consultation and we'll guide you to the right solution.</p>
+                <div class="fcr-buttons">
+                    <a href="/contact.html" class="btn-rich-primary light">
+                        <span>Contact Us</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/consultation.html" class="btn-rich-ghost">
+                        <i class="fas fa-gavel"></i>
+                        <span>Paid Consultation</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
+    <!-- FOOTER -->
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>Walid Abo Al-Ela Law Firm</h5>
-                    <p class="text-white-50">Specialized in arbitration and intellectual property protection with a personal touch since 2016.</p>
-                    <div class="social-links mt-3">
+                <div class="col-lg-4">
+                    <img src="/images/logo arb ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">Walid Mohamed Abu Al-Ela</h5>
+                    <p class="footer-desc">Law · Arbitration · Intellectual Property. Serving clients with dedication since 2013.</p>
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">Quick Links</h6>
+                    <ul class="footer-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/lawyers.html">Our Team</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">Contact</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Sat - Thu: 9am - 8pm</li>
+                    </ul>
+                </div>
                 <div class="col-lg-3">
-                    <h6 class="mb-4">Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/index.html" class="text-white-50 text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="/about.html" class="text-white-50 text-decoration-none">About</a></li>
-                        <li class="mb-2"><a href="/services.html" class="text-white-50 text-decoration-none">Services</a></li>
-                        <li class="mb-2"><a href="/lawyers.html" class="text-white-50 text-decoration-none">Our Team</a></li>
-                        <li class="mb-2"><a href="/blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
-                        <li class="mb-2"><a href="/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
-                        <li class="mb-2"><a href="/consultation.html" class="text-white-50 text-decoration-none">Paid Consultation</a></li>
+                    <h6 class="footer-heading">Legal</h6>
+                    <ul class="footer-list">
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Use</a></li>
+                        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h6 class="mb-4">Contact Info</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 10th of Ramadan, Cairo, Egypt</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Sat - Thu: 9am - 8pm</li>
-                    </ul>
-                </div>
-                <div class="col-lg-12 mt-3">
-                    <hr class="my-3" style="border-color: rgba(255,255,255,0.1);">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="small text-white-50 mb-0">© 2025 Walid Abo Al-Ela Law Firm. All rights reserved.</p>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
-                            <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">Terms of Use</a>
-                            <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">Cookie Policy</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Walid Mohamed Abu Al-Ela Law Firm. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
+
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-WQ0CPXRK2F');
-    </script>
-    <!-- كود إضافي لحل مشكلة صورة المحامي (النسخة الثالثة) -->
-    <script>
-    (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-            testImg.onerror = function() { tryLoadImage(index + 1); };
-        }
-        tryLoadImage(0);
-    })();
-    </script>
-    <script>
-        // تحديد الرابط النشط
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
-                if (link.getAttribute('href') === currentPath) link.classList.add('active');
+        (function() {
+            const tabBtns = document.querySelectorAll('.svc-tab-btn');
+            const tabContents = document.querySelectorAll('.svc-tab-content');
+
+            function activateTab(tabId) {
+                tabBtns.forEach(btn => {
+                    const isActive = btn.getAttribute('data-tab') === tabId;
+                    btn.classList.toggle('active', isActive);
+                    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+                tabContents.forEach(content => {
+                    content.classList.toggle('active', content.getAttribute('data-content') === tabId);
+                });
+            }
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    activateTab(this.getAttribute('data-tab'));
+                });
             });
-        });
+
+            const hash = window.location.hash.replace('#', '');
+            if (hash && ['ip', 'disputes', 'corporate', 'contracts'].includes(hash)) {
+                activateTab(hash);
+            }
+        })();
     </script>
 </body>
 </html>

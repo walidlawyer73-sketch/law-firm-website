@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paid Consultation - Walid Abo Al-Ela Law Firm</title>
-    <meta name="description" content="Book a paid legal consultation with expert attorneys specializing in international arbitration and intellectual property. Choose from standard, premium, or specialized IP consultations.">
-    <!-- Bootstrap CSS -->
+    <title>Book a Consultation - Walid Mohamed Abu Al-Ela Law Firm | IP, Arbitration &amp; Corporate</title>
+    <meta name="description" content="Book a confidential consultation with Walid Mohamed Abu Al-Ela Law Firm — specialist in Intellectual Property, Arbitration, and Corporate Law. Clear scope, transparent fees.">
+    <meta name="keywords" content="law consultation Egypt, IP consultation, arbitration consultation, book lawyer Egypt, trademark consultation, patent consultation, legal advice Egypt">
+    <meta name="author" content="Walid Mohamed Abu Al-Ela">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/consultation.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/consultation.html">
+    <meta property="og:title" content="Book a Consultation - Walid Mohamed Abu Al-Ela Law Firm">
+    <meta property="og:description" content="Book a confidential consultation with a specialist in IP, Arbitration, and Corporate Law.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/consultation.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/consultation.html">
+
+    <link rel="icon" type="image/png" href="/images/logo%20arb%20ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,143 +35,334 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Book a Consultation - Walid Mohamed Abu Al-Ela Law Firm",
+        "url": "https://law-arb-ip-walid.vercel.app/consultation.html",
+        "mainEntity": {
+            "@type": "LegalService",
+            "name": "Walid Mohamed Abu Al-Ela Law Firm",
+            "url": "https://law-arb-ip-walid.vercel.app/",
+            "telephone": "+20111257219",
+            "email": "walidlegal.ippro@gmail.com",
+            "areaServed": {"@type": "Country", "name": "Egypt"},
+            "availableLanguage": ["Arabic", "English"]
+        }
+    }
+    </script>
+
     <style>
-        .language-switcher {
-            position: fixed;
-            top: 70px;
-            left: 20px;
-            z-index: 9999;
-        }
-        .language-switcher .lang-btn {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .language-switcher .lang-btn:hover {
-            background-color: #0b5ed7;
-            transform: scale(1.05);
-        }
-        body { padding-top: 70px; }
-        @media (max-width: 768px) {
-            .language-switcher { top: 60px; left: 10px; }
-            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
-        }
-        .dropdown-menu { min-width: 220px; }
-        /* Special styling for IP consultation card */
-        .ip-consultation-card {
-            background: linear-gradient(135deg, #1a2a3a 0%, #0f1a24 100%);
-            border: 1px solid rgba(255,215,0,0.3);
+        /* Consultation Form Enhanced */
+        .consultation-form-wrap {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 24px;
+            padding: 45px 40px;
+            box-shadow: 0 30px 60px -30px rgba(0,0,0,0.1);
             position: relative;
             overflow: hidden;
         }
-        .ip-consultation-card::before {
+        .consultation-form-wrap::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #C9A961, #A88947, #C9A961);
         }
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        @media (max-width: 768px) {
+            .consultation-form-wrap { padding: 30px 22px; }
         }
-        .ip-consultation-card .card-body {
-            position: relative;
-            z-index: 2;
+
+        .cf-field {
+            margin-bottom: 20px;
         }
-        .ip-consultation-card h4, .ip-consultation-card .h5 {
-            color: #FFD700;
+        .cf-field label {
+            display: block;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
         }
-        .ip-consultation-card .btn-outline-primary {
-            border-color: #FFD700;
-            color: #FFD700;
+        .cf-field label .req {
+            color: #DC3545;
+            margin-left: 4px;
         }
-        .ip-consultation-card .btn-outline-primary:hover {
-            background-color: #FFD700;
-            color: #000;
+        .cf-field input,
+        .cf-field select,
+        .cf-field textarea {
+            width: 100%;
+            padding: 13px 18px;
+            border: 2px solid #E9ECEF;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: #fff;
+            color: #212529;
         }
-        .badge-ip {
-            background: #FFD700;
-            color: #000;
+        .cf-field input:focus,
+        .cf-field select:focus,
+        .cf-field textarea:focus {
+            border-color: #C9A961;
+            box-shadow: 0 0 0 4px rgba(201,169,97,0.15);
+            outline: none;
+        }
+        .cf-field textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+        .cf-field small {
+            display: block;
+            margin-top: 6px;
+            color: #6C757D;
             font-size: 0.8rem;
-            padding: 5px 12px;
-            border-radius: 30px;
         }
-        .feature-icon {
-            transition: transform 0.3s;
+
+        .cf-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
         }
-        .feature-icon:hover {
-            transform: scale(1.1);
+        @media (max-width: 600px) {
+            .cf-row { grid-template-columns: 1fr; gap: 0; }
+        }
+
+        /* Service Selection Cards */
+        .cf-service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .cf-service-option {
+            position: relative;
+            padding: 14px 16px;
+            border: 2px solid #E9ECEF;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #212529;
+            background: #fff;
+        }
+        .cf-service-option:hover {
+            border-color: #C9A961;
+            background: rgba(201,169,97,0.05);
+        }
+        .cf-service-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .cf-service-option i {
+            display: block;
+            font-size: 1.3rem;
+            color: #C9A961;
+            margin-bottom: 6px;
+        }
+        .cf-service-option input[type="radio"]:checked + i {
+            color: #A88947;
+        }
+        .cf-service-option:has(input[type="radio"]:checked) {
+            border-color: #C9A961;
+            background: rgba(201,169,97,0.1);
+            box-shadow: 0 8px 20px -8px rgba(201,169,97,0.3);
+        }
+
+        /* Submit button full width */
+        .cf-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 12px 30px rgba(201,169,97,0.35);
+            margin-top: 10px;
+        }
+        .cf-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(201,169,97,0.5);
+            color: #000;
+        }
+        .cf-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .cf-status {
+            margin-top: 18px;
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: none;
+        }
+        .cf-status.success {
+            background: #D4EDDA;
+            color: #155724;
+            border: 1px solid #C3E6CB;
+            display: block;
+        }
+        .cf-status.error {
+            background: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+            display: block;
+        }
+
+        /* Side Info Cards */
+        .side-info-card {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 22px;
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+        .side-info-card:hover {
+            border-color: #C9A961;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -12px rgba(0,0,0,0.08);
+        }
+        .side-info-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .side-info-card h5 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 4px;
+        }
+        .side-info-card p {
+            font-size: 0.85rem;
+            color: #6C757D;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Pricing Cards */
+        .pricing-card {
+            background: #fff;
+            border: 2px solid #E9ECEF;
+            border-radius: 20px;
+            padding: 32px 26px;
+            height: 100%;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .pricing-card:hover {
+            border-color: #C9A961;
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px -25px rgba(201,169,97,0.3);
+        }
+        .pricing-card.featured {
+            border-color: #C9A961;
+            background: linear-gradient(160deg, #fff 0%, #FAF6EC 100%);
+        }
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            padding: 6px 18px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 8px 20px rgba(201,169,97,0.4);
+        }
+        .pricing-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .pricing-card .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #A88947;
+            margin: 15px 0;
+            line-height: 1;
+        }
+        .pricing-card .price small {
+            font-size: 0.85rem;
+            color: #6C757D;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+        }
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 22px 0 25px;
+        }
+        .pricing-card ul li {
+            padding: 8px 0;
+            font-size: 0.9rem;
+            color: #495057;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .pricing-card ul li i {
+            color: #C9A961;
+            margin-top: 4px;
+            flex-shrink: 0;
         }
     </style>
 </head>
-<script>
-// ========== حل نهائي لصورة المحامي (النسخة الأولى) ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> This is a trial version - site under development and updates <i class="fas fa-tools"></i>
-</div>
+
 <body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> العربية</a>
+    <div id="trial-banner">
+        <i class="fas fa-tools"></i>
+        <span>This is a trial version - site under development and updates</span>
+        <i class="fas fa-tools"></i>
     </div>
 
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (!currentPath.startsWith('/ar/')) {
-            let arabicPath;
-            if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
-                arabicPath = '/ar/';
-            } else {
-                arabicPath = '/ar' + currentPath;
-            }
-            langLink.href = arabicPath;
-        } else {
-            langLink.href = '/ar/';
-        }
-    })();
-    </script>
+    <div class="language-switcher">
+        <a href="/ar/consultation.html" class="lang-btn"><i class="fas fa-globe"></i> العربية</a>
+    </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="Walid Abo Al-Ela Law Firm" style="height:45px; width:auto; margin-right:10px;">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm">
                 <div>
-                    <span class="fw-bold">Walid Abo Al-Ela Law Firm</span>
-                    <small class="d-block" style="font-size:16px; opacity:0.9; margin-top:5px; font-weight:500;">For Arbitration and Intellectual Property</small>
+                    <span class="firm-name">Walid Mohamed Abu Al-Ela</span>
+                    <small class="firm-sub">Law Firm · Arbitration · IP</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -163,16 +370,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
                             <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
                             <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
                             <li><a class="dropdown-item" href="/copyright.html">Copyright</a></li>
                             <li><a class="dropdown-item" href="/litigation.html">IP Litigation</a></li>
+                            <li><a class="dropdown-item" href="/licensing.html">Licensing &amp; Contracts</a></li>
                             <li><a class="dropdown-item" href="/corporate-formation.html">Corporate Formation</a></li>
                             <li><a class="dropdown-item" href="/criminal-litigation.html">Criminal Litigation</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -182,362 +390,585 @@
                     <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/consultation.html">Paid Consultation</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html"><i class="fas fa-lock me-1"></i>Client Portal</a>
+                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>Client Portal
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script>
-        // حل مشكلة صورة المحامي - البحث عن المسار الصحيح (نسخة إضافية للاحتياط)
-        (function() {
-            const possiblePaths = [
-                '/images/team/walid-profile.jpg',
-                '/images/team/walid-abouelela.jpg',
-                '/images/walid-profile.jpg',
-                '/ar/images/team/walid-profile.jpg',
-                '/images/lawyers/walid.jpg'
-            ];
-            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-            if (!imgElement) return;
-            function tryLoadImage(index) {
-                if (index >= possiblePaths.length) return;
-                const testImg = new Image();
-                testImg.src = possiblePaths[index];
-                testImg.onload = function() {
-                    imgElement.src = possiblePaths[index];
-                    imgElement.onerror = null;
-                };
-                testImg.onerror = function() {
-                    tryLoadImage(index + 1);
-                };
-            }
-            tryLoadImage(0);
-        })();
-        </script>
     </nav>
 
     <header class="page-header">
-        <div class="container text-white text-center">
-            <h1 class="display-4">Paid Legal Consultation</h1>
-            <p class="lead">Get personalized legal advice from expert attorneys specializing in IP and Arbitration</p>
+        <div class="container text-center">
+            <h1 class="display-4">Book a Consultation</h1>
+            <p class="lead">A confidential, direct conversation with our attorney — no intermediaries</p>
         </div>
     </header>
 
+    <!-- ============================================================
+         INTRO + FORM (Two columns)
+         ============================================================ -->
     <section class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="card shadow-lg border-0 rounded-4">
-                        <div class="card-body p-4 p-lg-5">
-                            <div class="text-center mb-5">
-                                <i class="fas fa-gavel fa-3x text-primary mb-3"></i>
-                                <h2 class="mb-3">Book Your Legal Consultation</h2>
-                                <p class="text-muted">Choose the consultation type that suits your needs, and our team will contact you to confirm the appointment.</p>
-                            </div>
+            <div class="row g-5">
 
-                            <div class="row g-4">
-                                <!-- Standard Consultation -->
-                                <div class="col-md-6">
-                                    <div class="card h-100 border-2 shadow-sm rounded-4">
-                                        <div class="card-body text-center p-4">
-                                            <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                                                <i class="fas fa-phone-alt text-primary"></i>
-                                            </div>
-                                            <h3 class="card-title h4">Standard Consultation</h3>
-                                            <div class="display-6 text-primary fw-bold my-3">1,000 EGP</div>
-                                            <ul class="list-unstyled text-muted mb-4 text-start">
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>30-minute</strong> video call</li>
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Preliminary advice on your case</li>
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Written summary via email</li>
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Answers to your direct questions</li>
-                                            </ul>
-                                            <a href="/contact.html" class="btn btn-primary w-100 py-2"><i class="fas fa-calendar-check me-2"></i>Book Now</a>
-                                        </div>
-                                    </div>
-                                </div>
+                <!-- LEFT: Form -->
+                <div class="col-lg-7">
+                    <div class="consultation-form-wrap">
+                        <div class="sh-line-left"></div>
+                        <span class="sh-label">Consultation Request</span>
+                        <h2 class="sh-title text-start mb-3" style="font-size: 1.75rem;">Tell Us About Your Matter</h2>
+                        <p class="text-muted mb-4" style="font-size: 0.95rem;">
+                            Fill in the form below and we'll get back to you within one business day.
+                            All information is treated with complete confidentiality.
+                        </p>
 
-                                <!-- Premium Consultation -->
-                                <div class="col-md-6">
-                                    <div class="card h-100 border-2 border-primary shadow-lg rounded-4 position-relative">
-                                        <div class="position-absolute top-0 start-50 translate-middle badge bg-primary rounded-pill px-3 py-2">
-                                            Most Popular
-                                        </div>
-                                        <div class="card-body text-center p-4">
-                                            <div class="feature-icon mx-auto mb-3" style="width:70px; height:70px; background:#f8f9fa; border-radius:50%; display:flex; align-items:center; justify-content:center;">
-                                                <i class="fas fa-file-alt text-primary"></i>
-                                            </div>
-                                            <h3 class="card-title h4">Premium Consultation</h3>
-                                            <div class="display-6 text-primary fw-bold my-3">2,000 EGP</div>
-                                            <ul class="list-unstyled text-muted mb-4 text-start">
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>1-hour</strong> video call</li>
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Detailed case review</li>
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Written legal opinion</li>
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Document review</li>
-                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 3-day email follow-up</li>
-                                            </ul>
-                                            <a href="/contact.html" class="btn btn-primary w-100 py-2"><i class="fas fa-calendar-check me-2"></i>Book Now</a>
-                                        </div>
-                                    </div>
+                        <form id="consultationForm" novalidate>
+
+                            <!-- Service type -->
+                            <div class="cf-field">
+                                <label>What can we help you with? <span class="req">*</span></label>
+                                <div class="cf-service-grid">
+                                    <label class="cf-service-option">
+                                        <input type="radio" name="serviceType" value="Intellectual Property" required>
+                                        <i class="fas fa-trademark"></i>
+                                        Intellectual Property
+                                    </label>
+                                    <label class="cf-service-option">
+                                        <input type="radio" name="serviceType" value="Arbitration">
+                                        <i class="fas fa-scale-balanced"></i>
+                                        Arbitration
+                                    </label>
+                                    <label class="cf-service-option">
+                                        <input type="radio" name="serviceType" value="Corporate Formation">
+                                        <i class="fas fa-building"></i>
+                                        Corporate
+                                    </label>
+                                    <label class="cf-service-option">
+                                        <input type="radio" name="serviceType" value="Litigation">
+                                        <i class="fas fa-gavel"></i>
+                                        Litigation
+                                    </label>
+                                    <label class="cf-service-option">
+                                        <input type="radio" name="serviceType" value="Contracts & Licensing">
+                                        <i class="fas fa-file-contract"></i>
+                                        Contracts
+                                    </label>
+                                    <label class="cf-service-option">
+                                        <input type="radio" name="serviceType" value="Other">
+                                        <i class="fas fa-ellipsis"></i>
+                                        Other
+                                    </label>
                                 </div>
                             </div>
 
-                            <!-- Specialized IP Consultation (Enhanced) -->
-                            <div class="row mt-5">
-                                <div class="col-12">
-                                    <div class="card ip-consultation-card rounded-4 border-0">
-                                        <div class="card-body p-4 p-md-5">
-                                            <div class="row align-items-center">
-                                                <div class="col-md-8">
-                                                    <div class="d-flex align-items-center gap-2 mb-2">
-                                                        <span class="badge-ip"><i class="fas fa-star me-1"></i> Specialized Service</span>
-                                                        <span class="badge-ip"><i class="fas fa-certificate me-1"></i> IP Experts</span>
-                                                    </div>
-                                                    <h3 class="h2 mb-3" style="color: #FFD700;"><i class="fas fa-crown me-2"></i>Specialized IP Consultation</h3>
-                                                    <p class="text-white-50 mb-md-0">In-depth consultation with an attorney specialized in patents, trademarks, copyright, and all intellectual property rights. Includes comprehensive document review and a detailed legal assessment.</p>
-                                                    <div class="mt-3 d-flex flex-wrap gap-2">
-                                                        <span class="badge bg-light text-dark">Patents</span>
-                                                        <span class="badge bg-light text-dark">Trademarks</span>
-                                                        <span class="badge bg-light text-dark">Copyright</span>
-                                                        <span class="badge bg-light text-dark">Trade Secrets</span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 text-md-end text-center mt-4 mt-md-0">
-                                                    <div class="display-5 fw-bold text-warning mb-2">3,000 EGP</div>
-                                                    <p class="small text-white-50 mb-3">Comprehensive assessment + detailed report</p>
-                                                    <a href="/contact.html" class="btn btn-outline-primary btn-lg w-100" style="border-color:#FFD700; color:#FFD700;"><i class="fas fa-phone-alt me-2"></i>Book Now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <!-- Name row -->
+                            <div class="cf-row">
+                                <div class="cf-field">
+                                    <label for="fullName">Full Name <span class="req">*</span></label>
+                                    <input type="text" id="fullName" name="fullName" required minlength="2" placeholder="e.g. Ahmed Mohamed">
+                                </div>
+                                <div class="cf-field">
+                                    <label for="company">Company / Organization</label>
+                                    <input type="text" id="company" name="company" placeholder="Optional">
                                 </div>
                             </div>
 
-                            <!-- How It Works -->
-                            <div class="mt-5 p-4 bg-light rounded-4">
-                                <h5 class="mb-3"><i class="fas fa-info-circle text-primary me-2"></i> How It Works:</h5>
-                                <div class="row g-4">
-                                    <div class="col-md-3 text-center">
-                                        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:60px; height:60px;"><i class="fas fa-1 fa-2x text-primary"></i></div>
-                                        <h6>Choose</h6>
-                                        <p class="small text-muted">Select the consultation type for your case</p>
-                                    </div>
-                                    <div class="col-md-3 text-center">
-                                        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:60px; height:60px;"><i class="fas fa-2 fa-2x text-primary"></i></div>
-                                        <h6>Contact</h6>
-                                        <p class="small text-muted">Call or email us to book</p>
-                                    </div>
-                                    <div class="col-md-3 text-center">
-                                        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:60px; height:60px;"><i class="fas fa-3 fa-2x text-primary"></i></div>
-                                        <h6>Confirm</h6>
-                                        <p class="small text-muted">We'll confirm your appointment</p>
-                                    </div>
-                                    <div class="col-md-3 text-center">
-                                        <div class="bg-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:60px; height:60px;"><i class="fas fa-4 fa-2x text-primary"></i></div>
-                                        <h6>Consult</h6>
-                                        <p class="small text-muted">Get your consultation via video</p>
-                                    </div>
+                            <!-- Email / Phone -->
+                            <div class="cf-row">
+                                <div class="cf-field">
+                                    <label for="email">Email Address <span class="req">*</span></label>
+                                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                                </div>
+                                <div class="cf-field">
+                                    <label for="phone">Phone Number <span class="req">*</span></label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+20 1XX XXX XXXX">
                                 </div>
                             </div>
 
-                            <!-- Confidentiality -->
-                            <div class="mt-4 alert alert-info border-0 rounded-4">
-                                <i class="fas fa-shield-alt me-2"></i>
-                                <strong>Strict Confidentiality:</strong> All consultations are protected by attorney-client privilege and no information is shared with third parties.
+                            <!-- Preferred contact method -->
+                            <div class="cf-field">
+                                <label for="contactMethod">Preferred Contact Method</label>
+                                <select id="contactMethod" name="contactMethod">
+                                    <option value="Email">Email</option>
+                                    <option value="Phone">Phone Call</option>
+                                    <option value="WhatsApp">WhatsApp</option>
+                                    <option value="Either">Any</option>
+                                </select>
                             </div>
+
+                            <!-- Message -->
+                            <div class="cf-field">
+                                <label for="message">Brief Description of Your Matter <span class="req">*</span></label>
+                                <textarea id="message" name="message" required minlength="20" placeholder="Please describe your legal matter in a few lines — the more context, the better we can prepare."></textarea>
+                                <small>Minimum 20 characters. Please avoid sharing highly sensitive details in this initial form.</small>
+                            </div>
+
+                            <!-- Consent -->
+                            <div class="cf-field" style="display:flex;gap:10px;align-items:flex-start;">
+                                <input type="checkbox" id="consent" name="consent" required style="width:auto;margin-top:5px;">
+                                <label for="consent" style="font-weight:500;font-size:0.88rem;color:#495057;margin:0;cursor:pointer;">
+                                    I agree that the firm may contact me regarding this request and understand that
+                                    submitting this form does not create an attorney-client relationship.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="cf-submit" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Submit Consultation Request</span>
+                            </button>
+
+                            <div id="formStatus" class="cf-status"></div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Side info -->
+                <div class="col-lg-5">
+                    <div class="sh-line-left"></div>
+                    <span class="sh-label">What to Expect</span>
+                    <h2 class="sh-title text-start mb-4" style="font-size: 1.75rem;">How We Handle Your Request</h2>
+
+                    <div class="side-info-card">
+                        <div class="side-info-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h5>Response Within 1 Business Day</h5>
+                            <p>We review every request personally and respond within one business day — usually much faster.</p>
                         </div>
                     </div>
+
+                    <div class="side-info-card">
+                        <div class="side-info-icon"><i class="fas fa-user-tie"></i></div>
+                        <div>
+                            <h5>Direct With the Attorney</h5>
+                            <p>Your consultation is a direct conversation with the attorney handling your matter — no gatekeeping, no junior screening.</p>
+                        </div>
+                    </div>
+
+                    <div class="side-info-card">
+                        <div class="side-info-icon"><i class="fas fa-shield-halved"></i></div>
+                        <div>
+                            <h5>Complete Confidentiality</h5>
+                            <p>All information shared with us is treated with strict confidentiality, from the first message onward.</p>
+                        </div>
+                    </div>
+
+                    <div class="side-info-card">
+                        <div class="side-info-icon"><i class="fas fa-file-signature"></i></div>
+                        <div>
+                            <h5>Clear Scope &amp; Fees Before Any Work</h5>
+                            <p>You'll receive a written engagement letter with a clear scope, timeline, and fee — before any work begins.</p>
+                        </div>
+                    </div>
+
+                    <div class="side-info-card">
+                        <div class="side-info-icon"><i class="fas fa-comment-dots"></i></div>
+                        <div>
+                            <h5>Bilingual Service</h5>
+                            <p>Consultations available in Arabic and English — whichever you prefer.</p>
+                        </div>
+                    </div>
+
+                    <div class="side-info-card">
+                        <div class="side-info-icon"><i class="fas fa-handshake"></i></div>
+                        <div>
+                            <h5>Honest Assessment</h5>
+                            <p>If your matter isn't something we can help with, we'll tell you directly — and point you to someone who can.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
+    <!-- ============================================================
+         PRICING OPTIONS
+         ============================================================ -->
     <section class="py-5 bg-light">
         <div class="container">
-            <div class="row text-center mb-5">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="fw-bold">Why Choose Our Paid Consultations?</h2>
-                    <p class="text-muted">We provide exceptional consulting services tailored to your legal needs</p>
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">Consultation Options</span>
+                <h2 class="sh-title">Choose the Depth That Fits Your Matter</h2>
+                <p class="sh-desc">Three consultation formats — from a quick 30-minute call to an in-depth written opinion.</p>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-4">
+                    <div class="pricing-card">
+                        <h4>Quick Assessment</h4>
+                        <p class="text-muted" style="font-size: 0.88rem;">For initial questions and brief guidance</p>
+                        <div class="price">Free <small>— first 15 min</small></div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Up to 15 minutes</li>
+                            <li><i class="fas fa-check"></i> Phone or WhatsApp</li>
+                            <li><i class="fas fa-check"></i> Initial legal orientation</li>
+                            <li><i class="fas fa-check"></i> Recommendation on next step</li>
+                        </ul>
+                        <a href="#consultationForm" class="btn-rich-outline" style="width:100%;justify-content:center;">
+                            <span>Request Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="pricing-card featured">
+                        <h4>Standard Consultation</h4>
+                        <p class="text-muted" style="font-size: 0.88rem;">For serious matters requiring proper review</p>
+                        <div class="price">On Request <small>— 45–60 min</small></div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 45–60 minute session</li>
+                            <li><i class="fas fa-check"></i> In-person, phone, or video</li>
+                            <li><i class="fas fa-check"></i> Document review if provided</li>
+                            <li><i class="fas fa-check"></i> Written summary &amp; next steps</li>
+                            <li><i class="fas fa-check"></i> Follow-up for 7 days</li>
+                        </ul>
+                        <a href="#consultationForm" class="btn-rich-primary" style="width:100%;justify-content:center;">
+                            <span>Book Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="pricing-card">
+                        <h4>In-Depth Legal Opinion</h4>
+                        <p class="text-muted" style="font-size: 0.88rem;">For complex matters requiring a written opinion</p>
+                        <div class="price">On Request <small>— custom scope</small></div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Full document analysis</li>
+                            <li><i class="fas fa-check"></i> Written legal opinion</li>
+                            <li><i class="fas fa-check"></i> Risk assessment report</li>
+                            <li><i class="fas fa-check"></i> Recommended legal strategy</li>
+                            <li><i class="fas fa-check"></i> Follow-up session included</li>
+                        </ul>
+                        <a href="#consultationForm" class="btn-rich-outline" style="width:100%;justify-content:center;">
+                            <span>Request Quote</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="row g-4">
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-user-tie fa-3x text-primary mb-3"></i>
-                    <h5>Legal Expertise</h5>
-                    <p class="text-muted">Consultations with lead attorney experienced since 2016</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-clock fa-3x text-primary mb-3"></i>
-                    <h5>Flexible Scheduling</h5>
-                    <p class="text-muted">We offer flexible hours to fit your schedule</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <i class="fas fa-file-contract fa-3x text-primary mb-3"></i>
-                    <h5>Written Output</h5>
-                    <p class="text-muted">Written summary of the consultation and proposed steps</p>
-                </div>
-            </div>
+
+            <p class="text-center mt-4 mb-0" style="color:#6C757D;font-size:0.85rem;">
+                <i class="fas fa-info-circle" style="color:#C9A961;"></i>
+                Consultation fees are always confirmed in writing <strong>before</strong> the session. No surprises.
+            </p>
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- ============================================================
+         PROCESS STEPS
+         ============================================================ -->
     <section class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="text-center mb-4">Frequently Asked Questions</h2>
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                    How does the consultation work?
-                                </button>
-                            </h2>
-                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Consultations are conducted via video call (Zoom/Google Meet) or phone. After confirmation, we'll send you the meeting link.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                    How can I pay?
-                                </button>
-                            </h2>
-                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    For payment methods, please contact us directly at +20 111257219.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                    What should I prepare for the consultation?
-                                </button>
-                            </h2>
-                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Please prepare all documents related to your case (contracts, correspondence, notices) and send them before the consultation if possible.
-                                </div>
-                            </div>
-                        </div>
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">What Happens Next</span>
+                <h2 class="sh-title">From Request to Resolution</h2>
+                <p class="sh-desc">Simple, transparent, four-step process.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-paper-plane"></i></div>
+                        <h4>1. You Submit</h4>
+                        <p class="text-muted">
+                            Fill out the form with the essentials about your matter.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-envelope-open-text"></i></div>
+                        <h4>2. We Respond</h4>
+                        <p class="text-muted">
+                            You receive a direct reply within one business day — by your preferred contact method.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-comments"></i></div>
+                        <h4>3. We Consult</h4>
+                        <p class="text-muted">
+                            A scheduled session to review your matter, assess the legal position, and outline next steps.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-file-signature"></i></div>
+                        <h4>4. Clear Path Forward</h4>
+                        <p class="text-muted">
+                            You leave with a clear written scope, timeline, and fee — or a referral if we're not the right fit.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Info -->
-    <section class="py-5 bg-primary text-white">
+    <!-- ============================================================
+         FAQ
+         ============================================================ -->
+    <section class="py-5 bg-light">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h3 class="mb-3">For more information or direct booking</h3>
-                    <p class="lead mb-md-0">Contact us and we'll respond promptly</p>
-                </div>
-                <div class="col-md-4 text-md-end text-center">
-                    <a href="/contact.html" class="btn btn-light btn-lg">Contact Us</a>
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">FAQ</span>
+                <h2 class="sh-title">Questions Before You Book</h2>
+            </div>
+
+            <div class="faq-rich-accordion mx-auto" style="max-width: 900px;">
+                <div class="accordion" id="consultFaq">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf1">
+                                Is the consultation confidential?
+                            </button>
+                        </h3>
+                        <div id="cf1" class="accordion-collapse collapse" data-bs-parent="#consultFaq">
+                            <div class="accordion-body">
+                                Yes. All information shared during a consultation is treated with strict
+                                confidentiality. Formal attorney-client privilege begins once an engagement
+                                letter is signed.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf2">
+                                How much does a consultation cost?
+                            </button>
+                        </h3>
+                        <div id="cf2" class="accordion-collapse collapse" data-bs-parent="#consultFaq">
+                            <div class="accordion-body">
+                                The first 15-minute orientation call is free. Standard and in-depth
+                                consultations are quoted based on scope and confirmed in writing before
+                                the session — no hidden charges.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf3">
+                                Can I consult in English or Arabic?
+                            </button>
+                        </h3>
+                        <div id="cf3" class="accordion-collapse collapse" data-bs-parent="#consultFaq">
+                            <div class="accordion-body">
+                                Yes — full service in both Arabic and English, including legal drafting
+                                and correspondence in either language.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf4">
+                                Do you take on cases outside Egypt?
+                            </button>
+                        </h3>
+                        <div id="cf4" class="accordion-collapse collapse" data-bs-parent="#consultFaq">
+                            <div class="accordion-body">
+                                Yes. We work with international clients on Egyptian filings and
+                                coordinate with partner firms abroad for cross-border matters.
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
+    <!-- ============================================================
+         FINAL CTA
+         ============================================================ -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-handshake"></i></div>
+                <h2>Prefer to Reach Out Directly?</h2>
+                <p>Call, WhatsApp, or email — whatever feels comfortable.</p>
+                <div class="fcr-buttons">
+                    <a href="tel:+20111257219" class="btn-rich-primary light">
+                        <i class="fas fa-phone"></i>
+                        <span>+20 111 257 219</span>
+                    </a>
+                    <a href="https://wa.me/20111257219" target="_blank" rel="noopener" class="btn-rich-ghost">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>Walid Abo Al-Ela Law Firm</h5>
-                    <p class="text-white-50">Specialized in arbitration and intellectual property protection with a personal touch since 2016.</p>
-                    <div class="social-links mt-3">
+                <div class="col-lg-4">
+                    <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">Walid Mohamed Abu Al-Ela Law Firm</h5>
+                    <p class="footer-desc">Law · Arbitration · Intellectual Property. Serving clients with dedication since 2016.</p>
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">Quick Links</h6>
+                    <ul class="footer-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/lawyers.html">Our Team</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">Contact</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Sat - Thu: 9am - 8pm</li>
+                    </ul>
+                </div>
                 <div class="col-lg-3">
-                    <h6 class="mb-4">Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/index.html" class="text-white-50 text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="/about.html" class="text-white-50 text-decoration-none">About</a></li>
-                        <li class="mb-2"><a href="/services.html" class="text-white-50 text-decoration-none">Services</a></li>
-                        <li class="mb-2"><a href="/lawyers.html" class="text-white-50 text-decoration-none">Our Team</a></li>
-                        <li class="mb-2"><a href="/blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
-                        <li class="mb-2"><a href="/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
-                        <li class="mb-2"><a href="/consultation.html" class="text-white-50 text-decoration-none">Paid Consultation</a></li>
+                    <h6 class="footer-heading">Legal</h6>
+                    <ul class="footer-list">
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Use</a></li>
+                        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h6 class="mb-4">Contact Info</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 10th of Ramadan, Cairo, Egypt</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Sat - Thu: 9am - 8pm</li>
-                    </ul>
-                </div>
-                <div class="col-lg-12 mt-3">
-                    <hr class="my-3" style="border-color: rgba(255,255,255,0.1);">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="small text-white-50 mb-0">© 2025 Walid Abo Al-Ela Law Firm. All rights reserved.</p>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
-                            <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">Terms of Use</a>
-                            <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">Cookie Policy</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Walid Mohamed Abu Al-Ela Law Firm. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-WQ0CPXRK2F');
-    </script>
-    <!-- كود إضافي لحل مشكلة صورة المحامي (النسخة الثالثة) -->
+
+    <!-- ============================================================
+         FORM HANDLER
+         ============================================================ -->
     <script>
     (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-            testImg.onerror = function() { tryLoadImage(index + 1); };
+        const form = document.getElementById('consultationForm');
+        const statusDiv = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+
+        if (!form) return;
+
+        function showStatus(type, message) {
+            statusDiv.className = 'cf-status ' + type;
+            statusDiv.textContent = message;
+            statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-        tryLoadImage(0);
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Basic validation
+            const fullName = form.fullName.value.trim();
+            const email = form.email.value.trim();
+            const phone = form.phone.value.trim();
+            const message = form.message.value.trim();
+            const serviceType = form.querySelector('input[name="serviceType"]:checked');
+            const consent = form.consent.checked;
+
+            if (!serviceType) {
+                showStatus('error', 'Please select a service type.');
+                return;
+            }
+            if (fullName.length < 2) {
+                showStatus('error', 'Please enter your full name.');
+                return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showStatus('error', 'Please enter a valid email address.');
+                return;
+            }
+            if (phone.length < 6) {
+                showStatus('error', 'Please enter a valid phone number.');
+                return;
+            }
+            if (message.length < 20) {
+                showStatus('error', 'Please describe your matter in at least 20 characters.');
+                return;
+            }
+            if (!consent) {
+                showStatus('error', 'Please accept the consent checkbox to continue.');
+                return;
+            }
+
+            // Disable button
+            submitBtn.disabled = true;
+            const originalHTML = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Sending...</span>';
+
+            try {
+                const formData = new FormData(form);
+                const payload = {
+                    name: fullName,
+                    email: email,
+                    phone: phone,
+                    company: form.company.value.trim(),
+                    subject: 'Consultation Request — ' + serviceType.value,
+                    message: message + '\n\n---\nPreferred Contact: ' + form.contactMethod.value + '\nService: ' + serviceType.value,
+                    type: 'consultation'
+                };
+
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await res.json().catch(() => ({}));
+
+                if (res.ok) {
+                    showStatus('success', 'Thank you! Your consultation request has been received. We\'ll get back to you within one business day.');
+                    form.reset();
+                } else {
+                    showStatus('error', data.error || 'Something went wrong. Please try again or contact us directly.');
+                }
+            } catch (err) {
+                showStatus('error', 'Network error. Please check your connection or contact us directly at walidlegal.ippro@gmail.com');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalHTML;
+            }
+        });
     })();
     </script>
-    <script>
-        // تحديد الرابط النشط
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
-                if (link.getAttribute('href') === currentPath) link.classList.add('active');
-            });
-        });
-    </script>
+
 </body>
 </html>

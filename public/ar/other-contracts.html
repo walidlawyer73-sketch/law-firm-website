@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عقود أخرى - مكتب وليد محمد أبوالعلا للمحاماة</title>
+    <meta name="description" content="صياغة ومراجعة جميع أنواع العقود في مصر — الوكالة، العمل، الإيجار، القرض، الصلح، الوساطة، وغيرها. أخبرنا بنوع العقد الذي تحتاجه. خبرة منذ 2013.">
+    <meta name="keywords" content="صياغة عقود مصر, عقد وكالة, عقد عمل, عقد إيجار, عقد قرض, عقد صلح, وساطة">
+    <meta name="author" content="وليد محمد أبوالعلا">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/ar/other-contracts.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/ar/other-contracts.html">
+    <meta property="og:title" content="عقود أخرى - مكتب وليد محمد أبوالعلا للمحاماة">
+    <meta property="og:description" content="الوكالة، العمل، الإيجار، القرض، الصلح، الوساطة، وأي نوع عقد تحتاجه.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta property="og:locale" content="ar_EG">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/other-contracts.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/other-contracts.html">
+
+    <link rel="icon" type="image/png" href="/images/logo arb ip.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WQ0CPXRK2F');
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "عقود أخرى",
+        "provider": {
+            "@type": "LegalService",
+            "name": "مكتب وليد محمد أبوالعلا للمحاماة",
+            "url": "https://law-arb-ip-walid.vercel.app/ar/"
+        },
+        "areaServed": {"@type": "Country", "name": "Egypt"},
+        "description": "صياغة ومراجعة جميع أنواع العقود — الوكالة، العمل، الإيجار، القرض، الصلح، الوساطة، وغيرها."
+    }
+    </script>
+
+    <style>
+        /* ============================================================
+           OTHER CONTRACTS - Smart Selector + Form (RTL)
+           ============================================================ */
+        .oc-hero { padding: 90px 0 70px; background: #fff; }
+        .oc-intro { padding: 40px 0 60px; }
+        .oc-intro .lead-block {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--dark-text);
+            border-inline-start: 4px solid var(--accent-color);
+            padding-inline-start: 24px;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        /* Contract Type Selector */
+        .oc-selector { padding: 40px 0 60px; }
+
+        .oc-types-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 40px 0;
+        }
+
+        .oc-type-card {
+            background: #fff;
+            border: 2px solid #E9ECEF;
+            border-radius: 16px;
+            padding: 24px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            font-family: inherit;
+        }
+
+        .oc-type-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-dark));
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.4s ease;
+        }
+
+        .oc-type-card:hover::before,
+        .oc-type-card.selected::before { transform: scaleX(1); }
+
+        .oc-type-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px -15px rgba(201,169,97,0.25);
+        }
+
+        .oc-type-card.selected {
+            background: linear-gradient(160deg, rgba(201,169,97,0.08) 0%, #fff 100%);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px -12px rgba(201,169,97,0.35);
+        }
+
+        .oc-type-card.selected::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            width: 26px;
+            height: 26px;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 10px rgba(201,169,97,0.4);
+        }
+
+        .oc-type-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #F8F9FA, #fff);
+            border: 1px solid #E9ECEF;
+            color: var(--accent-dark);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin: 0 auto 14px;
+            transition: all 0.4s ease;
+        }
+
+        .oc-type-card:hover .oc-type-icon,
+        .oc-type-card.selected .oc-type-icon {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: var(--primary-color);
+            border-color: transparent;
+            transform: rotate(6deg) scale(1.08);
+            box-shadow: 0 8px 20px rgba(201,169,97,0.3);
+        }
+
+        .oc-type-card h5 {
+            font-family: var(--font-arabic);
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--dark-text);
+            margin: 0 0 6px;
+        }
+
+        .oc-type-card small {
+            font-size: 0.75rem;
+            color: #6C757D;
+            line-height: 1.5;
+            display: block;
+        }
+
+        /* Form */
+        .oc-form-wrap {
+            padding: 60px 0 80px;
+            background: linear-gradient(180deg, #F8F9FA 0%, #fff 100%);
+        }
+
+        .oc-form-card {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 24px;
+            padding: 45px 40px;
+            box-shadow: 0 30px 60px -20px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .oc-form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-dark), var(--accent-color));
+        }
+
+        .oc-form-card h3 {
+            font-family: var(--font-arabic);
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--dark-text);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .oc-form-card > p {
+            text-align: center;
+            color: #6C757D;
+            margin-bottom: 35px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .oc-form .form-label {
+            font-weight: 700;
+            color: var(--dark-text);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .oc-form .form-control,
+        .oc-form .form-select {
+            padding: 13px 18px;
+            border: 2px solid #E9ECEF;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .oc-form .form-control:focus,
+        .oc-form .form-select:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 4px rgba(201,169,97,0.12);
+        }
+
+        .oc-form textarea.form-control {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .oc-form .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: var(--primary-color);
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 30px -8px rgba(201,169,97,0.4);
+            margin-top: 15px;
+            font-family: inherit;
+        }
+
+        .oc-form .btn-submit:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px -8px rgba(201,169,97,0.55);
+        }
+
+        .oc-form .btn-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .oc-form-status {
+            margin-top: 20px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: none;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .oc-form-status.show { display: block; }
+        .oc-form-status.success {
+            background: #D4EDDA;
+            color: #155724;
+            border: 1px solid #C3E6CB;
+        }
+        .oc-form-status.error {
+            background: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+        }
+
+        .oc-form-note {
+            text-align: center;
+            font-size: 0.82rem;
+            color: #6C757D;
+            margin-top: 20px;
+            line-height: 1.7;
+        }
+
+        .oc-form-note i {
+            color: var(--accent-dark);
+            margin-inline-end: 4px;
+        }
+
+        /* Process */
+        .oc-process { padding: 80px 0; background: #F8F9FA; }
+        .oc-process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 50px;
+        }
+        .oc-process-step { text-align: center; position: relative; }
+        .ops-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin: 0 auto 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+        }
+        .oc-process-step:hover .ops-number {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: var(--primary-color);
+            transform: scale(1.08) rotate(5deg);
+            box-shadow: 0 20px 40px rgba(201,169,97,0.35);
+        }
+        .oc-process-step h5 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--dark-text);
+            margin-bottom: 8px;
+        }
+        .oc-process-step p {
+            font-size: 0.85rem;
+            color: #6C757D;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* FAQ */
+        .oc-faq { padding: 80px 0; background: #fff; }
+
+        /* RTL fixes */
+        [dir="rtl"] .language-switcher { right: auto; left: 20px; }
+        [dir="rtl"] .oc-form .btn-submit i.fa-paper-plane { transform: scaleX(-1); }
+
+        @media (max-width: 768px) {
+            [dir="rtl"] .language-switcher { right: auto; left: 10px; }
+        }
+
+        @media (max-width: 991px) {
+            .oc-types-grid { grid-template-columns: repeat(3, 1fr); }
+            .oc-process-steps { grid-template-columns: repeat(2, 1fr); }
+            .oc-form-card { padding: 35px 28px; }
+        }
+
+        @media (max-width: 576px) {
+            .oc-types-grid { grid-template-columns: repeat(2, 1fr); }
+            .oc-process-steps { grid-template-columns: 1fr; }
+            .oc-hero { padding: 60px 0 40px; }
+            .oc-form-card { padding: 28px 20px; border-radius: 16px; }
+            .oc-form-card h3 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- TRIAL BANNER -->
+    <div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background: linear-gradient(90deg, #FFC107 0%, #FFB300 100%); color: #000; text-align: center; padding: 10px 15px; font-weight: 600; border-bottom: 2px solid #000; display: flex; justify-content: center; align-items: center; gap: 10px; box-sizing: border-box; font-size: 0.9rem; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+        <i class="fas fa-tools" style="font-size: 1.1rem; animation: pulse-icon 2s ease-in-out infinite;"></i>
+        <span>هذا إصدار تجريبي للموقع - جاري التطوير والتحديث</span>
+        <i class="fas fa-tools" style="font-size: 1.1rem; animation: pulse-icon 2s ease-in-out infinite;"></i>
+    </div>
+    <style>@keyframes pulse-icon { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }</style>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <a href="/other-contracts.html" class="lang-btn"><i class="fas fa-globe"></i> English</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="/ar/">
+                <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة">
+                <div>
+                    <span class="firm-name">وليد محمد أبوالعلا</span>
+                    <small class="firm-sub">محاماة · تحكيم · ملكية فكرية</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/ar/">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/about.html">من نحن</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">الخدمات</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/ar/arbitration.html">التحكيم الدولي</a></li>
+                            <li><a class="dropdown-item" href="/ar/trademark.html">تسجيل العلامات التجارية</a></li>
+                            <li><a class="dropdown-item" href="/ar/patent.html">براءات الاختراع</a></li>
+                            <li><a class="dropdown-item" href="/ar/copyright.html">حقوق المؤلف</a></li>
+                            <li><a class="dropdown-item" href="/ar/litigation.html">قضايا الملكية الفكرية</a></li>
+                            <li><a class="dropdown-item" href="/ar/licensing.html">الترخيص والعقود</a></li>
+                            <li><a class="dropdown-item" href="/ar/corporate-formation.html">تأسيس الشركات</a></li>
+                            <li><a class="dropdown-item" href="/ar/criminal-litigation.html">القضايا الجنائية</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/ar/services.html">جميع الخدمات</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/lawyers.html">فريق العمل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/blog.html">المدونة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/contact.html">اتصل بنا</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>بوابة العميل
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container text-center">
+            <div class="sh-line" style="margin: 0 auto 18px;"></div>
+            <span class="sh-label" style="color: var(--accent-light);">العقود والاتفاقيات</span>
+            <h1 class="display-4">عقود أخرى</h1>
+            <p class="lead">أي نوع عقد آخر تحتاجه — بنفس العناية والاحترافية</p>
+        </div>
+    </header>
+
+    <!-- INTRO -->
+    <section class="oc-intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <p class="lead-block">
+                        ليست كل العقود تدخل في فئة معينة. سواء كان عقد وكالة، أو عقد عمل، أو إيجار، أو قرض، أو صلح، أو ترتيب مصمم خصيصاً — نصوغه بنفس الدقة ومعايير القابلية للتنفيذ.
+                    </p>
+                    <p class="about-text">
+                        اختر نوع العقد من الأسفل، أو اختر "أخرى / غير مُدرج" إذا لم تكن متأكداً. أخبرنا باختصار عن حالتك، وسيتواصل معك فريقنا بالنهج المناسب.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTRACT TYPE SELECTOR -->
+    <section class="oc-selector">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">الخطوة 1</span>
+                <h2 class="sh-title">ما نوع العقد الذي تحتاجه؟</h2>
+                <p class="sh-desc">اضغط على نوع العقد الذي يصف احتياجك.</p>
+            </div>
+
+            <div class="oc-types-grid" id="ocTypesGrid">
+                <button type="button" class="oc-type-card" data-type="عقد وكالة">
+                    <div class="oc-type-icon"><i class="fas fa-user-tie"></i></div>
+                    <h5>وكالة</h5>
+                    <small>تجارية وبيع</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="عقد عمل">
+                    <div class="oc-type-icon"><i class="fas fa-briefcase"></i></div>
+                    <h5>عمل</h5>
+                    <small>موظف وتنفيذي</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="عقد إيجار">
+                    <div class="oc-type-icon"><i class="fas fa-home"></i></div>
+                    <h5>إيجار</h5>
+                    <small>سكني وتجاري</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="عقد قرض">
+                    <div class="oc-type-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h5>قرض</h5>
+                    <small>شخصي وتجاري</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="عقد صلح">
+                    <div class="oc-type-icon"><i class="fas fa-handshake"></i></div>
+                    <h5>صلح</h5>
+                    <small>تسوية نزاع</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="اتفاقية وساطة">
+                    <div class="oc-type-icon"><i class="fas fa-people-arrows"></i></div>
+                    <h5>وساطة</h5>
+                    <small>تسوية خارج المحاكم</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="عقد بيع وشراء">
+                    <div class="oc-type-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h5>بيع وشراء</h5>
+                    <small>سلع وأصول</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="عقد خدمات">
+                    <div class="oc-type-icon"><i class="fas fa-concierge-bell"></i></div>
+                    <h5>خدمات</h5>
+                    <small>مهنية وعامة</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="مراجعة عقد">
+                    <div class="oc-type-icon"><i class="fas fa-search"></i></div>
+                    <h5>مراجعة فقط</h5>
+                    <small>مراجعة عقد قائم</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="تعديل عقد قائم">
+                    <div class="oc-type-icon"><i class="fas fa-edit"></i></div>
+                    <h5>تعديل</h5>
+                    <small>تعديل عقد قائم</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="مشورة إنهاء عقد">
+                    <div class="oc-type-icon"><i class="fas fa-times-circle"></i></div>
+                    <h5>إنهاء</h5>
+                    <small>إنهاء عقد قائم</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="أخرى / غير مُدرج">
+                    <div class="oc-type-icon"><i class="fas fa-question-circle"></i></div>
+                    <h5>أخرى</h5>
+                    <small>غير متأكد؟ أخبرنا بالأسفل</small>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- REQUEST FORM -->
+    <section class="oc-form-wrap">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">الخطوة 2</span>
+                <h2 class="sh-title">أخبرنا عن العقد الذي تحتاجه</h2>
+                <p class="sh-desc">املأ النموذج بالأسفل — سنرد عليك خلال 24 ساعة.</p>
+            </div>
+
+            <div class="oc-form-card">
+                <h3><i class="fas fa-file-signature" style="color: var(--accent-dark); margin-inline-end: 10px;"></i>نموذج طلب عقد</h3>
+                <p>جميع المعلومات المقدمة سرية تماماً وتُحمى بسرية المحامي والموكل.</p>
+
+                <form id="otherContractsForm" class="oc-form" novalidate>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="ocName" class="form-label">الاسم الكامل *</label>
+                            <input type="text" class="form-control" id="ocName" name="name" required placeholder="أدخل اسمك الكامل">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ocEmail" class="form-label">البريد الإلكتروني *</label>
+                            <input type="email" class="form-control" id="ocEmail" name="email" required placeholder="name@example.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ocPhone" class="form-label">رقم الهاتف</label>
+                            <input type="tel" class="form-control" id="ocPhone" name="phone" placeholder="مثال: +20 111 257 219">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ocContractType" class="form-label">نوع العقد *</label>
+                            <select class="form-select" id="ocContractType" name="contractType" required>
+                                <option value="">— اختر النوع —</option>
+                                <option value="عقد وكالة">عقد وكالة</option>
+                                <option value="عقد عمل">عقد عمل</option>
+                                <option value="عقد إيجار">عقد إيجار</option>
+                                <option value="عقد قرض">عقد قرض</option>
+                                <option value="عقد صلح">عقد صلح</option>
+                                <option value="اتفاقية وساطة">اتفاقية وساطة</option>
+                                <option value="عقد بيع وشراء">عقد بيع وشراء</option>
+                                <option value="عقد خدمات">عقد خدمات</option>
+                                <option value="مراجعة عقد">مراجعة عقد فقط</option>
+                                <option value="تعديل عقد قائم">تعديل عقد قائم</option>
+                                <option value="مشورة إنهاء عقد">مشورة إنهاء عقد</option>
+                                <option value="أخرى / غير مُدرج">أخرى / غير مُدرج</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="ocDetails" class="form-label">وصف موجز لاحتياجك *</label>
+                            <textarea class="form-control" id="ocDetails" name="details" required placeholder="صف العقد الذي تحتاجه، والأطراف المعنية، وأي متطلبات أو مخاوف محددة..."></textarea>
+                        </div>
+                        <div class="col-12">
+                            <label for="ocDeadline" class="form-label">هل لديك موعد نهائي؟</label>
+                            <input type="text" class="form-control" id="ocDeadline" name="deadline" placeholder="مثال: نهاية الشهر، الأسبوع القادم، مرن">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="ocSubmitBtn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>إرسال الطلب</span>
+                    </button>
+
+                    <div class="oc-form-status" id="ocFormStatus"></div>
+
+                    <p class="oc-form-note">
+                        <i class="fas fa-shield-alt"></i>
+                        معلوماتك محمية بسرية المحامي والموكل ولا تُشارك مع أي طرف ثالث.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="oc-process">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">كيف نعمل</span>
+                <h2 class="sh-title">عملية العقود لدينا</h2>
+                <p class="sh-desc">بسيطة، منظمة، وفعّالة.</p>
+            </div>
+
+            <div class="oc-process-steps">
+                <div class="oc-process-step">
+                    <div class="ops-number">01</div>
+                    <h5>إرسال الطلب</h5>
+                    <p>أخبرنا بنوع العقد واحتياجك عبر النموذج بالأسفل.</p>
+                </div>
+
+                <div class="oc-process-step">
+                    <div class="ops-number">02</div>
+                    <h5>مراجعة أولية</h5>
+                    <p>نقيّم حالتك ونقترح النهج المناسب خلال 24 ساعة.</p>
+                </div>
+
+                <div class="oc-process-step">
+                    <div class="ops-number">03</div>
+                    <h5>الصياغة والتفاوض</h5>
+                    <p>نصوغ أو نراجع أو نتفاوض — بحماية مصالحك.</p>
+                </div>
+
+                <div class="oc-process-step">
+                    <div class="ops-number">04</div>
+                    <h5>التسليم والدعم</h5>
+                    <p>المستند النهائي مع دعم مستمر للتعديلات أو المنازعات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="oc-faq">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">الأسئلة الشائعة</span>
+                <h2 class="sh-title">أسئلة متكررة</h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion faq-rich-accordion" id="faqOC">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#oc1">
+                                    ماذا لو لم يكن نوع عقدي مُدرجاً؟
+                                </button>
+                            </h2>
+                            <div id="oc1" class="accordion-collapse collapse show" data-bs-parent="#faqOC">
+                                <div class="accordion-body">
+                                    اختر "أخرى / غير مُدرج" في النموذج ووصف ما تحتاجه في خانة التفاصيل. نتولى جميع أنواع العقود — من القوالب القياسية إلى الاتفاقيات المصممة بالكامل.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#oc2">
+                                    هل يمكنني إرسال عقدي القائم للمراجعة؟
+                                </button>
+                            </h2>
+                            <div id="oc2" class="accordion-collapse collapse" data-bs-parent="#faqOC">
+                                <div class="accordion-body">
+                                    نعم — اختر "مراجعة عقد فقط" في النموذج واذكر في التفاصيل أنك سترسل مستنداً. سنرد بتعليمات آمنة لإرسال المستند.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#oc3">
+                                    كم تستغرق العملية؟
+                                </button>
+                            </h2>
+                            <div id="oc3" class="accordion-collapse collapse" data-bs-parent="#faqOC">
+                                <div class="accordion-body">
+                                    رد أولي خلال 24 ساعة. العقود القياسية تُسلَّم عادة في 3-7 أيام عمل. الاتفاقيات المعقدة أو المخصصة تستغرق وقتاً أطول — سنعطيك جدولاً زمنياً واضحاً بعد المراجعة الأولية.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#oc4">
+                                    هل هناك رسوم للاستشارة الأولية؟
+                                </button>
+                            </h2>
+                            <div id="oc4" class="accordion-collapse collapse" data-bs-parent="#faqOC">
+                                <div class="accordion-body">
+                                    التقييم الأولي لطلبك مجاني. سنقترح هيكل رسوم واضح بناءً على تعقيد العقد بعد المراجعة الأولية.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-file-signature"></i></div>
+                <h2>مستعد للبدء؟</h2>
+                <p>املأ النموذج بالأسفل أو تواصل معنا مباشرة. سنرد خلال 24 ساعة.</p>
+                <div class="fcr-buttons">
+                    <a href="/ar/contact.html" class="btn-rich-primary light">
+                        <span>تواصل معنا</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <a href="/ar/services.html" class="btn-rich-ghost">
+                        <i class="fas fa-th-large"></i>
+                        <span>جميع الخدمات</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">وليد محمد أبوالعلا</h5>
+                    <p class="footer-desc">محاماة · تحكيم · ملكية فكرية. نخدم عملاءنا بتفانٍ منذ 2013.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="فيسبوك"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">روابط سريعة</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/">الرئيسية</a></li>
+                        <li><a href="/ar/about.html">من نحن</a></li>
+                        <li><a href="/ar/services.html">الخدمات</a></li>
+                        <li><a href="/ar/lawyers.html">فريق العمل</a></li>
+                        <li><a href="/ar/blog.html">المدونة</a></li>
+                        <li><a href="/ar/contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">معلومات الاتصال</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> العاشر من رمضان، القاهرة، مصر</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> السبت - الخميس: 9 ص - 8 م</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="footer-heading">قانوني</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/privacy-policy.html">سياسة الخصوصية</a></li>
+                        <li><a href="/ar/terms-of-service.html">شروط الاستخدام</a></li>
+                        <li><a href="/ar/cookie-policy.html">سياسة ملفات تعريف الارتباط</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 وليد محمد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="العودة إلى الأعلى"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!-- ============================================================
+         SMART SELECTOR + FORM LOGIC (Arabic)
+         ============================================================ -->
+    <script>
+        (function() {
+            const typeCards = document.querySelectorAll('.oc-type-card');
+            const contractTypeSelect = document.getElementById('ocContractType');
+            const form = document.getElementById('otherContractsForm');
+            const statusDiv = document.getElementById('ocFormStatus');
+            const submitBtn = document.getElementById('ocSubmitBtn');
+
+            // Card click
+            typeCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const type = this.getAttribute('data-type');
+
+                    typeCards.forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+
+                    if (contractTypeSelect) {
+                        contractTypeSelect.value = type;
+                    }
+
+                    const formWrap = document.querySelector('.oc-form-wrap');
+                    if (formWrap) {
+                        formWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Dropdown sync
+            if (contractTypeSelect) {
+                contractTypeSelect.addEventListener('change', function() {
+                    const val = this.value;
+                    typeCards.forEach(c => {
+                        c.classList.toggle('selected', c.getAttribute('data-type') === val);
+                    });
+                });
+            }
+
+            // Form submit
+            if (form) {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+
+                    const name = document.getElementById('ocName').value.trim();
+                    const email = document.getElementById('ocEmail').value.trim();
+                    const contractType = document.getElementById('ocContractType').value;
+                    const details = document.getElementById('ocDetails').value.trim();
+
+                    if (!name || !email || !contractType || !details) {
+                        showStatus('error', 'يرجى ملء جميع الحقول المطلوبة (الاسم، البريد الإلكتروني، نوع العقد، والتفاصيل).');
+                        return;
+                    }
+
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        showStatus('error', 'يرجى إدخال بريد إلكتروني صحيح.');
+                        return;
+                    }
+
+                    const phone = document.getElementById('ocPhone').value.trim();
+                    const deadline = document.getElementById('ocDeadline').value.trim();
+
+                    const fullMessage = [
+                        `نوع العقد: ${contractType}`,
+                        deadline ? `الموعد النهائي: ${deadline}` : '',
+                        '',
+                        'التفاصيل:',
+                        details
+                    ].filter(Boolean).join('\n');
+
+                    const payload = new FormData();
+                    payload.append('name', name);
+                    payload.append('email', email);
+                    payload.append('phone', phone);
+                    payload.append('service', 'other-contracts');
+                    payload.append('message', fullMessage);
+
+                    submitBtn.disabled = true;
+                    const originalHTML = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>جاري الإرسال...</span>';
+
+                    try {
+                        const response = await fetch('/api/contact', {
+                            method: 'POST',
+                            body: payload,
+                            headers: { 'Accept': 'application/json' }
+                        });
+
+                        let data;
+                        try {
+                            data = await response.json();
+                        } catch (jsonErr) {
+                            data = { success: false, error: 'الخادم أرجع استجابة غير متوقعة.' };
+                        }
+
+                        if (data.success) {
+                            showStatus('success', '✅ ' + (data.message || 'تم استلام طلبك. سنرد عليك خلال 24 ساعة.'));
+                            form.reset();
+                            typeCards.forEach(c => c.classList.remove('selected'));
+                        } else {
+                            showStatus('error', '❌ ' + (data.error || 'حدث خطأ. يرجى المحاولة مرة أخرى.'));
+                        }
+                    } catch (err) {
+                        console.error('Form error:', err);
+                        showStatus('error', '❌ خطأ في الشبكة. يرجى التحقق من اتصالك والمحاولة مجدداً.');
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalHTML;
+                    }
+                });
+            }
+
+            function showStatus(type, message) {
+                if (!statusDiv) return;
+                statusDiv.className = 'oc-form-status show ' + type;
+                statusDiv.innerHTML = message;
+                statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        })();
+    </script>
+</body>
+</html>

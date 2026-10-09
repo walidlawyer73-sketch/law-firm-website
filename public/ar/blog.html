@@ -3,238 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المدونة - وليد أبوالعلا للمحاماة</title>
-    <!-- Bootstrap CSS -->
+    <title>المدونة - مكتب وليد محمد أبوالعلا للمحاماة | رؤى في الملكية الفكرية والتحكيم والشركات</title>
+    <meta name="description" content="رؤى قانونية في الملكية الفكرية والتحكيم وقانون الشركات والتقاضي من مكتب وليد محمد أبوالعلا للمحاماة — تحليل عملي للشركات والمبدعين في مصر.">
+    <meta name="keywords" content="مدونة قانونية مصر, ملكية فكرية, تحكيم, مقالات قانونية, قانون الشركات, علامات تجارية, براءات اختراع">
+    <meta name="author" content="وليد محمد أبوالعلا">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/ar/blog.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/ar/blog.html">
+    <meta property="og:title" content="المدونة - مكتب وليد محمد أبوالعلا للمحاماة">
+    <meta property="og:description" content="رؤى قانونية في الملكية الفكرية والتحكيم وقانون الشركات والتقاضي.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta property="og:locale" content="ar_EG">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/blog.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/blog.html">
+
+    <link rel="icon" type="image/png" href="/images/logo arb ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <meta name="description" content="مدونة مكتب وليد أبوالعلا للمحاماة: مقالات وتحليلات قانونية في مجالات التحكيم الدولي والملكية الفكرية والتشريعات المصرية.">
-</head>
-<script>
-// ========== حل نهائي لصورة المحامي (للاحتياط) ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools"></i>
-</div>
-<body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>
-    </div>
 
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (currentPath.startsWith('/ar/')) {
-            let englishPath = currentPath.replace('/ar', '');
-            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') englishPath = '/';
-            langLink.href = englishPath;
-        } else {
-            langLink.href = '/';
-        }
-    })();
-    </script>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="وليد أبوالعلا للمحاماة" style="height:45px; width:auto; margin-left:10px;">
-                <div>
-                    <span class="fw-bold">وليد أبوالعلا للمحاماة</span>
-                    <small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small>
-                </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">الخدمات</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li><a class="dropdown-item" href="/ar/arbitration.html">التحكيم الدولي</a></li>
-                            <li><a class="dropdown-item" href="/ar/trademark.html">تسجيل العلامات التجارية</a></li>
-                            <li><a class="dropdown-item" href="/ar/patent.html">براءات الاختراع</a></li>
-                            <li><a class="dropdown-item" href="/ar/copyright.html">حقوق المؤلف</a></li>
-                            <li><a class="dropdown-item" href="/ar/litigation.html">قضايا الملكية الفكرية</a></li>
-                            <li><a class="dropdown-item" href="/ar/corporate-formation.html">تأسيس الشركات</a></li>
-                            <li><a class="dropdown-item" href="/ar/criminal-litigation.html">القضايا الجنائية</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/ar/services.html">جميع الخدمات</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/lawyers.html">فريق العمل</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/blog.html">المدونة</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/contact.html">اتصل بنا</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/consultation.html">استشارة مدفوعة</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html"><i class="fas fa-lock me-1"></i>بوابة العميل</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <header class="page-header">
-        <div class="container text-white text-center">
-            <h1 class="display-4">المدونة القانونية</h1>
-            <p class="lead">أحدث المقالات والتحليلات في مجال الملكية الفكرية والتحكيم</p>
-        </div>
-    </header>
-
-    <section class="py-5">
-        <div class="container">
-            <div class="row g-4">
-                <!-- المقال الأول -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden hover-lift">
-                        <img src="/images/blog/blog1.jpg" class="card-img-top" style="height:220px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/400x220?text=IP+Law'">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-primary">الملكية الفكرية</span>
-                                <small class="text-muted"><i class="far fa-calendar me-1"></i> 10 فبراير 2025</small>
-                            </div>
-                            <h5 class="card-title">تعديلات جديدة في قانون الملكية الفكرية المصري</h5>
-                            <p class="card-text text-muted">نظرة عامة على التغييرات الأخيرة وتأثيرها على حماية العلامات التجارية وبراءات الاختراع...</p>
-                            <a href="/ar/blog/amendments-egyptian-ip-law.html" class="btn btn-outline-primary btn-sm mt-2">اقرأ المزيد <i class="fas fa-arrow-left me-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- المقال الثاني -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                        <img src="/images/blog/blog2.jpg" class="card-img-top" style="height:220px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/400x220?text=Arbitration'">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-primary">التحكيم الدولي</span>
-                                <small class="text-muted"><i class="far fa-calendar me-1"></i> 25 يناير 2025</small>
-                            </div>
-                            <h5 class="card-title">اتجاهات التحكيم الدولي 2025</h5>
-                            <p class="card-text text-muted">تطورات رئيسية في تسوية المنازعات عبر الحدود وما تعنيه للشركات...</p>
-                            <a href="/ar/blog/arbitration-trends-2025.html" class="btn btn-outline-primary btn-sm mt-2">اقرأ المزيد <i class="fas fa-arrow-left me-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- المقال الثالث -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                        <img src="/images/blog/blog3.jpg" class="card-img-top" style="height:220px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/400x220?text=Software+Patent'">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-primary">براءات الاختراع</span>
-                                <small class="text-muted"><i class="far fa-calendar me-1"></i> 5 يناير 2025</small>
-                            </div>
-                            <h5 class="card-title">حماية البرمجيات ببراءات الاختراع</h5>
-                            <p class="card-text text-muted">التعامل مع تعقيدات حماية براءات الاختراع للاختراعات المنفذة بالحاسوب...</p>
-                            <a href="/ar/blog/protecting-software-patents.html" class="btn btn-outline-primary btn-sm mt-2">اقرأ المزيد <i class="fas fa-arrow-left me-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- الاشتراك في النشرة البريدية -->
-            <div class="row mt-5">
-                <div class="col-lg-8 mx-auto">
-                    <div class="bg-light p-4 p-md-5 rounded-4 text-center">
-                        <h3 class="mb-3">اشترك في نشرتنا البريدية</h3>
-                        <p class="text-muted mb-4">احصل على أحدث المقالات والتحديثات القانونية مباشرة إلى بريدك الإلكتروني.</p>
-                        <form class="row g-2 justify-content-center">
-                            <div class="col-md-6">
-                                <input type="email" class="form-control form-control-lg" placeholder="بريدك الإلكتروني">
-                            </div>
-                            <div class="col-auto">
-                                <button class="btn btn-primary btn-lg px-4" type="button">اشترك الآن</button>
-                            </div>
-                        </form>
-                        <p class="small text-muted mt-3">لن نرسل لك بريداً مزعجاً. يمكنك إلغاء الاشتراك في أي وقت.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>وليد أبوالعلا للمحاماة</h5>
-                    <p class="text-white-50">متخصصون في التحكيم وحماية الملكية الفكرية بلمسة شخصية منذ 2016.</p>
-                    <div class="social-links mt-3">
-                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="فيسبوك"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <h6 class="mb-4">روابط سريعة</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/ar/index.html" class="text-white-50 text-decoration-none">الرئيسية</a></li>
-                        <li class="mb-2"><a href="/ar/about.html" class="text-white-50 text-decoration-none">من نحن</a></li>
-                        <li class="mb-2"><a href="/ar/services.html" class="text-white-50 text-decoration-none">الخدمات</a></li>
-                        <li class="mb-2"><a href="/ar/lawyers.html" class="text-white-50 text-decoration-none">فريق العمل</a></li>
-                        <li class="mb-2"><a href="/ar/blog.html" class="text-white-50 text-decoration-none">المدونة</a></li>
-                        <li class="mb-2"><a href="/ar/contact.html" class="text-white-50 text-decoration-none">اتصل بنا</a></li>
-                        <li class="mb-2"><a href="/ar/consultation.html" class="text-white-50 text-decoration-none">استشارة مدفوعة</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h6 class="mb-4">معلومات الاتصال</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، القاهرة، مصر</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> السبت - الخميس: 9 صباحاً - 8 مساءً</li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="small text-white-50 mb-0">© 2025 وليد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
-                </div>
-                <div class="col-md-6">
-                    <h6 class="mb-2 text-white-50">قانوني</h6>
-                    <ul class="list-unstyled d-flex gap-3">
-                        <li><a href="/privacy-policy.html" class="text-white-50 text-decoration-none">سياسة الخصوصية</a></li>
-                        <li><a href="/terms-of-service.html" class="text-white-50 text-decoration-none">شروط الاستخدام</a></li>
-                        <li><a href="/cookie-policy.html" class="text-white-50 text-decoration-none">سياسة ملفات تعريف الارتباط</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -242,48 +36,1030 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
-    <!-- كود إضافي لحل مشكلة صورة المحامي -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "مدونة مكتب وليد محمد أبوالعلا للمحاماة",
+        "url": "https://law-arb-ip-walid.vercel.app/ar/blog.html",
+        "description": "رؤى قانونية في الملكية الفكرية والتحكيم وقانون الشركات والتقاضي.",
+        "inLanguage": "ar",
+        "publisher": {
+            "@type": "Organization",
+            "name": "مكتب وليد محمد أبوالعلا للمحاماة",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://law-arb-ip-walid.vercel.app/images/logo.png"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        /* المقال المميز */
+        .featured-post {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 0;
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -30px rgba(0,0,0,0.12);
+            transition: all 0.4s ease;
+            margin-bottom: 60px;
+        }
+        .featured-post:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 40px 80px -30px rgba(0,0,0,0.18);
+            border-color: #C9A961;
+        }
+        .fp-image {
+            position: relative;
+            overflow: hidden;
+            min-height: 420px;
+            background: linear-gradient(135deg, #000, #1A1A1A);
+        }
+        .fp-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            opacity: 0.85;
+        }
+        .featured-post:hover .fp-image img {
+            transform: scale(1.05);
+        }
+        .fp-badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            box-shadow: 0 10px 25px rgba(201,169,97,0.4);
+            z-index: 2;
+        }
+        .fp-content {
+            padding: 50px 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .fp-meta {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+            font-size: 0.8rem;
+            color: #6C757D;
+            font-weight: 600;
+        }
+        .fp-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .fp-meta i {
+            color: #C9A961;
+            font-size: 0.85rem;
+        }
+        .fp-category {
+            color: #A88947;
+            letter-spacing: 1px;
+            font-weight: 800;
+        }
+        .fp-title {
+            font-family: 'Cairo', sans-serif;
+            font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+            font-weight: 800;
+            color: #212529;
+            line-height: 1.4;
+            margin-bottom: 18px;
+        }
+        .fp-excerpt {
+            font-size: 0.95rem;
+            color: #6C757D;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        .fp-read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #A88947;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+        .fp-read-more:hover {
+            color: #000;
+            gap: 15px;
+        }
+
+        @media (max-width: 900px) {
+            .featured-post { grid-template-columns: 1fr; }
+            .fp-image { min-height: 260px; }
+            .fp-content { padding: 35px 28px; }
+        }
+
+        /* تابات الفلترة */
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 45px;
+        }
+        .filter-tab {
+            padding: 10px 24px;
+            background: #fff;
+            border: 2px solid #E9ECEF;
+            border-radius: 999px;
+            color: #495057;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .filter-tab:hover {
+            border-color: #C9A961;
+            color: #A88947;
+            transform: translateY(-2px);
+        }
+        .filter-tab.active {
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            border-color: #C9A961;
+            box-shadow: 0 10px 25px -8px rgba(201,169,97,0.4);
+        }
+        .filter-tab i {
+            font-size: 0.8rem;
+        }
+
+        /* بطاقة المقال */
+        .post-card {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+        .post-card:hover {
+            transform: translateY(-8px);
+            border-color: #C9A961;
+            box-shadow: 0 30px 60px -25px rgba(0,0,0,0.15);
+            color: inherit;
+        }
+        .pc-image {
+            position: relative;
+            height: 210px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #000, #1A1A1A);
+        }
+        .pc-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .post-card:hover .pc-image img {
+            transform: scale(1.08);
+        }
+        .pc-category {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.95);
+            color: #000;
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(8px);
+            z-index: 2;
+        }
+        .pc-category.ip { background: rgba(201,169,97,0.95); color: #000; }
+        .pc-category.arb { background: rgba(30,144,255,0.9); color: #fff; }
+        .pc-category.corp { background: rgba(40,167,69,0.9); color: #fff; }
+        .pc-category.lit { background: rgba(220,53,69,0.9); color: #fff; }
+
+        .pc-body {
+            padding: 26px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .pc-meta {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            font-size: 0.75rem;
+            color: #ADB5BD;
+            font-weight: 600;
+        }
+        .pc-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .pc-title {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #212529;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+        .post-card:hover .pc-title {
+            color: #A88947;
+        }
+        .pc-excerpt {
+            font-size: 0.86rem;
+            color: #6C757D;
+            line-height: 1.75;
+            margin-bottom: 18px;
+            flex: 1;
+        }
+        .pc-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid #F1F3F5;
+        }
+        .pc-read-time {
+            font-size: 0.75rem;
+            color: #ADB5BD;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .pc-arrow {
+            color: #C9A961;
+            font-size: 0.95rem;
+            transition: transform 0.3s ease;
+        }
+        .post-card:hover .pc-arrow {
+            transform: translateX(-5px);
+        }
+
+        /* صندوق النشرة البريدية */
+        .newsletter-box {
+            background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+            border-radius: 24px;
+            padding: 55px 45px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(201,169,97,0.2);
+        }
+        .newsletter-box::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(201,169,97,0.18), transparent 70%);
+            border-radius: 50%;
+        }
+        .newsletter-box::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            right: -60px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(201,169,97,0.12), transparent 70%);
+            border-radius: 50%;
+        }
+        .newsletter-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            color: #fff;
+        }
+        .newsletter-content i.nl-icon {
+            font-size: 2.5rem;
+            color: #C9A961;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .newsletter-content h3 {
+            font-family: 'Cairo', sans-serif;
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .newsletter-content p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid rgba(201,169,97,0.3);
+            border-radius: 999px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            font-size: 0.9rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        .newsletter-form input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #C9A961;
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 0 0 4px rgba(201,169,97,0.15);
+        }
+        .newsletter-form button {
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(201,169,97,0.4);
+        }
+        .newsletter-form button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .nl-status {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            display: none;
+        }
+        .nl-status.success { color: #6EE7B7; display: block; }
+        .nl-status.error { color: #FCA5A5; display: block; }
+
+        @media (max-width: 600px) {
+            .newsletter-form { flex-direction: column; }
+            .newsletter-form button { justify-content: center; }
+            .newsletter-box { padding: 40px 25px; }
+        }
+
+        /* RTL: مبدل اللغة */
+        [dir="rtl"] .language-switcher { right: auto; left: 20px; }
+        @media (max-width: 768px) {
+            [dir="rtl"] .language-switcher { right: auto; left: 10px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="trial-banner">
+        <i class="fas fa-tools"></i>
+        <span>هذا إصدار تجريبي للموقع - جاري التطوير والتحديث</span>
+        <i class="fas fa-tools"></i>
+    </div>
+
+    <div class="language-switcher">
+        <a href="/blog.html" class="lang-btn"><i class="fas fa-globe"></i> English</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="/ar/">
+                <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة">
+                <div>
+                    <span class="firm-name">وليد محمد أبوالعلا</span>
+                    <small class="firm-sub">مكتب محاماة · تحكيم · ملكية فكرية</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/ar/">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/about.html">من نحن</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">الخدمات</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/ar/arbitration.html">التحكيم الدولي</a></li>
+                            <li><a class="dropdown-item" href="/ar/trademark.html">تسجيل العلامات التجارية</a></li>
+                            <li><a class="dropdown-item" href="/ar/patent.html">براءات الاختراع</a></li>
+                            <li><a class="dropdown-item" href="/ar/copyright.html">حقوق المؤلف</a></li>
+                            <li><a class="dropdown-item" href="/ar/litigation.html">قضايا الملكية الفكرية</a></li>
+                            <li><a class="dropdown-item" href="/ar/licensing.html">الترخيص والعقود</a></li>
+                            <li><a class="dropdown-item" href="/ar/corporate-formation.html">تأسيس الشركات</a></li>
+                            <li><a class="dropdown-item" href="/ar/criminal-litigation.html">القضايا الجنائية</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/ar/services.html">جميع الخدمات</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/lawyers.html">فريق العمل</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/ar/blog.html">المدونة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/contact.html">اتصل بنا</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>بوابة العميل
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4">رؤى قانونية</h1>
+            <p class="lead">تحليل عملي في الملكية الفكرية والتحكيم وقانون الشركات والتقاضي</p>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         المقال المميز
+         ============================================================ -->
+    <section class="py-5">
+        <div class="container">
+
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">مقال مميز</span>
+                <h2 class="sh-title">أحدث <span class="text-gold">ما نُقدّمه</span></h2>
+            </div>
+
+            <article class="featured-post">
+                <div class="fp-image">
+                    <span class="fp-badge">مميز</span>
+                    <img src="/images/blog/ai-ip-cover.jpg"
+                         alt="الذكاء الاصطناعي والملكية الفكرية - بحث علمي"
+                         loading="lazy"
+                         onerror="this.onerror=null; this.style.opacity=0;">
+                </div>
+                <div class="fp-content">
+                    <div class="fp-meta">
+                        <span class="fp-category">بحث علمي</span>
+                        <span><i class="fas fa-calendar"></i> 2026</span>
+                        <span><i class="fas fa-clock"></i> 9 دقائق قراءة</span>
+                    </div>
+                    <h3 class="fp-title">أثر التوسع في استخدام الذكاء الاصطناعي كمعلم رقمي على حقوق الملكية الفكرية لمؤلفي المحتوى المستخدم</h3>
+                    <p class="fp-excerpt">
+                        بحث علمي أُعدّ منفرداً وقُدّم في المؤتمر العلمي التاسع للملكية الفكرية،
+                        يحلّل تأثير التوسع في استخدام الذكاء الاصطناعي كمعلم رقمي على حقوق
+                        الملكية الفكرية لمؤلفي المحتوى الذي يُستخدم لتدريب الأنظمة. البحث
+                        حصل على موافقة النشر بمجلة المعهد القومي للملكية الفكرية.
+                    </p>
+                    <a href="/ar/blog/ai-digital-educator-ip-rights.html" class="fp-read-more">
+                        اقرأ المقال
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+         كل المقالات
+         ============================================================ -->
+    <section class="py-5 bg-light">
+        <div class="container">
+
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">جميع المقالات</span>
+                <h2 class="sh-title">تصفّح <span class="text-gold">رؤانا</span></h2>
+                <p class="sh-desc">تحليل قانوني عبر مجالات الممارسة.</p>
+            </div>
+
+            <!-- تابات الفلترة -->
+            <div class="filter-tabs">
+                <a href="#" class="filter-tab active"><i class="fas fa-th-large"></i> الكل</a>
+                <a href="#" class="filter-tab"><i class="fas fa-trademark"></i> الملكية الفكرية</a>
+                <a href="#" class="filter-tab"><i class="fas fa-scale-balanced"></i> التحكيم</a>
+                <a href="#" class="filter-tab"><i class="fas fa-building"></i> الشركات</a>
+                <a href="#" class="filter-tab"><i class="fas fa-gavel"></i> التقاضي</a>
+            </div>
+
+            <!-- شبكة المقالات -->
+            <div class="row g-4">
+
+                <!-- 1 — تعديلات قانون الملكية الفكرية -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/ar/blog/egyptian-ip-law-amendments-2026.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category ip">ملكية فكرية</span>
+                            <img src="/images/blog/ip-law-amendments.jpg" alt="تعديلات قانون الملكية الفكرية المصري" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> مارس 2026</span>
+                                <span><i class="fas fa-clock"></i> 6 دقائق</span>
+                            </div>
+                            <h4 class="pc-title">التعديلات الحديثة على قانون الملكية الفكرية المصري: ما يجب أن يعرفه أصحاب الأعمال</h4>
+                            <p class="pc-excerpt">
+                                نظرة عملية على آخر التعديلات على إطار الملكية الفكرية في مصر —
+                                وما تعنيه لحاملي العلامات التجارية ومقدّمي طلبات البراءات وأصحاب الحقوق.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
+                                <i class="fas fa-arrow-left pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 2 — اتجاهات التحكيم -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/ar/blog/arbitration-trends-2026.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category arb">تحكيم</span>
+                            <img src="/images/blog/arbitration-trends.jpg" alt="اتجاهات التحكيم 2026" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> فبراير 2026</span>
+                                <span><i class="fas fa-clock"></i> 7 دقائق</span>
+                            </div>
+                            <h4 class="pc-title">اتجاهات التحكيم التي يجب متابعتها في 2026: مصر والمنطقة</h4>
+                            <p class="pc-excerpt">
+                                كيف تتطور ممارسة التحكيم في مصر ومنطقة الشرق الأوسط — بما في
+                                ذلك منازعات الملكية الفكرية، والتحكيم الاستثماري، والدور المتزايد
+                                للتقنية.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
+                                <i class="fas fa-arrow-left pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 3 — حماية البرمجيات -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/ar/blog/protecting-software-patents.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category ip">ملكية فكرية</span>
+                            <img src="/images/blog/software-patents.jpg" alt="حماية البرمجيات في مصر" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> فبراير 2026</span>
+                                <span><i class="fas fa-clock"></i> 8 دقائق</span>
+                            </div>
+                            <h4 class="pc-title">حماية البرمجيات في مصر: حقوق المؤلف أم براءات الاختراع أم الأسرار التجارية؟</h4>
+                            <p class="pc-excerpt">
+                                تفصيل للمسارات القانونية الثلاثة الرئيسية لحماية البرمجيات
+                                ومنتجات SaaS في مصر — وكيف تختار الاستراتيجية المناسبة لعملك.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
+                                <i class="fas fa-arrow-left pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 4 — معارضات العلامات -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/ar/blog/trademark-opposition-strategy.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category ip">ملكية فكرية</span>
+                            <img src="/images/blog/trademark-opposition.jpg" alt="معارضات العلامات التجارية" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> يناير 2026</span>
+                                <span><i class="fas fa-clock"></i> 5 دقائق</span>
+                            </div>
+                            <h4 class="pc-title">الرد على معارضات العلامات التجارية: دليل عملي</h4>
+                            <p class="pc-excerpt">
+                                ماذا يحدث عندما يُعارض على طلب تسجيل علامتك التجارية — والخطوات
+                                التي يمكنك اتخاذها للدفاع عن علامتك بموقف قانوني قوي.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
+                                <i class="fas fa-arrow-left pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 5 — حوكمة الشركات -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/ar/blog/corporate-governance-checklist.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category corp">شركات</span>
+                            <img src="/images/blog/corporate-governance.jpg" alt="قائمة فحص حوكمة الشركات" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> يناير 2026</span>
+                                <span><i class="fas fa-clock"></i> 6 دقائق</span>
+                            </div>
+                            <h4 class="pc-title">قائمة فحص حوكمة الشركات للشركات المصرية</h4>
+                            <p class="pc-excerpt">
+                                قائمة عملية تُغطّي متطلبات الجمعية العمومية، وإجراءات مجلس
+                                الإدارة، والالتزامات التنظيمية للشركات ذات المسؤولية المحدودة
+                                والمساهمة في مصر.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
+                                <i class="fas fa-arrow-left pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 6 — أخطاء NDA -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/ar/blog/nda-drafting-mistakes.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category corp">شركات</span>
+                            <img src="/images/blog/nda-drafting.jpg" alt="أخطاء صياغة اتفاقيات عدم الإفصاح" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> ديسمبر 2025</span>
+                                <span><i class="fas fa-clock"></i> 5 دقائق</span>
+                            </div>
+                            <h4 class="pc-title">خمسة أخطاء شائعة في صياغة اتفاقيات عدم الإفصاح — وكيف تتجنبها</h4>
+                            <p class="pc-excerpt">
+                                كثيراً ما تُعامَل اتفاقيات NDA كإجراء شكلي. إليك لماذا تُهم —
+                                وأكثر أخطاء الصياغة الشائعة التي قد تعرّض معلوماتك السرية للخطر.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
+                                <i class="fas fa-arrow-left pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 7 — التحضير للتقاضي -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/ar/blog/preparing-commercial-litigation.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category lit">تقاضي</span>
+                            <img src="/images/blog/litigation-prep.jpg" alt="التحضير للتقاضي التجاري" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> ديسمبر 2025</span>
+                                <span><i class="fas fa-clock"></i> 7 دقائق</span>
+                            </div>
+                            <h4 class="pc-title">التحضير للتقاضي التجاري: قائمة فحص عملية لأصحاب الأعمال</h4>
+                            <p class="pc-excerpt">
+                                ما يجب تحضيره قبل رفع دعوى تجارية أو الدفاع عن نفسك — المستندات،
+                                والأدلة، والجدول الزمني، وما يمكن توقّعه خلال العملية.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
+                                <i class="fas fa-arrow-left pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 8 — العناية الواجبة -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/ar/blog/ip-due-diligence-ma.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category ip">ملكية فكرية</span>
+                            <img src="/images/blog/ip-due-diligence.jpg" alt="العناية الواجبة للملكية الفكرية في الاندماج" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> نوفمبر 2025</span>
+                                <span><i class="fas fa-clock"></i> 8 دقائق</span>
+                            </div>
+                            <h4 class="pc-title">العناية الواجبة للملكية الفكرية في صفقات الاندماج والاستحواذ: ما يُغفله المشترون</h4>
+                            <p class="pc-excerpt">
+                                في صفقات الاندماج والاستحواذ، غالباً ما تكون أصول الملكية
+                                الفكرية الأكثر قيمة — والأكثر إغفالاً. إليك ما يجب فحصه قبل التوقيع.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
+                                <i class="fas fa-arrow-left pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 9 — استراتيجية إيداع البراءات -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/ar/blog/patent-filing-strategy-egypt.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category ip">ملكية فكرية</span>
+                            <img src="/images/blog/patent-filing.jpg" alt="استراتيجية إيداع البراءات في مصر" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> أكتوبر 2025</span>
+                                <span><i class="fas fa-clock"></i> 7 دقائق</span>
+                            </div>
+                            <h4 class="pc-title">استراتيجية إيداع البراءات في مصر: المسار المحلي مقابل PCT</h4>
+                            <p class="pc-excerpt">
+                                متى تُودع محلياً، ومتى تسلك مسار PCT، وكيف تبني استراتيجية براءات
+                                تدعم الحماية طويلة المدى والتوسع الدولي.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
+                                <i class="fas fa-arrow-left pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+         النشرة البريدية
+         ============================================================ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="newsletter-box">
+                <div class="newsletter-content">
+                    <i class="fas fa-envelope-open-text nl-icon"></i>
+                    <h3>ابقَ على اطّلاع بآخر تطورات الملكية الفكرية والقانون في مصر</h3>
+                    <p>
+                        استلم تحديثات دورية من مكتبنا — مقالات جديدة، تغييرات تنظيمية،
+                        ورؤى قانونية عملية. بدون إزعاج أو رسائل غير مرغوبة.
+                    </p>
+                    <form class="newsletter-form" id="newsletterForm" novalidate>
+                        <input type="email" id="nlEmail" name="email" required placeholder="your@email.com" dir="ltr">
+                        <button type="submit" id="nlBtn">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>اشترك</span>
+                        </button>
+                    </form>
+                    <div class="nl-status" id="nlStatus"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         أسئلة شائعة
+         ============================================================ -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">أسئلة شائعة</span>
+                <h2 class="sh-title">أسئلة عن مدونتنا</h2>
+            </div>
+
+            <div class="faq-rich-accordion mx-auto" style="max-width: 900px;">
+                <div class="accordion" id="blogFaq">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bf1">
+                                هل المحتوى المنشور في المدونة يُعدّ استشارة قانونية؟
+                            </button>
+                        </h3>
+                        <div id="bf1" class="accordion-collapse collapse" data-bs-parent="#blogFaq">
+                            <div class="accordion-body">
+                                لا. المقالات المنشورة في هذه المدونة لأغراض معلوماتية عامة فقط
+                                ولا تُعدّ استشارة قانونية. للحصول على استشارة خاصة بحالتك،
+                                يُرجى حجز استشارة.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bf2">
+                                كم مرة تنشرون مقالات جديدة؟
+                            </button>
+                        </h3>
+                        <div id="bf2" class="accordion-collapse collapse" data-bs-parent="#blogFaq">
+                            <div class="accordion-body">
+                                ننشر بشكل دوري، بتركيز على الجودة لا الكم — عادةً عند وجود
+                                تطوّر قانوني مهم أو موضوع يستحق التحليل لعملائنا.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bf3">
+                                هل يمكنني اقتراح موضوع للتغطية؟
+                            </button>
+                        </h3>
+                        <div id="bf3" class="accordion-collapse collapse" data-bs-parent="#blogFaq">
+                            <div class="accordion-body">
+                                نعم — يسعدنا استقبال اقتراحاتك. أرسل لنا رسالة عبر صفحة
+                                التواصل مع الموضوع المقترح.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bf4">
+                                هل يمكنني إعادة نشر هذه المقالات؟
+                            </button>
+                        </h3>
+                        <div id="bf4" class="accordion-collapse collapse" data-bs-parent="#blogFaq">
+                            <div class="accordion-body">
+                                يمكنك مشاركة الروابط واقتباسات قصيرة مع الإشارة للمصدر.
+                                إعادة النشر الكامل تتطلب إذناً كتابياً مسبقاً — يُرجى التواصل معنا.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         دعوة نهائية
+         ============================================================ -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-handshake"></i></div>
+                <h2>تحتاج استشارة في موضوع معيّن؟</h2>
+                <p>مدونتنا تُغطّي موضوعات عامة — لحالتك الخاصة، احجز استشارة.</p>
+                <div class="fcr-buttons">
+                    <a href="/ar/consultation.html" class="btn-rich-primary light">
+                        <span>احجز استشارة</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <a href="/ar/contact.html" class="btn-rich-ghost">
+                        <i class="fas fa-envelope"></i>
+                        <span>تواصل معنا</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         الفوتر
+         ============================================================ -->
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">مكتب وليد محمد أبوالعلا للمحاماة</h5>
+                    <p class="footer-desc">محاماة · تحكيم · ملكية فكرية. نخدم عملاءنا بتفانٍ منذ 2016.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="فيسبوك"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">روابط سريعة</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/">الرئيسية</a></li>
+                        <li><a href="/ar/about.html">من نحن</a></li>
+                        <li><a href="/ar/services.html">الخدمات</a></li>
+                        <li><a href="/ar/lawyers.html">فريق العمل</a></li>
+                        <li><a href="/ar/blog.html">المدونة</a></li>
+                        <li><a href="/ar/contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">معلومات الاتصال</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> العاشر من رمضان، القاهرة، مصر</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;" dir="ltr">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;" dir="ltr">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> السبت - الخميس: 9 ص - 8 م</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="footer-heading">قانوني</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/privacy-policy.html">سياسة الخصوصية</a></li>
+                        <li><a href="/ar/terms-of-service.html">شروط الاستخدام</a></li>
+                        <li><a href="/ar/cookie-policy.html">سياسة ملفات تعريف الارتباط</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 مكتب وليد محمد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="العودة إلى الأعلى"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!-- ============================================================
+         معالج النشرة البريدية
+         ============================================================ -->
     <script>
     (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-            testImg.onerror = function() { tryLoadImage(index + 1); };
-        }
-        tryLoadImage(0);
+        const form = document.getElementById('newsletterForm');
+        const statusDiv = document.getElementById('nlStatus');
+        const btn = document.getElementById('nlBtn');
+
+        if (!form) return;
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('nlEmail').value.trim();
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                statusDiv.className = 'nl-status error';
+                statusDiv.textContent = 'يرجى إدخال بريد إلكتروني صحيح.';
+                return;
+            }
+
+            btn.disabled = true;
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>جارٍ الإرسال...</span>';
+
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: 'مشترك في النشرة البريدية',
+                        email: email,
+                        phone: 'N/A',
+                        subject: 'اشتراك في النشرة البريدية',
+                        message: 'طلب اشتراك جديد في النشرة البريدية من صفحة المدونة.',
+                        type: 'newsletter'
+                    })
+                });
+
+                if (res.ok) {
+                    statusDiv.className = 'nl-status success';
+                    statusDiv.textContent = 'تم الاشتراك! شكراً لك — ستستلم تحديثنا القادم.';
+                    form.reset();
+                } else {
+                    statusDiv.className = 'nl-status error';
+                    statusDiv.textContent = 'حدث خطأ ما. يرجى المحاولة مرة أخرى.';
+                }
+            } catch (err) {
+                statusDiv.className = 'nl-status error';
+                statusDiv.textContent = 'خطأ في الشبكة. يرجى المحاولة لاحقاً.';
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = original;
+            }
+        });
     })();
     </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const langSwitcher = document.querySelector('.language-switcher');
-        if (!langSwitcher) return;
-        const langLink = langSwitcher.querySelector('a');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (currentPath.startsWith('/ar/')) {
-            let englishPath = currentPath.replace('/ar/', '/');
-            if (englishPath === '' || englishPath === '/') englishPath = '/';
-            langLink.href = englishPath;
-            langLink.innerHTML = '<i class="fas fa-globe"></i> English';
-        } else {
-            let arabicPath;
-            if (currentPath === '/' || currentPath === '') arabicPath = '/ar/';
-            else arabicPath = '/ar' + currentPath;
-            langLink.href = arabicPath;
-            langLink.innerHTML = '<i class="fas fa-globe"></i> العربية';
-        }
-    });
-    </script>
+
 </body>
 </html>

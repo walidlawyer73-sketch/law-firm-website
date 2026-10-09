@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Contracts - Walid Mohamed Abu Al-Ela Law Firm</title>
+    <meta name="description" content="Drafting and reviewing all types of contracts in Egypt — agency, employment, lease, loan, settlement, mediation, and more. Tell us your contract type. Trusted since 2013.">
+    <meta name="keywords" content="contract drafting Egypt, agency contract, employment contract, lease agreement, loan agreement, settlement agreement, mediation">
+    <meta name="author" content="Walid Mohamed Abu Al-Ela">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/other-contracts.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/other-contracts.html">
+    <meta property="og:title" content="Other Contracts - Walid Mohamed Abu Al-Ela Law Firm">
+    <meta property="og:description" content="Agency, employment, lease, loan, settlement, mediation, and any other contract type you need.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/other-contracts.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/other-contracts.html">
+
+    <link rel="icon" type="image/png" href="/images/logo arb ip.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WQ0CPXRK2F');
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Other Contracts",
+        "provider": {
+            "@type": "LegalService",
+            "name": "Walid Mohamed Abu Al-Ela Law Firm",
+            "url": "https://law-arb-ip-walid.vercel.app/"
+        },
+        "areaServed": {"@type": "Country", "name": "Egypt"},
+        "description": "Drafting and reviewing all types of contracts — agency, employment, lease, loan, settlement, mediation, and more."
+    }
+    </script>
+
+    <style>
+        /* ============================================================
+           OTHER CONTRACTS - Smart Selector + Form
+           ============================================================ */
+        .oc-hero { padding: 90px 0 70px; background: #fff; }
+        .oc-intro { padding: 40px 0 60px; }
+        .oc-intro .lead-block {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--dark-text);
+            border-inline-start: 4px solid var(--accent-color);
+            padding-inline-start: 24px;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        /* Contract Type Selector (Interactive Cards) */
+        .oc-selector {
+            padding: 40px 0 60px;
+        }
+
+        .oc-types-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 40px 0;
+        }
+
+        .oc-type-card {
+            background: #fff;
+            border: 2px solid #E9ECEF;
+            border-radius: 16px;
+            padding: 24px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            font-family: inherit;
+        }
+
+        .oc-type-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-dark));
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.4s ease;
+        }
+
+        .oc-type-card:hover::before,
+        .oc-type-card.selected::before {
+            transform: scaleX(1);
+        }
+
+        .oc-type-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px -15px rgba(201,169,97,0.25);
+        }
+
+        .oc-type-card.selected {
+            background: linear-gradient(160deg, rgba(201,169,97,0.08) 0%, #fff 100%);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px -12px rgba(201,169,97,0.35);
+        }
+
+        .oc-type-card.selected::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 26px;
+            height: 26px;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 10px rgba(201,169,97,0.4);
+        }
+
+        .oc-type-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #F8F9FA, #fff);
+            border: 1px solid #E9ECEF;
+            color: var(--accent-dark);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin: 0 auto 14px;
+            transition: all 0.4s ease;
+        }
+
+        .oc-type-card:hover .oc-type-icon,
+        .oc-type-card.selected .oc-type-icon {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: var(--primary-color);
+            border-color: transparent;
+            transform: rotate(-6deg) scale(1.08);
+            box-shadow: 0 8px 20px rgba(201,169,97,0.3);
+        }
+
+        .oc-type-card h5 {
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--dark-text);
+            margin: 0 0 6px;
+        }
+
+        .oc-type-card small {
+            font-size: 0.75rem;
+            color: #6C757D;
+            line-height: 1.4;
+            display: block;
+        }
+
+        /* Custom form */
+        .oc-form-wrap {
+            padding: 60px 0 80px;
+            background: linear-gradient(180deg, #F8F9FA 0%, #fff 100%);
+        }
+
+        .oc-form-card {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 24px;
+            padding: 45px 40px;
+            box-shadow: 0 30px 60px -20px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .oc-form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-dark), var(--accent-color));
+        }
+
+        .oc-form-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--dark-text);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .oc-form-card > p {
+            text-align: center;
+            color: #6C757D;
+            margin-bottom: 35px;
+            font-size: 0.95rem;
+        }
+
+        .oc-form .form-label {
+            font-weight: 700;
+            color: var(--dark-text);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .oc-form .form-control,
+        .oc-form .form-select {
+            padding: 13px 18px;
+            border: 2px solid #E9ECEF;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .oc-form .form-control:focus,
+        .oc-form .form-select:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 4px rgba(201,169,97,0.12);
+        }
+
+        .oc-form textarea.form-control {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .oc-form .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: var(--primary-color);
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 30px -8px rgba(201,169,97,0.4);
+            margin-top: 15px;
+            font-family: inherit;
+        }
+
+        .oc-form .btn-submit:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px -8px rgba(201,169,97,0.55);
+        }
+
+        .oc-form .btn-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .oc-form-status {
+            margin-top: 20px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: none;
+            text-align: center;
+        }
+
+        .oc-form-status.show { display: block; }
+        .oc-form-status.success {
+            background: #D4EDDA;
+            color: #155724;
+            border: 1px solid #C3E6CB;
+        }
+        .oc-form-status.error {
+            background: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+        }
+
+        .oc-form-note {
+            text-align: center;
+            font-size: 0.82rem;
+            color: #6C757D;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .oc-form-note i {
+            color: var(--accent-dark);
+            margin-inline-end: 4px;
+        }
+
+        /* Process */
+        .oc-process { padding: 80px 0; background: #F8F9FA; }
+        .oc-process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 50px;
+        }
+        .oc-process-step { text-align: center; position: relative; }
+        .ops-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin: 0 auto 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+        }
+        .oc-process-step:hover .ops-number {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: var(--primary-color);
+            transform: scale(1.08) rotate(-5deg);
+            box-shadow: 0 20px 40px rgba(201,169,97,0.35);
+        }
+        .oc-process-step h5 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--dark-text);
+            margin-bottom: 8px;
+        }
+        .oc-process-step p {
+            font-size: 0.85rem;
+            color: #6C757D;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* FAQ */
+        .oc-faq { padding: 80px 0; background: #fff; }
+
+        @media (max-width: 991px) {
+            .oc-types-grid { grid-template-columns: repeat(3, 1fr); }
+            .oc-process-steps { grid-template-columns: repeat(2, 1fr); }
+            .oc-form-card { padding: 35px 28px; }
+        }
+
+        @media (max-width: 576px) {
+            .oc-types-grid { grid-template-columns: repeat(2, 1fr); }
+            .oc-process-steps { grid-template-columns: 1fr; }
+            .oc-hero { padding: 60px 0 40px; }
+            .oc-form-card { padding: 28px 20px; border-radius: 16px; }
+            .oc-form-card h3 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ============================================================
+         TRIAL BANNER
+         ============================================================ -->
+    <div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background: linear-gradient(90deg, #FFC107 0%, #FFB300 100%); color: #000; text-align: center; padding: 10px 15px; font-weight: 600; border-bottom: 2px solid #000; display: flex; justify-content: center; align-items: center; gap: 10px; box-sizing: border-box; font-size: 0.9rem; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+        <i class="fas fa-tools" style="font-size: 1.1rem; animation: pulse-icon 2s ease-in-out infinite;"></i>
+        <span>This is a trial version - site under development and updates</span>
+        <i class="fas fa-tools" style="font-size: 1.1rem; animation: pulse-icon 2s ease-in-out infinite;"></i>
+    </div>
+    <style>@keyframes pulse-icon { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }</style>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <a href="/ar/other-contracts.html" class="lang-btn"><i class="fas fa-globe"></i> العربية</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo arb ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm">
+                <div>
+                    <span class="firm-name">Walid Mohamed Abu Al-Ela</span>
+                    <small class="firm-sub">Law · Arbitration · IP</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
+                            <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
+                            <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
+                            <li><a class="dropdown-item" href="/copyright.html">Copyright</a></li>
+                            <li><a class="dropdown-item" href="/litigation.html">IP Litigation</a></li>
+                            <li><a class="dropdown-item" href="/licensing.html">Licensing & Contracts</a></li>
+                            <li><a class="dropdown-item" href="/corporate-formation.html">Corporate Formation</a></li>
+                            <li><a class="dropdown-item" href="/criminal-litigation.html">Criminal Litigation</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/services.html">All Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>Client Portal
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container text-center">
+            <div class="sh-line" style="margin: 0 auto 18px;"></div>
+            <span class="sh-label" style="color: var(--accent-light);">Contracts & Agreements</span>
+            <h1 class="display-4">Other Contracts</h1>
+            <p class="lead">Every other contract type you need — drafted with the same care</p>
+        </div>
+    </header>
+
+    <!-- INTRO -->
+    <section class="oc-intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <p class="lead-block">
+                        Not every contract fits into a category. Whether it's an agency agreement, employment contract, lease, loan, settlement, or a highly customized arrangement — we draft it with the same precision and enforceability standards.
+                    </p>
+                    <p class="about-text">
+                        Choose your contract type below, or select "Other / Not Listed" if you're not sure. Tell us briefly about your situation, and our team will get back to you with the right approach.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTRACT TYPE SELECTOR -->
+    <section class="oc-selector">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">Step 1</span>
+                <h2 class="sh-title">What Type of Contract Do You Need?</h2>
+                <p class="sh-desc">Click on the contract type that best describes your need.</p>
+            </div>
+
+            <div class="oc-types-grid" id="ocTypesGrid">
+                <button type="button" class="oc-type-card" data-type="Agency Agreement">
+                    <div class="oc-type-icon"><i class="fas fa-user-tie"></i></div>
+                    <h5>Agency</h5>
+                    <small>Commercial & sales agency</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="Employment Contract">
+                    <div class="oc-type-icon"><i class="fas fa-briefcase"></i></div>
+                    <h5>Employment</h5>
+                    <small>Employee & executive</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="Lease Agreement">
+                    <div class="oc-type-icon"><i class="fas fa-home"></i></div>
+                    <h5>Lease</h5>
+                    <small>Residential & commercial</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="Loan Agreement">
+                    <div class="oc-type-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h5>Loan</h5>
+                    <small>Personal & corporate</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="Settlement Agreement">
+                    <div class="oc-type-icon"><i class="fas fa-handshake"></i></div>
+                    <h5>Settlement</h5>
+                    <small>Dispute resolution</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="Mediation Agreement">
+                    <div class="oc-type-icon"><i class="fas fa-people-arrows"></i></div>
+                    <h5>Mediation</h5>
+                    <small>Out-of-court resolution</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="Sale & Purchase Agreement">
+                    <div class="oc-type-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h5>Sale & Purchase</h5>
+                    <small>Goods & assets</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="Service Agreement">
+                    <div class="oc-type-icon"><i class="fas fa-concierge-bell"></i></div>
+                    <h5>Service</h5>
+                    <small>Professional & general</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="Contract Review">
+                    <div class="oc-type-icon"><i class="fas fa-search"></i></div>
+                    <h5>Review Only</h5>
+                    <small>Review existing contract</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="Amendment to Existing Contract">
+                    <div class="oc-type-icon"><i class="fas fa-edit"></i></div>
+                    <h5>Amendment</h5>
+                    <small>Modify existing contract</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="Termination Advice">
+                    <div class="oc-type-icon"><i class="fas fa-times-circle"></i></div>
+                    <h5>Termination</h5>
+                    <small>Terminate existing contract</small>
+                </button>
+
+                <button type="button" class="oc-type-card" data-type="Other / Not Listed">
+                    <div class="oc-type-icon"><i class="fas fa-question-circle"></i></div>
+                    <h5>Other</h5>
+                    <small>Not sure? Tell us below</small>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- REQUEST FORM -->
+    <section class="oc-form-wrap">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">Step 2</span>
+                <h2 class="sh-title">Tell Us About Your Contract</h2>
+                <p class="sh-desc">Fill in the form below — we'll respond within 24 hours.</p>
+            </div>
+
+            <div class="oc-form-card">
+                <h3><i class="fas fa-file-signature" style="color: var(--accent-dark); margin-inline-end: 10px;"></i>Contract Inquiry Form</h3>
+                <p>All information submitted is strictly confidential per attorney-client privilege.</p>
+
+                <form id="otherContractsForm" class="oc-form" novalidate>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="ocName" class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="ocName" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ocEmail" class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" id="ocEmail" name="email" required placeholder="name@example.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ocPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="ocPhone" name="phone" placeholder="e.g., +20 111 257 219">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ocContractType" class="form-label">Contract Type *</label>
+                            <select class="form-select" id="ocContractType" name="contractType" required>
+                                <option value="">— Select a type —</option>
+                                <option value="Agency Agreement">Agency Agreement</option>
+                                <option value="Employment Contract">Employment Contract</option>
+                                <option value="Lease Agreement">Lease Agreement</option>
+                                <option value="Loan Agreement">Loan Agreement</option>
+                                <option value="Settlement Agreement">Settlement Agreement</option>
+                                <option value="Mediation Agreement">Mediation Agreement</option>
+                                <option value="Sale & Purchase Agreement">Sale & Purchase Agreement</option>
+                                <option value="Service Agreement">Service Agreement</option>
+                                <option value="Contract Review">Contract Review Only</option>
+                                <option value="Amendment to Existing Contract">Amendment to Existing Contract</option>
+                                <option value="Termination Advice">Termination Advice</option>
+                                <option value="Other / Not Listed">Other / Not Listed</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="ocDetails" class="form-label">Brief Description of Your Needs *</label>
+                            <textarea class="form-control" id="ocDetails" name="details" required placeholder="Describe the contract you need, the parties involved, and any specific requirements or concerns..."></textarea>
+                        </div>
+                        <div class="col-12">
+                            <label for="ocDeadline" class="form-label">Do You Have a Deadline?</label>
+                            <input type="text" class="form-control" id="ocDeadline" name="deadline" placeholder="e.g., End of this month, Next week, Flexible">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="ocSubmitBtn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Send Request</span>
+                    </button>
+
+                    <div class="oc-form-status" id="ocFormStatus"></div>
+
+                    <p class="oc-form-note">
+                        <i class="fas fa-shield-alt"></i>
+                        Your information is protected by attorney-client privilege and never shared with third parties.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="oc-process">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">How It Works</span>
+                <h2 class="sh-title">Our Contract Process</h2>
+                <p class="sh-desc">Simple, structured, and efficient.</p>
+            </div>
+
+            <div class="oc-process-steps">
+                <div class="oc-process-step">
+                    <div class="ops-number">01</div>
+                    <h5>Submit Request</h5>
+                    <p>Tell us your contract type and needs via the form above.</p>
+                </div>
+
+                <div class="oc-process-step">
+                    <div class="ops-number">02</div>
+                    <h5>Initial Review</h5>
+                    <p>We assess your situation and propose the right approach within 24 hours.</p>
+                </div>
+
+                <div class="oc-process-step">
+                    <div class="ops-number">03</div>
+                    <h5>Drafting & Negotiation</h5>
+                    <p>We draft, review, or negotiate — protecting your interests.</p>
+                </div>
+
+                <div class="oc-process-step">
+                    <div class="ops-number">04</div>
+                    <h5>Delivery & Support</h5>
+                    <p>Finalized document with ongoing support for amendments or disputes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="oc-faq">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">FAQ</span>
+                <h2 class="sh-title">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion faq-rich-accordion" id="faqOC">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#oc1">
+                                    What if my contract type isn't listed?
+                                </button>
+                            </h2>
+                            <div id="oc1" class="accordion-collapse collapse show" data-bs-parent="#faqOC">
+                                <div class="accordion-body">
+                                    Simply select "Other / Not Listed" in the form and describe what you need in the details field. We handle all contract types — from standard templates to fully customized agreements.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#oc2">
+                                    Can I just send my existing contract for review?
+                                </button>
+                            </h2>
+                            <div id="oc2" class="accordion-collapse collapse" data-bs-parent="#faqOC">
+                                <div class="accordion-body">
+                                    Yes — select "Contract Review Only" in the form and mention in the details field that you'll send a document. We'll reply with secure instructions for document submission.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#oc3">
+                                    How long does the process take?
+                                </button>
+                            </h2>
+                            <div id="oc3" class="accordion-collapse collapse" data-bs-parent="#faqOC">
+                                <div class="accordion-body">
+                                    Initial response within 24 hours. Standard contracts are typically delivered in 3-7 business days. Complex or highly customized agreements take longer — we'll give you a clear timeline after the initial review.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#oc4">
+                                    Is there a fee for the initial consultation?
+                                </button>
+                            </h2>
+                            <div id="oc4" class="accordion-collapse collapse" data-bs-parent="#faqOC">
+                                <div class="accordion-body">
+                                    Initial assessment of your request is free. We'll propose a clear fee structure based on the contract complexity after the initial review.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-file-signature"></i></div>
+                <h2>Ready to Get Started?</h2>
+                <p>Fill in the form above or contact us directly. We'll respond within 24 hours.</p>
+                <div class="fcr-buttons">
+                    <a href="/contact.html" class="btn-rich-primary light">
+                        <span>Contact Us</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/services.html" class="btn-rich-ghost">
+                        <i class="fas fa-th-large"></i>
+                        <span>All Services</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="/images/logo arb ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">Walid Mohamed Abu Al-Ela</h5>
+                    <p class="footer-desc">Law · Arbitration · Intellectual Property. Serving clients with dedication since 2013.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">Quick Links</h6>
+                    <ul class="footer-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/lawyers.html">Our Team</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">Contact</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Sat - Thu: 9am - 8pm</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="footer-heading">Legal</h6>
+                    <ul class="footer-list">
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Use</a></li>
+                        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Walid Mohamed Abu Al-Ela Law Firm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!-- ============================================================
+         SMART SELECTOR + FORM LOGIC
+         ============================================================ -->
+    <script>
+        (function() {
+            const typeCards = document.querySelectorAll('.oc-type-card');
+            const contractTypeSelect = document.getElementById('ocContractType');
+            const form = document.getElementById('otherContractsForm');
+            const statusDiv = document.getElementById('ocFormStatus');
+            const submitBtn = document.getElementById('ocSubmitBtn');
+
+            // When a type card is clicked
+            typeCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const type = this.getAttribute('data-type');
+
+                    // Remove selected from all
+                    typeCards.forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+
+                    // Update dropdown
+                    if (contractTypeSelect) {
+                        contractTypeSelect.value = type;
+                    }
+
+                    // Scroll to form
+                    const formWrap = document.querySelector('.oc-form-wrap');
+                    if (formWrap) {
+                        formWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Sync dropdown -> cards
+            if (contractTypeSelect) {
+                contractTypeSelect.addEventListener('change', function() {
+                    const val = this.value;
+                    typeCards.forEach(c => {
+                        c.classList.toggle('selected', c.getAttribute('data-type') === val);
+                    });
+                });
+            }
+
+            // Handle form submission
+            if (form) {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+
+                    // Validate
+                    const name = document.getElementById('ocName').value.trim();
+                    const email = document.getElementById('ocEmail').value.trim();
+                    const contractType = document.getElementById('ocContractType').value;
+                    const details = document.getElementById('ocDetails').value.trim();
+
+                    if (!name || !email || !contractType || !details) {
+                        showStatus('error', 'Please fill in all required fields (Name, Email, Contract Type, and Details).');
+                        return;
+                    }
+
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        showStatus('error', 'Please enter a valid email address.');
+                        return;
+                    }
+
+                    // Prepare data
+                    const phone = document.getElementById('ocPhone').value.trim();
+                    const deadline = document.getElementById('ocDeadline').value.trim();
+
+                    const fullMessage = [
+                        `Contract Type: ${contractType}`,
+                        deadline ? `Deadline: ${deadline}` : '',
+                        '',
+                        'Details:',
+                        details
+                    ].filter(Boolean).join('\n');
+
+                    const payload = new FormData();
+                    payload.append('name', name);
+                    payload.append('email', email);
+                    payload.append('phone', phone);
+                    payload.append('service', 'other-contracts');
+                    payload.append('message', fullMessage);
+
+                    // Disable button
+                    submitBtn.disabled = true;
+                    const originalHTML = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Sending...</span>';
+
+                    try {
+                        const response = await fetch('/api/contact', {
+                            method: 'POST',
+                            body: payload,
+                            headers: { 'Accept': 'application/json' }
+                        });
+
+                        let data;
+                        try {
+                            data = await response.json();
+                        } catch (jsonErr) {
+                            data = { success: false, error: 'Server returned an unexpected response.' };
+                        }
+
+                        if (data.success) {
+                            showStatus('success', '✅ ' + (data.message || 'Your request has been received. We will respond within 24 hours.'));
+                            form.reset();
+                            typeCards.forEach(c => c.classList.remove('selected'));
+                        } else {
+                            showStatus('error', '❌ ' + (data.error || 'Something went wrong. Please try again.'));
+                        }
+                    } catch (err) {
+                        console.error('Form error:', err);
+                        showStatus('error', '❌ Network error. Please check your connection and try again.');
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalHTML;
+                    }
+                });
+            }
+
+            function showStatus(type, message) {
+                if (!statusDiv) return;
+                statusDiv.className = 'oc-form-status show ' + type;
+                statusDiv.innerHTML = message;
+                statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        })();
+    </script>
+</body>
+</html>

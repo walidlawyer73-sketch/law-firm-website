@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team - Walid Abo Al-Ela Law Firm</title>
-    <meta name="description" content="Meet Walid Abo Al-Ela, founder and lead attorney of Walid Abo Al-Ela Law Firm, specializing in international arbitration and intellectual property since 2016.">
+    <title>Our Team - Walid Mohamed Abu Al-Ela Law Firm | IP, Arbitration &amp; Litigation</title>
+    <meta name="description" content="Meet the founder and lead attorney of Walid Mohamed Abu Al-Ela Law Firm — Accredited IP Arbitrator, Registered Patent Agent, and Master's Researcher in Intellectual Property. 10+ years of legal practice since 2016.">
+    <meta name="keywords" content="law firm team, IP lawyer Egypt, arbitration lawyer, patent agent Egypt, Walid Mohamed Abu Al-Ela, legal team, master researcher IP">
+    <meta name="author" content="Walid Mohamed Abu Al-Ela">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/lawyers.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/lawyers.html">
+    <meta property="og:title" content="Our Team - Walid Mohamed Abu Al-Ela Law Firm">
+    <meta property="og:description" content="Led by an Accredited IP Arbitrator, Registered Patent Agent, and Master's Researcher in IP.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/lawyers.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/lawyers.html">
+
+    <link rel="icon" type="image/png" href="/images/logo%20arb%20ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -16,94 +35,197 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
-    <style>
-        .language-switcher {
-            position: fixed;
-            top: 70px;
-            left: 20px;
-            z-index: 9999;
-        }
-        .language-switcher .lang-btn {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .language-switcher .lang-btn:hover {
-            background-color: #0b5ed7;
-            transform: scale(1.05);
-        }
-        body { padding-top: 70px; }
-        @media (max-width: 768px) {
-            .language-switcher { top: 60px; left: 10px; }
-            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
-        }
-        .dropdown-menu { min-width: 220px; }
-    </style>
-</head>
-<script>
-// ========== حل نهائي لصورة المحامي (النسخة الأولى) ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> This is a trial version - site under development and updates <i class="fas fa-tools"></i>
-</div>
-<body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> العربية</a>
-    </div>
 
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (!currentPath.startsWith('/ar/')) {
-            let arabicPath;
-            if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
-                arabicPath = '/ar/';
-            } else {
-                arabicPath = '/ar' + currentPath;
-            }
-            langLink.href = arabicPath;
-        } else {
-            langLink.href = '/ar/';
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "Our Team - Walid Mohamed Abu Al-Ela Law Firm",
+        "url": "https://law-arb-ip-walid.vercel.app/lawyers.html",
+        "mainEntity": {
+            "@type": "Person",
+            "name": "Walid Mohamed Abu Al-Ela",
+            "jobTitle": "Founder & Principal Attorney",
+            "worksFor": {
+                "@type": "LegalService",
+                "name": "Walid Mohamed Abu Al-Ela Law Firm"
+            },
+            "alumniOf": "Al-Azhar University (Assiut)",
+            "knowsAbout": ["Intellectual Property", "Arbitration", "Patent Law", "Trademark Law", "Corporate Law", "Litigation"],
+            "hasCredential": [
+                "Accredited IP Arbitrator — National Institute of Intellectual Property (2025)",
+                "Registered Arbitrator — Egyptian Chamber for Mediation & Arbitration (since 2013)",
+                "Registered Patent Agent — Official Register of Patent Agents (2023)",
+                "Master's Researcher in Intellectual Property"
+            ]
         }
-    })();
+    }
     </script>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+    <style>
+        /* Milestone Timeline */
+        .milestone-timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .milestone-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, transparent, #C9A961, transparent);
+            transform: translateX(-50%);
+        }
+        .milestone-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .milestone-item:nth-child(odd) {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+        .milestone-item:nth-child(even) {
+            text-align: left;
+        }
+        .milestone-item .milestone-content {
+            width: 45%;
+            background: #fff;
+            padding: 24px 28px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+            border: 1px solid #E9ECEF;
+            transition: all 0.3s ease;
+        }
+        .milestone-item .milestone-content:hover {
+            transform: translateY(-5px);
+            border-color: #C9A961;
+            box-shadow: 0 20px 40px -15px rgba(201,169,97,0.3);
+        }
+        .milestone-item .milestone-year {
+            width: 10%;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #C9A961;
+            background: #fff;
+            padding: 12px 0;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 0 0 6px #F8F9FA, 0 0 0 8px #C9A961;
+        }
+        .milestone-item .milestone-year.small {
+            font-size: 0.72rem;
+            letter-spacing: 0.3px;
+            font-weight: 800;
+        }
+        .milestone-item .milestone-content h4 {
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .milestone-item .milestone-content p {
+            color: #6C757D;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        .milestone-item .milestone-content .ms-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .milestone-item .milestone-content .ms-tags span {
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            background: rgba(201,169,97,0.12);
+            color: #A88947;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .milestone-timeline::before { left: 20px; }
+            .milestone-item,
+            .milestone-item:nth-child(odd),
+            .milestone-item:nth-child(even) {
+                flex-direction: row;
+                text-align: left;
+            }
+            .milestone-item .milestone-content { width: calc(100% - 60px); }
+            .milestone-item .milestone-year {
+                width: 40px;
+                font-size: 0.85rem;
+                box-shadow: 0 0 0 4px #F8F9FA, 0 0 0 6px #C9A961;
+            }
+            .milestone-item .milestone-year.small { font-size: 0.5rem; }
+        }
+
+        /* Expertise Areas Grid */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 30px;
+        }
+        .expertise-item {
+            padding: 20px 22px;
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .expertise-item:hover {
+            border-color: #C9A961;
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -10px rgba(201,169,97,0.2);
+        }
+        .expertise-item i {
+            color: #C9A961;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        .expertise-item strong {
+            display: block;
+            color: #212529;
+            font-weight: 700;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+        .expertise-item small {
+            color: #6C757D;
+            font-size: 0.82rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="trial-banner">
+        <i class="fas fa-tools"></i>
+        <span>This is a trial version - site under development and updates</span>
+        <i class="fas fa-tools"></i>
+    </div>
+
+    <div class="language-switcher">
+        <a href="/ar/lawyers.html" class="lang-btn"><i class="fas fa-globe"></i> العربية</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="Walid Abo Al-Ela Law Firm" style="height:45px; width:auto; margin-right:10px;">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm">
                 <div>
-                    <span class="fw-bold">Walid Abo Al-Ela Law Firm</span>
-                    <small class="d-block" style="font-size:16px; opacity:0.9; margin-top:5px; font-weight:500;">For Arbitration and Intellectual Property</small>
+                    <span class="firm-name">Walid Mohamed Abu Al-Ela</span>
+                    <small class="firm-sub">Law Firm · Arbitration · IP</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -111,236 +233,685 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
                             <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
                             <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
                             <li><a class="dropdown-item" href="/copyright.html">Copyright</a></li>
                             <li><a class="dropdown-item" href="/litigation.html">IP Litigation</a></li>
+                            <li><a class="dropdown-item" href="/licensing.html">Licensing &amp; Contracts</a></li>
                             <li><a class="dropdown-item" href="/corporate-formation.html">Corporate Formation</a></li>
                             <li><a class="dropdown-item" href="/criminal-litigation.html">Criminal Litigation</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="/services.html">All Services</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/lawyers.html">Our Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/consultation.html">Paid Consultation</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html"><i class="fas fa-lock me-1"></i>Client Portal</a>
+                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>Client Portal
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script>
-        // حل مشكلة صورة المحامي - البحث عن المسار الصحيح (نسخة إضافية للاحتياط)
-        (function() {
-            const possiblePaths = [
-                '/images/team/walid-profile.jpg',
-                '/images/team/walid-abouelela.jpg',
-                '/images/walid-profile.jpg',
-                '/ar/images/team/walid-profile.jpg',
-                '/images/lawyers/walid.jpg'
-            ];
-            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-            if (!imgElement) return;
-            function tryLoadImage(index) {
-                if (index >= possiblePaths.length) return;
-                const testImg = new Image();
-                testImg.src = possiblePaths[index];
-                testImg.onload = function() {
-                    imgElement.src = possiblePaths[index];
-                    imgElement.onerror = null;
-                };
-                testImg.onerror = function() {
-                    tryLoadImage(index + 1);
-                };
-            }
-            tryLoadImage(0);
-        })();
-        </script>
     </nav>
 
     <header class="page-header">
-        <div class="container text-white text-center">
+        <div class="container text-center">
             <h1 class="display-4">Our Team</h1>
-            <p class="lead">Meet the founder and lead attorney</p>
+            <p class="lead">Led by a specialist in intellectual property, arbitration &amp; corporate law</p>
         </div>
     </header>
 
-    <section class="py-5">
+    <!-- ============================================================
+         FOUNDER PROFILE — Featured
+         ============================================================ -->
+    <section class="team-featured">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-5 col-md-8 mb-5">
-                    <div class="team-card text-center shadow-lg rounded-4 p-4 border-0">
-                        <div class="position-relative d-inline-block">
-                            <img src="/images/team/walid-profile.png" alt="Walid Abo Al-Ela" 
-                                 style="width:180px; height:180px; object-fit:cover; border-radius:50%; border:4px solid var(--accent-color); box-shadow:0 8px 20px rgba(0,0,0,0.1);"
-                                 onerror="this.onerror=null; this.src='/images/team/walid-profile.jpg';">
-                            <div class="position-absolute bottom-0 end-0 bg-success rounded-circle p-2 border border-white">
-                                <i class="fas fa-check-circle text-white"></i>
-                            </div>
-                        </div>
-                        <h3 class="mt-4">Walid Mohamed Abo Al-Ela</h3>
-                        <p class="text-primary fw-bold mb-1">Founder & Lead Attorney</p>
-                        <p class="text-muted small mb-3">Member of the Egyptian Bar Association | Certified Arbitrator</p>
-                        <div class="d-flex justify-content-center gap-2 flex-wrap mb-3">
-                            <span class="badge bg-primary px-3 py-2">International Arbitration</span>
-                            <span class="badge bg-primary px-3 py-2">Intellectual Property</span>
-                            <span class="badge bg-primary px-3 py-2">Commercial Disputes</span>
-                        </div>
-                        <p class="text-muted">Over 9 years of experience in international arbitration and intellectual property law. Handling all cases personally with dedication and expertise. Successfully represented clients in complex cross-border disputes and IP enforcement matters.</p>
-                        <div class="social-links mt-4">
-                            <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary rounded-circle mx-1" style="width:40px; height:40px;"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary rounded-circle mx-1" style="width:40px; height:40px;"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary rounded-circle mx-1" style="width:40px; height:40px;"><i class="fab fa-whatsapp"></i></a>
-                            <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary rounded-circle mx-1" style="width:40px; height:40px;"><i class="fab fa-telegram"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">Founder &amp; Lead Attorney</span>
+                <h2 class="sh-title">Meet the Attorney Behind the Firm</h2>
+                <p class="sh-desc">Every case handled personally with dedication and expertise.</p>
             </div>
 
-            <!-- Why Trust Our Team Section -->
-            <div class="row mt-5 pt-4">
-                <div class="col-12 text-center">
-                    <h2 class="fw-bold mb-3">Why Trust Our Team?</h2>
-                    <p class="lead text-muted mx-auto" style="max-width:800px;">We believe excellence begins with the individual. We treat every case as if it were the first and most important, putting our expertise at your service.</p>
-                </div>
-            </div>
-            <div class="row mt-4 g-4">
-                <div class="col-md-4">
-                    <div class="text-center p-3">
-                        <i class="fas fa-gavel fa-3x text-primary mb-3"></i>
-                        <h5>Specialized Expertise</h5>
-                        <p class="text-muted">Over 9 years in arbitration and intellectual property</p>
+            <div class="team-featured-card">
+                <div class="tfc-portrait">
+                    <div class="tfc-image-wrap">
+                        <img src="/images/team/walid-profile.jpg"
+                             alt="Walid Mohamed Abu Al-Ela - Founder &amp; Lead Attorney"
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='/images/team/walid-profile.png';">
                     </div>
+                    <div class="tfc-badge-top"><i class="fas fa-award"></i></div>
+                    <div class="tfc-badge-bottom"><i class="fas fa-gavel"></i></div>
                 </div>
-                <div class="col-md-4">
-                    <div class="text-center p-3">
-                        <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
-                        <h5>Personal Approach</h5>
-                        <p class="text-muted">Every case receives direct attention from the founder</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center p-3">
-                        <i class="fas fa-globe fa-3x text-primary mb-3"></i>
-                        <h5>International Network</h5>
-                        <p class="text-muted">Partnerships with law firms worldwide to serve you wherever you are</p>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Call to Action -->
-            <div class="row mt-5">
-                <div class="col-12 text-center">
-                    <div class="bg-light p-5 rounded-4">
-                        <h3 class="mb-3">Need specialized legal advice?</h3>
-                        <p class="mb-4">Our team is ready to answer your questions and provide the legal support you need.</p>
-                        <a href="/contact.html" class="btn btn-primary btn-lg px-4"><i class="fas fa-phone-alt me-2"></i>Contact Us Now</a>
+                <div class="tfc-content">
+                    <span class="tfc-role">Founder &amp; Principal Attorney</span>
+                    <h3 class="tfc-name">Walid Mohamed Abu Al-Ela</h3>
+                    <div class="tfc-tags">
+                        <span><i class="fas fa-check"></i> IP Arbitrator</span>
+                        <span><i class="fas fa-check"></i> Registered Arbitrator</span>
+                        <span><i class="fas fa-check"></i> Patent Agent</span>
+                        <span><i class="fas fa-check"></i> Master's Researcher</span>
+                    </div>
+                    <p class="tfc-bio">
+                        Legal Counsel with over 10 years of experience spanning intellectual
+                        property, arbitration, corporate services, litigation, and investment
+                        disputes. Accredited IP Arbitrator (2025), Registered Arbitrator since
+                        2013, Registered Patent Agent (2023), and a registered Master's
+                        researcher in Intellectual Property at the National Institute of
+                        Intellectual Property.
+                    </p>
+                    <div class="tfc-actions">
+                        <a href="#career-timeline" class="btn-rich-primary">
+                            <span>View Career Timeline</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <div class="tfc-social">
+                            <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
+    <!-- ============================================================
+         PROFESSIONAL SUMMARY
+         ============================================================ -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">Professional Summary</span>
+                <h2 class="sh-title">A Decade of Specialized Practice</h2>
+                <p class="sh-desc">Focused expertise across IP, arbitration, corporate services, and litigation.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="about-content-rich">
+                        <p class="about-lead">
+                            <strong>Walid Mohamed Abu Al-Ela</strong> has been practicing law since
+                            <strong>2016</strong>, when he was admitted to the Egyptian Bar Association.
+                            Since then, he has built a practice focused on intellectual property,
+                            arbitration, corporate services, and commercial litigation.
+                        </p>
+                        <p class="about-text">
+                            He is an <strong>Accredited IP Arbitrator</strong> at the National
+                            Institute of Intellectual Property, a <strong>Registered Arbitrator</strong>
+                            since 2013 (under an arbitration practice license issued by the Egyptian
+                            Chamber for Mediation &amp; Arbitration), and a <strong>Registered Patent
+                            Agent</strong> since 2023.
+                        </p>
+                        <p class="about-text">
+                            He is also a <strong>registered Master's researcher in Intellectual
+                            Property</strong> at the National Institute of Intellectual Property,
+                            and the sole author of a research paper on the impact of AI on content
+                            creators' IP rights — presented at the 9th Scientific Conference on IP.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="expertise-grid">
+                        <div class="expertise-item">
+                            <i class="fas fa-trademark"></i>
+                            <div>
+                                <strong>350+ Trademarks</strong>
+                                <small>Managed to full registration for local &amp; international clients</small>
+                            </div>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-gavel"></i>
+                            <div>
+                                <strong>500+ Cases Litigated</strong>
+                                <small>Civil, commercial, and economic courts — plus State Council</small>
+                            </div>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-building"></i>
+                            <div>
+                                <strong>50+ Companies</strong>
+                                <small>Founded and amended across various legal forms</small>
+                            </div>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <strong>20+ Corporate Clients</strong>
+                                <small>Local and foreign companies advised on compliance &amp; governance</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         AREAS OF EXPERTISE
+         ============================================================ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">Areas of Expertise</span>
+                <h2 class="sh-title">Where the Practice Delivers</h2>
+                <p class="sh-desc">Focused expertise across the full spectrum of IP, arbitration, and corporate law.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon mx-auto"><i class="fas fa-trademark"></i></div>
+                        <h4>Intellectual Property</h4>
+                        <p class="text-muted">
+                            Trademark registration, patents, industrial designs, copyright,
+                            trade secrets, NDA drafting, and IP arbitration.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon mx-auto"><i class="fas fa-scale-balanced"></i></div>
+                        <h4>Arbitration &amp; Mediation</h4>
+                        <p class="text-muted">
+                            Domestic and cross-border commercial arbitration, IP dispute
+                            arbitration, and settlement negotiations.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon mx-auto"><i class="fas fa-building"></i></div>
+                        <h4>Corporate Services</h4>
+                        <p class="text-muted">
+                            Company formation and amendments, mergers, divisions, operating
+                            licenses, corporate governance, and compliance.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon mx-auto"><i class="fas fa-file-contract"></i></div>
+                        <h4>Contracts &amp; Licensing</h4>
+                        <p class="text-muted">
+                            Drafting and reviewing commercial &amp; investment contracts,
+                            franchise &amp; agency agreements, and licensing deals.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon mx-auto"><i class="fas fa-gavel"></i></div>
+                        <h4>Civil &amp; Commercial Litigation</h4>
+                        <p class="text-muted">
+                            Representation before Egyptian courts, including Economic Courts
+                            and the State Council.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon mx-auto"><i class="fas fa-passport"></i></div>
+                        <h4>Foreign Nationals' Services</h4>
+                        <p class="text-muted">
+                            Work &amp; residency permits, Egyptian citizenship files (by investment
+                            or property), and cross-border transactions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CAREER TIMELINE — COMPREHENSIVE
+         ============================================================ -->
+    <section class="py-5 bg-light" id="career-timeline">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">Career Timeline</span>
+                <h2 class="sh-title">Milestones &amp; Achievements</h2>
+                <p class="sh-desc">Key milestones in a decade of legal practice.</p>
+            </div>
+
+            <div class="milestone-timeline">
+
+                <!-- 2013 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>Arbitration Practice License</h4>
+                        <p>Licensed to practice arbitration by the Egyptian Chamber for Mediation &amp; Arbitration — registered on its official roster of arbitrators.</p>
+                        <div class="ms-tags">
+                            <span>Arbitration</span>
+                            <span>Egyptian Chamber</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2013</div>
+                </div>
+
+                <!-- 2014 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>Bachelor of Sharia &amp; Law</h4>
+                        <p>Graduated from the Faculty of Sharia and Law, Al-Azhar University (Assiut).</p>
+                        <div class="ms-tags">
+                            <span>Al-Azhar University</span>
+                            <span>LL.B.</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2014</div>
+                </div>
+
+                <!-- 2016 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>Admitted to the Bar &amp; Start of Practice</h4>
+                        <p>Admitted to the Egyptian Bar Association and began independent legal practice — focused on corporate matters, litigation, and commercial disputes.</p>
+                        <div class="ms-tags">
+                            <span>Egyptian Bar</span>
+                            <span>Practice Start</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2016</div>
+                </div>
+
+                <!-- 2019 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>IP Agency Practice Launched</h4>
+                        <p>Launched a dedicated IP agency practice — managing trademark, patent, and industrial design portfolios for local and international clients.</p>
+                        <div class="ms-tags">
+                            <span>Trademarks</span>
+                            <span>Patents</span>
+                            <span>Industrial Designs</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2019</div>
+                </div>
+
+                <!-- 2021 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>IP Expert Training Certificate (Level 3)</h4>
+                        <p>Completed the specialized IP training program — "Trademarks, Geographical Indications &amp; Unfair Competition" — from the National Institute of Intellectual Property.</p>
+                        <div class="ms-tags">
+                            <span>NIIP</span>
+                            <span>Level 3</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2021</div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>Registered Patent Agent &amp; WIPO Certificate</h4>
+                        <p>Registered in the official Register of Patent Agents, and completed the WIPO General Course on Intellectual Property.</p>
+                        <div class="ms-tags">
+                            <span>Patent Agent</span>
+                            <span>WIPO</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2023</div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>Accredited IP Arbitrator</h4>
+                        <p>Obtained accreditation as a specialized arbitrator in IP disputes from the National Institute of Intellectual Property — and completed the WIPO General Course on IP (Egypt edition).</p>
+                        <div class="ms-tags">
+                            <span>IP Arbitration</span>
+                            <span>NIIP</span>
+                            <span>WIPO Egypt</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2025</div>
+                </div>
+
+                <!-- 2026 -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>Specialized WIPO Certifications</h4>
+                        <p>Completed three specialized WIPO programs: Patent Fundamentals, Introduction to the PCT, and the Distance Learning Program on the Use of Patent Information.</p>
+                        <div class="ms-tags">
+                            <span>Patents</span>
+                            <span>PCT</span>
+                            <span>Patent Information</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year">2026</div>
+                </div>
+
+                <!-- Ongoing -->
+                <div class="milestone-item">
+                    <div class="milestone-content">
+                        <h4>Master's Researcher in IP — &amp; Published Research</h4>
+                        <p>Registered as a Master's researcher in Intellectual Property at the National Institute of Intellectual Property. Sole author of a research paper on AI's impact on content creators' IP rights — presented at the 9th Scientific Conference on IP and approved for publication.</p>
+                        <div class="ms-tags">
+                            <span>Master's Research</span>
+                            <span>AI &amp; IP</span>
+                            <span>Publication</span>
+                        </div>
+                    </div>
+                    <div class="milestone-year small">Ongoing</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CREDENTIALS
+         ============================================================ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">Credentials</span>
+                <h2 class="sh-title">Accredited &amp; Certified</h2>
+                <p class="sh-desc">Verified credentials of the founder and lead attorney.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="cred-card">
+                        <div class="cc-icon"><i class="fas fa-award"></i></div>
+                        <div class="cc-content">
+                            <h5>Accredited IP Arbitrator</h5>
+                            <span>National Institute of Intellectual Property · 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="cred-card">
+                        <div class="cc-icon"><i class="fas fa-gavel"></i></div>
+                        <div class="cc-content">
+                            <h5>Registered Arbitrator</h5>
+                            <span>Egyptian Chamber for Mediation &amp; Arbitration · Since 2013</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="cred-card">
+                        <div class="cc-icon"><i class="fas fa-certificate"></i></div>
+                        <div class="cc-content">
+                            <h5>Registered Patent Agent</h5>
+                            <span>Official Register of Patent Agents · 2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="cred-card">
+                        <div class="cc-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="cc-content">
+                            <h5>Master's Researcher in IP</h5>
+                            <span>Registered at the National Institute of Intellectual Property</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="cred-card">
+                        <div class="cc-icon"><i class="fas fa-globe"></i></div>
+                        <div class="cc-content">
+                            <h5>5 WIPO Certifications</h5>
+                            <span>General IP · Egypt IP · Patents · PCT · Patent Information</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="cred-card">
+                        <div class="cc-icon"><i class="fas fa-scale-balanced"></i></div>
+                        <div class="cc-content">
+                            <h5>Swiss Arbitration Certificates</h5>
+                            <span>2 International Certificates · Swiss Arbitration Association</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         HOW WE WORK
+         ============================================================ -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">How We Work</span>
+                <h2 class="sh-title">A Focused Practice, Not a Factory</h2>
+                <p class="sh-desc">Every case handled personally — with direct oversight throughout.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-comments"></i></div>
+                        <h4>Direct Consultation</h4>
+                        <p class="text-muted">
+                            Every case starts with a direct consultation — no gatekeeping,
+                            no junior staff screening.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-clipboard-check"></i></div>
+                        <h4>Honest Assessment</h4>
+                        <p class="text-muted">
+                            Candid legal assessment — even when the answer isn't what
+                            the client hopes for.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-file-signature"></i></div>
+                        <h4>Clear Scope</h4>
+                        <p class="text-muted">
+                            Written scope, timeline, and fees — agreed before any
+                            work begins.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card h-100 text-center">
+                        <div class="feature-icon mx-auto"><i class="fas fa-shield-halved"></i></div>
+                        <h4>Confidentiality</h4>
+                        <p class="text-muted">
+                            Strict confidentiality across all engagements — with a
+                            signed engagement letter from day one.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ
+         ============================================================ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">FAQ</span>
+                <h2 class="sh-title">Questions About Working With Us</h2>
+            </div>
+
+            <div class="faq-rich-accordion mx-auto" style="max-width: 900px;">
+                <div class="accordion" id="teamFaq">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tf1">
+                                Who will handle my case?
+                            </button>
+                        </h3>
+                        <div id="tf1" class="accordion-collapse collapse" data-bs-parent="#teamFaq">
+                            <div class="accordion-body">
+                                Every case is personally reviewed and handled by the founder —
+                                with direct oversight from start to finish. There is no middle
+                                layer of account managers between you and your attorney.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tf2">
+                                Do you accept cases outside Egypt?
+                            </button>
+                        </h3>
+                        <div id="tf2" class="accordion-collapse collapse" data-bs-parent="#teamFaq">
+                            <div class="accordion-body">
+                                Yes. We work with international clients on Egyptian filings
+                                and collaborate with partner firms abroad for filings in other
+                                jurisdictions — including Madrid Protocol filings where applicable.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tf3">
+                                How do you charge for your services?
+                            </button>
+                        </h3>
+                        <div id="tf3" class="accordion-collapse collapse" data-bs-parent="#teamFaq">
+                            <div class="accordion-body">
+                                Fees depend on the nature and scope of the matter. We provide a
+                                clear written quotation before starting — no hidden or surprise
+                                charges.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tf4">
+                                Can I speak directly with the attorney?
+                            </button>
+                        </h3>
+                        <div id="tf4" class="accordion-collapse collapse" data-bs-parent="#teamFaq">
+                            <div class="accordion-body">
+                                Yes. Every consultation is a direct conversation with the
+                                attorney — you'll discuss the initial assessment and next steps
+                                directly, without intermediaries.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FINAL CTA
+         ============================================================ -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-handshake"></i></div>
+                <h2>Ready to Speak With Our Attorney?</h2>
+                <p>Book a confidential consultation and let us assess your case with clarity and honesty.</p>
+                <div class="fcr-buttons">
+                    <a href="/consultation.html" class="btn-rich-primary light">
+                        <span>Book Consultation</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/contact.html" class="btn-rich-ghost">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact Us</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>Walid Abo Al-Ela Law Firm</h5>
-                    <p class="text-white-50">Specialized in arbitration and intellectual property protection with a personal touch since 2016.</p>
-                    <div class="social-links mt-3">
+                <div class="col-lg-4">
+                    <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">Walid Mohamed Abu Al-Ela Law Firm</h5>
+                    <p class="footer-desc">Law · Arbitration · Intellectual Property. Serving clients with dedication since 2016.</p>
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">Quick Links</h6>
+                    <ul class="footer-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/lawyers.html">Our Team</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">Contact</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Sat - Thu: 9am - 8pm</li>
+                    </ul>
+                </div>
                 <div class="col-lg-3">
-                    <h6 class="mb-4">Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/index.html" class="text-white-50 text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="/about.html" class="text-white-50 text-decoration-none">About</a></li>
-                        <li class="mb-2"><a href="/services.html" class="text-white-50 text-decoration-none">Services</a></li>
-                        <li class="mb-2"><a href="/lawyers.html" class="text-white-50 text-decoration-none">Our Team</a></li>
-                        <li class="mb-2"><a href="/blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
-                        <li class="mb-2"><a href="/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
-                        <li class="mb-2"><a href="/consultation.html" class="text-white-50 text-decoration-none">Paid Consultation</a></li>
+                    <h6 class="footer-heading">Legal</h6>
+                    <ul class="footer-list">
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Use</a></li>
+                        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h6 class="mb-4">Contact Info</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 10th of Ramadan, Cairo, Egypt</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Sat - Thu: 9am - 8pm</li>
-                    </ul>
-                </div>
-                <div class="col-lg-12 mt-3">
-                    <hr class="my-3" style="border-color: rgba(255,255,255,0.1);">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="small text-white-50 mb-0">© 2025 Walid Abo Al-Ela Law Firm. All rights reserved.</p>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
-                            <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">Terms of Use</a>
-                            <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">Cookie Policy</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Walid Mohamed Abu Al-Ela Law Firm. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-WQ0CPXRK2F');
-    </script>
-    <!-- كود إضافي لحل مشكلة صورة المحامي (النسخة الثالثة) -->
-    <script>
-    (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-            testImg.onerror = function() { tryLoadImage(index + 1); };
-        }
-        tryLoadImage(0);
-    })();
-    </script>
-    <script>
-        // تحديد الرابط النشط
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
-                if (link.getAttribute('href') === currentPath) link.classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>

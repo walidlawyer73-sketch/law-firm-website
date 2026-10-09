@@ -3,69 +3,410 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بوابة العميل - وليد أبوالعلا للمحاماة</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-    <meta name="description" content="بوابة العميل الآمنة لمكتب وليد أبوالعلا للمحاماة. دخول آمن إلى معلومات قضيتك ومستنداتك.">
-</head>
-<script>
-// ========== حل نهائي لصورة المحامي ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools"></i>
-</div>
-<body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>
-    </div>
+    <title>بوابة العميل - مكتب وليد محمد أبوالعلا للمحاماة | دخول آمن</title>
+    <meta name="description" content="بوابة العميل الآمنة لمكتب وليد محمد أبوالعلا للمحاماة — ادخل إلى ملفات قضاياك ومستنداتك وتحديثاتك في بيئة سرية.">
+    <meta name="keywords" content="بوابة العميل, دخول آمن, بوابة مكتب محاماة, الوصول لملفات القضية, بوابة قانونية سرية">
+    <meta name="author" content="وليد محمد أبوالعلا">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/ar/client-portal.html">
 
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/ar/client-portal.html">
+    <meta property="og:title" content="بوابة العميل - مكتب وليد محمد أبوالعلا للمحاماة">
+    <meta property="og:description" content="وصول آمن للعملاء إلى ملفات القضايا والمستندات.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta property="og:locale" content="ar_EG">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/client-portal.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/client-portal.html">
+
+    <link rel="icon" type="image/png" href="/images/logo arb ip.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (currentPath.startsWith('/ar/')) {
-            let englishPath = currentPath.replace('/ar', '');
-            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') englishPath = '/';
-            langLink.href = englishPath;
-        } else {
-            langLink.href = '/';
-        }
-    })();
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WQ0CPXRK2F');
     </script>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "بوابة العميل - مكتب وليد محمد أبوالعلا للمحاماة",
+        "url": "https://law-arb-ip-walid.vercel.app/ar/client-portal.html",
+        "inLanguage": "ar",
+        "isPartOf": {
+            "@type": "LegalService",
+            "name": "مكتب وليد محمد أبوالعلا للمحاماة",
+            "url": "https://law-arb-ip-walid.vercel.app/ar/"
+        }
+    }
+    </script>
+
+    <style>
+        /* هيرو البوابة */
+        .portal-hero {
+            position: relative;
+            margin-top: calc(var(--banner-height) + var(--navbar-height));
+            min-height: 320px;
+            background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 60px 0;
+        }
+        .portal-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 80% 30%, rgba(201,169,97,0.15), transparent 55%),
+                radial-gradient(circle at 20% 70%, rgba(201,169,97,0.10), transparent 55%);
+            pointer-events: none;
+        }
+        .portal-hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            text-align: center;
+        }
+        .portal-hero h1 {
+            font-family: 'Cairo', sans-serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .portal-hero p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.75);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.9;
+        }
+        .portal-hero .ah-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(201,169,97,0.15);
+            border: 1px solid rgba(201,169,97,0.4);
+            border-radius: 999px;
+            color: #C9A961;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* بطاقة الدخول */
+        .portal-login-wrap {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .portal-card {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 24px;
+            padding: 45px 40px;
+            box-shadow: 0 30px 60px -30px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .portal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #C9A961, #A88947, #C9A961);
+        }
+        @media (max-width: 600px) {
+            .portal-card { padding: 32px 24px; }
+        }
+
+        .portal-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #000, #1A1A1A);
+            color: #C9A961;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 24px;
+            box-shadow: 0 15px 35px rgba(201,169,97,0.25);
+            border: 2px solid rgba(201,169,97,0.3);
+        }
+
+        .portal-title {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #212529;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .portal-subtitle {
+            text-align: center;
+            color: #6C757D;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            line-height: 1.9;
+        }
+
+        .portal-field {
+            margin-bottom: 20px;
+        }
+        .portal-field label {
+            display: block;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 8px;
+            font-size: 0.88rem;
+        }
+        .portal-input-wrap {
+            position: relative;
+        }
+        .portal-input-wrap i.field-icon {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ADB5BD;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            pointer-events: none;
+        }
+        .portal-input-wrap input {
+            width: 100%;
+            padding: 14px 48px 14px 18px;
+            border: 2px solid #E9ECEF;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: #fff;
+            color: #212529;
+        }
+        .portal-input-wrap input[type="email"] {
+            direction: ltr;
+            text-align: right;
+        }
+        .portal-input-wrap input[type="password"] {
+            direction: ltr;
+            text-align: right;
+        }
+        .portal-input-wrap input:focus {
+            border-color: #C9A961;
+            box-shadow: 0 0 0 4px rgba(201,169,97,0.15);
+            outline: none;
+        }
+        .portal-input-wrap input:focus + i.field-icon,
+        .portal-input-wrap input:not(:placeholder-shown) ~ i.field-icon {
+            color: #C9A961;
+        }
+        .toggle-password {
+            position: absolute;
+            left: 18px;
+            right: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #ADB5BD;
+            cursor: pointer;
+            padding: 4px;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        .toggle-password:hover { color: #A88947; }
+
+        .portal-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .portal-row .remember {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #495057;
+            cursor: pointer;
+        }
+        .portal-row .remember input {
+            width: auto;
+            margin: 0;
+            accent-color: #C9A961;
+        }
+        .portal-row a {
+            color: #A88947;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .portal-row a:hover { color: #000; }
+
+        .portal-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 12px 30px rgba(201,169,97,0.35);
+            font-family: inherit;
+        }
+        .portal-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(201,169,97,0.5);
+            color: #000;
+        }
+        .portal-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .portal-status {
+            margin-top: 18px;
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: none;
+        }
+        .portal-status.success {
+            background: #D4EDDA;
+            color: #155724;
+            border: 1px solid #C3E6CB;
+            display: block;
+        }
+        .portal-status.error {
+            background: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+            display: block;
+        }
+
+        .portal-divider {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin: 28px 0;
+            color: #ADB5BD;
+            font-size: 0.78rem;
+            letter-spacing: 1px;
+        }
+        .portal-divider::before,
+        .portal-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #E9ECEF;
+        }
+
+        .portal-contact-hint {
+            text-align: center;
+            font-size: 0.88rem;
+            color: #6C757D;
+            line-height: 1.9;
+        }
+        .portal-contact-hint a {
+            color: #A88947;
+            font-weight: 700;
+            text-decoration: none;
+            direction: ltr;
+            display: inline-block;
+        }
+        .portal-contact-hint a:hover { color: #000; }
+
+        /* قسم مزايا الأمان */
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .security-card {
+            background: linear-gradient(160deg, #fff 0%, #FAFAFA 100%);
+            border: 1px solid #E9ECEF;
+            border-radius: 16px;
+            padding: 26px 24px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        .security-card:hover {
+            transform: translateY(-5px);
+            border-color: #C9A961;
+            box-shadow: 0 20px 40px -15px rgba(201,169,97,0.25);
+        }
+        .security-card i {
+            font-size: 1.8rem;
+            color: #C9A961;
+            margin-bottom: 14px;
+            display: inline-block;
+        }
+        .security-card h4 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #212529;
+            margin-bottom: 8px;
+        }
+        .security-card p {
+            font-size: 0.85rem;
+            color: #6C757D;
+            line-height: 1.85;
+            margin: 0;
+        }
+
+        /* RTL */
+        [dir="rtl"] .language-switcher { right: auto; left: 20px; }
+    </style>
+</head>
+
+<body>
+    <div id="trial-banner">
+        <i class="fas fa-tools"></i>
+        <span>هذا إصدار تجريبي للموقع - جاري التطوير والتحديث</span>
+        <i class="fas fa-tools"></i>
+    </div>
+
+    <div class="language-switcher">
+        <a href="/client-portal.html" class="lang-btn"><i class="fas fa-globe"></i> English</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="وليد أبوالعلا للمحاماة" style="height:45px; width:auto; margin-left:10px;">
+            <a class="navbar-brand" href="/ar/">
+                <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة">
                 <div>
-                    <span class="fw-bold">وليد أبوالعلا للمحاماة</span>
-                    <small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small>
+                    <span class="firm-name">وليد محمد أبوالعلا</span>
+                    <small class="firm-sub">مكتب محاماة · تحكيم · ملكية فكرية</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -73,16 +414,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/about.html">من نحن</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">الخدمات</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">الخدمات</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/ar/arbitration.html">التحكيم الدولي</a></li>
                             <li><a class="dropdown-item" href="/ar/trademark.html">تسجيل العلامات التجارية</a></li>
                             <li><a class="dropdown-item" href="/ar/patent.html">براءات الاختراع</a></li>
                             <li><a class="dropdown-item" href="/ar/copyright.html">حقوق المؤلف</a></li>
                             <li><a class="dropdown-item" href="/ar/litigation.html">قضايا الملكية الفكرية</a></li>
+                            <li><a class="dropdown-item" href="/ar/licensing.html">الترخيص والعقود</a></li>
                             <li><a class="dropdown-item" href="/ar/corporate-formation.html">تأسيس الشركات</a></li>
                             <li><a class="dropdown-item" href="/ar/criminal-litigation.html">القضايا الجنائية</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -92,170 +434,282 @@
                     <li class="nav-item"><a class="nav-link" href="/ar/lawyers.html">فريق العمل</a></li>
                     <li class="nav-item"><a class="nav-link" href="/ar/blog.html">المدونة</a></li>
                     <li class="nav-item"><a class="nav-link" href="/ar/contact.html">اتصل بنا</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/consultation.html">استشارة مدفوعة</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html"><i class="fas fa-lock me-1"></i>بوابة العميل</a>
+                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>بوابة العميل
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="page-header">
-        <div class="container text-white text-center">
-            <h1 class="display-4">بوابة العميل</h1>
-            <p class="lead">دخول آمن إلى معلومات قضيتك ومستنداتك</p>
+    <header class="portal-hero">
+        <div class="container">
+            <div class="portal-hero-content">
+                <span class="ah-badge">
+                    <i class="fas fa-lock"></i>
+                    دخول آمن
+                </span>
+                <h1>بوابة العميل</h1>
+                <p>بيئة سرية للوصول إلى ملفات قضاياك ومستنداتك وتحديثاتك — في أي وقت ومن أي مكان.</p>
+            </div>
         </div>
     </header>
 
+    <!-- نموذج الدخول -->
     <section class="py-5">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="card shadow-lg border-0 rounded-4">
-                        <div class="card-header bg-primary text-white text-center py-3">
-                            <h4 class="mb-0"><i class="fas fa-lock me-2"></i>تسجيل الدخول</h4>
-                        </div>
-                        <div class="card-body p-4">
-                            <form id="clientLoginForm">
-                                <div class="mb-3">
-                                    <label for="username" class="form-label">اسم المستخدم / البريد الإلكتروني</label>
-                                    <input type="text" class="form-control form-control-lg" id="username" placeholder="أدخل اسم المستخدم">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="password" class="form-label">كلمة المرور</label>
-                                    <input type="password" class="form-control form-control-lg" id="password" placeholder="أدخل كلمة المرور">
-                                </div>
-                                <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="remember">
-                                    <label class="form-check-label" for="remember">تذكرني</label>
-                                </div>
-                                <button type="submit" class="btn btn-primary w-100 py-2">دخول</button>
-                            </form>
-                            <hr>
-                            <div class="text-center">
-                                <a href="#" class="text-muted">نسيت كلمة المرور؟</a>
+            <div class="portal-login-wrap">
+                <div class="portal-card">
+
+                    <div class="portal-icon">
+                        <i class="fas fa-user-lock"></i>
+                    </div>
+
+                    <h2 class="portal-title">أهلاً بعودتك</h2>
+                    <p class="portal-subtitle">
+                        سجّل الدخول للوصول إلى بوابة العميل الآمنة. إذا لم يكن لديك بيانات
+                        الدخول بعد، يُرجى التواصل مع مكتبنا.
+                    </p>
+
+                    <form id="portalForm" novalidate>
+
+                        <div class="portal-field">
+                            <label for="email">البريد الإلكتروني</label>
+                            <div class="portal-input-wrap">
+                                <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email" dir="ltr">
+                                <i class="fas fa-envelope field-icon"></i>
                             </div>
                         </div>
-                    </div>
-                    <p class="text-center mt-4">ليس لديك حساب؟ <a href="/ar/contact.html">اتصل بنا</a> لطلب الوصول.</p>
+
+                        <div class="portal-field">
+                            <label for="password">كلمة المرور</label>
+                            <div class="portal-input-wrap">
+                                <input type="password" id="password" name="password" required placeholder="••••••••" autocomplete="current-password" dir="ltr">
+                                <i class="fas fa-lock field-icon"></i>
+                                <button type="button" class="toggle-password" id="togglePassword" aria-label="إظهار/إخفاء كلمة المرور">
+                                    <i class="fas fa-eye" id="eyeIcon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="portal-row">
+                            <label class="remember">
+                                <input type="checkbox" id="remember" name="remember">
+                                <span>تذكّرني</span>
+                            </label>
+                            <a href="#" onclick="alert('يُرجى التواصل مع مكتبنا لإعادة تعيين كلمة المرور.'); return false;">نسيت كلمة المرور؟</a>
+                        </div>
+
+                        <button type="submit" class="portal-submit" id="submitBtn">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <span>تسجيل الدخول</span>
+                        </button>
+
+                        <div id="formStatus" class="portal-status"></div>
+
+                        <div class="portal-divider">أو</div>
+
+                        <p class="portal-contact-hint">
+                            ليس لديك حساب بعد؟<br>
+                            تواصل مع مكتبنا على <a href="mailto:walidlegal.ippro@gmail.com">walidlegal.ippro@gmail.com</a>
+                            لطلب الوصول.
+                        </p>
+
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
+    <!-- مزايا الأمان -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">الأمان والسرية</span>
+                <h2 class="sh-title">معلوماتك <span class="text-gold">محمية</span></h2>
+                <p class="sh-desc">نتخذ كل الاحتياطات لضمان بقاء ملفات قضاياك ومراسلاتك سرية.</p>
+            </div>
+
+            <div class="security-grid">
+                <div class="security-card">
+                    <i class="fas fa-shield-halved"></i>
+                    <h4>اتصال مشفّر</h4>
+                    <p>جميع البيانات تُنقل عبر اتصال HTTPS/TLS آمن.</p>
+                </div>
+                <div class="security-card">
+                    <i class="fas fa-user-shield"></i>
+                    <h4>ضوابط وصول صارمة</h4>
+                    <p>لا يمكن للعملاء المصرّح لهم سوى الوصول لملفاتهم الخاصة — دون رؤية ملفات عملاء آخرين.</p>
+                </div>
+                <div class="security-card">
+                    <i class="fas fa-user-secret"></i>
+                    <h4>سرية تامة</h4>
+                    <p>سرّية المحامي-الموكّل تنطبق على كل المعلومات التي تُشارَك عبر البوابة.</p>
+                </div>
+                <div class="security-card">
+                    <i class="fas fa-clock-rotate-left"></i>
+                    <h4>تسجيل النشاط</h4>
+                    <p>تُسجَّل جميع جلسات البوابة لأغراض المراجعة والأمان.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- دعوة للمساعدة -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-headset"></i></div>
+                <h2>تحتاج مساعدة في الوصول إلى بوابتك؟</h2>
+                <p>إذا واجهت مشكلة في تسجيل الدخول أو تحتاج إلى بيانات الدخول، مكتبنا هنا للمساعدة.</p>
+                <div class="fcr-buttons">
+                    <a href="mailto:walidlegal.ippro@gmail.com" class="btn-rich-primary light">
+                        <i class="fas fa-envelope"></i>
+                        <span>الدعم بالبريد الإلكتروني</span>
+                    </a>
+                    <a href="https://wa.me/20111257219" target="_blank" rel="noopener" class="btn-rich-ghost">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>واتساب</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>وليد أبوالعلا للمحاماة</h5>
-                    <p class="text-white-50">متخصصون في التحكيم وحماية الملكية الفكرية بلمسة شخصية منذ 2016.</p>
-                    <div class="social-links mt-3">
+                <div class="col-lg-4">
+                    <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">مكتب وليد محمد أبوالعلا للمحاماة</h5>
+                    <p class="footer-desc">محاماة · تحكيم · ملكية فكرية. نخدم عملاءنا بتفانٍ منذ 2016.</p>
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="فيسبوك"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
                         <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <h6 class="mb-4">روابط سريعة</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/ar/index.html" class="text-white-50 text-decoration-none">الرئيسية</a></li>
-                        <li class="mb-2"><a href="/ar/about.html" class="text-white-50 text-decoration-none">من نحن</a></li>
-                        <li class="mb-2"><a href="/ar/services.html" class="text-white-50 text-decoration-none">الخدمات</a></li>
-                        <li class="mb-2"><a href="/ar/lawyers.html" class="text-white-50 text-decoration-none">فريق العمل</a></li>
-                        <li class="mb-2"><a href="/ar/blog.html" class="text-white-50 text-decoration-none">المدونة</a></li>
-                        <li class="mb-2"><a href="/ar/contact.html" class="text-white-50 text-decoration-none">اتصل بنا</a></li>
-                        <li class="mb-2"><a href="/ar/consultation.html" class="text-white-50 text-decoration-none">استشارة مدفوعة</a></li>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">روابط سريعة</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/">الرئيسية</a></li>
+                        <li><a href="/ar/about.html">من نحن</a></li>
+                        <li><a href="/ar/services.html">الخدمات</a></li>
+                        <li><a href="/ar/lawyers.html">فريق العمل</a></li>
+                        <li><a href="/ar/blog.html">المدونة</a></li>
+                        <li><a href="/ar/contact.html">اتصل بنا</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h6 class="mb-4">معلومات الاتصال</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، القاهرة، مصر</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> السبت - الخميس: 9 صباحاً - 8 مساءً</li>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">معلومات الاتصال</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> العاشر من رمضان، القاهرة، مصر</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;" dir="ltr">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;" dir="ltr">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> السبت - الخميس: 9 ص - 8 م</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="footer-heading">قانوني</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/privacy-policy.html">سياسة الخصوصية</a></li>
+                        <li><a href="/ar/terms-of-service.html">شروط الاستخدام</a></li>
+                        <li><a href="/ar/cookie-policy.html">سياسة ملفات تعريف الارتباط</a></li>
                     </ul>
                 </div>
             </div>
-            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="small text-white-50 mb-0">© 2025 وليد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
-                </div>
-                <div class="col-md-6">
-                    <h6 class="mb-2 text-white-50">قانوني</h6>
-                    <ul class="list-unstyled d-flex gap-3">
-                        <li><a href="/privacy-policy.html" class="text-white-50 text-decoration-none">سياسة الخصوصية</a></li>
-                        <li><a href="/terms-of-service.html" class="text-white-50 text-decoration-none">شروط الاستخدام</a></li>
-                        <li><a href="/cookie-policy.html" class="text-white-50 text-decoration-none">سياسة ملفات تعريف الارتباط</a></li>
-                    </ul>
-                </div>
+            <div class="footer-bottom">
+                <p>© 2026 مكتب وليد محمد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
 
+    <button id="backToTop" title="العودة إلى الأعلى"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-WQ0CPXRK2F');
-    </script>
-    <!-- كود إضافي لحل مشكلة صورة المحامي (النسخة الثانية) -->
+
     <script>
     (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-            testImg.onerror = function() { tryLoadImage(index + 1); };
+        const form = document.getElementById('portalForm');
+        const statusDiv = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+        const toggleBtn = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        const eyeIcon = document.getElementById('eyeIcon');
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function() {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    eyeIcon.classList.remove('fa-eye');
+                    eyeIcon.classList.add('fa-eye-slash');
+                } else {
+                    passwordInput.type = 'password';
+                    eyeIcon.classList.remove('fa-eye-slash');
+                    eyeIcon.classList.add('fa-eye');
+                }
+            });
         }
-        tryLoadImage(0);
+
+        function showStatus(type, message) {
+            statusDiv.className = 'portal-status ' + type;
+            statusDiv.textContent = message;
+            statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        if (form) {
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const email = form.email.value.trim();
+                const password = form.password.value;
+
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    showStatus('error', 'يُرجى إدخال بريد إلكتروني صحيح.');
+                    return;
+                }
+                if (password.length < 6) {
+                    showStatus('error', 'يُرجى إدخال كلمة المرور.');
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                const original = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>جارٍ تسجيل الدخول...</span>';
+
+                try {
+                    const res = await fetch('/api/auth/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: email, password: password })
+                    }).catch(() => null);
+
+                    if (res && res.ok) {
+                        showStatus('success', 'جارٍ تسجيل دخولك...');
+                        setTimeout(() => { window.location.href = '/ar/client-portal/dashboard.html'; }, 800);
+                    } else {
+                        showStatus('error', 'بوابة العميل غير مُفعَّلة بعد. يُرجى التواصل مع مكتبنا لاستلام بيانات الدخول.');
+                    }
+                } catch (err) {
+                    showStatus('error', 'بوابة العميل قيد الإعداد حالياً. يُرجى التواصل مع مكتبنا للمساعدة.');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = original;
+                }
+            });
+        }
     })();
     </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const langSwitcher = document.querySelector('.language-switcher');
-        if (!langSwitcher) return;
-        const langLink = langSwitcher.querySelector('a');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (currentPath.startsWith('/ar/')) {
-            let englishPath = currentPath.replace('/ar/', '/');
-            if (englishPath === '' || englishPath === '/') englishPath = '/';
-            langLink.href = englishPath;
-            langLink.innerHTML = '<i class="fas fa-globe"></i> English';
-        } else {
-            let arabicPath;
-            if (currentPath === '/' || currentPath === '') arabicPath = '/ar/';
-            else arabicPath = '/ar' + currentPath;
-            langLink.href = arabicPath;
-            langLink.innerHTML = '<i class="fas fa-globe"></i> العربية';
-        }
-    });
-    </script>
-    <script>
-        // Simple form submission handler
-        document.getElementById('clientLoginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('هذه نسخة تجريبية. سيتم تفعيل بوابة العميل قريباً.');
-        });
-    </script>
+
 </body>
 </html>

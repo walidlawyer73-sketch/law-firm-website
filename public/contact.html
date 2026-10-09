@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Walid Abo Al-Ela Law Firm</title>
-    <meta name="description" content="Contact Walid Abo Al-Ela Law Firm for expert legal advice in international arbitration and intellectual property. Call, email, or use our online form with file attachment.">
-    <!-- Bootstrap CSS -->
+    <title>Contact Us - Walid Mohamed Abu Al-Ela Law Firm | IP, Arbitration &amp; Corporate</title>
+    <meta name="description" content="Contact Walid Mohamed Abu Al-Ela Law Firm — specialists in Intellectual Property, Arbitration, and Corporate Law. Phone, WhatsApp, or email. Response within one business day.">
+    <meta name="keywords" content="contact law firm Egypt, IP lawyer contact, arbitration lawyer contact, Walid Mohamed Abu Al-Ela contact, legal consultation Egypt">
+    <meta name="author" content="Walid Mohamed Abu Al-Ela">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/contact.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/contact.html">
+    <meta property="og:title" content="Contact Us - Walid Mohamed Abu Al-Ela Law Firm">
+    <meta property="og:description" content="Reach out via phone, WhatsApp, or email — response within one business day.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/contact.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/contact.html">
+
+    <link rel="icon" type="image/png" href="/images/logo%20arb%20ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,111 +35,353 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
-    <style>
-        .language-switcher {
-            position: fixed;
-            top: 70px;
-            left: 20px;
-            z-index: 9999;
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact - Walid Mohamed Abu Al-Ela Law Firm",
+        "url": "https://law-arb-ip-walid.vercel.app/contact.html",
+        "mainEntity": {
+            "@type": "LegalService",
+            "name": "Walid Mohamed Abu Al-Ela Law Firm",
+            "url": "https://law-arb-ip-walid.vercel.app/",
+            "telephone": "+20111257219",
+            "email": "walidlegal.ippro@gmail.com",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "10th of Ramadan City",
+                "addressRegion": "Cairo",
+                "addressCountry": "EG"
+            },
+            "openingHours": "Sa-Th 09:00-20:00",
+            "areaServed": {"@type": "Country", "name": "Egypt"},
+            "availableLanguage": ["Arabic", "English"]
         }
-        .language-switcher .lang-btn {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
+    }
+    </script>
+
+    <style>
+        /* Contact Info Cards */
+        .contact-info-card {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 28px 26px;
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 18px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #C9A961, #A88947);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .contact-info-card:hover::before { transform: scaleX(1); }
+        .contact-info-card:hover {
+            transform: translateY(-6px);
+            border-color: #C9A961;
+            box-shadow: 0 25px 50px -15px rgba(201,169,97,0.25);
+        }
+
+        .ci-icon {
+            width: 58px;
+            height: 58px;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #000, #1A1A1A);
+            color: #C9A961;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .contact-info-card:hover .ci-icon {
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            transform: rotate(-6deg) scale(1.05);
+            box-shadow: 0 12px 30px rgba(201,169,97,0.4);
+        }
+
+        .ci-content h5 {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        .ci-content p,
+        .ci-content a {
+            font-size: 0.9rem;
+            color: #6C757D;
+            margin: 0;
+            line-height: 1.7;
             text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
+            transition: color 0.3s ease;
+            word-break: break-word;
+        }
+        .ci-content a:hover { color: #A88947; }
+        .ci-content .ci-meta {
+            font-size: 0.75rem;
+            color: #ADB5BD;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-top: 4px;
             display: inline-block;
         }
-        .language-switcher .lang-btn:hover {
-            background-color: #0b5ed7;
-            transform: scale(1.05);
+
+        /* Contact Form */
+        .contact-form-wrap {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 24px;
+            padding: 45px 40px;
+            box-shadow: 0 30px 60px -30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
         }
-        body { padding-top: 70px; }
+        .contact-form-wrap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #C9A961, #A88947, #C9A961);
+        }
         @media (max-width: 768px) {
-            .language-switcher { top: 60px; left: 10px; }
-            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
+            .contact-form-wrap { padding: 30px 22px; }
         }
-        .dropdown-menu { min-width: 220px; }
-        /* Custom style for form status */
-        .form-status {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 5px;
+
+        .cn-field { margin-bottom: 20px; }
+        .cn-field label {
+            display: block;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .cn-field label .req { color: #DC3545; margin-left: 4px; }
+        .cn-field input,
+        .cn-field select,
+        .cn-field textarea {
+            width: 100%;
+            padding: 13px 18px;
+            border: 2px solid #E9ECEF;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: #fff;
+            color: #212529;
+        }
+        .cn-field input:focus,
+        .cn-field select:focus,
+        .cn-field textarea:focus {
+            border-color: #C9A961;
+            box-shadow: 0 0 0 4px rgba(201,169,97,0.15);
+            outline: none;
+        }
+        .cn-field textarea { min-height: 140px; resize: vertical; }
+
+        .cn-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        @media (max-width: 600px) {
+            .cn-row { grid-template-columns: 1fr; gap: 0; }
+        }
+
+        .cn-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 12px 30px rgba(201,169,97,0.35);
+            margin-top: 10px;
+            font-family: inherit;
+        }
+        .cn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(201,169,97,0.5);
+            color: #000;
+        }
+        .cn-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+        .cn-status {
+            margin-top: 18px;
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.95rem;
             display: none;
         }
-        .form-status.success {
-            background: #d4edda;
+        .cn-status.success {
+            background: #D4EDDA;
             color: #155724;
-            border: 1px solid #c3e6cb;
+            border: 1px solid #C3E6CB;
+            display: block;
         }
-        .form-status.error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+        .cn-status.error {
+            background: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+            display: block;
+        }
+
+        /* Quick Action Buttons */
+        .quick-action {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 24px;
+            background: #fff;
+            border: 2px solid #E9ECEF;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #212529;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            margin-bottom: 14px;
+        }
+        .quick-action:hover {
+            border-color: #C9A961;
+            background: linear-gradient(135deg, #fff, #FAF6EC);
+            transform: translateX(6px);
+            color: #A88947;
+            box-shadow: 0 15px 35px -12px rgba(201,169,97,0.3);
+        }
+        .quick-action i {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        .quick-action.qa-whatsapp i { background: rgba(37,211,102,0.12); color: #25D366; }
+        .quick-action.qa-phone i { background: rgba(201,169,97,0.12); color: #A88947; }
+        .quick-action.qa-email i { background: rgba(23,162,184,0.12); color: #17A2B8; }
+        .quick-action:hover i {
+            transform: scale(1.08) rotate(-4deg);
+            color: #000;
+            background: linear-gradient(135deg, #C9A961, #A88947);
+        }
+        .quick-action .qa-text {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .quick-action .qa-label {
+            font-size: 0.72rem;
+            color: #ADB5BD;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .quick-action .qa-value {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: #212529;
+        }
+        .quick-action:hover .qa-value { color: #A88947; }
+
+        /* Map Placeholder */
+        .map-wrap {
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #E9ECEF;
+            box-shadow: 0 20px 40px -20px rgba(0,0,0,0.1);
+            height: 400px;
+            background: linear-gradient(135deg, #000, #1A1A1A);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+        }
+        .map-wrap::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(201,169,97,0.12), transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(201,169,97,0.08), transparent 50%);
+            pointer-events: none;
+        }
+        .map-content { position: relative; z-index: 1; color: #fff; }
+        .map-content i {
+            font-size: 3rem;
+            color: #C9A961;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .map-content h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .map-content p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
-<script>
-// ========== حل نهائي لصورة المحامي (النسخة الأولى) ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> This is a trial version - site under development and updates <i class="fas fa-tools"></i>
-</div>
+
 <body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> العربية</a>
+    <div id="trial-banner">
+        <i class="fas fa-tools"></i>
+        <span>This is a trial version - site under development and updates</span>
+        <i class="fas fa-tools"></i>
     </div>
 
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (!currentPath.startsWith('/ar/')) {
-            let arabicPath;
-            if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
-                arabicPath = '/ar/';
-            } else {
-                arabicPath = '/ar' + currentPath;
-            }
-            langLink.href = arabicPath;
-        } else {
-            langLink.href = '/ar/';
-        }
-    })();
-    </script>
+    <div class="language-switcher">
+        <a href="/ar/contact.html" class="lang-btn"><i class="fas fa-globe"></i> العربية</a>
+    </div>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="Walid Abo Al-Ela Law Firm" style="height:45px; width:auto; margin-right:10px;">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm">
                 <div>
-                    <span class="fw-bold">Walid Abo Al-Ela Law Firm</span>
-                    <small class="d-block" style="font-size:16px; opacity:0.9; margin-top:5px; font-weight:500;">For Arbitration and Intellectual Property</small>
+                    <span class="firm-name">Walid Mohamed Abu Al-Ela</span>
+                    <small class="firm-sub">Law Firm · Arbitration · IP</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -131,16 +389,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
                             <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
                             <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
                             <li><a class="dropdown-item" href="/copyright.html">Copyright</a></li>
                             <li><a class="dropdown-item" href="/litigation.html">IP Litigation</a></li>
+                            <li><a class="dropdown-item" href="/licensing.html">Licensing &amp; Contracts</a></li>
                             <li><a class="dropdown-item" href="/corporate-formation.html">Corporate Formation</a></li>
                             <li><a class="dropdown-item" href="/criminal-litigation.html">Criminal Litigation</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -149,116 +408,120 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/consultation.html">Paid Consultation</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/contact.html">Contact</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html"><i class="fas fa-lock me-1"></i>Client Portal</a>
+                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>Client Portal
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script>
-        // حل مشكلة صورة المحامي - البحث عن المسار الصحيح (نسخة إضافية للاحتياط)
-        (function() {
-            const possiblePaths = [
-                '/images/team/walid-profile.jpg',
-                '/images/team/walid-abouelela.jpg',
-                '/images/walid-profile.jpg',
-                '/ar/images/team/walid-profile.jpg',
-                '/images/lawyers/walid.jpg'
-            ];
-            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-            if (!imgElement) return;
-            function tryLoadImage(index) {
-                if (index >= possiblePaths.length) return;
-                const testImg = new Image();
-                testImg.src = possiblePaths[index];
-                testImg.onload = function() {
-                    imgElement.src = possiblePaths[index];
-                    imgElement.onerror = null;
-                };
-                testImg.onerror = function() {
-                    tryLoadImage(index + 1);
-                };
-            }
-            tryLoadImage(0);
-        })();
-        </script>
     </nav>
 
-    <!-- Page Header -->
     <header class="page-header">
-        <div class="container text-white text-center">
+        <div class="container text-center">
             <h1 class="display-4">Contact Us</h1>
-            <p class="lead">We're here to help. Send us a message with your documents and we'll respond within 24 hours.</p>
+            <p class="lead">Reach out by phone, WhatsApp, or email — response within one business day</p>
         </div>
     </header>
 
-    <!-- Contact Form and Info -->
+    <!-- ============================================================
+         QUICK ACTIONS + CONTACT INFO
+         ============================================================ -->
     <section class="py-5">
         <div class="container">
-            <div class="row g-5">
-                <div class="col-md-6">
-                    <div class="card border-0 shadow-lg rounded-4 h-100">
-                        <div class="card-body p-4 p-lg-5">
-                            <h2 class="mb-4"><i class="fas fa-envelope text-primary me-2"></i>Send a Message</h2>
-                            <form id="contactForm" action="https://www.snapform.cc/api/f/cmpiuze510002ju04zudu90r6" method="POST" enctype="multipart/form-data">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label fw-bold">Full Name *</label>
-                                    <input type="text" class="form-control form-control-lg" id="name" name="name" required placeholder="Enter your full name">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label fw-bold">Email *</label>
-                                    <input type="email" class="form-control form-control-lg" id="email" name="email" required placeholder="name@example.com">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="phone" class="form-label fw-bold">Phone Number</label>
-                                    <input type="tel" class="form-control form-control-lg" id="phone" name="phone" placeholder="e.g., +20 111257219">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label fw-bold">Message *</label>
-                                    <textarea class="form-control form-control-lg" id="message" name="message" rows="5" required placeholder="Please describe your inquiry..."></textarea>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="attachment" class="form-label fw-bold">Attach File (optional)</label>
-                                    <input type="file" class="form-control form-control-lg" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.jpg,.png">
-                                    <div class="form-text">Max size 10MB. Allowed: PDF, DOC, JPG, PNG.</div>
-                                </div>
-                                <button type="submit" class="btn btn-primary w-100 py-3"><i class="fas fa-paper-plane me-2"></i>Send Message</button>
-                                <div id="formStatus" class="form-status"></div>
-                            </form>
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">Direct Channels</span>
+                <h2 class="sh-title">Reach Out <span class="text-gold">Directly</span></h2>
+                <p class="sh-desc">Choose the channel that works best for you — all are monitored during business hours.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Quick actions -->
+                <div class="col-lg-5">
+                    <a href="https://wa.me/20111257219" target="_blank" rel="noopener" class="quick-action qa-whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="qa-text">
+                            <span class="qa-label">Fastest Response</span>
+                            <span class="qa-value">WhatsApp</span>
                         </div>
-                    </div>
+                        <i class="fas fa-arrow-right" style="color:#C9A961;font-size:0.9rem;"></i>
+                    </a>
+
+                    <a href="tel:+20111257219" class="quick-action qa-phone">
+                        <i class="fas fa-phone"></i>
+                        <div class="qa-text">
+                            <span class="qa-label">Primary Line</span>
+                            <span class="qa-value">+20 111 257 219</span>
+                        </div>
+                        <i class="fas fa-arrow-right" style="color:#C9A961;font-size:0.9rem;"></i>
+                    </a>
+
+                    <a href="tel:+201018437396" class="quick-action qa-phone">
+                        <i class="fas fa-phone"></i>
+                        <div class="qa-text">
+                            <span class="qa-label">Secondary Line</span>
+                            <span class="qa-value">+20 101 843 7396</span>
+                        </div>
+                        <i class="fas fa-arrow-right" style="color:#C9A961;font-size:0.9rem;"></i>
+                    </a>
+
+                    <a href="mailto:walidlegal.ippro@gmail.com" class="quick-action qa-email">
+                        <i class="fas fa-envelope"></i>
+                        <div class="qa-text">
+                            <span class="qa-label">Email</span>
+                            <span class="qa-value">walidlegal.ippro@gmail.com</span>
+                        </div>
+                        <i class="fas fa-arrow-right" style="color:#C9A961;font-size:0.9rem;"></i>
+                    </a>
                 </div>
-                <div class="col-md-6">
-                    <div class="card border-0 shadow-lg rounded-4 h-100">
-                        <div class="card-body p-4 p-lg-5">
-                            <h2 class="mb-4"><i class="fas fa-address-card text-primary me-2"></i>Contact Information</h2>
-                            <ul class="list-unstyled">
-                                <li class="mb-4 d-flex">
-                                    <i class="fas fa-map-marker-alt fa-2x text-primary me-3"></i>
-                                    <div><strong class="d-block">Address</strong> 10th of Ramadan, Cairo, Egypt</div>
-                                </li>
-                                <li class="mb-4 d-flex">
-                                    <i class="fas fa-phone fa-2x text-primary me-3"></i>
-                                    <div><strong class="d-block">Phone</strong> <a href="tel:+20111257219" class="text-decoration-none">+20 111257219</a><br><small class="text-muted">Available during business hours</small></div>
-                                </li>
-                                <li class="mb-4 d-flex">
-                                    <i class="fas fa-envelope fa-2x text-primary me-3"></i>
-                                    <div><strong class="d-block">Email</strong> <a href="mailto:walidlegal.ippro@gmail.com" class="text-decoration-none">walidlegal.ippro@gmail.com</a></div>
-                                </li>
-                                <li class="mb-4 d-flex">
-                                    <i class="fas fa-clock fa-2x text-primary me-3"></i>
-                                    <div><strong class="d-block">Business Hours</strong> Saturday - Thursday: 9am - 8pm</div>
-                                </li>
-                            </ul>
-                            <div class="mt-4">
-                                <h5><i class="fab fa-whatsapp text-success me-2"></i>WhatsApp Direct</h5>
-                                <a href="https://wa.me/20111257219" class="btn btn-outline-success w-100 py-2" target="_blank"><i class="fab fa-whatsapp me-2"></i>Message on WhatsApp</a>
+
+                <!-- Info cards -->
+                <div class="col-lg-7">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="contact-info-card">
+                                <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="ci-content">
+                                    <h5>Office Location</h5>
+                                    <p>10th of Ramadan City, Cairo, Egypt</p>
+                                    <span class="ci-meta">By Appointment</span>
+                                </div>
                             </div>
-                            <div class="mt-4">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.7890!2d31.0000!3d30.0000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAwJzAwLjAiTiAzMcKwMDAnMDAuMCJF!5e0!3m2!1sen!2seg!4v1234567890" width="100%" height="250" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
-                                <p class="text-muted small mt-2">📍 Our office location on the map</p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="contact-info-card">
+                                <div class="ci-icon"><i class="fas fa-clock"></i></div>
+                                <div class="ci-content">
+                                    <h5>Business Hours</h5>
+                                    <p>Saturday – Thursday<br>9:00 AM – 8:00 PM</p>
+                                    <span class="ci-meta">Cairo Time (GMT+2)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="contact-info-card">
+                                <div class="ci-icon"><i class="fas fa-language"></i></div>
+                                <div class="ci-content">
+                                    <h5>Languages</h5>
+                                    <p>Arabic · English<br>Legal drafting in both</p>
+                                    <span class="ci-meta">Bilingual Service</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="contact-info-card">
+                                <div class="ci-icon"><i class="fas fa-globe"></i></div>
+                                <div class="ci-content">
+                                    <h5>Service Area</h5>
+                                    <p>Egypt &amp; cross-border via partner network</p>
+                                    <span class="ci-meta">Local &amp; International</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -267,122 +530,366 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
+    <!-- ============================================================
+         CONTACT FORM
+         ============================================================ -->
+    <section class="py-5 bg-light" id="contactForm">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">Send a Message</span>
+                <h2 class="sh-title">Tell Us About <span class="text-gold">Your Matter</span></h2>
+                <p class="sh-desc">Fill in the form below and we'll respond within one business day.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="contact-form-wrap">
+
+                        <form id="contactForm" novalidate>
+
+                            <div class="cn-row">
+                                <div class="cn-field">
+                                    <label for="fullName">Full Name <span class="req">*</span></label>
+                                    <input type="text" id="fullName" name="fullName" required minlength="2" placeholder="e.g. Ahmed Mohamed">
+                                </div>
+                                <div class="cn-field">
+                                    <label for="company">Company / Organization</label>
+                                    <input type="text" id="company" name="company" placeholder="Optional">
+                                </div>
+                            </div>
+
+                            <div class="cn-row">
+                                <div class="cn-field">
+                                    <label for="email">Email Address <span class="req">*</span></label>
+                                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                                </div>
+                                <div class="cn-field">
+                                    <label for="phone">Phone Number <span class="req">*</span></label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+20 1XX XXX XXXX">
+                                </div>
+                            </div>
+
+                            <div class="cn-row">
+                                <div class="cn-field">
+                                    <label for="subject">Subject <span class="req">*</span></label>
+                                    <input type="text" id="subject" name="subject" required minlength="3" placeholder="Brief subject of your inquiry">
+                                </div>
+                                <div class="cn-field">
+                                    <label for="contactMethod">Preferred Contact</label>
+                                    <select id="contactMethod" name="contactMethod">
+                                        <option value="Email">Email</option>
+                                        <option value="Phone">Phone Call</option>
+                                        <option value="WhatsApp">WhatsApp</option>
+                                        <option value="Either">Any</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="cn-field">
+                                <label for="message">Your Message <span class="req">*</span></label>
+                                <textarea id="message" name="message" required minlength="20" placeholder="Please share the details of your inquiry in a few lines."></textarea>
+                            </div>
+
+                            <div class="cn-field" style="display:flex;gap:10px;align-items:flex-start;">
+                                <input type="checkbox" id="consent" name="consent" required style="width:auto;margin-top:5px;">
+                                <label for="consent" style="font-weight:500;font-size:0.88rem;color:#495057;margin:0;cursor:pointer;">
+                                    I agree that the firm may contact me regarding this message and understand that
+                                    submitting this form does not create an attorney-client relationship.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="cn-submit" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Send Message</span>
+                            </button>
+
+                            <div id="formStatus" class="cn-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MAP / LOCATION
+         ============================================================ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">Visit Us</span>
+                <h2 class="sh-title">Our Location</h2>
+                <p class="sh-desc">Meetings by appointment — please contact us in advance.</p>
+            </div>
+
+            <div class="map-wrap">
+                <div class="map-content">
+                    <i class="fas fa-map-location-dot"></i>
+                    <h4>10th of Ramadan City</h4>
+                    <p>Cairo, Egypt — meetings are held by confirmed appointment only.</p>
+                    <a href="https://maps.google.com/?q=10th+of+Ramadan+City+Cairo+Egypt" target="_blank" rel="noopener" class="btn-rich-primary">
+                        <i class="fas fa-diamond-turn-right"></i>
+                        <span>Open in Google Maps</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ
+         ============================================================ -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">FAQ</span>
+                <h2 class="sh-title">Questions Before You Reach Out</h2>
+            </div>
+
+            <div class="faq-rich-accordion mx-auto" style="max-width: 900px;">
+                <div class="accordion" id="contactFaq">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf1">
+                                How fast do you respond to inquiries?
+                            </button>
+                        </h3>
+                        <div id="cf1" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
+                            <div class="accordion-body">
+                                We respond to all inquiries within one business day — often much faster.
+                                WhatsApp is the fastest channel for urgent matters.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf2">
+                                Is my message confidential?
+                            </button>
+                        </h3>
+                        <div id="cf2" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
+                            <div class="accordion-body">
+                                Yes. All information you share with us is treated with strict
+                                confidentiality. Formal attorney-client privilege begins once an
+                                engagement letter is signed.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf3">
+                                Do you offer free initial consultations?
+                            </button>
+                        </h3>
+                        <div id="cf3" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
+                            <div class="accordion-body">
+                                Yes — the first 15-minute orientation call is free of charge, to
+                                help you decide if we're the right fit. Deeper consultations are
+                                quoted in advance.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cf4">
+                                Can I reach out in Arabic or English?
+                            </button>
+                        </h3>
+                        <div id="cf4" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
+                            <div class="accordion-body">
+                                Yes — full service in both Arabic and English, including phone,
+                                email, WhatsApp, and legal drafting.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FINAL CTA
+         ============================================================ -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-handshake"></i></div>
+                <h2>Ready to Book a Full Consultation?</h2>
+                <p>If you'd prefer a scheduled session with clear scope and fees, use our consultation page.</p>
+                <div class="fcr-buttons">
+                    <a href="/consultation.html" class="btn-rich-primary light">
+                        <span>Book Consultation</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://wa.me/20111257219" target="_blank" rel="noopener" class="btn-rich-ghost">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp Now</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>Walid Abo Al-Ela Law Firm</h5>
-                    <p class="text-white-50">Specialized in arbitration and intellectual property protection with a personal touch since 2016.</p>
-                    <div class="social-links mt-3">
+                <div class="col-lg-4">
+                    <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">Walid Mohamed Abu Al-Ela Law Firm</h5>
+                    <p class="footer-desc">Law · Arbitration · Intellectual Property. Serving clients with dedication since 2016.</p>
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">Quick Links</h6>
+                    <ul class="footer-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/lawyers.html">Our Team</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">Contact</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Sat - Thu: 9am - 8pm</li>
+                    </ul>
+                </div>
                 <div class="col-lg-3">
-                    <h6 class="mb-4">Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/index.html" class="text-white-50 text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="/about.html" class="text-white-50 text-decoration-none">About</a></li>
-                        <li class="mb-2"><a href="/services.html" class="text-white-50 text-decoration-none">Services</a></li>
-                        <li class="mb-2"><a href="/lawyers.html" class="text-white-50 text-decoration-none">Our Team</a></li>
-                        <li class="mb-2"><a href="/blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
-                        <li class="mb-2"><a href="/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
-                        <li class="mb-2"><a href="/consultation.html" class="text-white-50 text-decoration-none">Paid Consultation</a></li>
+                    <h6 class="footer-heading">Legal</h6>
+                    <ul class="footer-list">
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Use</a></li>
+                        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h6 class="mb-4">Contact Info</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 10th of Ramadan, Cairo, Egypt</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Sat - Thu: 9am - 8pm</li>
-                    </ul>
-                </div>
-                <div class="col-lg-12 mt-3">
-                    <hr class="my-3" style="border-color: rgba(255,255,255,0.1);">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="small text-white-50 mb-0">© 2025 Walid Abo Al-Ela Law Firm. All rights reserved.</p>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
-                            <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">Terms of Use</a>
-                            <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">Cookie Policy</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Walid Mohamed Abu Al-Ela Law Firm. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
+
+    <!-- ============================================================
+         FORM HANDLER
+         ============================================================ -->
     <script>
-        // Form submission handling with confirmation message and reset
+    (function() {
         const form = document.getElementById('contactForm');
         const statusDiv = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+
+        if (!form) return;
+
+        function showStatus(type, message) {
+            statusDiv.className = 'cn-status ' + type;
+            statusDiv.textContent = message;
+            statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
 
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
-            statusDiv.style.display = 'block';
-            statusDiv.innerHTML = 'Sending...';
-            statusDiv.className = 'form-status';
 
-            const formData = new FormData(form);
+            const fullName = form.fullName.value.trim();
+            const email = form.email.value.trim();
+            const phone = form.phone.value.trim();
+            const subject = form.subject.value.trim();
+            const message = form.message.value.trim();
+            const consent = form.consent.checked;
+
+            if (fullName.length < 2) {
+                showStatus('error', 'Please enter your full name.');
+                return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showStatus('error', 'Please enter a valid email address.');
+                return;
+            }
+            if (phone.length < 6) {
+                showStatus('error', 'Please enter a valid phone number.');
+                return;
+            }
+            if (subject.length < 3) {
+                showStatus('error', 'Please enter a subject.');
+                return;
+            }
+            if (message.length < 20) {
+                showStatus('error', 'Please write your message in at least 20 characters.');
+                return;
+            }
+            if (!consent) {
+                showStatus('error', 'Please accept the consent checkbox to continue.');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            const originalHTML = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Sending...</span>';
 
             try {
-                const response = await fetch(form.action, {
+                const payload = {
+                    name: fullName,
+                    email: email,
+                    phone: phone,
+                    company: form.company.value.trim(),
+                    subject: subject,
+                    message: message + '\n\n---\nPreferred Contact: ' + form.contactMethod.value,
+                    type: 'contact'
+                };
+
+                const res = await fetch('/api/contact', {
                     method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
                 });
-                if (response.ok) {
-                    statusDiv.innerHTML = '✅ Thank you for contacting us. We will respond as soon as possible.';
-                    statusDiv.classList.add('success');
+
+                const data = await res.json().catch(() => ({}));
+
+                if (res.ok) {
+                    showStatus('success', 'Thank you! Your message has been received. We\'ll get back to you within one business day.');
                     form.reset();
                 } else {
-                    const errorData = await response.json();
-                    statusDiv.innerHTML = '❌ Oops! There was a problem. Please try again.';
-                    statusDiv.classList.add('error');
+                    showStatus('error', data.error || 'Something went wrong. Please try again or contact us directly.');
                 }
-            } catch (error) {
-                statusDiv.innerHTML = '❌ Network error. Please check your connection.';
-                statusDiv.classList.add('error');
+            } catch (err) {
+                showStatus('error', 'Network error. Please check your connection or contact us directly at walidlegal.ippro@gmail.com');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalHTML;
             }
         });
-    </script>
-    <script>
-    (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-            testImg.onerror = function() { tryLoadImage(index + 1); };
-        }
-        tryLoadImage(0);
     })();
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
-                if (link.getAttribute('href') === currentPath) link.classList.add('active');
-            });
-        });
-    </script>
+
 </body>
 </html>

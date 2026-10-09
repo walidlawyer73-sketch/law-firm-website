@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Walid Abo Al-Ela Law Firm</title>
-    <meta name="description" content="Stay updated with the latest insights on intellectual property law, international arbitration, and legal developments. Expert articles from Walid Abo Al-Ela Law Firm.">
-    <!-- Bootstrap CSS -->
+    <title>Blog - Walid Mohamed Abu Al-Ela Law Firm | IP, Arbitration &amp; Corporate Insights</title>
+    <meta name="description" content="Legal insights on Intellectual Property, Arbitration, Corporate Law, and Litigation from Walid Mohamed Abu Al-Ela Law Firm — practical analysis for businesses and creators in Egypt.">
+    <meta name="keywords" content="IP law blog Egypt, arbitration blog, trademark insights, patent law articles, corporate law insights, legal blog Egypt">
+    <meta name="author" content="Walid Mohamed Abu Al-Ela">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/blog.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/blog.html">
+    <meta property="og:title" content="Blog - Walid Mohamed Abu Al-Ela Law Firm">
+    <meta property="og:description" content="Legal insights on IP, Arbitration, Corporate Law, and Litigation.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/blog.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/blog.html">
+
+    <link rel="icon" type="image/png" href="/images/logo%20arb%20ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,94 +35,440 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
-    <style>
-        .language-switcher {
-            position: fixed;
-            top: 70px;
-            left: 20px;
-            z-index: 9999;
-        }
-        .language-switcher .lang-btn {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .language-switcher .lang-btn:hover {
-            background-color: #0b5ed7;
-            transform: scale(1.05);
-        }
-        body { padding-top: 70px; }
-        @media (max-width: 768px) {
-            .language-switcher { top: 60px; left: 10px; }
-            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
-        }
-        .dropdown-menu { min-width: 220px; }
-    </style>
-</head>
-<script>
-// ========== حل نهائي لصورة المحامي (النسخة الأولى) ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> This is a trial version - site under development and updates <i class="fas fa-tools"></i>
-</div>
-<body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> العربية</a>
-    </div>
 
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (!currentPath.startsWith('/ar/')) {
-            let arabicPath;
-            if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
-                arabicPath = '/ar/';
-            } else {
-                arabicPath = '/ar' + currentPath;
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Walid Mohamed Abu Al-Ela Law Firm — Blog",
+        "url": "https://law-arb-ip-walid.vercel.app/blog.html",
+        "description": "Legal insights on IP, Arbitration, Corporate Law, and Litigation.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Walid Mohamed Abu Al-Ela Law Firm",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://law-arb-ip-walid.vercel.app/images/logo.png"
             }
-            langLink.href = arabicPath;
-        } else {
-            langLink.href = '/ar/';
         }
-    })();
+    }
     </script>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+    <style>
+        /* Featured Post */
+        .featured-post {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 0;
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -30px rgba(0,0,0,0.12);
+            transition: all 0.4s ease;
+            margin-bottom: 60px;
+        }
+        .featured-post:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 40px 80px -30px rgba(0,0,0,0.18);
+            border-color: #C9A961;
+        }
+        .fp-image {
+            position: relative;
+            overflow: hidden;
+            min-height: 420px;
+            background: linear-gradient(135deg, #000, #1A1A1A);
+        }
+        .fp-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            opacity: 0.85;
+        }
+        .featured-post:hover .fp-image img {
+            transform: scale(1.05);
+        }
+        .fp-badge {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            box-shadow: 0 10px 25px rgba(201,169,97,0.4);
+            z-index: 2;
+        }
+        .fp-content {
+            padding: 50px 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .fp-meta {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+            font-size: 0.8rem;
+            color: #6C757D;
+            font-weight: 600;
+        }
+        .fp-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .fp-meta i {
+            color: #C9A961;
+            font-size: 0.85rem;
+        }
+        .fp-category {
+            color: #A88947;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 800;
+        }
+        .fp-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            font-weight: 800;
+            color: #212529;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            letter-spacing: -0.02em;
+        }
+        .fp-excerpt {
+            font-size: 0.95rem;
+            color: #6C757D;
+            line-height: 1.75;
+            margin-bottom: 25px;
+        }
+        .fp-read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #A88947;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+        .fp-read-more:hover {
+            color: #000;
+            gap: 15px;
+        }
+
+        @media (max-width: 900px) {
+            .featured-post { grid-template-columns: 1fr; }
+            .fp-image { min-height: 260px; }
+            .fp-content { padding: 35px 28px; }
+        }
+
+        /* Category Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 45px;
+        }
+        .filter-tab {
+            padding: 10px 24px;
+            background: #fff;
+            border: 2px solid #E9ECEF;
+            border-radius: 999px;
+            color: #495057;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .filter-tab:hover {
+            border-color: #C9A961;
+            color: #A88947;
+            transform: translateY(-2px);
+        }
+        .filter-tab.active {
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            border-color: #C9A961;
+            box-shadow: 0 10px 25px -8px rgba(201,169,97,0.4);
+        }
+        .filter-tab i {
+            font-size: 0.8rem;
+        }
+
+        /* Blog Post Card */
+        .post-card {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+        .post-card:hover {
+            transform: translateY(-8px);
+            border-color: #C9A961;
+            box-shadow: 0 30px 60px -25px rgba(0,0,0,0.15);
+            color: inherit;
+        }
+        .pc-image {
+            position: relative;
+            height: 210px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #000, #1A1A1A);
+        }
+        .pc-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .post-card:hover .pc-image img {
+            transform: scale(1.08);
+        }
+        .pc-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255,255,255,0.95);
+            color: #000;
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            backdrop-filter: blur(8px);
+            z-index: 2;
+        }
+        .pc-category.ip { background: rgba(201,169,97,0.95); color: #000; }
+        .pc-category.arb { background: rgba(30,144,255,0.9); color: #fff; }
+        .pc-category.corp { background: rgba(40,167,69,0.9); color: #fff; }
+        .pc-category.lit { background: rgba(220,53,69,0.9); color: #fff; }
+
+        .pc-body {
+            padding: 26px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .pc-meta {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            font-size: 0.75rem;
+            color: #ADB5BD;
+            font-weight: 600;
+        }
+        .pc-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .pc-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #212529;
+            line-height: 1.35;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+            letter-spacing: -0.01em;
+        }
+        .post-card:hover .pc-title {
+            color: #A88947;
+        }
+        .pc-excerpt {
+            font-size: 0.88rem;
+            color: #6C757D;
+            line-height: 1.7;
+            margin-bottom: 18px;
+            flex: 1;
+        }
+        .pc-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid #F1F3F5;
+        }
+        .pc-read-time {
+            font-size: 0.75rem;
+            color: #ADB5BD;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .pc-arrow {
+            color: #C9A961;
+            font-size: 0.95rem;
+            transition: transform 0.3s ease;
+        }
+        .post-card:hover .pc-arrow {
+            transform: translateX(5px);
+        }
+
+        /* Newsletter Box */
+        .newsletter-box {
+            background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+            border-radius: 24px;
+            padding: 55px 45px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(201,169,97,0.2);
+        }
+        .newsletter-box::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(201,169,97,0.18), transparent 70%);
+            border-radius: 50%;
+        }
+        .newsletter-box::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(201,169,97,0.12), transparent 70%);
+            border-radius: 50%;
+        }
+        .newsletter-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            color: #fff;
+        }
+        .newsletter-content i.nl-icon {
+            font-size: 2.5rem;
+            color: #C9A961;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .newsletter-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        .newsletter-content p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid rgba(201,169,97,0.3);
+            border-radius: 999px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            font-size: 0.9rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        .newsletter-form input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #C9A961;
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 0 0 4px rgba(201,169,97,0.15);
+        }
+        .newsletter-form button {
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            border: none;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(201,169,97,0.4);
+        }
+        .newsletter-form button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .nl-status {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            display: none;
+        }
+        .nl-status.success { color: #6EE7B7; display: block; }
+        .nl-status.error { color: #FCA5A5; display: block; }
+
+        @media (max-width: 600px) {
+            .newsletter-form { flex-direction: column; }
+            .newsletter-form button { justify-content: center; }
+            .newsletter-box { padding: 40px 25px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="trial-banner">
+        <i class="fas fa-tools"></i>
+        <span>This is a trial version - site under development and updates</span>
+        <i class="fas fa-tools"></i>
+    </div>
+
+    <div class="language-switcher">
+        <a href="/ar/blog.html" class="lang-btn"><i class="fas fa-globe"></i> العربية</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="Walid Abo Al-Ela Law Firm" style="height:45px; width:auto; margin-right:10px;">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm">
                 <div>
-                    <span class="fw-bold">Walid Abo Al-Ela Law Firm</span>
-                    <small class="d-block" style="font-size:16px; opacity:0.9; margin-top:5px; font-weight:500;">For Arbitration and Intellectual Property</small>
+                    <span class="firm-name">Walid Mohamed Abu Al-Ela</span>
+                    <small class="firm-sub">Law Firm · Arbitration · IP</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -114,16 +476,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
                             <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
                             <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
                             <li><a class="dropdown-item" href="/copyright.html">Copyright</a></li>
                             <li><a class="dropdown-item" href="/litigation.html">IP Litigation</a></li>
+                            <li><a class="dropdown-item" href="/licensing.html">Licensing &amp; Contracts</a></li>
                             <li><a class="dropdown-item" href="/corporate-formation.html">Corporate Formation</a></li>
                             <li><a class="dropdown-item" href="/criminal-litigation.html">Criminal Litigation</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -131,212 +494,578 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/consultation.html">Paid Consultation</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html"><i class="fas fa-lock me-1"></i>Client Portal</a>
+                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>Client Portal
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script>
-        // حل مشكلة صورة المحامي - البحث عن المسار الصحيح (نسخة إضافية للاحتياط)
-        (function() {
-            const possiblePaths = [
-                '/images/team/walid-profile.jpg',
-                '/images/team/walid-abouelela.jpg',
-                '/images/walid-profile.jpg',
-                '/ar/images/team/walid-profile.jpg',
-                '/images/lawyers/walid.jpg'
-            ];
-            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-            if (!imgElement) return;
-            function tryLoadImage(index) {
-                if (index >= possiblePaths.length) return;
-                const testImg = new Image();
-                testImg.src = possiblePaths[index];
-                testImg.onload = function() {
-                    imgElement.src = possiblePaths[index];
-                    imgElement.onerror = null;
-                };
-                testImg.onerror = function() {
-                    tryLoadImage(index + 1);
-                };
-            }
-            tryLoadImage(0);
-        })();
-        </script>
     </nav>
 
-    <!-- Page Header -->
     <header class="page-header">
-        <div class="container text-white text-center">
-            <h1 class="display-4">Legal Insights & News</h1>
-            <p class="lead">Stay updated with the latest developments in IP and arbitration</p>
+        <div class="container text-center">
+            <h1 class="display-4">Legal Insights</h1>
+            <p class="lead">Practical analysis on IP, Arbitration, Corporate Law &amp; Litigation</p>
         </div>
     </header>
 
+    <!-- ============================================================
+         FEATURED POST
+         ============================================================ -->
     <section class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                        <img src="/images/blog/blog1.jpg" class="card-img-top" style="height:220px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/400x220?text=IP+Law'">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-primary">Intellectual Property</span>
-                                <small class="text-muted"><i class="far fa-calendar me-1"></i> Feb 10, 2025</small>
-                            </div>
-                            <h5 class="card-title">New Amendments to Egyptian IP Law</h5>
-                            <p class="card-text text-muted">An overview of recent changes and their impact on trademark and patent protection...</p>
-                            <a href="/blog/amendments-egyptian-ip-law.html" class="btn btn-outline-primary btn-sm mt-2">Read More <i class="fas fa-arrow-right ms-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                        <img src="/images/blog/blog2.jpg" class="card-img-top" style="height:220px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/400x220?text=Arbitration'">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-primary">International Arbitration</span>
-                                <small class="text-muted"><i class="far fa-calendar me-1"></i> Jan 25, 2025</small>
-                            </div>
-                            <h5 class="card-title">International Arbitration Trends 2025</h5>
-                            <p class="card-text text-muted">Key developments in cross-border dispute resolution and what they mean for businesses...</p>
-                            <a href="/blog/arbitration-trends-2025.html" class="btn btn-outline-primary btn-sm mt-2">Read More <i class="fas fa-arrow-right ms-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                        <img src="/images/blog/blog3.jpg" class="card-img-top" style="height:220px; object-fit:cover;" onerror="this.src='https://via.placeholder.com/400x220?text=Software+Patents'">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-primary">Patents</span>
-                                <small class="text-muted"><i class="far fa-calendar me-1"></i> Jan 5, 2025</small>
-                            </div>
-                            <h5 class="card-title">Protecting Software with Patents</h5>
-                            <p class="card-text text-muted">Navigating the complexities of patent protection for computer-implemented inventions...</p>
-                            <a href="/blog/protecting-software-patents.html" class="btn btn-outline-primary btn-sm mt-2">Read More <i class="fas fa-arrow-right ms-1"></i></a>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">Featured Article</span>
+                <h2 class="sh-title">Our Latest <span class="text-gold">Reading</span></h2>
             </div>
 
-            <!-- Newsletter Subscription -->
-            <div class="row mt-5">
-                <div class="col-lg-8 mx-auto">
-                    <div class="bg-light p-4 p-md-5 rounded-4 text-center">
-                        <h3 class="mb-3">Subscribe to Our Newsletter</h3>
-                        <p class="text-muted mb-4">Get the latest legal insights and updates delivered to your inbox.</p>
-                        <form class="row g-2 justify-content-center">
-                            <div class="col-md-6">
-                                <input type="email" class="form-control form-control-lg" placeholder="Your email address">
-                            </div>
-                            <div class="col-auto">
-                                <button class="btn btn-primary btn-lg px-4" type="button">Subscribe</button>
-                            </div>
-                        </form>
-                        <p class="small text-muted mt-3">We respect your privacy. Unsubscribe at any time.</p>
+            <article class="featured-post">
+                <div class="fp-image">
+                    <span class="fp-badge">Featured</span>
+                    <img src="/images/blog/ai-ip-cover.jpg"
+                         alt="AI and Intellectual Property - research article cover"
+                         loading="lazy"
+                         onerror="this.onerror=null; this.style.opacity=0;">
+                </div>
+                <div class="fp-content">
+                    <div class="fp-meta">
+                        <span class="fp-category">Research</span>
+                        <span><i class="fas fa-calendar"></i> 2026</span>
+                        <span><i class="fas fa-clock"></i> 9 min read</span>
                     </div>
+                    <h3 class="fp-title">The Impact of AI as a Digital Educator on the IP Rights of Content Creators</h3>
+                    <p class="fp-excerpt">
+                        A research paper presented at the 9th Scientific Conference on
+                        Intellectual Property — analyzing how the expanding use of AI as
+                        a digital educator affects the IP rights of content creators whose
+                        work is used for training. The paper has been approved for publication
+                        in the National Institute of Intellectual Property's journal.
+                    </p>
+                    <a href="/blog/ai-digital-educator-ip-rights.html" class="fp-read-more">
+                        Read Article
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+         ALL POSTS
+         ============================================================ -->
+    <section class="py-5 bg-light">
+        <div class="container">
+
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">All Articles</span>
+                <h2 class="sh-title">Browse Our <span class="text-gold">Insights</span></h2>
+                <p class="sh-desc">Legal analysis across the firm's practice areas.</p>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="filter-tabs">
+                <a href="#" class="filter-tab active"><i class="fas fa-th-large"></i> All</a>
+                <a href="#" class="filter-tab"><i class="fas fa-trademark"></i> Intellectual Property</a>
+                <a href="#" class="filter-tab"><i class="fas fa-scale-balanced"></i> Arbitration</a>
+                <a href="#" class="filter-tab"><i class="fas fa-building"></i> Corporate</a>
+                <a href="#" class="filter-tab"><i class="fas fa-gavel"></i> Litigation</a>
+            </div>
+
+            <!-- Posts Grid -->
+            <div class="row g-4">
+
+                <!-- Post 1 — IP Law Amendments -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/blog/egyptian-ip-law-amendments-2026.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category ip">Intellectual Property</span>
+                            <img src="/images/blog/ip-law-amendments.jpg" alt="Egyptian IP law amendments 2026" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> Mar 2026</span>
+                                <span><i class="fas fa-clock"></i> 6 min</span>
+                            </div>
+                            <h4 class="pc-title">Recent Amendments to the Egyptian IP Law: What Business Owners Should Know</h4>
+                            <p class="pc-excerpt">
+                                A practical overview of the latest amendments to Egypt's
+                                intellectual property framework — and what they mean for
+                                trademark holders, patent applicants, and rights owners.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> Read article</span>
+                                <i class="fas fa-arrow-right pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Post 2 — Arbitration Trends -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/blog/arbitration-trends-2026.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category arb">Arbitration</span>
+                            <img src="/images/blog/arbitration-trends.jpg" alt="Arbitration trends 2026" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> Feb 2026</span>
+                                <span><i class="fas fa-clock"></i> 7 min</span>
+                            </div>
+                            <h4 class="pc-title">Arbitration Trends to Watch in 2026: Egypt and the Region</h4>
+                            <p class="pc-excerpt">
+                                How arbitration practice is evolving in Egypt and the wider
+                                MENA region — including IP disputes, investment arbitration,
+                                and the growing role of technology.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> Read article</span>
+                                <i class="fas fa-arrow-right pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Post 3 — Software Patents -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/blog/protecting-software-patents.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category ip">Intellectual Property</span>
+                            <img src="/images/blog/software-patents.jpg" alt="Protecting software patents" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> Feb 2026</span>
+                                <span><i class="fas fa-clock"></i> 8 min</span>
+                            </div>
+                            <h4 class="pc-title">Protecting Software in Egypt: Copyright, Patents, or Trade Secrets?</h4>
+                            <p class="pc-excerpt">
+                                A breakdown of the three main legal paths for protecting
+                                software and SaaS products in Egypt — and how to choose the
+                                right strategy for your business.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> Read article</span>
+                                <i class="fas fa-arrow-right pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Post 4 — Trademark Opposition -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/blog/trademark-opposition-strategy.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category ip">Intellectual Property</span>
+                            <img src="/images/blog/trademark-opposition.jpg" alt="Trademark opposition strategy" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> Jan 2026</span>
+                                <span><i class="fas fa-clock"></i> 5 min</span>
+                            </div>
+                            <h4 class="pc-title">Responding to Trademark Oppositions: A Practical Guide</h4>
+                            <p class="pc-excerpt">
+                                What happens when your trademark application is opposed — and
+                                the steps you can take to defend your mark with a strong legal
+                                position.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> Read article</span>
+                                <i class="fas fa-arrow-right pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Post 5 — Corporate Governance -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/blog/corporate-governance-checklist.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category corp">Corporate</span>
+                            <img src="/images/blog/corporate-governance.jpg" alt="Corporate governance checklist" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> Jan 2026</span>
+                                <span><i class="fas fa-clock"></i> 6 min</span>
+                            </div>
+                            <h4 class="pc-title">Corporate Governance Checklist for Egyptian Companies</h4>
+                            <p class="pc-excerpt">
+                                A practical checklist covering general assembly requirements,
+                                board procedures, and compliance obligations for LLCs and
+                                joint-stock companies in Egypt.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> Read article</span>
+                                <i class="fas fa-arrow-right pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Post 6 — NDA Drafting -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/blog/nda-drafting-mistakes.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category corp">Corporate</span>
+                            <img src="/images/blog/nda-drafting.jpg" alt="NDA drafting mistakes" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> Dec 2025</span>
+                                <span><i class="fas fa-clock"></i> 5 min</span>
+                            </div>
+                            <h4 class="pc-title">Five Common Mistakes in NDA Drafting — and How to Avoid Them</h4>
+                            <p class="pc-excerpt">
+                                NDAs are often treated as a formality. Here's why they matter
+                                — and the most common drafting pitfalls that can leave your
+                                confidential information exposed.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> Read article</span>
+                                <i class="fas fa-arrow-right pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Post 7 — Litigation Prep -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/blog/preparing-commercial-litigation.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category lit">Litigation</span>
+                            <img src="/images/blog/litigation-prep.jpg" alt="Preparing for commercial litigation" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> Dec 2025</span>
+                                <span><i class="fas fa-clock"></i> 7 min</span>
+                            </div>
+                            <h4 class="pc-title">Preparing for Commercial Litigation: A Practical Checklist for Business Owners</h4>
+                            <p class="pc-excerpt">
+                                What to prepare before filing or defending a commercial case —
+                                documents, evidence, timelines, and what to expect through the
+                                process.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> Read article</span>
+                                <i class="fas fa-arrow-right pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Post 8 — IP Due Diligence -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/blog/ip-due-diligence-ma.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category ip">Intellectual Property</span>
+                            <img src="/images/blog/ip-due-diligence.jpg" alt="IP due diligence in M&A" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> Nov 2025</span>
+                                <span><i class="fas fa-clock"></i> 8 min</span>
+                            </div>
+                            <h4 class="pc-title">IP Due Diligence in M&amp;A Transactions: What Buyers Miss</h4>
+                            <p class="pc-excerpt">
+                                In M&amp;A deals, IP assets are often the most valuable — and
+                                the most overlooked. Here's what to check before signing.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> Read article</span>
+                                <i class="fas fa-arrow-right pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Post 9 — Patent Filing Strategy -->
+                <div class="col-md-6 col-lg-4">
+                    <a href="/blog/patent-filing-strategy-egypt.html" class="post-card">
+                        <div class="pc-image">
+                            <span class="pc-category ip">Intellectual Property</span>
+                            <img src="/images/blog/patent-filing.jpg" alt="Patent filing strategy Egypt" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                        </div>
+                        <div class="pc-body">
+                            <div class="pc-meta">
+                                <span><i class="fas fa-calendar"></i> Oct 2025</span>
+                                <span><i class="fas fa-clock"></i> 7 min</span>
+                            </div>
+                            <h4 class="pc-title">Patent Filing Strategy in Egypt: Local vs. PCT Route</h4>
+                            <p class="pc-excerpt">
+                                When to file locally, when to go through the PCT, and how to
+                                build a patent strategy that supports long-term protection and
+                                international expansion.
+                            </p>
+                            <div class="pc-footer">
+                                <span class="pc-read-time"><i class="fas fa-book-open"></i> Read article</span>
+                                <i class="fas fa-arrow-right pc-arrow"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+         NEWSLETTER
+         ============================================================ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="newsletter-box">
+                <div class="newsletter-content">
+                    <i class="fas fa-envelope-open-text nl-icon"></i>
+                    <h3>Stay Updated on Egyptian IP &amp; Legal Developments</h3>
+                    <p>
+                        Get occasional updates from our firm — new articles, regulatory
+                        changes, and practical legal insights. No spam, no noise.
+                    </p>
+                    <form class="newsletter-form" id="newsletterForm" novalidate>
+                        <input type="email" id="nlEmail" name="email" required placeholder="your@email.com" dir="ltr">
+                        <button type="submit" id="nlBtn">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Subscribe</span>
+                        </button>
+                    </form>
+                    <div class="nl-status" id="nlStatus"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
+    <!-- ============================================================
+         FAQ
+         ============================================================ -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">FAQ</span>
+                <h2 class="sh-title">Questions About Our Blog</h2>
+            </div>
+
+            <div class="faq-rich-accordion mx-auto" style="max-width: 900px;">
+                <div class="accordion" id="blogFaq">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bf1">
+                                Is the content on this blog legal advice?
+                            </button>
+                        </h3>
+                        <div id="bf1" class="accordion-collapse collapse" data-bs-parent="#blogFaq">
+                            <div class="accordion-body">
+                                No. Articles on this blog are for general informational
+                                purposes only and do not constitute legal advice. For advice
+                                on your specific situation, please book a consultation.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bf2">
+                                How often do you publish new articles?
+                            </button>
+                        </h3>
+                        <div id="bf2" class="accordion-collapse collapse" data-bs-parent="#blogFaq">
+                            <div class="accordion-body">
+                                We publish periodically, focusing on quality over volume —
+                                usually when there's a meaningful legal development or a topic
+                                worth unpacking for our clients.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bf3">
+                                Can I request a topic to be covered?
+                            </button>
+                        </h3>
+                        <div id="bf3" class="accordion-collapse collapse" data-bs-parent="#blogFaq">
+                            <div class="accordion-body">
+                                Yes — we're happy to hear suggestions. Send us a message
+                                through the contact page with your suggested topic.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bf4">
+                                Can I republish these articles?
+                            </button>
+                        </h3>
+                        <div id="bf4" class="accordion-collapse collapse" data-bs-parent="#blogFaq">
+                            <div class="accordion-body">
+                                You may share links and short quotes with attribution.
+                                Full republication requires prior written permission — please
+                                contact us.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FINAL CTA
+         ============================================================ -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-handshake"></i></div>
+                <h2>Need Advice on a Specific Matter?</h2>
+                <p>Our blog covers general topics — for your case, book a consultation.</p>
+                <div class="fcr-buttons">
+                    <a href="/consultation.html" class="btn-rich-primary light">
+                        <span>Book Consultation</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/contact.html" class="btn-rich-ghost">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact Us</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>Walid Abo Al-Ela Law Firm</h5>
-                    <p class="text-white-50">Specialized in arbitration and intellectual property protection with a personal touch since 2016.</p>
-                    <div class="social-links mt-3">
+                <div class="col-lg-4">
+                    <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">Walid Mohamed Abu Al-Ela Law Firm</h5>
+                    <p class="footer-desc">Law · Arbitration · Intellectual Property. Serving clients with dedication since 2016.</p>
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">Quick Links</h6>
+                    <ul class="footer-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/lawyers.html">Our Team</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">Contact</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Sat - Thu: 9am - 8pm</li>
+                    </ul>
+                </div>
                 <div class="col-lg-3">
-                    <h6 class="mb-4">Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/index.html" class="text-white-50 text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="/about.html" class="text-white-50 text-decoration-none">About</a></li>
-                        <li class="mb-2"><a href="/services.html" class="text-white-50 text-decoration-none">Services</a></li>
-                        <li class="mb-2"><a href="/lawyers.html" class="text-white-50 text-decoration-none">Our Team</a></li>
-                        <li class="mb-2"><a href="/blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
-                        <li class="mb-2"><a href="/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
-                        <li class="mb-2"><a href="/consultation.html" class="text-white-50 text-decoration-none">Paid Consultation</a></li>
+                    <h6 class="footer-heading">Legal</h6>
+                    <ul class="footer-list">
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Use</a></li>
+                        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h6 class="mb-4">Contact Info</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 10th of Ramadan, Cairo, Egypt</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Sat - Thu: 9am - 8pm</li>
-                    </ul>
-                </div>
-                <div class="col-lg-12 mt-3">
-                    <hr class="my-3" style="border-color: rgba(255,255,255,0.1);">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="small text-white-50 mb-0">© 2025 Walid Abo Al-Ela Law Firm. All rights reserved.</p>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
-                            <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">Terms of Use</a>
-                            <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">Cookie Policy</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Walid Mohamed Abu Al-Ela Law Firm. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-WQ0CPXRK2F');
-    </script>
-    <!-- كود إضافي لحل مشكلة صورة المحامي (النسخة الثالثة) -->
+
+    <!-- ============================================================
+         NEWSLETTER HANDLER (Simple — sends via /api/contact)
+         ============================================================ -->
     <script>
     (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-            testImg.onerror = function() { tryLoadImage(index + 1); };
-        }
-        tryLoadImage(0);
+        const form = document.getElementById('newsletterForm');
+        const statusDiv = document.getElementById('nlStatus');
+        const btn = document.getElementById('nlBtn');
+
+        if (!form) return;
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('nlEmail').value.trim();
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                statusDiv.className = 'nl-status error';
+                statusDiv.textContent = 'Please enter a valid email address.';
+                return;
+            }
+
+            btn.disabled = true;
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Sending...</span>';
+
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: 'Newsletter Subscriber',
+                        email: email,
+                        phone: 'N/A',
+                        subject: 'Newsletter Subscription',
+                        message: 'New newsletter subscription request from blog page.',
+                        type: 'newsletter'
+                    })
+                });
+
+                if (res.ok) {
+                    statusDiv.className = 'nl-status success';
+                    statusDiv.textContent = 'Subscribed! Thank you — you\'ll receive our next update.';
+                    form.reset();
+                } else {
+                    statusDiv.className = 'nl-status error';
+                    statusDiv.textContent = 'Something went wrong. Please try again.';
+                }
+            } catch (err) {
+                statusDiv.className = 'nl-status error';
+                statusDiv.textContent = 'Network error. Please try again later.';
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = original;
+            }
+        });
     })();
     </script>
-    <script>
-        // تحديد الرابط النشط
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
-                if (link.getAttribute('href') === currentPath) link.classList.add('active');
-            });
-        });
-    </script>
+
 </body>
 </html>

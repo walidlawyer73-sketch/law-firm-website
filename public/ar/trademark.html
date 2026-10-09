@@ -3,12 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل العلامات التجارية - وليد أبوالعلا للمحاماة</title>
-    <meta name="description" content="خدمات تسجيل العلامات التجارية في مصر ودولياً. بحث، تقديم طلبات، متابعة الفحص، تجديد، وحماية علامتك التجارية منذ 2016.">
+    <title>خدمات تسجيل العلامات التجارية - مكتب وليد محمد أبوالعلا للمحاماة | مصر</title>
+    <meta name="description" content="خدمات تسجيل العلامات التجارية في مصر — البحث، والإيداع، والمتابعة، والمعارضات، والتنفيذ. أكثر من 350 علامة تجارية مسجّلة لعملاء محليين ودوليين.">
+    <meta name="keywords" content="تسجيل العلامات التجارية مصر, إيداع علامة تجارية, معارضة العلامات, تنفيذ العلامات, حماية العلامة التجارية مصر">
+    <meta name="author" content="وليد محمد أبوالعلا">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/ar/trademark.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/ar/trademark.html">
+    <meta property="og:title" content="خدمات تسجيل العلامات التجارية - مكتب وليد محمد أبوالعلا للمحاماة">
+    <meta property="og:description" content="خدمات تسجيل العلامات التجارية في مصر — البحث، والإيداع، والمتابعة، والتنفيذ.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta property="og:locale" content="ar_EG">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/trademark.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/trademark.html">
+
+    <link rel="icon" type="image/png" href="/images/logo arb ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -16,90 +36,473 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
-    <style>
-        .language-switcher {
-            position: fixed;
-            top: 70px;
-            left: 20px;
-            z-index: 9999;
-        }
-        .language-switcher .lang-btn {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .language-switcher .lang-btn:hover {
-            background-color: #0b5ed7;
-            transform: scale(1.05);
-        }
-        body { padding-top: 70px; }
-        @media (max-width: 768px) {
-            .language-switcher { top: 60px; left: 10px; }
-            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
-        }
-        .dropdown-menu { min-width: 220px; }
-    </style>
-</head>
-<script>
-// ========== حل نهائي لصورة المحامي (النسخة الأولى) ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> هذا إصدار تجريبي للموقع - جاري التطوير والتحديث <i class="fas fa-tools"></i>
-</div>
-<body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> English</a>
-    </div>
 
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (currentPath.startsWith('/ar/')) {
-            let englishPath = currentPath.replace('/ar', '');
-            if (englishPath === '' || englishPath === '/index.html' || englishPath === '/') englishPath = '/';
-            langLink.href = englishPath;
-        } else {
-            langLink.href = '/';
-        }
-    })();
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "خدمات تسجيل العلامات التجارية",
+        "url": "https://law-arb-ip-walid.vercel.app/ar/trademark.html",
+        "provider": {
+            "@type": "LegalService",
+            "name": "مكتب وليد محمد أبوالعلا للمحاماة",
+            "url": "https://law-arb-ip-walid.vercel.app/ar/",
+            "telephone": "+20111257219",
+            "email": "walidlegal.ippro@gmail.com"
+        },
+        "areaServed": {"@type": "Country", "name": "مصر"},
+        "serviceType": "تسجيل العلامات التجارية",
+        "description": "البحث، والإيداع، والمتابعة، والمعارضات، وتنفيذ العلامات التجارية في مصر.",
+        "inLanguage": "ar"
+    }
     </script>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://law-arb-ip-walid.vercel.app/ar/"},
+            {"@type": "ListItem", "position": 2, "name": "الخدمات", "item": "https://law-arb-ip-walid.vercel.app/ar/services.html"},
+            {"@type": "ListItem", "position": 3, "name": "تسجيل العلامات التجارية"}
+        ]
+    }
+    </script>
+
+    <style>
+        .service-hero {
+            position: relative;
+            margin-top: calc(var(--banner-height) + var(--navbar-height));
+            min-height: 520px;
+            background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+        }
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 80% 30%, rgba(201,169,97,0.15), transparent 55%),
+                radial-gradient(circle at 20% 70%, rgba(201,169,97,0.10), transparent 55%);
+            pointer-events: none;
+        }
+        .service-hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            max-width: 850px;
+        }
+        .sh-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(201,169,97,0.15);
+            border: 1px solid rgba(201,169,97,0.4);
+            border-radius: 999px;
+            color: #C9A961;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+        }
+        .service-hero h1 {
+            font-family: 'Cairo', sans-serif;
+            font-size: clamp(1.7rem, 3.8vw, 2.8rem);
+            font-weight: 800;
+            line-height: 1.35;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+        .service-hero h1 .text-gold {
+            background: linear-gradient(135deg, #C9A961, #D4B872);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .service-hero p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.95;
+            max-width: 700px;
+            margin-bottom: 35px;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .features-rich {
+            padding: 90px 0;
+            background: #F8F9FA;
+        }
+        .svc-feature-card {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 18px;
+            padding: 32px 28px;
+            transition: all 0.4s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .svc-feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(270deg, #C9A961, #A88947);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+        .svc-feature-card:hover::before { transform: scaleX(1); }
+        .svc-feature-card:hover {
+            transform: translateY(-6px);
+            border-color: #C9A961;
+            box-shadow: 0 25px 50px -20px rgba(201,169,97,0.25);
+        }
+        .svc-feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #000, #1A1A1A);
+            color: #C9A961;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .svc-feature-card:hover .svc-feature-icon {
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            transform: rotate(6deg) scale(1.05);
+        }
+        .svc-feature-card h3 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #212529;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .svc-feature-card p {
+            font-size: 0.92rem;
+            color: #6C757D;
+            line-height: 1.9;
+            margin: 0;
+        }
+
+        .handles-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 14px;
+        }
+        .handles-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 18px 22px;
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 12px;
+            font-size: 0.92rem;
+            color: #495057;
+            line-height: 1.85;
+            transition: all 0.3s ease;
+        }
+        .handles-list li:hover {
+            border-color: #C9A961;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -12px rgba(201,169,97,0.2);
+        }
+        .handles-list li i {
+            color: #C9A961;
+            font-size: 0.85rem;
+            width: 22px;
+            height: 22px;
+            background: rgba(201,169,97,0.12);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        /* صندوق ملاحظة */
+        .info-note {
+            display: flex;
+            gap: 16px;
+            padding: 22px 26px;
+            background: linear-gradient(160deg, #FAF6EC 0%, #fff 100%);
+            border-right: 4px solid #C9A961;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        .info-note i {
+            color: #C9A961;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        .info-note div p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: #495057;
+            line-height: 1.9;
+        }
+        .info-note div p:first-child {
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 4px;
+        }
+
+        .process-rich {
+            padding: 90px 0;
+            background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .process-rich::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(201,169,97,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201,169,97,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            position: relative;
+            padding-top: 30px;
+        }
+        @media (max-width: 900px) {
+            .process-timeline { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 500px) {
+            .process-timeline { grid-template-columns: 1fr; }
+        }
+        .pt-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .pt-node {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 18px;
+            background: linear-gradient(135deg, #1A1A1A, #000);
+            border: 2px solid #C9A961;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: #C9A961;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+        }
+        .pt-step:hover .pt-node {
+            transform: scale(1.08) rotate(5deg);
+            background: linear-gradient(135deg, #C9A961, #A88947);
+            color: #000;
+            box-shadow: 0 20px 40px rgba(201,169,97,0.4);
+        }
+        .pt-num {
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            width: 30px;
+            height: 30px;
+            background: #C9A961;
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            font-weight: 800;
+            font-family: 'Inter', sans-serif;
+            border: 3px solid #000;
+        }
+        .pt-step h6 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .pt-step p {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.65);
+            margin: 0;
+            line-height: 1.85;
+        }
+
+        .practice-areas-rich {
+            padding: 90px 0;
+        }
+        .pa-card {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .pa-card:hover {
+            transform: translateY(-6px);
+            border-color: #C9A961;
+            box-shadow: 0 25px 50px -20px rgba(0,0,0,0.12);
+        }
+        .pa-card-head {
+            padding: 26px 26px 18px;
+            background: linear-gradient(160deg, #FAF6EC 0%, #fff 100%);
+            border-bottom: 1px solid #F1F3F5;
+            position: relative;
+        }
+        .pa-card-head i.pa-icon {
+            font-size: 1.8rem;
+            color: #C9A961;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        .pa-card-head h3 {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #212529;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .pa-card-body {
+            padding: 22px 26px 26px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .pa-card-body p {
+            font-size: 0.9rem;
+            color: #6C757D;
+            line-height: 1.9;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+        .pa-card-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 18px;
+        }
+        .pa-card-body ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 5px 0;
+            font-size: 0.85rem;
+            color: #495057;
+            line-height: 1.75;
+        }
+        .pa-card-body ul li i {
+            color: #C9A961;
+            font-size: 0.7rem;
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+        .pa-card-body .pa-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #A88947;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            margin-top: auto;
+            transition: all 0.3s ease;
+        }
+        .pa-card-body .pa-link:hover { color: #000; gap: 14px; }
+
+        .faq-rich-accordion .accordion-item {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 14px !important;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-rich-accordion .accordion-item:hover {
+            border-color: #C9A961;
+            box-shadow: 0 10px 25px -10px rgba(0,0,0,0.08);
+        }
+        .faq-rich-accordion .accordion-button {
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 22px 26px;
+            color: #212529;
+            background: #fff;
+            border: none;
+            box-shadow: none;
+            text-align: right;
+            line-height: 1.6;
+        }
+        .faq-rich-accordion .accordion-button:not(.collapsed) {
+            background: linear-gradient(135deg, rgba(201,169,97,0.08), rgba(201,169,97,0.02));
+            color: #A88947;
+        }
+        .faq-rich-accordion .accordion-button:focus { box-shadow: none; }
+        .faq-rich-accordion .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23C9A961'%3e%3cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            margin-right: auto;
+            margin-left: 0;
+        }
+        .faq-rich-accordion .accordion-body {
+            padding: 0 26px 22px;
+            color: #6C757D;
+            line-height: 1.95;
+            font-size: 0.9rem;
+        }
+
+        [dir="rtl"] .language-switcher { right: auto; left: 20px; }
+    </style>
+</head>
+
+<body>
+    <div id="trial-banner">
+        <i class="fas fa-tools"></i>
+        <span>هذا إصدار تجريبي للموقع - جاري التطوير والتحديث</span>
+        <i class="fas fa-tools"></i>
+    </div>
+
+    <div class="language-switcher">
+        <a href="/trademark.html" class="lang-btn"><i class="fas fa-globe"></i> English</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="وليد أبوالعلا للمحاماة" style="height:45px; width:auto; margin-left:10px;">
+            <a class="navbar-brand" href="/ar/">
+                <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة">
                 <div>
-                    <span class="fw-bold">وليد أبوالعلا للمحاماة</span>
-                    <small class="d-block" style="font-size:18px; opacity:0.9; margin-top:6px; font-weight:500;">والتحكيم والملكية الفكرية</small>
+                    <span class="firm-name">وليد محمد أبوالعلا</span>
+                    <small class="firm-sub">مكتب محاماة · تحكيم · ملكية فكرية</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -107,16 +510,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ar/about.html">من نحن</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">الخدمات</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">الخدمات</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/ar/arbitration.html">التحكيم الدولي</a></li>
                             <li><a class="dropdown-item" href="/ar/trademark.html">تسجيل العلامات التجارية</a></li>
                             <li><a class="dropdown-item" href="/ar/patent.html">براءات الاختراع</a></li>
                             <li><a class="dropdown-item" href="/ar/copyright.html">حقوق المؤلف</a></li>
                             <li><a class="dropdown-item" href="/ar/litigation.html">قضايا الملكية الفكرية</a></li>
+                            <li><a class="dropdown-item" href="/ar/licensing.html">الترخيص والعقود</a></li>
                             <li><a class="dropdown-item" href="/ar/corporate-formation.html">تأسيس الشركات</a></li>
                             <li><a class="dropdown-item" href="/ar/criminal-litigation.html">القضايا الجنائية</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -126,229 +530,448 @@
                     <li class="nav-item"><a class="nav-link" href="/ar/lawyers.html">فريق العمل</a></li>
                     <li class="nav-item"><a class="nav-link" href="/ar/blog.html">المدونة</a></li>
                     <li class="nav-item"><a class="nav-link" href="/ar/contact.html">اتصل بنا</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ar/consultation.html">استشارة مدفوعة</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html"><i class="fas fa-lock me-1"></i>بوابة العميل</a>
+                        <a class="btn btn-outline-light btn-sm" href="/ar/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>بوابة العميل
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script>
-        // حل مشكلة صورة المحامي - البحث عن المسار الصحيح (نسخة إضافية للاحتياط)
-        (function() {
-            const possiblePaths = [
-                '/images/team/walid-profile.jpg',
-                '/images/team/walid-abouelela.jpg',
-                '/images/walid-profile.jpg',
-                '/ar/images/team/walid-profile.jpg',
-                '/images/lawyers/walid.jpg'
-            ];
-            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-            if (!imgElement) return;
-            function tryLoadImage(index) {
-                if (index >= possiblePaths.length) return;
-                const testImg = new Image();
-                testImg.src = possiblePaths[index];
-                testImg.onload = function() {
-                    imgElement.src = possiblePaths[index];
-                    imgElement.onerror = null;
-                };
-                testImg.onerror = function() {
-                    tryLoadImage(index + 1);
-                };
-            }
-            tryLoadImage(0);
-        })();
-        </script>
     </nav>
 
-    <header class="page-header">
-        <div class="container text-white text-center">
-            <h1 class="display-4">تسجيل العلامات التجارية</h1>
-            <p class="lead">احمِ هوية علامتك التجارية محلياً ودولياً</p>
+    <header class="service-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <span class="sh-badge">
+                    <i class="fas fa-trademark"></i>
+                    تخصص دقيق
+                </span>
+                <h1>خدمات <span class="text-gold">تسجيل العلامات التجارية</span></h1>
+                <p>
+                    إيداع ومتابعة وتسجيل العلامات التجارية في مصر — بالتنسيق الدولي، وبسجل حافل
+                    بأكثر من 350 علامة تجارية مسجّلة لعملاء محليين ودوليين.
+                </p>
+                <div class="hero-actions">
+                    <a href="/ar/consultation.html" class="btn-rich-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>احجز استشارة</span>
+                    </a>
+                    <a href="/ar/contact.html" class="btn-rich-outline" style="border-color: rgba(255,255,255,0.4); color: #fff;">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>اسأل عن علامتك</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section class="py-5">
+    <div style="background: #F8F9FA; padding: 16px 0; border-bottom: 1px solid #E9ECEF;">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>لماذا تسجل علامتك التجارية؟</h2>
-                    <p>العلامة التجارية هي هوية عملك. تميز منتجاتك أو خدماتك عن المنافسين وتبني ثقة العملاء. يمنحك تسجيل العلامة التجارية حقوقاً حصرية وحماية قانونية ضد التعدي.</p>
+            <nav style="font-size: 0.85rem; color: #6C757D;">
+                <a href="/ar/" style="color: #6C757D; text-decoration: none;">الرئيسية</a>
+                <span style="margin: 0 10px; color: #ADB5BD;">/</span>
+                <a href="/ar/services.html" style="color: #6C757D; text-decoration: none;">الخدمات</a>
+                <span style="margin: 0 10px; color: #ADB5BD;">/</span>
+                <span style="color: #212529; font-weight: 600;">تسجيل العلامات التجارية</span>
+            </nav>
+        </div>
+    </div>
 
-                    <div class="row g-4 my-4">
-                        <div class="col-md-4">
-                            <div class="bg-light p-3 rounded-4 text-center h-100">
-                                <i class="fas fa-search fa-2x text-primary mb-2"></i>
-                                <h5 class="fw-bold">بحث شامل</h5>
-                                <p class="small">فحص دقيق للتأكد من خلو العلامة للاستخدام والتسجيل.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="bg-light p-3 rounded-4 text-center h-100">
-                                <i class="fas fa-file-alt fa-2x text-primary mb-2"></i>
-                                <h5 class="fw-bold">تقديم احترافي</h5>
-                                <p class="small">إعداد وتقديم الطلبات بدقة لتجنب الرفض.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="bg-light p-3 rounded-4 text-center h-100">
-                                <i class="fas fa-globe fa-2x text-primary mb-2"></i>
-                                <h5 class="fw-bold">حماية دولية</h5>
-                                <p class="small">تسجيل عبر بروتوكول مدريد لتغطية أكثر من 130 دولة.</p>
-                            </div>
-                        </div>
+    <!-- المزايا -->
+    <section class="features-rich">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">ممارستنا في العلامات التجارية</span>
+                <h2 class="sh-title">ما الذي <span class="text-gold">نقدّمه</span></h2>
+                <p class="sh-desc">خدمات علامات تجارية شاملة — من البحث إلى التنفيذ.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="svc-feature-card">
+                        <div class="svc-feature-icon"><i class="fas fa-search"></i></div>
+                        <h3>البحث والتقييم</h3>
+                        <p>أبحاث شاملة للعلامات التجارية لتحديد العلامات القائمة وتقييم مخاطر التسجيل قبل الإيداع.</p>
                     </div>
-
-                    <h3 class="mt-5">خدماتنا في العلامات التجارية تشمل:</h3>
-                    <ul class="list-group list-group-flush mb-4">
-                        <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> بحث العلامة التجارية والتأكد من خلوها</li>
-                        <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> تقديم الطلبات محلياً (مكتب العلامات التجارية المصري)</li>
-                        <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> التسجيل الدولي عبر بروتوكول مدريد</li>
-                        <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> الرد على إخطارات المكتب</li>
-                        <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> تجديد العلامات التجارية وصيانتها</li>
-                        <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> إجراءات المعارضة والإلغاء</li>
-                        <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> ترخيص وتنازل العلامات التجارية</li>
-                    </ul>
-
-                    <h3>خطوات التسجيل</h3>
-                    <div class="row mt-4">
-                        <div class="col-md-3 text-center">
-                            <div class="bg-light p-3 rounded-3 mb-3">
-                                <span class="badge bg-primary mb-2">الخطوة 1</span>
-                                <h5>البحث</h5>
-                                <p class="small">بحث شامل للتأكد من توفر العلامة.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <div class="bg-light p-3 rounded-3 mb-3">
-                                <span class="badge bg-primary mb-2">الخطوة 2</span>
-                                <h5>التقديم</h5>
-                                <p class="small">إعداد وتقديم الطلب للمكتب المختص.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <div class="bg-light p-3 rounded-3 mb-3">
-                                <span class="badge bg-primary mb-2">الخطوة 3</span>
-                                <h5>الفحص</h5>
-                                <p class="small">الفحص الرسمي والرد على الاعتراضات.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <div class="bg-light p-3 rounded-3 mb-3">
-                                <span class="badge bg-primary mb-2">الخطوة 4</span>
-                                <h5>التسجيل</h5>
-                                <p class="small">إصدار الشهادة والحماية المستمرة.</p>
-                            </div>
-                        </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="svc-feature-card">
+                        <div class="svc-feature-icon"><i class="fas fa-file-signature"></i></div>
+                        <h3>الإيداع والمتابعة</h3>
+                        <p>إعداد وإيداع طلبات العلامات التجارية، والرد على قرارات الفحص، والمتابعة حتى التسجيل.</p>
                     </div>
-
-                    <h3 class="mt-4">لماذا تعمل معنا؟</h3>
-                    <p>يتمتع فريقنا بخبرة واسعة في تسجيل العلامات التجارية أمام مكتب العلامات المصري ودولياً. نقدم استشارات استراتيجية لتعظيم حماية علامتك التجارية.</p>
-
-                    <div class="mt-5 p-4 bg-light rounded-4 text-center">
-                        <h4>مستعد لحماية علامتك التجارية؟</h4>
-                        <p class="mb-3">اتصل بنا للحصول على بحث شامل واستراتيجية تسجيل متكاملة.</p>
-                        <a href="/ar/contact.html" class="btn btn-primary btn-lg">اتصل بنا اليوم</a>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="svc-feature-card">
+                        <div class="svc-feature-icon"><i class="fas fa-gavel"></i></div>
+                        <h3>إجراءات المعارضة</h3>
+                        <p>الدفاع عن طلبك ضد المعارضات — وتقديم معارضات ضد العلامات المتعارضة.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="svc-feature-card">
+                        <div class="svc-feature-icon"><i class="fas fa-shield-halved"></i></div>
+                        <h3>التنفيذ ومكافحة التقليد</h3>
+                        <p>إنفاذ حقوقك ضد المقلّدين والمنتهكين عبر الإجراءات المدنية والجنائية والإدارية.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="svc-feature-card">
+                        <div class="svc-feature-icon"><i class="fas fa-globe"></i></div>
+                        <h3>الإيداع الدولي</h3>
+                        <p>تنسيق إيداعات العلامات التجارية الدولية عبر بروتوكول مدريد ومكاتب شركاء في ولايات قضائية رئيسية.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="svc-feature-card">
+                        <div class="svc-feature-icon"><i class="fas fa-folder-open"></i></div>
+                        <h3>إدارة المحفظة</h3>
+                        <p>إدارة محافظ العلامات التجارية — التجديدات، والتنازلات، والترخيص، والتوسع الاستراتيجي.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
+    <!-- أنواع العلامات القابلة للتسجيل في مصر -->
+    <section class="py-5" style="background: #fff;">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">ما الذي يمكن تسجيله</span>
+                <h2 class="sh-title">أنواع <span class="text-gold">العلامات</span></h2>
+                <p class="sh-desc">بموجب القانون المصري (القانون رقم 82 لسنة 2002)، يمكن تسجيل الفئات التالية من العلامات.</p>
+            </div>
+
+            <ul class="handles-list">
+                <li><i class="fas fa-check"></i> العلامات اللفظية — الأسماء والكلمات والشعارات</li>
+                <li><i class="fas fa-check"></i> العلامات التصويرية — الشعارات والتصاميم والرموز</li>
+                <li><i class="fas fa-check"></i> العلامات المركّبة — لفظ + تصميم</li>
+                <li><i class="fas fa-check"></i> العلامات اللونية — لون واحد أو مجموعة ألوان مميزة</li>
+                <li><i class="fas fa-check"></i> علامات السلع — للتمييز بين المنتجات المادية</li>
+                <li><i class="fas fa-check"></i> علامات الخدمات — للتمييز بين الخدمات المقدمة</li>
+                <li><i class="fas fa-check"></i> العلامات الجماعية — مملوكة لكيان أو جمعية ويستخدمها أعضاؤها</li>
+                <li><i class="fas fa-check"></i> علامات الشهادات — للإشارة إلى مطابقة معايير معينة</li>
+                <li><i class="fas fa-check"></i> العلامات المشهورة — حماية موسعة للعلامات المعروفة عالمياً</li>
+            </ul>
+
+            <div class="info-note">
+                <i class="fas fa-info-circle"></i>
+                <div>
+                    <p>ملاحظة بشأن العلامات غير التقليدية في مصر</p>
+                    <p>
+                        بعض العلامات غير التقليدية — بما في ذلك العلامات ثلاثية الأبعاد، والعلامات
+                        الصوتية، والعلامات الرائحية — <strong>غير مقبولة حالياً للتسجيل</strong> من
+                        قِبل مكتب العلامات التجارية المصري، على الرغم من الاعتراف بها في بعض
+                        الولايات القضائية الأخرى. ويمكن لمكتبنا تقديم المشورة حول مدى قبول علامتك
+                        تحديداً بموجب الممارسة المصرية الحالية.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- العملية -->
+    <section class="process-rich">
+        <div class="container">
+            <div class="section-head-rich light">
+                <div class="sh-line"></div>
+                <span class="sh-label">كيف نعمل</span>
+                <h2 class="sh-title">عمليتنا في <span class="text-gold">التسجيل</span></h2>
+                <p class="sh-desc">مقاربة من خمس خطوات منظمة من البحث إلى التسجيل.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="pt-step">
+                    <div class="pt-node">
+                        <i class="fas fa-search"></i>
+                        <span class="pt-num">01</span>
+                    </div>
+                    <h6>البحث</h6>
+                    <p>أبحاث شاملة لتحديد العلامات القائمة وتقييم فرص التسجيل.</p>
+                </div>
+                <div class="pt-step">
+                    <div class="pt-node">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span class="pt-num">02</span>
+                    </div>
+                    <h6>الاستراتيجية</h6>
+                    <p>تحديد الفئات والعلامات والولايات القضائية الصحيحة للإيداع.</p>
+                </div>
+                <div class="pt-step">
+                    <div class="pt-node">
+                        <i class="fas fa-file-import"></i>
+                        <span class="pt-num">03</span>
+                    </div>
+                    <h6>الإيداع</h6>
+                    <p>إعداد وإيداع طلب العلامة التجارية لدى مكتب العلامات المصري.</p>
+                </div>
+                <div class="pt-step">
+                    <div class="pt-node">
+                        <i class="fas fa-hourglass-half"></i>
+                        <span class="pt-num">04</span>
+                    </div>
+                    <h6>المتابعة</h6>
+                    <p>الرد على قرارات الفحص والمعارضات، والمتابعة حتى التسجيل.</p>
+                </div>
+                <div class="pt-step">
+                    <div class="pt-node">
+                        <i class="fas fa-certificate"></i>
+                        <span class="pt-num">05</span>
+                    </div>
+                    <h6>التسجيل</h6>
+                    <p>استلام شهادة التسجيل ووضع آليات التجديد والتنفيذ.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- خدمات ذات صلة -->
+    <section class="practice-areas-rich">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">مجالات ممارسة ذات صلة</span>
+                <h2 class="sh-title">قد تحتاج أيضاً <span class="text-gold">هذه الخدمات</span></h2>
+                <p class="sh-desc">غالباً ما تتقاطع حماية العلامة التجارية مع مجالات ممارسة أخرى للملكية الفكرية.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="pa-card">
+                        <div class="pa-card-head">
+                            <i class="fas fa-lightbulb pa-icon"></i>
+                            <h3>براءات الاختراع</h3>
+                        </div>
+                        <div class="pa-card-body">
+                            <p>خدمات وكيل براءات مسجّل — من البحث عن الحالة السابقة إلى المتابعة الكاملة.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> البحث عن الحالة السابقة</li>
+                                <li><i class="fas fa-check"></i> صياغة البراءة</li>
+                                <li><i class="fas fa-check"></i> PCT والمرحلة الوطنية</li>
+                            </ul>
+                            <a href="/ar/patent.html" class="pa-link">
+                                اعرف المزيد <i class="fas fa-arrow-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="pa-card">
+                        <div class="pa-card-head">
+                            <i class="fas fa-gavel pa-icon"></i>
+                            <h3>قضايا الملكية الفكرية</h3>
+                        </div>
+                        <div class="pa-card-body">
+                            <p>التمثيل أمام المحاكم المصرية في قضايا انتهاك الملكية الفكرية والصلاحية والتنفيذ.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> القضايا المدنية والتجارية</li>
+                                <li><i class="fas fa-check"></i> الإنفاذ الجنائي</li>
+                                <li><i class="fas fa-check"></i> الدعاوى الإدارية</li>
+                            </ul>
+                            <a href="/ar/litigation.html" class="pa-link">
+                                اعرف المزيد <i class="fas fa-arrow-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="pa-card">
+                        <div class="pa-card-head">
+                            <i class="fas fa-scale-balanced pa-icon"></i>
+                            <h3>التحكيم الدولي</h3>
+                        </div>
+                        <div class="pa-card-body">
+                            <p>التمثيل في التحكيم التجاري والمتعلق بالملكية الفكرية — محلياً وعبر الحدود.</p>
+                            <ul>
+                                <li><i class="fas fa-check"></i> التحكيم التجاري</li>
+                                <li><i class="fas fa-check"></i> تحكيم الملكية الفكرية</li>
+                                <li><i class="fas fa-check"></i> تنفيذ أحكام التحكيم</li>
+                            </ul>
+                            <a href="/ar/arbitration.html" class="pa-link">
+                                اعرف المزيد <i class="fas fa-arrow-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الأسئلة الشائعة -->
+    <section class="py-5" style="background: #F8F9FA;">
+        <div class="container">
+            <div class="section-head-rich">
+                <div class="sh-line"></div>
+                <span class="sh-label">أسئلة شائعة</span>
+                <h2 class="sh-title">أسئلة حول <span class="text-gold">العلامات التجارية</span></h2>
+            </div>
+
+            <div class="faq-rich-accordion mx-auto" style="max-width: 900px;">
+                <div class="accordion" id="tmFaq">
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tf1">
+                                كم تستغرق مدة تسجيل العلامة التجارية في مصر؟
+                            </button>
+                        </h3>
+                        <div id="tf1" class="accordion-collapse collapse" data-bs-parent="#tmFaq">
+                            <div class="accordion-body">
+                                عادةً من 12 إلى 24 شهراً، حسب الفئة، ووجود معارضات، وحجم عمل الفحص الحالي.
+                                ويبدأ تاريخ الأولوية فور الإيداع، فتُؤمَّن أولويتك من اليوم الأول.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tf2">
+                                ما الذي يمكن تسجيله كعلامة تجارية في مصر؟
+                            </button>
+                        </h3>
+                        <div id="tf2" class="accordion-collapse collapse" data-bs-parent="#tmFaq">
+                            <div class="accordion-body">
+                                أي إشارة قادرة على تمييز السلع أو الخدمات — بما في ذلك الكلمات، والأسماء،
+                                والحروف، والأرقام، والشعارات، والتصاميم، والتركيبات، والألوان المميّزة
+                                ومجموعات الألوان. ويجب أن تكون العلامة مميّزة وغير وصفية للسلع أو الخدمات
+                                التي تغطيها. أما بعض العلامات غير التقليدية (مثل العلامات ثلاثية الأبعاد
+                                والصوتية والرائحية) فلا تُقبل حالياً للتسجيل في مصر.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tf3">
+                                ما مدة صلاحية العلامة التجارية في مصر؟
+                            </button>
+                        </h3>
+                        <div id="tf3" class="accordion-collapse collapse" data-bs-parent="#tmFaq">
+                            <div class="accordion-body">
+                                تسجيل العلامة التجارية في مصر صالح لمدة 10 سنوات من تاريخ الإيداع،
+                                ويمكن تجديده إلى أجل غير مسمّى لفترات أخرى من 10 سنوات — شريطة
+                                استمرار استخدام العلامة.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tf4">
+                                ماذا يحدث إذا عُورض على طلبي؟
+                            </button>
+                        </h3>
+                        <div id="tf4" class="accordion-collapse collapse" data-bs-parent="#tmFaq">
+                            <div class="accordion-body">
+                                تتطلب المعارضة رداً مكتوباً رسمياً خلال الموعد المحدد. ونحن نُعدّ ونُقدّم
+                                الرد، ونُقدّم الأدلة الداعمة، ونمثّلك في الإجراءات — أو نتفاوض على
+                                اتفاقية تعايش عند الاقتضاء.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tf5">
+                                هل تتولّون الإيداعات الدولية للعلامات التجارية؟
+                            </button>
+                        </h3>
+                        <div id="tf5" class="accordion-collapse collapse" data-bs-parent="#tmFaq">
+                            <div class="accordion-body">
+                                نعم — ننسّق الإيداعات الدولية عبر بروتوكول مدريد ومكاتب شركاء في
+                                ولايات قضائية رئيسية، بما يضمن حماية متسقة عبر الأسواق.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- دعوة نهائية -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-handshake"></i></div>
+                <h2>مستعد لحماية علامتك التجارية؟</h2>
+                <p>سجّل مكتبنا أكثر من 350 علامة تجارية لعملاء محليين ودوليين.</p>
+                <div class="fcr-buttons">
+                    <a href="/ar/consultation.html" class="btn-rich-primary light">
+                        <span>احجز استشارة</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <a href="/ar/contact.html" class="btn-rich-ghost">
+                        <i class="fas fa-envelope"></i>
+                        <span>تواصل معنا</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>وليد أبوالعلا للمحاماة</h5>
-                    <p class="text-white-50">متخصصون في التحكيم وحماية الملكية الفكرية بلمسة شخصية منذ 2016.</p>
-                    <div class="social-links mt-3">
+                <div class="col-lg-4">
+                    <img src="/images/logo arb ip.png" alt="مكتب وليد محمد أبوالعلا للمحاماة" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">مكتب وليد محمد أبوالعلا للمحاماة</h5>
+                    <p class="footer-desc">محاماة · تحكيم · ملكية فكرية. نخدم عملاءنا بتفانٍ منذ 2016.</p>
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="فيسبوك"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="لينكد إن"><i class="fab fa-linkedin"></i></a>
                         <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="واتساب"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="تليجرام"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                    <h6 class="mb-4">روابط سريعة</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/ar/index.html" class="text-white-50 text-decoration-none">الرئيسية</a></li>
-                        <li class="mb-2"><a href="/ar/about.html" class="text-white-50 text-decoration-none">من نحن</a></li>
-                        <li class="mb-2"><a href="/ar/services.html" class="text-white-50 text-decoration-none">الخدمات</a></li>
-                        <li class="mb-2"><a href="/ar/lawyers.html" class="text-white-50 text-decoration-none">فريق العمل</a></li>
-                        <li class="mb-2"><a href="/ar/blog.html" class="text-white-50 text-decoration-none">المدونة</a></li>
-                        <li class="mb-2"><a href="/ar/contact.html" class="text-white-50 text-decoration-none">اتصل بنا</a></li>
-                        <li class="mb-2"><a href="/ar/consultation.html" class="text-white-50 text-decoration-none">استشارة مدفوعة</a></li>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">روابط سريعة</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/">الرئيسية</a></li>
+                        <li><a href="/ar/about.html">من نحن</a></li>
+                        <li><a href="/ar/services.html">الخدمات</a></li>
+                        <li><a href="/ar/lawyers.html">فريق العمل</a></li>
+                        <li><a href="/ar/blog.html">المدونة</a></li>
+                        <li><a href="/ar/contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">معلومات الاتصال</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> العاشر من رمضان، القاهرة، مصر</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;" dir="ltr">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;" dir="ltr">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> السبت - الخميس: 9 ص - 8 م</li>
                     </ul>
                 </div>
                 <div class="col-lg-3">
-                    <h6 class="mb-4">معلومات الاتصال</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> العاشر من رمضان، القاهرة، مصر</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> السبت - الخميس: 9 صباحاً - 8 مساءً</li>
-                    </ul>
-                </div>
-                <div class="col-lg-2">
-                    <h6 class="mb-4">قانوني</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/privacy-policy.html" class="text-white-50 text-decoration-none">سياسة الخصوصية</a></li>
-                        <li class="mb-2"><a href="/terms-of-service.html" class="text-white-50 text-decoration-none">شروط الاستخدام</a></li>
-                        <li class="mb-2"><a href="/cookie-policy.html" class="text-white-50 text-decoration-none">سياسة ملفات تعريف الارتباط</a></li>
+                    <h6 class="footer-heading">قانوني</h6>
+                    <ul class="footer-list">
+                        <li><a href="/ar/privacy-policy.html">سياسة الخصوصية</a></li>
+                        <li><a href="/ar/terms-of-service.html">شروط الاستخدام</a></li>
+                        <li><a href="/ar/cookie-policy.html">سياسة ملفات تعريف الارتباط</a></li>
                     </ul>
                 </div>
             </div>
-            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="small text-white-50 mb-0">© 2025 وليد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
-                </div>
+            <div class="footer-bottom">
+                <p>© 2026 مكتب وليد محمد أبوالعلا للمحاماة. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
 
+    <button id="backToTop" title="العودة إلى الأعلى"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-WQ0CPXRK2F');
-    </script>
-    <!-- كود إضافي لحل مشكلة صورة المحامي (النسخة الثالثة) -->
-    <script>
-    (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-            testImg.onerror = function() { tryLoadImage(index + 1); };
-        }
-        tryLoadImage(0);
-    })();
-    </script>
-    <script>
-        // تحديد الرابط النشط
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
-                if (link.getAttribute('href') === currentPath) link.classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>

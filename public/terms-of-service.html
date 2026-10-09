@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Walid Abo Al-Ela Law Firm</title>
-    <meta name="description" content="Terms of Service for Walid Abo Al-Ela Law Firm. Learn about the terms governing your use of our website and legal services.">
-    <!-- Bootstrap CSS -->
+    <title>Terms of Service - Walid Mohamed Abu Al-Ela Law Firm</title>
+    <meta name="description" content="Terms of Service of Walid Mohamed Abu Al-Ela Law Firm — the rules governing your use of our website and engagement of our legal services.">
+    <meta name="keywords" content="terms of service, terms of use, law firm terms, legal disclaimer, attorney-client">
+    <meta name="author" content="Walid Mohamed Abu Al-Ela">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/terms-of-service.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/terms-of-service.html">
+    <meta property="og:title" content="Terms of Service - Walid Mohamed Abu Al-Ela Law Firm">
+    <meta property="og:description" content="The rules governing your use of our website and engagement of our legal services.">
+    <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/terms-of-service.html">
+    <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/terms-of-service.html">
+
+    <link rel="icon" type="image/png" href="/images/logo%20arb%20ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Google tag (gtag.js) -->
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,94 +35,307 @@
         gtag('js', new Date());
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
-    <style>
-        .language-switcher {
-            position: fixed;
-            top: 70px;
-            left: 20px;
-            z-index: 9999;
-        }
-        .language-switcher .lang-btn {
-            background-color: #0d6efd;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            display: inline-block;
-        }
-        .language-switcher .lang-btn:hover {
-            background-color: #0b5ed7;
-            transform: scale(1.05);
-        }
-        body { padding-top: 70px; }
-        @media (max-width: 768px) {
-            .language-switcher { top: 60px; left: 10px; }
-            .language-switcher .lang-btn { padding: 6px 12px; font-size: 14px; }
-        }
-        .dropdown-menu { min-width: 220px; }
-    </style>
-</head>
-<script>
-// ========== حل نهائي لصورة المحامي (النسخة الأولى) ==========
-(function() {
-    const correctImagePath = '/images/team/walid-profile.jpg';
-    const possibleSelectors = [
-        'img[alt*="وليد"]',
-        'img[alt*="Walid"]',
-        '.team-card img',
-        'img[src*="walid"]',
-        'img[src*="team"]'
-    ];
-    const imgElement = document.querySelector(possibleSelectors.join(','));
-    if (!imgElement) return;
-    imgElement.onerror = null;
-    const testImg = new Image();
-    testImg.src = correctImagePath;
-    testImg.onload = function() {
-        if (imgElement.src !== correctImagePath) imgElement.src = correctImagePath;
-    };
-})();
-</script>
-<!-- Banner تجريبي للموقع -->
-<div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-weight: bold; border-bottom: 2px solid #000;">
-    <i class="fas fa-tools"></i> This is a trial version - site under development and updates <i class="fas fa-tools"></i>
-</div>
-<body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#" class="lang-btn" id="langSwitch"><i class="fas fa-globe"></i> العربية</a>
-    </div>
 
-    <script>
-    (function() {
-        const langLink = document.getElementById('langSwitch');
-        if (!langLink) return;
-        const currentPath = window.location.pathname;
-        if (!currentPath.startsWith('/ar/')) {
-            let arabicPath;
-            if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
-                arabicPath = '/ar/';
-            } else {
-                arabicPath = '/ar' + currentPath;
-            }
-            langLink.href = arabicPath;
-        } else {
-            langLink.href = '/ar/';
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Terms of Service - Walid Mohamed Abu Al-Ela Law Firm",
+        "url": "https://law-arb-ip-walid.vercel.app/terms-of-service.html",
+        "isPartOf": {
+            "@type": "LegalService",
+            "name": "Walid Mohamed Abu Al-Ela Law Firm",
+            "url": "https://law-arb-ip-walid.vercel.app/"
         }
-    })();
+    }
     </script>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d6efd;" id="mainNav">
+    <style>
+        /* Legal Page Wrapper */
+        .legal-wrap {
+            background: #fff;
+            border: 1px solid #E9ECEF;
+            border-radius: 24px;
+            padding: 55px 50px;
+            box-shadow: 0 30px 60px -30px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        .legal-wrap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #C9A961, #A88947, #C9A961);
+        }
+        @media (max-width: 768px) {
+            .legal-wrap { padding: 32px 24px; border-radius: 16px; }
+        }
+
+        /* Legal TOC */
+        .legal-toc {
+            background: linear-gradient(160deg, #FAF6EC 0%, #fff 100%);
+            border: 1px solid rgba(201,169,97,0.25);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin-bottom: 45px;
+        }
+        .legal-toc h4 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #212529;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legal-toc h4 i { color: #C9A961; }
+        .legal-toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: toc-counter;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 24px;
+        }
+        @media (max-width: 600px) {
+            .legal-toc ol { grid-template-columns: 1fr; }
+            .legal-toc { padding: 22px 22px; }
+        }
+        .legal-toc li {
+            counter-increment: toc-counter;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .legal-toc li::before {
+            content: counter(toc-counter, decimal-leading-zero);
+            color: #C9A961;
+            font-weight: 800;
+            margin-right: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+        }
+        .legal-toc a {
+            color: #495057;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .legal-toc a:hover { color: #A88947; }
+
+        /* Legal Content */
+        .legal-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: #212529;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #F1F3F5;
+            position: relative;
+            letter-spacing: -0.01em;
+            scroll-margin-top: 120px;
+        }
+        .legal-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #C9A961, #A88947);
+        }
+        .legal-content h2:first-of-type { margin-top: 0; }
+
+        .legal-content h3 {
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: #212529;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        .legal-content p {
+            font-size: 0.95rem;
+            color: #495057;
+            line-height: 1.85;
+            margin-bottom: 15px;
+        }
+
+        .legal-content ul,
+        .legal-content ol {
+            padding-left: 22px;
+            margin-bottom: 18px;
+        }
+        .legal-content li {
+            font-size: 0.95rem;
+            color: #495057;
+            line-height: 1.85;
+            margin-bottom: 8px;
+        }
+        .legal-content strong { color: #212529; font-weight: 700; }
+        .legal-content a {
+            color: #A88947;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .legal-content a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        /* Info boxes */
+        .legal-info-box {
+            background: linear-gradient(160deg, #F8F9FA 0%, #fff 100%);
+            border-left: 4px solid #C9A961;
+            border-radius: 12px;
+            padding: 22px 26px;
+            margin: 24px 0;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .legal-info-box.warning {
+            border-left-color: #DC3545;
+            background: linear-gradient(160deg, #FFF5F5 0%, #fff 100%);
+        }
+        .legal-info-box.warning i { color: #DC3545; }
+        .legal-info-box i {
+            color: #C9A961;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        .legal-info-box div p {
+            margin: 0;
+            font-size: 0.92rem;
+        }
+        .legal-info-box div p:first-child {
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 4px;
+        }
+
+        /* Last updated */
+        .last-updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: #6C757D;
+            font-weight: 600;
+            padding: 8px 16px;
+            background: #F8F9FA;
+            border-radius: 999px;
+            margin-bottom: 25px;
+        }
+        .last-updated i { color: #C9A961; }
+
+        /* Contact card */
+        .contact-mini-card {
+            background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+            border-radius: 20px;
+            padding: 35px 32px;
+            color: #fff;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-mini-card::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(201,169,97,0.18), transparent 70%);
+            border-radius: 50%;
+        }
+        .contact-mini-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-mini-card p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.92rem;
+            line-height: 1.75;
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-mini-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 24px;
+        }
+        @media (max-width: 600px) {
+            .contact-mini-list { grid-template-columns: 1fr; }
+        }
+        .contact-mini-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.88rem;
+        }
+        .contact-mini-list i { color: #C9A961; width: 18px; }
+        .contact-mini-list a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-mini-list a:hover { color: #C9A961; }
+
+        /* RTL */
+        [dir="rtl"] .legal-info-box {
+            border-left: none;
+            border-right: 4px solid #C9A961;
+        }
+        [dir="rtl"] .legal-info-box.warning {
+            border-right-color: #DC3545;
+        }
+        [dir="rtl"] .legal-toc li::before {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="trial-banner">
+        <i class="fas fa-tools"></i>
+        <span>This is a trial version - site under development and updates</span>
+        <i class="fas fa-tools"></i>
+    </div>
+
+    <div class="language-switcher">
+        <a href="/ar/terms-of-service.html" class="lang-btn"><i class="fas fa-globe"></i> العربية</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo arb ip.png" alt="Walid Abo Al-Ela Law Firm" style="height:45px; width:auto; margin-right:10px;">
+            <a class="navbar-brand" href="/">
+                <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm">
                 <div>
-                    <span class="fw-bold">Walid Abo Al-Ela Law Firm</span>
-                    <small class="d-block" style="font-size:16px; opacity:0.9; margin-top:5px; font-weight:500;">For Arbitration and Intellectual Property</small>
+                    <span class="firm-name">Walid Mohamed Abu Al-Ela</span>
+                    <small class="firm-sub">Law Firm · Arbitration · IP</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -114,16 +343,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
                             <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
                             <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
                             <li><a class="dropdown-item" href="/copyright.html">Copyright</a></li>
                             <li><a class="dropdown-item" href="/litigation.html">IP Litigation</a></li>
+                            <li><a class="dropdown-item" href="/licensing.html">Licensing &amp; Contracts</a></li>
                             <li><a class="dropdown-item" href="/corporate-formation.html">Corporate Formation</a></li>
                             <li><a class="dropdown-item" href="/criminal-litigation.html">Criminal Litigation</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -133,179 +363,450 @@
                     <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/consultation.html">Paid Consultation</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html"><i class="fas fa-lock me-1"></i>Client Portal</a>
+                        <a class="btn btn-outline-light btn-sm" href="/client-portal.html">
+                            <i class="fas fa-lock me-1"></i>Client Portal
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script>
-        // حل مشكلة صورة المحامي - البحث عن المسار الصحيح (نسخة إضافية للاحتياط)
-        (function() {
-            const possiblePaths = [
-                '/images/team/walid-profile.jpg',
-                '/images/team/walid-abouelela.jpg',
-                '/images/walid-profile.jpg',
-                '/ar/images/team/walid-profile.jpg',
-                '/images/lawyers/walid.jpg'
-            ];
-            const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-            if (!imgElement) return;
-            function tryLoadImage(index) {
-                if (index >= possiblePaths.length) return;
-                const testImg = new Image();
-                testImg.src = possiblePaths[index];
-                testImg.onload = function() {
-                    imgElement.src = possiblePaths[index];
-                    imgElement.onerror = null;
-                };
-                testImg.onerror = function() {
-                    tryLoadImage(index + 1);
-                };
-            }
-            tryLoadImage(0);
-        })();
-        </script>
     </nav>
 
-    <!-- Page Header -->
     <header class="page-header">
-        <div class="container text-white text-center">
+        <div class="container text-center">
             <h1 class="display-4">Terms of Service</h1>
-            <p class="lead">Last updated: February 2025</p>
+            <p class="lead">The rules governing your use of our website and services</p>
         </div>
     </header>
 
-    <!-- Content -->
     <section class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>1. Acceptance of Terms</h2>
-                    <p>By accessing and using this website (the "Site"), you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Site.</p>
-                    
-                    <h2 class="mt-4">2. Legal Services</h2>
-                    <p>The information provided on this Site is for general informational purposes only and does not constitute legal advice. No attorney-client relationship is formed by using the Site or contacting us through it. Legal services are only provided under a separate written engagement agreement.</p>
-                    
-                    <h2 class="mt-4">3. Intellectual Property</h2>
-                    <p>All content on this Site, including text, graphics, logos, and images, is the property of Walid Abo Al-Ela Law Firm and is protected by Egyptian and international copyright laws. You may not reproduce, distribute, or create derivative works without our express written permission.</p>
-                    
-                    <h2 class="mt-4">4. Use of the Site</h2>
-                    <p>You agree to use the Site only for lawful purposes. You are prohibited from violating or attempting to violate the security of the Site, including accessing data not intended for you or logging into a server or account which you are not authorized to access.</p>
-                    
-                    <h2 class="mt-4">5. Limitation of Liability</h2>
-                    <p>To the fullest extent permitted by law, Walid Abo Al-Ela Law Firm shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your access to or use of the Site.</p>
-                    
-                    <h2 class="mt-4">6. Governing Law</h2>
-                    <p>These Terms shall be governed by and construed in accordance with the laws of the Arab Republic of Egypt, without regard to its conflict of law provisions.</p>
-                    
-                    <h2 class="mt-4">7. Changes to Terms</h2>
-                    <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting on the Site. Your continued use of the Site after any changes indicates your acceptance of the new Terms.</p>
-                    
-                    <h2 class="mt-4">8. Contact Information</h2>
-                    <p>If you have any questions about these Terms, please contact us at:</p>
+            <div class="legal-wrap">
+
+                <span class="last-updated">
+                    <i class="fas fa-calendar-check"></i>
+                    Last Updated: January 2026
+                </span>
+
+                <div class="legal-info-box">
+                    <i class="fas fa-file-contract"></i>
+                    <div>
+                        <p>Please read these terms carefully.</p>
+                        <p>
+                            These Terms of Service ("Terms") govern your access to and use of the
+                            website and legal services of <strong>Walid Mohamed Abu Al-Ela Law Firm</strong>
+                            ("we", "us", "our"). By accessing our website or engaging our services,
+                            you agree to be bound by these Terms.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- TOC -->
+                <div class="legal-toc">
+                    <h4><i class="fas fa-list-ul"></i> Table of Contents</h4>
+                    <ol>
+                        <li><a href="#section-1">Acceptance of Terms</a></li>
+                        <li><a href="#section-2">About the Firm</a></li>
+                        <li><a href="#section-3">Use of the Website</a></li>
+                        <li><a href="#section-4">No Attorney-Client Relationship</a></li>
+                        <li><a href="#section-5">Legal Information Disclaimer</a></li>
+                        <li><a href="#section-6">Intellectual Property Rights</a></li>
+                        <li><a href="#section-7">User Conduct</a></li>
+                        <li><a href="#section-8">Consultations &amp; Engagement</a></li>
+                        <li><a href="#section-9">Fees and Payment</a></li>
+                        <li><a href="#section-10">Confidentiality</a></li>
+                        <li><a href="#section-11">Limitation of Liability</a></li>
+                        <li><a href="#section-12">Indemnification</a></li>
+                        <li><a href="#section-13">Third-Party Links</a></li>
+                        <li><a href="#section-14">Governing Law &amp; Jurisdiction</a></li>
+                        <li><a href="#section-15">Changes to These Terms</a></li>
+                        <li><a href="#section-16">Termination</a></li>
+                        <li><a href="#section-17">Contact Us</a></li>
+                    </ol>
+                </div>
+
+                <div class="legal-content">
+
+                    <!-- 1 -->
+                    <h2 id="section-1">1. Acceptance of Terms</h2>
+                    <p>
+                        By accessing, browsing, or using this website — or by engaging our legal
+                        services in any form — you acknowledge that you have read, understood, and
+                        agreed to be bound by these Terms, together with our
+                        <a href="/privacy-policy.html">Privacy Policy</a> and
+                        <a href="/cookie-policy.html">Cookie Policy</a>.
+                    </p>
+                    <p>
+                        If you do not agree with any part of these Terms, please do not use our
+                        website or engage our services.
+                    </p>
+
+                    <!-- 2 -->
+                    <h2 id="section-2">2. About the Firm</h2>
+                    <p>
+                        <strong>Walid Mohamed Abu Al-Ela Law Firm</strong> is an independent legal
+                        practice operating from 10th of Ramadan City, Cairo, Egypt. The firm focuses
+                        on intellectual property, arbitration, corporate services, and civil and
+                        commercial litigation.
+                    </p>
+                    <p>
+                        The firm is led by <strong>Walid Mohamed Abu Al-Ela</strong>, an Accredited
+                        IP Arbitrator (2025), Registered Arbitrator since 2013, Registered Patent
+                        Agent (2023), and a registered Master's researcher in Intellectual Property
+                        at the National Institute of Intellectual Property.
+                    </p>
+
+                    <!-- 3 -->
+                    <h2 id="section-3">3. Use of the Website</h2>
+                    <p>
+                        You agree to use this website only for lawful purposes and in a manner that
+                        does not infringe the rights of, or restrict or inhibit the use of, this
+                        website by any third party.
+                    </p>
+                    <p>In particular, you agree <strong>not</strong> to:</p>
                     <ul>
-                        <li>Email: <a href="mailto:walidlegal.ippro@gmail.com">walidlegal.ippro@gmail.com</a></li>
-                        <li>Phone: +20 111257219</li>
+                        <li>Use the website in any way that breaches any applicable local, national, or international law or regulation.</li>
+                        <li>Attempt to gain unauthorized access to any part of the website, its servers, or any related systems.</li>
+                        <li>Introduce any viruses, malware, or other harmful material to the website.</li>
+                        <li>Use automated systems (such as bots, scrapers, or crawlers) to access the website without our prior written consent.</li>
+                        <li>Copy, reproduce, or republish any part of the website without permission.</li>
+                        <li>Use the website to transmit unsolicited commercial communications (spam).</li>
                     </ul>
+
+                    <!-- 4 -->
+                    <h2 id="section-4">4. No Attorney-Client Relationship</h2>
+
+                    <div class="legal-info-box warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <p>Important — Please read carefully</p>
+                            <p>
+                                Sending us a message through our website, submitting a contact form,
+                                subscribing to our newsletter, or participating in a free orientation
+                                call <strong>does not create an attorney-client relationship</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <p>
+                        An attorney-client relationship between you and our firm is established
+                        <strong>only</strong> when both of the following conditions are met:
+                    </p>
+                    <ul>
+                        <li>We have confirmed in writing that we are willing and able to represent you; <strong>and</strong></li>
+                        <li>You have signed a formal engagement letter with us — and, where required, paid any agreed advance fee.</li>
+                    </ul>
+                    <p>
+                        Until an engagement letter is signed, you should <strong>not</strong> send us
+                        any confidential or time-sensitive information. Communications prior to
+                        engagement may not be protected by attorney-client privilege.
+                    </p>
+
+                    <!-- 5 -->
+                    <h2 id="section-5">5. Legal Information Disclaimer</h2>
+                    <p>
+                        All content on this website — including blog articles, service descriptions,
+                        FAQs, and any downloadable materials — is provided for
+                        <strong>general informational purposes only</strong>. It does not constitute
+                        legal advice and should not be relied upon as such.
+                    </p>
+                    <p>
+                        Legal matters are highly fact-specific. The information on this website may
+                        not apply to your situation, and legal rules may change over time. You should
+                        always seek professional legal advice tailored to your specific circumstances
+                        before making any decision.
+                    </p>
+
+                    <!-- 6 -->
+                    <h2 id="section-6">6. Intellectual Property Rights</h2>
+                    <p>
+                        All content on this website — including but not limited to text, graphics,
+                        logos, images, layout, design, code, and blog articles — is the property of
+                        the firm or its licensors and is protected by Egyptian and international
+                        copyright, trademark, and other intellectual property laws.
+                    </p>
+
+                    <h3>Permitted Use</h3>
+                    <ul>
+                        <li>You may view, download, and print pages from this website for your own personal, non-commercial use.</li>
+                        <li>You may share links to our articles on social media or via email.</li>
+                        <li>You may quote short excerpts (up to 100 words) with clear attribution and a link back to the original article.</li>
+                    </ul>
+
+                    <h3>Prohibited Use</h3>
+                    <ul>
+                        <li>Reproducing, duplicating, copying, or reselling any part of the website for commercial purposes.</li>
+                        <li>Modifying, adapting, or creating derivative works from website content.</li>
+                        <li>Using the firm's name, logo, or any trademark without prior written consent.</li>
+                        <li>Full republication of any article without our explicit written permission.</li>
+                    </ul>
+                    <p>
+                        To request permission for any use beyond what is described above, please
+                        contact us at <a href="mailto:walidlegal.ippro@gmail.com">walidlegal.ippro@gmail.com</a>.
+                    </p>
+
+                    <!-- 7 -->
+                    <h2 id="section-7">7. User Conduct</h2>
+                    <p>
+                        When communicating with us — through our website, email, WhatsApp, or any
+                        other channel — you agree to:
+                    </p>
+                    <ul>
+                        <li>Provide accurate and truthful information.</li>
+                        <li>Refrain from submitting content that is unlawful, defamatory, abusive, obscene, or infringing on third-party rights.</li>
+                        <li>Refrain from impersonating any person or entity.</li>
+                        <li>Refrain from using our communications for solicitation or advertising purposes.</li>
+                    </ul>
+                    <p>
+                        We reserve the right to refuse service, terminate communications, and take
+                        appropriate action if these standards are violated.
+                    </p>
+
+                    <!-- 8 -->
+                    <h2 id="section-8">8. Consultations &amp; Engagement</h2>
+                    <p>
+                        We offer several consultation formats — from a free 15-minute orientation
+                        call to in-depth written legal opinions. All consultations are subject to the
+                        following:
+                    </p>
+                    <ul>
+                        <li><strong>Scheduling:</strong> consultations are held by appointment only, confirmed in advance.</li>
+                        <li><strong>Scope:</strong> the scope of each consultation is agreed in writing before the session.</li>
+                        <li><strong>Payment:</strong> paid consultations require payment (or a written payment arrangement) before the session begins.</li>
+                        <li><strong>Documentation:</strong> you agree to provide documents in good faith and in a timely manner.</li>
+                    </ul>
+                    <p>
+                        Formal legal representation requires a separate engagement letter, defining
+                        scope, fees, and other terms.
+                    </p>
+
+                    <!-- 9 -->
+                    <h2 id="section-9">9. Fees and Payment</h2>
+                    <p>
+                        Fees for our services depend on the nature, scope, and complexity of each
+                        matter. Our standard practices are:
+                    </p>
+                    <ul>
+                        <li>All fees are quoted in writing <strong>before</strong> any work begins.</li>
+                        <li>We do not charge hidden fees or surprise costs.</li>
+                        <li>Advance payments may be required for certain matters, in accordance with the engagement letter.</li>
+                        <li>Government and third-party fees (such as official trademark filing fees) are separate from our professional fees and are your responsibility unless stated otherwise.</li>
+                        <li>Payment methods and schedules are confirmed in the engagement letter.</li>
+                    </ul>
+                    <p>
+                        If you are dissatisfied with a fee arrangement, please raise the matter with
+                        us directly and promptly — we aim to resolve any concern transparently.
+                    </p>
+
+                    <!-- 10 -->
+                    <h2 id="section-10">10. Confidentiality</h2>
+                    <p>
+                        We take confidentiality seriously. Once an attorney-client relationship is
+                        established, all information you share with us in connection with your matter
+                        is treated as confidential and privileged to the extent permitted by law.
+                    </p>
+                    <p>
+                        However, please note the following important limitations:
+                    </p>
+                    <ul>
+                        <li>Communications sent <strong>before</strong> an engagement letter is signed may not be protected by attorney-client privilege.</li>
+                        <li>We may disclose information where required by law, court order, or professional obligation.</li>
+                        <li>You should avoid sending highly sensitive information through unsecured channels (such as initial contact forms or unencrypted email) until our engagement is formalized.</li>
+                    </ul>
+
+                    <!-- 11 -->
+                    <h2 id="section-11">11. Limitation of Liability</h2>
+                    <p>
+                        To the maximum extent permitted by applicable law:
+                    </p>
+                    <ul>
+                        <li>The website and its content are provided <strong>"as is"</strong> and <strong>"as available"</strong>, without warranties of any kind — express or implied.</li>
+                        <li>We do not warrant that the website will be uninterrupted, error-free, or free of viruses or other harmful components.</li>
+                        <li>We shall not be liable for any indirect, incidental, consequential, special, or punitive damages arising from your use of the website or reliance on its content.</li>
+                        <li>Our total liability — for any claim arising from the use of the website — shall not exceed the amount, if any, that you have paid to us for the specific service to which the claim relates.</li>
+                    </ul>
+                    <p>
+                        Nothing in these Terms limits or excludes any liability that cannot be limited
+                        or excluded under applicable Egyptian law.
+                    </p>
+
+                    <!-- 12 -->
+                    <h2 id="section-12">12. Indemnification</h2>
+                    <p>
+                        You agree to indemnify, defend, and hold harmless the firm, its founder, and
+                        its representatives from and against any claims, liabilities, damages, losses,
+                        or expenses (including reasonable legal fees) arising out of or in any way
+                        connected with:
+                    </p>
+                    <ul>
+                        <li>Your violation of these Terms.</li>
+                        <li>Your misuse of the website or its content.</li>
+                        <li>Your violation of any third-party rights, including intellectual property or privacy rights.</li>
+                        <li>Any information or content you submit to us that is false, misleading, or unlawful.</li>
+                    </ul>
+
+                    <!-- 13 -->
+                    <h2 id="section-13">13. Third-Party Links</h2>
+                    <p>
+                        Our website may contain links to third-party websites, services, or platforms
+                        (such as WhatsApp, LinkedIn, Facebook, or Google Maps). These links are
+                        provided for convenience only. We do not control, endorse, or assume
+                        responsibility for the content, privacy practices, or terms of those third
+                        parties.
+                    </p>
+
+                    <!-- 14 -->
+                    <h2 id="section-14">14. Governing Law &amp; Jurisdiction</h2>
+                    <p>
+                        These Terms and any dispute or claim arising out of or in connection with
+                        them shall be governed by and construed in accordance with the laws of the
+                        <strong>Arab Republic of Egypt</strong>.
+                    </p>
+                    <p>
+                        Any dispute arising from these Terms shall be subject to the exclusive
+                        jurisdiction of the competent courts of Cairo, Egypt — without prejudice to
+                        any right to resolve the matter through arbitration where agreed between the
+                        parties.
+                    </p>
+
+                    <!-- 15 -->
+                    <h2 id="section-15">15. Changes to These Terms</h2>
+                    <p>
+                        We may update these Terms from time to time to reflect changes in our
+                        practices, services, or legal requirements. When we make material changes,
+                        we will update the "Last Updated" date at the top of this page.
+                    </p>
+                    <p>
+                        Your continued use of our website or services after any such change
+                        constitutes your acceptance of the updated Terms. We encourage you to review
+                        this page periodically.
+                    </p>
+
+                    <!-- 16 -->
+                    <h2 id="section-16">16. Termination</h2>
+                    <p>
+                        We reserve the right, at our sole discretion, to suspend, restrict, or
+                        terminate your access to our website — without prior notice or liability —
+                        if we determine that you have breached these Terms, or if continued access
+                        presents a security, legal, or ethical concern.
+                    </p>
+                    <p>
+                        The termination of website access does not affect any rights or obligations
+                        that arose prior to termination, including those under any signed engagement
+                        letter.
+                    </p>
+
+                    <!-- 17 -->
+                    <h2 id="section-17">17. Contact Us</h2>
+                    <p>
+                        If you have any questions, concerns, or requests regarding these Terms of
+                        Service, please contact us:
+                    </p>
+                </div>
+
+                <!-- Contact Card -->
+                <div class="contact-mini-card">
+                    <h3>Questions About These Terms?</h3>
+                    <p>
+                        For any question about these Terms, or to request permission for any use of
+                        our content, please reach out through one of the channels below.
+                    </p>
+                    <ul class="contact-mini-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219">+20 111 257 219</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li><i class="fas fa-globe"></i> <a href="/contact.html">Contact Page</a></li>
+                    </ul>
+                    <a href="/contact.html" class="btn-rich-primary">
+                        <span>Contact Us</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta-rich">
+        <div class="fcr-decoration-1"></div>
+        <div class="fcr-decoration-2"></div>
+        <div class="fcr-decoration-3"></div>
+        <div class="container">
+            <div class="fcr-content">
+                <div class="fcr-badge"><i class="fas fa-file-contract"></i></div>
+                <h2>Have a Legal Matter to Discuss?</h2>
+                <p>Our firm is ready to help — book a consultation and let's talk through your case.</p>
+                <div class="fcr-buttons">
+                    <a href="/consultation.html" class="btn-rich-primary light">
+                        <span>Book Consultation</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/privacy-policy.html" class="btn-rich-ghost">
+                        <i class="fas fa-shield-halved"></i>
+                        <span>Privacy Policy</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-section py-5 bg-dark text-white">
+    <!-- FOOTER -->
+    <footer class="footer-rich">
+        <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-5">
-                    <h5 class="mb-4"><i class="fas fa-balance-scale me-2"></i>Walid Abo Al-Ela Law Firm</h5>
-                    <p class="text-white-50">Specialized in arbitration and intellectual property protection with a personal touch since 2016.</p>
-                    <div class="social-links mt-3">
+                <div class="col-lg-4">
+                    <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">Walid Mohamed Abu Al-Ela Law Firm</h5>
+                    <p class="footer-desc">Law · Arbitration · Intellectual Property. Serving clients with dedication since 2016.</p>
+                    <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-2 col-6">
+                    <h6 class="footer-heading">Quick Links</h6>
+                    <ul class="footer-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/lawyers.html">Our Team</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="footer-heading">Contact</h6>
+                    <ul class="footer-list footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;">+20 111257219</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Sat - Thu: 9am - 8pm</li>
+                    </ul>
+                </div>
                 <div class="col-lg-3">
-                    <h6 class="mb-4">Quick Links</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/index.html" class="text-white-50 text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="/about.html" class="text-white-50 text-decoration-none">About</a></li>
-                        <li class="mb-2"><a href="/services.html" class="text-white-50 text-decoration-none">Services</a></li>
-                        <li class="mb-2"><a href="/lawyers.html" class="text-white-50 text-decoration-none">Our Team</a></li>
-                        <li class="mb-2"><a href="/blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
-                        <li class="mb-2"><a href="/contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
-                        <li class="mb-2"><a href="/consultation.html" class="text-white-50 text-decoration-none">Paid Consultation</a></li>
+                    <h6 class="footer-heading">Legal</h6>
+                    <ul class="footer-list">
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Use</a></li>
+                        <li><a href="/cookie-policy.html">Cookie Policy</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h6 class="mb-4">Contact Info</h6>
-                    <ul class="list-unstyled text-white-50">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 10th of Ramadan, Cairo, Egypt</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +20 111257219</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> walidlegal.ippro@gmail.com</li>
-                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Sat - Thu: 9am - 8pm</li>
-                    </ul>
-                </div>
-                <div class="col-lg-12 mt-3">
-                    <hr class="my-3" style="border-color: rgba(255,255,255,0.1);">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="small text-white-50 mb-0">© 2025 Walid Abo Al-Ela Law Firm. All rights reserved.</p>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <a href="/privacy-policy.html" class="text-white-50 small text-decoration-none me-3">Privacy Policy</a>
-                            <a href="/terms-of-service.html" class="text-white-50 small text-decoration-none me-3">Terms of Use</a>
-                            <a href="/cookie-policy.html" class="text-white-50 small text-decoration-none">Cookie Policy</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Walid Mohamed Abu Al-Ela Law Firm. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-WQ0CPXRK2F');
-    </script>
-    <!-- كود إضافي لحل مشكلة صورة المحامي (النسخة الثالثة) -->
-    <script>
-    (function() {
-        const possiblePaths = [
-            '/images/team/walid-profile.jpg',
-            '/images/team/walid-abouelela.jpg',
-            '/images/walid-profile.jpg',
-            '/ar/images/team/walid-profile.jpg',
-            '/images/lawyers/walid.jpg'
-        ];
-        const imgElement = document.querySelector('img[alt*="وليد"], img[alt*="Walid"], .team-card img');
-        if (!imgElement) return;
-        function tryLoadImage(index) {
-            if (index >= possiblePaths.length) return;
-            const testImg = new Image();
-            testImg.src = possiblePaths[index];
-            testImg.onload = function() { imgElement.src = possiblePaths[index]; imgElement.onerror = null; };
-            testImg.onerror = function() { tryLoadImage(index + 1); };
-        }
-        tryLoadImage(0);
-    })();
-    </script>
-    <script>
-        // تحديد الرابط النشط
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.navbar-nav .nav-link, .dropdown-item').forEach(link => {
-                if (link.getAttribute('href') === currentPath) link.classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>
