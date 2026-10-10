@@ -1040,6 +1040,132 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
+        
+    <!-- ═══════════════════════════════════════════════════════════════
+         LANGUAGE SWITCHER — DIRECT INLINE INJECTION
+         حقن زر اللغة مباشرة — يشتغل بدون الاعتماد على main.js
+         ═══════════════════════════════════════════════════════════════ -->
+    <script>
+    (function injectLangNow() {
+        'use strict';
 
+        function doInject() {
+            // Remove any legacy floating button
+            document.querySelectorAll('body > .language-switcher').forEach(function(el) { el.remove(); });
+
+            // Skip if already exists
+            if (document.querySelector('.navbar .lang-nav-item')) {
+                console.log('[LANG-INLINE] Already exists');
+                return;
+            }
+
+            var isAr = document.documentElement.lang === 'ar';
+
+            // Find the Client Portal button
+            var portalLink = null;
+            var links = document.querySelectorAll('.navbar a');
+            for (var i = 0; i < links.length; i++) {
+                var a = links[i];
+                var href = a.getAttribute('href') || '';
+                var text = a.textContent || '';
+                if (/client-portal|portal/i.test(href) || /Client Portal|بوابة العميل/.test(text)) {
+                    portalLink = a;
+                    break;
+                }
+            }
+
+            if (!portalLink) {
+                console.warn('[LANG-INLINE] Portal button NOT FOUND');
+                return;
+            }
+
+            console.log('[LANG-INLINE] Portal found ✓', portalLink);
+
+            // Create the language button
+            var langBtn = document.createElement('a');
+            langBtn.href = isAr ? '/' : '/ar/';
+            langBtn.className = 'lang-btn';
+            langBtn.setAttribute('aria-label', isAr ? 'Switch to English' : 'Switch to Arabic');
+            langBtn.innerHTML = '<i class="fas fa-globe" aria-hidden="true"></i><span>' + (isAr ? 'English' : 'العربية') + '</span>';
+
+            // Inline styles (bulletproof)
+            var styles = {
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                padding: '8px 18px',
+                margin: isAr ? '0 8px 0 0' : '0 0 0 8px',
+                border: '2px solid #C9A961',
+                borderRadius: '999px',
+                background: 'transparent',
+                color: '#C9A961',
+                fontFamily: 'inherit',
+                fontWeight: '700',
+                fontSize: '0.82rem',
+                letterSpacing: '0.3px',
+                lineHeight: '1.3',
+                textDecoration: 'none',
+                whiteSpace: 'nowrap',
+                boxShadow: '0 3px 12px rgba(201,169,97,0.15)',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer',
+                minHeight: '34px',
+                height: 'auto',
+                width: 'auto',
+                verticalAlign: 'middle'
+            };
+            Object.assign(langBtn.style, styles);
+
+            // Hover effect
+            langBtn.addEventListener('mouseenter', function() {
+                langBtn.style.background = 'linear-gradient(135deg, #C9A961, #A88947)';
+                langBtn.style.color = '#000';
+                langBtn.style.transform = 'translateY(-2px)';
+                langBtn.style.boxShadow = '0 8px 22px rgba(201,169,97,0.5)';
+            });
+            langBtn.addEventListener('mouseleave', function() {
+                langBtn.style.background = 'transparent';
+                langBtn.style.color = '#C9A961';
+                langBtn.style.transform = 'translateY(0)';
+                langBtn.style.boxShadow = '0 3px 12px rgba(201,169,97,0.15)';
+            });
+
+            // Wrap in <li>
+            var langLi = document.createElement('li');
+            langLi.className = 'nav-item lang-nav-item';
+            langLi.style.cssText = 'display:inline-flex;align-items:center;list-style:none;margin:0;padding:0;';
+            langLi.appendChild(langBtn);
+
+            // Insert after portal <li>
+            var portalLi = portalLink.closest('li');
+            var parentUl = portalLink.closest('ul');
+
+            if (portalLi && portalLi.parentNode) {
+                portalLi.parentNode.insertBefore(langLi, portalLi.nextSibling);
+                console.log('[LANG-INLINE] ✓✓✓ Inserted AFTER Portal ✓');
+            } else if (parentUl) {
+                parentUl.appendChild(langLi);
+                console.log('[LANG-INLINE] ✓ Appended to navbar');
+            } else if (portalLink.parentNode) {
+                portalLink.parentNode.insertBefore(langBtn, portalLink.nextSibling);
+                console.log('[LANG-INLINE] ✓ Inserted next to link');
+            }
+        }
+
+        // Run twice to be safe
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                doInject();
+                setTimeout(doInject, 500);
+            });
+        } else {
+            doInject();
+            setTimeout(doInject, 500);
+        }
+    })();
+    </script>
+</body>
+</html>
 </body>
 </html>
