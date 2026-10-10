@@ -7014,6 +7014,95 @@ hr.divider-soft {
     }
 }
 
+/* ============================================================================
+   🎯 HERO SIZE ADJUSTMENT v13.0 — تصغير حجم البانر الرئيسي
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Reduces the hero section height from 620px to 520px (desktop) for a
+   more balanced, less overwhelming appearance. Includes responsive
+   adjustments for tablet and mobile.
+   
+   تصغير ارتفاع البانر الرئيسي من 620px إلى 520px (سطح المكتب) لمظهر
+   أكثر توازناً. يشمل تعديلات للتابلت والموبايل.
+   ============================================================================ */
+
+/* ─── Desktop / سطح المكتب ───────────────────────────────────────────── */
+html body .hero-rich {
+    height: 520px !important;
+    min-height: 520px !important;
+    max-height: 520px !important;
+    padding: 30px 0 !important;
+}
+
+/* Smaller inner elements to match reduced height */
+html body .hero-rich .hero-rich-title {
+    font-size: clamp(2rem, 5vw, 3.5rem) !important;
+    margin-bottom: 18px !important;
+}
+
+html body .hero-rich .hero-rich-subtitle {
+    font-size: clamp(0.95rem, 1.3vw, 1.05rem) !important;
+    margin-bottom: 22px !important;
+    line-height: 1.65 !important;
+}
+
+html body .hero-rich .hero-rich-buttons {
+    margin-bottom: 22px !important;
+}
+
+html body .hero-rich .btn-hero-primary,
+html body .hero-rich .btn-hero-ghost {
+    padding: 13px 30px !important;
+    font-size: 0.95rem !important;
+}
+
+html body .hero-rich .hero-trust-row {
+    padding-top: 18px !important;
+    gap: 22px !important;
+}
+
+html body .hero-rich .hsb-number {
+    font-size: 4.5rem !important;
+}
+
+html body .hero-rich .hsb-number span {
+    font-size: 3rem !important;
+}
+
+html body .hero-rich .hero-badge-rich {
+    padding: 8px 18px !important;
+    font-size: 0.8rem !important;
+    margin-bottom: 18px !important;
+}
+
+/* ─── Tablet / تابلت ─────────────────────────────────────────────────── */
+@media (max-width: 991px) {
+    html body .hero-rich {
+        height: auto !important;
+        min-height: 460px !important;
+        max-height: none !important;
+        padding: 45px 0 40px !important;
+    }
+}
+
+/* ─── Mobile / موبايل ────────────────────────────────────────────────── */
+@media (max-width: 576px) {
+    html body .hero-rich {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        padding: 40px 0 35px !important;
+    }
+    html body .hero-rich .hero-rich-title {
+        font-size: 1.7rem !important;
+    }
+    html body .hero-rich .hsb-number {
+        font-size: 4rem !important;
+    }
+    html body .hero-rich .hsb-number span {
+        font-size: 2.5rem !important;
+    }
+}
 
 /* ============================================================================
    ██████████████████████████████████████████████████████████████████████████
