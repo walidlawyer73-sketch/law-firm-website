@@ -7416,7 +7416,11 @@ section, header, footer, main {
 /* ---- 24.10 اسم المكتب على الموبايل ---- */
 @media (max-width: 991px) {
     .navbar-brand .firm-name { font-size: 0.92rem !important; }
-    .navbar-brand .firm-sub { font-size: 0.6rem !important; -webkit-line-clamp: 2 !important; }
+.navbar-brand .firm-sub { 
+    font-size: 0.6rem !important; 
+    -webkit-line-clamp: 2 !important; 
+    line-clamp: 2 !important; 
+}
     .navbar-brand img { height: 40px !important; max-width: 55px !important; }
     [dir="rtl"] .navbar-brand .firm-name { font-size: 0.98rem !important; }
     [dir="rtl"] .navbar-brand .firm-sub { font-size: 0.65rem !important; }
@@ -8148,6 +8152,125 @@ img {
         font-size: 0.7rem !important;
         padding: 7px 10px !important;
         line-height: 1.35 !important;
+    }
+}
+
+/* ============================================================================
+   25.12 FIX v2.1 — حل مشكلة زرين اللغة + موضع الزر + حجم الهيرو
+   ============================================================================ */
+
+/* ---- 25.12.1: زر اللغة يرجع لفوق (مكانه الطبيعي) ---- */
+.language-switcher {
+    position: fixed !important;
+    top: calc(var(--banner-height) + var(--navbar-height) + 20px) !important;
+    bottom: auto !important;
+    right: 20px !important;
+    left: auto !important;
+    z-index: 999 !important;
+    display: inline-flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+}
+
+[dir="rtl"] .language-switcher {
+    right: auto !important;
+    left: 20px !important;
+}
+
+/* ---- 25.12.2: إخفاء أي زر لغة قديم مكرر (بس اللي جوه النافبار) ---- */
+.navbar .language-switcher,
+.navbar .lang-btn,
+.navbar-nav .lang-btn,
+header .language-switcher,
+#trial-banner .language-switcher {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* ---- 25.12.3: حجم الهيرو ثابت ومعقول (مش بياخد الشاشة كلها) ---- */
+.hero-rich,
+.hero-section {
+    min-height: 620px !important;
+    max-height: 85vh !important;
+    padding: 60px 0 50px !important;
+}
+
+/* على التابلت */
+@media (max-width: 991px) {
+    .hero-rich,
+    .hero-section {
+        min-height: 540px !important;
+        max-height: none !important;
+    }
+}
+
+/* على الموبايل */
+@media (max-width: 768px) {
+    .hero-rich,
+    .hero-section {
+        min-height: auto !important;
+        max-height: none !important;
+        padding: 60px 0 50px !important;
+    }
+}
+
+/* باقي صفحات الهيرو */
+.service-hero,
+.page-hero-rich,
+.article-hero {
+    min-height: 520px !important;
+    max-height: none !important;
+}
+
+@media (max-width: 768px) {
+    .service-hero,
+    .page-hero-rich,
+    .article-hero {
+        min-height: auto !important;
+        padding: 60px 0 50px !important;
+    }
+}
+
+/* ---- 25.12.4: صورة الهيرو متعرضش أكبر من اللازم ---- */
+.hero-rich-bg img {
+    object-fit: cover !important;
+    object-position: center center !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* ---- 25.12.5: على الموبايل الزر صغير وأنيق ---- */
+@media (max-width: 768px) {
+    .language-switcher {
+        top: calc(var(--banner-height) + var(--navbar-height) + 12px) !important;
+        right: 12px !important;
+    }
+    [dir="rtl"] .language-switcher {
+        right: auto !important;
+        left: 12px !important;
+    }
+    .lang-btn {
+        padding: 8px 14px !important;
+        font-size: 0.78rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .language-switcher {
+        top: calc(var(--banner-height) + var(--navbar-height) + 10px) !important;
+        right: 10px !important;
+    }
+    [dir="rtl"] .language-switcher {
+        right: auto !important;
+        left: 10px !important;
+    }
+    .lang-btn {
+        padding: 7px 12px !important;
+        font-size: 0.72rem !important;
     }
 }
 
