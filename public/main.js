@@ -82,29 +82,30 @@
 
 
     // ========================================================================
-    // 2. AUTO-INJECT LANGUAGE SWITCHER INTO NAVBAR (v2 - Direct Insertion)
-    //    حقن زر اللغة مباشرة بجوار بوابة العميل (نسخة محسّنة)
+    // 2. AUTO-INJECT LANGUAGE SWITCHER INTO NAVBAR (v3 - Wrapped Fix)
+    //    حقن زر اللغة داخل الغلاف الصحيح الذي يتعرف عليه ملف CSS
     // ========================================================================
     // PURPOSE / الوظيفة:
-    // Injects the language switcher button directly next to the "Client
-    // Portal" button using INLINE STYLES for maximum reliability.
-    // Uses 3 fallback strategies to ensure insertion succeeds.
-    // Logs every step to console with [LANG] prefix for debugging.
+    // Injects the language button wrapped inside .language-switcher.in-navbar
+    // so it matches the stylesheet rules. Removes any legacy floating button
+    // and any manually-added duplicate. Inserts right after Client Portal.
+    // Also handles same-page language switching (e.g. /lawyers.html ⇄ /ar/lawyers.html).
     //
-    // يحقن زر اللغة مباشرةً بجوار زر "بوابة العميل" باستخدام أنماط
-    // inline لضمان أقصى موثوقية. يستخدم 3 استراتيجيات بديلة لضمان
-    // نجاح الإدراج. يسجّل كل خطوة في Console بمقدمة [LANG] للتشخيص.
+    // يحقن زر اللغة مغلفاً داخل .language-switcher.in-navbar ليطابق قواعد
+    // الـ CSS. يحذف أي زر عائم قديم أو نسخة يدوية مكررة. يدرجه بعد بوابة
+    // العميل مباشرة. كما يتعامل مع التبديل لنفس الصفحة في اللغة الأخرى.
     // ========================================================================
     function injectLanguageSwitcher() {
         // ═══════════════════════════════════════════════════════════════════
-        // STEP 1: Clean up old floating buttons
-        // الخطوة 1: احذف أي زر عائم قديم
+        // STEP 1: Remove the old floating language button.
+        // الخطوة 1: احذف الزر العائم القديم.
         // ═══════════════════════════════════════════════════════════════════
-        document.querySelectorAll('body > .language-switcher').forEach(el => el.remove());
+        document.querySelectorAll('body > .language-switcher')
+            .forEach(el => el.remove());
 
         // ═══════════════════════════════════════════════════════════════════
-        // STEP 2: Skip if already injected
-        // الخطوة 2: تخطى لو موجود
+        // STEP 2: Do not inject twice.
+        // الخطوة 2: لا تحقن مرتين.
         // ═══════════════════════════════════════════════════════════════════
         if (document.querySelector('.navbar .lang-nav-item')) {
             console.log('[LANG] Already injected — skipping');
@@ -112,142 +113,131 @@
         }
 
         // ═══════════════════════════════════════════════════════════════════
-        // STEP 3: Config based on current page language
-        // الخطوة 3: الإعدادات حسب اللغة الحالية
+        // STEP 3: Remove a manually added navbar switcher, if one exists.
+        //         The shared JavaScript will create the canonical button.
+        // الخطوة 3: احذف أي زر يدوي مضاف للنافبار.
         // ═══════════════════════════════════════════════════════════════════
-        const isArabic = document.documentElement.lang === 'ar';
-        const config = isArabic
-            ? { href: '/',      label: 'English',  flag: 'EN' }
-            : { href: '/ar/',   label: 'العربية',  flag: 'AR' };
+        document.querySelectorAll('.navbar .language-switcher.in-navbar')
+            .forEach(el => {
+                if (el.closest('.lang-nav-item')) return;
+
+                const item = el.closest('li');
+                if (item) {
+                    item.remove();
+                } else {
+                    el.remove();
+                }
+            });
 
         // ═══════════════════════════════════════════════════════════════════
-        // STEP 4: Find the Client Portal button
-        // الخطوة 4: إيجاد زر بوابة العميل
+        // STEP 4: Detect current language.
+        // الخطوة 4: كشف اللغة الحالية.
         // ═══════════════════════════════════════════════════════════════════
-        let portalLink = null;
-        const allLinks = document.querySelectorAll('.navbar-nav a, .navbar a');
-        allLinks.forEach(a => {
+        const isArabic =
+            document.documentElement.lang.toLowerCase().startsWith('ar');
+
+        // ═══════════════════════════════════════════════════════════════════
+        // STEP 5: Switch to the corresponding page in the other language.
+        // الخطوة 5: الانتقال إلى الصفحة المقابلة في اللغة الأخرى.
+        // ═══════════════════════════════════════════════════════════════════
+        const currentPath = window.location.pathname || '/';
+        let targetHref;
+
+        if (isArabic) {
+            targetHref = currentPath.replace(/^\/ar(?=\/|$)/i, '') || '/';
+
+            if (targetHref === '/index.html') {
+                targetHref = '/';
+            }
+        } else {
+            targetHref =
+                currentPath === '/' || currentPath === '/index.html'
+                    ? '/ar/'
+                    : '/ar' + currentPath;
+        }
+
+        const label = isArabic ? 'English' : 'العربية';
+        const targetLanguage = isArabic ? 'en' : 'ar';
+
+        // ═══════════════════════════════════════════════════════════════════
+        // STEP 6: Find the Client Portal button.
+        // الخطوة 6: إيجاد زر بوابة العميل.
+        // ═══════════════════════════════════════════════════════════════════
+        const portalLink = Array.from(
+            document.querySelectorAll('.navbar .navbar-nav a, .navbar a')
+        ).find(a => {
             const href = a.getAttribute('href') || '';
             const text = a.textContent || '';
-            if (/client-portal|portal/i.test(href) || /Client Portal|بوابة العميل/.test(text)) {
-                if (!portalLink) portalLink = a;
-            }
+
+            return /client-portal|portal/i.test(href) ||
+                   /Client Portal|بوابة العميل/i.test(text);
         });
 
         if (!portalLink) {
-            console.warn('[LANG] Client Portal button not found — cannot inject');
+            console.warn(
+                '[LANG] Client Portal was not found; language button was not inserted.'
+            );
             return;
         }
 
         console.log('[LANG] Client Portal button found ✓', portalLink);
 
         // ═══════════════════════════════════════════════════════════════════
-        // STEP 5: Create the language button with INLINE STYLES (bulletproof)
-        // الخطوة 5: إنشاء زر اللغة بأنماط inline (مضمون 100%)
+        // STEP 7: Create the language button.
+        // الخطوة 7: إنشاء زر اللغة.
         // ═══════════════════════════════════════════════════════════════════
-        const langBtn = document.createElement('a');
-        langBtn.href = config.href;
-        langBtn.className = 'lang-btn';
-        langBtn.setAttribute('aria-label', 'Switch language');
-        langBtn.setAttribute('hreflang', isArabic ? 'en' : 'ar');
-        langBtn.innerHTML = '<i class="fas fa-globe" aria-hidden="true"></i><span>' + config.label + '</span>';
-
-        // Apply inline styles that mimic the Client Portal button exactly
-        // تطبيق أنماط inline تحاكي زر بوابة العميل تماماً
-        const btnStyles = {
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '8px',
-            padding: '8px 18px',
-            margin: '0 0 0 8px',
-            border: '2px solid #C9A961',
-            borderRadius: '999px',
-            background: 'transparent',
-            color: '#C9A961',
-            fontFamily: 'inherit',
-            fontWeight: '700',
-            fontSize: '0.82rem',
-            letterSpacing: '0.3px',
-            lineHeight: '1.3',
-            textDecoration: 'none',
-            whiteSpace: 'nowrap',
-            boxShadow: '0 3px 12px rgba(201,169,97,0.15)',
-            transition: 'all 0.3s ease',
-            cursor: 'pointer',
-            minHeight: '34px',
-            height: 'auto',
-            width: 'auto',
-            verticalAlign: 'middle'
-        };
-
-        if (isArabic) {
-            btnStyles.margin = '0 8px 0 0';
-        }
-
-        Object.assign(langBtn.style, btnStyles);
-
-        // Hover effect via JS (inline styles can't have :hover)
-        // تأثير التحويم عبر JavaScript
-        langBtn.addEventListener('mouseenter', () => {
-            langBtn.style.background = 'linear-gradient(135deg, #C9A961, #A88947)';
-            langBtn.style.color = '#000';
-            langBtn.style.transform = 'translateY(-2px)';
-            langBtn.style.boxShadow = '0 8px 22px rgba(201,169,97,0.5)';
-        });
-        langBtn.addEventListener('mouseleave', () => {
-            langBtn.style.background = 'transparent';
-            langBtn.style.color = '#C9A961';
-            langBtn.style.transform = 'translateY(0)';
-            langBtn.style.boxShadow = '0 3px 12px rgba(201,169,97,0.15)';
-        });
+        const langButton = document.createElement('a');
+        langButton.href = targetHref;
+        langButton.className = 'lang-btn';
+        langButton.setAttribute('aria-label', label);
+        langButton.setAttribute('hreflang', targetLanguage);
+        langButton.innerHTML =
+            '<i class="fas fa-globe" aria-hidden="true"></i>' +
+            '<span>' + label + '</span>';
 
         // ═══════════════════════════════════════════════════════════════════
-        // STEP 6: Find the portal's <li> and its parent
-        // الخطوة 6: إيجاد الـ li الخاص بالبوابة والأب
+        // STEP 8: Use the wrapper class expected by the shared stylesheet.
+        // الخطوة 8: استخدام الغلاف الذي يتعرف عليه ملف CSS.
         // ═══════════════════════════════════════════════════════════════════
-        const portalLi = portalLink.closest('li');
-        const parentUl = portalLink.closest('ul');
+        const langWrapper = document.createElement('div');
+        langWrapper.className = 'language-switcher in-navbar';
+        langWrapper.appendChild(langButton);
+
+        const langItem = document.createElement('li');
+        langItem.className = 'nav-item lang-nav-item';
+        langItem.appendChild(langWrapper);
 
         // ═══════════════════════════════════════════════════════════════════
-        // STEP 7: Create the wrapper <li> for the language button
-        // الخطوة 7: إنشاء li للزر اللغة
+        // STEP 9: Insert after Client Portal item (with fallbacks).
+        // الخطوة 9: الإدراج بعد بوابة العميل (مع بدائل).
         // ═══════════════════════════════════════════════════════════════════
-        const langLi = document.createElement('li');
-        langLi.className = 'nav-item lang-nav-item';
-        langLi.style.cssText = 'display:inline-flex;align-items:center;list-style:none;margin:0;padding:0;';
-        langLi.appendChild(langBtn);
+        const portalItem = portalLink.closest('li');
+        const navList = portalLink.closest('ul');
 
-        // ═══════════════════════════════════════════════════════════════════
-        // STEP 8: Insert the language button
-        // الخطوة 8: إدراج زر اللغة
-        // ═══════════════════════════════════════════════════════════════════
-        if (portalLi && portalLi.parentNode) {
-            // Insert after the portal <li>
-            portalLi.parentNode.insertBefore(langLi, portalLi.nextSibling);
-            console.log('[LANG] ✓ Inserted AFTER Client Portal button');
-        } else if (parentUl) {
-            // Fallback: append to the same <ul>
-            parentUl.appendChild(langLi);
+        if (portalItem && portalItem.parentNode) {
+            portalItem.parentNode.insertBefore(
+                langItem,
+                portalItem.nextSibling
+            );
+            console.log('[LANG] ✓✓✓ Inserted AFTER Client Portal button');
+        } else if (navList) {
+            navList.appendChild(langItem);
             console.log('[LANG] ✓ Appended to navbar list');
         } else {
-            // Final fallback: insert after portal link directly
-            if (portalLink.parentNode) {
-                portalLink.parentNode.insertBefore(langBtn, portalLink.nextSibling);
-                console.log('[LANG] ✓ Inserted next to portal link');
-            }
+            console.warn('[LANG] Unable to find the navbar insertion point.');
+            return;
         }
 
         // ═══════════════════════════════════════════════════════════════════
-        // STEP 9: Verify it's actually there
-        // الخطوة 9: تأكد إنه ظهر فعلاً
+        // STEP 10: Verify injection success.
+        // الخطوة 10: التحقق من نجاح الحقن.
         // ═══════════════════════════════════════════════════════════════════
         setTimeout(() => {
-            const found = document.querySelector('.navbar .lang-nav-item, .navbar .lang-btn');
+            const found = document.querySelector('.navbar .lang-nav-item');
             if (found) {
                 console.log('[LANG] ✓✓✓ Language button verified in DOM');
             } else {
-                console.error('[LANG] ✗✗✗ Language button NOT in DOM after insertion!');
+                console.error('[LANG] ✗ Language button NOT in DOM after insertion!');
             }
         }, 100);
     }

@@ -7105,6 +7105,126 @@ html body .hero-rich .hero-badge-rich {
 }
 
 /* ============================================================================
+   ============================================================================
+   🎯 FINAL FIX — SHARED LANGUAGE SWITCHER IN THE NAVBAR
+   الحل النهائي — زر اللغة الموحّد داخل النافبار
+   ============================================================================
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   The JS injects the language button wrapped in .language-switcher.in-navbar.
+   These rules make that wrapper display correctly inside the navbar,
+   matching the Client Portal button's gold pill style exactly.
+   
+   ملف JS يحقن زر اللغة مغلفاً داخل .language-switcher.in-navbar.
+   هذه القواعد تجعل الغلاف يظهر بشكل صحيح داخل النافبار، ويطابق
+   زر بوابة العميل تماماً في التصميم الذهبي.
+   ============================================================================ */
+
+/* ─── The wrapper <li> ─── */
+.navbar .lang-nav-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-shrink: 0;
+    list-style: none;
+}
+
+/* ─── The inner .language-switcher.in-navbar wrapper ─── */
+.navbar .lang-nav-item .language-switcher.in-navbar {
+    position: static !important;
+    inset: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    margin: 0 0 0 8px !important;
+    padding: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: auto !important;
+    transform: none !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+[dir="rtl"] .navbar .lang-nav-item .language-switcher.in-navbar {
+    margin: 0 8px 0 0 !important;
+}
+
+/* ─── The gold button itself ─── */
+.navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    min-height: 34px;
+    padding: 8px 18px !important;
+    border: 2px solid #C9A961 !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+    color: #C9A961 !important;
+    font-family: inherit;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    line-height: 1.3;
+    letter-spacing: 0.3px !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: 0 3px 12px rgba(201,169,97,0.15) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer;
+}
+
+.navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover,
+.navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:focus-visible {
+    background: linear-gradient(135deg, #C9A961, #A88947) !important;
+    color: #000 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(201,169,97,0.5) !important;
+    outline: none !important;
+}
+
+.navbar .lang-nav-item .language-switcher.in-navbar .lang-btn i {
+    font-size: 0.85rem !important;
+    color: inherit !important;
+    transition: transform 0.3s ease !important;
+}
+
+.navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover i {
+    transform: rotate(180deg) !important;
+}
+
+/* ─── Desktop spacing ─── */
+@media (min-width: 992px) {
+    .navbar .lang-nav-item {
+        margin-inline-start: 4px;
+    }
+}
+
+/* ─── Mobile: full-width buttons ─── */
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav > .lang-nav-item {
+        display: flex !important;
+        width: 100% !important;
+        margin: 6px 0 0 !important;
+        justify-content: stretch !important;
+    }
+
+    .navbar .lang-nav-item .language-switcher.in-navbar {
+        width: 100% !important;
+        margin: 0 !important;
+        justify-content: stretch !important;
+    }
+
+    .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
+        width: 100% !important;
+        min-height: 42px;
+        justify-content: center !important;
+    }
+}
+
+/* ============================================================================
    ██████████████████████████████████████████████████████████████████████████
    END OF STYLESHEET — نهاية ورقة الأنماط
    ██████████████████████████████████████████████████████████████████████████
