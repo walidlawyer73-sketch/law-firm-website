@@ -9761,7 +9761,827 @@ main {
     margin-top: auto !important;
 }
 
+/* ============================================================================
+   ============================================================================
+   🎯 REFINEMENT PATCH v11.0 — PART 1/2
+   NAVBAR BUTTONS + COMPACT CARDS
+   تحسينات شاملة (الجزء الأول): أزرار النافبار + الكروت المضغوطة
+   ============================================================================
+   
+   HOW TO USE / طريقة الاستخدام:
+   ─────────────────────────────────────────────────────────────────
+   Append this entire block at the END of style.css.
+   It overrides any earlier conflicting rules automatically.
+   
+   أضف هذا البلوك في نهاية ملف style.css. يلغي تلقائياً أي قواعد
+   متعارضة موجودة قبل ذلك.
+   ─────────────────────────────────────────────────────────────────
+   
+   CONTENTS / المحتويات:
+   ─────────────────────────────────────────────────────────────────
+   01. Navbar Buttons         →  أزرار النافبار الذهبية
+   02. Navbar Responsive      →  تجاوب أزرار النافبار
+   03. Service Cards          →  كروت الخدمات المضغوطة
+   04. Bento Cards            →  بطاقات Bento المضغوطة
+   05. Team Featured          →  بطاقة فريق العمل المضغوطة
+   ─────────────────────────────────────────────────────────────────
+   ============================================================================ */
 
+
+/* ============================================================================
+   01. NAVBAR BUTTONS — أزرار النافبار الذهبية
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Unifies the "Client Portal" button and the "Language Switcher" button
+   with the same premium gold-bordered pill design. Both look identical
+   and appear side-by-side in every page.
+   
+   توحيد شكل زر "بوابة العميل" وزر "تبديل اللغة" بإطار ذهبي فخم على شكل
+   حبة. الزران بنفس الشكل تماماً ويظهران جنب بعض في كل صفحة.
+   ============================================================================ */
+
+/* ---------- Shared Base for Both Buttons / الأساس المشترك للزرين ---------- */
+.navbar .btn-outline-light,
+.navbar .btn-outline-light.btn-sm,
+.navbar .language-switcher.in-navbar .lang-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 8px 18px !important;
+    margin: 0 !important;
+    border: 2px solid var(--accent-color, #C9A961) !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+    color: var(--accent-color, #C9A961) !important;
+    font-weight: 700 !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.3px !important;
+    line-height: 1.3 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: 0 3px 12px rgba(201, 169, 97, 0.15) !important;
+    transition: all 0.3s ease !important;
+    font-family: inherit !important;
+    cursor: pointer !important;
+    height: auto !important;
+    min-height: 34px !important;
+    text-transform: none !important;
+}
+
+/* ---------- Hover State / حالة التحويم ---------- */
+.navbar .btn-outline-light:hover,
+.navbar .btn-outline-light.btn-sm:hover,
+.navbar .btn-outline-light:focus,
+.navbar .language-switcher.in-navbar .lang-btn:hover,
+.navbar .language-switcher.in-navbar .lang-btn:focus {
+    background: linear-gradient(135deg, var(--accent-color, #C9A961), var(--accent-dark, #A88947)) !important;
+    color: var(--primary-color, #000) !important;
+    border-color: var(--accent-color, #C9A961) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(201, 169, 97, 0.5) !important;
+    outline: none !important;
+}
+
+/* ---------- Icons Inside Buttons / الأيقونات داخل الأزرار ---------- */
+.navbar .btn-outline-light i,
+.navbar .language-switcher.in-navbar .lang-btn i {
+    font-size: 0.88rem !important;
+    transition: transform 0.3s ease !important;
+    color: inherit !important;
+}
+
+.navbar .language-switcher.in-navbar .lang-btn:hover i {
+    transform: rotate(180deg) !important;
+}
+
+/* ---------- Language Switcher Container / حاوية زر اللغة ---------- */
+.navbar .language-switcher.in-navbar {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    margin: 0 0 0 6px !important;
+    padding: 0 !important;
+    z-index: auto !important;
+    pointer-events: auto !important;
+}
+
+[dir="rtl"] .navbar .language-switcher.in-navbar {
+    margin: 0 6px 0 0 !important;
+}
+
+/* ---------- Hide Legacy Floating Language Button / إخفاء الزر العائم القديم ---------- */
+body > .language-switcher:not(.in-navbar) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+
+/* ============================================================================
+   02. NAVBAR BUTTONS RESPONSIVE — تجاوب أزرار النافبار
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   On mobile, both buttons stretch to full width inside the collapsed
+   navigation menu for better touch targets.
+   
+   على الموبايل، الزران يأخذان عرضاً كاملاً داخل القائمة المنسدلة
+   لأهداف لمس أفضل.
+   ============================================================================ */
+@media (max-width: 991.98px) {
+    /* Stack buttons full-width / ترتيب بعرض كامل */
+    .navbar-nav > li > .btn-outline-light,
+    .navbar-nav > li .language-switcher.in-navbar {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        margin: 6px 0 !important;
+    }
+
+    .navbar-nav > li > .btn-outline-light,
+    .navbar-nav > li .language-switcher.in-navbar .lang-btn {
+        width: 100% !important;
+        padding: 12px 20px !important;
+        font-size: 0.9rem !important;
+        min-height: 44px !important;
+    }
+
+    /* Remove inline margin from lang switcher on mobile */
+    .navbar .language-switcher.in-navbar {
+        margin: 0 !important;
+    }
+}
+
+
+/* ============================================================================
+   03. SERVICE CARDS — كروت الخدمات المضغوطة
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Converts service cards into slim, horizontal rows: icon on the left,
+   text in the middle, arrow on the right. Much shorter than the default
+   vertical card layout.
+   
+   تحويل كروت الخدمات إلى صفوف أفقية مضغوطة: أيقونة على اليسار، نص في
+   الوسط، سهم على اليمين. أقصر بكثير من التخطيط العمودي الافتراضي.
+   ============================================================================ */
+.services-modern {
+    padding: 55px 0 !important;
+}
+
+.services-grid-modern {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+}
+
+/* ---------- Service Card / بطاقة الخدمة ---------- */
+.svc-modern-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 14px 16px !important;
+    border-radius: 12px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+}
+
+/* ---------- Service Icon / أيقونة الخدمة ---------- */
+.svc-modern-icon {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1.1rem !important;
+    border-radius: 10px !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+/* ---------- Service Content / محتوى الخدمة ---------- */
+.svc-modern-content {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+}
+
+.svc-modern-content h6 {
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    line-height: 1.25 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.svc-modern-content small {
+    font-size: 0.72rem !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+/* ---------- Arrow Indicator / مؤشر السهم ---------- */
+.svc-modern-arrow {
+    opacity: 0.5 !important;
+    font-size: 0.8rem !important;
+    flex-shrink: 0 !important;
+    transform: translateX(0) !important;
+    transition: all 0.3s ease !important;
+}
+
+.svc-modern-item:hover .svc-modern-arrow {
+    opacity: 1 !important;
+    transform: translateX(3px) !important;
+}
+
+[dir="rtl"] .svc-modern-item:hover .svc-modern-arrow {
+    transform: translateX(-3px) !important;
+}
+
+
+/* ============================================================================
+   04. BENTO CARDS — بطاقات Bento المضغوطة
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Reduces bento grid card heights so the "Four Areas of Expertise" section
+   fits more compactly without overwhelming the scroll.
+   
+   تقليل ارتفاع بطاقات Bento حتى ينضبط قسم "أربعة مجالات خبرة" بشكل أكثر
+   إحكاماً بدون استهلاك مساحة كبيرة.
+   ============================================================================ */
+.bento-section {
+    padding: 55px 0 45px !important;
+}
+
+.bento-card {
+    padding: 24px 22px !important;
+    min-height: 200px !important;
+    border-radius: 16px !important;
+}
+
+.bento-card.bento-large {
+    min-height: 420px !important;
+    padding: 32px 28px !important;
+}
+
+/* ---------- Bento Titles / عناوين Bento ---------- */
+.bento-card h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 8px !important;
+}
+
+.bento-card.bento-large h3 {
+    font-size: 1.4rem !important;
+}
+
+/* ---------- Bento Paragraphs / نصوص Bento ---------- */
+.bento-card p {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 14px !important;
+}
+
+.bento-card.bento-large p {
+    font-size: 0.9rem !important;
+    max-width: 100% !important;
+}
+
+/* ---------- Bento Icons / أيقونات Bento ---------- */
+.bc-icon {
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 1.4rem !important;
+    border-radius: 12px !important;
+    margin-bottom: 16px !important;
+}
+
+.bento-card.bento-large .bc-icon {
+    width: 62px !important;
+    height: 62px !important;
+    font-size: 1.7rem !important;
+}
+
+/* ---------- Bento Numbers / أرقام Bento ---------- */
+.bc-num {
+    font-size: 2.5rem !important;
+    top: 15px !important;
+    right: 18px !important;
+}
+
+[dir="rtl"] .bc-num {
+    right: auto !important;
+    left: 18px !important;
+}
+
+.bento-card.bento-large .bc-num {
+    font-size: 3.5rem !important;
+}
+
+
+/* ============================================================================
+   05. TEAM FEATURED — بطاقة فريق العمل المضغوطة
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Compacts the featured team card by reducing portrait size, internal
+   padding, and typography scale.
+   
+   تصغير بطاقة فريق العمل بتقليل حجم الصورة والحشو الداخلي والخط.
+   ============================================================================ */
+.team-featured {
+    padding: 55px 0 !important;
+}
+
+.team-featured-card {
+    border-radius: 20px !important;
+}
+
+.tfc-portrait {
+    padding: 35px 20px !important;
+}
+
+.tfc-image-wrap {
+    width: 190px !important;
+    height: 190px !important;
+    max-width: 190px !important;
+    max-height: 190px !important;
+}
+
+.tfc-content {
+    padding: 35px 32px !important;
+}
+
+/* ---------- Role Badge / شارة الدور ---------- */
+.tfc-role {
+    font-size: 0.72rem !important;
+    padding: 5px 14px !important;
+    margin-bottom: 12px !important;
+}
+
+/* ---------- Name / الاسم ---------- */
+.tfc-name {
+    font-size: clamp(1.3rem, 2vw, 1.7rem) !important;
+    margin-bottom: 14px !important;
+}
+
+/* ---------- Tags / الوسوم ---------- */
+.tfc-tags {
+    gap: 6px !important;
+    margin-bottom: 18px !important;
+}
+
+.tfc-tags span {
+    font-size: 0.72rem !important;
+    padding: 5px 12px !important;
+}
+
+/* ---------- Bio / النبذة ---------- */
+.tfc-bio {
+    font-size: 0.9rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 22px !important;
+}
+
+/* ---------- Social Icons / أيقونات التواصل ---------- */
+.tfc-social a {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 0.9rem !important;
+}
+
+/* ---------- Floating Badges / الشارات العائمة ---------- */
+.tfc-badge-top,
+.tfc-badge-bottom {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1rem !important;
+}
+
+
+/* ============================================================================
+   END OF PART 1/2
+   نهاية الجزء الأول من 2
+   ============================================================================ */
+   /* ============================================================================
+   ============================================================================
+   🎯 REFINEMENT PATCH v11.0 — PART 2/2
+   COMPACT CARDS + SPACING + RESPONSIVE
+   تحسينات شاملة (الجزء الثاني): بقية الكروت والمسافات والتجاوب
+   ============================================================================
+   
+   Append this block right AFTER Part 1/2 at the END of style.css.
+   أضف هذا البلوك مباشرةً بعد الجزء الأول في نهاية ملف style.css.
+   
+   CONTENTS / المحتويات:
+   ─────────────────────────────────────────────────────────────────
+   06. Testimonial Cards      →  بطاقات آراء العملاء المضغوطة
+   07. Process Timeline       →  خطوات العمل المضغوطة
+   08. FAQ Accordion          →  الأسئلة الشائعة المضغوطة
+   09. Credential Cards       →  بطاقات الاعتمادات المضغوطة
+   10. Section Spacing        →  المسافات العامة للأقسام
+   11. Responsive — Mobile    →  التجاوب النهائي للموبايل
+   ─────────────────────────────────────────────────────────────────
+   ============================================================================ */
+
+
+/* ============================================================================
+   06. TESTIMONIAL CARDS — بطاقات آراء العملاء المضغوطة
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Shortens testimonial cards by reducing padding, avatar size, quote mark
+   size, and typography — so all three cards fit side-by-side elegantly.
+   
+   تصغير بطاقات آراء العملاء بحشو أقل وحجم أفاتار أصغر وعلامة اقتباس
+   أصغر وخط أصغر — لتناسب الثلاثة جنب بعض.
+   ============================================================================ */
+.testimonials-modern {
+    padding: 55px 0 !important;
+}
+
+.testimonial-modern-card {
+    padding: 26px 24px !important;
+    border-radius: 16px !important;
+}
+
+/* ---------- Star Rating / التقييم بالنجوم ---------- */
+.tmc-stars {
+    font-size: 0.8rem !important;
+    margin-bottom: 14px !important;
+    letter-spacing: 1.5px !important;
+}
+
+/* ---------- Quote Text / نص الاقتباس ---------- */
+.testimonial-modern-card p {
+    font-size: 0.9rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 18px !important;
+}
+
+/* ---------- Author Block / كتلة الكاتب ---------- */
+.tmc-author {
+    padding-top: 14px !important;
+    gap: 12px !important;
+}
+
+.tmc-avatar {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1rem !important;
+}
+
+.tmc-author strong {
+    font-size: 0.88rem !important;
+}
+
+.tmc-author small {
+    font-size: 0.75rem !important;
+}
+
+/* ---------- Decorative Quote Mark / علامة الاقتباس الزخرفية ---------- */
+.tmc-quote {
+    font-size: 2.2rem !important;
+    top: 18px !important;
+    right: 18px !important;
+}
+
+[dir="rtl"] .tmc-quote {
+    right: auto !important;
+    left: 18px !important;
+}
+
+
+/* ============================================================================
+   07. PROCESS TIMELINE — خطوات العمل المضغوطة
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Smaller timeline nodes, tighter line position, and reduced icon sizes
+   so the "How We Work" section compresses vertically.
+   
+   تصغير عقد خطوات العمل مع تعديل موضع الخط وتصغير الأيقونات حتى
+   ينضغط قسم "كيف نعمل" رأسياً.
+   ============================================================================ */
+.process-rich {
+    padding: 55px 0 !important;
+}
+
+.process-timeline {
+    gap: 20px !important;
+    padding-top: 20px !important;
+}
+
+/* ---------- Connecting Line / الخط الرابط ---------- */
+.pt-line {
+    top: 45px !important;
+}
+
+/* ---------- Circular Node / العقدة الدائرية ---------- */
+.pt-node {
+    width: 72px !important;
+    height: 72px !important;
+    font-size: 1.3rem !important;
+    margin-bottom: 14px !important;
+}
+
+/* ---------- Numbered Badge / شارة الرقم ---------- */
+.pt-num {
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 0.65rem !important;
+    top: -6px !important;
+    right: -6px !important;
+    border-width: 2px !important;
+}
+
+[dir="rtl"] .pt-num {
+    right: auto !important;
+    left: -6px !important;
+}
+
+/* ---------- Step Text / نص الخطوة ---------- */
+.pt-step h6 {
+    font-size: 0.9rem !important;
+    margin-bottom: 4px !important;
+}
+
+.pt-step p {
+    font-size: 0.78rem !important;
+    line-height: 1.5 !important;
+}
+
+
+/* ============================================================================
+   08. FAQ ACCORDION — الأسئلة الشائعة المضغوطة
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Tighter accordion padding and smaller typography so the FAQ section
+   scans more quickly.
+   
+   تقليل حشو الأكورديون وتصغير الخط حتى يكون قسم الأسئلة أسرع في القراءة.
+   ============================================================================ */
+.faq-modern {
+    padding: 55px 0 !important;
+}
+
+.faq-rich-accordion .accordion-item {
+    border-radius: 12px !important;
+    margin-bottom: 10px !important;
+}
+
+/* ---------- Question Button / زر السؤال ---------- */
+.faq-rich-accordion .accordion-button {
+    font-size: 0.9rem !important;
+    padding: 16px 20px !important;
+    font-weight: 700 !important;
+}
+
+/* ---------- Answer Body / جسم الإجابة ---------- */
+.faq-rich-accordion .accordion-body {
+    padding: 0 20px 16px !important;
+    font-size: 0.85rem !important;
+    line-height: 1.7 !important;
+}
+
+
+/* ============================================================================
+   09. CREDENTIAL CARDS — بطاقات الاعتمادات المضغوطة
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Reduces credential card height and icon size so the "About" credentials
+   grid fits in less vertical space.
+   
+   تقليل ارتفاع بطاقات الاعتمادات وحجم الأيقونة حتى تنضبط شبكة الاعتمادات
+   في قسم "من نحن" بمساحة أقل.
+   ============================================================================ */
+.cred-card {
+    padding: 14px !important;
+    border-radius: 12px !important;
+    gap: 12px !important;
+}
+
+.cc-icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.95rem !important;
+    border-radius: 8px !important;
+}
+
+.cc-content h5 {
+    font-size: 0.82rem !important;
+    margin-bottom: 2px !important;
+    line-height: 1.25 !important;
+}
+
+.cc-content span {
+    font-size: 0.7rem !important;
+    line-height: 1.3 !important;
+}
+
+.credentials-row {
+    gap: 10px !important;
+    margin-bottom: 22px !important;
+}
+
+
+/* ============================================================================
+   10. SECTION SPACING — المسافات العامة للأقسام
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Consistent reduced vertical padding between major sections for a
+   tighter, more modern feel. Also compresses section headings.
+   
+   مسافات رأسية موحّدة ومقَلّلة بين الأقسام الرئيسية لمظهر أكثف
+   وأكثر عصرية. كما يقلّص عناوين الأقسام.
+   ============================================================================ */
+
+/* ---------- Main Section Padding / حشو الأقسام الرئيسية ---------- */
+.bento-section,
+.services-modern,
+.process-rich,
+.team-featured,
+.testimonials-modern,
+.faq-modern {
+    padding: 55px 0 !important;
+}
+
+/* ---------- Section Headings / عناوين الأقسام ---------- */
+.section-head-rich {
+    margin-bottom: 35px !important;
+}
+
+.sh-title {
+    margin-bottom: 10px !important;
+}
+
+.sh-desc {
+    font-size: 0.95rem !important;
+}
+
+/* ---------- Final CTA / الدعوة النهائية ---------- */
+.final-cta-rich {
+    padding: 60px 0 !important;
+}
+
+/* ---------- About Asymmetric / قسم من نحن ---------- */
+.about-asymmetric {
+    padding: 30px 0 70px !important;
+}
+
+
+/* ============================================================================
+   11. RESPONSIVE — MOBILE / التجاوب النهائي للموبايل
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Final responsive adjustments for tablets and phones so all the compact
+   sizes above render correctly without breaking the layout.
+   
+   تعديلات نهائية للتجاوب على التابلت والموبايل حتى تعمل كل الأحجام
+   المضغوطة أعلاه بشكل صحيح دون كسر التصميم.
+   ============================================================================ */
+
+/* ---------- Tablet (<= 991px) / تابلت ---------- */
+@media (max-width: 991px) {
+    /* Service cards: 2 columns / كروت الخدمات: عمودان */
+    .services-grid-modern {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Bento large card / بطاقة Bento الكبيرة */
+    .bento-card.bento-large {
+        min-height: 340px !important;
+    }
+
+    /* Team portrait / صورة فريق العمل */
+    .tfc-image-wrap {
+        width: 160px !important;
+        height: 160px !important;
+        max-width: 160px !important;
+        max-height: 160px !important;
+    }
+
+    .tfc-content {
+        padding: 28px 24px !important;
+    }
+
+    /* Process timeline: 2 columns / خطوات العمل: عمودان */
+    .process-timeline {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .pt-line {
+        display: none !important;
+    }
+
+    /* Credentials: 1 column / الاعتمادات: عمود واحد */
+    .credentials-row {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ---------- Mobile (<= 576px) / موبايل ---------- */
+@media (max-width: 576px) {
+    /* Container padding / حشو الحاوية */
+    .container {
+        padding-right: 14px !important;
+        padding-left: 14px !important;
+    }
+
+    /* Service cards: 1 column / كروت الخدمات: عمود واحد */
+    .services-grid-modern {
+        grid-template-columns: 1fr !important;
+    }
+
+    .svc-modern-item {
+        padding: 12px 14px !important;
+    }
+
+    /* Bento full width / Bento بعرض كامل */
+    .bento-card,
+    .bento-card.bento-large {
+        padding: 20px 18px !important;
+        min-height: auto !important;
+    }
+
+    .bento-card.bento-large .bc-icon {
+        width: 52px !important;
+        height: 52px !important;
+        font-size: 1.4rem !important;
+    }
+
+    .bento-card.bento-large .bc-num {
+        font-size: 3rem !important;
+    }
+
+    /* Team card / بطاقة الفريق */
+    .tfc-content {
+        padding: 24px 20px !important;
+    }
+
+    .tfc-image-wrap {
+        width: 140px !important;
+        height: 140px !important;
+        max-width: 140px !important;
+        max-height: 140px !important;
+    }
+
+    /* Process timeline: 1 column / خطوات العمل: عمود واحد */
+    .process-timeline {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Testimonial card / بطاقة الرأي */
+    .testimonial-modern-card {
+        padding: 22px 20px !important;
+    }
+
+    /* FAQ button / زر الأسئلة */
+    .faq-rich-accordion .accordion-button {
+        font-size: 0.85rem !important;
+        padding: 14px 18px !important;
+    }
+
+    /* Section headings / عناوين الأقسام */
+    .sh-title {
+        font-size: 1.4rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .sh-desc {
+        font-size: 0.88rem !important;
+    }
+}
+
+
+/* ============================================================================
+   END OF REFINEMENT PATCH v11.0
+   نهاية باتش التحسينات الشامل
+   ============================================================================
+   
+   ✅ CHECKLIST / قائمة التحقق:
+   ─────────────────────────────────────────────────────────────────
+   [x] زر اللغة بجوار بوابة العميل — إطار ذهبي فخم
+   [x] زر اللغة يُحقن تلقائياً في كل الصفحات عبر main.js
+   [x] الأزرار بنفس التصميم تماماً
+   [x] كروت الخدمات مصغّرة (صفوف مضغوطة ~70px)
+   [x] بطاقات Bento مصغّرة (420px للكبيرة، 200px للصغيرة)
+   [x] بطاقة فريق العمل مصغّرة (صورة 190px)
+   [x] بطاقات الآراء مصغّرة (حشو 26px)
+   [x] خطوات العمل مصغّرة (عقدة 72px)
+   [x] الأسئلة الشائعة مصغّرة (حشو 16px)
+   [x] بطاقات الاعتمادات مصغّرة (حشو 14px)
+   [x] مسافات الأقسام مقَلّلة (55px)
+   [x] التجاوب الكامل (991px / 576px)
+   ─────────────────────────────────────────────────────────────────
+   ============================================================================ */
+   
 /* ============================================================================
    END OF POLISH PATCH v10.0
    نهاية بلوك التحسينات النهائي
