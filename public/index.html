@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ============================================================
+         PAGE META - بيانات الصفحة
+         ============================================================ -->
     <title>Walid Mohamed Abu Al-Ela Law Firm - Law, Arbitration & Intellectual Property</title>
     <meta name="description" content="Walid Mohamed Abu Al-Ela - Legal Counsel since 2013. 500+ cases litigated, 350+ trademarks registered, 50+ companies founded. Full-service practice in IP, Arbitration, Corporate & Litigation.">
     <meta name="keywords" content="law firm Egypt, intellectual property, arbitration, trademark, patent, corporate law, Walid Mohamed Abu Al-Ela">
@@ -10,6 +15,9 @@
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/">
 
+    <!-- ============================================================
+         OPEN GRAPH - معلومات المشاركة الاجتماعية
+         ============================================================ -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/">
     <meta property="og:title" content="Walid Mohamed Abu Al-Ela Law Firm - Law, Arbitration & IP">
@@ -18,9 +26,15 @@
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- ============================================================
+         HREFLANG - روابط اللغات البديلة
+         ============================================================ -->
     <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/">
     <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/">
 
+    <!-- ============================================================
+         FAVICON & EXTERNAL STYLESHEETS - الأيقونة والأنماط الخارجية
+         ============================================================ -->
     <link rel="icon" type="image/png" href="/images/logo arb ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -29,6 +43,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 
+    <!-- ============================================================
+         GOOGLE ANALYTICS - إحصائيات جوجل
+         ============================================================ -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -37,6 +54,9 @@
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
 
+    <!-- ============================================================
+         SCHEMA.ORG STRUCTURED DATA - بيانات منظمة للسيو
+         ============================================================ -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -58,11 +78,13 @@
     }
     </script>
 
+    <!-- ============================================================
+         INLINE STYLES - أنماط داخلية لإطار اللوجو الذهبي
+         ============================================================ -->
     <style>
-        /* ============================================================
-           LUXURY GOLD FRAME FOR LOGO - About Section
-           إطار ذهبي فخم للوجو - قسم من نحن
-           ============================================================ */
+        /* ---------------------------------------------------------
+           LOGO SHOWCASE FRAME — إطار اللوجو الذهبي
+           --------------------------------------------------------- */
         .logo-showcase {
             position: relative;
             width: 100%;
@@ -72,7 +94,7 @@
             padding: 40px 20px;
             min-height: 560px;
         }
-        
+
         .logo-showcase__frame {
             position: relative;
             width: 100%;
@@ -81,14 +103,14 @@
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
             border-radius: 30px;
             padding: 30px;
-            box-shadow: 
+            box-shadow:
                 0 30px 60px -20px rgba(0, 0, 0, 0.5),
                 0 0 80px rgba(201, 169, 97, 0.15),
                 inset 0 0 60px rgba(201, 169, 97, 0.05);
             overflow: hidden;
         }
-        
-        /* Corner ornaments - زخارف الزوايا */
+
+        /* Corner ornaments - زخارف الزوايا (LTR: top-left & bottom-right) */
         .logo-showcase__frame::before,
         .logo-showcase__frame::after {
             content: '';
@@ -112,7 +134,7 @@
             border-top: none;
             border-bottom-right-radius: 20px;
         }
-        
+
         /* Inner border - الحد الداخلي */
         .logo-showcase__inner-border {
             position: absolute;
@@ -122,8 +144,8 @@
             pointer-events: none;
             z-index: 2;
         }
-        
-        /* Gold glow behind logo - توهج ذهبي خلف اللوجو */
+
+        /* Gold glow - التوهج الذهبي */
         .logo-showcase__glow {
             position: absolute;
             top: 50%;
@@ -136,13 +158,13 @@
             z-index: 1;
             animation: glowPulse 4s ease-in-out infinite;
         }
-        
+
         @keyframes glowPulse {
             0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
             50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
         }
-        
-        /* The logo itself - اللوجو نفسه */
+
+        /* Logo itself - اللوجو نفسه */
         .logo-showcase__logo {
             position: relative;
             z-index: 3;
@@ -152,13 +174,13 @@
             filter: drop-shadow(0 10px 30px rgba(201, 169, 97, 0.5));
             animation: logoFloat 6s ease-in-out infinite;
         }
-        
+
         @keyframes logoFloat {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
         }
-        
-        /* Decorative dots around - نقاط زخرفية */
+
+        /* Decorative dots - نقاط زخرفية (LTR: top-right & bottom-left) */
         .logo-showcase__deco {
             position: absolute;
             width: 100%;
@@ -178,16 +200,10 @@
             border-radius: 50%;
             box-shadow: 0 0 15px rgba(201, 169, 97, 0.8);
         }
-        .logo-showcase__deco::before {
-            top: 20%;
-            right: 15%;
-        }
-        .logo-showcase__deco::after {
-            bottom: 20%;
-            left: 15%;
-        }
-        
-        /* Floating badge - الشارة العائمة */
+        .logo-showcase__deco::before { top: 20%; right: 15%; }
+        .logo-showcase__deco::after { bottom: 20%; left: 15%; }
+
+        /* Floating badge - الشارة العائمة (LTR: bottom-right) */
         .logo-showcase__badge {
             position: absolute;
             bottom: -10px;
@@ -216,88 +232,67 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
-        /* Responsive */
+
+        /* Responsive adjustments - تعديلات التجاوب */
         @media (max-width: 991px) {
-            .logo-showcase {
-                min-height: 420px;
-                padding: 30px 15px;
-            }
-            .logo-showcase__frame {
-                max-width: 380px;
-                padding: 25px;
-            }
+            .logo-showcase { min-height: 420px; padding: 30px 15px; }
+            .logo-showcase__frame { max-width: 380px; padding: 25px; }
             .logo-showcase__frame::before,
-            .logo-showcase__frame::after {
-                width: 45px;
-                height: 45px;
-            }
+            .logo-showcase__frame::after { width: 45px; height: 45px; }
         }
-        
+
         @media (max-width: 576px) {
-            .logo-showcase {
-                min-height: 360px;
-            }
-            .logo-showcase__frame {
-                max-width: 300px;
-                padding: 20px;
-            }
-            .logo-showcase__badge {
-                padding: 12px 18px;
-                right: 15px;
-            }
-            .logo-showcase__badge-num {
-                font-size: 1.8rem;
-            }
-            .logo-showcase__badge-txt {
-                font-size: 0.65rem;
-            }
+            .logo-showcase { min-height: 360px; }
+            .logo-showcase__frame { max-width: 300px; padding: 20px; }
+            .logo-showcase__badge { padding: 12px 18px; right: 15px; }
+            .logo-showcase__badge-num { font-size: 1.8rem; }
+            .logo-showcase__badge-txt { font-size: 0.65rem; }
         }
     </style>
 </head>
 
 <body>
+
     <!-- ============================================================
          TRIAL BANNER - الشريط التجريبي
          ============================================================ -->
-    <div id="trial-banner" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 10000; background: linear-gradient(90deg, #FFC107 0%, #FFB300 100%); color: #000; text-align: center; padding: 10px 15px; font-weight: 600; border-bottom: 2px solid #000; display: flex; justify-content: center; align-items: center; gap: 10px; box-sizing: border-box; font-size: 0.9rem; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-        <i class="fas fa-tools" style="font-size: 1.1rem; animation: pulse-icon 2s ease-in-out infinite;"></i>
+    <div id="trial-banner">
+        <i class="fas fa-tools" aria-hidden="true"></i>
         <span>This is a trial version - site under development and updates</span>
-        <i class="fas fa-tools" style="font-size: 1.1rem; animation: pulse-icon 2s ease-in-out infinite;"></i>
-    </div>
-    <style>
-        @keyframes pulse-icon {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-        }
-    </style>
-
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="/ar/" class="lang-btn"><i class="fas fa-globe"></i> العربية</a>
+        <i class="fas fa-tools" aria-hidden="true"></i>
     </div>
 
     <!-- ============================================================
-         Navigation
+         NAVIGATION - شريط التنقل
          ============================================================ -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
+
+            <!-- Brand / العلامة -->
             <a class="navbar-brand" href="/">
                 <img src="/images/logo arb ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm">
                 <div>
-                    <span class="firm-name">WALID MOHAMED ABU AL-ELA</span>
+                    <span class="firm-name">Walid Mohamed Abu El-Ela</span>
                     <small class="firm-sub">Law · Arbitration · IP</small>
                 </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+            <!-- Mobile toggler / زر القائمة للموبايل -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Main menu / القائمة الرئيسية -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+
+                    <!-- Primary links - روابط رئيسية -->
                     <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+
+                    <!-- Services dropdown - قائمة الخدمات المنسدلة -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/arbitration.html">International Arbitration</a></li>
                             <li><a class="dropdown-item" href="/trademark.html">Trademark Registration</a></li>
@@ -311,27 +306,43 @@
                             <li><a class="dropdown-item" href="/services.html">All Services</a></li>
                         </ul>
                     </li>
+
                     <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
                     <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+
+                    <!-- Client Portal button - زر بوابة العميل -->
                     <li class="nav-item ms-lg-3">
                         <a class="btn btn-outline-light btn-sm" href="/client-portal.html">
-                            <i class="fas fa-lock me-1"></i>Client Portal
+                            <i class="fas fa-lock me-1" aria-hidden="true"></i>Client Portal
                         </a>
                     </li>
+
+                    <!-- Language Switcher - زر تبديل اللغة (بجوار بوابة العميل) -->
+                    <li class="nav-item lang-nav-item ms-lg-2">
+                        <div class="language-switcher in-navbar">
+                            <a href="/ar/" class="lang-btn" aria-label="التبديل إلى العربية" hreflang="ar">
+                                <i class="fas fa-globe" aria-hidden="true"></i>
+                                <span>العربية</span>
+                            </a>
+                        </div>
+                    </li>
+
                 </ul>
             </div>
+
         </div>
     </nav>
 
     <!-- ============================================================
-         HERO
+         HERO - البانر الرئيسي
          ============================================================ -->
     <header class="hero-rich">
         <div class="hero-rich-bg">
             <img src="/images/hero-bg.jpg" alt="Walid Mohamed Abu Al-Ela Law Firm">
         </div>
         <div class="hero-rich-overlay"></div>
+
         <div class="hero-decorations">
             <div class="deco-shape deco-circle-1"></div>
             <div class="deco-shape deco-circle-2"></div>
@@ -339,12 +350,13 @@
             <div class="deco-dots"></div>
             <div class="deco-grid"></div>
         </div>
+
         <div class="container hero-rich-content">
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <div class="hero-badge-rich">
                         <span class="badge-dot"></span>
-                        <i class="fas fa-award"></i>
+                        <i class="fas fa-award" aria-hidden="true"></i>
                         <span>Accredited IP Arbitrator · Since 2013</span>
                     </div>
                     <h1 class="hero-rich-title">
@@ -359,24 +371,24 @@
                     <div class="hero-rich-buttons">
                         <a href="/contact.html" class="btn-hero-primary">
                             <span>Contact Us</span>
-                            <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
                         <a href="/consultation.html" class="btn-hero-ghost">
-                            <i class="fas fa-gavel"></i>
+                            <i class="fas fa-gavel" aria-hidden="true"></i>
                             <span>Paid Consultation</span>
                         </a>
                     </div>
                     <div class="hero-trust-row">
                         <div class="trust-badge">
-                            <i class="fas fa-shield-halved"></i>
+                            <i class="fas fa-shield-halved" aria-hidden="true"></i>
                             <span>Confidential</span>
                         </div>
                         <div class="trust-badge">
-                            <i class="fas fa-award"></i>
+                            <i class="fas fa-award" aria-hidden="true"></i>
                             <span>Accredited</span>
                         </div>
                         <div class="trust-badge">
-                            <i class="fas fa-globe"></i>
+                            <i class="fas fa-globe" aria-hidden="true"></i>
                             <span>Cross-Border</span>
                         </div>
                     </div>
@@ -389,16 +401,17 @@
                 </div>
             </div>
         </div>
+
         <div class="hero-scroll-indicator">
             <a href="#stats">
                 <span>Scroll</span>
-                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
             </a>
         </div>
     </header>
 
     <!-- ============================================================
-         STATS MARQUEE
+         STATS MARQUEE - شريط الأرقام المتحرك
          ============================================================ -->
     <section class="stats-marquee" id="stats">
         <div class="marquee-track">
@@ -409,6 +422,7 @@
                 <div class="marquee-item"><span class="mq-num">20+</span><span class="mq-txt">Corporate Clients</span></div>
                 <div class="marquee-item"><span class="mq-num">10+</span><span class="mq-txt">Years Experience</span></div>
                 <div class="marquee-item"><span class="mq-num">5</span><span class="mq-txt">WIPO Certifications</span></div>
+                <!-- Duplicate set for seamless loop - نسخة مكررة للحركة السلسة -->
                 <div class="marquee-item"><span class="mq-num">500+</span><span class="mq-txt">Cases Litigated</span></div>
                 <div class="marquee-item"><span class="mq-num">350+</span><span class="mq-txt">Trademarks Registered</span></div>
                 <div class="marquee-item"><span class="mq-num">50+</span><span class="mq-txt">Companies Founded</span></div>
@@ -420,7 +434,7 @@
     </section>
 
     <!-- ============================================================
-         PRACTICE AREAS - Bento Grid
+         PRACTICE AREAS - مجالات الممارسة
          ============================================================ -->
     <section class="bento-section">
         <div class="container">
@@ -430,11 +444,13 @@
                 <h2 class="sh-title">Four Areas of Deep Expertise</h2>
                 <p class="sh-desc">A decade of comprehensive legal practice across multiple disciplines.</p>
             </div>
+
             <div class="bento-grid">
+                <!-- Large card / البطاقة الكبيرة -->
                 <div class="bento-card bento-large">
                     <div class="bc-decoration"></div>
                     <div class="bc-num">01</div>
-                    <div class="bc-icon"><i class="fas fa-trademark"></i></div>
+                    <div class="bc-icon"><i class="fas fa-trademark" aria-hidden="true"></i></div>
                     <h3>Intellectual Property</h3>
                     <p>Trademarks, patents, industrial designs, copyright, and trade secrets — from filing to enforcement.</p>
                     <div class="bc-tags">
@@ -442,59 +458,67 @@
                         <span>Patents</span>
                         <span>Copyright</span>
                     </div>
-                    <a href="/services.html" class="bc-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    <a href="/services.html" class="bc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
+
+                <!-- Card 2 -->
                 <div class="bento-card">
                     <div class="bc-decoration"></div>
                     <div class="bc-num">02</div>
-                    <div class="bc-icon"><i class="fas fa-gavel"></i></div>
+                    <div class="bc-icon"><i class="fas fa-gavel" aria-hidden="true"></i></div>
                     <h3>Arbitration</h3>
                     <p>Accredited arbitrator since 2013, specialized in commercial and investment disputes.</p>
-                    <a href="/arbitration.html" class="bc-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    <a href="/arbitration.html" class="bc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
+
+                <!-- Card 3 -->
                 <div class="bento-card">
                     <div class="bc-decoration"></div>
                     <div class="bc-num">03</div>
-                    <div class="bc-icon"><i class="fas fa-building"></i></div>
+                    <div class="bc-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
                     <h3>Corporate Services</h3>
                     <p>Formation, M&A, governance, and compliance for businesses of all sizes.</p>
-                    <a href="/corporate-formation.html" class="bc-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    <a href="/corporate-formation.html" class="bc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
+
+                <!-- Card 4 -->
                 <div class="bento-card">
                     <div class="bc-decoration"></div>
                     <div class="bc-num">04</div>
-                    <div class="bc-icon"><i class="fas fa-scale-balanced"></i></div>
+                    <div class="bc-icon"><i class="fas fa-scale-balanced" aria-hidden="true"></i></div>
                     <h3>Litigation</h3>
                     <p>500+ cases before all court levels, including Economic Courts and the State Council.</p>
-                    <a href="/litigation.html" class="bc-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    <a href="/litigation.html" class="bc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-         SVG DIVIDER
+         SVG DIVIDER - الفاصل المائل
          ============================================================ -->
     <div class="svg-divider">
-        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
             <path d="M0,0 C360,100 1080,0 1440,80 L1440,100 L0,100 Z" fill="#F8F9FA"></path>
         </svg>
     </div>
 
     <!-- ============================================================
-         ABOUT + CREDENTIALS - Logo in Luxury Gold Frame
+         ABOUT + CREDENTIALS - من نحن + اللوجو في إطار ذهبي
          ============================================================ -->
     <section class="about-asymmetric">
         <div class="container">
             <div class="row g-5 align-items-center">
+
+                <!-- Logo showcase / عرض اللوجو -->
                 <div class="col-lg-5">
                     <div class="logo-showcase">
                         <div class="logo-showcase__frame">
                             <div class="logo-showcase__inner-border"></div>
                             <div class="logo-showcase__glow"></div>
                             <div class="logo-showcase__deco"></div>
-                            <img src="/images/logo arb ip.png" 
-                                 alt="Walid Mohamed Abu Al-Ela Law Firm Logo" 
+                            <img src="/images/logo arb ip.png"
+                                 alt="Walid Mohamed Abu Al-Ela Law Firm Logo"
                                  class="logo-showcase__logo"
                                  loading="lazy">
                         </div>
@@ -504,6 +528,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- About content / محتوى من نحن -->
                 <div class="col-lg-7">
                     <div class="about-content-rich">
                         <div class="sh-line-left"></div>
@@ -519,62 +545,66 @@
                             corporations across Egypt and beyond, with a proven track record of
                             delivering results in complex legal matters.
                         </p>
+
+                        <!-- Credentials grid / شبكة الاعتمادات -->
                         <div class="credentials-row">
                             <div class="cred-card">
-                                <div class="cc-icon"><i class="fas fa-award"></i></div>
+                                <div class="cc-icon"><i class="fas fa-award" aria-hidden="true"></i></div>
                                 <div class="cc-content">
                                     <h5>Accredited IP Arbitrator</h5>
                                     <span>National Institute of IP · 2025</span>
                                 </div>
                             </div>
                             <div class="cred-card">
-                                <div class="cc-icon"><i class="fas fa-gavel"></i></div>
+                                <div class="cc-icon"><i class="fas fa-gavel" aria-hidden="true"></i></div>
                                 <div class="cc-content">
                                     <h5>Registered Arbitrator</h5>
                                     <span>Egyptian Chamber · Since 2013</span>
                                 </div>
                             </div>
                             <div class="cred-card">
-                                <div class="cc-icon"><i class="fas fa-certificate"></i></div>
+                                <div class="cc-icon"><i class="fas fa-certificate" aria-hidden="true"></i></div>
                                 <div class="cc-content">
                                     <h5>Registered Patent Agent</h5>
                                     <span>Official Register · 2023</span>
                                 </div>
                             </div>
                             <div class="cred-card">
-                                <div class="cc-icon"><i class="fas fa-graduation-cap"></i></div>
+                                <div class="cc-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
                                 <div class="cc-content">
                                     <h5>Master's Researcher</h5>
                                     <span>Intellectual Property</span>
                                 </div>
                             </div>
                             <div class="cred-card">
-                                <div class="cc-icon"><i class="fas fa-globe"></i></div>
+                                <div class="cc-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
                                 <div class="cc-content">
                                     <h5>5 WIPO Courses</h5>
                                     <span>IP, Patents & PCT</span>
                                 </div>
                             </div>
                             <div class="cred-card">
-                                <div class="cc-icon"><i class="fas fa-scale-balanced"></i></div>
+                                <div class="cc-icon"><i class="fas fa-scale-balanced" aria-hidden="true"></i></div>
                                 <div class="cc-content">
                                     <h5>Swiss Arbitration</h5>
                                     <span>2 International Certificates</span>
                                 </div>
                             </div>
                         </div>
+
                         <a href="/about.html" class="btn-rich-primary mt-4">
                             <span>More About Us</span>
-                            <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-         SERVICES - Modern Icon Grid
+         SERVICES - الخدمات
          ============================================================ -->
     <section class="services-modern">
         <div class="container">
@@ -584,83 +614,85 @@
                 <h2 class="sh-title">Complete Legal Solutions</h2>
                 <p class="sh-desc">Comprehensive services across IP, arbitration, corporate, and litigation.</p>
             </div>
+
             <div class="services-grid-modern">
                 <a href="/arbitration.html" class="svc-modern-item">
-                    <div class="svc-modern-icon"><i class="fas fa-gavel"></i></div>
+                    <div class="svc-modern-icon"><i class="fas fa-gavel" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
                         <h6>Arbitration</h6>
                         <small>Commercial & investment</small>
                     </div>
-                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
                 <a href="/trademark.html" class="svc-modern-item">
-                    <div class="svc-modern-icon"><i class="fas fa-trademark"></i></div>
+                    <div class="svc-modern-icon"><i class="fas fa-trademark" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
                         <h6>Trademark</h6>
                         <small>Local & international</small>
                     </div>
-                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
                 <a href="/patent.html" class="svc-modern-item">
-                    <div class="svc-modern-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="svc-modern-icon"><i class="fas fa-microchip" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
                         <h6>Patent</h6>
                         <small>Full lifecycle</small>
                     </div>
-                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
                 <a href="/copyright.html" class="svc-modern-item">
-                    <div class="svc-modern-icon"><i class="fas fa-copyright"></i></div>
+                    <div class="svc-modern-icon"><i class="fas fa-copyright" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
                         <h6>Copyright</h6>
                         <small>Authors' rights</small>
                     </div>
-                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
                 <a href="/corporate-formation.html" class="svc-modern-item">
-                    <div class="svc-modern-icon"><i class="fas fa-building"></i></div>
+                    <div class="svc-modern-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
                         <h6>Corporate</h6>
                         <small>Formation & M&A</small>
                     </div>
-                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
                 <a href="/licensing.html" class="svc-modern-item">
-                    <div class="svc-modern-icon"><i class="fas fa-file-signature"></i></div>
+                    <div class="svc-modern-icon"><i class="fas fa-file-signature" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
                         <h6>Contracts</h6>
                         <small>Draft & negotiate</small>
                     </div>
-                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
                 <a href="/litigation.html" class="svc-modern-item">
-                    <div class="svc-modern-icon"><i class="fas fa-scale-balanced"></i></div>
+                    <div class="svc-modern-icon"><i class="fas fa-scale-balanced" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
                         <h6>IP Litigation</h6>
                         <small>Enforce & defend</small>
                     </div>
-                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
                 <a href="/criminal-litigation.html" class="svc-modern-item">
-                    <div class="svc-modern-icon"><i class="fas fa-shield-halved"></i></div>
+                    <div class="svc-modern-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
                         <h6>Criminal</h6>
                         <small>White-collar</small>
                     </div>
-                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
             </div>
+
             <div class="text-center mt-5">
                 <a href="/services.html" class="btn-rich-outline">
                     <span>View All Services</span>
-                    <i class="fas fa-arrow-right"></i>
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-         PROCESS - Rich Timeline
+         PROCESS - المنهجية
          ============================================================ -->
     <section class="process-rich">
         <div class="process-rich-pattern"></div>
@@ -671,36 +703,41 @@
                 <h2 class="sh-title">How We Work</h2>
                 <p class="sh-desc">A structured approach to every case.</p>
             </div>
+
             <div class="process-timeline">
                 <div class="pt-line"></div>
+
                 <div class="pt-step">
                     <div class="pt-node">
                         <div class="pt-num">01</div>
-                        <i class="fas fa-comments"></i>
+                        <i class="fas fa-comments" aria-hidden="true"></i>
                     </div>
                     <h6>Consultation</h6>
                     <p>Discuss case & goals</p>
                 </div>
+
                 <div class="pt-step">
                     <div class="pt-node">
                         <div class="pt-num">02</div>
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search" aria-hidden="true"></i>
                     </div>
                     <h6>Analysis</h6>
                     <p>Review & strategy</p>
                 </div>
+
                 <div class="pt-step">
                     <div class="pt-node">
                         <div class="pt-num">03</div>
-                        <i class="fas fa-chess"></i>
+                        <i class="fas fa-chess" aria-hidden="true"></i>
                     </div>
                     <h6>Execution</h6>
                     <p>File, negotiate, litigate</p>
                 </div>
+
                 <div class="pt-step">
                     <div class="pt-node">
                         <div class="pt-num">04</div>
-                        <i class="fas fa-flag-checkered"></i>
+                        <i class="fas fa-flag-checkered" aria-hidden="true"></i>
                     </div>
                     <h6>Resolution</h6>
                     <p>Closed with follow-up</p>
@@ -710,7 +747,7 @@
     </section>
 
     <!-- ============================================================
-         TEAM - Featured (Personal Photo KEPT)
+         TEAM - فريق العمل
          ============================================================ -->
     <section class="team-featured">
         <div class="container">
@@ -720,25 +757,27 @@
                 <h2 class="sh-title">Meet Our Lead Attorney</h2>
                 <p class="sh-desc">Every case handled personally with dedication and expertise.</p>
             </div>
+
             <div class="team-featured-card">
                 <div class="tfc-portrait">
                     <div class="tfc-image-wrap">
-                        <img src="/images/team/walid-profile.jpg" 
-     alt="Walid Mohamed Abu Al-Ela"
-     loading="lazy"
-     onerror="this.onerror=null; this.src='/images/team/walid-profile.png'; this.onerror=function(){this.src='/images/logo arb ip.png';};">
+                        <img src="/images/team/walid-profile.jpg"
+                             alt="Walid Mohamed Abu Al-Ela"
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='/images/team/walid-profile.png';">
                     </div>
-                    <div class="tfc-badge-top"><i class="fas fa-award"></i></div>
-                    <div class="tfc-badge-bottom"><i class="fas fa-gavel"></i></div>
+                    <div class="tfc-badge-top"><i class="fas fa-award" aria-hidden="true"></i></div>
+                    <div class="tfc-badge-bottom"><i class="fas fa-gavel" aria-hidden="true"></i></div>
                 </div>
+
                 <div class="tfc-content">
                     <span class="tfc-role">Founder & Lead Attorney</span>
                     <h3 class="tfc-name">Walid Mohamed Abu Al-Ela</h3>
                     <div class="tfc-tags">
-                        <span><i class="fas fa-check"></i> IP Arbitrator</span>
-                        <span><i class="fas fa-check"></i> Arbitrator</span>
-                        <span><i class="fas fa-check"></i> Patent Agent</span>
-                        <span><i class="fas fa-check"></i> Master's Researcher</span>
+                        <span><i class="fas fa-check" aria-hidden="true"></i> IP Arbitrator</span>
+                        <span><i class="fas fa-check" aria-hidden="true"></i> Arbitrator</span>
+                        <span><i class="fas fa-check" aria-hidden="true"></i> Patent Agent</span>
+                        <span><i class="fas fa-check" aria-hidden="true"></i> Master's Researcher</span>
                     </div>
                     <p class="tfc-bio">
                         Accredited IP Arbitrator (2025), Registered Arbitrator since 2013,
@@ -748,13 +787,13 @@
                     <div class="tfc-actions">
                         <a href="/lawyers.html" class="btn-rich-primary">
                             <span>View Full Profile</span>
-                            <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
                         <div class="tfc-social">
-                            <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook"></i></a>
-                            <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                            <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/in/walid-abu-al-ela-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                            <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                            <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -763,7 +802,7 @@
     </section>
 
     <!-- ============================================================
-         TESTIMONIALS
+         TESTIMONIALS - آراء العملاء
          ============================================================ -->
     <section class="testimonials-modern">
         <div class="container">
@@ -773,14 +812,17 @@
                 <h2 class="sh-title">What Our Clients Say</h2>
                 <p class="sh-desc">Feedback from clients across our different practice areas.</p>
             </div>
+
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="testimonial-modern-card">
-                        <div class="tmc-quote"><i class="fas fa-quote-left"></i></div>
-                        <div class="tmc-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="tmc-quote"><i class="fas fa-quote-left" aria-hidden="true"></i></div>
+                        <div class="tmc-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                         <p>"Excellent IP service — trademark portfolio handled professionally from filing through registration."</p>
                         <div class="tmc-author">
-                            <div class="tmc-avatar"><i class="fas fa-user-tie"></i></div>
+                            <div class="tmc-avatar"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
                             <div>
                                 <strong>Corporate Client</strong>
                                 <small>Trademark Portfolio</small>
@@ -788,13 +830,16 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="testimonial-modern-card">
-                        <div class="tmc-quote"><i class="fas fa-quote-left"></i></div>
-                        <div class="tmc-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="tmc-quote"><i class="fas fa-quote-left" aria-hidden="true"></i></div>
+                        <div class="tmc-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                         <p>"Strategic advice on a commercial arbitration — clear legal analysis and effective recommendations."</p>
                         <div class="tmc-author">
-                            <div class="tmc-avatar"><i class="fas fa-user-tie"></i></div>
+                            <div class="tmc-avatar"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
                             <div>
                                 <strong>Commercial Client</strong>
                                 <small>Arbitration Advisory</small>
@@ -802,13 +847,16 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="testimonial-modern-card">
-                        <div class="tmc-quote"><i class="fas fa-quote-left"></i></div>
-                        <div class="tmc-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="tmc-quote"><i class="fas fa-quote-left" aria-hidden="true"></i></div>
+                        <div class="tmc-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                         <p>"Guided us through company formation and compliance from start to finish — reliable legal support."</p>
                         <div class="tmc-author">
-                            <div class="tmc-avatar"><i class="fas fa-user-tie"></i></div>
+                            <div class="tmc-avatar"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
                             <div>
                                 <strong>Business Client</strong>
                                 <small>Corporate Formation</small>
@@ -817,6 +865,7 @@
                     </div>
                 </div>
             </div>
+
             <p class="text-center text-muted small mt-4">
                 <em>Client identities are confidential per attorney-client privilege.</em>
             </p>
@@ -824,7 +873,7 @@
     </section>
 
     <!-- ============================================================
-         FAQ
+         FAQ - الأسئلة الشائعة
          ============================================================ -->
     <section class="faq-modern">
         <div class="container">
@@ -833,12 +882,13 @@
                 <span class="sh-label">FAQ</span>
                 <h2 class="sh-title">Frequently Asked Questions</h2>
             </div>
+
             <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="accordion faq-rich-accordion" id="faq1">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#q1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
                                     What areas do you specialize in?
                                 </button>
                             </h2>
@@ -848,9 +898,10 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
                                     How long does trademark registration take?
                                 </button>
                             </h2>
@@ -860,9 +911,10 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
                                     Do you handle cases outside Egypt?
                                 </button>
                             </h2>
@@ -874,11 +926,12 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-6">
                     <div class="accordion faq-rich-accordion" id="faq2">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
                                     How can I schedule a consultation?
                                 </button>
                             </h2>
@@ -888,9 +941,10 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
                                     Are communications confidential?
                                 </button>
                             </h2>
@@ -900,9 +954,10 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q6">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q6">
                                     What languages do you work in?
                                 </button>
                             </h2>
@@ -919,24 +974,25 @@
     </section>
 
     <!-- ============================================================
-         FINAL CTA
+         FINAL CTA - الدعوة النهائية
          ============================================================ -->
     <section class="final-cta-rich">
         <div class="fcr-decoration-1"></div>
         <div class="fcr-decoration-2"></div>
         <div class="fcr-decoration-3"></div>
+
         <div class="container">
             <div class="fcr-content">
-                <div class="fcr-badge"><i class="fas fa-handshake"></i></div>
+                <div class="fcr-badge"><i class="fas fa-handshake" aria-hidden="true"></i></div>
                 <h2>Ready to Protect Your Business?</h2>
                 <p>Schedule a confidential consultation with our expert attorney today.</p>
                 <div class="fcr-buttons">
                     <a href="/contact.html" class="btn-rich-primary light">
                         <span>Contact Us</span>
-                        <i class="fas fa-arrow-right"></i>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </a>
                     <a href="/consultation.html" class="btn-rich-ghost">
-                        <i class="fas fa-gavel"></i>
+                        <i class="fas fa-gavel" aria-hidden="true"></i>
                         <span>Paid Consultation</span>
                     </a>
                 </div>
@@ -945,23 +1001,27 @@
     </section>
 
     <!-- ============================================================
-         FOOTER
+         FOOTER - التذييل
          ============================================================ -->
     <footer class="footer-rich">
         <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
+
+                <!-- Brand column / عمود العلامة -->
                 <div class="col-lg-4">
                     <img src="/images/logo arb ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm" class="footer-logo" onerror="this.style.display='none';">
                     <h5 class="mt-3">Walid Mohamed Abu Al-Ela</h5>
                     <p class="footer-desc">Law · Arbitration · Intellectual Property. Serving clients with dedication since 2013.</p>
                     <div class="footer-social">
-                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/in/%D9%88%D9%84%D9%8A%D8%AF-%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7-a23062128/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/walid-abu-al-ela-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/20111257219" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="https://t.me/+20111257219" target="_blank" rel="noopener noreferrer" title="Telegram" aria-label="Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a>
                     </div>
                 </div>
+
+                <!-- Quick links / روابط سريعة -->
                 <div class="col-lg-2 col-6">
                     <h6 class="footer-heading">Quick Links</h6>
                     <ul class="footer-list">
@@ -973,16 +1033,20 @@
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
                 </div>
+
+                <!-- Contact info / معلومات الاتصال -->
                 <div class="col-lg-3 col-6">
                     <h6 class="footer-heading">Contact</h6>
                     <ul class="footer-list footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> 10th of Ramadan, Cairo, Egypt</li>
-                        <li><i class="fas fa-phone"></i> <a href="tel:+20111257219" style="color:inherit;text-decoration:none;">+20 111257219</a></li>
-                        <li><i class="fas fa-phone"></i> <a href="tel:+201018437396" style="color:inherit;text-decoration:none;">+20 1018437396</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:walidlegal.ippro@gmail.com" style="color:inherit;text-decoration:none;">walidlegal.ippro@gmail.com</a></li>
-                        <li><i class="fas fa-clock"></i> Sat - Thu: 9am - 8pm</li>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 10th of Ramadan, Cairo, Egypt</li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+20111257219">+20 111257219</a></li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+201018437396">+20 1018437396</a></li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:walidlegal.ippro@gmail.com">walidlegal.ippro@gmail.com</a></li>
+                        <li><i class="fas fa-clock" aria-hidden="true"></i> Sat - Thu: 9am - 8pm</li>
                     </ul>
                 </div>
+
+                <!-- Legal links / روابط قانونية -->
                 <div class="col-lg-3">
                     <h6 class="footer-heading">Legal</h6>
                     <ul class="footer-list">
@@ -991,16 +1055,25 @@
                         <li><a href="/cookie-policy.html">Cookie Policy</a></li>
                     </ul>
                 </div>
+
             </div>
+
             <div class="footer-bottom">
                 <p>© 2026 Walid Mohamed Abu Al-Ela Law Firm. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+    <!-- Back to top button / زر العودة لأعلى -->
+    <button id="backToTop" title="Back to Top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
 
+    <!-- ============================================================
+         SCRIPTS - السكربتات
+         ============================================================ -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
+
 </body>
 </html>
