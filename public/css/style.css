@@ -3,83 +3,26 @@
    WALID ABU ALELA LAW FIRM — MASTER STYLESHEET
    ورقة الأنماط الشاملة - مكتب وليد أبو العلا للمحاماة
    
-   VERSION / الإصدار: v12.0 (Comprehensive Edition)
+   VERSION / الإصدار: v13.0 (Unified Buttons Edition)
    UPDATED / آخر تحديث: 2026
-   
-   ─────────────────────────────────────────────────────────────────────────────
-   TABLE OF CONTENTS / جدول المحتويات
-   ─────────────────────────────────────────────────────────────────────────────
-   
-   01. CSS Variables & Design System      | متغيرات التصميم
-   02. Reset & Base Styles                | إعادة التعيين والأساسيات
-   03. RTL Support                        | دعم الكتابة من اليمين
-   04. Trial Banner                       | الشريط التجريبي
-   05. Navbar + Language Switcher         | شريط التنقل + زر اللغة
-   06. Hero Section                       | قسم البانر الرئيسي
-   07. Page Header                        | رأس الصفحات الداخلية
-   08. Feature / Service / Team Cards     | بطاقات الميزات والخدمات والفريق
-   09. Blog Cards & Testimonials          | بطاقات المدونة والآراء
-   10. CTA Section                        | قسم الدعوة للتواصل
-   11. Footer                             | التذييل
-   12. Buttons                            | الأزرار
-   13. Social Links                       | روابط التواصل الاجتماعي
-   14. Forms                              | النماذج
-   15. Utilities & Helpers                | أدوات مساعدة
-   16. Animations                         | الحركات
-   17. Back to Top                        | زر العودة للأعلى
-   18. Premium Homepage                   | الصفحة الرئيسية الفاخرة
-   19. Logo Showcase                      | عرض اللوجو
-   20. Services Modern                    | الخدمات الحديثة
-   21. Process Timeline                   | خطوات العمل
-   22. Team Featured                      | فريق العمل
-   23. Testimonials Modern                | آراء العملاء
-   24. FAQ Accordion                      | الأسئلة الشائعة
-   25. Final CTA & Footer Rich            | الدعوة والتذييل الفاخر
-   26. Service Pages                      | صفحات الخدمات
-   27. Responsive                         | التجاوب
-   28. Accessibility & Print              | إمكانية الوصول والطباعة
-   
-   ─────────────────────────────────────────────────────────────────────────────
-   HOW TO USE / طريقة الاستخدام
-   ─────────────────────────────────────────────────────────────────────────────
-   Append the entire content of this file to your style.css.
-   Or replace your existing file completely.
-   
-   أضف محتوى هذا الملف بالكامل إلى ملف style.css الخاص بك.
-   أو استبدل ملفك الحالي بالكامل.
    ============================================================================
    ============================================================================ */
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    01. CSS VARIABLES & DESIGN SYSTEM — متغيرات التصميم
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Central configuration for the entire design system — colors, spacing,
-   typography, shadows, and z-index layering. All other sections reference
-   these variables for consistency and easy maintenance.
-   
-   تعريف مركزي لنظام التصميم بالكامل — الألوان والمسافات والخطوط والظلال
-   وطبقات الترتيب. جميع الأقسام الأخرى تستخدم هذه المتغيرات لضمان
-   التناسق وسهولة الصيانة.
    ============================================================================ */
 :root {
 
-    /* ─────────────────────────────────────────────────────────────────────
-       Brand Colors / ألوان الهوية
-       ───────────────────────────────────────────────────────────────────── */
-    --primary-color: #000000;       /* Deep black — main brand color */
-    --primary-light: #1A1A1A;       /* Slightly lighter black for gradients */
-    --primary-dark: #000000;        /* Pure black */
-    --accent-color: #C9A961;        /* Signature gold */
-    --accent-light: #D4B872;        /* Lighter gold for highlights */
-    --accent-dark: #A88947;         /* Darker gold for depth */
+    /* Brand Colors / ألوان الهوية */
+    --primary-color: #000000;
+    --primary-light: #1A1A1A;
+    --primary-dark: #000000;
+    --accent-color: #C9A961;
+    --accent-light: #D4B872;
+    --accent-dark: #A88947;
 
-    /* ─────────────────────────────────────────────────────────────────────
-       Neutral Palette / الألوان المحايدة
-       ───────────────────────────────────────────────────────────────────── */
+    /* Neutral Palette / الألوان المحايدة */
     --white: #FFFFFF;
     --off-white: #FAFAFA;
     --light-bg: #F8F9FA;
@@ -91,17 +34,13 @@
     --dark-text: #212529;
     --dark-text-soft: #495057;
 
-    /* ─────────────────────────────────────────────────────────────────────
-       Semantic Colors / الألوان الدلالية
-       ───────────────────────────────────────────────────────────────────── */
+    /* Semantic Colors / الألوان الدلالية */
     --success: #28A745;
     --info: #17A2B8;
     --warning: #FFC107;
     --danger: #DC3545;
 
-    /* ─────────────────────────────────────────────────────────────────────
-       Shadow Scale / مقياس الظلال
-       ───────────────────────────────────────────────────────────────────── */
+    /* Shadow Scale / مقياس الظلال */
     --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.10);
@@ -109,40 +48,30 @@
     --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
     --shadow-gold: 0 8px 20px rgba(201, 169, 97, 0.25);
 
-    /* ─────────────────────────────────────────────────────────────────────
-       Transition Durations / مدة الحركة
-       ───────────────────────────────────────────────────────────────────── */
+    /* Transition Durations / مدة الحركة */
     --transition-fast: all 0.15s ease;
     --transition: all 0.30s ease;
     --transition-slow: all 0.50s ease;
 
-    /* ─────────────────────────────────────────────────────────────────────
-       Border Radius / استدارة الحدود
-       ───────────────────────────────────────────────────────────────────── */
+    /* Border Radius / استدارة الحدود */
     --radius-sm: 6px;
     --radius: 10px;
     --radius-lg: 16px;
     --radius-xl: 24px;
     --radius-pill: 999px;
 
-    /* ─────────────────────────────────────────────────────────────────────
-       Typography Families / عائلات الخطوط
-       ───────────────────────────────────────────────────────────────────── */
+    /* Typography Families / عائلات الخطوط */
     --font-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-arabic: 'Cairo', 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
     --font-serif: 'Playfair Display', Georgia, serif;
     --font-mono: 'Courier New', monospace;
 
-    /* ─────────────────────────────────────────────────────────────────────
-       Layout Dimensions / أبعاد التخطيط
-       ───────────────────────────────────────────────────────────────────── */
-    --banner-height: 50px;       /* Trial banner height */
-    --navbar-height: 80px;       /* Main navbar height */
-    --container-max: 1200px;     /* Max content width */
+    /* Layout Dimensions / أبعاد التخطيط */
+    --banner-height: 50px;
+    --navbar-height: 80px;
+    --container-max: 1200px;
 
-    /* ─────────────────────────────────────────────────────────────────────
-       Z-Index Layers / طبقات الترتيب
-       ───────────────────────────────────────────────────────────────────── */
+    /* Z-Index Layers / طبقات الترتيب */
     --z-base: 1;
     --z-dropdown: 100;
     --z-sticky: 500;
@@ -155,35 +84,20 @@
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    02. RESET & BASE STYLES — إعادة التعيين والأساسيات
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Normalizes browser defaults and establishes global typography, colors,
-   and spacing. Also prevents horizontal scrolling which can break layouts.
-   
-   توحيد افتراضيات المتصفح وضبط الخطوط والألوان والمسافات العامة.
-   كما يمنع التمرير الأفقي الذي قد يكسر التصميم.
    ============================================================================ */
 
-/* ---------- Universal Box Model / نموذج الصندوق الشامل ---------- */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
-/* ---------- HTML Root / جذر الصفحة ---------- */
 html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
 }
 
-/* ---------- Body & HTML — Prevent Overflow / منع التمرير الأفقي ---------- */
-html,
-body {
+html, body {
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
@@ -191,7 +105,6 @@ body {
     padding: 0;
 }
 
-/* ---------- Body Base / أساس الصفحة ---------- */
 body {
     font-family: var(--font-primary);
     color: var(--dark-text);
@@ -203,27 +116,23 @@ body {
     position: relative;
 }
 
-/* ---------- Arabic Typography / الخطوط العربية ---------- */
 [dir="rtl"] body,
 [dir="rtl"] {
     font-family: var(--font-arabic);
     line-height: 1.8;
 }
 
-/* ---------- Text Selection / تحديد النص ---------- */
 ::selection {
     background: var(--accent-color);
     color: var(--primary-color);
 }
 
-/* ---------- Images / الصور ---------- */
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-/* ---------- Anchor Links / الروابط ---------- */
 a {
     color: var(--accent-color);
     text-decoration: none;
@@ -234,7 +143,6 @@ a:hover {
     color: var(--accent-dark);
 }
 
-/* ---------- Headings / العناوين ---------- */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.3;
@@ -249,15 +157,9 @@ h4 { font-size: 1.25rem; }
 h5 { font-size: 1.1rem; }
 h6 { font-size: 1rem; }
 
-/* ---------- Paragraphs / الفقرات ---------- */
-p {
-    margin-bottom: 1rem;
-}
+p { margin-bottom: 1rem; }
 
-/* ---------- Lists / القوائم ---------- */
-ul, ol {
-    padding-left: 1.5rem;
-}
+ul, ol { padding-left: 1.5rem; }
 
 [dir="rtl"] ul,
 [dir="rtl"] ol {
@@ -265,13 +167,11 @@ ul, ol {
     padding-right: 1.5rem;
 }
 
-/* ---------- Buttons Base Reset / إعادة تعيين الأزرار ---------- */
 button {
     font-family: inherit;
     cursor: pointer;
 }
 
-/* ---------- Container / الحاوية ---------- */
 .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -282,70 +182,29 @@ button {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    03. RTL SUPPORT — دعم الكتابة من اليمين
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Flips margin and text alignment utility classes when the document
-   direction is RTL (Arabic). Mirrors Bootstrap-like utilities.
-   
-   يقلب الهوامش ومحاذاة النص عند تفعيل الوضع العربي. يطابق أدوات
-   مشابهة لـ Bootstrap.
    ============================================================================ */
 
-/* ---------- Margin Start Auto (right in RTL) / الهامش التلقائي ---------- */
 [dir="rtl"] .ms-auto {
     margin-right: auto !important;
     margin-left: 0 !important;
 }
 
-/* ---------- Margin End Utilities / هوامش النهاية ---------- */
-[dir="rtl"] .me-1 {
-    margin-left: 0.25rem !important;
-    margin-right: 0 !important;
-}
+[dir="rtl"] .me-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-3 { margin-left: 1rem !important; margin-right: 0 !important; }
 
-[dir="rtl"] .me-2 {
-    margin-left: 0.5rem !important;
-    margin-right: 0 !important;
-}
+[dir="rtl"] .ms-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-3 { margin-right: 1rem !important; margin-left: 0 !important; }
 
-[dir="rtl"] .me-3 {
-    margin-left: 1rem !important;
-    margin-right: 0 !important;
-}
-
-/* ---------- Margin Start Utilities / هوامش البداية ---------- */
-[dir="rtl"] .ms-2 {
-    margin-right: 0.5rem !important;
-    margin-left: 0 !important;
-}
-
-[dir="rtl"] .ms-3 {
-    margin-right: 1rem !important;
-    margin-left: 0 !important;
-}
-
-/* ---------- Text Alignment / محاذاة النص ---------- */
-[dir="rtl"] .text-start { text-align: right !important; }
-[dir="rtl"] .text-end { text-align: left !important; }
-[dir="rtl"] .text-md-end { text-align: left !important; }
+[dir="rtl"] .text-start   { text-align: right !important; }
+[dir="rtl"] .text-end     { text-align: left !important; }
+[dir="rtl"] .text-md-end  { text-align: left !important; }
 [dir="rtl"] .text-md-start { text-align: right !important; }
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    04. TRIAL BANNER — الشريط التجريبي
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Fixed top banner announcing the trial version. Uses flex layout to keep
-   icon + text + icon evenly centered. JS adjusts body padding and navbar
-   position based on banner height.
-   
-   شريط علوي ثابت للإعلان عن النسخة التجريبية. يستخدم flex لترتيب
-   الأيقونة والنص والأيقونة. JS يضبط حشو الصفحة وموضع النافبار.
    ============================================================================ */
 #trial-banner {
     position: fixed;
@@ -368,7 +227,6 @@ button {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* ---------- Banner Icons / أيقونات الشريط ---------- */
 #trial-banner i {
     font-size: 1.1rem;
     animation: pulse-icon 2s ease-in-out infinite;
@@ -381,23 +239,7 @@ button {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    05. NAVBAR + LANGUAGE SWITCHER — شريط التنقل + زر اللغة
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Fixed navigation bar with brand block (logo + firm name) on one side,
-   and menu links + Client Portal button + Language Switcher on the other.
-   Shrinks slightly on scroll for a compact appearance.
-   
-   Both the "Client Portal" button and the "Language Switcher" button
-   share the exact same premium gold-bordered pill design.
-   
-   شريط تنقل ثابت يحتوي على العلامة (لوجو + اسم المكتب) من جهة، وعلى
-   الجانب الآخر روابط القائمة + زر بوابة العميل + زر تبديل اللغة.
-   يتقلص قليلاً عند التمرير.
-   
-   كلا الزرين (بوابة العميل + تبديل اللغة) بنفس تصميم الحبة الذهبية تماماً.
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -438,7 +280,6 @@ button {
     transform: scale(1.02);
 }
 
-/* ---------- Logo Image / صورة اللوجو ---------- */
 .navbar-brand img {
     height: 50px;
     max-height: 50px;
@@ -463,7 +304,6 @@ button {
     margin-left: 12px;
 }
 
-/* ---------- Brand Text Block / كتلة نص العلامة ---------- */
 .navbar-brand > div {
     display: flex;
     flex-direction: column;
@@ -476,7 +316,6 @@ button {
     align-items: flex-end;
 }
 
-/* ---------- Firm Name / اسم المكتب ---------- */
 .navbar-brand .firm-name,
 .navbar-brand .fw-bold {
     font-family: var(--font-primary);
@@ -496,7 +335,6 @@ button {
     font-size: 1.05rem;
 }
 
-/* ---------- Firm Subtitle / العنوان الفرعي ---------- */
 .navbar-brand .firm-sub,
 .navbar-brand small {
     font-family: var(--font-primary);
@@ -532,7 +370,6 @@ button {
     z-index: 2;
 }
 
-/* ---------- Underline Animation / حركة الخط السفلي ---------- */
 .navbar-nav .nav-link::after {
     content: '';
     position: absolute;
@@ -573,146 +410,162 @@ button {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23C9A961' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+
 /* ═══════════════════════════════════════════════════════════════════════════
-   05.5 ★★★ THE UNIFIED NAVBAR BUTTONS ★★★
-        زرّي النافبار الموحدين (بوابة العميل + تبديل اللغة)
+   05.5 ★★★ UNIFIED NAVBAR BUTTONS — الزران الموحدان ★★★
+        (نقطة الحقيقة الوحيدة — Single Source of Truth)
    ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Both buttons — Client Portal AND Language Switcher — share the exact
-   same premium gold-bordered pill design. This is a single source of
-   truth for their appearance.
+   DESIGN / التصميم النهائي:
+   ┌──────────────────────────┬──────────────────────────┐
+   │  🌐 Language Button       │  🔒 Client Portal Button │
+   │  SOLID GOLD (ممتلئ)       │  OUTLINED GOLD (مفرّغ)   │
+   │  خلفية ذهبية + نص أسود    │  خلفية شفافة + حد ذهبي    │
+   └──────────────────────────┴──────────────────────────┘
    
-   كلا الزرين — بوابة العميل وتبديل اللغة — بنفس تصميم الحبة الذهبية
-   الفخم تماماً. هذا هو المصدر الوحيد لشكلهما.
+   Both share IDENTICAL:
+   • Height      : 40px
+   • Padding     : 10px 20px
+   • Radius      : 999px (Pill)
+   • Font-size   : 0.85rem
+   • Alignment   : Center / Middle
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ─── Combined Selector — both buttons get identical styles ──────────── */
-/* ─── محدد مشترك — كلا الزرين يحصلان على نفس الأنماط ──────────────── */
+/* ─── 05.5.1 Shared Base — both buttons have identical size & shape ──── */
 html body .navbar .btn-outline-light,
 html body .navbar .btn-outline-light.btn-sm,
-html body .navbar .language-switcher.in-navbar .lang-btn,
-html body .navbar .language-switcher.in-navbar a.lang-btn,
-html body .navbar .lang-nav-item .language-switcher .lang-btn {
-
-    /* Layout / التخطيط */
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
+html body .navbar .lang-nav-item .language-switcher .lang-btn,
+html body .navbar .language-switcher.in-navbar .lang-btn {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 8px !important;
     padding: 10px 20px !important;
     margin: 0 !important;
-    height: auto !important;
     min-height: 40px !important;
-    min-width: fit-content !important;
+    height: 40px !important;
     width: auto !important;
-
-    /* Shape / الشكل */
-    border: 2px solid var(--accent-color, #C9A961) !important;
+    min-width: fit-content !important;
     border-radius: 999px !important;
-    background: transparent !important;
     box-sizing: border-box !important;
-
-    /* Colors / الألوان */
-    color: var(--accent-color, #C9A961) !important;
-
-    /* Typography / الخط */
     font-family: inherit !important;
     font-weight: 700 !important;
     font-size: 0.85rem !important;
-    letter-spacing: 0.4px !important;
-    line-height: 1.4 !important;
+    letter-spacing: 0.3px !important;
+    line-height: 1 !important;
     text-decoration: none !important;
     text-transform: none !important;
     white-space: nowrap !important;
-
-    /* Effects / التأثيرات */
-    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.18) !important;
     transition: all 0.3s ease !important;
     cursor: pointer !important;
+    outline: none !important;
+    vertical-align: middle !important;
     position: relative !important;
-    overflow: hidden !important;
-    outline: none !important;
 }
 
-/* ─── Hover State — identical for both buttons ─────────────────────── */
-/* ─── حالة التحويم — متطابقة لكلا الزرين ────────────────────────── */
+/* ─── 05.5.2 Language Button — SOLID GOLD (ذهبي ممتلئ) ───────────────── */
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
+html body .navbar .lang-nav-item .language-switcher .lang-btn,
+html body .navbar .language-switcher.in-navbar .lang-btn {
+    background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
+    color: #000000 !important;
+    border: 2px solid #C9A961 !important;
+    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.40) !important;
+}
+
+/* ─── 05.5.3 Client Portal Button — OUTLINED GOLD (ذهبي مفرّغ) ──────── */
+html body .navbar .btn-outline-light,
+html body .navbar .btn-outline-light.btn-sm {
+    background: transparent !important;
+    color: #C9A961 !important;
+    border: 2px solid #C9A961 !important;
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.15) !important;
+}
+
+/* ─── 05.5.4 Hover — BOTH turn gold-filled + black text + lift ──────── */
 html body .navbar .btn-outline-light:hover,
-html body .navbar .btn-outline-light.btn-sm:hover,
 html body .navbar .btn-outline-light:focus,
-html body .navbar .language-switcher.in-navbar .lang-btn:hover,
-html body .navbar .language-switcher.in-navbar .lang-btn:focus,
-html body .navbar .lang-nav-item .language-switcher .lang-btn:hover {
-    background: linear-gradient(135deg, var(--accent-color, #C9A961), var(--accent-dark, #A88947)) !important;
-    color: var(--primary-color, #000) !important;
-    border-color: var(--accent-color, #C9A961) !important;
+html body .navbar .btn-outline-light.btn-sm:hover,
+html body .navbar .btn-outline-light.btn-sm:focus,
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover,
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:focus,
+html body .navbar .lang-nav-item .language-switcher .lang-btn:hover,
+html body .navbar .language-switcher.in-navbar .lang-btn:hover {
+    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+    color: #000000 !important;
+    border-color: #D4B872 !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 8px 22px rgba(201, 169, 97, 0.5) !important;
+    box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55) !important;
     outline: none !important;
 }
 
-/* ─── Icons Inside Buttons / الأيقونات داخل الأزرار ─────────────────── */
+/* ─── 05.5.5 Icons inside both buttons ──────────────────────────────── */
 html body .navbar .btn-outline-light i,
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn i,
+html body .navbar .lang-nav-item .language-switcher .lang-btn i,
 html body .navbar .language-switcher.in-navbar .lang-btn i {
     font-size: 0.9rem !important;
     color: inherit !important;
-    transition: transform 0.3s ease !important;
     line-height: 1 !important;
     display: inline-flex !important;
     align-items: center !important;
+    transition: transform 0.3s ease !important;
 }
 
-/* ─── Language Button Icon Rotation on Hover / دوران أيقونة اللغة ─── */
+/* Language globe rotates on hover */
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover i,
 html body .navbar .language-switcher.in-navbar .lang-btn:hover i {
     transform: rotate(180deg) !important;
 }
 
-/* ─── Text Spans Inside Buttons / النصوص داخل الأزرار ──────────────── */
+/* ─── 05.5.6 Text spans inside buttons ──────────────────────────────── */
 html body .navbar .btn-outline-light span,
-html body .navbar .language-switcher.in-navbar .lang-btn span {
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn span,
+html body .navbar .lang-nav-item .language-switcher .lang-btn span {
     display: inline-block !important;
     color: inherit !important;
     font-size: inherit !important;
     line-height: inherit !important;
 }
 
-/* ─── Language Switcher Container — MUST be inline-flex, no fixed pos ─ */
-/* ─── حاوية زر اللغة — يجب أن تكون inline-flex بلا تثبيت ────────── */
-html body .navbar .language-switcher.in-navbar,
-html body .navbar .language-switcher {
+/* ─── 05.5.7 Language Switcher wrapper — must be inline, no fixed pos ─ */
+html body .navbar .lang-nav-item .language-switcher,
+html body .navbar .lang-nav-item .language-switcher.in-navbar {
     position: static !important;
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
+    inset: auto !important;
     display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
     visibility: visible !important;
     opacity: 1 !important;
-    margin: 0 0 0 8px !important;
-    padding: 0 !important;
-    z-index: auto !important;
     pointer-events: auto !important;
     transform: none !important;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    min-width: auto !important;
-    width: auto !important;
-    height: auto !important;
+    z-index: auto !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
 }
 
-[dir="rtl"] html body .navbar .language-switcher.in-navbar,
-html[dir="rtl"] body .navbar .language-switcher.in-navbar {
-    margin: 0 8px 0 0 !important;
-}
-
-/* ─── Nav-Item Wrapper (if wrapped in <li>) / عنصر LI إن وُجد ─────── */
+/* ─── 05.5.8 The <li> wrapper — aligns with Client Portal <li> ──────── */
 html body .navbar .nav-item.lang-nav-item,
 html body .navbar .navbar-nav > .nav-item.lang-nav-item {
     display: inline-flex !important;
     align-items: center !important;
+    justify-content: center !important;
+    list-style: none !important;
     margin: 0 0 0 8px !important;
     padding: 0 !important;
-    list-style: none !important;
+    width: auto !important;
+    height: auto !important;
+    align-self: center !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
 }
 
 [dir="rtl"] html body .navbar .nav-item.lang-nav-item,
@@ -720,7 +573,7 @@ html[dir="rtl"] body .navbar .navbar-nav > .nav-item.lang-nav-item {
     margin: 0 8px 0 0 !important;
 }
 
-/* ─── Hide Any Legacy Floating Language Button / إخفاء الزر العائم ── */
+/* ─── 05.5.9 Hide any legacy floating language button ───────────────── */
 html body > .language-switcher:not(.in-navbar),
 html body > .language-switcher {
     display: none !important;
@@ -728,6 +581,17 @@ html body > .language-switcher {
     opacity: 0 !important;
     pointer-events: none !important;
 }
+
+/* ─── 05.5.10 Desktop alignment — both buttons sit on same line ─────── */
+@media (min-width: 992px) {
+    html body .navbar .navbar-nav {
+        align-items: center !important;
+    }
+    html body .navbar .navbar-nav > li {
+        align-self: center !important;
+    }
+}
+
 
 /* ─────────────────────────────────────────────────────────────────────────
    05.6 DROPDOWN MENU — القائمة المنسدلة
@@ -774,22 +638,16 @@ html body > .language-switcher {
     opacity: 0.1;
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    05.7 NAVBAR RESPONSIVE — تجاوب النافبار
-   ─────────────────────────────────────────────────────────────────────────
-   On mobile, both buttons stretch to full width inside the collapsed
-   navigation for better touch targets.
-   
-   على الموبايل، الزران يأخذان عرضاً كاملاً داخل القائمة المنسدلة
-   لأهداف لمس أفضل.
    ───────────────────────────────────────────────────────────────────────── */
 @media (max-width: 991.98px) {
-    /* Navbar padding / حشو النافبار */
+
     .navbar {
         padding: 10px 0 !important;
     }
 
-    /* Collapsed menu container / حاوية القائمة المنسدلة */
     .navbar-collapse {
         background: var(--primary-color);
         padding: 20px 18px;
@@ -801,7 +659,6 @@ html body > .language-switcher {
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     }
 
-    /* Nav links / روابط النافبار */
     .navbar-nav .nav-link {
         padding: 12px 14px !important;
         margin-bottom: 4px !important;
@@ -809,25 +666,32 @@ html body > .language-switcher {
         font-size: 0.95rem !important;
     }
 
-    /* Both buttons — full width / الزران بعرض كامل */
-    html body .navbar .navbar-nav > li > .btn-outline-light,
-    html body .navbar .navbar-nav > li .language-switcher.in-navbar,
-    html body .navbar .navbar-nav > li.lang-nav-item {
-        width: 100% !important;
+    /* Both buttons — full width, stacked */
+    html body .navbar .navbar-nav > .nav-item.lang-nav-item {
         display: flex !important;
-        justify-content: center !important;
-        margin: 6px 0 !important;
-    }
-
-    html body .navbar .navbar-nav > li > .btn-outline-light,
-    html body .navbar .navbar-nav > li .language-switcher.in-navbar .lang-btn {
         width: 100% !important;
-        padding: 12px 20px !important;
-        font-size: 0.9rem !important;
-        min-height: 44px !important;
+        margin: 6px 0 !important;
+        justify-content: stretch !important;
     }
 
-    /* Dropdown inside mobile / قائمة منسدلة داخل الموبايل */
+    html body .navbar .lang-nav-item .language-switcher,
+    html body .navbar .lang-nav-item .language-switcher.in-navbar {
+        width: 100% !important;
+        justify-content: stretch !important;
+    }
+
+    html body .navbar .btn-outline-light,
+    html body .navbar .btn-outline-light.btn-sm,
+    html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
+    html body .navbar .lang-nav-item .language-switcher .lang-btn {
+        width: 100% !important;
+        min-height: 44px !important;
+        height: auto !important;
+        font-size: 0.9rem !important;
+        justify-content: center !important;
+    }
+
+    /* Dropdown inside mobile */
     .navbar-nav .dropdown-menu {
         position: static !important;
         background: rgba(255, 255, 255, 0.05);
@@ -844,7 +708,6 @@ html body > .language-switcher {
         font-size: 0.88rem;
     }
 
-    /* Brand on tablet / العلامة على التابلت */
     .navbar-brand img {
         height: 42px;
         max-height: 42px;
@@ -858,11 +721,9 @@ html body > .language-switcher {
         max-height: 36px;
         max-width: 120px;
     }
-
     .navbar-brand .firm-name {
         font-size: 0.85rem;
     }
-
     .navbar-brand .firm-sub {
         font-size: 0.62rem;
     }
@@ -872,33 +733,14 @@ html body > .language-switcher {
 /* ============================================================================
    END OF PART 1/5
    نهاية الجزء الأول من 5
-   ============================================================================
-   
-   NEXT / التالي:
-   Part 2/5 → Sections 06-10:
-     • Hero Section (Classic)
-     • Page Header
-     • Feature / Service / Team Cards
-     • Blog Cards & Testimonials
-     • CTA Section
    ============================================================================ */
    /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
+   END OF PART 1/5 — نهاية الجزء الأول من 5
+   ============================================================================ */
+
+
+/* ============================================================================
    06. HERO SECTION — قسم البانر الرئيسي
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Classic hero used on interior pages and non-premium homepages.
-   Features a full-bleed background image with a dark gradient overlay,
-   a radial gold highlight, and vertically centered content.
-   
-   Starts directly below the fixed navbar, so no content is hidden.
-   
-   البانر الكلاسيكي المستخدم في الصفحات الداخلية والصفحات التي لا تعتمد
-   على البانر الفاخر. يحتوي على صورة خلفية كاملة مع طبقة تعتيم متدرجة
-   وتوهج ذهبي دائري ومحتوى في المنتصف رأسياً.
-   
-   يبدأ مباشرةً أسفل شريط التنقل الثابت فلا يختفي أي محتوى.
    ============================================================================ */
 .hero-section {
     position: relative;
@@ -917,7 +759,6 @@ html body > .language-switcher {
     background-color: var(--primary-color);
 }
 
-/* ---------- Dark Gradient Overlay / طبقة التعتيم المتدرجة ---------- */
 .hero-section::before {
     content: "";
     position: absolute;
@@ -931,7 +772,6 @@ html body > .language-switcher {
     z-index: 1;
 }
 
-/* ---------- Radial Gold Highlight / توهج ذهبي دائري ---------- */
 .hero-section::after {
     content: "";
     position: absolute;
@@ -945,13 +785,11 @@ html body > .language-switcher {
     pointer-events: none;
 }
 
-/* ---------- Content Wrapper / حاوية المحتوى ---------- */
 .hero-section .container {
     position: relative;
     z-index: 2;
 }
 
-/* ---------- Hero Title / العنوان الرئيسي ---------- */
 .hero-section h1 {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
@@ -962,7 +800,6 @@ html body > .language-switcher {
     color: var(--white);
 }
 
-/* ---------- Hero Subtitle / العنوان الفرعي ---------- */
 .hero-section .lead {
     font-size: clamp(1rem, 1.5vw, 1.25rem);
     margin-bottom: 2rem;
@@ -972,7 +809,6 @@ html body > .language-switcher {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* ---------- Hero Buttons / أزرار البانر ---------- */
 .hero-buttons .btn {
     margin: 0.5rem;
     padding: 14px 32px;
@@ -988,7 +824,6 @@ html body > .language-switcher {
     box-shadow: var(--shadow-xl);
 }
 
-/* ---------- Hero Badge / شارة البانر ---------- */
 .hero-badge .badge {
     padding: 8px 18px;
     font-size: 0.85rem;
@@ -998,7 +833,6 @@ html body > .language-switcher {
     color: var(--primary-color);
 }
 
-/* ---------- Trust Indicators / مؤشرات الثقة ---------- */
 .trust-indicators {
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     padding-top: 1.5rem;
@@ -1010,18 +844,7 @@ html body > .language-switcher {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    07. PAGE HEADER — رأس الصفحات الداخلية
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Compact header used on interior pages (About, Services, Blog, Contact).
-   Features a dark gradient background with a radial gold accent in the
-   top-right corner and centered title + subtitle.
-   
-   رأس مضغوط يُستخدم في الصفحات الداخلية (من نحن، الخدمات، المدونة،
-   اتصل بنا). يحتوي على خلفية متدرجة داكنة مع لمسة ذهبية دائرية في
-   الزاوية العلوية اليمنى وعنوان + وصف في المنتصف.
    ============================================================================ */
 .page-header {
     position: relative;
@@ -1033,7 +856,6 @@ html body > .language-switcher {
     overflow: hidden;
 }
 
-/* ---------- Corner Gold Accent / لمسة ذهبية في الزاوية ---------- */
 .page-header::before {
     content: "";
     position: absolute;
@@ -1049,13 +871,11 @@ html body > .language-switcher {
     pointer-events: none;
 }
 
-/* ---------- Content Wrapper / حاوية المحتوى ---------- */
 .page-header .container {
     position: relative;
     z-index: 2;
 }
 
-/* ---------- Page Title / عنوان الصفحة ---------- */
 .page-header h1 {
     font-size: clamp(1.75rem, 4vw, 3rem);
     font-weight: 800;
@@ -1064,7 +884,6 @@ html body > .language-switcher {
     letter-spacing: -0.02em;
 }
 
-/* ---------- Page Subtitle / وصف الصفحة ---------- */
 .page-header .lead {
     font-size: clamp(1rem, 1.4vw, 1.2rem);
     opacity: 0.9;
@@ -1075,24 +894,7 @@ html body > .language-switcher {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    08. CARDS — FEATURE / SERVICE / TEAM — البطاقات
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Three card styles with shared hover animations:
-     • Feature Card — centered, circular icon top, subtle top gold line
-     • Service Card — left-aligned, icon + title + body
-     • Team Card — circular photo + name + role + social links
-   
-   All cards lift on hover and reveal a gold top accent.
-   
-   ثلاثة أنماط بطاقات بحركات تحويم مشتركة:
-     • بطاقة الميزة — متمركزة، أيقونة دائرية في الأعلى، خط ذهبي علوي
-     • بطاقة الخدمة — محاذاة يسار، أيقونة + عنوان + نص
-     • بطاقة فريق العمل — صورة دائرية + اسم + دور + روابط تواصل
-   
-   كل البطاقات ترتفع عند التحويم وتكشف عن لمسة ذهبية علوية.
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -1117,7 +919,6 @@ html body > .language-switcher {
     flex-direction: column;
 }
 
-/* ---------- Gold Top Line on Hover / خط ذهبي علوي عند التحويم ---------- */
 .feature-card::before {
     content: "";
     position: absolute;
@@ -1141,7 +942,6 @@ html body > .language-switcher {
     border-color: var(--accent-color);
 }
 
-/* ---------- Feature Icon / أيقونة الميزة ---------- */
 .feature-icon {
     width: 80px;
     height: 80px;
@@ -1165,7 +965,6 @@ html body > .language-switcher {
     box-shadow: var(--shadow-gold);
 }
 
-/* ---------- Feature Title / عنوان الميزة ---------- */
 .feature-card h4,
 .feature-card h5 {
     margin-bottom: 15px;
@@ -1173,7 +972,6 @@ html body > .language-switcher {
     color: var(--dark-text);
 }
 
-/* ---------- Feature Body / نص الميزة ---------- */
 .feature-card p {
     color: var(--gray-text);
     margin-bottom: 0;
@@ -1210,7 +1008,6 @@ html body > .language-switcher {
     margin-bottom: 15px;
 }
 
-/* ---------- Smaller Icon for Service Card / أيقونة أصغر لبطاقة الخدمة ---------- */
 .service-card .feature-icon {
     width: 70px;
     height: 70px;
@@ -1251,7 +1048,6 @@ html body > .language-switcher {
     border-color: var(--accent-color);
 }
 
-/* ---------- Team Photo — Perfect Circle / صورة العضو دائرية كاملة ---------- */
 .team-card img {
     width: 160px;
     height: 160px;
@@ -1271,21 +1067,18 @@ html body > .language-switcher {
     box-shadow: var(--shadow-gold);
 }
 
-/* ---------- Team Name / اسم العضو ---------- */
 .team-card h4 {
     color: var(--dark-text);
     font-weight: 700;
     margin-bottom: 8px;
 }
 
-/* ---------- Team Role / دور العضو ---------- */
 .team-card .text-primary {
     color: var(--accent-dark) !important;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-/* ---------- Social Links / روابط التواصل ---------- */
 .team-card .social-links {
     margin-top: 20px;
     display: flex;
@@ -1316,16 +1109,7 @@ html body > .language-switcher {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    09. BLOG CARDS & TESTIMONIALS — بطاقات المدونة والآراء
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Blog cards display a cover image, category badge, title, and excerpt.
-   Testimonial cards display a decorative quote mark and italic quote.
-   
-   بطاقات المدونة تعرض صورة غلاف + شارة التصنيف + العنوان + مقتطف.
-   بطاقات الآراء تعرض علامة اقتباس زخرفية + اقتباس مائل.
    ============================================================================ */
 .blog-section,
 .testimonials-section {
@@ -1353,7 +1137,6 @@ html body > .language-switcher {
     border-color: var(--accent-color);
 }
 
-/* ---------- Blog Cover Image / صورة غلاف المدونة ---------- */
 .blog-card img {
     width: 100%;
     height: 220px;
@@ -1365,7 +1148,6 @@ html body > .language-switcher {
     transform: scale(1.05);
 }
 
-/* ---------- Blog Body / جسم البطاقة ---------- */
 .blog-card .card-body {
     padding: 25px;
     flex: 1;
@@ -1410,7 +1192,6 @@ html body > .language-switcher {
     flex-direction: column;
 }
 
-/* ---------- Decorative Quote Mark / علامة اقتباس زخرفية ---------- */
 .testimonial-card::before {
     content: '"';
     position: absolute;
@@ -1435,7 +1216,6 @@ html body > .language-switcher {
     border-color: var(--accent-color);
 }
 
-/* ---------- Star Rating / تقييم النجوم ---------- */
 .testimonial-card .stars {
     color: var(--accent-color);
     margin-bottom: 15px;
@@ -1443,7 +1223,6 @@ html body > .language-switcher {
     letter-spacing: 2px;
 }
 
-/* ---------- Quote Text / نص الاقتباس ---------- */
 .testimonial-card p {
     color: var(--dark-text-soft);
     font-style: italic;
@@ -1456,16 +1235,7 @@ html body > .language-switcher {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    10. CTA SECTION (CLASSIC) — قسم الدعوة للتواصل
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Simple mid-page or pre-footer call-to-action band with a dark gradient
-   background and a large radial gold glow to add visual interest.
-   
-   شريط دعوة بسيط في منتصف الصفحة أو قبل التذييل، بخلفية متدرجة داكنة
-   وتوهج ذهبي كبير لإضافة عمق بصري.
    ============================================================================ */
 .cta-section {
     position: relative;
@@ -1475,7 +1245,6 @@ html body > .language-switcher {
     overflow: hidden;
 }
 
-/* ---------- Radial Gold Glow / توهج ذهبي دائري ---------- */
 .cta-section::before {
     content: "";
     position: absolute;
@@ -1492,14 +1261,12 @@ html body > .language-switcher {
     z-index: 2;
 }
 
-/* ---------- CTA Title / عنوان الدعوة ---------- */
 .cta-section h3 {
     color: var(--white);
     font-weight: 700;
     margin-bottom: 15px;
 }
 
-/* ---------- CTA Text / نص الدعوة ---------- */
 .cta-section p {
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 0;
@@ -1509,29 +1276,14 @@ html body > .language-switcher {
 /* ============================================================================
    END OF PART 2/5
    نهاية الجزء الثاني من 5
-   ============================================================================
-   
-   NEXT / التالي:
-   Part 3/5 → Sections 11-15:
-     • Footer (Classic)
-     • Buttons (Complete System)
-     • Social Links
-     • Forms (Complete Set)
-     • Utilities & Helpers
    ============================================================================ */
    /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
+   END OF PART 2/5 — نهاية الجزء الثاني من 5
+   ============================================================================ */
+
+
+/* ============================================================================
    11. FOOTER (CLASSIC) — التذييل الكلاسيكي
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Basic footer used on interior pages. Dark background with a gold top
-   border accent. Contains brand block, quick links, contact info, and
-   social icons.
-   
-   تذييل أساسي يُستخدم في الصفحات الداخلية. خلفية داكنة مع حد ذهبي
-   علوي. يحتوي على كتلة العلامة + روابط سريعة + معلومات الاتصال +
-   أيقونات التواصل.
    ============================================================================ */
 .footer-section {
     background: var(--primary-color);
@@ -1542,7 +1294,6 @@ html body > .language-switcher {
     overflow: hidden;
 }
 
-/* ---------- Gold Top Border / الحد الذهبي العلوي ---------- */
 .footer-section::before {
     content: "";
     position: absolute;
@@ -1553,7 +1304,6 @@ html body > .language-switcher {
     background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
 }
 
-/* ---------- Footer Headings / عناوين التذييل ---------- */
 .footer-section h5,
 .footer-section h6 {
     color: var(--accent-color);
@@ -1561,7 +1311,6 @@ html body > .language-switcher {
     margin-bottom: 20px;
 }
 
-/* ---------- Footer Links / روابط التذييل ---------- */
 .footer-section a {
     color: rgba(255, 255, 255, 0.75);
     transition: var(--transition-fast);
@@ -1578,7 +1327,6 @@ html body > .language-switcher {
     padding-right: 5px;
 }
 
-/* ---------- Social Links Container / حاوية روابط التواصل ---------- */
 .footer-section .social-links {
     display: flex;
     gap: 10px;
@@ -1615,22 +1363,7 @@ html body > .language-switcher {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    12. BUTTONS — الأزرار (نظام كامل)
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Complete button system including:
-     • Base button reset (.btn)
-     • Bootstrap variants: primary, outline-primary, outline-light, light, link
-     • Size variants: btn-lg, btn-sm, btn-block
-     • Custom "rich" variants: btn-rich-primary, btn-rich-outline, btn-rich-ghost
-   
-   نظام أزرار كامل يشمل:
-     • زر أساسي (.btn)
-     • متغيرات Bootstrap: primary، outline-primary، outline-light، light، link
-     • أحجام: btn-lg، btn-sm، btn-block
-     • متغيرات "غنية" مخصصة: btn-rich-primary، btn-rich-outline، btn-rich-ghost
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -1682,7 +1415,9 @@ html body > .language-switcher {
     transform: translateY(-2px);
 }
 
-/* ---------- Outline Light / مفرغ فاتح ---------- */
+/* ---------- Outline Light / مفرغ فاتح ----------
+   ⚠️ NOTE: الشكل النهائي لزر "بوابة العميل" داخل النافبار
+   محدد في القسم 05.5 أعلاه — هذه القاعدة للاستخدامات الأخرى فقط */
 .btn-outline-light {
     color: var(--white);
     border-color: rgba(255, 255, 255, 0.5);
@@ -1899,16 +1634,7 @@ html body > .language-switcher {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    13. SOCIAL LINKS (GENERAL) — روابط التواصل الاجتماعي العامة
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Reusable social icons row. Works on both light and dark backgrounds.
-   Each icon is circular and lifts with a gold background on hover.
-   
-   صف أيقونات تواصل قابل لإعادة الاستخدام. يعمل على الخلفيات الفاتحة
-   والداكنة. كل أيقونة دائرية وترتفع بخلفية ذهبية عند التحويم.
    ============================================================================ */
 .social-links {
     display: flex;
@@ -1940,22 +1666,7 @@ html body > .language-switcher {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    14. FORMS — النماذج
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Complete form system including:
-     • Base inputs (.form-control, .form-select)
-     • Labels and helper text
-     • Status messages (success/error)
-     • Dynamic content (rendered Markdown from MongoDB)
-   
-   نظام نماذج كامل يشمل:
-     • حقول أساسية
-     • التسميات والنصوص المساعدة
-     • رسائل الحالة (نجاح/خطأ)
-     • محتوى ديناميكي (Markdown من MongoDB)
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -2023,9 +1734,6 @@ html body > .language-switcher {
 
 /* ─────────────────────────────────────────────────────────────────────────
    14.4 DYNAMIC CONTENT — المحتوى الديناميكي
-   ─────────────────────────────────────────────────────────────────────────
-   Styles applied to Markdown-rendered content from MongoDB.
-   يُطبق على محتوى Markdown المُعالج من MongoDB.
    ───────────────────────────────────────────────────────────────────────── */
 .dynamic-content h2 {
     margin-top: 2rem;
@@ -2095,16 +1803,7 @@ html body > .language-switcher {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    15. UTILITIES & HELPERS — الأدوات المساعدة
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Small utility classes used across the site — cards, badges, backgrounds,
-   text helpers, and gold shadow.
-   
-   كلاسات مساعدة صغيرة تُستخدم في الموقع — بطاقات، شارات، خلفيات،
-   أدوات نص، وظل ذهبي.
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -2287,27 +1986,14 @@ hr.divider-soft {
 /* ============================================================================
    END OF PART 3/5
    نهاية الجزء الثالث من 5
-   ============================================================================
-   
-   NEXT / التالي:
-   Part 4/5 → Sections 16-20:
-     • Animations (keyframes)
-     • Back to Top
-     • Premium Homepage — Hero Rich (with proper 620px fixed height)
-     • Logo Showcase (gold frame)
-     • Services Modern (compact)
    ============================================================================ */
    /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
+   END OF PART 3/5 — نهاية الجزء الثالث من 5
+   ============================================================================ */
+
+
+/* ============================================================================
    16. ANIMATIONS — الحركات (Keyframes)
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Centralized keyframe definitions used across the site. Individual
-   sections may still define their own local keyframes when scoped.
-   
-   تعريفات مركزية للحركات المستخدمة في الموقع. الأقسام الفردية قد
-   تعرّف حركات محلية خاصة بها عند الحاجة.
    ============================================================================ */
 
 /* ---------- Fade In Up — Entrance from bottom / ظهور من الأسفل ---------- */
@@ -2399,16 +2085,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    17. BACK TO TOP — زر العودة للأعلى
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Floating gold circular button that appears after scrolling 300px.
-   Positioned bottom-right in LTR, bottom-left in RTL.
-   
-   زر ذهبي دائري عائم يظهر بعد التمرير 300 بكسل. موضعه أسفل اليمين
-   في الإنجليزية وأسفل اليسار في العربية.
    ============================================================================ */
 #backToTop {
     position: fixed;
@@ -2442,22 +2119,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    18. PREMIUM HOMEPAGE — الصفحة الرئيسية الفاخرة
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Set of premium sections used on the homepage:
-     • Hero Rich (620px fixed height)
-     • Stats Marquee
-     • Section Head Rich
-     • Bento Grid
-   
-   مجموعة أقسام فاخرة تُستخدم في الصفحة الرئيسية:
-     • البانر الفاخر (620px ارتفاع ثابت)
-     • شريط الأرقام
-     • عناوين الأقسام
-     • شبكة Bento
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -2491,13 +2153,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   18.2 HERO RICH — البانر الفاخر (620px ثابت)
-   ─────────────────────────────────────────────────────────────────────────
-   FIX / الإصلاح:
-   • Height locked at 620px (no growing beyond).
-   • Background image confined to hero box.
-   • Inner elements scaled down so they never push the height.
-   • Starts directly below fixed navbar.
+   18.2 HERO RICH — البانر الفاخر
    ───────────────────────────────────────────────────────────────────────── */
 .hero-rich {
     position: relative;
@@ -2514,7 +2170,6 @@ hr.divider-soft {
     isolation: isolate;
 }
 
-/* ---------- Background Wrapper / حاوية الصورة ---------- */
 .hero-rich-bg {
     position: absolute;
     inset: 0;
@@ -2525,7 +2180,6 @@ hr.divider-soft {
     pointer-events: none;
 }
 
-/* ---------- Background Image — Perfect Fit / الصورة — تغطية كاملة ---------- */
 .hero-rich-bg img {
     position: absolute;
     top: 0;
@@ -2540,7 +2194,6 @@ hr.divider-soft {
     animation: none;
 }
 
-/* ---------- Dark Overlay / طبقة التعتيم ---------- */
 .hero-rich-overlay {
     position: absolute;
     inset: 0;
@@ -2620,13 +2273,11 @@ hr.divider-soft {
     background-size: 20px 20px;
 }
 
-/* ---------- Content Wrapper / حاوية المحتوى ---------- */
 .hero-rich-content {
     position: relative;
     z-index: 3;
 }
 
-/* ---------- Hero Badge / شارة البانر ---------- */
 .hero-badge-rich {
     display: inline-flex;
     align-items: center;
@@ -2652,7 +2303,6 @@ hr.divider-soft {
     flex-shrink: 0;
 }
 
-/* ---------- Hero Title / العنوان الرئيسي ---------- */
 .hero-rich-title {
     font-family: var(--font-serif);
     font-size: clamp(2.5rem, 6vw, 4rem);
@@ -2690,7 +2340,6 @@ hr.divider-soft {
     animation: gradientShift 6s ease infinite;
 }
 
-/* ---------- Hero Subtitle / العنوان الفرعي ---------- */
 .hero-rich-subtitle {
     font-size: clamp(1rem, 1.5vw, 1.15rem);
     color: rgba(255, 255, 255, 0.85);
@@ -2704,7 +2353,6 @@ hr.divider-soft {
     font-weight: 700;
 }
 
-/* ---------- Hero Buttons Row / صف الأزرار ---------- */
 .hero-rich-buttons {
     display: flex;
     gap: 15px;
@@ -2712,7 +2360,6 @@ hr.divider-soft {
     margin-bottom: 30px;
 }
 
-/* ---------- Primary Hero Button — Gold Pill / زر ذهبي ---------- */
 .btn-hero-primary {
     display: inline-flex;
     align-items: center;
@@ -2750,7 +2397,6 @@ hr.divider-soft {
     transform: translateX(-5px);
 }
 
-/* ---------- Ghost Hero Button — Transparent / زر شفاف ---------- */
 .btn-hero-ghost {
     display: inline-flex;
     align-items: center;
@@ -2777,7 +2423,6 @@ hr.divider-soft {
     transform: translateY(-4px);
 }
 
-/* ---------- Trust Row / صف مؤشرات الثقة ---------- */
 .hero-trust-row {
     display: flex;
     gap: 30px;
@@ -2800,7 +2445,6 @@ hr.divider-soft {
     font-size: 1.15rem;
 }
 
-/* ---------- Side Big Number / الرقم الكبير الجانبي ---------- */
 .hero-side-badge {
     position: relative;
     text-align: center;
@@ -2838,7 +2482,6 @@ hr.divider-soft {
     text-transform: none;
 }
 
-/* ---------- Scroll Indicator / مؤشر التمرير ---------- */
 .hero-scroll-indicator {
     position: absolute;
     bottom: 25px;
@@ -2882,7 +2525,6 @@ hr.divider-soft {
     border-bottom: 1px solid rgba(201, 169, 97, 0.2);
 }
 
-/* ---------- Left/Right Fade Masks / أقنعة التلاشي ---------- */
 .stats-marquee::before,
 .stats-marquee::after {
     content: '';
@@ -2904,7 +2546,6 @@ hr.divider-soft {
     background: linear-gradient(270deg, var(--primary-color), transparent);
 }
 
-/* ---------- Scrolling Track / المسار المتحرك ---------- */
 .marquee-track {
     display: flex;
     width: fit-content;
@@ -2959,12 +2600,10 @@ hr.divider-soft {
     position: relative;
 }
 
-/* ---------- Light Theme on Dark Backgrounds / نمط فاتح للخلفيات الداكنة ---------- */
 .section-head-rich.light .sh-title { color: #fff; }
 .section-head-rich.light .sh-desc  { color: rgba(255, 255, 255, 0.75); }
 .section-head-rich.light .sh-label { color: var(--accent-light); }
 
-/* ---------- Decorative Line / الخط الزخرفي ---------- */
 .sh-line {
     width: 60px;
     height: 3px;
@@ -2988,7 +2627,6 @@ hr.divider-soft {
 .sh-line::before { left: -14px; }
 .sh-line::after  { right: -14px; }
 
-/* ---------- Left-Aligned Line / خط بمحاذاة يسار ---------- */
 .sh-line-left {
     width: 50px;
     height: 3px;
@@ -3001,7 +2639,6 @@ hr.divider-soft {
     margin-right: 0;
 }
 
-/* ---------- Small Label / التسمية الصغيرة ---------- */
 .sh-label {
     display: inline-block;
     font-size: 0.8rem;
@@ -3017,7 +2654,6 @@ hr.divider-soft {
     text-transform: none;
 }
 
-/* ---------- Section Title / عنوان القسم ---------- */
 .sh-title {
     font-family: var(--font-serif);
     font-size: clamp(1.75rem, 3.5vw, 2.5rem);
@@ -3037,7 +2673,6 @@ hr.divider-soft {
 .sh-title.text-start { text-align: left; }
 [dir="rtl"] .sh-title.text-start { text-align: right; }
 
-/* ---------- Section Description / وصف القسم ---------- */
 .sh-desc {
     font-size: 1rem;
     color: var(--gray-text);
@@ -3049,8 +2684,6 @@ hr.divider-soft {
 
 /* ─────────────────────────────────────────────────────────────────────────
    18.5 BENTO GRID — شبكة Bento
-   ─────────────────────────────────────────────────────────────────────────
-   Compact asymmetric grid: 1 large card (2x2) + 3 small cards.
    ───────────────────────────────────────────────────────────────────────── */
 .bento-section {
     padding: 60px 0 50px;
@@ -3064,7 +2697,6 @@ hr.divider-soft {
     gap: 18px;
 }
 
-/* ---------- Base Bento Card / البطاقة الأساسية ---------- */
 .bento-card {
     background: linear-gradient(160deg, #fff 0%, #FAFAFA 100%);
     border: 1px solid var(--gray-200);
@@ -3078,7 +2710,6 @@ hr.divider-soft {
     flex-direction: column;
 }
 
-/* ---------- Large Bento Card / البطاقة الكبيرة ---------- */
 .bento-card.bento-large {
     grid-column: span 2;
     grid-row: span 2;
@@ -3092,7 +2723,6 @@ hr.divider-soft {
     border-color: var(--accent-color);
 }
 
-/* ---------- Corner Glow Decoration / توهج زخرفي في الزاوية ---------- */
 .bc-decoration {
     position: absolute;
     top: -50px;
@@ -3110,7 +2740,6 @@ hr.divider-soft {
     background: radial-gradient(circle, rgba(201, 169, 97, 0.25), transparent 70%);
 }
 
-/* ---------- Serial Number / الرقم التسلسلي ---------- */
 .bc-num {
     position: absolute;
     top: 15px;
@@ -3138,7 +2767,6 @@ hr.divider-soft {
     font-size: 3.5rem;
 }
 
-/* ---------- Bento Icon / أيقونة Bento ---------- */
 .bc-icon {
     width: 52px;
     height: 52px;
@@ -3174,7 +2802,6 @@ hr.divider-soft {
     transform: rotate(8deg) scale(1.05);
 }
 
-/* ---------- Bento Title / عنوان Bento ---------- */
 .bento-card h3 {
     font-family: var(--font-serif);
     font-size: 1.1rem;
@@ -3194,7 +2821,6 @@ hr.divider-soft {
     font-size: 1.4rem;
 }
 
-/* ---------- Bento Body / نص Bento ---------- */
 .bento-card p {
     color: var(--gray-text);
     font-size: 0.85rem;
@@ -3210,7 +2836,6 @@ hr.divider-soft {
     max-width: 100%;
 }
 
-/* ---------- Tag Chips / وسوم صغيرة ---------- */
 .bc-tags {
     display: flex;
     gap: 6px;
@@ -3229,7 +2854,6 @@ hr.divider-soft {
     font-weight: 600;
 }
 
-/* ---------- Learn More Link / رابط المزيد ---------- */
 .bc-link {
     display: inline-flex;
     align-items: center;
@@ -3263,17 +2887,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    19. LOGO SHOWCASE — عرض اللوجو الذهبي
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Displays the firm logo inside a luxurious gold-bordered square frame
-   with corner ornaments, inner thin border, pulsing glow, and a floating
-   years badge.
-   
-   يعرض لوجو المكتب داخل إطار ذهبي فخم مربع بزخارف في الزوايا وحد
-   داخلي رقيق وتوهج نابض وشارة عائمة للسنوات.
    ============================================================================ */
 .about-asymmetric {
     padding: 40px 0 80px;
@@ -3306,7 +2920,6 @@ hr.divider-soft {
     overflow: hidden;
 }
 
-/* ---------- Gold Corner Ornaments / زخارف الزوايا الذهبية ---------- */
 .logo-showcase__frame::before,
 .logo-showcase__frame::after {
     content: '';
@@ -3351,7 +2964,6 @@ hr.divider-soft {
     border-bottom-left-radius: 0;
 }
 
-/* ---------- Inner Thin Border / الحد الداخلي الرقيق ---------- */
 .logo-showcase__inner-border {
     position: absolute;
     inset: 30px;
@@ -3361,7 +2973,6 @@ hr.divider-soft {
     z-index: 2;
 }
 
-/* ---------- Pulsing Gold Glow / توهج ذهبي نابض ---------- */
 .logo-showcase__glow {
     position: absolute;
     top: 50%;
@@ -3386,7 +2997,6 @@ hr.divider-soft {
     }
 }
 
-/* ---------- Logo Image / صورة اللوجو ---------- */
 .logo-showcase__logo {
     position: relative;
     z-index: 3;
@@ -3402,7 +3012,6 @@ hr.divider-soft {
     50%      { transform: translateY(-8px); }
 }
 
-/* ---------- Decorative Dots / نقاط زخرفية ---------- */
 .logo-showcase__deco {
     position: absolute;
     inset: 0;
@@ -3431,7 +3040,6 @@ hr.divider-soft {
     right: 15%;
 }
 
-/* ---------- Floating Years Badge / الشارة العائمة ---------- */
 .logo-showcase__badge {
     position: absolute;
     bottom: -10px;
@@ -3475,7 +3083,6 @@ hr.divider-soft {
     font-family: var(--font-arabic);
 }
 
-/* ---------- About Content Column / عمود محتوى من نحن ---------- */
 .about-content-rich {
     padding-left: 20px;
 }
@@ -3504,7 +3111,6 @@ hr.divider-soft {
     margin-bottom: 25px;
 }
 
-/* ---------- Credentials Grid / شبكة الاعتمادات ---------- */
 .credentials-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -3569,18 +3175,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    20. SERVICES MODERN (COMPACT) — الخدمات الحديثة (مضغوطة)
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Compact horizontal service cards: icon on left, title + subtitle in
-   middle, arrow on right. Much shorter than the default vertical card
-   layout — around 70px per row.
-   
-   كروت خدمات أفقية مضغوطة: أيقونة على اليسار، عنوان ووصف في الوسط،
-   سهم على اليمين. أقصر بكثير من التخطيط العمودي الافتراضي — حوالي
-   70 بكسل لكل صف.
    ============================================================================ */
 .services-modern {
     padding: 55px 0;
@@ -3595,7 +3190,6 @@ hr.divider-soft {
     align-items: stretch;
 }
 
-/* ---------- Service Card / بطاقة الخدمة ---------- */
 .svc-modern-item {
     display: flex;
     flex-direction: row;
@@ -3614,7 +3208,6 @@ hr.divider-soft {
     height: auto;
 }
 
-/* ---------- Bottom Gold Bar on Hover / الشريط الذهبي السفلي ---------- */
 .svc-modern-item::before {
     content: '';
     position: absolute;
@@ -3644,7 +3237,6 @@ hr.divider-soft {
     color: inherit;
 }
 
-/* ---------- Service Icon / أيقونة الخدمة ---------- */
 .svc-modern-icon {
     width: 42px;
     height: 42px;
@@ -3672,7 +3264,6 @@ hr.divider-soft {
     transform: rotate(8deg) scale(1.05);
 }
 
-/* ---------- Service Content / محتوى الخدمة ---------- */
 .svc-modern-content {
     flex: 1;
     min-width: 0;
@@ -3702,7 +3293,6 @@ hr.divider-soft {
     text-overflow: ellipsis;
 }
 
-/* ---------- Arrow Indicator / مؤشر السهم ---------- */
 .svc-modern-arrow {
     color: var(--accent-color);
     opacity: 0.5;
@@ -3725,31 +3315,14 @@ hr.divider-soft {
 /* ============================================================================
    END OF PART 4/5
    نهاية الجزء الرابع من 5
-   ============================================================================
-   
-   NEXT / التالي:
-   Part 5/5 → Sections 21-28:
-     • Process Timeline
-     • Team Featured
-     • Testimonials Modern
-     • FAQ Accordion
-     • Final CTA & Footer Rich
-     • Service Pages (Hero, Features, Compare, etc.)
-     • Responsive (All Breakpoints)
-     • Accessibility & Print
    ============================================================================ */
    /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
+   END OF PART 4/5 — نهاية الجزء الرابع من 5
+   ============================================================================ */
+
+
+/* ============================================================================
    21. PROCESS TIMELINE — خطوات العمل
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Four-step methodology timeline displayed on a dark gradient background.
-   Each step has a circular node with an icon and a numbered badge. A
-   thin connecting line runs behind the nodes.
-   
-   خط زمني من أربع خطوات على خلفية داكنة متدرجة. كل خطوة بها عقدة دائرية
-   بأيقونة ورقم، مع خط رفيع يربط بين العقد في الخلف.
    ============================================================================ */
 .process-rich {
     padding: 55px 0;
@@ -3758,7 +3331,6 @@ hr.divider-soft {
     overflow: hidden;
 }
 
-/* ---------- Background Grid Pattern / نقشة شبكية في الخلف ---------- */
 .process-rich-pattern {
     position: absolute;
     inset: 0;
@@ -3777,7 +3349,6 @@ hr.divider-soft {
     padding-top: 20px;
 }
 
-/* ---------- Connecting Line / الخط الرابط ---------- */
 .pt-line {
     position: absolute;
     top: 45px;
@@ -3795,14 +3366,12 @@ hr.divider-soft {
     z-index: 0;
 }
 
-/* ---------- Individual Step / الخطوة الفردية ---------- */
 .pt-step {
     text-align: center;
     position: relative;
     z-index: 1;
 }
 
-/* ---------- Circular Node / العقدة الدائرية ---------- */
 .pt-node {
     width: 72px;
     height: 72px;
@@ -3832,7 +3401,6 @@ hr.divider-soft {
     transform: scale(1.08) rotate(5deg);
 }
 
-/* ---------- Numbered Badge / شارة الرقم ---------- */
 .pt-num {
     position: absolute;
     top: -6px;
@@ -3856,7 +3424,6 @@ hr.divider-soft {
     left: -6px;
 }
 
-/* ---------- Step Title / عنوان الخطوة ---------- */
 .pt-step h6 {
     font-size: 0.9rem;
     font-weight: 700;
@@ -3864,7 +3431,6 @@ hr.divider-soft {
     margin-bottom: 4px;
 }
 
-/* ---------- Step Description / وصف الخطوة ---------- */
 .pt-step p {
     font-size: 0.78rem;
     color: rgba(255, 255, 255, 0.65);
@@ -3878,18 +3444,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    22. TEAM FEATURED — فريق العمل المميز
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Asymmetric featured card for the lead attorney. Left portrait column
-   (dark gradient) with a perfect circular photo. Right content column
-   with role badge, name, skill tags, bio, CTA button, and social links.
-   
-   بطاقة غير متناظرة للمحامي الرئيسي. عمود الصورة يسار (خلفية داكنة
-   متدرجة) مع صورة دائرية كاملة. عمود المحتوى يمين يحتوي على شارة
-   الدور والاسم والوسوم والنبذة وزر الدعوة وروابط التواصل.
    ============================================================================ */
 .team-featured {
     padding: 55px 0;
@@ -3909,7 +3464,6 @@ hr.divider-soft {
     position: relative;
 }
 
-/* ---------- Portrait Column / عمود الصورة ---------- */
 .tfc-portrait {
     position: relative;
     background: linear-gradient(160deg, var(--primary-color), var(--primary-light));
@@ -3928,7 +3482,6 @@ hr.divider-soft {
     pointer-events: none;
 }
 
-/* ---------- Perfect Circular Photo Frame / الإطار الدائري الكامل ---------- */
 .tfc-image-wrap {
     position: relative;
     z-index: 1;
@@ -3966,7 +3519,6 @@ hr.divider-soft {
     padding: 0;
 }
 
-/* ---------- Floating Badges / الشارات العائمة ---------- */
 .tfc-badge-top,
 .tfc-badge-bottom {
     position: absolute;
@@ -3995,14 +3547,12 @@ hr.divider-soft {
     animation-delay: 2s;
 }
 
-/* ---------- Content Column / عمود المحتوى ---------- */
 .tfc-content {
     padding: 35px 32px;
     display: flex;
     flex-direction: column;
 }
 
-/* ---------- Role Badge / شارة الدور ---------- */
 .tfc-role {
     display: inline-block;
     font-size: 0.72rem;
@@ -4023,7 +3573,6 @@ hr.divider-soft {
     align-self: flex-end;
 }
 
-/* ---------- Name / الاسم ---------- */
 .tfc-name {
     font-family: var(--font-serif);
     font-size: clamp(1.3rem, 2vw, 1.7rem);
@@ -4038,7 +3587,6 @@ hr.divider-soft {
     letter-spacing: 0;
 }
 
-/* ---------- Skill Tags / وسوم المهارات ---------- */
 .tfc-tags {
     display: flex;
     gap: 6px;
@@ -4064,7 +3612,6 @@ hr.divider-soft {
     color: var(--accent-color);
 }
 
-/* ---------- Bio / النبذة ---------- */
 .tfc-bio {
     font-size: 0.9rem;
     color: var(--gray-text);
@@ -4073,7 +3620,6 @@ hr.divider-soft {
     flex: 1;
 }
 
-/* ---------- Actions Row / صف الإجراءات ---------- */
 .tfc-actions {
     display: flex;
     align-items: center;
@@ -4082,7 +3628,6 @@ hr.divider-soft {
     flex-wrap: wrap;
 }
 
-/* ---------- Social Links / روابط التواصل ---------- */
 .tfc-social {
     display: flex;
     gap: 8px;
@@ -4113,18 +3658,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    23. TESTIMONIALS MODERN — آراء العملاء الحديثة
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Three-column grid of client testimonial cards. Each card has a decorative
-   quote mark, star rating, italic quote, and author block (avatar + name +
-   role).
-   
-   شبكة من 3 أعمدة لبطاقات آراء العملاء. كل بطاقة بها علامة اقتباس
-   زخرفية وتقييم بالنجوم واقتباس مائل وكتلة الكاتب (صورة رمزية + اسم
-   + دور).
    ============================================================================ */
 .testimonials-modern {
     padding: 55px 0;
@@ -4145,7 +3679,6 @@ hr.divider-soft {
     flex-direction: column;
 }
 
-/* ---------- Top Gold Bar on Hover / الشريط الذهبي العلوي ---------- */
 .testimonial-modern-card::before {
     content: '';
     position: absolute;
@@ -4174,7 +3707,6 @@ hr.divider-soft {
     border-color: var(--accent-color);
 }
 
-/* ---------- Decorative Quote Mark / علامة الاقتباس الزخرفية ---------- */
 .tmc-quote {
     position: absolute;
     top: 18px;
@@ -4190,7 +3722,6 @@ hr.divider-soft {
     left: 18px;
 }
 
-/* ---------- Star Rating / تقييم النجوم ---------- */
 .tmc-stars {
     color: var(--accent-color);
     font-size: 0.8rem;
@@ -4198,7 +3729,6 @@ hr.divider-soft {
     letter-spacing: 1.5px;
 }
 
-/* ---------- Quote Text / نص الاقتباس ---------- */
 .testimonial-modern-card p {
     font-size: 0.9rem;
     color: var(--dark-text);
@@ -4210,7 +3740,6 @@ hr.divider-soft {
     flex: 1;
 }
 
-/* ---------- Author Block / كتلة الكاتب ---------- */
 .tmc-author {
     display: flex;
     align-items: center;
@@ -4246,16 +3775,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    24. FAQ ACCORDION — الأسئلة الشائعة
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Custom Bootstrap accordion with rounded card items, gold hover borders,
-   and a custom SVG chevron icon in gold.
-   
-   أكورديون Bootstrap مخصص ببطاقات مدورة، حدود ذهبية عند التحويم،
-   وأيقونة سهم SVG ذهبية مخصصة.
    ============================================================================ */
 .faq-modern {
     padding: 55px 0;
@@ -4276,7 +3796,6 @@ hr.divider-soft {
     box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.08);
 }
 
-/* ---------- Question Button / زر السؤال ---------- */
 .faq-rich-accordion .accordion-button {
     font-weight: 700;
     font-size: 0.9rem;
@@ -4300,7 +3819,6 @@ hr.divider-soft {
     box-shadow: none;
 }
 
-/* ---------- Custom Gold Chevron / سهم ذهبي مخصص ---------- */
 .faq-rich-accordion .accordion-button::after {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23C9A961'%3e%3cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
     flex-shrink: 0;
@@ -4311,7 +3829,6 @@ hr.divider-soft {
     margin-left: 0;
 }
 
-/* ---------- Answer Body / جسم الإجابة ---------- */
 .faq-rich-accordion .accordion-body {
     padding: 0 20px 16px;
     color: var(--gray-text);
@@ -4321,22 +3838,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    25. FINAL CTA RICH — الدعوة النهائية
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Full-width call-to-action with dark gradient background. Features:
-     • Pulsing gold circular badge with handshake icon
-     • Headline + subtitle
-     • Two CTA buttons (filled gold + ghost)
-     • Three floating decorative shapes
-   
-   قسم دعوة بعرض كامل بخلفية داكنة متدرجة. يحتوي على:
-     • شارة ذهبية دائرية نابضة بأيقونة مصافحة
-     • عنوان + وصف
-     • زرين (ذهبي ممتلئ + شفاف)
-     • 3 أشكال زخرفية عائمة
    ============================================================================ */
 .final-cta-rich {
     padding: 60px 0;
@@ -4347,7 +3849,6 @@ hr.divider-soft {
     text-align: center;
 }
 
-/* ---------- Decorative Ring (rotating) / حلقة زخرفية دوارة ---------- */
 .fcr-decoration-1 {
     position: absolute;
     top: -100px;
@@ -4360,7 +3861,6 @@ hr.divider-soft {
     pointer-events: none;
 }
 
-/* ---------- Decorative Glow / توهج زخرفي ---------- */
 .fcr-decoration-2 {
     position: absolute;
     bottom: -80px;
@@ -4372,7 +3872,6 @@ hr.divider-soft {
     pointer-events: none;
 }
 
-/* ---------- Floating Square / مربع عائم ---------- */
 .fcr-decoration-3 {
     position: absolute;
     top: 50%;
@@ -4386,7 +3885,6 @@ hr.divider-soft {
     pointer-events: none;
 }
 
-/* ---------- Content Wrapper / حاوية المحتوى ---------- */
 .fcr-content {
     position: relative;
     z-index: 2;
@@ -4394,7 +3892,6 @@ hr.divider-soft {
     margin: 0 auto;
 }
 
-/* ---------- Pulsing Badge / شارة نابضة ---------- */
 .fcr-badge {
     width: 80px;
     height: 80px;
@@ -4410,7 +3907,6 @@ hr.divider-soft {
     animation: pulseBadge 3s ease-in-out infinite;
 }
 
-/* ---------- Heading / العنوان ---------- */
 .final-cta-rich h2 {
     font-family: var(--font-serif);
     font-size: clamp(1.75rem, 4vw, 2.5rem);
@@ -4426,7 +3922,6 @@ hr.divider-soft {
     line-height: 1.4;
 }
 
-/* ---------- Subtitle / الوصف ---------- */
 .final-cta-rich p {
     font-size: 1.05rem;
     color: rgba(255, 255, 255, 0.8);
@@ -4434,7 +3929,6 @@ hr.divider-soft {
     line-height: 1.7;
 }
 
-/* ---------- CTA Buttons Row / صف الأزرار ---------- */
 .fcr-buttons {
     display: flex;
     gap: 15px;
@@ -4444,18 +3938,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    26. FOOTER RICH — التذييل الفاخر
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Rich footer with 4 columns: brand block (logo + description + social),
-   quick links, contact info, and legal links. Dark background with subtle
-   radial gold glow patterns and gold top border.
-   
-   تذييل غني بأربعة أعمدة: كتلة العلامة (لوجو + وصف + تواصل)، روابط
-   سريعة، معلومات الاتصال، وروابط قانونية. خلفية داكنة مع توهج ذهبي
-   دائري خفيف وحد ذهبي علوي.
    ============================================================================ */
 .footer-rich {
     background: var(--primary-color);
@@ -4465,7 +3948,6 @@ hr.divider-soft {
     overflow: hidden;
 }
 
-/* ---------- Gold Top Border / الحد الذهبي العلوي ---------- */
 .footer-rich::before {
     content: '';
     position: absolute;
@@ -4476,7 +3958,6 @@ hr.divider-soft {
     background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
 }
 
-/* ---------- Background Radial Pattern / نقشة خلفية دائرية ---------- */
 .footer-rich-pattern {
     position: absolute;
     inset: 0;
@@ -4491,7 +3972,6 @@ hr.divider-soft {
     z-index: 1;
 }
 
-/* ---------- Footer Logo / لوجو التذييل ---------- */
 .footer-logo {
     height: 55px;
     max-height: 55px;
@@ -4503,7 +3983,6 @@ hr.divider-soft {
     display: inline-block;
 }
 
-/* ---------- Footer Headings / عناوين التذييل ---------- */
 .footer-rich h5 {
     color: var(--accent-color);
     font-family: var(--font-serif);
@@ -4529,7 +4008,6 @@ hr.divider-soft {
     text-transform: none;
 }
 
-/* ---------- Footer Description / وصف التذييل ---------- */
 .footer-desc {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
@@ -4537,7 +4015,6 @@ hr.divider-soft {
     margin-bottom: 20px;
 }
 
-/* ---------- Social Icons Row / صف أيقونات التواصل ---------- */
 .footer-social {
     display: flex;
     gap: 10px;
@@ -4566,7 +4043,6 @@ hr.divider-soft {
     box-shadow: 0 10px 20px rgba(201, 169, 97, 0.3);
 }
 
-/* ---------- Footer Links List / قائمة الروابط ---------- */
 .footer-list {
     list-style: none;
     padding: 0;
@@ -4594,7 +4070,6 @@ hr.divider-soft {
     padding-right: 4px;
 }
 
-/* ---------- Contact List / قائمة الاتصال ---------- */
 .footer-contact li {
     display: flex;
     align-items: center;
@@ -4611,7 +4086,6 @@ hr.divider-soft {
     flex-shrink: 0;
 }
 
-/* ---------- Bottom Bar / الشريط السفلي ---------- */
 .footer-bottom {
     margin-top: 40px;
     padding-top: 25px;
@@ -4627,40 +4101,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    27. SERVICE PAGES — صفحات الخدمات الداخلية
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Components specific to service pages (Arbitration, Trademark, Patent,
-   Copyright, etc.). Includes:
-     • Service Hero
-     • Service Feature Cards
-     • Handles List
-     • Info Note / Callout
-     • Comparison Table
-     • Practice Areas (related)
-     • Legal Info Box
-     • Checklist Block
-     • Mistake Cards
-     • Stage Timeline
-     • Trends Grid
-     • Route Compare
-     • Decision Grid
-     • PCT Timeline
-     • IP Assets Grid
-     • Red Flags List
-     • Grounds Grid
-     • Security Grid
-     • Portal Card
-     • Featured Post
-     • Filter Tabs
-     • Legal Wrap / Legal TOC
-     • Contact Card / Author Card / Share Row / Citation Box
-     • Article Content
-   
-   مكونات خاصة بصفحات الخدمات (التحكيم، العلامات التجارية، براءات
-   الاختراع، حقوق المؤلف، إلخ).
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -4724,6 +4165,7 @@ hr.divider-soft {
     margin-bottom: 30px;
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    27.2 SH BADGE — شارة صغيرة فوق العناوين
    ───────────────────────────────────────────────────────────────────────── */
@@ -4747,6 +4189,7 @@ hr.divider-soft {
 [dir="rtl"] .sh-badge {
     letter-spacing: 1.5px;
 }
+
 
 /* ─────────────────────────────────────────────────────────────────────────
    27.3 SERVICE FEATURE CARDS — بطاقات الميزات
@@ -4843,6 +4286,7 @@ hr.divider-soft {
     margin: 0;
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    27.4 HANDLES LIST — قائمة المجالات المغطاة
    ───────────────────────────────────────────────────────────────────────── */
@@ -4889,6 +4333,7 @@ hr.divider-soft {
     margin-top: 3px;
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    27.5 INFO NOTE / CALLOUT — ملاحظة معلوماتية
    ───────────────────────────────────────────────────────────────────────── */
@@ -4926,6 +4371,7 @@ hr.divider-soft {
     color: var(--dark-text);
     margin-bottom: 4px;
 }
+
 
 /* ─────────────────────────────────────────────────────────────────────────
    27.6 COMPARISON TABLE — جدول المقارنة
@@ -4981,6 +4427,7 @@ hr.divider-soft {
 .compare-table tbody tr:last-child td { border-bottom: none; }
 .compare-table tbody tr:hover { background: #FAF6EC; }
 .compare-table strong { color: var(--dark-text); font-weight: 700; }
+
 
 /* ─────────────────────────────────────────────────────────────────────────
    27.7 PRACTICE AREAS (RELATED) — مجالات ذات صلة
@@ -5066,6 +4513,7 @@ hr.divider-soft {
     gap: 12px;
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    27.8 LEGAL INFO BOX — صندوق معلومات قانونية
    ───────────────────────────────────────────────────────────────────────── */
@@ -5117,6 +4565,7 @@ hr.divider-soft {
     color: var(--dark-text);
     margin-bottom: 4px;
 }
+
 
 /* ─────────────────────────────────────────────────────────────────────────
    27.9 CHECKLIST BLOCK — صندوق قوائم التحقق
@@ -5181,6 +4630,7 @@ hr.divider-soft {
     flex-shrink: 0;
     margin-top: 4px;
 }
+
 
 /* ─────────────────────────────────────────────────────────────────────────
    27.10 MISTAKE CARDS — بطاقات الأخطاء الشائعة
@@ -5284,6 +4734,7 @@ hr.divider-soft {
     margin-bottom: 3px;
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    27.11 STAGE TIMELINE — الخط الزمني للمراحل
    ───────────────────────────────────────────────────────────────────────── */
@@ -5364,6 +4815,7 @@ hr.divider-soft {
     margin: 0;
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    27.12 TRENDS GRID — شبكة الاتجاهات
    ───────────────────────────────────────────────────────────────────────── */
@@ -5435,6 +4887,7 @@ hr.divider-soft {
     line-height: 1.7;
     margin: 0;
 }
+
 
 /* ─────────────────────────────────────────────────────────────────────────
    27.13 ROUTE COMPARE — مقارنة المسارات
@@ -5575,6 +5028,7 @@ hr.divider-soft {
     margin-bottom: 4px;
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    27.14 DECISION GRID — شبكة القرارات
    ───────────────────────────────────────────────────────────────────────── */
@@ -5644,6 +5098,7 @@ hr.divider-soft {
     line-height: 1.7;
     margin: 0;
 }
+
 
 /* ─────────────────────────────────────────────────────────────────────────
    27.15 PCT TIMELINE — الخط الزمني لنظام PCT
@@ -5742,6 +5197,7 @@ hr.divider-soft {
     margin-right: 6px;
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    27.16 IP ASSETS GRID — شبكة أصول الملكية الفكرية
    ───────────────────────────────────────────────────────────────────────── */
@@ -5812,6 +5268,7 @@ hr.divider-soft {
     margin: 0;
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    27.17 RED FLAGS LIST — قائمة العلامات الحمراء
    ───────────────────────────────────────────────────────────────────────── */
@@ -5855,6 +5312,7 @@ hr.divider-soft {
     flex-shrink: 0;
     margin-top: 4px;
 }
+
 
 /* ─────────────────────────────────────────────────────────────────────────
    27.18 GROUNDS GRID — شبكة الأسباب
@@ -5905,6 +5363,7 @@ hr.divider-soft {
     display: block;
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    27.19 SECURITY GRID — شبكة الأمان
    ───────────────────────────────────────────────────────────────────────── */
@@ -5950,6 +5409,7 @@ hr.divider-soft {
     line-height: 1.7;
     margin: 0;
 }
+
 
 /* ─────────────────────────────────────────────────────────────────────────
    27.20 PORTAL CARD — بطاقة بوابة العميل
@@ -6098,6 +5558,7 @@ hr.divider-soft {
     color: var(--primary-color);
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    27.21 FEATURED POST — المقال المميز (المدونة)
    ───────────────────────────────────────────────────────────────────────── */
@@ -6125,6 +5586,7 @@ hr.divider-soft {
         grid-template-columns: 1fr;
     }
 }
+
 
 /* ─────────────────────────────────────────────────────────────────────────
    27.22 FILTER TABS — تبويبات الفلترة (المدونة)
@@ -6165,6 +5627,7 @@ hr.divider-soft {
     border-color: var(--accent-color);
     box-shadow: 0 10px 25px -8px rgba(201, 169, 97, 0.4);
 }
+
 
 /* ─────────────────────────────────────────────────────────────────────────
    27.23 LEGAL WRAP & TOC — الصفحات القانونية
@@ -6270,6 +5733,7 @@ hr.divider-soft {
     color: var(--accent-dark);
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    27.24 AUTHOR CARD (BLOG) — بطاقة الكاتب
    ───────────────────────────────────────────────────────────────────────── */
@@ -6333,6 +5797,7 @@ hr.divider-soft {
     line-height: 1.7;
     margin: 0;
 }
+
 
 /* ─────────────────────────────────────────────────────────────────────────
    27.25 ARTICLE CONTENT — محتوى المقال
@@ -6420,6 +5885,7 @@ hr.divider-soft {
     line-height: 1.95;
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    27.26 ARTICLE HERO (BLOG) — بانر المقال
    ───────────────────────────────────────────────────────────────────────── */
@@ -6497,6 +5963,7 @@ hr.divider-soft {
     color: var(--accent-color);
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
    27.27 PAGE HERO RICH (SERVICES PAGE) — بانر صفحة الخدمات
    ───────────────────────────────────────────────────────────────────────── */
@@ -6523,20 +5990,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    28. RESPONSIVE — التجاوب الشامل
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Three-tier responsive breakpoints:
-     • 991px and below → Tablet
-     • 768px and below → Large phone
-     • 576px and below → Small phone
-   
-   ثلاث نقاط توقف للتجاوب:
-     • 991px وأقل → تابلت
-     • 768px وأقل → موبايل كبير
-     • 576px وأقل → موبايل صغير
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -6544,12 +5998,10 @@ hr.divider-soft {
    ───────────────────────────────────────────────────────────────────────── */
 @media (max-width: 991px) {
 
-    /* ---------- Layout Tokens / قيم التخطيط ---------- */
     :root {
         --navbar-height: 70px;
     }
 
-    /* ---------- Hero Sections / البانرات ---------- */
     .hero-rich {
         height: auto !important;
         min-height: 520px !important;
@@ -6572,7 +6024,6 @@ hr.divider-soft {
         padding: 50px 0 !important;
     }
 
-    /* ---------- Bento Grid / شبكة Bento ---------- */
     .bento-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
@@ -6583,12 +6034,10 @@ hr.divider-soft {
         min-height: 340px !important;
     }
 
-    /* ---------- Services Modern / كروت الخدمات ---------- */
     .services-grid-modern {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 
-    /* ---------- Team Featured / فريق العمل ---------- */
     .team-featured-card {
         grid-template-columns: 1fr !important;
     }
@@ -6618,7 +6067,6 @@ hr.divider-soft {
         padding: 28px 24px !important;
     }
 
-    /* ---------- Process Timeline / خطوات العمل ---------- */
     .process-timeline {
         grid-template-columns: repeat(2, 1fr) !important;
     }
@@ -6627,19 +6075,16 @@ hr.divider-soft {
         display: none !important;
     }
 
-    /* ---------- Credentials Grid / شبكة الاعتمادات ---------- */
     .credentials-row {
         grid-template-columns: 1fr !important;
     }
 
-    /* ---------- About Asymmetric / من نحن ---------- */
     .about-content-rich {
         padding-left: 0 !important;
         padding-right: 0 !important;
         margin-top: 30px;
     }
 
-    /* ---------- Logo Showcase / عرض اللوجو ---------- */
     .logo-showcase {
         min-height: 420px !important;
         padding: 30px 15px !important;
@@ -6656,7 +6101,6 @@ hr.divider-soft {
    ───────────────────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
 
-    /* ---------- Layout Tokens / قيم التخطيط ---------- */
     :root {
         --navbar-height: 65px;
     }
@@ -6665,7 +6109,6 @@ hr.divider-soft {
         font-size: 15px;
     }
 
-    /* ---------- Hero / البانر ---------- */
     .hero-rich {
         height: auto !important;
         min-height: auto !important;
@@ -6710,7 +6153,6 @@ hr.divider-soft {
         display: none !important;
     }
 
-    /* ---------- Stats Marquee / شريط الأرقام ---------- */
     .stats-marquee {
         padding: 22px 0 !important;
     }
@@ -6728,7 +6170,6 @@ hr.divider-soft {
         padding-right: 35px !important;
     }
 
-    /* ---------- Section Headings / عناوين الأقسام ---------- */
     .sh-title {
         font-size: 1.5rem !important;
         line-height: 1.3 !important;
@@ -6742,7 +6183,6 @@ hr.divider-soft {
         margin-bottom: 30px !important;
     }
 
-    /* ---------- Bento Cards / بطاقات Bento ---------- */
     .bento-grid {
         gap: 14px !important;
     }
@@ -6752,7 +6192,6 @@ hr.divider-soft {
         padding: 22px 20px !important;
     }
 
-    /* ---------- Team / فريق العمل ---------- */
     .team-featured-card {
         border-radius: 16px !important;
     }
@@ -6761,12 +6200,10 @@ hr.divider-soft {
         font-size: 1.35rem !important;
     }
 
-    /* ---------- Testimonials / الآراء ---------- */
     .testimonial-modern-card {
         padding: 24px 22px !important;
     }
 
-    /* ---------- FAQ / الأسئلة ---------- */
     .faq-rich-accordion .accordion-button {
         font-size: 0.88rem !important;
         padding: 14px 18px !important;
@@ -6777,7 +6214,6 @@ hr.divider-soft {
         font-size: 0.84rem !important;
     }
 
-    /* ---------- Footer / التذييل ---------- */
     .footer-rich {
         text-align: center;
         padding: 50px 0 20px !important;
@@ -6795,7 +6231,6 @@ hr.divider-soft {
         margin-bottom: 28px !important;
     }
 
-    /* ---------- Back to Top / زر العودة ---------- */
     #backToTop {
         bottom: 20px !important;
         right: 15px !important;
@@ -6815,13 +6250,11 @@ hr.divider-soft {
    ───────────────────────────────────────────────────────────────────────── */
 @media (max-width: 576px) {
 
-    /* ---------- Container Padding / حشو الحاوية ---------- */
     .container {
         padding-right: 14px !important;
         padding-left: 14px !important;
     }
 
-    /* ---------- Typography / الخطوط ---------- */
     h1 { font-size: 1.7rem; }
     h2 { font-size: 1.45rem; }
     h3 { font-size: 1.2rem; }
@@ -6834,7 +6267,6 @@ hr.divider-soft {
         line-height: 1.7;
     }
 
-    /* ---------- Navbar Brand / علامة النافبار ---------- */
     .navbar-brand img {
         height: 32px !important;
         max-height: 32px !important;
@@ -6855,7 +6287,6 @@ hr.divider-soft {
         gap: 8px !important;
     }
 
-    /* ---------- Services Modern — Single Column / عمود واحد ---------- */
     .services-grid-modern {
         grid-template-columns: 1fr !important;
     }
@@ -6864,7 +6295,6 @@ hr.divider-soft {
         padding: 12px 14px !important;
     }
 
-    /* ---------- Bento — Single Column / عمود واحد ---------- */
     .bento-card,
     .bento-card.bento-large {
         grid-column: span 1 !important;
@@ -6882,12 +6312,10 @@ hr.divider-soft {
         font-size: 3rem !important;
     }
 
-    /* ---------- Process — Single Column / عمود واحد ---------- */
     .process-timeline {
         grid-template-columns: 1fr !important;
     }
 
-    /* ---------- Team Card / بطاقة الفريق ---------- */
     .tfc-content {
         padding: 24px 20px !important;
     }
@@ -6899,12 +6327,10 @@ hr.divider-soft {
         max-height: 140px !important;
     }
 
-    /* ---------- Testimonial Card / بطاقة الرأي ---------- */
     .testimonial-modern-card {
         padding: 22px 20px !important;
     }
 
-    /* ---------- Trial Banner / الشريط التجريبي ---------- */
     #trial-banner {
         font-size: 0.72rem !important;
         padding: 8px 10px !important;
@@ -6915,7 +6341,6 @@ hr.divider-soft {
         display: none !important;
     }
 
-    /* ---------- Logo Showcase / عرض اللوجو ---------- */
     .logo-showcase {
         min-height: 360px !important;
     }
@@ -6950,21 +6375,9 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
    29. ACCESSIBILITY & PRINT — إمكانية الوصول والطباعة
-   ██████████████████████████████████████████████████████████████████████████
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   • Respects user's reduced-motion preference (disables animations)
-   • Adds visible focus outline for keyboard navigation
-   • Provides clean print layout (hides nav, footer, floating buttons)
-   
-   • يحترم تفضيل المستخدم لتقليل الحركة
-   • يضيف إطار تركيز مرئي للتنقل بلوحة المفاتيح
-   • يوفر تخطيط طباعة نظيف
    ============================================================================ */
 
-/* ---------- Reduced Motion / تقليل الحركة ---------- */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -6976,14 +6389,12 @@ hr.divider-soft {
     }
 }
 
-/* ---------- Keyboard Focus / تركيز لوحة المفاتيح ---------- */
 *:focus-visible {
     outline: 3px solid var(--accent-color);
     outline-offset: 2px;
     border-radius: 4px;
 }
 
-/* ---------- Print Layout / تخطيط الطباعة ---------- */
 @media print {
     .navbar,
     #trial-banner,
@@ -7014,6 +6425,7 @@ hr.divider-soft {
     }
 }
 
+
 /* ============================================================================
    🎯 HERO SIZE ADJUSTMENT v13.0 — تصغير حجم البانر الرئيسي
    ─────────────────────────────────────────────────────────────────────────
@@ -7021,12 +6433,9 @@ hr.divider-soft {
    Reduces the hero section height from 620px to 520px (desktop) for a
    more balanced, less overwhelming appearance. Includes responsive
    adjustments for tablet and mobile.
-   
-   تصغير ارتفاع البانر الرئيسي من 620px إلى 520px (سطح المكتب) لمظهر
-   أكثر توازناً. يشمل تعديلات للتابلت والموبايل.
    ============================================================================ */
 
-/* ─── Desktop / سطح المكتب ───────────────────────────────────────────── */
+/* ─── Desktop / سطح المكتب ─── */
 html body .hero-rich {
     height: 520px !important;
     min-height: 520px !important;
@@ -7034,7 +6443,6 @@ html body .hero-rich {
     padding: 30px 0 !important;
 }
 
-/* Smaller inner elements to match reduced height */
 html body .hero-rich .hero-rich-title {
     font-size: clamp(2rem, 5vw, 3.5rem) !important;
     margin-bottom: 18px !important;
@@ -7075,7 +6483,7 @@ html body .hero-rich .hero-badge-rich {
     margin-bottom: 18px !important;
 }
 
-/* ─── Tablet / تابلت ─────────────────────────────────────────────────── */
+/* ─── Tablet / تابلت ─── */
 @media (max-width: 991px) {
     html body .hero-rich {
         height: auto !important;
@@ -7085,7 +6493,7 @@ html body .hero-rich .hero-badge-rich {
     }
 }
 
-/* ─── Mobile / موبايل ────────────────────────────────────────────────── */
+/* ─── Mobile / موبايل ─── */
 @media (max-width: 576px) {
     html body .hero-rich {
         height: auto !important;
@@ -7104,459 +6512,14 @@ html body .hero-rich .hero-badge-rich {
     }
 }
 
+
 /* ============================================================================
    ============================================================================
-   🎯 FINAL FIX — SHARED LANGUAGE SWITCHER IN THE NAVBAR
-   الحل النهائي — زر اللغة الموحّد داخل النافبار
-   ============================================================================
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   The JS injects the language button wrapped in .language-switcher.in-navbar.
-   These rules make that wrapper display correctly inside the navbar,
-   matching the Client Portal button's gold pill style exactly.
-   
-   ملف JS يحقن زر اللغة مغلفاً داخل .language-switcher.in-navbar.
-   هذه القواعد تجعل الغلاف يظهر بشكل صحيح داخل النافبار، ويطابق
-   زر بوابة العميل تماماً في التصميم الذهبي.
-   ============================================================================ */
-
-/* ─── The wrapper <li> ─── */
-.navbar .lang-nav-item {
-    display: inline-flex !important;
-    align-items: center !important;
-    flex-shrink: 0;
-    list-style: none;
-}
-
-/* ─── The inner .language-switcher.in-navbar wrapper ─── */
-.navbar .lang-nav-item .language-switcher.in-navbar {
-    position: static !important;
-    inset: auto !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: auto !important;
-    margin: 0 0 0 8px !important;
-    padding: 0 !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    z-index: auto !important;
-    transform: none !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-[dir="rtl"] .navbar .lang-nav-item .language-switcher.in-navbar {
-    margin: 0 8px 0 0 !important;
-}
-
-/* ─── The gold button itself ─── */
-.navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 7px !important;
-    min-height: 34px;
-    padding: 8px 18px !important;
-    border: 2px solid #C9A961 !important;
-    border-radius: 999px !important;
-    background: transparent !important;
-    color: #C9A961 !important;
-    font-family: inherit;
-    font-size: 0.82rem !important;
-    font-weight: 700 !important;
-    line-height: 1.3;
-    letter-spacing: 0.3px !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-    box-shadow: 0 3px 12px rgba(201,169,97,0.15) !important;
-    transition: all 0.3s ease !important;
-    cursor: pointer;
-}
-
-.navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover,
-.navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:focus-visible {
-    background: linear-gradient(135deg, #C9A961, #A88947) !important;
-    color: #000 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 8px 22px rgba(201,169,97,0.5) !important;
-    outline: none !important;
-}
-
-.navbar .lang-nav-item .language-switcher.in-navbar .lang-btn i {
-    font-size: 0.85rem !important;
-    color: inherit !important;
-    transition: transform 0.3s ease !important;
-}
-
-.navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover i {
-    transform: rotate(180deg) !important;
-}
-
-/* ─── Desktop spacing ─── */
-@media (min-width: 992px) {
-    .navbar .lang-nav-item {
-        margin-inline-start: 4px;
-    }
-}
-
-/* ─── Mobile: full-width buttons ─── */
-@media (max-width: 991.98px) {
-    .navbar .navbar-nav > .lang-nav-item {
-        display: flex !important;
-        width: 100% !important;
-        margin: 6px 0 0 !important;
-        justify-content: stretch !important;
-    }
-
-    .navbar .lang-nav-item .language-switcher.in-navbar {
-        width: 100% !important;
-        margin: 0 !important;
-        justify-content: stretch !important;
-    }
-
-    .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
-        width: 100% !important;
-        min-height: 42px;
-        justify-content: center !important;
-    }
-}
-
-/* ============================================================================
-   🎨 LANGUAGE BUTTON — GOLD FILLED (Final Style)
-   زر اللغة الذهبي الممتلئ
-   ============================================================================
-   PURPOSE / الوظيفة:
-   Makes the language button stand out with a SOLID GOLD background,
-   black text, and pill shape — clearly distinct from the transparent
-   Client Portal button next to it.
-   
-   يجعل زر اللغة بارزاً بخلفية ذهبية ممتلئة ونص أسود وشكل حبة دوا —
-   مميز بوضوح عن زر بوابة العميل الشفاف بجانبه.
-   ============================================================================ */
-
-/* ─── The Gold-Filled Language Button ─── */
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
-html body .navbar .language-switcher.in-navbar .lang-btn {
-
-    /* Layout / التخطيط */
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    padding: 8px 18px !important;
-    margin: 0 !important;
-    min-height: 36px !important;
-    height: auto !important;
-    width: auto !important;
-
-    /* Background — GOLD GRADIENT / الخلفية — تدرج ذهبي */
-    background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
-
-    /* Text Color — BLACK / لون النص — أسود */
-    color: #000 !important;
-
-    /* Border / الحد */
-    border: none !important;
-    border-radius: 999px !important;
-
-    /* Typography / الخط */
-    font-family: inherit !important;
-    font-weight: 700 !important;
-    font-size: 0.85rem !important;
-    letter-spacing: 0.3px !important;
-    line-height: 1.3 !important;
-    text-decoration: none !important;
-    text-transform: none !important;
-    white-space: nowrap !important;
-
-    /* Effects / التأثيرات */
-    box-shadow: 0 6px 15px rgba(201, 169, 97, 0.4) !important;
-    transition: all 0.3s ease !important;
-    cursor: pointer !important;
-    outline: none !important;
-}
-
-/* ─── Hover State / حالة التحويم ─── */
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover,
-html body .navbar .language-switcher.in-navbar .lang-btn:hover,
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:focus,
-html body .navbar .language-switcher.in-navbar .lang-btn:focus {
-    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
-    color: #000 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 10px 25px rgba(201, 169, 97, 0.55) !important;
-    outline: none !important;
-}
-
-/* ─── Icon / الأيقونة ─── */
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn i,
-html body .navbar .language-switcher.in-navbar .lang-btn i {
-    font-size: 0.9rem !important;
-    color: inherit !important;
-    transition: transform 0.3s ease !important;
-}
-
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover i,
-html body .navbar .language-switcher.in-navbar .lang-btn:hover i {
-    transform: rotate(180deg) !important;
-}
-
-/* ─── Mobile: full-width / الموبايل: عرض كامل ─── */
-@media (max-width: 991.98px) {
-    html body .navbar .lang-nav-item {
-        display: flex !important;
-        width: 100% !important;
-        margin: 6px 0 0 !important;
-        justify-content: stretch !important;
-    }
-
-    html body .navbar .lang-nav-item .language-switcher.in-navbar {
-        width: 100% !important;
-        margin: 0 !important;
-        justify-content: stretch !important;
-    }
-
-    html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
-        width: 100% !important;
-        min-height: 42px !important;
-        justify-content: center !important;
-        font-size: 0.9rem !important;
-    }
-}
-
-/* ============================================================================
-   🎯 LANGUAGE BUTTON — ALIGNED WITH CLIENT PORTAL
-   زر اللغة — محاذي تماماً لزر بوابة العميل
-   ============================================================================
-   PURPOSE / الوظيفة:
-   Makes the language button visually IDENTICAL to the Client Portal button:
-   same height, same padding, same font-size, same border radius, same
-   vertical alignment. Both buttons sit side-by-side in perfect alignment.
-   
-   يجعل زر اللغة مطابقاً تماماً لزر بوابة العميل: نفس الارتفاع، نفس الحشو،
-   نفس حجم الخط، نفس الاستدارة، ونفس المحاذاة الرأسية. الزران يجلسان جنب
-   بعض بمحاذاة مثالية.
-   ============================================================================ */
-
-/* ─── Shared alignment: both <li> items line up ─── */
-html body .navbar .nav-item.lang-nav-item,
-html body .navbar .navbar-nav > .nav-item.lang-nav-item {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    list-style: none !important;
-    margin: 0 0 0 8px !important;
-    padding: 0 !important;
-    width: auto !important;
-    height: auto !important;
-    align-self: center !important;
-    vertical-align: middle !important;
-    line-height: 1 !important;
-}
-
-[dir="rtl"] html body .navbar .nav-item.lang-nav-item,
-html[dir="rtl"] body .navbar .navbar-nav > .nav-item.lang-nav-item {
-    margin: 0 8px 0 0 !important;
-}
-
-/* ─── The inner wrapper ─── */
-html body .navbar .lang-nav-item .language-switcher,
-html body .navbar .lang-nav-item .language-switcher.in-navbar {
-    position: static !important;
-    inset: auto !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: auto !important;
-    height: auto !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    transform: none !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    z-index: auto !important;
-    line-height: 1 !important;
-    vertical-align: middle !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   ★ BOTH BUTTONS — IDENTICAL SIZE AND SHAPE ★
-   ★ الزران — نفس الحجم والشكل تماماً ★
-   ─────────────────────────────────────────────────────────────────────────
-   The language button and the Client Portal button share the exact same
-   height, padding, font-size, and border-radius.
-   
-   زر اللغة وزر بوابة العميل بنفس الارتفاع والحشو وحجم الخط والاستدارة.
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-html body .navbar .lang-nav-item .lang-btn,
-html body .navbar .lang-nav-item .language-switcher .lang-btn,
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
-
-    /* ─── Layout: matches Client Portal exactly ─── */
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    padding: 10px 20px !important;
-    margin: 0 !important;
-    min-height: 40px !important;
-    height: auto !important;
-    width: auto !important;
-    min-width: fit-content !important;
-
-    /* ─── Shape ─── */
-    border: 2px solid #C9A961 !important;
-    border-radius: 999px !important;
-    background: transparent !important;
-    box-sizing: border-box !important;
-
-    /* ─── Colors (gold border, gold text) ─── */
-    color: #C9A961 !important;
-
-    /* ─── Typography (same as portal) ─── */
-    font-family: inherit !important;
-    font-weight: 700 !important;
-    font-size: 0.85rem !important;
-    letter-spacing: 0.4px !important;
-    line-height: 1.4 !important;
-    text-decoration: none !important;
-    text-transform: none !important;
-    white-space: nowrap !important;
-
-    /* ─── Effects ─── */
-    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.18) !important;
-    transition: all 0.3s ease !important;
-    cursor: pointer !important;
-    outline: none !important;
-    vertical-align: middle !important;
-}
-
-/* ─── Hover: identical to portal ─── */
-html body .navbar .lang-nav-item .lang-btn:hover,
-html body .navbar .lang-nav-item .lang-btn:focus,
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover,
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:focus {
-    background: linear-gradient(135deg, #C9A961, #A88947) !important;
-    color: #000 !important;
-    border-color: #C9A961 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 8px 22px rgba(201, 169, 97, 0.5) !important;
-    outline: none !important;
-}
-
-/* ─── Icon inside button ─── */
-html body .navbar .lang-nav-item .lang-btn i {
-    font-size: 0.9rem !important;
-    color: inherit !important;
-    transition: transform 0.3s ease !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    line-height: 1 !important;
-}
-
-html body .navbar .lang-nav-item .lang-btn:hover i {
-    transform: rotate(180deg) !important;
-}
-
-/* ─── Span inside button ─── */
-html body .navbar .lang-nav-item .lang-btn span {
-    display: inline-block !important;
-    color: inherit !important;
-    font-size: inherit !important;
-    line-height: inherit !important;
-}
-
-/* ─── Portal button: ensure identical minimum height ─── */
-html body .navbar .btn-outline-light.btn-sm {
-    min-height: 40px !important;
-    padding: 10px 20px !important;
-    font-size: 0.85rem !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    vertical-align: middle !important;
-}
-
-/* ─── Desktop alignment: both items align center ─── */
-@media (min-width: 992px) {
-    html body .navbar .navbar-nav {
-        align-items: center !important;
-    }
-
-    html body .navbar .navbar-nav > li {
-        align-self: center !important;
-    }
-}
-
-/* ─── Mobile: both buttons full-width, stacked ─── */
-@media (max-width: 991.98px) {
-    html body .navbar .nav-item.lang-nav-item {
-        display: flex !important;
-        width: 100% !important;
-        margin: 6px 0 0 !important;
-        justify-content: stretch !important;
-    }
-
-    html body .navbar .lang-nav-item .language-switcher,
-    html body .navbar .lang-nav-item .language-switcher.in-navbar {
-        width: 100% !important;
-        justify-content: stretch !important;
-    }
-
-    html body .navbar .lang-nav-item .lang-btn {
-        width: 100% !important;
-        min-height: 44px !important;
-        justify-content: center !important;
-        font-size: 0.9rem !important;
-    }
-
-    html body .navbar .btn-outline-light.btn-sm {
-        width: 100% !important;
-        min-height: 44px !important;
-        justify-content: center !important;
-        font-size: 0.9rem !important;
-    }
-}
-
-/* ─── Hide any floating legacy button ─── */
-html body > .language-switcher:not(.in-navbar) {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-}
-
-/* ============================================================================
-   🎯 LANGUAGE BUTTON SIZE FIX — مطابقة حجم زر بوابة العميل تماماً
-   ============================================================================ */
-.navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
-    padding: 10px 20px !important;
-    min-height: 40px !important;
-    font-size: 0.85rem !important;
-    border-radius: 999px !important;
-}
-
-/* للموبايل */
-@media (max-width: 991.98px) {
-    .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
-        width: 100% !important;
-        min-height: 44px !important;
-        font-size: 0.9rem !important;
-        padding: 12px 20px !important;
-    }
-}
-
-/* ============================================================================
    ██████████████████████████████████████████████████████████████████████████
    END OF STYLESHEET — نهاية ورقة الأنماط
    ██████████████████████████████████████████████████████████████████████████
+   ============================================================================
+   ============================================================================
    
    ✅ FINAL CHECKLIST / قائمة التحقق النهائية:
    ─────────────────────────────────────────────────────────────────────────
@@ -7564,7 +6527,8 @@ html body > .language-switcher:not(.in-navbar) {
    [✓] 02. Reset & Base Styles
    [✓] 03. RTL Support
    [✓] 04. Trial Banner
-   [✓] 05. Navbar + Unified Gold Buttons (Language + Portal)
+   [✓] 05. Navbar + UNIFIED GOLD BUTTONS (Single Source of Truth)
+         • 05.5.1 → 05.5.10 — الحل النهائي لأزرار النافبار
    [✓] 06. Hero Section
    [✓] 07. Page Header
    [✓] 08. Feature / Service / Team Cards
@@ -7589,15 +6553,29 @@ html body > .language-switcher:not(.in-navbar) {
    [✓] 27. Service Pages Components
    [✓] 28. Responsive (991px / 768px / 576px)
    [✓] 29. Accessibility & Print
+   [✓] HERO SIZE ADJUSTMENT v13.0
    ─────────────────────────────────────────────────────────────────────────
    
-   🎯 تم حل جميع المشاكل:
-   • زر اللغة مطابق تماماً لزر بوابة العميل (ذهبي أنيق)
-   • زر اللغة يُحقن تلقائياً في كل الصفحات عبر main.js
-   • الهيرو 620px ثابت
-   • كل الكروت مضغوطة (خدمات + Bento + فريق + آراء + FAQ)
-   • الصور دائرية كاملة
-   • الاسم الجديد في النافبار والفوتر
+   🗑️ تم حذف البلوكات المتضاربة التالية:
+   ─────────────────────────────────────────────────────────────────────────
+   ❌ FINAL FIX — SHARED LANGUAGE SWITCHER IN THE NAVBAR
+   ❌ LANGUAGE BUTTON — GOLD FILLED (Final Style)
+   ❌ LANGUAGE BUTTON — ALIGNED WITH CLIENT PORTAL
+   ❌ LANGUAGE BUTTON SIZE FIX
+   
+   السبب: الشكل النهائي للأزرار أصبح في القسم 05.5
+          والبلوكات دي كانت متضاربة معاه.
+   ─────────────────────────────────────────────────────────────────────────
+   
+   🎯 التصميم النهائي لأزرار النافبار:
+   ─────────────────────────────────────────────────────────────────────────
+   🌐 زر اللغة      = ذهبي ممتلئ (خلفية ذهبية + نص أسود)
+   🔒 بوابة العميل = ذهبي مفرّغ (حد ذهبي + نص ذهبي + خلفية شفافة)
+   
+   • نفس الارتفاع  : 40px
+   • نفس الحشو     : 10px 20px
+   • نفس الاستدارة : 999px (Pill)
+   • نفس حجم الخط  : 0.85rem
    ─────────────────────────────────────────────────────────────────────────
    ============================================================================
    ============================================================================ */
