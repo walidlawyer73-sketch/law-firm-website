@@ -8273,6 +8273,179 @@ header .language-switcher,
         font-size: 0.72rem !important;
     }
 }
+/* ============================================================================
+   25.13 FIX v2.2 — حل نهائي لمشكلة صورة الهيرو + نقل زر اللغة للنافبار
+   ============================================================================ */
+
+/* ---- 25.13.1: هيرو بحجم ثابت ومحدود (مش بيتجاوز 620px) ---- */
+.hero-rich,
+.hero-section {
+    height: 620px !important;
+    min-height: 620px !important;
+    max-height: 620px !important;
+    padding: 40px 0 40px !important;
+    overflow: hidden !important;
+}
+
+/* تصغير العناصر الداخلية عشان متكبرش الهيرو */
+.hero-rich .hero-rich-title {
+    font-size: clamp(2rem, 4.5vw, 3.8rem) !important;
+    margin-bottom: 20px !important;
+}
+
+.hero-rich .hero-rich-subtitle {
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem) !important;
+    margin-bottom: 25px !important;
+}
+
+.hero-rich .hero-rich-buttons {
+    margin-bottom: 25px !important;
+}
+
+.hero-rich .hero-trust-row {
+    padding-top: 20px !important;
+}
+
+/* ✅ تصغير الرقم الكبير جداً اللي كان بيكبر الهيرو */
+.hero-rich .hsb-number {
+    font-size: 5.5rem !important;
+}
+
+.hero-rich .hsb-number span {
+    font-size: 3.5rem !important;
+}
+
+.hero-rich .hsb-text {
+    font-size: 0.85rem !important;
+    margin-top: 5px !important;
+}
+
+.hero-rich .hero-side-badge {
+    padding: 15px !important;
+}
+
+/* على التابلت */
+@media (max-width: 991px) {
+    .hero-rich,
+    .hero-section {
+        height: auto !important;
+        min-height: 520px !important;
+        max-height: none !important;
+        padding: 50px 0 40px !important;
+    }
+    .hero-rich .hsb-number { font-size: 4.5rem !important; }
+    .hero-rich .hsb-number span { font-size: 3rem !important; }
+}
+
+/* على الموبايل */
+@media (max-width: 768px) {
+    .hero-rich,
+    .hero-section {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        padding: 60px 0 50px !important;
+    }
+}
+
+/* باقي الهيروهات */
+.service-hero,
+.page-hero-rich,
+.article-hero {
+    height: 520px !important;
+    min-height: 520px !important;
+    max-height: 520px !important;
+    overflow: hidden !important;
+}
+
+@media (max-width: 991px) {
+    .service-hero,
+    .page-hero-rich,
+    .article-hero {
+        height: auto !important;
+        min-height: 450px !important;
+        max-height: none !important;
+    }
+}
+
+/* ---- 25.13.2: زر اللغة داخل النافبار (inline) ---- */
+
+/* نلغي الـ fixed ونخليه inline داخل النافبار */
+.navbar .language-switcher,
+.navbar .lang-btn-wrapper {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    z-index: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+[dir="rtl"] .navbar .language-switcher,
+[dir="rtl"] .navbar .lang-btn-wrapper {
+    right: auto !important;
+    left: auto !important;
+}
+
+/* زر اللغة داخل النافبار أصغر وأنيق */
+.navbar .lang-btn {
+    padding: 8px 16px !important;
+    font-size: 0.82rem !important;
+    box-shadow: none !important;
+    border-width: 1.5px !important;
+    background: transparent !important;
+    color: var(--accent-color) !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    gap: 6px !important;
+}
+
+.navbar .lang-btn i {
+    font-size: 0.85rem !important;
+}
+
+.navbar .lang-btn:hover {
+    background: var(--accent-color) !important;
+    color: var(--primary-color) !important;
+    transform: translateY(-1px) !important;
+}
+
+.navbar .lang-btn:hover i {
+    transform: rotate(180deg) !important;
+}
+
+/* لو الزر بره النافبار (النسخة القديمة العائمة) — نخفيه */
+body > .language-switcher:not(.in-navbar) {
+    display: none !important;
+}
+
+/* ✅ إخفاء أي زر لغة عائم */
+.language-switcher:not(.in-navbar):not(.navbar .language-switcher) {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* على الموبايل: الزر يبان جوه القائمة المنسدلة */
+@media (max-width: 991px) {
+    .navbar .language-switcher,
+    .navbar .lang-btn-wrapper {
+        display: flex !important;
+        width: 100% !important;
+        justify-content: center !important;
+        margin-top: 10px !important;
+    }
+    .navbar .lang-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 12px 16px !important;
+        font-size: 0.9rem !important;
+        background: rgba(201,169,97,0.12) !important;
+    }
+}
 
 /* ============================================================================
    END OF STYLESHEET v2.0
