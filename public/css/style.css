@@ -8448,6 +8448,196 @@ body > .language-switcher:not(.in-navbar) {
 }
 
 /* ============================================================================
+   🆕 FINAL FIXES v3.0 — الحل النهائي المؤكد
+   ============================================================================
+   هذا البلوك في آخر الملف، فهو بيغلب كل القواعد السابقة بسبب ترتيب CSS
+   ============================================================================ */
+
+/* ============================================================================
+   1) الهيرو: يبدأ من أسفل النافبار بالظبط، وحجمه معقول
+   ============================================================================ */
+.hero-rich,
+.hero-section,
+.service-hero,
+.page-hero-rich,
+.article-hero {
+    margin-top: var(--navbar-height) !important;
+    height: auto !important;
+    min-height: 600px !important;
+    max-height: 85vh !important;
+    padding: 60px 0 !important;
+    overflow: hidden !important;
+}
+
+@media (max-width: 991px) {
+    .hero-rich,
+    .hero-section,
+    .service-hero,
+    .page-hero-rich,
+    .article-hero {
+        margin-top: var(--navbar-height) !important;
+        min-height: 500px !important;
+        max-height: none !important;
+        padding: 50px 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-rich,
+    .hero-section,
+    .service-hero,
+    .page-hero-rich,
+    .article-hero {
+        margin-top: var(--navbar-height) !important;
+        min-height: auto !important;
+        max-height: none !important;
+        padding: 50px 0 40px !important;
+    }
+}
+
+/* صورة الهيرو تغطي المكان كله بدون خروج */
+.hero-rich-bg {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+}
+
+.hero-rich-bg img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transform: none !important;
+    animation: none !important;
+    max-width: none !important;
+}
+
+/* ============================================================================
+   2) زر اللغة: نعرضه من جديد كزر عائم أنيق (نلغي كل قواعد الإخفاء السابقة)
+   ============================================================================ */
+.language-switcher,
+body > .language-switcher,
+.language-switcher:not(.in-navbar) {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: fixed !important;
+    top: calc(var(--banner-height) + var(--navbar-height) + 20px) !important;
+    right: 20px !important;
+    left: auto !important;
+    bottom: auto !important;
+    z-index: 999 !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+}
+
+[dir="rtl"] .language-switcher,
+[dir="rtl"] body > .language-switcher,
+[dir="rtl"] .language-switcher:not(.in-navbar) {
+    right: auto !important;
+    left: 20px !important;
+}
+
+.language-switcher .lang-btn,
+body > .language-switcher .lang-btn {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 10px 20px !important;
+    background: linear-gradient(135deg, #000, #1A1A1A) !important;
+    color: #C9A961 !important;
+    border: 2px solid #C9A961 !important;
+    border-radius: 999px !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    text-decoration: none !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4) !important;
+    transition: all 0.3s ease !important;
+    white-space: nowrap !important;
+    font-family: inherit !important;
+}
+
+.language-switcher .lang-btn:hover,
+body > .language-switcher .lang-btn:hover {
+    background: linear-gradient(135deg, #C9A961, #A88947) !important;
+    color: #000 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(201,169,97,0.5) !important;
+}
+
+.language-switcher .lang-btn i {
+    font-size: 0.95rem !important;
+    transition: transform 0.3s ease !important;
+}
+
+.language-switcher .lang-btn:hover i {
+    transform: rotate(180deg) !important;
+}
+
+@media (max-width: 768px) {
+    .language-switcher,
+    body > .language-switcher,
+    .language-switcher:not(.in-navbar) {
+        top: calc(var(--banner-height) + var(--navbar-height) + 12px) !important;
+        right: 12px !important;
+    }
+    [dir="rtl"] .language-switcher,
+    [dir="rtl"] body > .language-switcher,
+    [dir="rtl"] .language-switcher:not(.in-navbar) {
+        right: auto !important;
+        left: 12px !important;
+    }
+    .language-switcher .lang-btn,
+    body > .language-switcher .lang-btn {
+        padding: 8px 14px !important;
+        font-size: 0.78rem !important;
+    }
+    .language-switcher .lang-btn .lang-text {
+        display: none !important;
+    }
+}
+
+/* ============================================================================
+   3) (اختياري) لو الزر جوه النافبار — يظهر بشكل inline أنيق
+   ============================================================================ */
+.navbar .language-switcher.in-navbar,
+.navbar .lang-btn-wrapper {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: auto !important;
+}
+
+.navbar .language-switcher.in-navbar .lang-btn {
+    padding: 8px 16px !important;
+    font-size: 0.82rem !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    color: #C9A961 !important;
+    border: 1.5px solid #C9A961 !important;
+    border-radius: 8px !important;
+}
+
+.navbar .language-switcher.in-navbar .lang-btn:hover {
+    background: #C9A961 !important;
+    color: #000 !important;
+}
+
+/* ============================================================================
    END OF STYLESHEET v2.0
    نهاية ورقة الأنماط - النسخة المحسّنة
    ============================================================================ */
