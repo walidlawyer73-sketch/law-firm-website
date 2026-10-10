@@ -9143,3 +9143,626 @@ body > .language-switcher:not(.in-navbar) {
     }
 }
 
+/* ============================================================================
+   ============================================================================
+   FINAL POLISH PATCH v10.0
+   الحل النهائي — زر اللغة + زر بوابة العميل + كروت الخدمات + الأسماء الجديدة
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   This patch restores the gold-themed buttons, shrinks the service cards,
+   and provides all necessary styling for the updated firm names.
+   
+   هذا البلوك يسترجع الأزرار الذهبية، يصغّر كروت الخدمات، ويوفر كل الأنماط
+   اللازمة للأسماء الجديدة للمكتب.
+   ============================================================================
+   ============================================================================ */
+
+
+/* ============================================================================
+   1) NAVBAR — FIRM NAME & SUBTITLE
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Style the firm name (uppercase for LTR) and the descriptive subtitle
+   below it. Handles RTL for Arabic layout.
+   
+   ينسّق اسم المكتب (بحروف كبيرة في الإنجليزية) والوصف المختصر تحته.
+   يتعامل مع العربية (RTL) حسب اتجاه اللغة.
+   ============================================================================ */
+.navbar-brand .firm-name {
+    font-family: var(--font-primary, 'Inter', sans-serif);
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #C9A961;
+    line-height: 1.15;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    display: block;
+    white-space: nowrap;
+}
+
+[dir="rtl"] .navbar-brand .firm-name {
+    font-family: var(--font-arabic, 'Cairo', sans-serif);
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #C9A961;
+}
+
+.navbar-brand .firm-sub {
+    font-family: var(--font-primary, 'Inter', sans-serif);
+    font-size: 0.62rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+    margin: 2px 0 0;
+    display: block;
+    max-width: 280px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+[dir="rtl"] .navbar-brand .firm-sub {
+    font-family: var(--font-arabic, 'Cairo', sans-serif);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.4;
+    max-width: 320px;
+}
+
+@media (max-width: 991px) {
+    .navbar-brand .firm-name { font-size: 0.85rem; }
+    .navbar-brand .firm-sub { font-size: 0.58rem; max-width: 200px; }
+    [dir="rtl"] .navbar-brand .firm-name { font-size: 0.9rem; }
+    [dir="rtl"] .navbar-brand .firm-sub { font-size: 0.62rem; max-width: 220px; }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand .firm-name { font-size: 0.75rem; letter-spacing: 0.5px; }
+    .navbar-brand .firm-sub { font-size: 0.53rem; max-width: 160px; }
+    [dir="rtl"] .navbar-brand .firm-name { font-size: 0.82rem; }
+    [dir="rtl"] .navbar-brand .firm-sub { font-size: 0.58rem; max-width: 170px; }
+}
+
+
+/* ============================================================================
+   2) LANGUAGE SWITCHER & CLIENT PORTAL — GOLD THEME BUTTONS
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Both the language switcher and the client portal button share the same
+   gold-bordered, gold-filled design for visual consistency inside the navbar.
+   
+   كلاً من زر تبديل اللغة وزر بوابة العميل يشتركان في نفس التصميم الذهبي
+   (حد ذهبي + خلفية ذهبية) للتناسق البصري داخل شريط التنقل.
+   ============================================================================ */
+
+/* ---- 2.1 Client Portal Button — Gold Outline ---- */
+.navbar .btn-outline-light,
+.navbar .btn-outline-light.btn-sm {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    padding: 7px 18px !important;
+    background: transparent !important;
+    background-image: linear-gradient(135deg, rgba(201, 169, 97, 0.08), rgba(201, 169, 97, 0.02)) !important;
+    color: #C9A961 !important;
+    border: 1.5px solid #C9A961 !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 0.82rem !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.3px !important;
+    text-transform: none !important;
+    box-shadow: 0 2px 8px rgba(201, 169, 97, 0.15), inset 0 0 12px rgba(201, 169, 97, 0.06) !important;
+    transition: all 0.3s ease !important;
+    white-space: nowrap !important;
+}
+
+.navbar .btn-outline-light:hover,
+.navbar .btn-outline-light:focus-visible,
+.navbar .btn-outline-light.btn-sm:hover {
+    background: linear-gradient(135deg, #C9A961, #A88947) !important;
+    color: #000 !important;
+    border-color: #C9A961 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.45) !important;
+}
+
+.navbar .btn-outline-light i {
+    color: inherit !important;
+    font-size: 0.78rem !important;
+}
+
+/* ---- 2.2 Language Switcher Button — Same Gold Theme ---- */
+.navbar .language-switcher.in-navbar,
+.navbar .lang-btn-wrapper {
+    position: static !important;
+    inset: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    margin: 0 0 0 8px !important;
+    padding: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: auto !important;
+    flex: 0 0 auto !important;
+}
+
+[dir="rtl"] .navbar .language-switcher.in-navbar,
+[dir="rtl"] .navbar .lang-btn-wrapper {
+    margin: 0 8px 0 0 !important;
+}
+
+.navbar .language-switcher.in-navbar .lang-btn,
+.navbar .lang-btn-wrapper .lang-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    padding: 7px 18px !important;
+    background: transparent !important;
+    background-image: linear-gradient(135deg, rgba(201, 169, 97, 0.08), rgba(201, 169, 97, 0.02)) !important;
+    color: #C9A961 !important;
+    border: 1.5px solid #C9A961 !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 0.82rem !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.3px !important;
+    text-decoration: none !important;
+    box-shadow: 0 2px 8px rgba(201, 169, 97, 0.15), inset 0 0 12px rgba(201, 169, 97, 0.06) !important;
+    transition: all 0.3s ease !important;
+    white-space: nowrap !important;
+    font-family: inherit !important;
+    cursor: pointer !important;
+    text-transform: none !important;
+}
+
+.navbar .language-switcher.in-navbar .lang-btn:hover,
+.navbar .language-switcher.in-navbar .lang-btn:focus-visible,
+.navbar .lang-btn-wrapper .lang-btn:hover {
+    background: linear-gradient(135deg, #C9A961, #A88947) !important;
+    color: #000 !important;
+    border-color: #C9A961 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.45) !important;
+    outline: none !important;
+}
+
+.navbar .language-switcher.in-navbar .lang-btn i,
+.navbar .lang-btn-wrapper .lang-btn i {
+    color: inherit !important;
+    font-size: 0.78rem !important;
+    transition: transform 0.3s ease !important;
+}
+
+.navbar .language-switcher.in-navbar .lang-btn:hover i,
+.navbar .lang-btn-wrapper .lang-btn:hover i {
+    transform: rotate(180deg) !important;
+}
+
+/* ---- 2.3 Hide old floating language switchers ---- */
+body > .language-switcher:not(.in-navbar),
+header > .language-switcher:not(.in-navbar),
+.language-switcher:not(.in-navbar):not(.navbar .language-switcher) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* ---- 2.4 Responsive — Mobile: Full-width buttons in nav ---- */
+@media (max-width: 991px) {
+    .navbar .navbar-nav > .nav-item:has(.language-switcher.in-navbar),
+    .navbar .navbar-nav > .nav-item.lang-nav-item {
+        width: 100% !important;
+        margin: 6px 0 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .navbar .language-switcher.in-navbar,
+    .navbar .lang-btn-wrapper {
+        width: 100% !important;
+        margin: 0 !important;
+        justify-content: stretch !important;
+    }
+
+    .navbar .language-switcher.in-navbar .lang-btn,
+    .navbar .lang-btn-wrapper .lang-btn {
+        width: 100% !important;
+        padding: 11px 16px !important;
+        font-size: 0.88rem !important;
+        justify-content: center !important;
+        background: rgba(201, 169, 97, 0.10) !important;
+    }
+
+    .navbar .btn-outline-light,
+    .navbar .btn-outline-light.btn-sm {
+        width: 100% !important;
+        padding: 11px 16px !important;
+        font-size: 0.88rem !important;
+        justify-content: center !important;
+        margin: 4px 0 0 !important;
+    }
+}
+
+
+/* ============================================================================
+   3) SERVICE CARDS — MUCH SMALLER (Horizontal Compact Layout)
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Transform the tall vertical service cards into compact horizontal rows:
+   icon on the side + title in middle + arrow on the end.
+   Height reduced by ~60% while keeping all content readable.
+   
+   تحويل كروت الخدمات الطويلة إلى صفوف أفقية مضغوطة:
+   أيقونة على الجانب + العنوان في المنتصف + سهم في النهاية.
+   تقليل الارتفاع بحوالي 60% مع الحفاظ على قابلية قراءة المحتوى.
+   ============================================================================ */
+.services-grid-modern {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+}
+
+.svc-modern-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 14px 16px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    background: #ffffff !important;
+    border: 1px solid #E9ECEF !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Remove any bottom accent line to keep the card minimal */
+.svc-modern-item::before {
+    height: 2px !important;
+}
+
+.svc-modern-item:hover {
+    transform: translateY(-3px) !important;
+    border-color: #C9A961 !important;
+    box-shadow: 0 10px 25px -10px rgba(201, 169, 97, 0.30) !important;
+}
+
+/* Icon — smaller */
+.svc-modern-icon {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    font-size: 1.1rem !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    background: linear-gradient(135deg, #F8F9FA, #ffffff) !important;
+    border: 1px solid #E9ECEF !important;
+    color: #A88947 !important;
+    transition: all 0.3s ease !important;
+}
+
+.svc-modern-item:hover .svc-modern-icon {
+    background: linear-gradient(135deg, #C9A961, #A88947) !important;
+    color: #000 !important;
+    border-color: transparent !important;
+    transform: rotate(-8deg) scale(1.05) !important;
+    box-shadow: 0 6px 16px rgba(201, 169, 97, 0.35) !important;
+}
+
+/* Content — one line for title, small sub-line */
+.svc-modern-content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 2px !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+}
+
+.svc-modern-content h6 {
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    color: #212529 !important;
+    margin: 0 !important;
+    line-height: 1.25 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.svc-modern-content small {
+    font-size: 0.7rem !important;
+    color: #6C757D !important;
+    line-height: 1.25 !important;
+    display: block !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+/* Arrow — small, on the end */
+.svc-modern-arrow {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #C9A961 !important;
+    font-size: 0.75rem !important;
+    opacity: 0.4 !important;
+    flex-shrink: 0 !important;
+    transition: all 0.3s ease !important;
+    transform: translateX(-4px) !important;
+    margin: 0 !important;
+}
+
+[dir="rtl"] .svc-modern-arrow {
+    transform: translateX(4px) !important;
+}
+
+.svc-modern-item:hover .svc-modern-arrow {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 991px) {
+    .services-grid-modern {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-grid-modern {
+        grid-template-columns: 1fr !important;
+    }
+
+    .svc-modern-item {
+        padding: 12px 14px !important;
+    }
+
+    .svc-modern-icon {
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        font-size: 1rem !important;
+    }
+
+    .svc-modern-content h6 {
+        font-size: 0.82rem !important;
+    }
+
+    .svc-modern-content small {
+        font-size: 0.66rem !important;
+    }
+}
+
+
+/* ============================================================================
+   4) HERO — Start Below Navbar, Fixed Height (Already applied, reinforcing)
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Ensure the hero begins exactly below the fixed navbar with a fixed
+   height of 620px on desktop. Background image is fully contained.
+   
+   ضمان بداية البانر أسفل شريط التنقل مباشرة بارتفاع ثابت 620 بكسل على
+   الشاشات الكبيرة، مع احتواء كامل لصورة الخلفية.
+   ============================================================================ */
+.hero-rich {
+    position: relative !important;
+    margin-top: 0 !important;
+    height: 620px !important;
+    min-height: 620px !important;
+    max-height: 620px !important;
+    padding: 40px 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    isolation: isolate !important;
+}
+
+/* Push below fixed navbar (banner + navbar) */
+body > .navbar + * .hero-rich,
+body > #trial-banner + * + * .hero-rich,
+main > .hero-rich,
+header.hero-rich {
+    margin-top: 0 !important;
+}
+
+/* Reserve space in body for the fixed navbar */
+body:has(#trial-banner) {
+    padding-top: calc(var(--banner-height, 50px) + var(--navbar-height, 80px)) !important;
+}
+
+body:not(:has(#trial-banner)) {
+    padding-top: var(--navbar-height, 80px) !important;
+}
+
+.hero-rich-bg,
+.hero-rich-bg img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transform: none !important;
+    animation: none !important;
+    max-width: none !important;
+    max-height: none !important;
+    position: absolute !important;
+    inset: 0 !important;
+}
+
+.hero-rich-bg {
+    position: absolute !important;
+    inset: 0 !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+}
+
+/* Big number shrink */
+.hero-rich .hsb-number { font-size: 5.5rem !important; }
+.hero-rich .hsb-number span { font-size: 3.5rem !important; }
+
+@media (max-width: 991px) {
+    .hero-rich {
+        height: auto !important;
+        min-height: 500px !important;
+        max-height: none !important;
+        padding: 50px 0 !important;
+    }
+    .hero-rich .hsb-number { font-size: 4.5rem !important; }
+    .hero-rich .hsb-number span { font-size: 3rem !important; }
+}
+
+@media (max-width: 768px) {
+    .hero-rich {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        padding: 50px 0 40px !important;
+    }
+}
+
+
+/* ============================================================================
+   5) TEAM IMAGE — Perfect Circular Frame
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Enforces a perfect 1:1 aspect ratio circle with center-crop on the team
+   member photo, regardless of the source image dimensions.
+   
+   يفرض نسبة أبعاد دائرية كاملة (1:1) مع قص مركزي لصورة المحامي، بغض
+   النظر عن أبعاد الصورة الأصلية.
+   ============================================================================ */
+.tfc-image-wrap {
+    position: relative !important;
+    width: 240px !important;
+    height: 240px !important;
+    max-width: 240px !important;
+    max-height: 240px !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 50% !important;
+    padding: 6px !important;
+    background: linear-gradient(135deg, #C9A961, #A88947) !important;
+    box-shadow: 0 20px 50px rgba(201, 169, 97, 0.35) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.tfc-image-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    border-radius: 50% !important;
+    border: 3px solid #ffffff !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+@media (max-width: 991px) {
+    .tfc-image-wrap {
+        width: 180px !important;
+        height: 180px !important;
+        max-width: 180px !important;
+        max-height: 180px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .tfc-image-wrap {
+        width: 150px !important;
+        height: 150px !important;
+        max-width: 150px !important;
+        max-height: 150px !important;
+        padding: 4px !important;
+    }
+    .tfc-image-wrap img {
+        border-width: 2px !important;
+    }
+}
+
+
+/* ============================================================================
+   6) GLOBAL SAFETY — Prevent horizontal scroll & card overlap
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Final safety net ensuring no horizontal scroll, no card overlap, and
+   consistent card flex behavior across all breakpoints.
+   
+   شبكة أمان أخيرة تمنع التمرير الأفقي، وتمنع تداخل البطاقات، وتضمن
+   سلوك flex ثابت لكل البطاقات على كل أحجام الشاشة.
+   ============================================================================ */
+html,
+body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+
+section,
+header,
+footer,
+main {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+.bento-card,
+.svc-modern-item,
+.pa-card,
+.post-card,
+.testimonial-modern-card,
+.feature-card,
+.service-card,
+.blog-card {
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
+}
+
+.bc-link,
+.svc-modern-arrow,
+.pa-link {
+    margin-top: auto !important;
+}
+
+
+/* ============================================================================
+   END OF POLISH PATCH v10.0
+   نهاية بلوك التحسينات النهائي
+   ============================================================================ */
