@@ -82,18 +82,20 @@
 
 
     // ========================================================================
-    // 2. AUTO-INJECT LANGUAGE SWITCHER INTO NAVBAR (v3 - Wrapped Fix)
-    //    حقن زر اللغة داخل الغلاف الصحيح الذي يتعرف عليه ملف CSS
+    // 2. AUTO-INJECT LANGUAGE SWITCHER INTO NAVBAR (v4 - Perfect Match)
+    //    حقن زر اللغة بمطابقة كاملة لزر بوابة العميل
     // ========================================================================
     // PURPOSE / الوظيفة:
     // Injects the language button wrapped inside .language-switcher.in-navbar
-    // so it matches the stylesheet rules. Removes any legacy floating button
-    // and any manually-added duplicate. Inserts right after Client Portal.
-    // Also handles same-page language switching (e.g. /lawyers.html ⇄ /ar/lawyers.html).
+    // so it matches the stylesheet rules. Uses the same spacing classes as
+    // the Client Portal button (ms-lg-3) for perfect alignment. Removes any
+    // legacy floating button and any manually-added duplicate.
+    // Also handles same-page language switching.
     //
     // يحقن زر اللغة مغلفاً داخل .language-switcher.in-navbar ليطابق قواعد
-    // الـ CSS. يحذف أي زر عائم قديم أو نسخة يدوية مكررة. يدرجه بعد بوابة
-    // العميل مباشرة. كما يتعامل مع التبديل لنفس الصفحة في اللغة الأخرى.
+    // الـ CSS. يستخدم نفس كلاسات المسافة كزر بوابة العميل (ms-lg-3) لضمان
+    // التوازي التام. يحذف أي زر عائم أو نسخة يدوية. كما يتعامل مع التبديل
+    // لنفس الصفحة في اللغة الأخرى.
     // ========================================================================
     function injectLanguageSwitcher() {
         // ═══════════════════════════════════════════════════════════════════
@@ -114,7 +116,6 @@
 
         // ═══════════════════════════════════════════════════════════════════
         // STEP 3: Remove a manually added navbar switcher, if one exists.
-        //         The shared JavaScript will create the canonical button.
         // الخطوة 3: احذف أي زر يدوي مضاف للنافبار.
         // ═══════════════════════════════════════════════════════════════════
         document.querySelectorAll('.navbar .language-switcher.in-navbar')
@@ -173,15 +174,6 @@
                    /Client Portal|بوابة العميل/i.test(text);
         });
 
-        if (!portalLink) {
-            console.warn(
-                '[LANG] Client Portal was not found; language button was not inserted.'
-            );
-            return;
-        }
-
-        console.log('[LANG] Client Portal button found ✓', portalLink);
-
         // ═══════════════════════════════════════════════════════════════════
         // STEP 7: Create the language button.
         // الخطوة 7: إنشاء زر اللغة.
@@ -203,29 +195,44 @@
         langWrapper.className = 'language-switcher in-navbar';
         langWrapper.appendChild(langButton);
 
+        // ✅ Match the Client Portal <li> exactly: nav-item + ms-lg-3
+        // ✅ مطابقة <li> بوابة العميل تماماً: nav-item + ms-lg-3
         const langItem = document.createElement('li');
-        langItem.className = 'nav-item lang-nav-item';
+        langItem.className = 'nav-item lang-nav-item ms-lg-3';
         langItem.appendChild(langWrapper);
 
         // ═══════════════════════════════════════════════════════════════════
         // STEP 9: Insert after Client Portal item (with fallbacks).
         // الخطوة 9: الإدراج بعد بوابة العميل (مع بدائل).
         // ═══════════════════════════════════════════════════════════════════
-        const portalItem = portalLink.closest('li');
-        const navList = portalLink.closest('ul');
+        if (portalLink) {
+            const portalItem = portalLink.closest('li');
+            const navList = portalLink.closest('ul');
 
-        if (portalItem && portalItem.parentNode) {
-            portalItem.parentNode.insertBefore(
-                langItem,
-                portalItem.nextSibling
-            );
-            console.log('[LANG] ✓✓✓ Inserted AFTER Client Portal button');
-        } else if (navList) {
-            navList.appendChild(langItem);
-            console.log('[LANG] ✓ Appended to navbar list');
+            if (portalItem && portalItem.parentNode) {
+                portalItem.parentNode.insertBefore(
+                    langItem,
+                    portalItem.nextSibling
+                );
+                console.log('[LANG] ✓✓✓ Inserted AFTER Client Portal');
+            } else if (navList) {
+                navList.appendChild(langItem);
+                console.log('[LANG] ✓ Appended to navbar list');
+            } else {
+                console.warn('[LANG] Unable to find navbar insertion point');
+                return;
+            }
         } else {
-            console.warn('[LANG] Unable to find the navbar insertion point.');
-            return;
+            // Fallback: If Client Portal is not on this page, append to navbar
+            // بديل: لو بوابة العميل مش موجودة في الصفحة، أضف للنافبار
+            const navbarNav = document.querySelector('.navbar .navbar-nav');
+            if (navbarNav) {
+                navbarNav.appendChild(langItem);
+                console.log('[LANG] ✓ Appended to navbar (no portal found)');
+            } else {
+                console.warn('[LANG] Navbar not found — cannot inject');
+                return;
+            }
         }
 
         // ═══════════════════════════════════════════════════════════════════
@@ -237,7 +244,7 @@
             if (found) {
                 console.log('[LANG] ✓✓✓ Language button verified in DOM');
             } else {
-                console.error('[LANG] ✗ Language button NOT in DOM after insertion!');
+                console.error('[LANG] ✗ Language button NOT in DOM!');
             }
         }, 100);
     }
@@ -247,10 +254,9 @@
     // 3. إصلاح صورة المحامي - Lawyer Profile Image Fix
     // ========================================================================
     // PURPOSE / الوظيفة:
-    // Ensures the lawyer's profile image always loads the correct path,
-    // falling back to alternative extensions if needed.
+    // Ensures the lawyer's profile image always loads the correct path.
     //
-    // يضمن تحميل صورة المحامي من المسار الصحيح، مع بدائل عند الحاجة.
+    // يضمن تحميل صورة المحامي من المسار الصحيح.
     // ========================================================================
     function fixLawyerImage() {
         const correctPath = '/images/team/walid-profile.jpg';
@@ -280,7 +286,7 @@
     // 4. الرابط النشط - Active Link Highlight
     // ========================================================================
     // PURPOSE / الوظيفة:
-    // Adds the .active class to navbar links that match the current URL path.
+    // Adds the .active class to navbar links matching current URL.
     //
     // يضيف كلاس .active لروابط النافبار المطابقة للصفحة الحالية.
     // ========================================================================
@@ -299,12 +305,6 @@
     // ========================================================================
     // 5. تأثير التمرير على النافبار - Navbar Scroll Effect
     // ========================================================================
-    // PURPOSE / الوظيفة:
-    // Adds the .scrolled class to the navbar when user scrolls past 50px,
-    // enabling a compact navbar appearance.
-    //
-    // يضيف كلاس .scrolled للنافبار عند التمرير أكثر من 50px، لتقليص حجمه.
-    // ========================================================================
     function setupNavbarScroll() {
         const navbar = document.getElementById('mainNav') || document.querySelector('.navbar');
         if (!navbar) return;
@@ -321,11 +321,6 @@
 
     // ========================================================================
     // 6. التمرير السلس - Smooth Scroll
-    // ========================================================================
-    // PURPOSE / الوظيفة:
-    // Enables smooth scrolling for all in-page anchor links (href="#...").
-    //
-    // تفعيل التمرير السلس لكل روابط المراسي الداخلية.
     // ========================================================================
     function setupSmoothScroll() {
         document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
@@ -348,13 +343,6 @@
 
     // ========================================================================
     // 7. أنيميشن البطاقات - Card Animations
-    // ========================================================================
-    // PURPOSE / الوظيفة:
-    // Adds a fade-in-up animation to cards as they enter the viewport
-    // using IntersectionObserver for performance.
-    //
-    // يضيف حركة ظهور تدريجي للبطاقات عند دخولها مجال الرؤية باستخدام
-    // IntersectionObserver للأداء العالي.
     // ========================================================================
     function setupCardAnimations() {
         if (!document.querySelector('#dynamic-animation-styles')) {
@@ -396,12 +384,6 @@
     // ========================================================================
     // 8. زر العودة للأعلى - Back to Top Button
     // ========================================================================
-    // PURPOSE / الوظيفة:
-    // Creates a floating "Back to Top" button that appears after scrolling
-    // 300px. Smooth-scrolls to the top on click.
-    //
-    // ينشئ زر عائم "العودة للأعلى" يظهر بعد التمرير 300px، ويصعد بنعومة.
-    // ========================================================================
     function setupBackToTop() {
         if (document.getElementById('backToTop')) {
             const btn = document.getElementById('backToTop');
@@ -418,8 +400,6 @@
             return;
         }
 
-        // Fallback: create the button if not in HTML
-        // بديل: إنشاء الزر لو مش موجود
         const btn = document.createElement('button');
         btn.id = 'backToTop';
         btn.innerHTML = '<i class="fas fa-arrow-up"></i>';
@@ -458,12 +438,6 @@
 
     // ========================================================================
     // 9. إضافة اللوجو إلى الفوتر تلقائياً - Auto-add footer logo
-    // ========================================================================
-    // PURPOSE / الوظيفة:
-    // Ensures the footer always contains the firm logo, replacing any old
-    // icon-based brand if present.
-    //
-    // يضمن وجود لوجو المكتب في الفوتر، مع استبدال الأيقونة القديمة إن وُجدت.
     // ========================================================================
     function addFooterLogo() {
         const footers = document.querySelectorAll('.footer-section, .footer-rich');
@@ -519,11 +493,6 @@
     // ========================================================================
     // 10. إصلاح حجم لوجو النافبار - Fix navbar logo size (fallback)
     // ========================================================================
-    // PURPOSE / الوظيفة:
-    // Fallback that enforces the correct navbar logo size if CSS fails to load.
-    //
-    // احتياطي لضبط حجم لوجو النافبار في حالة عدم تحميل CSS بشكل صحيح.
-    // ========================================================================
     function fixNavbarLogoSize() {
         const logos = document.querySelectorAll('.navbar-brand img');
 
@@ -550,19 +519,16 @@
     // 11. تهيئة كل الأكواد - Initialize all modules
     // ========================================================================
     // PURPOSE / الوظيفة:
-    // Runs every initializer in the correct order once the DOM is ready.
-    // Language switcher runs TWICE (immediate + 500ms delay) to ensure
-    // successful injection even if other modules modify the navbar.
+    // Runs every initializer in the correct order.
+    // Language switcher runs TWICE (immediate + 500ms) to ensure success.
     //
-    // يشغّل كل التهيئات بالترتيب الصحيح بعد جاهزية DOM.
-    // زر اللغة يعمل مرتين (فوري + بعد 500ms) لضمان الحقن الناجح
-    // حتى لو قامت وحدات أخرى بتعديل النافبار.
+    // يشغّل كل التهيئات بالترتيب الصحيح.
+    // زر اللغة يعمل مرتين (فوري + 500ms) لضمان النجاح.
     // ========================================================================
     function init() {
         createTrialBanner();
 
         // Inject language button — run TWICE for safety
-        // حقن زر اللغة — مرتين للأمان
         injectLanguageSwitcher();
         setTimeout(injectLanguageSwitcher, 500);
 
@@ -587,12 +553,6 @@
     // ============================================================================
     // MEGA MENU - Dynamic Navbar Upgrade
     // قائمة ضخمة - ترقية تلقائية للنافبار
-    //
-    // Converts the "Services" dropdown into a full mega menu with 4 columns
-    // (categories) and 23 services. Works on Arabic (RTL) and English (LTR).
-    //
-    // يحوّل قائمة "الخدمات" المنسدلة إلى قائمة ضخمة بأربعة أعمدة
-    // (تصنيفات) و23 خدمة. يعمل بالعربية والإنجليزية.
     // ============================================================================
     // ============================================================================
     (function buildMegaMenu() {
@@ -662,12 +622,10 @@
             const style = document.createElement('style');
             style.id = 'mega-menu-styles';
             style.textContent = `
-                /* Mega Menu Wrapper — position static so menu spans full width */
                 .navbar-nav .nav-item.mega-menu-item {
                     position: static !important;
                 }
 
-                /* The Mega Menu Container */
                 .mega-menu {
                     position: absolute !important;
                     top: 100% !important;
@@ -691,7 +649,6 @@
                     direction: ${isAr ? 'rtl' : 'ltr'};
                 }
 
-                /* Open state (hover on desktop, .show on mobile) */
                 .nav-item.mega-menu-item:hover > .mega-menu,
                 .nav-item.mega-menu-item.show > .mega-menu {
                     opacity: 1 !important;
@@ -699,12 +656,10 @@
                     transform: translateY(0) !important;
                 }
 
-                /* Hide old dropdown */
                 .nav-item.mega-menu-item > .dropdown-menu {
                     display: none !important;
                 }
 
-                /* Inner Grid */
                 .mega-menu-inner {
                     display: grid;
                     grid-template-columns: repeat(4, 1fr);
@@ -712,7 +667,6 @@
                     padding: 30px 24px 20px;
                 }
 
-                /* Column */
                 .mega-col {
                     padding: 0 18px;
                     border-inline-end: 1px solid #F1F3F5;
@@ -721,7 +675,6 @@
                     border-inline-end: none;
                 }
 
-                /* Column Title */
                 .mega-col-title {
                     display: flex;
                     align-items: center;
@@ -750,7 +703,6 @@
                     letter-spacing: -0.01em;
                 }
 
-                /* Service List */
                 .mega-list {
                     list-style: none;
                     padding: 0;
@@ -795,7 +747,6 @@
                 }
                 .mega-list a.active i { color: var(--accent-color); }
 
-                /* Footer Bar */
                 .mega-footer {
                     background: linear-gradient(90deg, #F8F9FA 0%, #fff 50%, #F8F9FA 100%);
                     border-top: 1px solid #F1F3F5;
@@ -835,7 +786,6 @@
                     transform: translateX(${isAr ? '-4px' : '4px'});
                 }
 
-                /* Mobile / Tablet */
                 @media (max-width: 991px) {
                     .mega-menu {
                         position: static !important;
@@ -900,14 +850,11 @@
 
             if (!servicesItem) return;
 
-            /* Remove old menu */
             const oldMenu = servicesItem.querySelector('.dropdown-menu');
             if (oldMenu) oldMenu.remove();
 
-            /* Add class */
             servicesItem.classList.add('mega-menu-item');
 
-            /* Build columns HTML */
             let columnsHTML = '';
             categories.forEach(cat => {
                 let listHTML = '';
@@ -935,7 +882,6 @@
                 `;
             });
 
-            /* Build container */
             const megaMenu = document.createElement('div');
             megaMenu.className = 'mega-menu';
             megaMenu.innerHTML = `
@@ -954,7 +900,6 @@
                 </div>
             `;
 
-            /* Prevent default Bootstrap dropdown */
             const toggle = servicesItem.querySelector('.dropdown-toggle');
             if (toggle) {
                 toggle.removeAttribute('data-bs-toggle');
@@ -974,10 +919,8 @@
                 });
             }
 
-            /* Append */
             servicesItem.appendChild(megaMenu);
 
-            /* Mark current page */
             const currentPath = window.location.pathname.replace(/\/$/, '');
             const allLinks = megaMenu.querySelectorAll('.mega-list a');
             allLinks.forEach(link => {
@@ -987,7 +930,6 @@
                 }
             });
 
-            /* Close on outside click (mobile) */
             document.addEventListener('click', function(e) {
                 if (window.innerWidth <= 991 && !servicesItem.contains(e.target)) {
                     servicesItem.classList.remove('open');
@@ -995,7 +937,6 @@
                 }
             });
 
-            /* Reset on resize */
             window.addEventListener('resize', function() {
                 if (window.innerWidth > 991) {
                     servicesItem.classList.remove('open');

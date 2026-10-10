@@ -7328,118 +7328,145 @@ html body .navbar .language-switcher.in-navbar .lang-btn:hover i {
 }
 
 /* ============================================================================
-   🎯 LANGUAGE BUTTON — FINAL FIX
-   زر اللغة — الحل النهائي المضمون
+   🎯 LANGUAGE BUTTON — ALIGNED WITH CLIENT PORTAL
+   زر اللغة — محاذي تماماً لزر بوابة العميل
    ============================================================================
-   PROBLEM / المشكلة:
-   The previous CSS selectors required a `.language-switcher` wrapper.
-   The HTML now has that wrapper, so these styles will finally apply.
+   PURPOSE / الوظيفة:
+   Makes the language button visually IDENTICAL to the Client Portal button:
+   same height, same padding, same font-size, same border radius, same
+   vertical alignment. Both buttons sit side-by-side in perfect alignment.
    
-   الآن بعد إضافة غلاف `.language-switcher` في HTML، هذه الأنماط ستُطبق.
+   يجعل زر اللغة مطابقاً تماماً لزر بوابة العميل: نفس الارتفاع، نفس الحشو،
+   نفس حجم الخط، نفس الاستدارة، ونفس المحاذاة الرأسية. الزران يجلسان جنب
+   بعض بمحاذاة مثالية.
    ============================================================================ */
 
-/* ---------- The Language Switcher Container — No fixed positioning ---------- */
-html body .navbar .language-switcher.in-navbar,
-html body .navbar .lang-nav-item .language-switcher,
-html body .navbar .language-switcher {
-    position: static !important;
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
+/* ─── Shared alignment: both <li> items line up ─── */
+html body .navbar .nav-item.lang-nav-item,
+html body .navbar .navbar-nav > .nav-item.lang-nav-item {
     display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    list-style: none !important;
+    margin: 0 0 0 8px !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    align-self: center !important;
+    vertical-align: middle !important;
+    line-height: 1 !important;
+}
+
+[dir="rtl"] html body .navbar .nav-item.lang-nav-item,
+html[dir="rtl"] body .navbar .navbar-nav > .nav-item.lang-nav-item {
+    margin: 0 8px 0 0 !important;
+}
+
+/* ─── The inner wrapper ─── */
+html body .navbar .lang-nav-item .language-switcher,
+html body .navbar .lang-nav-item .language-switcher.in-navbar {
+    position: static !important;
+    inset: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
     visibility: visible !important;
     opacity: 1 !important;
     pointer-events: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    z-index: auto !important;
     transform: none !important;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    width: auto !important;
-    height: auto !important;
-    min-width: 0 !important;
+    z-index: auto !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
 }
 
-/* ---------- The Language Button Itself — Identical to Client Portal ---------- */
-html body .navbar .language-switcher.in-navbar .lang-btn,
+/* ═══════════════════════════════════════════════════════════════════════════
+   ★ BOTH BUTTONS — IDENTICAL SIZE AND SHAPE ★
+   ★ الزران — نفس الحجم والشكل تماماً ★
+   ─────────────────────────────────────────────────────────────────────────
+   The language button and the Client Portal button share the exact same
+   height, padding, font-size, and border-radius.
+   
+   زر اللغة وزر بوابة العميل بنفس الارتفاع والحشو وحجم الخط والاستدارة.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+html body .navbar .lang-nav-item .lang-btn,
 html body .navbar .lang-nav-item .language-switcher .lang-btn,
-html body .navbar .language-switcher .lang-btn,
-html body .navbar a.lang-btn {
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
+
+    /* ─── Layout: matches Client Portal exactly ─── */
     display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 8px !important;
-    padding: 8px 18px !important;
+    padding: 10px 20px !important;
     margin: 0 !important;
+    min-height: 40px !important;
     height: auto !important;
-    min-height: 34px !important;
     width: auto !important;
-    min-width: 0 !important;
-    max-width: none !important;
+    min-width: fit-content !important;
 
-    /* Border — gold 2px */
+    /* ─── Shape ─── */
     border: 2px solid #C9A961 !important;
     border-radius: 999px !important;
     background: transparent !important;
+    box-sizing: border-box !important;
 
-    /* Color — gold text on transparent */
+    /* ─── Colors (gold border, gold text) ─── */
     color: #C9A961 !important;
 
-    /* Typography */
+    /* ─── Typography (same as portal) ─── */
     font-family: inherit !important;
     font-weight: 700 !important;
-    font-size: 0.82rem !important;
-    line-height: 1.3 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.4px !important;
+    line-height: 1.4 !important;
     text-decoration: none !important;
     text-transform: none !important;
-    letter-spacing: 0.3px !important;
     white-space: nowrap !important;
 
-    /* Effects */
-    box-shadow: 0 3px 12px rgba(201, 169, 97, 0.15) !important;
+    /* ─── Effects ─── */
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.18) !important;
     transition: all 0.3s ease !important;
     cursor: pointer !important;
-    text-align: center !important;
+    outline: none !important;
     vertical-align: middle !important;
-    transform: none !important;
-    position: relative !important;
 }
 
-/* ---------- Hover State — Gold fill + black text ---------- */
-html body .navbar .language-switcher.in-navbar .lang-btn:hover,
-html body .navbar .lang-nav-item .language-switcher .lang-btn:hover,
-html body .navbar .language-switcher .lang-btn:hover,
-html body .navbar a.lang-btn:hover {
+/* ─── Hover: identical to portal ─── */
+html body .navbar .lang-nav-item .lang-btn:hover,
+html body .navbar .lang-nav-item .lang-btn:focus,
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover,
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:focus {
     background: linear-gradient(135deg, #C9A961, #A88947) !important;
-    color: #000000 !important;
+    color: #000 !important;
     border-color: #C9A961 !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 8px 22px rgba(201, 169, 97, 0.5) !important;
+    outline: none !important;
 }
 
-/* ---------- Icons inside — Small + inherit color ---------- */
-html body .navbar .language-switcher .lang-btn i,
-html body .navbar .lang-nav-item .lang-btn i,
-html body .navbar a.lang-btn i {
+/* ─── Icon inside button ─── */
+html body .navbar .lang-nav-item .lang-btn i {
     font-size: 0.9rem !important;
     color: inherit !important;
-    display: inline-block !important;
-    line-height: 1 !important;
     transition: transform 0.3s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    line-height: 1 !important;
 }
 
-html body .navbar .language-switcher .lang-btn:hover i {
+html body .navbar .lang-nav-item .lang-btn:hover i {
     transform: rotate(180deg) !important;
 }
 
-/* ---------- Spans inside — inherit color ---------- */
-html body .navbar .language-switcher .lang-btn span,
+/* ─── Span inside button ─── */
 html body .navbar .lang-nav-item .lang-btn span {
     display: inline-block !important;
     color: inherit !important;
@@ -7447,22 +7474,58 @@ html body .navbar .lang-nav-item .lang-btn span {
     line-height: inherit !important;
 }
 
-/* ---------- Nav Item wrapper — inline-flex, aligned ---------- */
-html body .navbar .nav-item.lang-nav-item {
+/* ─── Portal button: ensure identical minimum height ─── */
+html body .navbar .btn-outline-light.btn-sm {
+    min-height: 40px !important;
+    padding: 10px 20px !important;
+    font-size: 0.85rem !important;
     display: inline-flex !important;
     align-items: center !important;
-    margin: 0 0 0 8px !important;
-    padding: 0 !important;
-    list-style: none !important;
-    width: auto !important;
+    vertical-align: middle !important;
 }
 
-[dir="rtl"] html body .navbar .nav-item.lang-nav-item,
-html[dir="rtl"] body .navbar .nav-item.lang-nav-item {
-    margin: 0 8px 0 0 !important;
+/* ─── Desktop alignment: both items align center ─── */
+@media (min-width: 992px) {
+    html body .navbar .navbar-nav {
+        align-items: center !important;
+    }
+
+    html body .navbar .navbar-nav > li {
+        align-self: center !important;
+    }
 }
 
-/* ---------- Hide Any Old Floating Button ---------- */
+/* ─── Mobile: both buttons full-width, stacked ─── */
+@media (max-width: 991.98px) {
+    html body .navbar .nav-item.lang-nav-item {
+        display: flex !important;
+        width: 100% !important;
+        margin: 6px 0 0 !important;
+        justify-content: stretch !important;
+    }
+
+    html body .navbar .lang-nav-item .language-switcher,
+    html body .navbar .lang-nav-item .language-switcher.in-navbar {
+        width: 100% !important;
+        justify-content: stretch !important;
+    }
+
+    html body .navbar .lang-nav-item .lang-btn {
+        width: 100% !important;
+        min-height: 44px !important;
+        justify-content: center !important;
+        font-size: 0.9rem !important;
+    }
+
+    html body .navbar .btn-outline-light.btn-sm {
+        width: 100% !important;
+        min-height: 44px !important;
+        justify-content: center !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ─── Hide any floating legacy button ─── */
 html body > .language-switcher:not(.in-navbar) {
     display: none !important;
     visibility: hidden !important;
@@ -7470,29 +7533,23 @@ html body > .language-switcher:not(.in-navbar) {
     pointer-events: none !important;
 }
 
-/* ---------- Mobile: full-width inside collapsed menu ---------- */
+/* ============================================================================
+   🎯 LANGUAGE BUTTON SIZE FIX — مطابقة حجم زر بوابة العميل تماماً
+   ============================================================================ */
+.navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
+    padding: 10px 20px !important;
+    min-height: 40px !important;
+    font-size: 0.85rem !important;
+    border-radius: 999px !important;
+}
+
+/* للموبايل */
 @media (max-width: 991.98px) {
-    html body .navbar .nav-item.lang-nav-item {
+    .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
         width: 100% !important;
-        display: flex !important;
-        justify-content: center !important;
-        margin: 8px 0 !important;
-    }
-
-    html body .navbar .language-switcher.in-navbar,
-    html body .navbar .lang-nav-item .language-switcher {
-        width: 100% !important;
-        display: flex !important;
-        justify-content: center !important;
-    }
-
-    html body .navbar .language-switcher .lang-btn,
-    html body .navbar .lang-nav-item .lang-btn {
-        width: 100% !important;
-        padding: 12px 20px !important;
-        font-size: 0.9rem !important;
         min-height: 44px !important;
-        justify-content: center !important;
+        font-size: 0.9rem !important;
+        padding: 12px 20px !important;
     }
 }
 
