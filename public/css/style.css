@@ -7225,6 +7225,109 @@ html body .hero-rich .hero-badge-rich {
 }
 
 /* ============================================================================
+   🎨 LANGUAGE BUTTON — GOLD FILLED (Final Style)
+   زر اللغة الذهبي الممتلئ
+   ============================================================================
+   PURPOSE / الوظيفة:
+   Makes the language button stand out with a SOLID GOLD background,
+   black text, and pill shape — clearly distinct from the transparent
+   Client Portal button next to it.
+   
+   يجعل زر اللغة بارزاً بخلفية ذهبية ممتلئة ونص أسود وشكل حبة دوا —
+   مميز بوضوح عن زر بوابة العميل الشفاف بجانبه.
+   ============================================================================ */
+
+/* ─── The Gold-Filled Language Button ─── */
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
+html body .navbar .language-switcher.in-navbar .lang-btn {
+
+    /* Layout / التخطيط */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 8px 18px !important;
+    margin: 0 !important;
+    min-height: 36px !important;
+    height: auto !important;
+    width: auto !important;
+
+    /* Background — GOLD GRADIENT / الخلفية — تدرج ذهبي */
+    background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
+
+    /* Text Color — BLACK / لون النص — أسود */
+    color: #000 !important;
+
+    /* Border / الحد */
+    border: none !important;
+    border-radius: 999px !important;
+
+    /* Typography / الخط */
+    font-family: inherit !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.3px !important;
+    line-height: 1.3 !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    white-space: nowrap !important;
+
+    /* Effects / التأثيرات */
+    box-shadow: 0 6px 15px rgba(201, 169, 97, 0.4) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    outline: none !important;
+}
+
+/* ─── Hover State / حالة التحويم ─── */
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover,
+html body .navbar .language-switcher.in-navbar .lang-btn:hover,
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:focus,
+html body .navbar .language-switcher.in-navbar .lang-btn:focus {
+    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+    color: #000 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(201, 169, 97, 0.55) !important;
+    outline: none !important;
+}
+
+/* ─── Icon / الأيقونة ─── */
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn i,
+html body .navbar .language-switcher.in-navbar .lang-btn i {
+    font-size: 0.9rem !important;
+    color: inherit !important;
+    transition: transform 0.3s ease !important;
+}
+
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover i,
+html body .navbar .language-switcher.in-navbar .lang-btn:hover i {
+    transform: rotate(180deg) !important;
+}
+
+/* ─── Mobile: full-width / الموبايل: عرض كامل ─── */
+@media (max-width: 991.98px) {
+    html body .navbar .lang-nav-item {
+        display: flex !important;
+        width: 100% !important;
+        margin: 6px 0 0 !important;
+        justify-content: stretch !important;
+    }
+
+    html body .navbar .lang-nav-item .language-switcher.in-navbar {
+        width: 100% !important;
+        margin: 0 !important;
+        justify-content: stretch !important;
+    }
+
+    html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
+        width: 100% !important;
+        min-height: 42px !important;
+        justify-content: center !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ============================================================================
    ██████████████████████████████████████████████████████████████████████████
    END OF STYLESHEET — نهاية ورقة الأنماط
    ██████████████████████████████████████████████████████████████████████████
