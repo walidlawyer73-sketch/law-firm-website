@@ -3738,3 +3738,3328 @@ hr.divider-soft {
      • Responsive (All Breakpoints)
      • Accessibility & Print
    ============================================================================ */
+   /* ============================================================================
+   ██████████████████████████████████████████████████████████████████████████
+   21. PROCESS TIMELINE — خطوات العمل
+   ██████████████████████████████████████████████████████████████████████████
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Four-step methodology timeline displayed on a dark gradient background.
+   Each step has a circular node with an icon and a numbered badge. A
+   thin connecting line runs behind the nodes.
+   
+   خط زمني من أربع خطوات على خلفية داكنة متدرجة. كل خطوة بها عقدة دائرية
+   بأيقونة ورقم، مع خط رفيع يربط بين العقد في الخلف.
+   ============================================================================ */
+.process-rich {
+    padding: 55px 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* ---------- Background Grid Pattern / نقشة شبكية في الخلف ---------- */
+.process-rich-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(201, 169, 97, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 169, 97, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+.process-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+    padding-top: 20px;
+}
+
+/* ---------- Connecting Line / الخط الرابط ---------- */
+.pt-line {
+    position: absolute;
+    top: 45px;
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent-color),
+        var(--accent-color),
+        transparent
+    );
+    opacity: 0.4;
+    z-index: 0;
+}
+
+/* ---------- Individual Step / الخطوة الفردية ---------- */
+.pt-step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- Circular Node / العقدة الدائرية ---------- */
+.pt-node {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 14px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.pt-step:hover .pt-node {
+    transform: scale(1.08) rotate(-5deg);
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(201, 169, 97, 0.4);
+}
+
+[dir="rtl"] .pt-step:hover .pt-node {
+    transform: scale(1.08) rotate(5deg);
+}
+
+/* ---------- Numbered Badge / شارة الرقم ---------- */
+.pt-num {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 26px;
+    height: 26px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 800;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid var(--primary-color);
+}
+
+[dir="rtl"] .pt-num {
+    right: auto;
+    left: -6px;
+}
+
+/* ---------- Step Title / عنوان الخطوة ---------- */
+.pt-step h6 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+/* ---------- Step Description / وصف الخطوة ---------- */
+.pt-step p {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+    line-height: 1.5;
+}
+
+[dir="rtl"] .pt-step p {
+    line-height: 1.7;
+}
+
+
+/* ============================================================================
+   ██████████████████████████████████████████████████████████████████████████
+   22. TEAM FEATURED — فريق العمل المميز
+   ██████████████████████████████████████████████████████████████████████████
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Asymmetric featured card for the lead attorney. Left portrait column
+   (dark gradient) with a perfect circular photo. Right content column
+   with role badge, name, skill tags, bio, CTA button, and social links.
+   
+   بطاقة غير متناظرة للمحامي الرئيسي. عمود الصورة يسار (خلفية داكنة
+   متدرجة) مع صورة دائرية كاملة. عمود المحتوى يمين يحتوي على شارة
+   الدور والاسم والوسوم والنبذة وزر الدعوة وروابط التواصل.
+   ============================================================================ */
+.team-featured {
+    padding: 55px 0;
+    background: var(--light-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-featured-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--gray-200);
+    position: relative;
+}
+
+/* ---------- Portrait Column / عمود الصورة ---------- */
+.tfc-portrait {
+    position: relative;
+    background: linear-gradient(160deg, var(--primary-color), var(--primary-light));
+    padding: 35px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.tfc-portrait::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(201, 169, 97, 0.15), transparent 60%);
+    pointer-events: none;
+}
+
+/* ---------- Perfect Circular Photo Frame / الإطار الدائري الكامل ---------- */
+.tfc-image-wrap {
+    position: relative;
+    z-index: 1;
+    width: 190px;
+    height: 190px;
+    max-width: 190px;
+    max-height: 190px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    box-shadow: 0 20px 50px rgba(201, 169, 97, 0.35);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.tfc-image-wrap img {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- Floating Badges / الشارات العائمة ---------- */
+.tfc-badge-top,
+.tfc-badge-bottom {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: 0 10px 25px rgba(201, 169, 97, 0.4);
+    z-index: 2;
+    animation: floatSlow 4s ease-in-out infinite;
+}
+
+.tfc-badge-top {
+    top: 25px;
+    right: 25px;
+}
+
+.tfc-badge-bottom {
+    bottom: 25px;
+    left: 25px;
+    animation-delay: 2s;
+}
+
+/* ---------- Content Column / عمود المحتوى ---------- */
+.tfc-content {
+    padding: 35px 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Role Badge / شارة الدور ---------- */
+.tfc-role {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-dark);
+    padding: 5px 14px;
+    background: rgba(201, 169, 97, 0.12);
+    border-radius: 999px;
+    margin-bottom: 12px;
+    align-self: flex-start;
+}
+
+[dir="rtl"] .tfc-role {
+    letter-spacing: 1px;
+    text-transform: none;
+    align-self: flex-end;
+}
+
+/* ---------- Name / الاسم ---------- */
+.tfc-name {
+    font-family: var(--font-serif);
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-bottom: 14px;
+    letter-spacing: -0.02em;
+}
+
+[dir="rtl"] .tfc-name {
+    font-family: var(--font-arabic);
+    letter-spacing: 0;
+}
+
+/* ---------- Skill Tags / وسوم المهارات ---------- */
+.tfc-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.tfc-tags span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    padding: 5px 12px;
+    background: rgba(201, 169, 97, 0.10);
+    color: var(--accent-dark);
+    border-radius: 999px;
+    font-weight: 600;
+    border: 1px solid rgba(201, 169, 97, 0.25);
+}
+
+.tfc-tags span i {
+    font-size: 0.6rem;
+    color: var(--accent-color);
+}
+
+/* ---------- Bio / النبذة ---------- */
+.tfc-bio {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin-bottom: 22px;
+    flex: 1;
+}
+
+/* ---------- Actions Row / صف الإجراءات ---------- */
+.tfc-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ---------- Social Links / روابط التواصل ---------- */
+.tfc-social {
+    display: flex;
+    gap: 8px;
+}
+
+.tfc-social a {
+    width: 38px;
+    height: 38px;
+    background: var(--light-bg);
+    border: 1px solid var(--gray-200);
+    color: var(--dark-text);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.tfc-social a:hover {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    color: var(--primary-color);
+    transform: translateY(-4px);
+    border-color: transparent;
+    box-shadow: 0 10px 20px rgba(201, 169, 97, 0.3);
+}
+
+
+/* ============================================================================
+   ██████████████████████████████████████████████████████████████████████████
+   23. TESTIMONIALS MODERN — آراء العملاء الحديثة
+   ██████████████████████████████████████████████████████████████████████████
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Three-column grid of client testimonial cards. Each card has a decorative
+   quote mark, star rating, italic quote, and author block (avatar + name +
+   role).
+   
+   شبكة من 3 أعمدة لبطاقات آراء العملاء. كل بطاقة بها علامة اقتباس
+   زخرفية وتقييم بالنجوم واقتباس مائل وكتلة الكاتب (صورة رمزية + اسم
+   + دور).
+   ============================================================================ */
+.testimonials-modern {
+    padding: 55px 0;
+    background: #fff;
+    position: relative;
+}
+
+.testimonial-modern-card {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    padding: 26px 24px;
+    height: 100%;
+    position: relative;
+    transition: var(--transition);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Top Gold Bar on Hover / الشريط الذهبي العلوي ---------- */
+.testimonial-modern-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-dark));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+[dir="rtl"] .testimonial-modern-card::before {
+    transform-origin: right;
+    background: linear-gradient(270deg, var(--accent-color), var(--accent-dark));
+}
+
+.testimonial-modern-card:hover::before {
+    transform: scaleX(1);
+}
+
+.testimonial-modern-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.12);
+    border-color: var(--accent-color);
+}
+
+/* ---------- Decorative Quote Mark / علامة الاقتباس الزخرفية ---------- */
+.tmc-quote {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-size: 2.2rem;
+    color: rgba(201, 169, 97, 0.15);
+    line-height: 1;
+    pointer-events: none;
+}
+
+[dir="rtl"] .tmc-quote {
+    right: auto;
+    left: 18px;
+}
+
+/* ---------- Star Rating / تقييم النجوم ---------- */
+.tmc-stars {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+}
+
+/* ---------- Quote Text / نص الاقتباس ---------- */
+.testimonial-modern-card p {
+    font-size: 0.9rem;
+    color: var(--dark-text);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+/* ---------- Author Block / كتلة الكاتب ---------- */
+.tmc-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px solid var(--gray-100);
+}
+
+.tmc-avatar {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.tmc-author strong {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--dark-text);
+    font-weight: 700;
+}
+
+.tmc-author small {
+    color: var(--gray-text);
+    font-size: 0.75rem;
+}
+
+
+/* ============================================================================
+   ██████████████████████████████████████████████████████████████████████████
+   24. FAQ ACCORDION — الأسئلة الشائعة
+   ██████████████████████████████████████████████████████████████████████████
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Custom Bootstrap accordion with rounded card items, gold hover borders,
+   and a custom SVG chevron icon in gold.
+   
+   أكورديون Bootstrap مخصص ببطاقات مدورة، حدود ذهبية عند التحويم،
+   وأيقونة سهم SVG ذهبية مخصصة.
+   ============================================================================ */
+.faq-modern {
+    padding: 55px 0;
+    background: var(--light-bg);
+}
+
+.faq-rich-accordion .accordion-item {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px !important;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-rich-accordion .accordion-item:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Question Button / زر السؤال ---------- */
+.faq-rich-accordion .accordion-button {
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 16px 20px;
+    color: var(--dark-text);
+    background: #fff;
+    border: none;
+    box-shadow: none;
+}
+
+[dir="rtl"] .faq-rich-accordion .accordion-button {
+    text-align: right;
+}
+
+.faq-rich-accordion .accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.08), rgba(201, 169, 97, 0.02));
+    color: var(--accent-dark);
+}
+
+.faq-rich-accordion .accordion-button:focus {
+    box-shadow: none;
+}
+
+/* ---------- Custom Gold Chevron / سهم ذهبي مخصص ---------- */
+.faq-rich-accordion .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23C9A961'%3e%3cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    flex-shrink: 0;
+}
+
+[dir="rtl"] .faq-rich-accordion .accordion-button::after {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+/* ---------- Answer Body / جسم الإجابة ---------- */
+.faq-rich-accordion .accordion-body {
+    padding: 0 20px 16px;
+    color: var(--gray-text);
+    line-height: 1.7;
+    font-size: 0.85rem;
+}
+
+
+/* ============================================================================
+   ██████████████████████████████████████████████████████████████████████████
+   25. FINAL CTA RICH — الدعوة النهائية
+   ██████████████████████████████████████████████████████████████████████████
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Full-width call-to-action with dark gradient background. Features:
+     • Pulsing gold circular badge with handshake icon
+     • Headline + subtitle
+     • Two CTA buttons (filled gold + ghost)
+     • Three floating decorative shapes
+   
+   قسم دعوة بعرض كامل بخلفية داكنة متدرجة. يحتوي على:
+     • شارة ذهبية دائرية نابضة بأيقونة مصافحة
+     • عنوان + وصف
+     • زرين (ذهبي ممتلئ + شفاف)
+     • 3 أشكال زخرفية عائمة
+   ============================================================================ */
+.final-cta-rich {
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* ---------- Decorative Ring (rotating) / حلقة زخرفية دوارة ---------- */
+.fcr-decoration-1 {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(201, 169, 97, 0.15);
+    border-radius: 50%;
+    animation: rotateSlow 30s linear infinite;
+    pointer-events: none;
+}
+
+/* ---------- Decorative Glow / توهج زخرفي ---------- */
+.fcr-decoration-2 {
+    position: absolute;
+    bottom: -80px;
+    right: -80px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(201, 169, 97, 0.15), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* ---------- Floating Square / مربع عائم ---------- */
+.fcr-decoration-3 {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgba(201, 169, 97, 0.2);
+    border-radius: 16px;
+    transform: rotate(45deg) translateY(-50%);
+    animation: floatSlow 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* ---------- Content Wrapper / حاوية المحتوى ---------- */
+.fcr-content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* ---------- Pulsing Badge / شارة نابضة ---------- */
+.fcr-badge {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 30px;
+    box-shadow: 0 20px 40px rgba(201, 169, 97, 0.4);
+    animation: pulseBadge 3s ease-in-out infinite;
+}
+
+/* ---------- Heading / العنوان ---------- */
+.final-cta-rich h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+
+[dir="rtl"] .final-cta-rich h2 {
+    font-family: var(--font-arabic);
+    letter-spacing: 0;
+    line-height: 1.4;
+}
+
+/* ---------- Subtitle / الوصف ---------- */
+.final-cta-rich p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+
+/* ---------- CTA Buttons Row / صف الأزرار ---------- */
+.fcr-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* ============================================================================
+   ██████████████████████████████████████████████████████████████████████████
+   26. FOOTER RICH — التذييل الفاخر
+   ██████████████████████████████████████████████████████████████████████████
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Rich footer with 4 columns: brand block (logo + description + social),
+   quick links, contact info, and legal links. Dark background with subtle
+   radial gold glow patterns and gold top border.
+   
+   تذييل غني بأربعة أعمدة: كتلة العلامة (لوجو + وصف + تواصل)، روابط
+   سريعة، معلومات الاتصال، وروابط قانونية. خلفية داكنة مع توهج ذهبي
+   دائري خفيف وحد ذهبي علوي.
+   ============================================================================ */
+.footer-rich {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 70px 0 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ---------- Gold Top Border / الحد الذهبي العلوي ---------- */
+.footer-rich::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+}
+
+/* ---------- Background Radial Pattern / نقشة خلفية دائرية ---------- */
+.footer-rich-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(201, 169, 97, 0.06), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(201, 169, 97, 0.06), transparent 40%);
+    pointer-events: none;
+}
+
+.footer-rich .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- Footer Logo / لوجو التذييل ---------- */
+.footer-logo {
+    height: 55px;
+    max-height: 55px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 2px 6px rgba(201, 169, 97, 0.3));
+    display: inline-block;
+}
+
+/* ---------- Footer Headings / عناوين التذييل ---------- */
+.footer-rich h5 {
+    color: var(--accent-color);
+    font-family: var(--font-serif);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+[dir="rtl"] .footer-rich h5 {
+    font-family: var(--font-arabic);
+}
+
+.footer-heading {
+    color: var(--accent-color);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+[dir="rtl"] .footer-heading {
+    letter-spacing: 1px;
+    text-transform: none;
+}
+
+/* ---------- Footer Description / وصف التذييل ---------- */
+.footer-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* ---------- Social Icons Row / صف أيقونات التواصل ---------- */
+.footer-social {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.footer-social a {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(201, 169, 97, 0.25);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    transform: translateY(-4px);
+    border-color: transparent;
+    box-shadow: 0 10px 20px rgba(201, 169, 97, 0.3);
+}
+
+/* ---------- Footer Links List / قائمة الروابط ---------- */
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    margin-bottom: 8px;
+    font-size: 0.88rem;
+}
+
+.footer-list a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-list a:hover {
+    color: var(--accent-color);
+    padding-left: 4px;
+}
+
+[dir="rtl"] .footer-list a:hover {
+    padding-left: 0;
+    padding-right: 4px;
+}
+
+/* ---------- Contact List / قائمة الاتصال ---------- */
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.footer-contact i {
+    color: var(--accent-color);
+    font-size: 0.95rem;
+    width: 18px;
+    flex-shrink: 0;
+}
+
+/* ---------- Bottom Bar / الشريط السفلي ---------- */
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+}
+
+
+/* ============================================================================
+   ██████████████████████████████████████████████████████████████████████████
+   27. SERVICE PAGES — صفحات الخدمات الداخلية
+   ██████████████████████████████████████████████████████████████████████████
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Components specific to service pages (Arbitration, Trademark, Patent,
+   Copyright, etc.). Includes:
+     • Service Hero
+     • Service Feature Cards
+     • Handles List
+     • Info Note / Callout
+     • Comparison Table
+     • Practice Areas (related)
+     • Legal Info Box
+     • Checklist Block
+     • Mistake Cards
+     • Stage Timeline
+     • Trends Grid
+     • Route Compare
+     • Decision Grid
+     • PCT Timeline
+     • IP Assets Grid
+     • Red Flags List
+     • Grounds Grid
+     • Security Grid
+     • Portal Card
+     • Featured Post
+     • Filter Tabs
+     • Legal Wrap / Legal TOC
+     • Contact Card / Author Card / Share Row / Citation Box
+     • Article Content
+   
+   مكونات خاصة بصفحات الخدمات (التحكيم، العلامات التجارية، براءات
+   الاختراع، حقوق المؤلف، إلخ).
+   ============================================================================ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.1 SERVICE HERO — البانر الرئيسي لصفحات الخدمات
+   ───────────────────────────────────────────────────────────────────────── */
+.service-hero {
+    position: relative;
+    margin-top: var(--navbar-height);
+    min-height: 520px;
+    background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.service-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(201, 169, 97, 0.15), transparent 55%),
+        radial-gradient(circle at 80% 70%, rgba(201, 169, 97, 0.10), transparent 55%);
+    pointer-events: none;
+}
+
+[dir="rtl"] .service-hero::before {
+    background:
+        radial-gradient(circle at 80% 30%, rgba(201, 169, 97, 0.15), transparent 55%),
+        radial-gradient(circle at 20% 70%, rgba(201, 169, 97, 0.10), transparent 55%);
+}
+
+.service-hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    max-width: 850px;
+}
+
+.service-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    color: #fff;
+    letter-spacing: -0.02em;
+}
+
+[dir="rtl"] .service-hero h1 {
+    font-family: var(--font-arabic);
+    line-height: 1.35;
+    letter-spacing: 0;
+}
+
+.service-hero p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.2 SH BADGE — شارة صغيرة فوق العناوين
+   ───────────────────────────────────────────────────────────────────────── */
+.sh-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: rgba(201, 169, 97, 0.15);
+    border: 1px solid rgba(201, 169, 97, 0.4);
+    border-radius: 999px;
+    color: var(--accent-color);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    backdrop-filter: blur(10px);
+}
+
+[dir="rtl"] .sh-badge {
+    letter-spacing: 1.5px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.3 SERVICE FEATURE CARDS — بطاقات الميزات
+   ───────────────────────────────────────────────────────────────────────── */
+.features-rich {
+    padding: 70px 0;
+    background: var(--light-bg);
+}
+
+.svc-feature-card {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    padding: 26px 22px;
+    transition: var(--transition);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.svc-feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-dark));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+[dir="rtl"] .svc-feature-card::before {
+    transform-origin: right;
+    background: linear-gradient(270deg, var(--accent-color), var(--accent-dark));
+}
+
+.svc-feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.svc-feature-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-color);
+    box-shadow: 0 25px 50px -20px rgba(201, 169, 97, 0.25);
+}
+
+.svc-feature-icon {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--accent-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+    transition: var(--transition);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    flex-shrink: 0;
+}
+
+.svc-feature-card:hover .svc-feature-icon {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    color: var(--primary-color);
+    transform: rotate(-6deg) scale(1.05);
+}
+
+[dir="rtl"] .svc-feature-card:hover .svc-feature-icon {
+    transform: rotate(6deg) scale(1.05);
+}
+
+.svc-feature-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+}
+
+[dir="rtl"] .svc-feature-card h3 {
+    font-family: var(--font-arabic);
+    line-height: 1.5;
+}
+
+.svc-feature-card p {
+    font-size: 0.88rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.4 HANDLES LIST — قائمة المجالات المغطاة
+   ───────────────────────────────────────────────────────────────────────── */
+.handles-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+}
+
+.handles-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    font-size: 0.88rem;
+    color: var(--dark-text-soft);
+    line-height: 1.7;
+    transition: var(--transition);
+}
+
+.handles-list li:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px -12px rgba(201, 169, 97, 0.2);
+}
+
+.handles-list li i {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    width: 22px;
+    height: 22px;
+    background: rgba(201, 169, 97, 0.12);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.5 INFO NOTE / CALLOUT — ملاحظة معلوماتية
+   ───────────────────────────────────────────────────────────────────────── */
+.info-note {
+    display: flex;
+    gap: 16px;
+    padding: 20px 24px;
+    background: linear-gradient(160deg, #FAF6EC 0%, #fff 100%);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 12px;
+    margin: 25px 0;
+}
+
+[dir="rtl"] .info-note {
+    border-left: none;
+    border-right: 4px solid var(--accent-color);
+}
+
+.info-note i {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.info-note div p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--dark-text-soft);
+    line-height: 1.8;
+}
+
+.info-note div p:first-child {
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.6 COMPARISON TABLE — جدول المقارنة
+   ───────────────────────────────────────────────────────────────────────── */
+.compare-table-wrap {
+    overflow-x: auto;
+    margin: 25px 0;
+    border-radius: 14px;
+    border: 1px solid var(--gray-200);
+    -webkit-overflow-scrolling: touch;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: 600px;
+}
+
+.compare-table thead {
+    background: linear-gradient(135deg, #000, #1A1A1A);
+}
+
+.compare-table thead th {
+    color: var(--accent-color);
+    font-weight: 700;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border: none;
+}
+
+[dir="rtl"] .compare-table thead th {
+    text-align: right;
+    letter-spacing: 0.5px;
+}
+
+.compare-table tbody td {
+    padding: 14px 16px;
+    color: var(--dark-text-soft);
+    border-bottom: 1px solid var(--gray-100);
+    vertical-align: top;
+    line-height: 1.7;
+}
+
+[dir="rtl"] .compare-table tbody td {
+    text-align: right;
+    line-height: 1.85;
+}
+
+.compare-table tbody tr:last-child td { border-bottom: none; }
+.compare-table tbody tr:hover { background: #FAF6EC; }
+.compare-table strong { color: var(--dark-text); font-weight: 700; }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.7 PRACTICE AREAS (RELATED) — مجالات ذات صلة
+   ───────────────────────────────────────────────────────────────────────── */
+.practice-areas-rich {
+    padding: 70px 0;
+}
+
+.pa-card {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pa-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-color);
+    box-shadow: 0 25px 50px -20px rgba(0, 0, 0, 0.12);
+}
+
+.pa-card-head {
+    padding: 22px 22px 16px;
+    background: linear-gradient(160deg, #FAF6EC 0%, #fff 100%);
+    border-bottom: 1px solid var(--gray-100);
+    position: relative;
+}
+
+.pa-card-head i.pa-icon {
+    font-size: 1.6rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.pa-card-head h3 {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    margin: 0;
+    line-height: 1.4;
+}
+
+[dir="rtl"] .pa-card-head h3 {
+    font-family: var(--font-arabic);
+    line-height: 1.5;
+}
+
+.pa-card-body {
+    padding: 20px 22px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.pa-card-body p {
+    font-size: 0.88rem;
+    color: var(--gray-text);
+    line-height: 1.75;
+    margin-bottom: 14px;
+    flex: 1;
+}
+
+.pa-card-body .pa-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-dark);
+    font-weight: 700;
+    font-size: 0.86rem;
+    text-decoration: none;
+    margin-top: auto;
+    transition: var(--transition);
+}
+
+.pa-card-body .pa-link:hover {
+    color: var(--primary-color);
+    gap: 12px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.8 LEGAL INFO BOX — صندوق معلومات قانونية
+   ───────────────────────────────────────────────────────────────────────── */
+.legal-info-box {
+    display: flex;
+    gap: 16px;
+    padding: 20px 24px;
+    background: linear-gradient(160deg, #F8F9FA 0%, #fff 100%);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 12px;
+    margin: 22px 0;
+    align-items: flex-start;
+}
+
+[dir="rtl"] .legal-info-box {
+    border-left: none;
+    border-right: 4px solid var(--accent-color);
+}
+
+.legal-info-box.warning {
+    border-left-color: #DC3545;
+    background: linear-gradient(160deg, #FFF5F5 0%, #fff 100%);
+}
+
+[dir="rtl"] .legal-info-box.warning {
+    border-right-color: #DC3545;
+}
+
+.legal-info-box.warning i {
+    color: #DC3545;
+}
+
+.legal-info-box i {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.legal-info-box div p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--dark-text-soft);
+    line-height: 1.8;
+}
+
+.legal-info-box div p:first-child {
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.9 CHECKLIST BLOCK — صندوق قوائم التحقق
+   ───────────────────────────────────────────────────────────────────────── */
+.checklist-block {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    padding: 24px 26px;
+    margin: 22px 0;
+    transition: var(--transition);
+}
+
+.checklist-block:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px -20px rgba(201, 169, 97, 0.2);
+}
+
+.checklist-block h4 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.checklist-block h4 i {
+    color: var(--accent-color);
+    font-size: 1.05rem;
+}
+
+.checklist-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.checklist-block ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 7px 0;
+    font-size: 0.9rem;
+    color: var(--dark-text-soft);
+    line-height: 1.7;
+}
+
+.checklist-block ul li i {
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    width: 20px;
+    height: 20px;
+    background: rgba(201, 169, 97, 0.12);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.10 MISTAKE CARDS — بطاقات الأخطاء الشائعة
+   ───────────────────────────────────────────────────────────────────────── */
+.mistake-card {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    padding: 24px 26px;
+    margin: 22px 0;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.mistake-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #DC3545, #A02330);
+}
+
+[dir="rtl"] .mistake-card::before {
+    left: auto;
+    right: 0;
+}
+
+.mistake-card:hover {
+    transform: translateY(-4px);
+    border-color: #DC3545;
+    box-shadow: 0 25px 50px -20px rgba(220, 53, 69, 0.2);
+}
+
+.mistake-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #DC3545, #A02330);
+    color: #fff;
+    border-radius: 10px;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3);
+}
+
+.mistake-card h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.mistake-card p {
+    color: var(--dark-text-soft);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.mistake-fix {
+    background: linear-gradient(160deg, #F0F9F4 0%, #fff 100%);
+    border-left: 3px solid #28A745;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+[dir="rtl"] .mistake-fix {
+    border-left: none;
+    border-right: 3px solid #28A745;
+}
+
+.mistake-fix i {
+    color: #28A745;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.mistake-fix div p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--dark-text-soft);
+    line-height: 1.8;
+}
+
+.mistake-fix div p:first-child {
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 3px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.11 STAGE TIMELINE — الخط الزمني للمراحل
+   ───────────────────────────────────────────────────────────────────────── */
+.stage-timeline {
+    position: relative;
+    padding: 15px 0;
+    margin: 25px 0;
+}
+
+.stage-item {
+    position: relative;
+    padding-left: 45px;
+    padding-bottom: 25px;
+}
+
+[dir="rtl"] .stage-item {
+    padding-left: 0;
+    padding-right: 45px;
+}
+
+.stage-item:last-child {
+    padding-bottom: 0;
+}
+
+.stage-item::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 36px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent-color), rgba(201, 169, 97, 0.2));
+}
+
+[dir="rtl"] .stage-item::before {
+    left: auto;
+    right: 16px;
+}
+
+.stage-item:last-child::before {
+    display: none;
+}
+
+.stage-num {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 34px;
+    height: 34px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-weight: 900;
+    font-size: 0.9rem;
+    box-shadow: 0 8px 20px rgba(201, 169, 97, 0.35);
+}
+
+[dir="rtl"] .stage-num {
+    left: auto;
+    right: 0;
+}
+
+.stage-item h4 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-bottom: 6px;
+}
+
+.stage-item p {
+    font-size: 0.88rem;
+    color: var(--gray-text);
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.12 TRENDS GRID — شبكة الاتجاهات
+   ───────────────────────────────────────────────────────────────────────── */
+.trends-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 25px 0 35px;
+}
+
+.trend-card {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 14px;
+    padding: 22px 20px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.trend-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-dark));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+[dir="rtl"] .trend-card::before {
+    transform-origin: right;
+    background: linear-gradient(270deg, var(--accent-color), var(--accent-dark));
+}
+
+.trend-card:hover::before {
+    transform: scaleX(1);
+}
+
+.trend-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px -15px rgba(201, 169, 97, 0.25);
+}
+
+.trend-card-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 900;
+    color: rgba(201, 169, 97, 0.25);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.trend-card h4 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.trend-card p {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.13 ROUTE COMPARE — مقارنة المسارات
+   ───────────────────────────────────────────────────────────────────────── */
+.route-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 25px 0;
+}
+
+@media (max-width: 700px) {
+    .route-compare {
+        grid-template-columns: 1fr;
+    }
+}
+
+.route-card {
+    background: #fff;
+    border: 2px solid var(--gray-200);
+    border-radius: 16px;
+    padding: 24px 22px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.route-card.local {
+    border-color: rgba(201, 169, 97, 0.4);
+}
+
+.route-card.local:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-6px);
+    box-shadow: 0 25px 50px -20px rgba(201, 169, 97, 0.3);
+}
+
+.route-card.pct {
+    border-color: rgba(30, 144, 255, 0.3);
+}
+
+.route-card.pct:hover {
+    border-color: #1E90FF;
+    transform: translateY(-6px);
+    box-shadow: 0 25px 50px -20px rgba(30, 144, 255, 0.25);
+}
+
+.route-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+.route-card.local .route-badge {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    color: var(--primary-color);
+}
+
+.route-card.pct .route-badge {
+    background: linear-gradient(135deg, #1E90FF, #0066CC);
+    color: #fff;
+}
+
+.route-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+[dir="rtl"] .route-card h3 {
+    font-family: var(--font-arabic);
+}
+
+.route-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+}
+
+.route-card ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 5px 0;
+    font-size: 0.85rem;
+    color: var(--dark-text-soft);
+    line-height: 1.6;
+}
+
+.route-card.local ul li i {
+    color: var(--accent-color);
+    margin-top: 4px;
+}
+
+.route-card.pct ul li i {
+    color: #1E90FF;
+    margin-top: 4px;
+}
+
+.route-card .route-when {
+    background: rgba(0, 0, 0, 0.03);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.82rem;
+    color: var(--dark-text-soft);
+    line-height: 1.7;
+}
+
+[dir="rtl"] .route-card .route-when {
+    border-left: none;
+    border-right: 3px solid var(--accent-color);
+}
+
+.route-card.pct .route-when {
+    border-left-color: #1E90FF;
+}
+
+[dir="rtl"] .route-card.pct .route-when {
+    border-right-color: #1E90FF;
+}
+
+.route-card .route-when strong {
+    display: block;
+    color: var(--dark-text);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.14 DECISION GRID — شبكة القرارات
+   ───────────────────────────────────────────────────────────────────────── */
+.decision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin: 25px 0 30px;
+}
+
+.decision-card {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 14px;
+    padding: 20px 22px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.decision-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-dark));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+[dir="rtl"] .decision-card::before {
+    transform-origin: right;
+    background: linear-gradient(270deg, var(--accent-color), var(--accent-dark));
+}
+
+.decision-card:hover::before {
+    transform: scaleX(1);
+}
+
+.decision-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px -15px rgba(201, 169, 97, 0.25);
+}
+
+.decision-card > i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.decision-card h4 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.decision-card p {
+    font-size: 0.82rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.15 PCT TIMELINE — الخط الزمني لنظام PCT
+   ───────────────────────────────────────────────────────────────────────── */
+.pct-timeline {
+    position: relative;
+    padding: 15px 0;
+    margin: 25px 0;
+}
+
+.pct-step {
+    position: relative;
+    padding-left: 45px;
+    padding-bottom: 24px;
+}
+
+[dir="rtl"] .pct-step {
+    padding-left: 0;
+    padding-right: 45px;
+}
+
+.pct-step:last-child {
+    padding-bottom: 0;
+}
+
+.pct-step::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 36px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent-color), rgba(201, 169, 97, 0.2));
+}
+
+[dir="rtl"] .pct-step::before {
+    left: auto;
+    right: 16px;
+}
+
+.pct-step:last-child::before {
+    display: none;
+}
+
+.pct-num {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 34px;
+    height: 34px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-weight: 900;
+    font-size: 0.85rem;
+    box-shadow: 0 8px 20px rgba(201, 169, 97, 0.35);
+}
+
+[dir="rtl"] .pct-num {
+    left: auto;
+    right: 0;
+}
+
+.pct-step h4 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-bottom: 4px;
+}
+
+.pct-step p {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.pct-step .pct-time {
+    display: inline-block;
+    background: rgba(201, 169, 97, 0.12);
+    color: var(--accent-dark);
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-left: 6px;
+    letter-spacing: 0.5px;
+}
+
+[dir="rtl"] .pct-step .pct-time {
+    margin-left: 0;
+    margin-right: 6px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.16 IP ASSETS GRID — شبكة أصول الملكية الفكرية
+   ───────────────────────────────────────────────────────────────────────── */
+.ip-assets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin: 25px 0 30px;
+}
+
+.ip-asset-card {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 14px;
+    padding: 20px 22px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.ip-asset-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-dark));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+[dir="rtl"] .ip-asset-card::before {
+    transform-origin: right;
+    background: linear-gradient(270deg, var(--accent-color), var(--accent-dark));
+}
+
+.ip-asset-card:hover::before {
+    transform: scaleX(1);
+}
+
+.ip-asset-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px -15px rgba(201, 169, 97, 0.25);
+}
+
+.ip-asset-card > i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.ip-asset-card h4 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.ip-asset-card p {
+    font-size: 0.82rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.17 RED FLAGS LIST — قائمة العلامات الحمراء
+   ───────────────────────────────────────────────────────────────────────── */
+.red-flags-list {
+    background: linear-gradient(160deg, #FFF5F5 0%, #fff 100%);
+    border: 1px solid rgba(220, 53, 69, 0.25);
+    border-radius: 14px;
+    padding: 24px 26px;
+    margin: 25px 0;
+}
+
+.red-flags-list h4 {
+    color: #DC3545;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.red-flags-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.red-flags-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 7px 0;
+    font-size: 0.88rem;
+    color: var(--dark-text-soft);
+    line-height: 1.7;
+}
+
+.red-flags-list li i {
+    color: #DC3545;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.18 GROUNDS GRID — شبكة الأسباب
+   ───────────────────────────────────────────────────────────────────────── */
+.grounds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 22px 0 26px;
+}
+
+.ground-item {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 16px 18px;
+    transition: var(--transition);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.ground-item:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px -12px rgba(201, 169, 97, 0.2);
+}
+
+.ground-item i {
+    color: var(--accent-color);
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.ground-item strong {
+    display: block;
+    color: var(--dark-text);
+    font-weight: 700;
+    margin-bottom: 3px;
+    font-size: 0.9rem;
+}
+
+.ground-item small {
+    color: var(--gray-text);
+    font-size: 0.78rem;
+    line-height: 1.65;
+    display: block;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.19 SECURITY GRID — شبكة الأمان
+   ───────────────────────────────────────────────────────────────────────── */
+.security-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.security-card {
+    background: linear-gradient(160deg, #fff 0%, #FAFAFA 100%);
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    padding: 24px 22px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.security-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px -15px rgba(201, 169, 97, 0.25);
+}
+
+.security-card i {
+    font-size: 1.6rem;
+    color: var(--accent-color);
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.security-card h4 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-bottom: 6px;
+}
+
+.security-card p {
+    font-size: 0.82rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.20 PORTAL CARD — بطاقة بوابة العميل
+   ───────────────────────────────────────────────────────────────────────── */
+.portal-card {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 24px;
+    padding: 40px 35px;
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    max-width: 460px;
+    margin: 0 auto;
+}
+
+.portal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-dark), var(--accent-color));
+}
+
+.portal-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #000, #1A1A1A);
+    color: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    margin: 0 auto 20px;
+    box-shadow: 0 15px 35px rgba(201, 169, 97, 0.25);
+    border: 2px solid rgba(201, 169, 97, 0.3);
+}
+
+.portal-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+[dir="rtl"] .portal-title {
+    font-family: var(--font-arabic);
+    letter-spacing: 0;
+}
+
+.portal-subtitle {
+    text-align: center;
+    color: var(--gray-text);
+    font-size: 0.88rem;
+    margin-bottom: 26px;
+    line-height: 1.7;
+}
+
+.portal-field {
+    margin-bottom: 18px;
+}
+
+.portal-field label {
+    display: block;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+
+.portal-input-wrap {
+    position: relative;
+}
+
+.portal-input-wrap input {
+    width: 100%;
+    padding: 13px 46px 13px 16px;
+    border: 2px solid var(--gray-200);
+    border-radius: 10px;
+    font-size: 0.92rem;
+    font-family: inherit;
+    transition: var(--transition);
+    background: #fff;
+    color: var(--dark-text);
+}
+
+[dir="rtl"] .portal-input-wrap input {
+    padding: 13px 16px 13px 46px;
+}
+
+.portal-input-wrap input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.15);
+    outline: none;
+}
+
+.portal-input-wrap i.field-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-500);
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: color 0.3s ease;
+}
+
+[dir="rtl"] .portal-input-wrap i.field-icon {
+    right: auto;
+    left: 16px;
+}
+
+.portal-input-wrap input:focus + i.field-icon {
+    color: var(--accent-color);
+}
+
+.portal-submit {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    color: var(--primary-color);
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 12px 30px rgba(201, 169, 97, 0.35);
+    font-family: inherit;
+    margin-top: 8px;
+}
+
+.portal-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(201, 169, 97, 0.5);
+    color: var(--primary-color);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.21 FEATURED POST — المقال المميز (المدونة)
+   ───────────────────────────────────────────────────────────────────────── */
+.featured-post {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 0;
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.12);
+    transition: var(--transition);
+    margin-bottom: 50px;
+}
+
+.featured-post:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.18);
+    border-color: var(--accent-color);
+}
+
+@media (max-width: 900px) {
+    .featured-post {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.22 FILTER TABS — تبويبات الفلترة (المدونة)
+   ───────────────────────────────────────────────────────────────────────── */
+.filter-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.filter-tab {
+    padding: 9px 22px;
+    background: #fff;
+    border: 2px solid var(--gray-200);
+    border-radius: 999px;
+    color: var(--dark-text-soft);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-tab:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+.filter-tab.active {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    color: var(--primary-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 25px -8px rgba(201, 169, 97, 0.4);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.23 LEGAL WRAP & TOC — الصفحات القانونية
+   ───────────────────────────────────────────────────────────────────────── */
+.legal-wrap {
+    background: #fff;
+    border: 1px solid var(--gray-200);
+    border-radius: 22px;
+    padding: 45px 40px;
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.legal-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-dark), var(--accent-color));
+}
+
+@media (max-width: 768px) {
+    .legal-wrap {
+        padding: 28px 22px;
+        border-radius: 16px;
+    }
+}
+
+.legal-toc {
+    background: linear-gradient(160deg, #FAF6EC 0%, #fff 100%);
+    border: 1px solid rgba(201, 169, 97, 0.25);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+}
+
+.legal-toc h4 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legal-toc h4 i {
+    color: var(--accent-color);
+}
+
+.legal-toc ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: toc-counter;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 22px;
+}
+
+@media (max-width: 600px) {
+    .legal-toc ol {
+        grid-template-columns: 1fr;
+    }
+    .legal-toc {
+        padding: 20px 20px;
+    }
+}
+
+.legal-toc li {
+    counter-increment: toc-counter;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.legal-toc li::before {
+    content: counter(toc-counter, decimal-leading-zero);
+    color: var(--accent-color);
+    font-weight: 800;
+    margin-right: 10px;
+    font-family: var(--font-serif);
+    font-size: 0.82rem;
+}
+
+[dir="rtl"] .legal-toc li::before {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+.legal-toc a {
+    color: var(--dark-text-soft);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.legal-toc a:hover {
+    color: var(--accent-dark);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.24 AUTHOR CARD (BLOG) — بطاقة الكاتب
+   ───────────────────────────────────────────────────────────────────────── */
+.author-card {
+    background: linear-gradient(160deg, #fff 0%, #FAFAFA 100%);
+    border: 1px solid var(--gray-200);
+    border-radius: 18px;
+    padding: 28px 26px;
+    margin: 55px 0 35px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    .author-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+    }
+}
+
+.author-card-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    padding: 4px;
+    box-shadow: 0 10px 25px rgba(201, 169, 97, 0.3);
+}
+
+.author-card-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.author-card-info h5 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-bottom: 4px;
+}
+
+.author-card-info .role {
+    font-size: 0.78rem;
+    color: var(--accent-dark);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.author-card-info p {
+    font-size: 0.88rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.25 ARTICLE CONTENT — محتوى المقال
+   ───────────────────────────────────────────────────────────────────────── */
+.article-content {
+    max-width: 780px;
+    margin: 0 auto;
+    font-size: 1.02rem;
+    line-height: 1.85;
+    color: var(--dark-text);
+}
+
+[dir="rtl"] .article-content {
+    line-height: 2;
+}
+
+.article-content h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--gray-100);
+    position: relative;
+    letter-spacing: -0.02em;
+    scroll-margin-top: 120px;
+}
+
+[dir="rtl"] .article-content h2 {
+    font-family: var(--font-arabic);
+    letter-spacing: 0;
+}
+
+.article-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 65px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-dark));
+}
+
+[dir="rtl"] .article-content h2::after {
+    left: auto;
+    right: 0;
+    background: linear-gradient(270deg, var(--accent-color), var(--accent-dark));
+}
+
+.article-content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-text);
+    margin-top: 32px;
+    margin-bottom: 14px;
+}
+
+.article-content p {
+    margin-bottom: 18px;
+    color: var(--dark-text);
+}
+
+.article-content strong {
+    color: #000;
+    font-weight: 700;
+}
+
+.article-content blockquote {
+    margin: 25px 0;
+    padding: 22px 28px;
+    background: linear-gradient(160deg, #FAF6EC 0%, #fff 100%);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 12px;
+    font-style: italic;
+    color: var(--dark-text-soft);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+[dir="rtl"] .article-content blockquote {
+    border-left: none;
+    border-right: 4px solid var(--accent-color);
+    line-height: 1.95;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.26 ARTICLE HERO (BLOG) — بانر المقال
+   ───────────────────────────────────────────────────────────────────────── */
+.article-hero {
+    position: relative;
+    margin-top: var(--navbar-height);
+    min-height: 480px;
+    background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.article-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+    z-index: 0;
+}
+
+.article-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.85) 100%);
+    z-index: 1;
+}
+
+.article-hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.article-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 22px;
+    color: #fff;
+}
+
+[dir="rtl"] .article-hero h1 {
+    font-family: var(--font-arabic);
+    line-height: 1.4;
+}
+
+.article-hero-meta {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 22px;
+}
+
+.article-hero-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.article-hero-meta i {
+    color: var(--accent-color);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   27.27 PAGE HERO RICH (SERVICES PAGE) — بانر صفحة الخدمات
+   ───────────────────────────────────────────────────────────────────────── */
+.page-hero-rich {
+    position: relative;
+    margin-top: var(--navbar-height);
+    min-height: 400px;
+    background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.page-hero-rich::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(201, 169, 97, 0.15), transparent 55%),
+        radial-gradient(circle at 80% 70%, rgba(201, 169, 97, 0.10), transparent 55%);
+    pointer-events: none;
+}
+
+
+/* ============================================================================
+   ██████████████████████████████████████████████████████████████████████████
+   28. RESPONSIVE — التجاوب الشامل
+   ██████████████████████████████████████████████████████████████████████████
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Three-tier responsive breakpoints:
+     • 991px and below → Tablet
+     • 768px and below → Large phone
+     • 576px and below → Small phone
+   
+   ثلاث نقاط توقف للتجاوب:
+     • 991px وأقل → تابلت
+     • 768px وأقل → موبايل كبير
+     • 576px وأقل → موبايل صغير
+   ============================================================================ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   28.1 TABLET (max-width: 991px) — تابلت
+   ───────────────────────────────────────────────────────────────────────── */
+@media (max-width: 991px) {
+
+    /* ---------- Layout Tokens / قيم التخطيط ---------- */
+    :root {
+        --navbar-height: 70px;
+    }
+
+    /* ---------- Hero Sections / البانرات ---------- */
+    .hero-rich {
+        height: auto !important;
+        min-height: 520px !important;
+        max-height: none !important;
+        padding: 50px 0 40px !important;
+    }
+
+    .hero-rich .hsb-number {
+        font-size: 4.5rem !important;
+    }
+
+    .hero-rich .hsb-number span {
+        font-size: 3rem !important;
+    }
+
+    .service-hero,
+    .page-hero-rich,
+    .article-hero {
+        min-height: 440px !important;
+        padding: 50px 0 !important;
+    }
+
+    /* ---------- Bento Grid / شبكة Bento ---------- */
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .bento-card.bento-large {
+        grid-column: span 2 !important;
+        grid-row: span 1 !important;
+        min-height: 340px !important;
+    }
+
+    /* ---------- Services Modern / كروت الخدمات ---------- */
+    .services-grid-modern {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* ---------- Team Featured / فريق العمل ---------- */
+    .team-featured-card {
+        grid-template-columns: 1fr !important;
+    }
+
+    .tfc-portrait {
+        padding: 35px 20px !important;
+    }
+
+    .tfc-image-wrap {
+        width: 160px !important;
+        height: 160px !important;
+        max-width: 160px !important;
+        max-height: 160px !important;
+    }
+
+    .tfc-badge-top {
+        top: 20px !important;
+        right: 20px !important;
+    }
+
+    .tfc-badge-bottom {
+        bottom: 20px !important;
+        left: 20px !important;
+    }
+
+    .tfc-content {
+        padding: 28px 24px !important;
+    }
+
+    /* ---------- Process Timeline / خطوات العمل ---------- */
+    .process-timeline {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .pt-line {
+        display: none !important;
+    }
+
+    /* ---------- Credentials Grid / شبكة الاعتمادات ---------- */
+    .credentials-row {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* ---------- About Asymmetric / من نحن ---------- */
+    .about-content-rich {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-top: 30px;
+    }
+
+    /* ---------- Logo Showcase / عرض اللوجو ---------- */
+    .logo-showcase {
+        min-height: 420px !important;
+        padding: 30px 15px !important;
+    }
+
+    .logo-showcase__frame {
+        max-width: 380px !important;
+        padding: 25px !important;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   28.2 LARGE PHONE (max-width: 768px) — موبايل كبير
+   ───────────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* ---------- Layout Tokens / قيم التخطيط ---------- */
+    :root {
+        --navbar-height: 65px;
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    /* ---------- Hero / البانر ---------- */
+    .hero-rich {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        padding: 55px 0 45px !important;
+    }
+
+    .hero-rich-title {
+        font-size: clamp(1.75rem, 6vw, 2.25rem) !important;
+        line-height: 1.25 !important;
+    }
+
+    .hero-rich-subtitle {
+        font-size: 0.95rem !important;
+        margin-bottom: 22px !important;
+    }
+
+    .hero-rich-buttons {
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    .hero-rich-buttons .btn-hero-primary,
+    .hero-rich-buttons .btn-hero-ghost {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 13px 22px !important;
+        font-size: 0.92rem !important;
+    }
+
+    .hero-trust-row {
+        gap: 16px !important;
+        padding-top: 18px !important;
+    }
+
+    .trust-badge {
+        font-size: 0.8rem !important;
+    }
+
+    .hero-scroll-indicator {
+        display: none !important;
+    }
+
+    /* ---------- Stats Marquee / شريط الأرقام ---------- */
+    .stats-marquee {
+        padding: 22px 0 !important;
+    }
+
+    .mq-num {
+        font-size: 1.5rem !important;
+    }
+
+    .mq-txt {
+        font-size: 0.7rem !important;
+    }
+
+    .marquee-content {
+        gap: 35px !important;
+        padding-right: 35px !important;
+    }
+
+    /* ---------- Section Headings / عناوين الأقسام ---------- */
+    .sh-title {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .sh-desc {
+        font-size: 0.9rem !important;
+    }
+
+    .section-head-rich {
+        margin-bottom: 30px !important;
+    }
+
+    /* ---------- Bento Cards / بطاقات Bento ---------- */
+    .bento-grid {
+        gap: 14px !important;
+    }
+
+    .bento-card,
+    .bento-card.bento-large {
+        padding: 22px 20px !important;
+    }
+
+    /* ---------- Team / فريق العمل ---------- */
+    .team-featured-card {
+        border-radius: 16px !important;
+    }
+
+    .tfc-name {
+        font-size: 1.35rem !important;
+    }
+
+    /* ---------- Testimonials / الآراء ---------- */
+    .testimonial-modern-card {
+        padding: 24px 22px !important;
+    }
+
+    /* ---------- FAQ / الأسئلة ---------- */
+    .faq-rich-accordion .accordion-button {
+        font-size: 0.88rem !important;
+        padding: 14px 18px !important;
+    }
+
+    .faq-rich-accordion .accordion-body {
+        padding: 0 18px 14px !important;
+        font-size: 0.84rem !important;
+    }
+
+    /* ---------- Footer / التذييل ---------- */
+    .footer-rich {
+        text-align: center;
+        padding: 50px 0 20px !important;
+    }
+
+    .footer-social {
+        justify-content: center !important;
+    }
+
+    .footer-heading {
+        margin-top: 8px !important;
+    }
+
+    .footer-rich .row > div {
+        margin-bottom: 28px !important;
+    }
+
+    /* ---------- Back to Top / زر العودة ---------- */
+    #backToTop {
+        bottom: 20px !important;
+        right: 15px !important;
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 17px !important;
+    }
+
+    [dir="rtl"] #backToTop {
+        right: auto !important;
+        left: 15px !important;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   28.3 SMALL PHONE (max-width: 576px) — موبايل صغير
+   ───────────────────────────────────────────────────────────────────────── */
+@media (max-width: 576px) {
+
+    /* ---------- Container Padding / حشو الحاوية ---------- */
+    .container {
+        padding-right: 14px !important;
+        padding-left: 14px !important;
+    }
+
+    /* ---------- Typography / الخطوط ---------- */
+    h1 { font-size: 1.7rem; }
+    h2 { font-size: 1.45rem; }
+    h3 { font-size: 1.2rem; }
+    h4 { font-size: 1.05rem; }
+    h5 { font-size: 0.98rem; }
+    h6 { font-size: 0.9rem; }
+
+    p {
+        font-size: 0.92rem;
+        line-height: 1.7;
+    }
+
+    /* ---------- Navbar Brand / علامة النافبار ---------- */
+    .navbar-brand img {
+        height: 32px !important;
+        max-height: 32px !important;
+        max-width: 110px !important;
+    }
+
+    .navbar-brand .firm-name {
+        font-size: 0.8rem !important;
+        letter-spacing: 0.3px !important;
+    }
+
+    .navbar-brand .firm-sub {
+        font-size: 0.58rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .navbar-brand {
+        gap: 8px !important;
+    }
+
+    /* ---------- Services Modern — Single Column / عمود واحد ---------- */
+    .services-grid-modern {
+        grid-template-columns: 1fr !important;
+    }
+
+    .svc-modern-item {
+        padding: 12px 14px !important;
+    }
+
+    /* ---------- Bento — Single Column / عمود واحد ---------- */
+    .bento-card,
+    .bento-card.bento-large {
+        grid-column: span 1 !important;
+        min-height: auto !important;
+        padding: 20px 18px !important;
+    }
+
+    .bento-card.bento-large .bc-icon {
+        width: 52px !important;
+        height: 52px !important;
+        font-size: 1.4rem !important;
+    }
+
+    .bento-card.bento-large .bc-num {
+        font-size: 3rem !important;
+    }
+
+    /* ---------- Process — Single Column / عمود واحد ---------- */
+    .process-timeline {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* ---------- Team Card / بطاقة الفريق ---------- */
+    .tfc-content {
+        padding: 24px 20px !important;
+    }
+
+    .tfc-image-wrap {
+        width: 140px !important;
+        height: 140px !important;
+        max-width: 140px !important;
+        max-height: 140px !important;
+    }
+
+    /* ---------- Testimonial Card / بطاقة الرأي ---------- */
+    .testimonial-modern-card {
+        padding: 22px 20px !important;
+    }
+
+    /* ---------- Trial Banner / الشريط التجريبي ---------- */
+    #trial-banner {
+        font-size: 0.72rem !important;
+        padding: 8px 10px !important;
+        line-height: 1.4 !important;
+    }
+
+    #trial-banner i {
+        display: none !important;
+    }
+
+    /* ---------- Logo Showcase / عرض اللوجو ---------- */
+    .logo-showcase {
+        min-height: 360px !important;
+    }
+
+    .logo-showcase__frame {
+        max-width: 300px !important;
+        padding: 20px !important;
+    }
+
+    .logo-showcase__badge {
+        padding: 12px 18px !important;
+        left: 15px !important;
+    }
+
+    [dir="rtl"] .logo-showcase__badge {
+        left: auto !important;
+        right: 15px !important;
+    }
+
+    .logo-showcase__badge-num {
+        font-size: 1.8rem !important;
+    }
+
+    .logo-showcase__badge-txt {
+        font-size: 0.65rem !important;
+    }
+
+    .logo-showcase__logo {
+        animation: none !important;
+    }
+}
+
+
+/* ============================================================================
+   ██████████████████████████████████████████████████████████████████████████
+   29. ACCESSIBILITY & PRINT — إمكانية الوصول والطباعة
+   ██████████████████████████████████████████████████████████████████████████
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   • Respects user's reduced-motion preference (disables animations)
+   • Adds visible focus outline for keyboard navigation
+   • Provides clean print layout (hides nav, footer, floating buttons)
+   
+   • يحترم تفضيل المستخدم لتقليل الحركة
+   • يضيف إطار تركيز مرئي للتنقل بلوحة المفاتيح
+   • يوفر تخطيط طباعة نظيف
+   ============================================================================ */
+
+/* ---------- Reduced Motion / تقليل الحركة ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ---------- Keyboard Focus / تركيز لوحة المفاتيح ---------- */
+*:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ---------- Print Layout / تخطيط الطباعة ---------- */
+@media print {
+    .navbar,
+    #trial-banner,
+    .language-switcher,
+    #backToTop,
+    footer {
+        display: none !important;
+    }
+
+    body {
+        padding-top: 0;
+        color: #000;
+        background: #fff;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .hero-rich,
+    .hero-section {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        padding: 40px 0 !important;
+        margin-top: 0 !important;
+    }
+}
+
+
+/* ============================================================================
+   ██████████████████████████████████████████████████████████████████████████
+   END OF STYLESHEET — نهاية ورقة الأنماط
+   ██████████████████████████████████████████████████████████████████████████
+   
+   ✅ FINAL CHECKLIST / قائمة التحقق النهائية:
+   ─────────────────────────────────────────────────────────────────────────
+   [✓] 01. CSS Variables & Design System
+   [✓] 02. Reset & Base Styles
+   [✓] 03. RTL Support
+   [✓] 04. Trial Banner
+   [✓] 05. Navbar + Unified Gold Buttons (Language + Portal)
+   [✓] 06. Hero Section
+   [✓] 07. Page Header
+   [✓] 08. Feature / Service / Team Cards
+   [✓] 09. Blog Cards & Testimonials
+   [✓] 10. CTA Section
+   [✓] 11. Footer (Classic)
+   [✓] 12. Buttons (Complete System)
+   [✓] 13. Social Links
+   [✓] 14. Forms
+   [✓] 15. Utilities & Helpers
+   [✓] 16. Animations
+   [✓] 17. Back to Top
+   [✓] 18. Premium Homepage (Hero Rich + Bento + Marquee)
+   [✓] 19. Logo Showcase (Gold Frame)
+   [✓] 20. Services Modern (Compact)
+   [✓] 21. Process Timeline
+   [✓] 22. Team Featured
+   [✓] 23. Testimonials Modern
+   [✓] 24. FAQ Accordion
+   [✓] 25. Final CTA Rich
+   [✓] 26. Footer Rich
+   [✓] 27. Service Pages Components
+   [✓] 28. Responsive (991px / 768px / 576px)
+   [✓] 29. Accessibility & Print
+   ─────────────────────────────────────────────────────────────────────────
+   
+   🎯 تم حل جميع المشاكل:
+   • زر اللغة مطابق تماماً لزر بوابة العميل (ذهبي أنيق)
+   • زر اللغة يُحقن تلقائياً في كل الصفحات عبر main.js
+   • الهيرو 620px ثابت
+   • كل الكروت مضغوطة (خدمات + Bento + فريق + آراء + FAQ)
+   • الصور دائرية كاملة
+   • الاسم الجديد في النافبار والفوتر
+   ─────────────────────────────────────────────────────────────────────────
+   ============================================================================
+   ============================================================================ */
