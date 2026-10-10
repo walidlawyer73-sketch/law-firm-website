@@ -7328,6 +7328,175 @@ html body .navbar .language-switcher.in-navbar .lang-btn:hover i {
 }
 
 /* ============================================================================
+   🎯 LANGUAGE BUTTON — FINAL FIX
+   زر اللغة — الحل النهائي المضمون
+   ============================================================================
+   PROBLEM / المشكلة:
+   The previous CSS selectors required a `.language-switcher` wrapper.
+   The HTML now has that wrapper, so these styles will finally apply.
+   
+   الآن بعد إضافة غلاف `.language-switcher` في HTML، هذه الأنماط ستُطبق.
+   ============================================================================ */
+
+/* ---------- The Language Switcher Container — No fixed positioning ---------- */
+html body .navbar .language-switcher.in-navbar,
+html body .navbar .lang-nav-item .language-switcher,
+html body .navbar .language-switcher {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: auto !important;
+    transform: none !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+}
+
+/* ---------- The Language Button Itself — Identical to Client Portal ---------- */
+html body .navbar .language-switcher.in-navbar .lang-btn,
+html body .navbar .lang-nav-item .language-switcher .lang-btn,
+html body .navbar .language-switcher .lang-btn,
+html body .navbar a.lang-btn {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 8px 18px !important;
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 34px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    /* Border — gold 2px */
+    border: 2px solid #C9A961 !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+
+    /* Color — gold text on transparent */
+    color: #C9A961 !important;
+
+    /* Typography */
+    font-family: inherit !important;
+    font-weight: 700 !important;
+    font-size: 0.82rem !important;
+    line-height: 1.3 !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    letter-spacing: 0.3px !important;
+    white-space: nowrap !important;
+
+    /* Effects */
+    box-shadow: 0 3px 12px rgba(201, 169, 97, 0.15) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    transform: none !important;
+    position: relative !important;
+}
+
+/* ---------- Hover State — Gold fill + black text ---------- */
+html body .navbar .language-switcher.in-navbar .lang-btn:hover,
+html body .navbar .lang-nav-item .language-switcher .lang-btn:hover,
+html body .navbar .language-switcher .lang-btn:hover,
+html body .navbar a.lang-btn:hover {
+    background: linear-gradient(135deg, #C9A961, #A88947) !important;
+    color: #000000 !important;
+    border-color: #C9A961 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(201, 169, 97, 0.5) !important;
+}
+
+/* ---------- Icons inside — Small + inherit color ---------- */
+html body .navbar .language-switcher .lang-btn i,
+html body .navbar .lang-nav-item .lang-btn i,
+html body .navbar a.lang-btn i {
+    font-size: 0.9rem !important;
+    color: inherit !important;
+    display: inline-block !important;
+    line-height: 1 !important;
+    transition: transform 0.3s ease !important;
+}
+
+html body .navbar .language-switcher .lang-btn:hover i {
+    transform: rotate(180deg) !important;
+}
+
+/* ---------- Spans inside — inherit color ---------- */
+html body .navbar .language-switcher .lang-btn span,
+html body .navbar .lang-nav-item .lang-btn span {
+    display: inline-block !important;
+    color: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+}
+
+/* ---------- Nav Item wrapper — inline-flex, aligned ---------- */
+html body .navbar .nav-item.lang-nav-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin: 0 0 0 8px !important;
+    padding: 0 !important;
+    list-style: none !important;
+    width: auto !important;
+}
+
+[dir="rtl"] html body .navbar .nav-item.lang-nav-item,
+html[dir="rtl"] body .navbar .nav-item.lang-nav-item {
+    margin: 0 8px 0 0 !important;
+}
+
+/* ---------- Hide Any Old Floating Button ---------- */
+html body > .language-switcher:not(.in-navbar) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* ---------- Mobile: full-width inside collapsed menu ---------- */
+@media (max-width: 991.98px) {
+    html body .navbar .nav-item.lang-nav-item {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        margin: 8px 0 !important;
+    }
+
+    html body .navbar .language-switcher.in-navbar,
+    html body .navbar .lang-nav-item .language-switcher {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    html body .navbar .language-switcher .lang-btn,
+    html body .navbar .lang-nav-item .lang-btn {
+        width: 100% !important;
+        padding: 12px 20px !important;
+        font-size: 0.9rem !important;
+        min-height: 44px !important;
+        justify-content: center !important;
+    }
+}
+
+/* ============================================================================
    ██████████████████████████████████████████████████████████████████████████
    END OF STYLESHEET — نهاية ورقة الأنماط
    ██████████████████████████████████████████████████████████████████████████
