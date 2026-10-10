@@ -3626,6 +3626,350 @@ section, header, footer, main {
 }
 
 /* ============================================================================
+   🎯 FIX v9.0 — الحل النهائي الشامل
+   ============================================================================
+   1. زر اللغة: كود ستايل كامل
+   2. كروت الخدمات: طول معقول
+   3. صورة الهيرو: 620px ثابت
+   ============================================================================ */
+
+/* ============================================================================
+   1) زر اللغة — ستايل كامل
+   ============================================================================ */
+html body .language-switcher {
+    position: fixed !important;
+    top: calc(var(--banner-height, 50px) + var(--navbar-height, 80px) + 15px) !important;
+    right: 20px !important;
+    left: auto !important;
+    bottom: auto !important;
+    z-index: 9999 !important;
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+html[dir="rtl"] body .language-switcher {
+    right: auto !important;
+    left: 20px !important;
+}
+
+html body .language-switcher .lang-btn {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 10px 20px !important;
+    background: linear-gradient(135deg, #000, #1A1A1A) !important;
+    color: #C9A961 !important;
+    border: 2px solid #C9A961 !important;
+    border-radius: 999px !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    text-decoration: none !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35) !important;
+    white-space: nowrap !important;
+    font-family: inherit !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    text-transform: none !important;
+}
+
+html body .language-switcher .lang-btn:hover {
+    background: linear-gradient(135deg, #C9A961, #A88947) !important;
+    color: #000 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(201,169,97,0.5) !important;
+}
+
+html body .language-switcher .lang-btn i {
+    font-size: 0.95rem !important;
+    color: inherit !important;
+}
+
+@media (max-width: 768px) {
+    html body .language-switcher {
+        top: calc(var(--banner-height, 50px) + var(--navbar-height, 70px) + 10px) !important;
+        right: 12px !important;
+    }
+    html[dir="rtl"] body .language-switcher {
+        right: auto !important;
+        left: 12px !important;
+    }
+    html body .language-switcher .lang-btn {
+        padding: 8px 14px !important;
+        font-size: 0.78rem !important;
+    }
+}
+
+/* ============================================================================
+   2) كروت الخدمات — طول معقول جداً
+   ============================================================================ */
+
+/* تصغير الـ padding والـ gap */
+html body .services-grid-modern {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 14px !important;
+    align-items: stretch !important;
+}
+
+html body .svc-modern-item {
+    padding: 18px 16px !important;
+    gap: 8px !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    text-align: start !important;
+    flex-wrap: nowrap !important;
+}
+
+/* الأيقونة على الشمال */
+html body .svc-modern-item .svc-modern-icon {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.15rem !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+/* المحتوى وسط */
+html body .svc-modern-item .svc-modern-content {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+}
+
+html body .svc-modern-item .svc-modern-content h6 {
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    line-height: 1.25 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+html body .svc-modern-item .svc-modern-content small {
+    font-size: 0.72rem !important;
+    line-height: 1.25 !important;
+    display: block !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+/* السهم على اليمين */
+html body .svc-modern-item .svc-modern-arrow {
+    margin: 0 !important;
+    margin-inline-start: auto !important;
+    opacity: 0.4 !important;
+    font-size: 0.8rem !important;
+    flex-shrink: 0 !important;
+    transform: translateX(0) !important;
+}
+
+html body .svc-modern-item:hover .svc-modern-arrow {
+    opacity: 1 !important;
+    transform: translateX(3px) !important;
+}
+
+[dir="rtl"] html body .svc-modern-item:hover .svc-modern-arrow {
+    transform: translateX(-3px) !important;
+}
+
+/* تابلت: عمودين */
+@media (max-width: 991px) {
+    html body .services-grid-modern {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* موبايل: عمود واحد */
+@media (max-width: 576px) {
+    html body .services-grid-modern {
+        grid-template-columns: 1fr !important;
+    }
+    html body .svc-modern-item {
+        padding: 16px 14px !important;
+    }
+}
+
+/* ============================================================================
+   3) الهيرو — 620px، يبدأ أسفل النافبار مباشرة
+   ============================================================================ */
+
+/* reset margin top على كل حاجة */
+html body .hero-rich,
+html body .hero-section {
+    margin-top: var(--navbar-height, 80px) !important;
+    height: 620px !important;
+    min-height: 620px !important;
+    max-height: 620px !important;
+    padding: 40px 0 !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* الخلفية والصورة */
+html body .hero-rich .hero-rich-bg {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+}
+
+html body .hero-rich .hero-rich-bg img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transform: none !important;
+    animation: none !important;
+    max-width: none !important;
+    max-height: none !important;
+    display: block !important;
+}
+
+/* تصغير الرقم الكبير */
+html body .hero-rich .hsb-number {
+    font-size: 5.5rem !important;
+}
+
+html body .hero-rich .hsb-number span {
+    font-size: 3.5rem !important;
+}
+
+html body .hero-rich .hero-side-badge {
+    padding: 15px !important;
+}
+
+/* تابلت */
+@media (max-width: 991px) {
+    html body .hero-rich,
+    html body .hero-section {
+        height: auto !important;
+        min-height: 520px !important;
+        max-height: none !important;
+        padding: 50px 0 !important;
+    }
+    html body .hero-rich .hsb-number { font-size: 4.5rem !important; }
+    html body .hero-rich .hsb-number span { font-size: 3rem !important; }
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+    html body .hero-rich,
+    html body .hero-section {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        padding: 50px 0 40px !important;
+    }
+}
+
+/* باقي الهيروهات */
+html body .service-hero,
+html body .page-hero-rich,
+html body .article-hero {
+    margin-top: var(--navbar-height, 80px) !important;
+    height: 520px !important;
+    min-height: 520px !important;
+    max-height: 520px !important;
+    overflow: hidden !important;
+}
+
+@media (max-width: 991px) {
+    html body .service-hero,
+    html body .page-hero-rich,
+    html body .article-hero {
+        height: auto !important;
+        min-height: 450px !important;
+        max-height: none !important;
+    }
+}
+
+/* ============================================================================
+   4) ضمانات أخيرة — اللوجو وصورة الفريق
+   ============================================================================ */
+html body .navbar-brand img {
+    height: 50px !important;
+    max-height: 50px !important;
+    width: auto !important;
+    max-width: 160px !important;
+    object-fit: contain !important;
+}
+
+html body .navbar.scrolled .navbar-brand img {
+    height: 40px !important;
+    max-height: 40px !important;
+    max-width: 140px !important;
+}
+
+html body .tfc-image-wrap {
+    width: 240px !important;
+    height: 240px !important;
+    max-width: 240px !important;
+    max-height: 240px !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+html body .tfc-image-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    border-radius: 50% !important;
+    display: block !important;
+}
+
+@media (max-width: 991px) {
+    html body .tfc-image-wrap {
+        width: 180px !important;
+        height: 180px !important;
+    }
+    html body .navbar-brand img {
+        height: 42px !important;
+        max-height: 42px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    html body .tfc-image-wrap {
+        width: 150px !important;
+        height: 150px !important;
+    }
+    html body .navbar-brand img {
+        height: 36px !important;
+        max-height: 36px !important;
+    }
+}
+/* ============================================================================
    END OF STYLESHEET (CLEAN v1.0)
    نهاية ورقة الأنماط — نسخة نظيفة
    ============================================================================ */
