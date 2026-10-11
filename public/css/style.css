@@ -6759,3 +6759,59 @@ hr.divider-soft {
    ─────────────────────────────────────────────────────────────────────────
    📌 ملاحظة: كل قاعدة محدودة بنطاق واضح، ولا تُلغي أي قاعدة أخرى.
    ============================================================================ */
+   /* ═══════════════════════════════════════════════════════════════════════
+   التعديلات النهائية — Final Adjustments
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* 1) صورة الهيرو — تظهر كاملة من فوق لتحت */
+.hero-rich {
+    height: 400px !important;
+    min-height: 400px !important;
+    max-height: 400px !important;
+}
+
+.hero-rich-bg img {
+    object-fit: cover !important;
+    object-position: center center !important;
+}
+
+/* 2) زر اللغة — نفس حجم زر بوابة العميل بالظبط */
+.navbar .lang-btn {
+    padding: 12px 26px !important;
+    min-height: 46px !important;
+    height: 46px !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+}
+
+/* 3) زر بوابة العميل — نفس الحجم + إطار ذهبي سميك */
+.navbar .btn-outline-light,
+.navbar .btn-outline-light.btn-sm {
+    padding: 12px 26px !important;
+    min-height: 46px !important;
+    height: 46px !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    border: 3px solid #C9A961 !important;
+}
+
+/* 4) أيقونات الأزرار */
+.navbar .lang-btn i,
+.navbar .btn-outline-light i {
+    font-size: 1rem !important;
+}
+
+/* 5) على الموبايل */
+@media (max-width: 991px) {
+    .hero-rich {
+        height: auto !important;
+        min-height: 380px !important;
+        max-height: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-rich {
+        min-height: auto !important;
+    }
+}
