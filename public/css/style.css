@@ -7260,3 +7260,223 @@ body {
         display: none !important;
     }
 }
+/* ═══════════════════════════════════════════════════════════════ */
+/* HERO EXTRA v4.0 — شعارات مصغّرة + بلوك دعائي */
+/* ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────
+   1) شعارات مصغّرة أسفل slogan (العمود الأيسر)
+   ───────────────────────────────────────────── */
+.hero-mini-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.hmb-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 15px;
+    background: rgba(201, 169, 97, 0.08);
+    border: 1px solid rgba(201, 169, 97, 0.30);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.76rem;
+    font-weight: 600;
+    font-family: 'Cairo', sans-serif;
+    letter-spacing: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+    white-space: nowrap;
+}
+
+.hmb-item i {
+    color: #C9A961;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.hmb-item:hover {
+    background: rgba(201, 169, 97, 0.18);
+    border-color: #C9A961;
+    color: #D4B872;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px -4px rgba(201, 169, 97, 0.4);
+}
+
+.hmb-item:hover i {
+    transform: rotate(-10deg) scale(1.15);
+}
+
+/* ─────────────────────────────────────────────
+   2) بلوك دعائي في أسفل العمود الأيمن
+   ───────────────────────────────────────────── */
+.hero-promo-block {
+    margin-top: 10px;
+    padding: 15px 18px;
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.14) 0%, rgba(201, 169, 97, 0.05) 100%);
+    border: 1px solid rgba(201, 169, 97, 0.35);
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.35s ease;
+}
+
+.hero-promo-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #C9A961, transparent);
+}
+
+.hero-promo-block:hover {
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.20) 0%, rgba(201, 169, 97, 0.08) 100%);
+    border-color: #C9A961;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -8px rgba(201, 169, 97, 0.45);
+}
+
+.hero-promo-block .hpb-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #C9A961;
+    line-height: 1;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.hero-promo-block .hpb-text {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.74rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    line-height: 1.35;
+    display: block;
+}
+
+/* ─────────────────────────────────────────────
+   3) التوازن العمودي — محاذاة من الأعلى
+   ───────────────────────────────────────────── */
+.hero-rich-content .row {
+    align-items: stretch !important;
+}
+
+.hero-rich-content .row > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* ─────────────────────────────────────────────
+   4) استجابة الجوال
+   ───────────────────────────────────────────── */
+@media (max-width: 991px) {
+    .hero-mini-badges {
+        gap: 6px;
+        margin-top: 12px;
+    }
+    .hmb-item {
+        padding: 6px 12px;
+        font-size: 0.72rem;
+    }
+    .hmb-item i {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-mini-badges {
+        gap: 5px;
+    }
+    .hmb-item {
+        padding: 5px 10px;
+        font-size: 0.68rem;
+        gap: 5px;
+    }
+}
+/* ═══════════════════════════════════════════════════════════════ */
+/* HERO SLOGANS STACK — شعارات متعددة تحت بعض */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.hero-slogans-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 14px;
+    margin-bottom: 8px;
+}
+
+.hero-slogans-stack .hero-slogan-extra {
+    margin-top: 0 !important;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Slogan 2 — مميز بخلفية ذهبية خفيفة */
+.hero-slogan-extra.slogan-gold {
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.18) 0%, rgba(201, 169, 97, 0.06) 100%);
+    border-right-color: #D4B872;
+}
+
+.hero-slogan-extra.slogan-gold i {
+    color: #D4B872;
+}
+
+/* Slogan 3 — أيقونة مختلفة */
+.hero-slogan-extra.slogan-soft {
+    background: rgba(255, 255, 255, 0.05);
+    border-right-color: rgba(201, 169, 97, 0.6);
+}
+
+.hero-slogan-extra.slogan-soft i {
+    color: rgba(201, 169, 97, 0.85);
+}
+
+/* على الموبايل */
+@media (max-width: 576px) {
+    .hero-slogans-stack { gap: 8px; }
+    .hero-slogans-stack .hero-slogan-extra {
+        font-size: 0.78rem;
+        padding: 6px 12px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* ACCREDITATION CARDS — تكبير بسيط للتناسق مع ارتفاع اليمين */
+/* ═══════════════════════════════════════════════════════════════ */
+
+/* ارتفاع الهيرو لاستيعاب الكروت الإضافية */
+@media (min-width: 992px) {
+    .hero-rich {
+        min-height: 720px !important;
+    }
+}
+
+/* الكارت الواحد أكبر قليلاً */
+.ha-item {
+    padding: 10px 16px !important;
+    min-height: 58px !important;
+}
+
+.ha-icon {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 1rem !important;
+}
+
+.ha-text strong {
+    font-size: 0.85rem !important;
+}
+
+.ha-text small {
+    font-size: 0.7rem !important;
+}
