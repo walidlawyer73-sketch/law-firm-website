@@ -7755,41 +7755,4 @@ body {
         .hpr-grid { grid-template-columns: 1fr; }
         .hero-promises { padding: 16px 16px; }
     }
-    /* ═══════════════════════════════════════════════════════════════
-   HERO — مضبوط على مقاس الصورة 1067×600
-   ═══════════════════════════════════════════════════════════════ */
-
-/* على شاشات كبيرة — البانر ياخد نفس نسبة الصورة */
-@media (min-width: 992px) {
-    .hero-rich {
-        min-height: 480px !important;
-        max-height: 560px !important;
-        padding: 50px 0 45px !important;
-    }
-}
-
-/* على التابلت */
-@media (max-width: 991px) and (min-width: 577px) {
-    .hero-rich {
-        min-height: 420px !important;
-        max-height: none !important;
-        padding: 40px 0 35px !important;
-    }
-}
-
-/* على الموبايل */
-@media (max-width: 576px) {
-    .hero-rich {
-        min-height: 380px !important;
-        max-height: none !important;
-        padding: 35px 0 30px !important;
-    }
-}
-
-/* صورة الخلفية — تغطية كاملة بدون تشويه */
-.hero-rich-bg img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center center !important;
-}
+    
