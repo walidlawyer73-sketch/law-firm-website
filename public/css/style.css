@@ -6981,3 +6981,193 @@ a.lang-btn i {
         min-height: 420px !important;
     }
 }
+/* ═══════════════════════════════════════════════════════════════ */
+/* HERO EXTRAS — اعتمادات + أرقام داخل الهيرو */
+/* ═══════════════════════════════════════════════════════════════ */
+
+/* الأرقام المختصرة — تحت صف الثقة */
+.hero-stats-mini {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hsm-item {
+    text-align: center;
+    padding: 4px 8px;
+    transition: transform 0.3s ease;
+}
+
+.hsm-item:hover {
+    transform: translateY(-3px);
+}
+
+.hsm-num {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #C9A961;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.hsm-txt {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.72);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+[dir="rtl"] .hsm-txt {
+    letter-spacing: 0;
+    text-transform: none;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.78rem;
+}
+
+/* الاعتمادات — العمود الأيمن في الهيرو */
+.hero-accreditations {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 6px 0;
+}
+
+.ha-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(201, 169, 97, 0.35);
+    border-radius: 14px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.ha-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #C9A961, #A88947);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.35s ease;
+}
+
+[dir="rtl"] .ha-item::before {
+    left: auto;
+    right: 0;
+}
+
+.ha-item:hover {
+    background: rgba(201, 169, 97, 0.12);
+    border-color: #C9A961;
+    transform: translateX(6px);
+    box-shadow: 0 12px 30px -8px rgba(201, 169, 97, 0.35);
+}
+
+[dir="rtl"] .ha-item:hover {
+    transform: translateX(-6px);
+}
+
+.ha-item:hover::before {
+    transform: scaleY(1);
+}
+
+.ha-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #C9A961, #A88947);
+    color: #000;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+    box-shadow: 0 8px 18px rgba(201, 169, 97, 0.35);
+    transition: transform 0.35s ease;
+}
+
+.ha-item:hover .ha-icon {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+[dir="rtl"] .ha-item:hover .ha-icon {
+    transform: rotate(8deg) scale(1.08);
+}
+
+.ha-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+    flex: 1;
+}
+
+.ha-text strong {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    letter-spacing: 0.2px;
+}
+
+[dir="rtl"] .ha-text strong {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.88rem;
+    letter-spacing: 0;
+}
+
+.ha-text small {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.68);
+    line-height: 1.35;
+}
+
+[dir="rtl"] .ha-text small {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.74rem;
+}
+
+/* التأكد من وجود مساحة كافية في الهيرو */
+@media (min-width: 992px) {
+    .hero-rich {
+        min-height: 640px !important;
+    }
+}
+
+/* الاستجابة للجوال */
+@media (max-width: 991px) {
+    .hero-stats-mini {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-top: 20px;
+        padding-top: 18px;
+    }
+    .hsm-num { font-size: 1.4rem; }
+}
+
+@media (max-width: 576px) {
+    .hero-stats-mini {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 16px;
+        padding-top: 14px;
+    }
+    .hsm-num { font-size: 1.25rem; }
+    .hsm-txt { font-size: 0.68rem; }
+}
