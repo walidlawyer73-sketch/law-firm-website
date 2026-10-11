@@ -2,8 +2,8 @@
    ============================================================================
    WALID ABU ALELA LAW FIRM — MASTER STYLESHEET
    ورقة الأنماط الشاملة - مكتب وليد أبو العلا للمحاماة
-
-   VERSION / الإصدار: v14.0 (Hero + Mobile Enhanced Edition)
+   
+   VERSION / الإصدار: v14.0
    UPDATED / آخر تحديث: 2026
    ============================================================================
    ============================================================================ */
@@ -80,63 +80,6 @@
     --z-banner: 1010;
     --z-modal: 2000;
     --z-tooltip: 3000;
-
-    /* ═══════════════════════════════════════════════════════════════════════
-       ★ NEW v14.0 — HERO SECTION DIMENSIONS
-       أبعاد قسم الهيرو (مصغّرة ومحسّنة)
-       ═══════════════════════════════════════════════════════════════════════ */
-    --hero-height-desktop: 480px;
-    --hero-height-tablet: 440px;
-    --hero-height-mobile: auto;
-    --hero-padding-desktop: 30px 0;
-    --hero-padding-tablet: 40px 0;
-    --hero-padding-mobile: 35px 0;
-
-    /* ═══════════════════════════════════════════════════════════════════════
-       ★ NEW v14.0 — FLUID SPACING SCALE
-       مقياس مسافات مرن (يتكيّف مع حجم الشاشة)
-       ═══════════════════════════════════════════════════════════════════════ */
-    --space-3xs: clamp(2px, 0.5vw, 4px);
-    --space-2xs: clamp(4px, 0.8vw, 8px);
-    --space-xs: clamp(8px, 1.5vw, 12px);
-    --space-sm: clamp(12px, 2vw, 16px);
-    --space-md: clamp(16px, 2.5vw, 24px);
-    --space-lg: clamp(24px, 3.5vw, 32px);
-    --space-xl: clamp(32px, 5vw, 48px);
-    --space-2xl: clamp(48px, 7vw, 72px);
-    --space-3xl: clamp(64px, 10vw, 96px);
-
-    /* ═══════════════════════════════════════════════════════════════════════
-       ★ NEW v14.0 — FLUID FONT SCALE
-       مقياس خطوط مرن (clamp-based)
-       ═══════════════════════════════════════════════════════════════════════ */
-    --fs-xs: clamp(0.7rem, 0.6rem + 0.3vw, 0.75rem);
-    --fs-sm: clamp(0.8rem, 0.7rem + 0.4vw, 0.875rem);
-    --fs-base: clamp(0.9rem, 0.85rem + 0.3vw, 1rem);
-    --fs-md: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-    --fs-lg: clamp(1.1rem, 1rem + 0.6vw, 1.25rem);
-    --fs-xl: clamp(1.25rem, 1.1rem + 0.8vw, 1.5rem);
-    --fs-2xl: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
-    --fs-3xl: clamp(1.75rem, 1.5rem + 1.5vw, 2.25rem);
-    --fs-4xl: clamp(2rem, 1.7rem + 2vw, 2.75rem);
-    --fs-5xl: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
-
-    /* ═══════════════════════════════════════════════════════════════════════
-       ★ NEW v14.0 — CONTAINER PADDING (fluid)
-       حشوة الحاوية المرنة
-       ═══════════════════════════════════════════════════════════════════════ */
-    --container-px-desktop: 20px;
-    --container-px-tablet: 16px;
-    --container-px-mobile: 14px;
-
-    /* ═══════════════════════════════════════════════════════════════════════
-       ★ NEW v14.0 — SAFE AREA INSETS (iPhone notch / Dynamic Island)
-       الحدود الآمنة للشاشات المنحوتة
-       ═══════════════════════════════════════════════════════════════════════ */
-    --safe-top: env(safe-area-inset-top, 0px);
-    --safe-bottom: env(safe-area-inset-bottom, 0px);
-    --safe-left: env(safe-area-inset-left, 0px);
-    --safe-right: env(safe-area-inset-right, 0px);
 }
 
 
@@ -152,8 +95,6 @@ html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
-    /* ✅ Fix iOS bounce + horizontal overflow */
-    overflow-x: hidden;
 }
 
 html, body {
@@ -162,7 +103,6 @@ html, body {
     max-width: 100vw;
     margin: 0;
     padding: 0;
-    position: relative;
 }
 
 body {
@@ -193,13 +133,6 @@ img {
     display: block;
 }
 
-/* ★ NEW v14.0 — Universal media defaults */
-img, video, iframe, svg, canvas {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
 a {
     color: var(--accent-color);
     text-decoration: none;
@@ -217,13 +150,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
 }
 
-/* ★ Enhanced v14.0 — fluid heading scale */
-h1 { font-size: var(--fs-5xl); }
-h2 { font-size: var(--fs-4xl); }
-h3 { font-size: var(--fs-3xl); }
-h4 { font-size: var(--fs-2xl); }
-h5 { font-size: var(--fs-xl); }
-h6 { font-size: var(--fs-lg); }
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
 
 p { margin-bottom: 1rem; }
 
@@ -240,14 +172,12 @@ button {
     cursor: pointer;
 }
 
-/* ★ Enhanced v14.0 — fluid container */
 .container {
-    padding-right: var(--container-px-desktop);
-    padding-left: var(--container-px-desktop);
+    padding-right: 15px;
+    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
     max-width: var(--container-max);
-    width: 100%;
 }
 
 
@@ -261,21 +191,16 @@ button {
 }
 
 [dir="rtl"] .me-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
-[dir="rtl"] .me-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
-[dir="rtl"] .me-3 { margin-left: 1rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-2 { margin-left: 0.5rem !important;  margin-right: 0 !important; }
+[dir="rtl"] .me-3 { margin-left: 1rem !important;    margin-right: 0 !important; }
 
 [dir="rtl"] .ms-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
-[dir="rtl"] .ms-3 { margin-right: 1rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-3 { margin-right: 1rem !important;   margin-left: 0 !important; }
 
-[dir="rtl"] .text-start   { text-align: right !important; }
-[dir="rtl"] .text-end     { text-align: left !important; }
-[dir="rtl"] .text-md-end  { text-align: left !important; }
+[dir="rtl"] .text-start    { text-align: right !important; }
+[dir="rtl"] .text-end      { text-align: left !important; }
+[dir="rtl"] .text-md-end   { text-align: left !important; }
 [dir="rtl"] .text-md-start { text-align: right !important; }
-
-/* ★ NEW v14.0 — RTL arrow flip utilities */
-[dir="rtl"] .arrow-flip { transform: scaleX(-1); }
-[dir="rtl"] .btn i.fa-arrow-right { transform: scaleX(-1); }
-[dir="rtl"] .btn:hover i.fa-arrow-right { transform: scaleX(-1) translateX(4px); }
 
 
 /* ============================================================================
@@ -300,8 +225,6 @@ button {
     box-sizing: border-box;
     font-size: 0.9rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    /* ✅ Fix iOS safe area */
-    padding-top: max(10px, calc(var(--safe-top) + 6px));
 }
 
 #trial-banner i {
@@ -387,7 +310,6 @@ button {
     line-height: 1.2;
     align-items: flex-start;
     gap: 3px;
-    min-width: 0;
 }
 
 [dir="rtl"] .navbar-brand > div {
@@ -490,174 +412,260 @@ button {
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   05.5 ★★★ UNIFIED NAVBAR BUTTONS — الزران الموحدان ★★★
-        (نقطة الحقيقة الوحيدة — Single Source of Truth)
+   05.5 LANGUAGE SWITCHER — مبدل اللغة
+   ─────────────────────────────────────────────────────────────────────────
+   • Base styles work for both positions:
+     - Floating (fixed top-right) — outside navbar
+     - Inline — inside navbar
    ───────────────────────────────────────────────────────────────────────── */
 
-/* ─── 05.5.1 Shared Base ─── */
-html body .navbar .btn-outline-light,
-html body .navbar .btn-outline-light.btn-sm,
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
-html body .navbar .lang-nav-item .language-switcher .lang-btn,
-html body .navbar .language-switcher.in-navbar .lang-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    padding: 10px 20px !important;
-    margin: 0 !important;
-    min-height: 40px !important;
-    height: 40px !important;
-    width: auto !important;
-    min-width: fit-content !important;
-    border-radius: 999px !important;
-    box-sizing: border-box !important;
-    font-family: inherit !important;
-    font-weight: 700 !important;
-    font-size: 0.85rem !important;
-    letter-spacing: 0.3px !important;
-    line-height: 1 !important;
-    text-decoration: none !important;
-    text-transform: none !important;
-    white-space: nowrap !important;
-    transition: all 0.3s ease !important;
-    cursor: pointer !important;
-    outline: none !important;
-    vertical-align: middle !important;
-    position: relative !important;
+/* 05.5.1 Floating wrapper — default position (top-right) */
+.language-switcher {
+    position: fixed;
+    top: calc(var(--banner-height) + 20px);
+    right: 20px;
+    z-index: var(--z-language);
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
 }
 
-/* ─── 05.5.2 Language Button — SOLID GOLD ─── */
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
-html body .navbar .lang-nav-item .language-switcher .lang-btn,
-html body .navbar .language-switcher.in-navbar .lang-btn {
-    background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
+[dir="rtl"] .language-switcher {
+    right: auto;
+    left: 20px;
+}
+
+/* 05.5.2 Base button — pill-shaped, dark with gold border */
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: var(--accent-color) !important;
+    border: 2px solid var(--accent-color);
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.88rem;
+    line-height: 1.2;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+[dir="rtl"] .lang-btn {
+    font-family: var(--font-arabic);
+}
+
+.lang-btn i {
+    font-size: 0.95rem;
+    transition: transform 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: var(--accent-color);
+    color: var(--primary-color) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+}
+
+.lang-btn:hover i {
+    transform: rotate(180deg);
+}
+
+/* 05.5.3 Inline (navbar) wrapper */
+.language-switcher.in-navbar,
+.navbar .language-switcher {
+    position: static;
+    top: auto;
+    right: auto;
+    left: auto;
+    z-index: auto;
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+[dir="rtl"] .language-switcher.in-navbar,
+[dir="rtl"] .navbar .language-switcher {
+    right: auto;
+    left: auto;
+}
+
+/* 05.5.4 Inline button — solid gold */
+.navbar .lang-btn,
+.language-switcher.in-navbar .lang-btn {
+    background: linear-gradient(135deg, #C9A961 0%, #A88947 100%);
     color: #000000 !important;
-    border: 2px solid #C9A961 !important;
-    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.40) !important;
+    border: 2px solid #C9A961;
+    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.40);
+    padding: 10px 20px;
+    min-height: 40px;
+    height: 40px;
+    font-size: 0.85rem;
 }
 
-/* ─── 05.5.3 Client Portal Button — OUTLINED GOLD ─── */
-html body .navbar .btn-outline-light,
-html body .navbar .btn-outline-light.btn-sm {
-    background: transparent !important;
+.navbar .lang-btn:hover,
+.navbar .lang-btn:focus,
+.language-switcher.in-navbar .lang-btn:hover,
+.language-switcher.in-navbar .lang-btn:focus {
+    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%);
+    color: #000000 !important;
+    border-color: #D4B872;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55);
+}
+
+/* 05.5.5 Client Portal button — outlined gold (inside navbar) */
+.navbar .btn-outline-light,
+.navbar .btn-outline-light.btn-sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    margin: 0;
+    min-height: 40px;
+    height: 40px;
+    background: transparent;
     color: #C9A961 !important;
-    border: 2px solid #C9A961 !important;
-    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.15) !important;
+    border: 2px solid #C9A961;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.15);
 }
 
-/* ─── 05.5.4 Hover ─── */
-html body .navbar .btn-outline-light:hover,
-html body .navbar .btn-outline-light:focus,
-html body .navbar .btn-outline-light.btn-sm:hover,
-html body .navbar .btn-outline-light.btn-sm:focus,
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover,
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:focus,
-html body .navbar .lang-nav-item .language-switcher .lang-btn:hover,
-html body .navbar .language-switcher.in-navbar .lang-btn:hover {
-    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+.navbar .btn-outline-light:hover,
+.navbar .btn-outline-light:focus,
+.navbar .btn-outline-light.btn-sm:hover,
+.navbar .btn-outline-light.btn-sm:focus {
+    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%);
     color: #000000 !important;
-    border-color: #D4B872 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55) !important;
-    outline: none !important;
+    border-color: #D4B872;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55);
 }
 
-/* ─── 05.5.5 Icons ─── */
-html body .navbar .btn-outline-light i,
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn i,
-html body .navbar .lang-nav-item .language-switcher .lang-btn i,
-html body .navbar .language-switcher.in-navbar .lang-btn i {
-    font-size: 0.9rem !important;
-    color: inherit !important;
-    line-height: 1 !important;
-    display: inline-flex !important;
+/* 05.5.6 Icons inside both buttons */
+.navbar .btn-outline-light i,
+.navbar .lang-btn i {
+    font-size: 0.9rem;
+    color: inherit;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   05.6 SINGLE-ROW LAYOUT — منع التفاف عناصر النافبار
+   ─────────────────────────────────────────────────────────────────────────
+   Keeps all navbar items on a single row on desktop, while allowing
+   wrapping inside the collapsed mobile menu.
+   ───────────────────────────────────────────────────────────────────────── */
+
+html body .navbar .container,
+html body .navbar .container-fluid {
+    flex-wrap: nowrap !important;
     align-items: center !important;
-    transition: transform 0.3s ease !important;
 }
 
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover i,
-html body .navbar .language-switcher.in-navbar .lang-btn:hover i {
-    transform: rotate(180deg) !important;
-}
-
-/* ─── 05.5.6 Text spans ─── */
-html body .navbar .btn-outline-light span,
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn span,
-html body .navbar .lang-nav-item .language-switcher .lang-btn span {
-    display: inline-block !important;
-    color: inherit !important;
-    font-size: inherit !important;
-    line-height: inherit !important;
-}
-
-/* ─── 05.5.7 Language Switcher wrapper ─── */
-html body .navbar .lang-nav-item .language-switcher,
-html body .navbar .lang-nav-item .language-switcher.in-navbar {
-    position: static !important;
-    inset: auto !important;
-    display: inline-flex !important;
+html body .navbar .navbar-collapse {
+    display: flex !important;
+    flex-wrap: nowrap !important;
     align-items: center !important;
-    justify-content: center !important;
-    width: auto !important;
-    height: auto !important;
+    justify-content: flex-end !important;
+}
+
+html body .navbar .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 2px !important;
     margin: 0 !important;
-    padding: 0 !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    transform: none !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    z-index: auto !important;
-    line-height: 1 !important;
-    vertical-align: middle !important;
 }
 
-/* ─── 05.5.8 The <li> wrapper ─── */
-html body .navbar .nav-item.lang-nav-item,
-html body .navbar .navbar-nav > .nav-item.lang-nav-item {
+html body .navbar .navbar-nav > li,
+html body .navbar .navbar-nav > .nav-item {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
     display: inline-flex !important;
     align-items: center !important;
-    justify-content: center !important;
-    list-style: none !important;
-    margin: 0 0 0 8px !important;
-    padding: 0 !important;
-    width: auto !important;
-    height: auto !important;
-    align-self: center !important;
-    line-height: 1 !important;
-    vertical-align: middle !important;
 }
 
-[dir="rtl"] html body .navbar .nav-item.lang-nav-item,
-html[dir="rtl"] body .navbar .navbar-nav > .nav-item.lang-nav-item {
-    margin: 0 8px 0 0 !important;
+html body .navbar .navbar-nav .nav-link {
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    line-height: 1.2 !important;
 }
 
-/* ─── 05.5.9 Hide legacy floating language button ─── */
-html body > .language-switcher:not(.in-navbar),
-html body > .language-switcher {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
+html body .navbar .btn-outline-light,
+html body .navbar .lang-btn {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
 }
 
-/* ─── 05.5.10 Desktop alignment ─── */
-@media (min-width: 992px) {
+/* Slightly tighter spacing on RTL to fit everything on one line */
+[dir="rtl"] .navbar .navbar-nav .nav-link {
+    padding: 8px 11px !important;
+    font-size: 0.92rem !important;
+    margin: 0 1px !important;
+}
+
+[dir="rtl"] .navbar .btn-outline-light,
+[dir="rtl"] .navbar .lang-btn {
+    padding: 10px 16px !important;
+    font-size: 0.82rem !important;
+    gap: 6px !important;
+}
+
+/* Medium screens (992–1200px) — shrink a bit more */
+@media (min-width: 992px) and (max-width: 1200px) {
+    .navbar .navbar-nav .nav-link {
+        padding: 8px 10px !important;
+        font-size: 0.88rem !important;
+    }
+    .navbar .btn-outline-light,
+    .navbar .lang-btn {
+        padding: 9px 14px !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+/* On mobile — allow wrapping inside the collapsed menu */
+@media (max-width: 991.98px) {
+    html body .navbar .navbar-collapse {
+        flex-wrap: wrap !important;
+    }
     html body .navbar .navbar-nav {
-        align-items: center !important;
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        width: 100% !important;
     }
     html body .navbar .navbar-nav > li {
-        align-self: center !important;
+        width: 100% !important;
+    }
+    html body .navbar .navbar-nav .nav-link {
+        white-space: normal !important;
     }
 }
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   05.6 DROPDOWN MENU — القائمة المنسدلة
+   05.7 DROPDOWN MENU — القائمة المنسدلة
    ───────────────────────────────────────────────────────────────────────── */
 .dropdown-menu {
     border: none;
@@ -703,7 +711,7 @@ html body > .language-switcher {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   05.7 NAVBAR RESPONSIVE — تجاوب النافبار
+   05.8 NAVBAR RESPONSIVE — تجاوب النافبار
    ───────────────────────────────────────────────────────────────────────── */
 @media (max-width: 991.98px) {
 
@@ -729,24 +737,18 @@ html body > .language-switcher {
         font-size: 0.95rem !important;
     }
 
-    /* Both buttons — full width, stacked */
-    html body .navbar .navbar-nav > .nav-item.lang-nav-item {
+    /* Language switcher & Client Portal — full width, stacked */
+    .navbar .language-switcher,
+    .navbar .language-switcher.in-navbar {
         display: flex !important;
         width: 100% !important;
         margin: 6px 0 !important;
         justify-content: stretch !important;
     }
 
-    html body .navbar .lang-nav-item .language-switcher,
-    html body .navbar .lang-nav-item .language-switcher.in-navbar {
-        width: 100% !important;
-        justify-content: stretch !important;
-    }
-
-    html body .navbar .btn-outline-light,
-    html body .navbar .btn-outline-light.btn-sm,
-    html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
-    html body .navbar .lang-nav-item .language-switcher .lang-btn {
+    .navbar .btn-outline-light,
+    .navbar .btn-outline-light.btn-sm,
+    .navbar .lang-btn {
         width: 100% !important;
         min-height: 44px !important;
         height: auto !important;
@@ -794,119 +796,20 @@ html body > .language-switcher {
 
 
 /* ============================================================================
-   🖼️ 05.8 ★★★ HERO IMAGE FIX — v14.0 ★★★
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Fixes the hero section so the image shows COMPLETELY (not cropped).
-   Uses object-fit: contain + black background + blurred backdrop layer
-   to create a cinematic, letterboxed presentation.
-
-   يصلح قسم الهيرو بحيث تظهر الصورة كاملة (غير مقصوصة)، باستخدام
-   object-fit: contain + خلفية سوداء + طبقة ضبابية خلفية لمظهر سينمائي.
-   ───────────────────────────────────────────────────────────────────────── */
-
-/* ─── 05.8.1 Container — dark background, no overflow ─── */
-html body .hero-rich {
-    background: #000 !important;
-    overflow: hidden !important;
-    position: relative !important;
-}
-
-/* ─── 05.8.2 Background wrapper — holds blurred backdrop ─── */
-html body .hero-rich .hero-rich-bg {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    overflow: hidden !important;
-    z-index: 0 !important;
-    background: #000 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-/* ─── 05.8.3 Blurred backdrop — same image, heavily blurred ─── */
-html body .hero-rich .hero-rich-bg::before {
-    content: '' !important;
-    position: absolute !important;
-    inset: -5% !important;
-    background-image: inherit !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    filter: blur(40px) brightness(0.35) saturate(0.7) !important;
-    z-index: 0 !important;
-    pointer-events: none !important;
-    transform: scale(1.1);
-}
-
-/* ─── 05.8.4 Main image — shows FULLY (contain, not crop) ─── */
-html body .hero-rich .hero-rich-bg img {
-    position: relative !important;
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    object-fit: contain !important;
-    object-position: center center !important;
-    display: block !important;
-    z-index: 1 !important;
-    transform: none !important;
-    animation: none !important;
-    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.6));
-}
-
-/* ─── 05.8.5 Overlay — lighter so image is visible ─── */
-html body .hero-rich .hero-rich-overlay {
-    background: linear-gradient(
-        135deg,
-        rgba(0, 0, 0, 0.75) 0%,
-        rgba(0, 0, 0, 0.55) 45%,
-        rgba(0, 0, 0, 0.80) 100%
-    ) !important;
-    z-index: 2 !important;
-}
-
-/* ─── 05.8.6 Content — must stay above image ─── */
-html body .hero-rich .hero-rich-content {
-    position: relative !important;
-    z-index: 3 !important;
-}
-
-/* ─── 05.8.7 Mobile: stack image on top, content below ─── */
-@media (max-width: 768px) {
-    html body .hero-rich .hero-rich-bg {
-        position: absolute !important;
-        inset: 0 !important;
-    }
-    html body .hero-rich .hero-rich-bg img {
-        object-fit: cover !important;
-        object-position: center top !important;
-    }
-    html body .hero-rich .hero-rich-bg::before {
-        filter: blur(25px) brightness(0.30) !important;
-    }
-}
-
-
-/* ============================================================================
-   END OF PART 1/5
-   نهاية الجزء الأول من 5
+   END OF PART 1/5 — نهاية الجزء الأول من 5
    ============================================================================ */
    /* ============================================================================
-   06. HERO SECTION — قسم البانر الرئيسي (v14.0 Improved)
+   06. HERO SECTION (CLASSIC) — قسم البانر الرئيسي (لصفحات داخلية)
    ============================================================================ */
 .hero-section {
     position: relative;
     margin-top: var(--navbar-height);
-    min-height: var(--hero-height-desktop);
-    height: auto;
-    max-height: none;
+    min-height: 520px;
+    max-height: 620px;
     display: flex;
     align-items: center;
     color: var(--white);
-    padding: var(--hero-padding-desktop);
+    padding: 60px 0 70px;
     overflow: hidden;
     z-index: var(--z-base);
     background: url('/images/hero-bg.jpg') no-repeat center center;
@@ -1000,7 +903,7 @@ html body .hero-rich .hero-rich-content {
 
 
 /* ============================================================================
-   07. PAGE HEADER — رأس الصفحات الداخلية (v14.0 Improved)
+   07. PAGE HEADER — رأس الصفحات الداخلية
    ============================================================================ */
 .page-header {
     position: relative;
@@ -1048,31 +951,9 @@ html body .hero-rich .hero-rich-content {
     color: rgba(255, 255, 255, 0.85);
 }
 
-/* ★ Responsive page header */
-@media (max-width: 768px) {
-    .page-header {
-        padding: 45px 0;
-    }
-    .page-header h1 {
-        font-size: 1.6rem;
-    }
-    .page-header .lead {
-        font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .page-header {
-        padding: 35px 0;
-    }
-    .page-header h1 {
-        font-size: 1.4rem;
-    }
-}
-
 
 /* ============================================================================
-   08. CARDS — FEATURE / SERVICE / TEAM — البطاقات (v14.0 Improved)
+   08. CARDS — FEATURE / SERVICE / TEAM — البطاقات
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -1159,33 +1040,6 @@ html body .hero-rich .hero-rich-content {
     color: var(--gray-text);
     margin-bottom: 0;
     font-size: 0.95rem;
-}
-
-/* ★ Responsive feature cards */
-@media (max-width: 768px) {
-    .features-section {
-        padding: 55px 0;
-    }
-    .feature-card {
-        padding: 26px 20px;
-    }
-    .feature-icon {
-        width: 65px;
-        height: 65px;
-        font-size: 24px;
-        margin-bottom: 18px;
-    }
-}
-
-@media (max-width: 576px) {
-    .feature-card {
-        padding: 22px 18px;
-    }
-    .feature-icon {
-        width: 55px;
-        height: 55px;
-        font-size: 20px;
-    }
 }
 
 
@@ -1317,30 +1171,9 @@ html body .hero-rich .hero-rich-content {
     box-shadow: var(--shadow-gold);
 }
 
-/* ★ Responsive team cards */
-@media (max-width: 768px) {
-    .team-section {
-        padding: 55px 0;
-    }
-    .team-card {
-        padding: 26px 20px;
-    }
-    .team-card img {
-        width: 130px;
-        height: 130px;
-    }
-}
-
-@media (max-width: 576px) {
-    .team-card img {
-        width: 110px;
-        height: 110px;
-    }
-}
-
 
 /* ============================================================================
-   09. BLOG CARDS & TESTIMONIALS — بطاقات المدونة والآراء (v14.0 Improved)
+   09. BLOG CARDS & TESTIMONIALS — بطاقات المدونة والآراء
    ============================================================================ */
 .blog-section,
 .testimonials-section {
@@ -1372,7 +1205,6 @@ html body .hero-rich .hero-rich-content {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    object-position: center center;
     transition: var(--transition);
 }
 
@@ -1405,26 +1237,6 @@ html body .hero-rich .hero-rich-content {
     color: var(--primary-color) !important;
     font-weight: 600;
     padding: 6px 12px;
-}
-
-/* ★ Responsive blog */
-@media (max-width: 768px) {
-    .blog-section,
-    .testimonials-section {
-        padding: 55px 0;
-    }
-    .blog-card img {
-        height: 180px;
-    }
-    .blog-card .card-body {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 576px) {
-    .blog-card img {
-        height: 200px;
-    }
 }
 
 
@@ -1524,34 +1336,9 @@ html body .hero-rich .hero-rich-content {
     margin-bottom: 0;
 }
 
-/* ★ Responsive CTA */
-@media (max-width: 768px) {
-    .cta-section {
-        padding: 45px 0;
-    }
-    .cta-section h3 {
-        font-size: 1.3rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .cta-section {
-        padding: 35px 0;
-    }
-    .cta-section h3 {
-        font-size: 1.15rem;
-    }
-    .cta-section .btn {
-        display: block;
-        width: 100%;
-        margin: 6px 0;
-    }
-}
-
 
 /* ============================================================================
-   END OF PART 2/5
-   نهاية الجزء الثاني من 5
+   END OF PART 2/5 — نهاية الجزء الثاني من 5
    ============================================================================ */
    /* ============================================================================
    11. FOOTER (CLASSIC) — التذييل الكلاسيكي
@@ -1632,25 +1419,9 @@ html body .hero-rich .hero-rich-content {
     margin: 30px 0 20px;
 }
 
-/* ★ Responsive footer classic */
-@media (max-width: 768px) {
-    .footer-section {
-        padding: 45px 0 15px;
-        margin-top: 40px;
-        text-align: center;
-    }
-    .footer-section .social-links {
-        justify-content: center;
-    }
-    .footer-section a:hover {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
 
 /* ============================================================================
-   12. BUTTONS — الأزرار (نظام كامل) (v14.0 Enhanced)
+   12. BUTTONS — الأزرار (نظام كامل)
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -1665,19 +1436,13 @@ html body .hero-rich .hero-rich-content {
     letter-spacing: 0.3px;
     cursor: pointer;
     font-family: inherit;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    text-align: center;
-    white-space: nowrap;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
    12.2 BOOTSTRAP VARIANTS — متغيرات Bootstrap
    ───────────────────────────────────────────────────────────────────────── */
 
-/* ---------- Primary (Gold) ---------- */
+/* ---------- Primary (Gold) / الأساسي (ذهبي) ---------- */
 .btn-primary {
     background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
     border-color: var(--accent-color);
@@ -1694,7 +1459,7 @@ html body .hero-rich .hero-rich-content {
     box-shadow: var(--shadow-gold);
 }
 
-/* ---------- Outline Primary ---------- */
+/* ---------- Outline Primary / مفرغ أساسي ---------- */
 .btn-outline-primary {
     color: var(--accent-dark);
     border-color: var(--accent-color);
@@ -1708,7 +1473,9 @@ html body .hero-rich .hero-rich-content {
     transform: translateY(-2px);
 }
 
-/* ---------- Outline Light ---------- */
+/* ---------- Outline Light / مفرغ فاتح ----------
+   ⚠️ ملاحظة: الشكل النهائي لزر "بوابة العميل" داخل النافبار
+   محدد في القسم 05 — هذه القاعدة للاستخدامات الأخرى فقط */
 .btn-outline-light {
     color: var(--white);
     border-color: rgba(255, 255, 255, 0.5);
@@ -1722,7 +1489,7 @@ html body .hero-rich .hero-rich-content {
     transform: translateY(-2px);
 }
 
-/* ---------- Light ---------- */
+/* ---------- Light / الفاتح ---------- */
 .btn-light {
     background: var(--white);
     color: var(--primary-color);
@@ -1736,7 +1503,7 @@ html body .hero-rich .hero-rich-content {
     transform: translateY(-2px);
 }
 
-/* ---------- Link Button ---------- */
+/* ---------- Link Button / زر الرابط ---------- */
 .btn-link {
     color: var(--primary-color);
     text-decoration: none;
@@ -1786,11 +1553,10 @@ html body .hero-rich .hero-rich-content {
    12.4 RICH BUTTONS — الأزرار الغنية المخصصة
    ───────────────────────────────────────────────────────────────────────── */
 
-/* ---------- Rich Primary — Filled Gold Pill ---------- */
+/* ---------- Rich Primary — Filled Gold Pill / الأساسي الغني ---------- */
 .btn-rich-primary {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 12px;
     padding: 14px 32px;
     background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
@@ -1807,7 +1573,6 @@ html body .hero-rich .hero-rich-content {
     cursor: pointer;
     font-family: inherit;
     text-align: center;
-    white-space: nowrap;
 }
 
 .btn-rich-primary::before {
@@ -1847,7 +1612,7 @@ html body .hero-rich .hero-rich-content {
     transform: translateX(-4px);
 }
 
-/* ---------- Rich Primary Light ---------- */
+/* ---------- Rich Primary Light / الأساسي الغني الفاتح ---------- */
 .btn-rich-primary.light {
     background: #fff;
     color: var(--primary-color);
@@ -1861,11 +1626,10 @@ html body .hero-rich .hero-rich-content {
     color: var(--primary-color);
 }
 
-/* ---------- Rich Outline — Gold-Bordered ---------- */
+/* ---------- Rich Outline — Gold-Bordered / المفرغ الغني ---------- */
 .btn-rich-outline {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 12px;
     padding: 14px 32px;
     background: transparent;
@@ -1879,7 +1643,6 @@ html body .hero-rich .hero-rich-content {
     cursor: pointer;
     font-family: inherit;
     text-align: center;
-    white-space: nowrap;
 }
 
 .btn-rich-outline:hover {
@@ -1901,11 +1664,10 @@ html body .hero-rich .hero-rich-content {
     transform: translateX(-4px);
 }
 
-/* ---------- Rich Ghost — White Border ---------- */
+/* ---------- Rich Ghost — White Border / الشبح الغني ---------- */
 .btn-rich-ghost {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 12px;
     padding: 14px 32px;
     background: transparent;
@@ -1919,7 +1681,6 @@ html body .hero-rich .hero-rich-content {
     cursor: pointer;
     font-family: inherit;
     text-align: center;
-    white-space: nowrap;
 }
 
 .btn-rich-ghost:hover {
@@ -1927,34 +1688,6 @@ html body .hero-rich .hero-rich-content {
     border-color: var(--accent-color);
     color: var(--accent-light);
     transform: translateY(-3px);
-}
-
-/* ★ NEW v14.0 — FULL WIDTH BUTTONS ON MOBILE */
-@media (max-width: 576px) {
-    .btn-rich-primary,
-    .btn-rich-outline,
-    .btn-rich-ghost {
-        width: 100%;
-        padding: 13px 24px;
-        font-size: 0.95rem;
-    }
-
-    .btn-lg {
-        padding: 13px 28px;
-        font-size: 0.95rem;
-    }
-
-    .hero-buttons .btn {
-        display: block;
-        width: 100%;
-        margin: 8px 0;
-    }
-
-    .cta-section .btn,
-    .final-cta-rich .btn {
-        width: 100%;
-        margin: 6px 0;
-    }
 }
 
 
@@ -1991,7 +1724,7 @@ html body .hero-rich .hero-rich-content {
 
 
 /* ============================================================================
-   14. FORMS — النماذج (v14.0 Enhanced)
+   14. FORMS — النماذج
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -2007,12 +1740,6 @@ html body .hero-rich .hero-rich-content {
     font-family: inherit;
     color: var(--dark-text);
     background: #fff;
-    width: 100%;
-    min-height: 46px;
-    /* ✅ Fix iOS default styles */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
 }
 
 .form-control:focus,
@@ -2022,19 +1749,8 @@ html body .hero-rich .hero-rich-content {
     outline: none;
 }
 
-/* ✅ Fix iOS zoom on input focus (font-size ≥ 16px) */
-@media (max-width: 768px) {
-    .form-control,
-    .form-select,
-    input,
-    textarea,
-    select {
-        font-size: 16px !important;
-    }
-}
-
 /* ─────────────────────────────────────────────────────────────────────────
-   14.2 LABELS & HELPER TEXT
+   14.2 LABELS & HELPER TEXT — التسميات والنصوص المساعدة
    ───────────────────────────────────────────────────────────────────────── */
 .form-label {
     font-weight: 600;
@@ -2049,7 +1765,7 @@ html body .hero-rich .hero-rich-content {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   14.3 STATUS MESSAGES
+   14.3 STATUS MESSAGES — رسائل الحالة
    ───────────────────────────────────────────────────────────────────────── */
 .form-status {
     margin-top: 20px;
@@ -2075,7 +1791,7 @@ html body .hero-rich .hero-rich-content {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   14.4 DYNAMIC CONTENT
+   14.4 DYNAMIC CONTENT — المحتوى الديناميكي
    ───────────────────────────────────────────────────────────────────────── */
 .dynamic-content h2 {
     margin-top: 2rem;
@@ -2149,7 +1865,7 @@ html body .hero-rich .hero-rich-content {
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.1 GENERIC CARDS
+   15.1 GENERIC CARDS — بطاقات عامة
    ───────────────────────────────────────────────────────────────────────── */
 .card {
     border-radius: var(--radius-lg);
@@ -2168,7 +1884,7 @@ html body .hero-rich .hero-rich-content {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.2 BACKGROUND HELPERS
+   15.2 BACKGROUND HELPERS — أدوات الخلفية
    ───────────────────────────────────────────────────────────────────────── */
 .bg-light {
     background-color: var(--light-bg) !important;
@@ -2187,7 +1903,7 @@ html body .hero-rich .hero-rich-content {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.3 BADGES
+   15.3 BADGES — الشارات
    ───────────────────────────────────────────────────────────────────────── */
 .badge {
     font-weight: 600;
@@ -2206,7 +1922,7 @@ html body .hero-rich .hero-rich-content {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.4 TEXT HELPERS
+   15.4 TEXT HELPERS — أدوات النص
    ───────────────────────────────────────────────────────────────────────── */
 .text-accent {
     color: var(--accent-color) !important;
@@ -2229,30 +1945,19 @@ html body .hero-rich .hero-rich-content {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.5 SHADOW HELPERS
+   15.5 SHADOW HELPERS — أدوات الظل
    ───────────────────────────────────────────────────────────────────────── */
 .shadow-gold {
     box-shadow: var(--shadow-gold) !important;
 }
 
-.shadow-sm {
-    box-shadow: var(--shadow-sm) !important;
-}
-
-.shadow-md {
-    box-shadow: var(--shadow-md) !important;
-}
-
-.shadow-lg {
-    box-shadow: var(--shadow-lg) !important;
-}
-
-.shadow-xl {
-    box-shadow: var(--shadow-xl) !important;
-}
+.shadow-sm { box-shadow: var(--shadow-sm) !important; }
+.shadow-md { box-shadow: var(--shadow-md) !important; }
+.shadow-lg { box-shadow: var(--shadow-lg) !important; }
+.shadow-xl { box-shadow: var(--shadow-xl) !important; }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.6 OVERFLOW & POSITION HELPERS
+   15.6 OVERFLOW & POSITION HELPERS — أدوات الفائض والتموضع
    ───────────────────────────────────────────────────────────────────────── */
 .overflow-hidden {
     overflow: hidden !important;
@@ -2271,7 +1976,7 @@ html body .hero-rich .hero-rich-content {
 .z-100 { z-index: 100 !important; }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.7 SPACING HELPERS
+   15.7 RADIUS HELPERS — أدوات الاستدارة
    ───────────────────────────────────────────────────────────────────────── */
 .rounded-pill {
     border-radius: var(--radius-pill) !important;
@@ -2286,7 +1991,7 @@ html body .hero-rich .hero-rich-content {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.8 DIVIDERS
+   15.8 DIVIDERS — الفواصل
    ───────────────────────────────────────────────────────────────────────── */
 hr.divider-gold {
     border: none;
@@ -2302,7 +2007,7 @@ hr.divider-soft {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.9 IMAGE HELPERS
+   15.9 IMAGE HELPERS — أدوات الصور
    ───────────────────────────────────────────────────────────────────────── */
 .img-cover {
     width: 100%;
@@ -2326,10 +2031,13 @@ hr.divider-soft {
 
 
 /* ============================================================================
+   END OF PART 3/5 — نهاية الجزء الثالث من 5
+   ============================================================================ */
+   /* ============================================================================
    16. ANIMATIONS — الحركات (Keyframes)
    ============================================================================ */
 
-/* ---------- Fade In Up ---------- */
+/* ---------- Fade In Up — Entrance from bottom / ظهور من الأسفل ---------- */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -2341,43 +2049,43 @@ hr.divider-soft {
     }
 }
 
-/* ---------- Fade In ---------- */
+/* ---------- Fade In — Simple opacity / ظهور بسيط ---------- */
 @keyframes fadeIn {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
 
-/* ---------- Float Slow ---------- */
+/* ---------- Float Slow — Gentle drifting motion / حركة انسيابية ---------- */
 @keyframes floatSlow {
     0%, 100% { transform: translateY(0) translateX(0); }
     50%      { transform: translateY(-30px) translateX(20px); }
 }
 
-/* ---------- Rotate Slow ---------- */
+/* ---------- Rotate Slow — Slow infinite rotation / دوران بطيء ---------- */
 @keyframes rotateSlow {
     from { transform: rotate(45deg); }
     to   { transform: rotate(405deg); }
 }
 
-/* ---------- Pulse Dot ---------- */
+/* ---------- Pulse Dot — Expanding ring / حلقة متوسعة ---------- */
 @keyframes pulseDot {
     0%, 100% { box-shadow: 0 0 0 0 rgba(201, 169, 97, 0.7); }
     50%      { box-shadow: 0 0 0 10px rgba(201, 169, 97, 0); }
 }
 
-/* ---------- Gradient Shift ---------- */
+/* ---------- Gradient Shift — Moving gradient / تدرج متحرك ---------- */
 @keyframes gradientShift {
     0%, 100% { background-position: 0% 50%; }
     50%      { background-position: 100% 50%; }
 }
 
-/* ---------- Bounce Down ---------- */
+/* ---------- Bounce Down — Scroll indicator / مؤشر التمرير ---------- */
 @keyframes bounceDown {
     0%, 100% { transform: translateY(0); }
     50%      { transform: translateY(8px); }
 }
 
-/* ---------- Pulse Badge ---------- */
+/* ---------- Pulse Badge — Expanding badge / شارة نابضة ---------- */
 @keyframes pulseBadge {
     0%, 100% {
         transform: scale(1);
@@ -2389,25 +2097,19 @@ hr.divider-soft {
     }
 }
 
-/* ---------- Marquee Scroll LTR ---------- */
+/* ---------- Marquee Scroll LTR / حركة الشريط (إنجليزي) ---------- */
 @keyframes marqueeScroll {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
 }
 
-/* ---------- Marquee Scroll RTL ---------- */
+/* ---------- Marquee Scroll RTL / حركة الشريط (عربي) ---------- */
 @keyframes marqueeScrollRTL {
     from { transform: translateX(0); }
     to   { transform: translateX(50%); }
 }
 
-/* ---------- Hero Zoom ---------- */
-@keyframes heroZoom {
-    from { transform: scale(1); }
-    to   { transform: scale(1.03); }
-}
-
-/* ---------- Utility Classes ---------- */
+/* ---------- Utility Classes / كلاسات جاهزة ---------- */
 .fadeInUp {
     animation: fadeInUp 0.7s ease forwards;
 }
@@ -2418,11 +2120,11 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   17. BACK TO TOP — زر العودة للأعلى (v14.0 Enhanced)
+   17. BACK TO TOP — زر العودة للأعلى
    ============================================================================ */
 #backToTop {
     position: fixed;
-    bottom: max(30px, calc(var(--safe-bottom) + 20px));
+    bottom: 30px;
     right: 30px;
     width: 50px;
     height: 50px;
@@ -2438,8 +2140,6 @@ hr.divider-soft {
     font-size: 20px;
     align-items: center;
     justify-content: center;
-    /* ✅ Prevent horizontal overflow on small screens */
-    max-width: calc(100vw - 40px);
 }
 
 #backToTop:hover {
@@ -2452,40 +2152,13 @@ hr.divider-soft {
     left: 30px;
 }
 
-/* ★ Responsive back-to-top */
-@media (max-width: 768px) {
-    #backToTop {
-        width: 44px;
-        height: 44px;
-        font-size: 17px;
-        bottom: max(20px, calc(var(--safe-bottom) + 15px));
-        right: 15px;
-    }
-    [dir="rtl"] #backToTop {
-        right: auto;
-        left: 15px;
-    }
-}
-
-@media (max-width: 576px) {
-    #backToTop {
-        width: 40px;
-        height: 40px;
-        font-size: 15px;
-    }
-}
-
 
 /* ============================================================================
-   END OF PART 3/5
-   نهاية الجزء الثالث من 5
-   ============================================================================ */
-   /* ============================================================================
-   18. PREMIUM HOMEPAGE — الصفحة الرئيسية الفاخرة (v14.0 Enhanced)
+   18. PREMIUM HOMEPAGE — الصفحة الرئيسية الفاخرة
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
-   18.1 PREMIUM NAVBAR OVERRIDES
+   18.1 PREMIUM NAVBAR — تجاوزات النافبار الفاخر
    ───────────────────────────────────────────────────────────────────────── */
 .navbar-brand .firm-name {
     font-size: 1rem;
@@ -2514,24 +2187,32 @@ hr.divider-soft {
 }
 
 
-/* ─────────────────────────────────────────────────────────────────────────
-   18.2 HERO RICH — البانر الفاخر (v14.0 Optimized)
-   ───────────────────────────────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════════════
+   18.2 HERO RICH — البانر الفاخر
+   ═══════════════════════════════════════════════════════════════════════════
+   Fixed behavior / السلوك المُصحَّح:
+   • Starts right below the fixed navbar (margin-top = navbar height).
+   • Height reduced to a more balanced value.
+   • Background image fills the whole area — no side bars, no letterboxing.
+   • Image is positioned behind the content with a dark gradient overlay.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 .hero-rich {
     position: relative;
-    margin-top: 0;
-    height: var(--hero-height-desktop);
-    min-height: var(--hero-height-desktop);
-    max-height: var(--hero-height-desktop);
+    margin-top: var(--navbar-height);
+    height: 520px;
+    min-height: 480px;
+    max-height: 520px;
     display: flex;
     align-items: center;
     overflow: hidden;
     color: #fff;
-    padding: var(--hero-padding-desktop);
-    background: #000;
+    padding: 60px 0 50px;
+    background: var(--primary-color);
     isolation: isolate;
 }
 
+/* Full-bleed background layer — the image covers the whole hero area */
 .hero-rich-bg {
     position: absolute;
     inset: 0;
@@ -2540,73 +2221,41 @@ hr.divider-soft {
     z-index: 0;
     overflow: hidden;
     pointer-events: none;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* ★ NEW v14.0 — Blurred backdrop for letterbox effect */
-.hero-rich-bg::before {
-    content: '';
-    position: absolute;
-    inset: -5%;
-    background-image: inherit;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    filter: blur(40px) brightness(0.35) saturate(0.7);
-    z-index: 0;
-    pointer-events: none;
-    transform: scale(1.1);
-}
-
-/* ★ v14.0 — Image shows FULLY (contain, not crop) */
 .hero-rich-bg img {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center center;
     display: block;
-    z-index: 1;
+    max-width: none;
     transform: none;
     animation: none;
-    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.6));
 }
 
+/* Dark gradient overlay for text readability — no side bars */
 .hero-rich-overlay {
     position: absolute;
     inset: 0;
-    z-index: 2;
+    z-index: 1;
     pointer-events: none;
     background: linear-gradient(
         135deg,
-        rgba(0, 0, 0, 0.75) 0%,
-        rgba(0, 0, 0, 0.55) 45%,
-        rgba(0, 0, 0, 0.80) 100%
+        rgba(0, 0, 0, 0.88) 0%,
+        rgba(0, 0, 0, 0.60) 45%,
+        rgba(0, 0, 0, 0.85) 100%
     );
 }
 
-/* ★ Mobile: image as background cover, full bleed */
-@media (max-width: 768px) {
-    .hero-rich-bg img {
-        object-fit: cover;
-        object-position: center top;
-    }
-    .hero-rich-bg::before {
-        filter: blur(25px) brightness(0.30);
-    }
-}
-
-
-/* ---------- Decorative Floating Shapes ---------- */
+/* ---------- Decorative Floating Shapes / الأشكال الزخرفية ---------- */
 .hero-decorations {
     position: absolute;
     inset: 0;
-    z-index: 3;
+    z-index: 2;
     pointer-events: none;
     overflow: hidden;
 }
@@ -2617,27 +2266,27 @@ hr.divider-soft {
 }
 
 .deco-circle-1 {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     background: radial-gradient(circle, rgba(201, 169, 97, 0.15), transparent 70%);
-    top: -100px;
-    right: -50px;
+    top: -90px;
+    right: -40px;
     animation: floatSlow 15s ease-in-out infinite;
 }
 
 .deco-circle-2 {
-    width: 250px;
-    height: 250px;
+    width: 220px;
+    height: 220px;
     background: radial-gradient(circle, rgba(201, 169, 97, 0.10), transparent 70%);
-    bottom: -80px;
-    left: -60px;
+    bottom: -70px;
+    left: -50px;
     animation: floatSlow 12s ease-in-out infinite reverse;
 }
 
 .deco-square-1 {
-    width: 80px;
-    height: 80px;
-    border-radius: 20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
     border: 2px solid rgba(201, 169, 97, 0.2);
     top: 15%;
     right: 8%;
@@ -2649,10 +2298,10 @@ hr.divider-soft {
     position: absolute;
     top: 30%;
     left: 5%;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     background-image: radial-gradient(circle, rgba(201, 169, 97, 0.3) 1.5px, transparent 1.5px);
-    background-size: 15px 15px;
+    background-size: 14px 14px;
     opacity: 0.5;
 }
 
@@ -2660,33 +2309,35 @@ hr.divider-soft {
     position: absolute;
     bottom: 10%;
     right: 5%;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     background-image:
         linear-gradient(rgba(201, 169, 97, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(201, 169, 97, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
+    background-size: 18px 18px;
 }
 
+/* Content layer */
 .hero-rich-content {
     position: relative;
-    z-index: 4;
+    z-index: 3;
 }
 
+/* ---------- Hero Badge / شارة البانر ---------- */
 .hero-badge-rich {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 22px;
+    padding: 8px 18px;
     background: rgba(201, 169, 97, 0.12);
     border: 1px solid rgba(201, 169, 97, 0.35);
     border-radius: 999px;
     color: var(--accent-light);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    margin-bottom: 25px;
+    margin-bottom: 18px;
 }
 
 .badge-dot {
@@ -2698,20 +2349,21 @@ hr.divider-soft {
     flex-shrink: 0;
 }
 
+/* ---------- Hero Title / عنوان البانر ---------- */
 .hero-rich-title {
     font-family: var(--font-serif);
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
-    line-height: 1.05;
+    line-height: 1.1;
     letter-spacing: -0.03em;
     color: #fff;
-    margin: 0 0 25px;
+    margin: 0 0 18px;
     text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
 }
 
 [dir="rtl"] .hero-rich-title {
     font-family: var(--font-arabic);
-    line-height: 1.25;
+    line-height: 1.3;
     letter-spacing: 0;
 }
 
@@ -2735,12 +2387,13 @@ hr.divider-soft {
     animation: gradientShift 6s ease infinite;
 }
 
+/* ---------- Hero Subtitle / الوصف ---------- */
 .hero-rich-subtitle {
-    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    font-size: clamp(0.95rem, 1.3vw, 1.05rem);
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.7;
-    max-width: 640px;
-    margin-bottom: 30px;
+    max-width: 620px;
+    margin-bottom: 22px;
 }
 
 .hero-rich-subtitle strong {
@@ -2748,31 +2401,31 @@ hr.divider-soft {
     font-weight: 700;
 }
 
+/* ---------- Hero Buttons / الأزرار ---------- */
 .hero-rich-buttons {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 22px;
 }
 
 .btn-hero-primary {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 12px;
-    padding: 16px 36px;
+    padding: 13px 30px;
     background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
     color: var(--primary-color);
     border: none;
     border-radius: 999px;
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     text-decoration: none;
     box-shadow: 0 15px 35px rgba(201, 169, 97, 0.35);
     transition: var(--transition);
     cursor: pointer;
     text-align: center;
-    white-space: nowrap;
+    justify-content: center;
 }
 
 .btn-hero-primary:hover {
@@ -2796,21 +2449,20 @@ hr.divider-soft {
 .btn-hero-ghost {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 12px;
-    padding: 16px 36px;
+    padding: 13px 30px;
     background: transparent;
     color: #fff;
     border: 2px solid rgba(255, 255, 255, 0.4);
     border-radius: 999px;
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     text-decoration: none;
     transition: var(--transition);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     text-align: center;
-    white-space: nowrap;
+    justify-content: center;
 }
 
 .btn-hero-ghost:hover {
@@ -2820,11 +2472,12 @@ hr.divider-soft {
     transform: translateY(-4px);
 }
 
+/* ---------- Hero Trust Row / صف الثقة ---------- */
 .hero-trust-row {
     display: flex;
-    gap: 30px;
+    gap: 22px;
     flex-wrap: wrap;
-    padding-top: 25px;
+    padding-top: 18px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -2833,15 +2486,16 @@ hr.divider-soft {
     align-items: center;
     gap: 10px;
     color: rgba(255, 255, 255, 0.85);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 500;
 }
 
 .trust-badge i {
     color: var(--accent-color);
-    font-size: 1.15rem;
+    font-size: 1.1rem;
 }
 
+/* ---------- Hero Side Badge / العدد الجانبي ---------- */
 .hero-side-badge {
     position: relative;
     text-align: center;
@@ -2850,7 +2504,7 @@ hr.divider-soft {
 
 .hsb-number {
     font-family: var(--font-serif);
-    font-size: 5.5rem;
+    font-size: 4.5rem;
     font-weight: 900;
     line-height: 1;
     color: transparent;
@@ -2861,12 +2515,12 @@ hr.divider-soft {
 .hsb-number span {
     -webkit-text-stroke: 0;
     color: var(--accent-color);
-    font-size: 3.5rem;
+    font-size: 3rem;
     vertical-align: top;
 }
 
 .hsb-text {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.85);
     text-transform: uppercase;
@@ -2879,12 +2533,13 @@ hr.divider-soft {
     text-transform: none;
 }
 
+/* ---------- Scroll Indicator ---------- */
 .hero-scroll-indicator {
     position: absolute;
-    bottom: 25px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 4;
+    z-index: 3;
 }
 
 .hero-scroll-indicator a {
@@ -2911,7 +2566,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   18.3 STATS MARQUEE
+   18.3 STATS MARQUEE — شريط الأرقام المتحرك
    ───────────────────────────────────────────────────────────────────────── */
 .stats-marquee {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
@@ -2947,7 +2602,6 @@ hr.divider-soft {
     display: flex;
     width: fit-content;
     animation: marqueeScroll 40s linear infinite;
-    will-change: transform;
 }
 
 [dir="rtl"] .marquee-track {
@@ -2988,30 +2642,9 @@ hr.divider-soft {
     text-transform: none;
 }
 
-/* ★ Responsive marquee */
-@media (max-width: 768px) {
-    .stats-marquee {
-        padding: 22px 0;
-    }
-    .mq-num {
-        font-size: 1.6rem;
-    }
-    .mq-txt {
-        font-size: 0.72rem;
-    }
-    .marquee-content {
-        gap: 35px;
-        padding-right: 35px;
-    }
-    .stats-marquee::before,
-    .stats-marquee::after {
-        width: 60px;
-    }
-}
-
 
 /* ─────────────────────────────────────────────────────────────────────────
-   18.4 SECTION HEAD RICH
+   18.4 SECTION HEAD RICH — عناوين الأقسام الفاخرة
    ───────────────────────────────────────────────────────────────────────── */
 .section-head-rich {
     text-align: center;
@@ -3102,7 +2735,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   18.5 BENTO GRID
+   18.5 BENTO GRID — شبكة Bento
    ───────────────────────────────────────────────────────────────────────── */
 .bento-section {
     padding: 60px 0 50px;
@@ -3306,7 +2939,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   19. LOGO SHOWCASE — عرض اللوجو الذهبي (v14.0 Enhanced)
+   19. LOGO SHOWCASE — عرض اللوجو الذهبي
    ============================================================================ */
 .about-asymmetric {
     padding: 40px 0 80px;
@@ -3592,57 +3225,9 @@ hr.divider-soft {
     line-height: 1.3;
 }
 
-/* ★ Responsive logo showcase */
-@media (max-width: 991px) {
-    .logo-showcase {
-        min-height: 420px;
-        padding: 30px 15px;
-    }
-    .logo-showcase__frame {
-        max-width: 380px;
-        padding: 25px;
-    }
-    .about-content-rich {
-        padding-left: 0;
-        padding-right: 0;
-        margin-top: 30px;
-    }
-    .credentials-row {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 576px) {
-    .logo-showcase {
-        min-height: 360px;
-    }
-    .logo-showcase__frame {
-        max-width: 300px;
-        padding: 20px;
-    }
-    .logo-showcase__badge {
-        padding: 12px 18px;
-        left: 15px;
-        bottom: -5px;
-    }
-    [dir="rtl"] .logo-showcase__badge {
-        left: auto;
-        right: 15px;
-    }
-    .logo-showcase__badge-num {
-        font-size: 1.8rem;
-    }
-    .logo-showcase__badge-txt {
-        font-size: 0.65rem;
-    }
-    .logo-showcase__logo {
-        animation: none;
-    }
-}
-
 
 /* ============================================================================
-   20. SERVICES MODERN (COMPACT)
+   20. SERVICES MODERN (COMPACT) — الخدمات الحديثة (مضغوطة)
    ============================================================================ */
 .services-modern {
     padding: 55px 0;
@@ -3778,32 +3363,9 @@ hr.divider-soft {
     transform: translateX(-3px);
 }
 
-/* ★ Responsive services modern */
-@media (max-width: 991px) {
-    .services-grid-modern {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .services-grid-modern {
-        grid-template-columns: 1fr;
-    }
-    .svc-modern-item {
-        padding: 12px 14px;
-    }
-    .svc-modern-content h6 {
-        white-space: normal;
-        font-size: 0.85rem;
-    }
-    .svc-modern-content small {
-        white-space: normal;
-    }
-}
-
 
 /* ============================================================================
-   21. PROCESS TIMELINE
+   21. PROCESS TIMELINE — خطوات العمل
    ============================================================================ */
 .process-rich {
     padding: 55px 0;
@@ -3923,25 +3485,9 @@ hr.divider-soft {
     line-height: 1.7;
 }
 
-/* ★ Responsive process timeline */
-@media (max-width: 991px) {
-    .process-timeline {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .pt-line {
-        display: none;
-    }
-}
-
-@media (max-width: 576px) {
-    .process-timeline {
-        grid-template-columns: 1fr;
-    }
-}
-
 
 /* ============================================================================
-   22. TEAM FEATURED — فريق العمل المميز (v14.0 Enhanced)
+   22. TEAM FEATURED — فريق العمل المميز
    ============================================================================ */
 .team-featured {
     padding: 55px 0;
@@ -4153,61 +3699,12 @@ hr.divider-soft {
     box-shadow: 0 10px 20px rgba(201, 169, 97, 0.3);
 }
 
-/* ★ Responsive team featured */
-@media (max-width: 991px) {
-    .team-featured-card {
-        grid-template-columns: 1fr;
-    }
-    .tfc-portrait {
-        padding: 35px 20px;
-    }
-    .tfc-image-wrap {
-        width: 160px;
-        height: 160px;
-        max-width: 160px;
-        max-height: 160px;
-    }
-    .tfc-badge-top {
-        top: 20px;
-        right: 20px;
-    }
-    .tfc-badge-bottom {
-        bottom: 20px;
-        left: 20px;
-    }
-    .tfc-content {
-        padding: 28px 24px;
-    }
-}
-
-@media (max-width: 576px) {
-    .tfc-image-wrap {
-        width: 140px;
-        height: 140px;
-        max-width: 140px;
-        max-height: 140px;
-    }
-    .tfc-content {
-        padding: 24px 20px;
-    }
-    .tfc-name {
-        font-size: 1.35rem;
-    }
-    .tfc-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    .tfc-actions .btn-rich-primary {
-        width: 100%;
-    }
-    .tfc-social {
-        justify-content: center;
-    }
-}
-
 
 /* ============================================================================
-   23. TESTIMONIALS MODERN
+   END OF PART 4/5 — نهاية الجزء الرابع من 5
+   ============================================================================ */
+   /* ============================================================================
+   23. TESTIMONIALS MODERN — آراء العملاء الحديثة
    ============================================================================ */
 .testimonials-modern {
     padding: 55px 0;
@@ -4324,7 +3821,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   24. FAQ ACCORDION
+   24. FAQ ACCORDION — الأسئلة الشائعة
    ============================================================================ */
 .faq-modern {
     padding: 55px 0;
@@ -4385,21 +3882,9 @@ hr.divider-soft {
     font-size: 0.85rem;
 }
 
-/* ★ Responsive FAQ */
-@media (max-width: 576px) {
-    .faq-rich-accordion .accordion-button {
-        font-size: 0.85rem;
-        padding: 14px 16px;
-    }
-    .faq-rich-accordion .accordion-body {
-        padding: 0 16px 14px;
-        font-size: 0.82rem;
-    }
-}
-
 
 /* ============================================================================
-   25. FINAL CTA RICH
+   25. FINAL CTA RICH — الدعوة النهائية
    ============================================================================ */
 .final-cta-rich {
     padding: 60px 0;
@@ -4497,32 +3982,9 @@ hr.divider-soft {
     flex-wrap: wrap;
 }
 
-/* ★ Responsive final CTA */
-@media (max-width: 576px) {
-    .final-cta-rich {
-        padding: 45px 0;
-    }
-    .final-cta-rich h2 {
-        font-size: 1.5rem;
-    }
-    .fcr-badge {
-        width: 65px;
-        height: 65px;
-        font-size: 1.6rem;
-        margin-bottom: 22px;
-    }
-    .fcr-buttons {
-        flex-direction: column;
-    }
-    .fcr-buttons .btn-rich-primary,
-    .fcr-buttons .btn-rich-ghost {
-        width: 100%;
-    }
-}
-
 
 /* ============================================================================
-   26. FOOTER RICH
+   26. FOOTER RICH — التذييل الفاخر
    ============================================================================ */
 .footer-rich {
     background: var(--primary-color);
@@ -4683,45 +4145,23 @@ hr.divider-soft {
     font-size: 0.85rem;
 }
 
-/* ★ Responsive footer rich */
-@media (max-width: 768px) {
-    .footer-rich {
-        padding: 50px 0 20px;
-        text-align: center;
-    }
-    .footer-rich .row > div {
-        margin-bottom: 28px;
-    }
-    .footer-social {
-        justify-content: center;
-    }
-    .footer-contact li {
-        justify-content: center;
-    }
-    .footer-list a:hover {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
 
 /* ============================================================================
-   27. SERVICE PAGES — صفحات الخدمات الداخلية (v14.0 Enhanced)
+   27. SERVICE PAGES — صفحات الخدمات الداخلية
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.1 SERVICE HERO
+   27.1 SERVICE HERO — البانر الرئيسي لصفحات الخدمات
    ───────────────────────────────────────────────────────────────────────── */
 .service-hero {
     position: relative;
     margin-top: var(--navbar-height);
-    min-height: 480px;
-    height: auto;
+    min-height: 460px;
     background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
     overflow: hidden;
     display: flex;
     align-items: center;
-    padding: var(--hero-padding-desktop);
+    padding: 60px 0;
 }
 
 .service-hero::before {
@@ -4749,10 +4189,10 @@ hr.divider-soft {
 
 .service-hero h1 {
     font-family: var(--font-serif);
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: clamp(1.8rem, 4vw, 3rem);
     font-weight: 800;
     line-height: 1.15;
-    margin-bottom: 22px;
+    margin-bottom: 25px;
     color: #fff;
     letter-spacing: -0.02em;
 }
@@ -4764,50 +4204,16 @@ hr.divider-soft {
 }
 
 .service-hero p {
-    font-size: 1.02rem;
+    font-size: 1.05rem;
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.8;
     max-width: 700px;
-    margin-bottom: 28px;
-}
-
-/* ★ Responsive service hero */
-@media (max-width: 768px) {
-    .service-hero {
-        min-height: 400px;
-        padding: 45px 0;
-    }
-    .service-hero h1 {
-        font-size: 1.65rem;
-    }
-    .service-hero p {
-        font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .service-hero {
-        min-height: auto;
-        padding: 40px 0;
-    }
-    .service-hero h1 {
-        font-size: 1.45rem;
-    }
-    .service-hero p {
-        font-size: 0.9rem;
-    }
-    .service-hero .hero-actions {
-        flex-direction: column;
-    }
-    .service-hero .hero-actions .btn-rich-primary,
-    .service-hero .hero-actions .btn-rich-outline {
-        width: 100%;
-    }
+    margin-bottom: 30px;
 }
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.2 SH BADGE
+   27.2 SH BADGE — شارة صغيرة فوق العناوين
    ───────────────────────────────────────────────────────────────────────── */
 .sh-badge {
     display: inline-flex;
@@ -4832,7 +4238,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.3 SERVICE FEATURE CARDS
+   27.3 SERVICE FEATURE CARDS — بطاقات الميزات
    ───────────────────────────────────────────────────────────────────────── */
 .features-rich {
     padding: 70px 0;
@@ -4928,7 +4334,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.4 HANDLES LIST
+   27.4 HANDLES LIST — قائمة المجالات المغطاة
    ───────────────────────────────────────────────────────────────────────── */
 .handles-list {
     list-style: none;
@@ -4975,7 +4381,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.5 INFO NOTE
+   27.5 INFO NOTE / CALLOUT — ملاحظة معلوماتية
    ───────────────────────────────────────────────────────────────────────── */
 .info-note {
     display: flex;
@@ -5014,7 +4420,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.6 COMPARISON TABLE
+   27.6 COMPARISON TABLE — جدول المقارنة
    ───────────────────────────────────────────────────────────────────────── */
 .compare-table-wrap {
     overflow-x: auto;
@@ -5070,7 +4476,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.7 PRACTICE AREAS (RELATED)
+   27.7 PRACTICE AREAS (RELATED) — مجالات ذات صلة
    ───────────────────────────────────────────────────────────────────────── */
 .practice-areas-rich {
     padding: 70px 0;
@@ -5155,7 +4561,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.8 LEGAL INFO BOX
+   27.8 LEGAL INFO BOX — صندوق معلومات قانونية
    ───────────────────────────────────────────────────────────────────────── */
 .legal-info-box {
     display: flex;
@@ -5208,7 +4614,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.9 CHECKLIST BLOCK
+   27.9 CHECKLIST BLOCK — صندوق قوائم التحقق
    ───────────────────────────────────────────────────────────────────────── */
 .checklist-block {
     background: #fff;
@@ -5273,7 +4679,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.10 MISTAKE CARDS
+   27.10 MISTAKE CARDS — بطاقات الأخطاء الشائعة
    ───────────────────────────────────────────────────────────────────────── */
 .mistake-card {
     background: #fff;
@@ -5376,7 +4782,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.11 STAGE TIMELINE
+   27.11 STAGE TIMELINE — الخط الزمني للمراحل
    ───────────────────────────────────────────────────────────────────────── */
 .stage-timeline {
     position: relative;
@@ -5457,7 +4863,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.12 TRENDS GRID
+   27.12 TRENDS GRID — شبكة الاتجاهات
    ───────────────────────────────────────────────────────────────────────── */
 .trends-grid {
     display: grid;
@@ -5530,7 +4936,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.13 ROUTE COMPARE
+   27.13 ROUTE COMPARE — مقارنة المسارات
    ───────────────────────────────────────────────────────────────────────── */
 .route-compare {
     display: grid;
@@ -5670,7 +5076,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.14 DECISION GRID
+   27.14 DECISION GRID — شبكة القرارات
    ───────────────────────────────────────────────────────────────────────── */
 .decision-grid {
     display: grid;
@@ -5741,7 +5147,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.15 PCT TIMELINE
+   27.15 PCT TIMELINE — الخط الزمني لنظام PCT
    ───────────────────────────────────────────────────────────────────────── */
 .pct-timeline {
     position: relative;
@@ -5839,7 +5245,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.16 IP ASSETS GRID
+   27.16 IP ASSETS GRID — شبكة أصول الملكية الفكرية
    ───────────────────────────────────────────────────────────────────────── */
 .ip-assets-grid {
     display: grid;
@@ -5910,7 +5316,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.17 RED FLAGS LIST
+   27.17 RED FLAGS LIST — قائمة العلامات الحمراء
    ───────────────────────────────────────────────────────────────────────── */
 .red-flags-list {
     background: linear-gradient(160deg, #FFF5F5 0%, #fff 100%);
@@ -5955,7 +5361,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.18 GROUNDS GRID
+   27.18 GROUNDS GRID — شبكة الأسباب
    ───────────────────────────────────────────────────────────────────────── */
 .grounds-grid {
     display: grid;
@@ -6005,7 +5411,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.19 SECURITY GRID
+   27.19 SECURITY GRID — شبكة الأمان
    ───────────────────────────────────────────────────────────────────────── */
 .security-grid {
     display: grid;
@@ -6052,7 +5458,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.20 PORTAL CARD
+   27.20 PORTAL CARD — بطاقة بوابة العميل
    ───────────────────────────────────────────────────────────────────────── */
 .portal-card {
     background: #fff;
@@ -6198,24 +5604,9 @@ hr.divider-soft {
     color: var(--primary-color);
 }
 
-@media (max-width: 576px) {
-    .portal-card {
-        padding: 30px 22px;
-        border-radius: 18px;
-    }
-    .portal-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-    .portal-title {
-        font-size: 1.2rem;
-    }
-}
-
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.21 FEATURED POST (BLOG)
+   27.21 FEATURED POST — المقال المميز (المدونة)
    ───────────────────────────────────────────────────────────────────────── */
 .featured-post {
     display: grid;
@@ -6244,7 +5635,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.22 FILTER TABS (BLOG)
+   27.22 FILTER TABS — تبويبات الفلترة (المدونة)
    ───────────────────────────────────────────────────────────────────────── */
 .filter-tabs {
     display: flex;
@@ -6285,7 +5676,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.23 LEGAL WRAP & TOC
+   27.23 LEGAL WRAP & TOC — الصفحات القانونية
    ───────────────────────────────────────────────────────────────────────── */
 .legal-wrap {
     background: #fff;
@@ -6390,7 +5781,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.24 AUTHOR CARD (BLOG)
+   27.24 AUTHOR CARD (BLOG) — بطاقة الكاتب
    ───────────────────────────────────────────────────────────────────────── */
 .author-card {
     background: linear-gradient(160deg, #fff 0%, #FAFAFA 100%);
@@ -6455,7 +5846,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.25 ARTICLE CONTENT
+   27.25 ARTICLE CONTENT — محتوى المقال
    ───────────────────────────────────────────────────────────────────────── */
 .article-content {
     max-width: 780px;
@@ -6542,12 +5933,12 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.26 ARTICLE HERO (BLOG)
+   27.26 ARTICLE HERO (BLOG) — بانر المقال
    ───────────────────────────────────────────────────────────────────────── */
 .article-hero {
     position: relative;
     margin-top: var(--navbar-height);
-    min-height: 480px;
+    min-height: 440px;
     background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
     overflow: hidden;
     display: flex;
@@ -6620,12 +6011,12 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.27 PAGE HERO RICH (SERVICES PAGE)
+   27.27 PAGE HERO RICH (SERVICES PAGE) — بانر صفحة الخدمات
    ───────────────────────────────────────────────────────────────────────── */
 .page-hero-rich {
     position: relative;
     margin-top: var(--navbar-height);
-    min-height: 400px;
+    min-height: 380px;
     background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
     overflow: hidden;
     display: flex;
@@ -6645,159 +6036,40 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   END OF PART 4/5
-   نهاية الجزء الرابع من 5
-   ============================================================================ */
-   /* ============================================================================
-   28. RESPONSIVE — التجاوب الشامل (v14.0 Enhanced)
-   ─────────────────────────────────────────────────────────────────────────
-   Breakpoints / نقاط التوقف:
-   • 1200px → Small Desktop
-   • 991px  → Tablet (Landscape)
-   • 768px  → Tablet (Portrait) / Large Phone
-   • 576px  → Small Phone
-   • 480px  → Very Small Phone
+   28. RESPONSIVE — التجاوب الشامل
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
-   28.1 SMALL DESKTOP (max-width: 1200px)
-   ───────────────────────────────────────────────────────────────────────── */
-@media (max-width: 1200px) {
-    .bento-grid {
-        gap: 16px;
-    }
-
-    .services-grid-modern {
-        gap: 10px;
-    }
-
-    .process-timeline {
-        gap: 16px;
-    }
-
-    .hero-rich-title {
-        font-size: clamp(2rem, 5vw, 3rem);
-    }
-}
-
-
-/* ─────────────────────────────────────────────────────────────────────────
-   28.2 TABLET LANDSCAPE (max-width: 991px)
+   28.1 TABLET (max-width: 991px) — تابلت
    ───────────────────────────────────────────────────────────────────────── */
 @media (max-width: 991px) {
 
     :root {
         --navbar-height: 70px;
-        --hero-height-desktop: 440px;
     }
 
-    /* Container padding */
-    .container {
-        padding-right: var(--container-px-tablet);
-        padding-left: var(--container-px-tablet);
-    }
-
-    /* ─── Navbar ─── */
-    .navbar {
-        padding: 10px 0 !important;
-    }
-
-    .navbar-collapse {
-        background: var(--primary-color);
-        padding: 20px 18px;
-        border-radius: 12px;
-        margin-top: 12px;
-        max-height: 78vh;
-        overflow-y: auto;
-        border: 1px solid rgba(201, 169, 97, 0.25);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    }
-
-    .navbar-nav .nav-link {
-        padding: 12px 14px !important;
-        margin-bottom: 4px !important;
-        border-radius: 8px !important;
-        font-size: 0.95rem !important;
-    }
-
-    /* Both buttons — full width, stacked */
-    html body .navbar .navbar-nav > .nav-item.lang-nav-item {
-        display: flex !important;
-        width: 100% !important;
-        margin: 6px 0 !important;
-        justify-content: stretch !important;
-    }
-
-    html body .navbar .lang-nav-item .language-switcher,
-    html body .navbar .lang-nav-item .language-switcher.in-navbar {
-        width: 100% !important;
-        justify-content: stretch !important;
-    }
-
-    html body .navbar .btn-outline-light,
-    html body .navbar .btn-outline-light.btn-sm,
-    html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
-    html body .navbar .lang-nav-item .language-switcher .lang-btn {
-        width: 100% !important;
-        min-height: 44px !important;
-        height: auto !important;
-        font-size: 0.9rem !important;
-        justify-content: center !important;
-    }
-
-    /* Dropdown inside mobile */
-    .navbar-nav .dropdown-menu {
-        position: static !important;
-        background: rgba(255, 255, 255, 0.05);
-        border: none;
-        box-shadow: none;
-        padding: 6px;
-        margin-top: 4px;
-    }
-
-    .navbar-nav .dropdown-item {
-        color: rgba(255, 255, 255, 0.9) !important;
-        padding: 10px 18px;
-        border-radius: 6px;
-        font-size: 0.88rem;
-    }
-
-    .navbar-brand img {
-        height: 42px;
-        max-height: 42px;
-        max-width: 140px;
-    }
-
-    /* ─── Hero Rich ─── */
     .hero-rich {
         height: auto !important;
-        min-height: 440px !important;
+        min-height: 480px !important;
         max-height: none !important;
-        padding: 50px 0 45px !important;
+        padding: 45px 0 40px !important;
     }
 
     .hero-rich .hsb-number {
-        font-size: 4.5rem !important;
+        font-size: 4rem !important;
     }
 
     .hero-rich .hsb-number span {
-        font-size: 3rem !important;
+        font-size: 2.5rem !important;
     }
 
-    .hero-side-badge {
-        margin-top: 30px;
-        text-align: center;
-    }
-
-    /* ─── Service Heroes ─── */
     .service-hero,
     .page-hero-rich,
     .article-hero {
-        min-height: 440px !important;
+        min-height: 400px !important;
         padding: 50px 0 !important;
     }
 
-    /* ─── Bento Grid ─── */
     .bento-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
@@ -6808,12 +6080,10 @@ hr.divider-soft {
         min-height: 340px !important;
     }
 
-    /* ─── Services Grid ─── */
     .services-grid-modern {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 
-    /* ─── Team Featured ─── */
     .team-featured-card {
         grid-template-columns: 1fr !important;
     }
@@ -6843,7 +6113,6 @@ hr.divider-soft {
         padding: 28px 24px !important;
     }
 
-    /* ─── Process Timeline ─── */
     .process-timeline {
         grid-template-columns: repeat(2, 1fr) !important;
     }
@@ -6852,19 +6121,16 @@ hr.divider-soft {
         display: none !important;
     }
 
-    /* ─── Credentials ─── */
     .credentials-row {
         grid-template-columns: 1fr !important;
     }
 
-    /* ─── About Content ─── */
     .about-content-rich {
         padding-left: 0 !important;
         padding-right: 0 !important;
         margin-top: 30px;
     }
 
-    /* ─── Logo Showcase ─── */
     .logo-showcase {
         min-height: 420px !important;
         padding: 30px 15px !important;
@@ -6874,64 +6140,39 @@ hr.divider-soft {
         max-width: 380px !important;
         padding: 25px !important;
     }
-
-    /* ─── Featured Post (Blog) ─── */
-    .featured-post {
-        grid-template-columns: 1fr !important;
-    }
 }
 
-
 /* ─────────────────────────────────────────────────────────────────────────
-   28.3 TABLET PORTRAIT / LARGE PHONE (max-width: 768px)
+   28.2 LARGE PHONE (max-width: 768px) — موبايل كبير
    ───────────────────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
 
     :root {
         --navbar-height: 65px;
-        --hero-height-desktop: auto;
     }
 
-    /* Body & typography */
     body {
         font-size: 15px;
     }
 
-    /* Container */
-    .container {
-        padding-right: var(--container-px-mobile);
-        padding-left: var(--container-px-mobile);
-    }
-
-    /* ─── Hero Rich ─── */
     .hero-rich {
         height: auto !important;
         min-height: auto !important;
         max-height: none !important;
-        padding: 55px 0 45px !important;
-    }
-
-    /* Mobile: image as full-bleed cover */
-    html body .hero-rich .hero-rich-bg img {
-        object-fit: cover !important;
-        object-position: center top !important;
-    }
-
-    html body .hero-rich .hero-rich-bg::before {
-        filter: blur(25px) brightness(0.30) !important;
+        padding: 45px 0 40px !important;
     }
 
     .hero-rich-title {
-        font-size: clamp(1.75rem, 6vw, 2.25rem) !important;
-        line-height: 1.25 !important;
+        font-size: clamp(1.6rem, 6vw, 2rem) !important;
+        line-height: 1.3 !important;
+        margin-bottom: 14px !important;
     }
 
     .hero-rich-subtitle {
-        font-size: 0.95rem !important;
-        margin-bottom: 22px !important;
+        font-size: 0.9rem !important;
+        margin-bottom: 18px !important;
     }
 
-    /* Hero buttons stacked */
     .hero-rich-buttons {
         flex-direction: column !important;
         gap: 10px !important;
@@ -6942,63 +6183,51 @@ hr.divider-soft {
     .hero-rich-buttons .btn-hero-ghost {
         width: 100% !important;
         justify-content: center !important;
-        padding: 13px 22px !important;
-        font-size: 0.92rem !important;
+        padding: 12px 22px !important;
+        font-size: 0.9rem !important;
     }
 
     .hero-trust-row {
-        gap: 16px !important;
-        padding-top: 18px !important;
+        gap: 14px !important;
+        padding-top: 16px !important;
     }
 
     .trust-badge {
-        font-size: 0.8rem !important;
+        font-size: 0.78rem !important;
     }
 
     .hero-scroll-indicator {
         display: none !important;
     }
 
-    /* ─── Stats Marquee ─── */
     .stats-marquee {
-        padding: 22px 0 !important;
+        padding: 20px 0 !important;
     }
 
     .mq-num {
-        font-size: 1.5rem !important;
+        font-size: 1.4rem !important;
     }
 
     .mq-txt {
-        font-size: 0.7rem !important;
+        font-size: 0.68rem !important;
     }
 
     .marquee-content {
-        gap: 35px !important;
-        padding-right: 35px !important;
-    }
-
-    .stats-marquee::before,
-    .stats-marquee::after {
-        width: 60px !important;
-    }
-
-    /* ─── Section Headers ─── */
-    .section-head-rich {
-        margin-bottom: 30px !important;
+        gap: 30px !important;
+        padding-right: 30px !important;
     }
 
     .sh-title {
-        font-size: 1.5rem !important;
+        font-size: 1.4rem !important;
         line-height: 1.3 !important;
     }
 
     .sh-desc {
-        font-size: 0.9rem !important;
+        font-size: 0.88rem !important;
     }
 
-    /* ─── Bento Grid ─── */
-    .bento-section {
-        padding: 45px 0 40px !important;
+    .section-head-rich {
+        margin-bottom: 30px !important;
     }
 
     .bento-grid {
@@ -7007,22 +6236,7 @@ hr.divider-soft {
 
     .bento-card,
     .bento-card.bento-large {
-        padding: 22px 20px !important;
-    }
-
-    /* ─── Services Modern ─── */
-    .services-modern {
-        padding: 40px 0 !important;
-    }
-
-    /* ─── Process Rich ─── */
-    .process-rich {
-        padding: 45px 0 !important;
-    }
-
-    /* ─── Team Featured ─── */
-    .team-featured {
-        padding: 45px 0 !important;
+        padding: 20px 18px !important;
     }
 
     .team-featured-card {
@@ -7030,34 +6244,26 @@ hr.divider-soft {
     }
 
     .tfc-name {
-        font-size: 1.35rem !important;
+        font-size: 1.25rem !important;
     }
 
-    /* ─── Testimonials ─── */
     .testimonial-modern-card {
-        padding: 24px 22px !important;
+        padding: 22px 20px !important;
     }
 
-    /* ─── FAQ ─── */
     .faq-rich-accordion .accordion-button {
-        font-size: 0.88rem !important;
+        font-size: 0.86rem !important;
         padding: 14px 18px !important;
     }
 
     .faq-rich-accordion .accordion-body {
         padding: 0 18px 14px !important;
-        font-size: 0.84rem !important;
+        font-size: 0.82rem !important;
     }
 
-    /* ─── Final CTA ─── */
-    .final-cta-rich {
-        padding: 50px 0 !important;
-    }
-
-    /* ─── Footer Rich ─── */
     .footer-rich {
-        padding: 50px 0 20px !important;
         text-align: center;
+        padding: 50px 0 20px !important;
     }
 
     .footer-social {
@@ -7072,13 +6278,8 @@ hr.divider-soft {
         margin-bottom: 28px !important;
     }
 
-    .footer-contact li {
-        justify-content: center !important;
-    }
-
-    /* ─── Back to Top ─── */
     #backToTop {
-        bottom: max(20px, calc(var(--safe-bottom) + 15px)) !important;
+        bottom: 20px !important;
         right: 15px !important;
         width: 44px !important;
         height: 44px !important;
@@ -7089,145 +6290,21 @@ hr.divider-soft {
         right: auto !important;
         left: 15px !important;
     }
-
-    /* ─── Service Pages ─── */
-    .service-hero {
-        min-height: 400px !important;
-        padding: 45px 0 !important;
-    }
-
-    .service-hero h1 {
-        font-size: 1.65rem !important;
-    }
-
-    .service-hero p {
-        font-size: 0.95rem !important;
-    }
-
-    /* ─── Tables ─── */
-    .compare-table-wrap,
-    .cookie-table-wrap {
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-    }
-
-    .compare-table,
-    .cookie-table {
-        min-width: 560px !important;
-        font-size: 0.82rem !important;
-    }
-
-    .compare-table thead th,
-    .cookie-table thead th {
-        padding: 12px 14px !important;
-        font-size: 0.76rem !important;
-    }
-
-    .compare-table tbody td,
-    .cookie-table tbody td {
-        padding: 12px 14px !important;
-    }
-
-    /* ─── Forms ─── */
-    .consultation-form-wrap,
-    .contact-form-wrap {
-        padding: 28px 22px !important;
-        border-radius: 16px !important;
-    }
-
-    .cf-row,
-    .cn-row {
-        grid-template-columns: 1fr !important;
-        gap: 0 !important;
-    }
-
-    /* ─── Pricing ─── */
-    .pricing-card {
-        padding: 28px 22px !important;
-    }
-
-    .pricing-card.featured::before {
-        font-size: 0.68rem !important;
-        padding: 5px 14px !important;
-    }
-
-    /* ─── Map ─── */
-    .map-wrap {
-        height: 320px !important;
-        padding: 30px 20px !important;
-    }
-
-    .map-content i {
-        font-size: 2.3rem !important;
-    }
-
-    .map-content h4 {
-        font-size: 1.25rem !important;
-    }
-
-    /* ─── Author Card (Blog) ─── */
-    .author-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 24px 20px !important;
-    }
-
-    /* ─── Legal Wrap ─── */
-    .legal-wrap {
-        padding: 28px 22px !important;
-        border-radius: 16px !important;
-    }
-
-    /* ─── Article Content ─── */
-    .article-content h2 {
-        font-size: 1.35rem !important;
-    }
-
-    .article-content h3 {
-        font-size: 1.1rem !important;
-    }
-
-    /* ─── Article Hero ─── */
-    .article-hero {
-        min-height: 400px !important;
-        padding: 50px 0 !important;
-    }
-
-    .article-hero h1 {
-        font-size: 1.5rem !important;
-    }
-
-    .article-hero-meta {
-        font-size: 0.8rem !important;
-        gap: 14px !important;
-    }
-
-    .article-hero-meta span {
-        font-size: 0.78rem !important;
-    }
 }
 
-
 /* ─────────────────────────────────────────────────────────────────────────
-   28.4 SMALL PHONE (max-width: 576px)
+   28.3 SMALL PHONE (max-width: 576px) — موبايل صغير
    ───────────────────────────────────────────────────────────────────────── */
 @media (max-width: 576px) {
 
-    :root {
-        --navbar-height: 60px;
-        --banner-height: 46px;
-    }
-
-    /* Container */
     .container {
         padding-right: 14px !important;
         padding-left: 14px !important;
     }
 
-    /* ─── Typography scale down ─── */
     h1 { font-size: 1.7rem; }
-    h2 { font-size: 1.45rem; }
-    h3 { font-size: 1.2rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.15rem; }
     h4 { font-size: 1.05rem; }
     h5 { font-size: 0.98rem; }
     h6 { font-size: 0.9rem; }
@@ -7235,11 +6312,6 @@ hr.divider-soft {
     p {
         font-size: 0.92rem;
         line-height: 1.7;
-    }
-
-    /* ─── Navbar ─── */
-    .navbar-brand {
-        gap: 8px !important;
     }
 
     .navbar-brand img {
@@ -7258,7 +6330,10 @@ hr.divider-soft {
         line-height: 1.3 !important;
     }
 
-    /* ─── Services Modern ─── */
+    .navbar-brand {
+        gap: 8px !important;
+    }
+
     .services-grid-modern {
         grid-template-columns: 1fr !important;
     }
@@ -7267,16 +6342,6 @@ hr.divider-soft {
         padding: 12px 14px !important;
     }
 
-    .svc-modern-content h6 {
-        white-space: normal !important;
-        font-size: 0.85rem !important;
-    }
-
-    .svc-modern-content small {
-        white-space: normal !important;
-    }
-
-    /* ─── Bento ─── */
     .bento-card,
     .bento-card.bento-large {
         grid-column: span 1 !important;
@@ -7285,55 +6350,37 @@ hr.divider-soft {
     }
 
     .bento-card.bento-large .bc-icon {
-        width: 52px !important;
-        height: 52px !important;
-        font-size: 1.4rem !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.35rem !important;
     }
 
     .bento-card.bento-large .bc-num {
         font-size: 3rem !important;
     }
 
-    /* ─── Process Timeline ─── */
     .process-timeline {
         grid-template-columns: 1fr !important;
     }
 
-    /* ─── Team Featured ─── */
     .tfc-content {
-        padding: 24px 20px !important;
+        padding: 22px 18px !important;
     }
 
     .tfc-image-wrap {
-        width: 140px !important;
-        height: 140px !important;
-        max-width: 140px !important;
-        max-height: 140px !important;
+        width: 130px !important;
+        height: 130px !important;
+        max-width: 130px !important;
+        max-height: 130px !important;
     }
 
-    .tfc-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .tfc-actions .btn-rich-primary {
-        width: 100%;
-    }
-
-    .tfc-social {
-        justify-content: center;
-    }
-
-    /* ─── Testimonials ─── */
     .testimonial-modern-card {
-        padding: 22px 20px !important;
+        padding: 20px 18px !important;
     }
 
-    /* ─── Trial Banner ─── */
     #trial-banner {
         font-size: 0.72rem !important;
         padding: 8px 10px !important;
-        padding-top: max(8px, calc(var(--safe-top) + 6px)) !important;
         line-height: 1.4 !important;
     }
 
@@ -7341,20 +6388,18 @@ hr.divider-soft {
         display: none !important;
     }
 
-    /* ─── Logo Showcase ─── */
     .logo-showcase {
-        min-height: 360px !important;
+        min-height: 340px !important;
     }
 
     .logo-showcase__frame {
-        max-width: 300px !important;
+        max-width: 280px !important;
         padding: 20px !important;
     }
 
     .logo-showcase__badge {
         padding: 12px 18px !important;
         left: 15px !important;
-        bottom: -5px !important;
     }
 
     [dir="rtl"] .logo-showcase__badge {
@@ -7363,304 +6408,65 @@ hr.divider-soft {
     }
 
     .logo-showcase__badge-num {
-        font-size: 1.8rem !important;
+        font-size: 1.7rem !important;
     }
 
     .logo-showcase__badge-txt {
-        font-size: 0.65rem !important;
+        font-size: 0.62rem !important;
     }
 
     .logo-showcase__logo {
         animation: none !important;
     }
 
-    /* ─── Service Hero ─── */
-    .service-hero {
-        min-height: auto !important;
-        padding: 40px 0 !important;
-    }
-
-    .service-hero h1 {
-        font-size: 1.45rem !important;
-    }
-
-    .service-hero p {
-        font-size: 0.9rem !important;
-    }
-
-    .service-hero .hero-actions {
-        flex-direction: column !important;
-    }
-
-    .service-hero .hero-actions .btn-rich-primary,
-    .service-hero .hero-actions .btn-rich-outline {
-        width: 100% !important;
-    }
-
-    /* ─── Buttons ─── */
-    .btn-rich-primary,
-    .btn-rich-outline,
-    .btn-rich-ghost {
-        width: 100%;
-        padding: 13px 24px;
-        font-size: 0.95rem;
-    }
-
-    .btn-lg {
-        padding: 13px 28px;
-        font-size: 0.95rem;
-    }
-
-    .hero-buttons .btn {
-        display: block;
-        width: 100%;
-        margin: 8px 0;
-    }
-
-    .cta-section .btn,
-    .final-cta-rich .btn {
-        width: 100%;
-        margin: 6px 0;
-    }
-
-    /* ─── Forms ─── */
-    .cf-service-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-
-    /* ─── Final CTA ─── */
-    .final-cta-rich {
-        padding: 45px 0;
-    }
-
-    .final-cta-rich h2 {
-        font-size: 1.5rem;
-    }
-
-    .fcr-badge {
-        width: 65px;
-        height: 65px;
-        font-size: 1.6rem;
-        margin-bottom: 22px;
-    }
-
-    .fcr-buttons {
-        flex-direction: column;
-    }
-
-    .fcr-buttons .btn-rich-primary,
-    .fcr-buttons .btn-rich-ghost {
-        width: 100%;
-    }
-
-    /* ─── Pricing Cards ─── */
-    .pricing-card .price {
-        font-size: 1.75rem !important;
-    }
-
-    /* ─── Article Content ─── */
-    .article-content .lead {
-        font-size: 1.05rem !important;
-        padding-right: 18px !important;
-        padding-left: 18px !important;
-    }
-
-    /* ─── Legal TOC ─── */
-    .legal-toc {
-        padding: 20px 20px !important;
-    }
-
-    .legal-toc ol {
-        grid-template-columns: 1fr !important;
-    }
-
-    /* ─── Cookie Table ─── */
-    .cookie-table {
-        min-width: 520px !important;
-    }
-}
-
-
-/* ─────────────────────────────────────────────────────────────────────────
-   28.5 VERY SMALL PHONE (max-width: 480px)
-   ───────────────────────────────────────────────────────────────────────── */
-@media (max-width: 480px) {
-
-    :root {
-        --banner-height: 44px;
-        --navbar-height: 56px;
-    }
-
-    /* ─── Navbar ─── */
-    .navbar-brand img {
-        height: 28px !important;
-        max-height: 28px !important;
-        max-width: 100px !important;
-    }
-
-    .navbar-brand .firm-name {
-        font-size: 0.72rem !important;
-    }
-
-    .navbar-brand .firm-sub {
-        font-size: 0.52rem !important;
-    }
-
-    /* ─── Hero ─── */
     .hero-rich-title {
         font-size: 1.5rem !important;
     }
 
-    .hero-rich-subtitle {
-        font-size: 0.88rem !important;
+    .hero-rich .hsb-number {
+        font-size: 3.5rem !important;
     }
 
-    .hero-badge-rich {
-        font-size: 0.68rem !important;
-        padding: 6px 12px !important;
-    }
-
-    /* ─── Section Headers ─── */
-    .sh-title {
-        font-size: 1.3rem !important;
-    }
-
-    .sh-desc {
-        font-size: 0.85rem !important;
-    }
-
-    /* ─── Cards ─── */
-    .svc-feature-card {
-        padding: 20px 18px !important;
-    }
-
-    .feature-card {
-        padding: 20px 18px !important;
-    }
-
-    /* ─── Team Featured ─── */
-    .tfc-image-wrap {
-        width: 120px !important;
-        height: 120px !important;
-        max-width: 120px !important;
-        max-height: 120px !important;
-    }
-
-    /* ─── Logo Showcase ─── */
-    .logo-showcase__frame {
-        max-width: 260px !important;
-    }
-
-    .logo-showcase__badge {
-        padding: 10px 14px !important;
-    }
-
-    .logo-showcase__badge-num {
-        font-size: 1.5rem !important;
-    }
-
-    .logo-showcase__badge-txt {
-        font-size: 0.58rem !important;
-    }
-
-    /* ─── FAQ ─── */
-    .faq-rich-accordion .accordion-button {
-        font-size: 0.82rem !important;
-        padding: 12px 16px !important;
-    }
-
-    .faq-rich-accordion .accordion-body {
-        font-size: 0.8rem !important;
-        padding: 0 16px 12px !important;
-    }
-
-    /* ─── Trial Banner ─── */
-    #trial-banner {
-        font-size: 0.68rem !important;
-        padding: 7px 8px !important;
+    .hero-rich .hsb-number span {
+        font-size: 2.2rem !important;
     }
 }
 
 
-/* ─────────────────────────────────────────────────────────────────────────
-   28.6 LANDSCAPE ORIENTATION FIXES — إصلاحات الوضع الأفقي
-   ───────────────────────────────────────────────────────────────────────── */
-@media (max-height: 500px) and (orientation: landscape) {
-    .hero-rich {
-        min-height: 400px !important;
-        padding: 40px 0 !important;
-    }
+/* ============================================================================
+   29. ACCESSIBILITY & PRINT — إمكانية الوصول والطباعة
+   ============================================================================ */
 
-    .hero-rich-title {
-        font-size: 1.75rem !important;
-    }
-
-    .hero-rich-subtitle {
-        font-size: 0.9rem !important;
-    }
-
-    .hero-scroll-indicator {
-        display: none !important;
-    }
-
-    .navbar-collapse {
-        max-height: 70vh !important;
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
 
-
-/* ─────────────────────────────────────────────────────────────────────────
-   28.7 TOUCH DEVICE OPTIMIZATIONS — تحسينات أجهزة اللمس
-   ───────────────────────────────────────────────────────────────────────── */
-@media (hover: none) and (pointer: coarse) {
-    /* Bigger tap targets */
-    .btn,
-    .nav-link,
-    .dropdown-item,
-    .filter-tab,
-    .bc-link,
-    .pa-link {
-        min-height: 44px;
-    }
-
-    /* Disable hover-only animations */
-    .svc-feature-card:hover,
-    .bento-card:hover,
-    .post-card:hover,
-    .feature-card:hover {
-        transform: none;
-    }
-
-    /* Ensure focus states are visible for touch */
-    .btn:focus,
-    .btn:active {
-        outline: 2px solid var(--accent-color);
-        outline-offset: 2px;
-    }
+*:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
-
-/* ─────────────────────────────────────────────────────────────────────────
-   28.8 PRINT — الطباعة
-   ───────────────────────────────────────────────────────────────────────── */
 @media print {
-
     .navbar,
     #trial-banner,
     .language-switcher,
     #backToTop,
-    footer,
-    .hero-decorations,
-    .stats-marquee,
-    .final-cta-rich {
+    footer {
         display: none !important;
     }
 
     body {
-        padding-top: 0 !important;
+        padding-top: 0;
         color: #000;
         background: #fff;
-        font-size: 12pt;
     }
 
     a {
@@ -7671,427 +6477,13 @@ hr.divider-soft {
     .hero-rich,
     .hero-section,
     .service-hero,
+    .page-hero-rich,
     .article-hero {
         height: auto !important;
         min-height: auto !important;
         max-height: none !important;
         padding: 40px 0 !important;
         margin-top: 0 !important;
-        background: #fff !important;
-        color: #000 !important;
-    }
-
-    .hero-rich-overlay,
-    .hero-section::before,
-    .hero-section::after {
-        display: none !important;
-    }
-
-    .hero-rich-title,
-    .hero-rich-subtitle,
-    .service-hero h1,
-    .article-hero h1 {
-        color: #000 !important;
-    }
-
-    .container {
-        max-width: 100% !important;
-    }
-
-    .row {
-        display: block !important;
-    }
-
-    .col-lg-4,
-    .col-lg-6,
-    .col-md-6,
-    .col-lg-3 {
-        width: 100% !important;
-    }
-}
-
-
-/* ============================================================================
-   29. ACCESSIBILITY — إمكانية الوصول
-   ============================================================================ */
-
-/* ─────────────────────────────────────────────────────────────────────────
-   29.1 REDUCED MOTION — تقليل الحركة
-   ───────────────────────────────────────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-
-    /* Disable continuous animations */
-    .marquee-track,
-    .hero-rich-bg img,
-    .logo-showcase__logo,
-    .logo-showcase__glow,
-    .deco-circle-1,
-    .deco-circle-2,
-    .deco-square-1,
-    .fcr-decoration-1,
-    .fcr-decoration-3,
-    .tfc-badge-top,
-    .tfc-badge-bottom,
-    .fcr-badge,
-    #trial-banner i {
-        animation: none !important;
-    }
-}
-
-
-/* ─────────────────────────────────────────────────────────────────────────
-   29.2 FOCUS VISIBLE — إبراز العنصر المركّز عليه
-   ───────────────────────────────────────────────────────────────────────── */
-*:focus {
-    outline: none;
-}
-
-*:focus-visible {
-    outline: 3px solid var(--accent-color);
-    outline-offset: 2px;
-    border-radius: 4px;
-}
-
-/* Special focus for buttons */
-.btn-rich-primary:focus-visible,
-.btn-rich-outline:focus-visible,
-.btn-rich-ghost:focus-visible,
-.btn-hero-primary:focus-visible,
-.btn-hero-ghost:focus-visible {
-    outline: 3px solid var(--accent-color);
-    outline-offset: 3px;
-    box-shadow: 0 0 0 6px rgba(201, 169, 97, 0.2);
-}
-
-/* Focus for inputs */
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-    outline: 3px solid var(--accent-color);
-    outline-offset: 2px;
-}
-
-
-/* ─────────────────────────────────────────────────────────────────────────
-   29.3 HIGH CONTRAST MODE — الوضع عالي التباين
-   ───────────────────────────────────────────────────────────────────────── */
-@media (prefers-contrast: high) {
-    :root {
-        --accent-color: #D4B872;
-        --accent-dark: #A88947;
-        --gray-text: #495057;
-    }
-
-    .btn-rich-outline {
-        border-width: 3px;
-    }
-
-    .bento-card,
-    .feature-card,
-    .post-card {
-        border-width: 2px;
-    }
-}
-
-
-/* ─────────────────────────────────────────────────────────────────────────
-   29.4 DARK MODE SUPPORT (Optional) — دعم الوضع المظلم
-   ───────────────────────────────────────────────────────────────────────── */
-@media (prefers-color-scheme: dark) {
-    /* Only applies if no manual theme toggle exists */
-    /* Currently disabled to preserve brand colors */
-}
-
-
-/* ─────────────────────────────────────────────────────────────────────────
-   29.5 SCREEN READER ONLY — لقارئ الشاشة فقط
-   ───────────────────────────────────────────────────────────────────────── */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-
-/* ============================================================================
-   🎯 HERO SIZE ADJUSTMENT v14.0 — تصغير حجم البانر الرئيسي
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Reduces the hero section height from 620px to 480px (desktop) for a
-   more balanced, less overwhelming appearance. Includes responsive
-   adjustments for tablet and mobile.
-
-   يُقلّص ارتفاع قسم الهيرو من 620px إلى 480px (سطح المكتب) لمظهر
-   أكثر توازناً. يشمل تعديلات متجاوبة للتابلت والموبايل.
-   ============================================================================ */
-
-/* ─── Desktop / سطح المكتب ─── */
-html body .hero-rich {
-    height: var(--hero-height-desktop) !important;
-    min-height: var(--hero-height-desktop) !important;
-    max-height: var(--hero-height-desktop) !important;
-    padding: var(--hero-padding-desktop) !important;
-}
-
-html body .hero-rich .hero-rich-title {
-    font-size: clamp(2rem, 5vw, 3.5rem) !important;
-    margin-bottom: 18px !important;
-}
-
-html body .hero-rich .hero-rich-subtitle {
-    font-size: clamp(0.95rem, 1.3vw, 1.05rem) !important;
-    margin-bottom: 22px !important;
-    line-height: 1.65 !important;
-}
-
-html body .hero-rich .hero-rich-buttons {
-    margin-bottom: 22px !important;
-}
-
-html body .hero-rich .btn-hero-primary,
-html body .hero-rich .btn-hero-ghost {
-    padding: 13px 30px !important;
-    font-size: 0.95rem !important;
-}
-
-html body .hero-rich .hero-trust-row {
-    padding-top: 18px !important;
-    gap: 22px !important;
-}
-
-html body .hero-rich .hsb-number {
-    font-size: 4.5rem !important;
-}
-
-html body .hero-rich .hsb-number span {
-    font-size: 3rem !important;
-}
-
-html body .hero-rich .hero-badge-rich {
-    padding: 8px 18px !important;
-    font-size: 0.8rem !important;
-    margin-bottom: 18px !important;
-}
-
-/* ─── Tablet / تابلت ─── */
-@media (max-width: 991px) {
-    html body .hero-rich {
-        height: auto !important;
-        min-height: 440px !important;
-        max-height: none !important;
-        padding: 45px 0 40px !important;
-    }
-}
-
-/* ─── Mobile / موبايل ─── */
-@media (max-width: 576px) {
-    html body .hero-rich {
-        height: auto !important;
-        min-height: auto !important;
-        max-height: none !important;
-        padding: 40px 0 35px !important;
-    }
-    html body .hero-rich .hero-rich-title {
-        font-size: 1.7rem !important;
-    }
-    html body .hero-rich .hsb-number {
-        font-size: 4rem !important;
-    }
-    html body .hero-rich .hsb-number span {
-        font-size: 2.5rem !important;
-    }
-}
-
-
-/* ============================================================================
-   🎯 NAVBAR FIX — منع التفاف الأزرار (خاصة في العربي)
-   ─────────────────────────────────────────────────────────────────────────
-   PURPOSE / الوظيفة:
-   Prevents navbar links and buttons from wrapping to two lines, especially
-   in Arabic (RTL) where text is naturally longer. Forces all navbar items
-   into a single row.
-
-   يمنع التفاف روابط وأزرار النافبار على سطرين، خاصة في العربي حيث
-   النص أطول بطبيعته. يُجبر كل عناصر النافبار على البقاء في سطر واحد.
-   ============================================================================ */
-
-/* ─── 1) Navbar container — single row, no wrapping ─── */
-html body .navbar .container,
-html body .navbar .container-fluid {
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-}
-
-html body .navbar .navbar-collapse {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-}
-
-html body .navbar .navbar-nav {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    gap: 2px !important;
-    margin: 0 !important;
-}
-
-/* ─── 2) Each nav item — stays on one line ─── */
-html body .navbar .navbar-nav > li,
-html body .navbar .navbar-nav > .nav-item {
-    flex-shrink: 0 !important;
-    white-space: nowrap !important;
-    display: inline-flex !important;
-    align-items: center !important;
-}
-
-/* ─── 3) Nav links — no text wrapping ─── */
-html body .navbar .navbar-nav .nav-link {
-    white-space: nowrap !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    line-height: 1.2 !important;
-}
-
-/* ─── 4) Both buttons — no wrapping ─── */
-html body .navbar .btn-outline-light,
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
-html body .navbar .lang-nav-item .lang-btn {
-    white-space: nowrap !important;
-    flex-shrink: 0 !important;
-}
-
-/* ─── 5) RTL-specific tweaks — smaller padding so everything fits ─── */
-[dir="rtl"] html body .navbar .navbar-nav .nav-link,
-html[dir="rtl"] body .navbar .navbar-nav .nav-link {
-    padding: 8px 11px !important;
-    font-size: 0.92rem !important;
-    margin: 0 1px !important;
-}
-
-[dir="rtl"] html body .navbar .btn-outline-light,
-[dir="rtl"] html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
-[dir="rtl"] html body .navbar .lang-nav-item .lang-btn,
-html[dir="rtl"] body .navbar .btn-outline-light,
-html[dir="rtl"] body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
-html[dir="rtl"] body .navbar .lang-nav-item .lang-btn {
-    padding: 10px 16px !important;
-    font-size: 0.82rem !important;
-    gap: 6px !important;
-}
-
-/* ─── 6) On screens 992px–1200px (iPad landscape), shrink more ─── */
-@media (min-width: 992px) and (max-width: 1200px) {
-    html body .navbar .navbar-nav .nav-link {
-        padding: 8px 10px !important;
-        font-size: 0.88rem !important;
-    }
-    html body .navbar .btn-outline-light,
-    html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
-        padding: 9px 14px !important;
-        font-size: 0.8rem !important;
-    }
-}
-
-/* ─── 7) On mobile, allow wrapping ONLY inside the collapsed menu ─── */
-@media (max-width: 991.98px) {
-    html body .navbar .navbar-collapse {
-        flex-wrap: wrap !important;
-    }
-    html body .navbar .navbar-nav {
-        flex-direction: column !important;
-        flex-wrap: wrap !important;
-        width: 100% !important;
-    }
-    html body .navbar .navbar-nav > li {
-        width: 100% !important;
-    }
-    html body .navbar .navbar-nav .nav-link {
-        white-space: normal !important;
-    }
-}
-
-/* ─── 8) Very last resort — allow scroll if too tight ─── */
-@media (min-width: 992px) {
-    html body .navbar .navbar-collapse {
-        overflow-x: auto !important;
-        overflow-y: visible !important;
-        scrollbar-width: none !important;
-    }
-    html body .navbar .navbar-collapse::-webkit-scrollbar {
-        display: none !important;
-    }
-}
-
-
-/* ============================================================================
-   🎯 FIXES FOR SPECIFIC ELEMENTS — إصلاحات إضافية v14.0
-   ============================================================================ */
-
-/* ─── FIX: Prevent any element from causing horizontal scroll ─── */
-html body * {
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-html body img,
-html body video,
-html body iframe {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Exception: allow specific overflow elements */
-html body .compare-table-wrap,
-html body .cookie-table-wrap,
-html body .marquee-track,
-html body .hero-decorations {
-    max-width: none;
-}
-
-/* ─── FIX: iOS Safari address bar 100vh issue ─── */
-html body .hero-rich {
-    /* Fallback for older browsers */
-    min-height: calc(100vh - var(--banner-height) - var(--navbar-height));
-    /* Modern: use dvh if supported */
-    min-height: calc(100dvh - var(--banner-height) - var(--navbar-height));
-    /* Cap at our max */
-    max-height: var(--hero-height-desktop);
-}
-
-@media (max-width: 768px) {
-    html body .hero-rich {
-        min-height: auto;
-        max-height: none;
-    }
-}
-
-/* ─── FIX: Aspect ratio for images to prevent layout shift ─── */
-html body .hero-rich-bg img {
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    height: 100%;
-}
-
-@media (max-width: 768px) {
-    html body .hero-rich-bg img {
-        aspect-ratio: auto;
     }
 }
 
@@ -8103,16 +6495,14 @@ html body .hero-rich-bg img {
    ██████████████████████████████████████████████████████████████████████████
    ============================================================================
    ============================================================================
-
+   
    ✅ FINAL CHECKLIST / قائمة التحقق النهائية:
    ─────────────────────────────────────────────────────────────────────────
-   [✓] 01. CSS Variables & Design System (Fluid scale v14.0)
+   [✓] 01. CSS Variables & Design System
    [✓] 02. Reset & Base Styles
    [✓] 03. RTL Support
    [✓] 04. Trial Banner
-   [✓] 05. Navbar + UNIFIED GOLD BUTTONS
-         • 05.5.1 → 05.5.10 — Unified navbar buttons
-         • 05.8 — Hero Image Fix (contain + backdrop blur)
+   [✓] 05. Navbar + Language Switcher (single-row layout)
    [✓] 06. Hero Section (Classic)
    [✓] 07. Page Header
    [✓] 08. Feature / Service / Team Cards
@@ -8121,11 +6511,11 @@ html body .hero-rich-bg img {
    [✓] 11. Footer (Classic)
    [✓] 12. Buttons (Complete System)
    [✓] 13. Social Links
-   [✓] 14. Forms (iOS-optimized)
+   [✓] 14. Forms
    [✓] 15. Utilities & Helpers
    [✓] 16. Animations
-   [✓] 17. Back to Top (Safe-area aware)
-   [✓] 18. Premium Homepage
+   [✓] 17. Back to Top
+   [✓] 18. Premium Homepage (Hero Rich — reduced height, no side bars)
    [✓] 19. Logo Showcase (Gold Frame)
    [✓] 20. Services Modern (Compact)
    [✓] 21. Process Timeline
@@ -8135,116 +6525,8 @@ html body .hero-rich-bg img {
    [✓] 25. Final CTA Rich
    [✓] 26. Footer Rich
    [✓] 27. Service Pages Components
-   [✓] 28. ★ Responsive (4 breakpoints + landscape + touch)
-   [✓] 29. ★ Accessibility & Print
-   [✓] HERO SIZE ADJUSTMENT v14.0
-   [✓] NAVBAR FIX (RTL wrapping)
-   [✓] iOS Safari Fixes (safe-area, dvh, 16px inputs)
-   [✓] Horizontal Overflow Prevention
-   ─────────────────────────────────────────────────────────────────────────
-
-   🎯 KEY IMPROVEMENTS IN v14.0 / التحسينات الرئيسية:
-   ─────────────────────────────────────────────────────────────────────────
-   ✅ Hero image shows FULLY (not cropped) via object-fit: contain
-   ✅ Blurred backdrop layer creates cinematic letterbox effect
-   ✅ On mobile: hero image switches to cover (full-bleed)
-   ✅ Fluid spacing scale (--space-*)
-   ✅ Fluid font scale (--fs-*)
-   ✅ Safe-area insets for iPhone notch/Dynamic Island
-   ✅ iOS input zoom fix (font-size: 16px on mobile)
-   ✅ prevent horizontal overflow on any screen
-   ✅ RTL-correct transform-origins everywhere
-   ✅ Touch-friendly tap targets (min 44px)
-   ✅ Reduced-motion support
-   ✅ Full print stylesheet
-   ✅ 5 responsive breakpoints (1200/991/768/576/480)
-   ✅ Landscape orientation fixes
-   ✅ Navbar buttons never wrap
-   ─────────────────────────────────────────────────────────────────────────
-
-   🎨 التصميم النهائي لأزرار النافبار:
-   ─────────────────────────────────────────────────────────────────────────
-   🌐 زر اللغة      = ذهبي ممتلئ (خلفية ذهبية + نص أسود)
-   🔒 بوابة العميل = ذهبي مفرّغ (حد ذهبي + نص ذهبي + خلفية شفافة)
-
-   • نفس الارتفاع  : 40px
-   • نفس الحشو     : 10px 20px
-   • نفس الاستدارة : 999px (Pill)
-   • نفس حجم الخط  : 0.85rem
-   ─────────────────────────────────────────────────────────────────────────
-
-   🖼️ Hero Image Strategy:
-   ─────────────────────────────────────────────────────────────────────────
-   Desktop:  object-fit: contain  → الصورة كاملة + خلفية سوداء + backdrop blur
-   Tablet:   object-fit: contain  → نفس السلوك
-   Mobile:   object-fit: cover    → الصورة تملأ الشاشة (full-bleed)
+   [✓] 28. Responsive (991px / 768px / 576px)
+   [✓] 29. Accessibility & Print
    ─────────────────────────────────────────────────────────────────────────
    ============================================================================
    ============================================================================ */
-   /* ============================================================================
-   🖼️ BLOG ARTICLE HERO — IMAGE FALLBACK
-   ─────────────────────────────────────────────────────────────────────────
-   Shows elegant gold-and-black pattern when image is unavailable.
-   يُظهر نمط ذهبي/أسود أنيق عند غياب الصورة.
-   ============================================================================ */
-
-.article-hero-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    opacity: 0.25;
-    z-index: 0;
-    display: block !important;
-}
-
-/* ★ Fallback background when image fails */
-.article-hero {
-    background: 
-        linear-gradient(135deg, #000 0%, #1A1A1A 100%);
-    background-color: #000;
-    position: relative;
-}
-
-.article-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background-image:
-        radial-gradient(circle at 20% 30%, rgba(201,169,97,0.18), transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(201,169,97,0.12), transparent 50%),
-        linear-gradient(rgba(201,169,97,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,169,97,0.04) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
-    pointer-events: none;
-}
-
-/* ★ Blog card image fallback */
-.post-card .pc-image,
-.related-card-img {
-    background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
-    position: relative;
-}
-
-.post-card .pc-image::before,
-.related-card-img::before {
-    content: '\f15c'; /* fa-file-lines icon */
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgba(201,169,97,0.3);
-    font-size: 3rem;
-    pointer-events: none;
-}
-
-/* Hide image completely if failed — let background show */
-.post-card img[style*="opacity: 0"],
-.related-card img[style*="opacity: 0"] {
-    display: none !important;
-}
