@@ -6531,147 +6531,129 @@ hr.divider-soft {
    ============================================================================
    ============================================================================ */
    /* ============================================================================
-   v15.0 — FINAL POLISH (Clean Overrides)
-   التعديلات النهائية — نظيفة ومرتبة — لا تعارض أي قسم سابق
+   v14.1 — FOCUSED ADJUSTMENTS
+   تعديلات محددة — تُضاف في نهاية ورقة الأنماط
+   ─────────────────────────────────────────────────────────────────────────
+   1. Hero image: show from the top (no top crop).
+   2. Language button: match Client Portal button size.
+   3. Client Portal border: thicker gold border.
+   4. Cards: slightly reduced size.
    ============================================================================ */
 
 
-/* ─────────────────────────────────────────────────────────────────
-   1) HERO — ارتفاع ثابت مناسب يُظهر الصورة كاملة
-   ───────────────────────────────────────────────────────────────── */
-.hero-rich {
-    height: auto !important;
-    min-height: 520px !important;
-    max-height: 620px !important;
-    padding: 60px 0 50px !important;
+/* ─────────────────────────────────────────────────────────────────────────
+   1) HERO IMAGE — anchor from the top so the upper part stays visible
+   ───────────────────────────────────────────────────────────────────────── */
+.hero-rich-bg img {
+    object-position: center top !important;
 }
 
-.hero-rich-bg img {
-    object-fit: cover !important;
-    object-position: center center !important;
+/* Slightly reduce the hero height so more of the image shows */
+.hero-rich {
+    height: 460px !important;
+    min-height: 440px !important;
+    max-height: 460px !important;
 }
 
 @media (max-width: 991px) {
     .hero-rich {
-        min-height: 480px !important;
+        height: auto !important;
+        min-height: 440px !important;
         max-height: none !important;
     }
 }
 
 @media (max-width: 576px) {
     .hero-rich {
-        min-height: 440px !important;
-        padding: 45px 0 40px !important;
+        min-height: auto !important;
     }
 }
 
 
-/* ─────────────────────────────────────────────────────────────────
-   2) LANGUAGE BUTTON — زر اللغة (تكبير + تناسق)
-   ───────────────────────────────────────────────────────────────── */
+/* ─────────────────────────────────────────────────────────────────────────
+   2) NAVBAR BUTTONS — Language button = Client Portal button size
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Language button — bigger, matching Client Portal */
 .navbar .lang-btn,
-.navbar .language-switcher .lang-btn,
-.navbar .language-switcher.in-navbar .lang-btn,
 .language-switcher.in-navbar .lang-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 10px !important;
-    padding: 12px 28px !important;
-    min-height: 48px !important;
-    height: 48px !important;
-    font-size: 0.95rem !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
-    background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
-    color: #000000 !important;
-    border: 2px solid #C9A961 !important;
-    border-radius: 999px !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.40) !important;
+    padding: 10px 22px !important;
+    min-height: 42px !important;
+    height: 42px !important;
+    font-size: 0.88rem !important;
+    gap: 8px !important;
 }
 
-.navbar .lang-btn i {
-    font-size: 1rem !important;
-    line-height: 1 !important;
-}
-
-.navbar .lang-btn:hover,
-.navbar .lang-btn:focus {
-    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
-    color: #000000 !important;
-    border-color: #D4B872 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55) !important;
-}
-
-
-/* ─────────────────────────────────────────────────────────────────
-   3) CLIENT PORTAL BUTTON — نفس حجم زر اللغة
-   ───────────────────────────────────────────────────────────────── */
+/* Client Portal button — matching Language button */
 .navbar .btn-outline-light,
 .navbar .btn-outline-light.btn-sm {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 10px !important;
-    padding: 12px 28px !important;
-    min-height: 48px !important;
-    height: 48px !important;
-    font-size: 0.95rem !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
-    background: transparent !important;
-    color: #C9A961 !important;
-    border: 3px solid #C9A961 !important;
-    border-radius: 999px !important;
-    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.25) !important;
-    white-space: nowrap !important;
+    padding: 10px 22px !important;
+    min-height: 42px !important;
+    height: 42px !important;
+    font-size: 0.88rem !important;
+    gap: 8px !important;
 }
 
+/* Icons inside both buttons */
+.navbar .lang-btn i,
 .navbar .btn-outline-light i {
-    font-size: 1rem !important;
-    line-height: 1 !important;
+    font-size: 0.92rem !important;
+}
+
+/* RTL — keep them the same size */
+[dir="rtl"] .navbar .lang-btn,
+[dir="rtl"] .navbar .btn-outline-light {
+    padding: 10px 20px !important;
+    font-size: 0.86rem !important;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   3) CLIENT PORTAL BUTTON — thicker gold border
+   ───────────────────────────────────────────────────────────────────────── */
+.navbar .btn-outline-light,
+.navbar .btn-outline-light.btn-sm {
+    border: 3px solid #C9A961 !important;
+    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.25) !important;
 }
 
 .navbar .btn-outline-light:hover,
 .navbar .btn-outline-light:focus {
-    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
-    color: #000000 !important;
+    border-width: 3px !important;
     border-color: #D4B872 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55) !important;
 }
 
 
-/* ─────────────────────────────────────────────────────────────────
-   4) CARDS — مقاسات متوازنة
-   ───────────────────────────────────────────────────────────────── */
+/* ─────────────────────────────────────────────────────────────────────────
+   4) CARDS — slightly smaller size across the site
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* Bento cards (homepage) */
 .bento-card {
     padding: 20px 18px !important;
-    min-height: 170px !important;
+    min-height: 175px !important;
 }
 
 .bento-card.bento-large {
-    padding: 28px 24px !important;
-    min-height: 380px !important;
+    padding: 26px 24px !important;
+    min-height: 370px !important;
 }
 
 .bento-card h3 {
-    font-size: 1.05rem !important;
+    font-size: 1.02rem !important;
     margin-bottom: 6px !important;
 }
 
 .bento-card.bento-large h3 {
-    font-size: 1.3rem !important;
+    font-size: 1.25rem !important;
 }
 
 .bento-card p {
-    font-size: 0.83rem !important;
+    font-size: 0.82rem !important;
     line-height: 1.55 !important;
 }
 
+/* Service feature cards (service pages) */
 .svc-feature-card {
     padding: 22px 20px !important;
 }
@@ -6684,56 +6666,318 @@ hr.divider-soft {
     font-size: 0.85rem !important;
 }
 
-.feature-card {
-    padding: 24px 20px !important;
+.svc-feature-icon {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 1.15rem !important;
+    margin-bottom: 14px !important;
 }
 
+/* Modern service items (compact grid) */
+.svc-modern-item {
+    padding: 12px 14px !important;
+}
+
+.svc-modern-content h6 {
+    font-size: 0.86rem !important;
+}
+
+.svc-modern-content small {
+    font-size: 0.7rem !important;
+}
+
+/* Practice area cards (related services) */
 .pa-card-head {
     padding: 18px 18px 14px !important;
+}
+
+.pa-card-head i.pa-icon {
+    font-size: 1.4rem !important;
+    margin-bottom: 8px !important;
+}
+
+.pa-card-head h3 {
+    font-size: 1rem !important;
 }
 
 .pa-card-body {
     padding: 16px 18px 18px !important;
 }
 
+.pa-card-body p {
+    font-size: 0.85rem !important;
+    margin-bottom: 12px !important;
+}
+
+/* Feature cards */
+.feature-card {
+    padding: 26px 20px !important;
+}
+
+.feature-card h4,
+.feature-card h5 {
+    font-size: 1.08rem !important;
+}
+
+.feature-icon {
+    width: 65px !important;
+    height: 65px !important;
+    font-size: 24px !important;
+    margin-bottom: 18px !important;
+}
+
+/* Testimonial modern cards */
 .testimonial-modern-card {
     padding: 22px 20px !important;
 }
 
+.testimonial-modern-card p {
+    font-size: 0.86rem !important;
+}
+
+/* Security cards (client portal) */
 .security-card {
     padding: 20px 18px !important;
 }
 
+.security-card i {
+    font-size: 1.4rem !important;
+    margin-bottom: 10px !important;
+}
 
-/* ─────────────────────────────────────────────────────────────────
-   5) MOBILE — استجابة كاملة للأزرار
-   ───────────────────────────────────────────────────────────────── */
+.security-card h4 {
+    font-size: 0.9rem !important;
+}
+
+.security-card p {
+    font-size: 0.78rem !important;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   END OF ADJUSTMENTS v14.1
+   ─────────────────────────────────────────────────────────────────────────
+   📌 ملاحظة: كل قاعدة محدودة بنطاق واضح، ولا تُلغي أي قاعدة أخرى.
+   ============================================================================ */
+   /* ═══════════════════════════════════════════════════════════════════════
+   التعديلات النهائية — Final Adjustments
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* 1) صورة الهيرو — تظهر كاملة من فوق لتحت */
+.hero-rich {
+    height: 400px !important;
+    min-height: 400px !important;
+    max-height: 400px !important;
+}
+
+.hero-rich-bg img {
+    object-fit: cover !important;
+    object-position: center center !important;
+}
+
+/* 2) زر اللغة — نفس حجم زر بوابة العميل بالظبط */
+.navbar .lang-btn {
+    padding: 12px 26px !important;
+    min-height: 46px !important;
+    height: 46px !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+}
+
+/* 3) زر بوابة العميل — نفس الحجم + إطار ذهبي سميك */
+.navbar .btn-outline-light,
+.navbar .btn-outline-light.btn-sm {
+    padding: 12px 26px !important;
+    min-height: 46px !important;
+    height: 46px !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    border: 3px solid #C9A961 !important;
+}
+
+/* 4) أيقونات الأزرار */
+.navbar .lang-btn i,
+.navbar .btn-outline-light i {
+    font-size: 1rem !important;
+}
+
+/* 5) على الموبايل */
 @media (max-width: 991px) {
-    .navbar .lang-btn,
-    .navbar .btn-outline-light {
-        width: 100% !important;
-        justify-content: center !important;
-        min-height: 46px !important;
-        height: 46px !important;
+    .hero-rich {
+        height: auto !important;
+        min-height: 380px !important;
+        max-height: none !important;
     }
 }
 
 @media (max-width: 576px) {
-    .navbar .lang-btn,
-    .navbar .btn-outline-light {
-        font-size: 0.88rem !important;
-        padding: 10px 20px !important;
-        min-height: 44px !important;
-        height: 44px !important;
-        gap: 6px !important;
+    .hero-rich {
+        min-height: auto !important;
     }
-    .navbar .lang-btn i,
-    .navbar .btn-outline-light i {
-        font-size: 0.9rem !important;
+}
+/* ══════════════════════════════════════════════════════════════════════ */
+/* زر اللغة العربية — أكبر + نفس حجم بوابة العميل + خلفية ذهبية */
+/* ══════════════════════════════════════════════════════════════════════ */
+.navbar .lang-btn,
+.navbar .language-switcher .lang-btn,
+.navbar .language-switcher.in-navbar .lang-btn,
+.navbar .nav-item .lang-btn,
+.language-switcher .lang-btn,
+a.lang-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    padding: 14px 34px !important;
+    min-height: 52px !important;
+    height: 52px !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
+    color: #000000 !important;
+    border: 2px solid #C9A961 !important;
+    border-radius: 999px !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: 0 6px 20px rgba(201, 169, 97, 0.40) !important;
+}
+
+.navbar .lang-btn i,
+.navbar .language-switcher .lang-btn i,
+a.lang-btn i {
+    font-size: 1.15rem !important;
+}
+
+.navbar .lang-btn:hover,
+.navbar .lang-btn:focus {
+    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+    color: #000000 !important;
+    border-color: #D4B872 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════ */
+/* زر بوابة العميل — نفس الحجم + إطار ذهبي سميك */
+/* ══════════════════════════════════════════════════════════════════════ */
+.navbar .btn-outline-light,
+.navbar .btn-outline-light.btn-sm {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 12px 28px !important;
+    min-height: 48px !important;
+    height: 48px !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    background: transparent !important;
+    color: #C9A961 !important;
+    border: 3px solid #C9A961 !important;
+    border-radius: 999px !important;
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.2) !important;
+}
+
+.navbar .btn-outline-light i {
+    font-size: 1.1rem !important;
+}
+
+/* عند المرور بالماوس */
+.navbar .lang-btn:hover,
+.navbar .btn-outline-light:hover {
+    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+    color: #000 !important;
+    border-color: #D4B872 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════ */
+/* الكروت — أصغر شوية */
+/* ══════════════════════════════════════════════════════════════════════ */
+.bento-card {
+    padding: 18px 16px !important;
+    min-height: 160px !important;
+}
+
+.bento-card.bento-large {
+    padding: 24px 22px !important;
+    min-height: 340px !important;
+}
+
+.bento-card h3 { font-size: 1rem !important; }
+.bento-card.bento-large h3 { font-size: 1.2rem !important; }
+.bento-card p { font-size: 0.8rem !important; line-height: 1.5 !important; }
+
+.svc-feature-card { padding: 22px 20px !important; }
+.svc-feature-card h3 { font-size: 1rem !important; }
+.svc-feature-card p { font-size: 0.84rem !important; }
+
+.feature-card { padding: 24px 18px !important; }
+.pa-card-head { padding: 18px 18px 14px !important; }
+.pa-card-body { padding: 16px 18px 18px !important; }
+
+.testimonial-modern-card { padding: 20px 18px !important; }
+.security-card { padding: 20px 18px !important; }
+/* ══════════════════════════════════════════════════════════════════════ */
+/* البانر الرئيسي — أطول عشان الصورة تبان كاملة */
+/* ══════════════════════════════════════════════════════════════════════ */
+
+.hero-rich {
+    height: 620px !important;
+    min-height: 620px !important;
+    max-height: 620px !important;
+    padding: 70px 0 60px !important;
+}
+
+/* الصورة تبدأ من فوق مباشرة */
+.hero-rich-bg img {
+    object-fit: cover !important;
+    object-position: center top !important;
+}
+
+/* على التابلت */
+@media (max-width: 991px) {
+    .hero-rich {
+        height: auto !important;
+        min-height: 560px !important;
+        max-height: none !important;
     }
 }
 
+/* على الموبايل */
+@media (max-width: 576px) {
+    .hero-rich {
+        min-height: auto !important;
+        padding: 50px 0 40px !important;
+    }
+}
+/* ══════════════════════════════════════════════════════════════════════ */
+/* البانر — يتبع نسبة أبعاد الصورة تلقائياً */
+/* ══════════════════════════════════════════════════════════════════════ */
 
-/* ============================================================================
-   END OF v15.0 — نهاية التعديلات النظيفة
-   ============================================================================ */
+.hero-rich {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    aspect-ratio: 16 / 9 !important;    /* ← غيّر النسبة حسب صورتك */
+    padding: 60px 0 !important;
+}
+
+.hero-rich-bg img {
+    object-fit: cover !important;
+    object-position: center center !important;
+}
+
+/* على الموبايل — نسبة أطول عشان المحتوى */
+@media (max-width: 768px) {
+    .hero-rich {
+        aspect-ratio: auto !important;
+        min-height: 480px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-rich {
+        min-height: 420px !important;
+    }
+}
