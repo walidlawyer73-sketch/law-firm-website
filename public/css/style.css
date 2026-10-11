@@ -6815,3 +6815,130 @@ hr.divider-soft {
         min-height: auto !important;
     }
 }
+/* ══════════════════════════════════════════════════════════════════════ */
+/* زر اللغة العربية — أكبر + نفس حجم بوابة العميل */
+/* ══════════════════════════════════════════════════════════════════════ */
+.navbar .lang-btn,
+.navbar .language-switcher .lang-btn,
+.navbar .language-switcher.in-navbar .lang-btn,
+.navbar .nav-item .lang-btn,
+.language-switcher .lang-btn,
+a.lang-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 12px 28px !important;
+    min-height: 48px !important;
+    height: 48px !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    background: transparent !important;
+    color: #C9A961 !important;
+    border: 3px solid #C9A961 !important;
+    border-radius: 999px !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.2) !important;
+}
+
+.navbar .lang-btn i,
+.navbar .language-switcher .lang-btn i,
+a.lang-btn i {
+    font-size: 1.1rem !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════ */
+/* زر بوابة العميل — نفس الحجم + إطار ذهبي سميك */
+/* ══════════════════════════════════════════════════════════════════════ */
+.navbar .btn-outline-light,
+.navbar .btn-outline-light.btn-sm {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 12px 28px !important;
+    min-height: 48px !important;
+    height: 48px !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    background: transparent !important;
+    color: #C9A961 !important;
+    border: 3px solid #C9A961 !important;
+    border-radius: 999px !important;
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.2) !important;
+}
+
+.navbar .btn-outline-light i {
+    font-size: 1.1rem !important;
+}
+
+/* عند المرور بالماوس */
+.navbar .lang-btn:hover,
+.navbar .btn-outline-light:hover {
+    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+    color: #000 !important;
+    border-color: #D4B872 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════ */
+/* الكروت — أصغر شوية */
+/* ══════════════════════════════════════════════════════════════════════ */
+.bento-card {
+    padding: 18px 16px !important;
+    min-height: 160px !important;
+}
+
+.bento-card.bento-large {
+    padding: 24px 22px !important;
+    min-height: 340px !important;
+}
+
+.bento-card h3 { font-size: 1rem !important; }
+.bento-card.bento-large h3 { font-size: 1.2rem !important; }
+.bento-card p { font-size: 0.8rem !important; line-height: 1.5 !important; }
+
+.svc-feature-card { padding: 22px 20px !important; }
+.svc-feature-card h3 { font-size: 1rem !important; }
+.svc-feature-card p { font-size: 0.84rem !important; }
+
+.feature-card { padding: 24px 18px !important; }
+.pa-card-head { padding: 18px 18px 14px !important; }
+.pa-card-body { padding: 16px 18px 18px !important; }
+
+.testimonial-modern-card { padding: 20px 18px !important; }
+.security-card { padding: 20px 18px !important; }
+/* ══════════════════════════════════════════════════════════════════════ */
+/* البانر الرئيسي — أطول عشان الصورة تبان كاملة */
+/* ══════════════════════════════════════════════════════════════════════ */
+
+.hero-rich {
+    height: 620px !important;
+    min-height: 620px !important;
+    max-height: 620px !important;
+    padding: 70px 0 60px !important;
+}
+
+/* الصورة تبدأ من فوق مباشرة */
+.hero-rich-bg img {
+    object-fit: cover !important;
+    object-position: center top !important;
+}
+
+/* على التابلت */
+@media (max-width: 991px) {
+    .hero-rich {
+        height: auto !important;
+        min-height: 560px !important;
+        max-height: none !important;
+    }
+}
+
+/* على الموبايل */
+@media (max-width: 576px) {
+    .hero-rich {
+        min-height: auto !important;
+        padding: 50px 0 40px !important;
+    }
+}
