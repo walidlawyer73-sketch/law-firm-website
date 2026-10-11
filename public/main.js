@@ -3,6 +3,8 @@
 // main.js - Walid Abu AlEla Law Firm
 // ملف JavaScript الموحد - كل الأكواد في مكان واحد
 // Unified JavaScript - All code in one place
+//
+// VERSION / الإصدار: v6.0 (Bulletproof Language Injection)
 // ============================================================================
 // ============================================================================
 
@@ -12,13 +14,6 @@
 
     // ========================================================================
     // 1. الشريط التجريبي - Trial Banner
-    // ========================================================================
-    // PURPOSE / الوظيفة:
-    // Creates the yellow trial banner at the very top of every page.
-    // Adjusts body padding and navbar position to accommodate its height.
-    //
-    // ينشئ الشريط التجريبي الأصفر في أعلى كل صفحة. يضبط حشو الـ body
-    // وموضع النافبار لتتناسب مع ارتفاعه.
     // ========================================================================
     function createTrialBanner() {
         if (document.getElementById('trial-banner')) return;
@@ -82,74 +77,51 @@
 
 
     // ========================================================================
-    // 2. AUTO-INJECT LANGUAGE SWITCHER INTO NAVBAR (v4 - Perfect Match)
-    //    حقن زر اللغة بمطابقة كاملة لزر بوابة العميل
+    // 2. AUTO-INJECT LANGUAGE SWITCHER INTO NAVBAR (v5 - Bulletproof)
+    //    حقن زر اللغة — نسخة مضادة للفشل — تشتغل في كل الصفحات
     // ========================================================================
     // PURPOSE / الوظيفة:
-    // Injects the language button wrapped inside .language-switcher.in-navbar
-    // so it matches the stylesheet rules. Uses the same spacing classes as
-    // the Client Portal button (ms-lg-3) for perfect alignment. Removes any
-    // legacy floating button and any manually-added duplicate.
-    // Also handles same-page language switching.
+    // Injects the language button into the navbar on EVERY page, using
+    // 5 fallback strategies to guarantee success regardless of the page's
+    // navbar structure. Removes any legacy floating button and prevents
+    // duplicate injections.
     //
-    // يحقن زر اللغة مغلفاً داخل .language-switcher.in-navbar ليطابق قواعد
-    // الـ CSS. يستخدم نفس كلاسات المسافة كزر بوابة العميل (ms-lg-3) لضمان
-    // التوازي التام. يحذف أي زر عائم أو نسخة يدوية. كما يتعامل مع التبديل
-    // لنفس الصفحة في اللغة الأخرى.
+    // يحقن زر اللغة في النافبار في كل صفحة، باستخدام 5 استراتيجيات بديلة
+    // لضمان النجاح مهما كانت بنية النافبار. يحذف أي زر عائم قديم ويمنع
+    // التكرار.
     // ========================================================================
     function injectLanguageSwitcher() {
-        // ═══════════════════════════════════════════════════════════════════
-        // STEP 1: Remove the old floating language button.
-        // الخطوة 1: احذف الزر العائم القديم.
-        // ═══════════════════════════════════════════════════════════════════
+        // ─── STEP 1: Remove old floating button / احذف الزر العائم القديم ───
         document.querySelectorAll('body > .language-switcher')
             .forEach(el => el.remove());
 
-        // ═══════════════════════════════════════════════════════════════════
-        // STEP 2: Do not inject twice.
-        // الخطوة 2: لا تحقن مرتين.
-        // ═══════════════════════════════════════════════════════════════════
+        // ─── STEP 2: Already injected? Skip / مفحقن قبل كده؟ ───
         if (document.querySelector('.navbar .lang-nav-item')) {
             console.log('[LANG] Already injected — skipping');
             return;
         }
 
-        // ═══════════════════════════════════════════════════════════════════
-        // STEP 3: Remove a manually added navbar switcher, if one exists.
-        // الخطوة 3: احذف أي زر يدوي مضاف للنافبار.
-        // ═══════════════════════════════════════════════════════════════════
+        // ─── STEP 3: Remove manually-added switcher / احذف أي زر يدوي ───
         document.querySelectorAll('.navbar .language-switcher.in-navbar')
             .forEach(el => {
                 if (el.closest('.lang-nav-item')) return;
-
                 const item = el.closest('li');
-                if (item) {
-                    item.remove();
-                } else {
-                    el.remove();
-                }
+                if (item) item.remove();
+                else el.remove();
             });
 
-        // ═══════════════════════════════════════════════════════════════════
-        // STEP 4: Detect current language.
-        // الخطوة 4: كشف اللغة الحالية.
-        // ═══════════════════════════════════════════════════════════════════
+        // ─── STEP 4: Detect current language / اكتشف اللغة الحالية ───
         const isArabic =
             document.documentElement.lang.toLowerCase().startsWith('ar');
 
-        // ═══════════════════════════════════════════════════════════════════
-        // STEP 5: Switch to the corresponding page in the other language.
-        // الخطوة 5: الانتقال إلى الصفحة المقابلة في اللغة الأخرى.
-        // ═══════════════════════════════════════════════════════════════════
+        // ─── STEP 5: Build target URL / ابنِ رابط اللغة الأخرى ───
         const currentPath = window.location.pathname || '/';
         let targetHref;
 
         if (isArabic) {
             targetHref = currentPath.replace(/^\/ar(?=\/|$)/i, '') || '/';
-
-            if (targetHref === '/index.html') {
-                targetHref = '/';
-            }
+            if (targetHref === '/index.html') targetHref = '/';
+            if (!targetHref.startsWith('/')) targetHref = '/' + targetHref;
         } else {
             targetHref =
                 currentPath === '/' || currentPath === '/index.html'
@@ -160,24 +132,7 @@
         const label = isArabic ? 'English' : 'العربية';
         const targetLanguage = isArabic ? 'en' : 'ar';
 
-        // ═══════════════════════════════════════════════════════════════════
-        // STEP 6: Find the Client Portal button.
-        // الخطوة 6: إيجاد زر بوابة العميل.
-        // ═══════════════════════════════════════════════════════════════════
-        const portalLink = Array.from(
-            document.querySelectorAll('.navbar .navbar-nav a, .navbar a')
-        ).find(a => {
-            const href = a.getAttribute('href') || '';
-            const text = a.textContent || '';
-
-            return /client-portal|portal/i.test(href) ||
-                   /Client Portal|بوابة العميل/i.test(text);
-        });
-
-        // ═══════════════════════════════════════════════════════════════════
-        // STEP 7: Create the language button.
-        // الخطوة 7: إنشاء زر اللغة.
-        // ═══════════════════════════════════════════════════════════════════
+        // ─── STEP 6: Create the button / أنشئ الزر ───
         const langButton = document.createElement('a');
         langButton.href = targetHref;
         langButton.className = 'lang-btn';
@@ -187,76 +142,114 @@
             '<i class="fas fa-globe" aria-hidden="true"></i>' +
             '<span>' + label + '</span>';
 
-        // ═══════════════════════════════════════════════════════════════════
-        // STEP 8: Use the wrapper class expected by the shared stylesheet.
-        // الخطوة 8: استخدام الغلاف الذي يتعرف عليه ملف CSS.
-        // ═══════════════════════════════════════════════════════════════════
         const langWrapper = document.createElement('div');
         langWrapper.className = 'language-switcher in-navbar';
         langWrapper.appendChild(langButton);
 
-        // ✅ Match the Client Portal <li> exactly: nav-item + ms-lg-3
-        // ✅ مطابقة <li> بوابة العميل تماماً: nav-item + ms-lg-3
         const langItem = document.createElement('li');
         langItem.className = 'nav-item lang-nav-item ms-lg-3';
         langItem.appendChild(langWrapper);
 
         // ═══════════════════════════════════════════════════════════════════
-        // STEP 9: Insert after Client Portal item (with fallbacks).
-        // الخطوة 9: الإدراج بعد بوابة العميل (مع بدائل).
+        // STEP 7: Find the navbar — VERY flexible
+        //         ابحث عن النافبار — بأكثر من طريقة
         // ═══════════════════════════════════════════════════════════════════
+        const navbar = document.querySelector('nav.navbar, .navbar, nav');
+        if (!navbar) {
+            console.warn('[LANG] ✗ No navbar found on this page');
+            return;
+        }
+
+        // ═══════════════════════════════════════════════════════════════════
+        // STEP 8: Try 5 strategies to insert the button
+        //         جرّب 5 طرق لإدراج الزر
+        // ═══════════════════════════════════════════════════════════════════
+
+        // ─── Helper: verify after insertion ───
+        function verifyInjection() {
+            setTimeout(() => {
+                const found = document.querySelector('.navbar .lang-nav-item');
+                if (found) {
+                    console.log('[LANG] ✓✓✓ Language button verified in DOM');
+                } else {
+                    console.error('[LANG] ✗ Language button NOT in DOM!');
+                }
+            }, 100);
+        }
+
+        // ─── Strategy 1: Insert after Client Portal button ────────────────
+        const portalLink = Array.from(
+            navbar.querySelectorAll('a')
+        ).find(a => {
+            const href = a.getAttribute('href') || '';
+            const text = a.textContent || '';
+            return /client-portal|portal/i.test(href) ||
+                   /Client Portal|بوابة العميل/i.test(text);
+        });
+
         if (portalLink) {
             const portalItem = portalLink.closest('li');
-            const navList = portalLink.closest('ul');
-
             if (portalItem && portalItem.parentNode) {
-                portalItem.parentNode.insertBefore(
-                    langItem,
-                    portalItem.nextSibling
-                );
+                portalItem.parentNode.insertBefore(langItem, portalItem.nextSibling);
                 console.log('[LANG] ✓✓✓ Inserted AFTER Client Portal');
-            } else if (navList) {
-                navList.appendChild(langItem);
-                console.log('[LANG] ✓ Appended to navbar list');
-            } else {
-                console.warn('[LANG] Unable to find navbar insertion point');
-                return;
-            }
-        } else {
-            // Fallback: If Client Portal is not on this page, append to navbar
-            // بديل: لو بوابة العميل مش موجودة في الصفحة، أضف للنافبار
-            const navbarNav = document.querySelector('.navbar .navbar-nav');
-            if (navbarNav) {
-                navbarNav.appendChild(langItem);
-                console.log('[LANG] ✓ Appended to navbar (no portal found)');
-            } else {
-                console.warn('[LANG] Navbar not found — cannot inject');
+                verifyInjection();
                 return;
             }
         }
 
-        // ═══════════════════════════════════════════════════════════════════
-        // STEP 10: Verify injection success.
-        // الخطوة 10: التحقق من نجاح الحقن.
-        // ═══════════════════════════════════════════════════════════════════
-        setTimeout(() => {
-            const found = document.querySelector('.navbar .lang-nav-item');
-            if (found) {
-                console.log('[LANG] ✓✓✓ Language button verified in DOM');
-            } else {
-                console.error('[LANG] ✗ Language button NOT in DOM!');
+        // ─── Strategy 2: Append to existing .navbar-nav ───────────────────
+        const navbarNav = navbar.querySelector('.navbar-nav');
+        if (navbarNav) {
+            navbarNav.appendChild(langItem);
+            console.log('[LANG] ✓ Appended to .navbar-nav');
+            verifyInjection();
+            return;
+        }
+
+        // ─── Strategy 3: Create .navbar-nav inside .navbar-collapse ──────
+        const navbarCollapse = navbar.querySelector('.navbar-collapse');
+        if (navbarCollapse) {
+            let ul = navbarCollapse.querySelector('ul');
+            if (!ul) {
+                ul = document.createElement('ul');
+                ul.className = 'navbar-nav ms-auto align-items-center';
+                ul.style.cssText = 'display:flex;flex-direction:row;align-items:center;list-style:none;margin:0;padding:0;margin-inline-start:auto;gap:8px;';
+                navbarCollapse.appendChild(ul);
             }
-        }, 100);
+            ul.appendChild(langItem);
+            console.log('[LANG] ✓ Created .navbar-nav inside .navbar-collapse');
+            verifyInjection();
+            return;
+        }
+
+        // ─── Strategy 4: Create wrapper inside .container-fluid / .container ───
+        const container = navbar.querySelector('.container-fluid, .container');
+        if (container) {
+            const wrapper = document.createElement('ul');
+            wrapper.className = 'navbar-nav ms-auto align-items-center';
+            wrapper.style.cssText = 'display:flex;flex-direction:row;align-items:center;list-style:none;margin:0;padding:0;margin-inline-start:auto;gap:8px;';
+            wrapper.appendChild(langItem);
+            container.appendChild(wrapper);
+            console.log('[LANG] ✓ Created wrapper inside container');
+            verifyInjection();
+            return;
+        }
+
+        // ─── Strategy 5: Last resort — append directly to navbar ─────────
+        const wrapper = document.createElement('ul');
+        wrapper.className = 'navbar-nav ms-auto align-items-center';
+        wrapper.style.cssText = 'display:flex;flex-direction:row;align-items:center;list-style:none;margin:0;padding:0;margin-inline-start:auto;gap:8px;position:absolute;top:50%;transform:translateY(-50%);' +
+            (isArabic ? 'left:20px;' : 'right:20px;');
+        wrapper.appendChild(langItem);
+        navbar.style.position = navbar.style.position || 'relative';
+        navbar.appendChild(wrapper);
+        console.log('[LANG] ✓ Appended directly to navbar (fallback)');
+        verifyInjection();
     }
 
 
     // ========================================================================
     // 3. إصلاح صورة المحامي - Lawyer Profile Image Fix
-    // ========================================================================
-    // PURPOSE / الوظيفة:
-    // Ensures the lawyer's profile image always loads the correct path.
-    //
-    // يضمن تحميل صورة المحامي من المسار الصحيح.
     // ========================================================================
     function fixLawyerImage() {
         const correctPath = '/images/team/walid-profile.jpg';
@@ -284,11 +277,6 @@
 
     // ========================================================================
     // 4. الرابط النشط - Active Link Highlight
-    // ========================================================================
-    // PURPOSE / الوظيفة:
-    // Adds the .active class to navbar links matching current URL.
-    //
-    // يضيف كلاس .active لروابط النافبار المطابقة للصفحة الحالية.
     // ========================================================================
     function highlightActiveLink() {
         const currentPath = window.location.pathname;
@@ -520,17 +508,20 @@
     // ========================================================================
     // PURPOSE / الوظيفة:
     // Runs every initializer in the correct order.
-    // Language switcher runs TWICE (immediate + 500ms) to ensure success.
+    // Language switcher runs MULTIPLE times (immediate + 300ms + 800ms + 1500ms)
+    // to guarantee success on slow-loading pages.
     //
     // يشغّل كل التهيئات بالترتيب الصحيح.
-    // زر اللغة يعمل مرتين (فوري + 500ms) لضمان النجاح.
+    // زر اللغة يعمل 4 مرات لضمان النجاح في كل الصفحات.
     // ========================================================================
     function init() {
         createTrialBanner();
 
-        // Inject language button — run TWICE for safety
+        // ⚡ Inject language button — run 4 times for safety
         injectLanguageSwitcher();
-        setTimeout(injectLanguageSwitcher, 500);
+        setTimeout(injectLanguageSwitcher, 300);
+        setTimeout(injectLanguageSwitcher, 800);
+        setTimeout(injectLanguageSwitcher, 1500);
 
         fixLawyerImage();
         highlightActiveLink();
@@ -546,6 +537,41 @@
         document.addEventListener('DOMContentLoaded', init);
     } else {
         init();
+    }
+
+    // ⚡ Re-try injection when window resizes (mobile DOM changes)
+    //    أعد المحاولة عند تغيير حجم الشاشة
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            if (!document.querySelector('.navbar .lang-nav-item')) {
+                console.log('[LANG] Re-injecting after resize...');
+                injectLanguageSwitcher();
+            }
+        }, 400);
+    });
+
+    // ⚡ Re-try injection when DOM changes significantly (AJAX, etc.)
+    //    أعد المحاولة عند تغيير الـ DOM
+    if (window.MutationObserver) {
+        const observer = new MutationObserver(function(mutations) {
+            // Only re-inject if navbar changed and lang button is missing
+            const navbarChanged = mutations.some(m =>
+                m.target.closest && m.target.closest('.navbar')
+            );
+            if (navbarChanged && !document.querySelector('.navbar .lang-nav-item')) {
+                injectLanguageSwitcher();
+            }
+        });
+
+        // Start observing after DOM is ready
+        setTimeout(function() {
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                observer.observe(navbar, { childList: true, subtree: true });
+            }
+        }, 1000);
     }
 
 

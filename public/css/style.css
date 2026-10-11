@@ -6512,6 +6512,127 @@ html body .hero-rich .hero-badge-rich {
     }
 }
 
+/* ============================================================================
+   🎯 NAVBAR FIX — منع التفاف الأزرار (خاصة في العربي)
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Prevents navbar links and buttons from wrapping to two lines, especially
+   in Arabic (RTL) where text is naturally longer. Forces all navbar items
+   into a single row.
+   
+   يمنع التفاف روابط وأزرار النافبار على سطرين، خاصة في العربي حيث
+   النص أطول بطبيعته. يُجبر كل عناصر النافبار على البقاء في سطر واحد.
+   ============================================================================ */
+
+/* ─── 1) Navbar container — single row, no wrapping ─── */
+html body .navbar .container,
+html body .navbar .container-fluid {
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+}
+
+html body .navbar .navbar-collapse {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+}
+
+html body .navbar .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 2px !important;
+    margin: 0 !important;
+}
+
+/* ─── 2) Each nav item — stays on one line ─── */
+html body .navbar .navbar-nav > li,
+html body .navbar .navbar-nav > .nav-item {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+/* ─── 3) Nav links — no text wrapping ─── */
+html body .navbar .navbar-nav .nav-link {
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    line-height: 1.2 !important;
+}
+
+/* ─── 4) Both buttons — no wrapping ─── */
+html body .navbar .btn-outline-light,
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
+html body .navbar .lang-nav-item .lang-btn {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+/* ─── 5) RTL-specific tweaks — smaller padding so everything fits ─── */
+[dir="rtl"] html body .navbar .navbar-nav .nav-link,
+html[dir="rtl"] body .navbar .navbar-nav .nav-link {
+    padding: 8px 11px !important;   /* أقل شوية من 14px */
+    font-size: 0.92rem !important;
+    margin: 0 1px !important;
+}
+
+[dir="rtl"] html body .navbar .btn-outline-light,
+[dir="rtl"] html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
+[dir="rtl"] html body .navbar .lang-nav-item .lang-btn,
+html[dir="rtl"] body .navbar .btn-outline-light,
+html[dir="rtl"] body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
+html[dir="rtl"] body .navbar .lang-nav-item .lang-btn {
+    padding: 10px 16px !important;   /* أقل شوية من 20px */
+    font-size: 0.82rem !important;  /* أقل شوية من 0.85rem */
+    gap: 6px !important;
+}
+
+/* ─── 6) On screens 992px–1200px (iPad landscape), shrink more ─── */
+@media (min-width: 992px) and (max-width: 1200px) {
+    html body .navbar .navbar-nav .nav-link {
+        padding: 8px 10px !important;
+        font-size: 0.88rem !important;
+    }
+    html body .navbar .btn-outline-light,
+    html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
+        padding: 9px 14px !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+/* ─── 7) On mobile, allow wrapping ONLY inside the collapsed menu ─── */
+@media (max-width: 991.98px) {
+    html body .navbar .navbar-collapse {
+        flex-wrap: wrap !important;
+    }
+    html body .navbar .navbar-nav {
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        width: 100% !important;
+    }
+    html body .navbar .navbar-nav > li {
+        width: 100% !important;
+    }
+    html body .navbar .navbar-nav .nav-link {
+        white-space: normal !important;
+    }
+}
+
+/* ─── 8) Very last resort — allow scroll if too tight ─── */
+@media (min-width: 992px) {
+    html body .navbar .navbar-collapse {
+        overflow-x: auto !important;
+        overflow-y: visible !important;
+        scrollbar-width: none !important;   /* Firefox */
+    }
+    html body .navbar .navbar-collapse::-webkit-scrollbar {
+        display: none !important;           /* Chrome/Safari */
+    }
+}
 
 /* ============================================================================
    ============================================================================
