@@ -6942,3 +6942,33 @@ a.lang-btn i {
         padding: 50px 0 40px !important;
     }
 }
+/* ══════════════════════════════════════════════════════════════════════ */
+/* البانر — يتبع نسبة أبعاد الصورة تلقائياً */
+/* ══════════════════════════════════════════════════════════════════════ */
+
+.hero-rich {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    aspect-ratio: 16 / 9 !important;    /* ← غيّر النسبة حسب صورتك */
+    padding: 60px 0 !important;
+}
+
+.hero-rich-bg img {
+    object-fit: cover !important;
+    object-position: center center !important;
+}
+
+/* على الموبايل — نسبة أطول عشان المحتوى */
+@media (max-width: 768px) {
+    .hero-rich {
+        aspect-ratio: auto !important;
+        min-height: 480px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-rich {
+        min-height: 420px !important;
+    }
+}
