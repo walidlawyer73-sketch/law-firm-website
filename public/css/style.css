@@ -6972,3 +6972,67 @@ a.lang-btn i {
         min-height: 420px !important;
     }
 }
+/* ══════════════════════════════════════════════════════════════════════ */
+/* 1) البانر — أصغر شوية بنفس النسبة */
+/* ══════════════════════════════════════════════════════════════════════ */
+
+.hero-rich {
+    max-height: 480px !important;      /* ← قلّل الرقم ده لو عايز أصغر */
+    aspect-ratio: 21 / 9 !important;   /* نسبة أعرض = ارتفاع أقل */
+}
+
+/* على الموبايل */
+@media (max-width: 768px) {
+    .hero-rich {
+        max-height: none !important;
+        aspect-ratio: auto !important;
+        min-height: 420px !important;
+    }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════ */
+/* 2) زر اللغة العربية — نفس حجم بوابة العميل بالظبط */
+/* ══════════════════════════════════════════════════════════════════════ */
+
+/* كل الاحتمالات لأسماء الكلاس — عشان نضمن إنه يتأثر */
+.navbar a.lang-btn,
+.navbar .lang-btn,
+.navbar .lang-switch,
+.navbar .language-switcher a,
+.language-switcher.in-navbar .lang-btn,
+.language-switcher .lang-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 12px 26px !important;
+    min-height: 48px !important;
+    height: 48px !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    border: 3px solid #C9A961 !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+    color: #C9A961 !important;
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.2) !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+}
+
+.navbar a.lang-btn i,
+.navbar .lang-btn i,
+.navbar .lang-switch i {
+    font-size: 1rem !important;
+}
+
+/* الماوس فوق الزر */
+.navbar a.lang-btn:hover,
+.navbar .lang-btn:hover,
+.navbar .lang-switch:hover,
+.navbar .language-switcher a:hover {
+    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+    color: #000 !important;
+    border-color: #D4B872 !important;
+    transform: translateY(-2px) !important;
+}
