@@ -804,12 +804,12 @@ html body .navbar .lang-btn {
 .hero-section {
     position: relative;
     margin-top: var(--navbar-height);
-    min-height: 440px;
-    max-height: 500px;
+    min-height: 360px;
+    max-height: 480px;
     display: flex;
     align-items: center;
     color: var(--white);
-    padding: 45px 0 40px;
+    padding: 40px 0 35px;
     overflow: hidden;
     z-index: var(--z-base);
     background: url('/images/hero-bg.jpg') no-repeat center center;
