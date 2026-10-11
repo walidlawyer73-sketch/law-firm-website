@@ -7582,3 +7582,125 @@ body {
         font-size: 0.71rem !important;
     }
 }
+/* ═══════════════════════════════════════════════════════════════ */
+/* HERO COMMITMENT — قسم "التزامنا تجاهك" في العمود الأيمن */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.hero-promises {
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.10) 0%, rgba(201, 169, 97, 0.03) 100%);
+    border: 1px solid rgba(201, 169, 97, 0.32);
+    border-radius: 14px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-promises::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(201, 169, 97, 0.15), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* العنوان */
+.hpr-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.22);
+    position: relative;
+    z-index: 1;
+}
+
+.hpr-title i {
+    color: #C9A961;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+}
+
+.hpr-title span {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #C9A961;
+    letter-spacing: 0.3px;
+}
+
+/* القائمة */
+.hpr-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.hpr-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.55;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hpr-list li:hover {
+    color: #D4B872;
+    transform: translateX(-4px);
+}
+
+.hpr-list li i {
+    color: #C9A961;
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    background: rgba(201, 169, 97, 0.15);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 3px;
+    transition: all 0.3s ease;
+}
+
+.hpr-list li:hover i {
+    background: #C9A961;
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* الاستجابة */
+@media (min-width: 992px) {
+    .hero-rich {
+        min-height: 900px !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .hero-promises {
+        padding: 12px 14px;
+    }
+    .hpr-title span {
+        font-size: 0.88rem;
+    }
+    .hpr-list li {
+        font-size: 0.77rem;
+        gap: 8px;
+    }
+}
