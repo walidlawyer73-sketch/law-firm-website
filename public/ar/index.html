@@ -61,295 +61,295 @@
     </script>
 
     <style>
-        /* ============================================================
-           HERO v4.0 — ضبط نهائي
-           ============================================================ */
-        .hero-rich {
-            height: auto !important;
-            min-height: auto !important;
-            max-height: none !important;
-            padding: 45px 0 !important;
-            margin-top: var(--navbar-height, 80px) !important;
-            display: flex !important;
-            align-items: center !important;
-        }
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* HERO VALUE CARDS — كروت القيم (تخدم الشغل، مش شخصية) */
+    /* ═══════════════════════════════════════════════════════════════ */
 
-        @media (min-width: 992px) {
-            .hero-rich {
-                min-height: 560px !important;
-                padding: 50px 0 !important;
-            }
-        }
+    /* إخفاء أي أرقام مضافة */
+    .hero-stats-mini {
+        display: none !important;
+    }
 
-        @media (max-width: 991px) {
-            .hero-rich {
-                min-height: 0 !important;
-                padding: 35px 0 !important;
-            }
-        }
+    /* حاوية الكروت */
+    .hero-accreditations {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 
-        @media (max-width: 576px) {
-            .hero-rich {
-                padding: 30px 0 !important;
-            }
-        }
+    /* البطاقة الواحدة */
+    .ha-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 14px;
+        min-height: 60px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(201, 169, 97, 0.35);
+        border-radius: 12px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: all 0.35s ease;
+        position: relative;
+        overflow: hidden;
+    }
 
-        /* الصورة تبدأ من فوق — الجزء المهم ظاهر دائماً */
-        .hero-rich-bg img {
-            object-fit: cover !important;
-            object-position: center top !important;
-        }
+    .ha-item::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(180deg, #C9A961, #A88947);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.35s ease;
+    }
 
-        /* إخفاء الأرقام المضافة — الأرقام المتحركة كافية */
-        .hero-stats-mini {
-            display: none !important;
-        }
+    .ha-item:hover {
+        background: rgba(201, 169, 97, 0.12);
+        border-color: #C9A961;
+        transform: translateX(-5px);
+        box-shadow: 0 10px 25px -8px rgba(201, 169, 97, 0.35);
+    }
 
-        /* الاعتمادات الأربع على اليمين */
+    .ha-item:hover::before {
+        transform: scaleY(1);
+    }
+
+    /* الأيقونة */
+    .ha-icon {
+        width: 38px;
+        height: 38px;
+        background: linear-gradient(135deg, #C9A961, #A88947);
+        color: #000;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        flex-shrink: 0;
+        box-shadow: 0 6px 14px rgba(201, 169, 97, 0.35);
+        transition: transform 0.35s ease;
+    }
+
+    .ha-item:hover .ha-icon {
+        transform: rotate(8deg) scale(1.08);
+    }
+
+    /* النص */
+    .ha-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .ha-text strong {
+        font-family: 'Cairo', sans-serif;
+        font-size: 0.86rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.25;
+    }
+
+    .ha-text small {
+        font-family: 'Cairo', sans-serif;
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.3;
+    }
+
+    /* على الموبايل: الكروت تختفي */
+    @media (max-width: 991px) {
         .hero-accreditations {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 14px !important;
-            padding: 0 !important;
+            display: none;
         }
+    }
 
-        .ha-item {
-            display: flex !important;
-            align-items: center !important;
-            gap: 14px !important;
-            padding: 16px 20px !important;
-            background: rgba(255, 255, 255, 0.06) !important;
-            border: 1px solid rgba(201, 169, 97, 0.35) !important;
-            border-radius: 14px !important;
-            backdrop-filter: blur(12px) !important;
-            -webkit-backdrop-filter: blur(12px) !important;
-            transition: all 0.35s ease !important;
-            position: relative !important;
-            overflow: hidden !important;
-            min-height: 74px !important;
-        }
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SLOGAN — سطر إضافي تحت الوصف */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .hero-slogan-extra {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 14px;
+        padding: 8px 18px;
+        background: rgba(201, 169, 97, 0.08);
+        border-right: 3px solid #C9A961;
+        border-radius: 6px;
+        font-family: 'Cairo', sans-serif;
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.92);
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        max-width: fit-content;
+    }
 
-        .ha-item::before {
-            content: '' !important;
-            position: absolute !important;
-            right: 0 !important;
-            top: 0 !important;
-            bottom: 0 !important;
-            width: 3px !important;
-            background: linear-gradient(180deg, #C9A961, #A88947) !important;
-            transform: scaleY(0) !important;
-            transform-origin: top !important;
-            transition: transform 0.35s ease !important;
-        }
+    .hero-slogan-extra i {
+        color: #C9A961;
+        font-size: 0.9rem;
+    }
 
-        .ha-item:hover {
-            background: rgba(201, 169, 97, 0.12) !important;
-            border-color: #C9A961 !important;
-            transform: translateX(-6px) !important;
-            box-shadow: 0 12px 30px -8px rgba(201, 169, 97, 0.35) !important;
+    @media (max-width: 576px) {
+        .hero-slogan-extra {
+            font-size: 0.82rem;
+            padding: 7px 14px;
         }
+    }
 
-        .ha-item:hover::before {
-            transform: scaleY(1) !important;
-        }
-
-        .ha-icon {
-            width: 48px !important;
-            height: 48px !important;
-            background: linear-gradient(135deg, #C9A961, #A88947) !important;
-            color: #000 !important;
-            border-radius: 12px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            font-size: 1.25rem !important;
-            flex-shrink: 0 !important;
-            box-shadow: 0 8px 18px rgba(201, 169, 97, 0.35) !important;
-            transition: transform 0.35s ease !important;
-        }
-
-        .ha-item:hover .ha-icon {
-            transform: rotate(8deg) scale(1.08) !important;
-        }
-
-        .ha-text {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 3px !important;
-            min-width: 0 !important;
-            flex: 1 !important;
-        }
-
-        .ha-text strong {
-            font-family: 'Cairo', sans-serif !important;
-            font-size: 0.95rem !important;
-            font-weight: 700 !important;
-            color: #fff !important;
-            line-height: 1.3 !important;
-        }
-
-        .ha-text small {
-            font-family: 'Cairo', sans-serif !important;
-            font-size: 0.79rem !important;
-            color: rgba(255, 255, 255, 0.68) !important;
-            line-height: 1.35 !important;
-        }
-
-        @media (max-width: 991px) {
-            .hero-accreditations {
-                display: none !important;
-            }
-        }
-
-        /* ============================================================
-           Logo Gold Frame
-           ============================================================ */
-        .logo-showcase {
-            position: relative;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-            min-height: 560px;
-        }
-        .logo-showcase__frame {
-            position: relative;
-            width: 100%;
-            max-width: 480px;
-            aspect-ratio: 1 / 1;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
-            border-radius: 30px;
-            padding: 30px;
-            box-shadow:
-                0 30px 60px -20px rgba(0, 0, 0, 0.5),
-                0 0 80px rgba(201, 169, 97, 0.15),
-                inset 0 0 60px rgba(201, 169, 97, 0.05);
-            overflow: hidden;
-        }
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* LOGO GOLD FRAME */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .logo-showcase {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        min-height: 560px;
+    }
+    .logo-showcase__frame {
+        position: relative;
+        width: 100%;
+        max-width: 480px;
+        aspect-ratio: 1 / 1;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+        border-radius: 30px;
+        padding: 30px;
+        box-shadow:
+            0 30px 60px -20px rgba(0, 0, 0, 0.5),
+            0 0 80px rgba(201, 169, 97, 0.15),
+            inset 0 0 60px rgba(201, 169, 97, 0.05);
+        overflow: hidden;
+    }
+    .logo-showcase__frame::before,
+    .logo-showcase__frame::after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border: 2px solid #C9A961;
+        z-index: 3;
+    }
+    .logo-showcase__frame::before {
+        top: 15px;
+        right: 15px;
+        border-left: none;
+        border-bottom: none;
+        border-top-right-radius: 20px;
+    }
+    .logo-showcase__frame::after {
+        bottom: 15px;
+        left: 15px;
+        border-right: none;
+        border-top: none;
+        border-bottom-left-radius: 20px;
+    }
+    .logo-showcase__inner-border {
+        position: absolute;
+        inset: 30px;
+        border: 1px solid rgba(201, 169, 97, 0.3);
+        border-radius: 20px;
+        pointer-events: none;
+        z-index: 2;
+    }
+    .logo-showcase__glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 70%;
+        background: radial-gradient(circle, rgba(201, 169, 97, 0.25) 0%, transparent 70%);
+        border-radius: 50%;
+        z-index: 1;
+        animation: glowPulse 4s ease-in-out infinite;
+    }
+    @keyframes glowPulse {
+        0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+        50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+    }
+    .logo-showcase__logo {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 10px 30px rgba(201, 169, 97, 0.5));
+        animation: logoFloat 6s ease-in-out infinite;
+    }
+    @keyframes logoFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+    .logo-showcase__deco {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 2;
+    }
+    .logo-showcase__deco::before,
+    .logo-showcase__deco::after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #C9A961;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(201, 169, 97, 0.8);
+    }
+    .logo-showcase__deco::before { top: 20%; left: 15%; }
+    .logo-showcase__deco::after { bottom: 20%; right: 15%; }
+    .logo-showcase__badge {
+        position: absolute;
+        bottom: -10px;
+        left: 30px;
+        background: linear-gradient(135deg, #C9A961 0%, #A88947 100%);
+        color: #000;
+        padding: 16px 24px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 15px 35px rgba(201, 169, 97, 0.4);
+        z-index: 5;
+        transform: rotate(3deg);
+    }
+    .logo-showcase__badge-num {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.2rem;
+        font-weight: 900;
+        line-height: 1;
+    }
+    .logo-showcase__badge-txt {
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    @media (max-width: 991px) {
+        .logo-showcase { min-height: 420px; padding: 30px 15px; }
+        .logo-showcase__frame { max-width: 380px; padding: 25px; }
         .logo-showcase__frame::before,
-        .logo-showcase__frame::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            border: 2px solid #C9A961;
-            z-index: 3;
-        }
-        .logo-showcase__frame::before {
-            top: 15px;
-            right: 15px;
-            border-left: none;
-            border-bottom: none;
-            border-top-right-radius: 20px;
-        }
-        .logo-showcase__frame::after {
-            bottom: 15px;
-            left: 15px;
-            border-right: none;
-            border-top: none;
-            border-bottom-left-radius: 20px;
-        }
-        .logo-showcase__inner-border {
-            position: absolute;
-            inset: 30px;
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            border-radius: 20px;
-            pointer-events: none;
-            z-index: 2;
-        }
-        .logo-showcase__glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70%;
-            height: 70%;
-            background: radial-gradient(circle, rgba(201, 169, 97, 0.25) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: 1;
-            animation: glowPulse 4s ease-in-out infinite;
-        }
-        @keyframes glowPulse {
-            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
-            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
-        }
-        .logo-showcase__logo {
-            position: relative;
-            z-index: 3;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 10px 30px rgba(201, 169, 97, 0.5));
-            animation: logoFloat 6s ease-in-out infinite;
-        }
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-        .logo-showcase__deco {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 2;
-        }
-        .logo-showcase__deco::before,
-        .logo-showcase__deco::after {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: #C9A961;
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(201, 169, 97, 0.8);
-        }
-        .logo-showcase__deco::before { top: 20%; left: 15%; }
-        .logo-showcase__deco::after { bottom: 20%; right: 15%; }
-        .logo-showcase__badge {
-            position: absolute;
-            bottom: -10px;
-            left: 30px;
-            background: linear-gradient(135deg, #C9A961 0%, #A88947 100%);
-            color: #000;
-            padding: 16px 24px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 15px 35px rgba(201, 169, 97, 0.4);
-            z-index: 5;
-            transform: rotate(3deg);
-        }
-        .logo-showcase__badge-num {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            font-weight: 900;
-            line-height: 1;
-        }
-        .logo-showcase__badge-txt {
-            font-size: 0.75rem;
-            font-weight: 700;
-            line-height: 1.2;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        @media (max-width: 991px) {
-            .logo-showcase { min-height: 420px; padding: 30px 15px; }
-            .logo-showcase__frame { max-width: 380px; padding: 25px; }
-            .logo-showcase__frame::before,
-            .logo-showcase__frame::after { width: 45px; height: 45px; }
-        }
-        @media (max-width: 576px) {
-            .logo-showcase { min-height: 360px; }
-            .logo-showcase__frame { max-width: 300px; padding: 20px; }
-            .logo-showcase__badge { padding: 12px 18px; left: 15px; }
-            .logo-showcase__badge-num { font-size: 1.8rem; }
-            .logo-showcase__badge-txt { font-size: 0.65rem; }
-        }
-    </style>
+        .logo-showcase__frame::after { width: 45px; height: 45px; }
+    }
+    @media (max-width: 576px) {
+        .logo-showcase { min-height: 360px; }
+        .logo-showcase__frame { max-width: 300px; padding: 20px; }
+        .logo-showcase__badge { padding: 12px 18px; left: 15px; }
+        .logo-showcase__badge-num { font-size: 1.8rem; }
+        .logo-showcase__badge-txt { font-size: 0.65rem; }
+    }
+</style>
 </head>
 
 <body>
@@ -419,105 +419,134 @@
     </nav>
 
     <!-- HERO -->
-    <header class="hero-rich">
-        <div class="hero-rich-bg">
-            <img src="/images/hero-bg.jpg" alt="مكتب وليد محمد أبو العلا للمحاماة">
-        </div>
-        <div class="hero-rich-overlay"></div>
+<header class="hero-rich">
+    <div class="hero-rich-bg">
+        <img src="/images/hero-bg.jpg" alt="مكتب وليد محمد أبو العلا للمحاماة">
+    </div>
+    <div class="hero-rich-overlay"></div>
 
-        <div class="hero-decorations">
-            <div class="deco-shape deco-circle-1"></div>
-            <div class="deco-shape deco-circle-2"></div>
-            <div class="deco-shape deco-square-1"></div>
-            <div class="deco-dots"></div>
-            <div class="deco-grid"></div>
-        </div>
+    <div class="hero-decorations">
+        <div class="deco-shape deco-circle-1"></div>
+        <div class="deco-shape deco-circle-2"></div>
+        <div class="deco-shape deco-square-1"></div>
+        <div class="deco-dots"></div>
+        <div class="deco-grid"></div>
+    </div>
 
-        <div class="container hero-rich-content">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-7">
-                    <div class="hero-badge-rich">
-                        <span class="badge-dot"></span>
-                        <i class="fas fa-award" aria-hidden="true"></i>
-                        <span>محكّم معتمد في الملكية الفكرية · خبرة تتجاوز 10 سنوات</span>
-                    </div>
-                    <h1 class="hero-rich-title">
-                        نحمي <span class="text-serif">أعمالك.</span><br>
-                        ندافع عن <span class="text-gradient">ابتكارك.</span>
-                    </h1>
-                    <p class="hero-rich-subtitle">
-                        مكتب محاماة متكامل في <strong>الملكية الفكرية</strong>،
-                        <strong>التحكيم</strong>، <strong>خدمات الشركات</strong>، و
-                        <strong>التقاضي</strong> — بخبرة تتجاوز عقداً من النتائج الموثقة.
-                    </p>
-                    <div class="hero-rich-buttons">
-                        <a href="/ar/contact.html" class="btn-hero-primary">
-                            <span>تواصل معنا</span>
-                            <i class="fas fa-arrow-left" aria-hidden="true"></i>
-                        </a>
-                        <a href="/ar/consultation.html" class="btn-hero-ghost">
-                            <i class="fas fa-gavel" aria-hidden="true"></i>
-                            <span>احجز استشارة</span>
-                        </a>
-                    </div>
-                    <div class="hero-trust-row">
-                        <div class="trust-badge">
-                            <i class="fas fa-shield-halved" aria-hidden="true"></i>
-                            <span>سرية تامة</span>
-                        </div>
-                        <div class="trust-badge">
-                            <i class="fas fa-award" aria-hidden="true"></i>
-                            <span>معتمد</span>
-                        </div>
-                        <div class="trust-badge">
-                            <i class="fas fa-globe" aria-hidden="true"></i>
-                            <span>خبرة دولية</span>
-                        </div>
-                    </div>
+    <div class="container hero-rich-content">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+                <div class="hero-badge-rich">
+                    <span class="badge-dot"></span>
+                    <i class="fas fa-award" aria-hidden="true"></i>
+                    <span>محكّم معتمد في الملكية الفكرية · خبرة تتجاوز 10 سنوات</span>
+                </div>
+                <h1 class="hero-rich-title">
+                    نحمي <span class="text-serif">أعمالك.</span><br>
+                    ندافع عن <span class="text-gradient">ابتكارك.</span>
+                </h1>
+                <p class="hero-rich-subtitle">
+                    مكتب محاماة متكامل في <strong>الملكية الفكرية</strong>،
+                    <strong>التحكيم</strong>، <strong>خدمات الشركات</strong>، و
+                    <strong>التقاضي</strong> — بخبرة تتجاوز عقداً من النتائج الموثقة.
+                </p>
+
+                <!-- سلوجان إضافي -->
+                <div class="hero-slogan-extra">
+                    <i class="fas fa-handshake" aria-hidden="true"></i>
+                    <span>شريكك القانوني في كل خطوة — من الفكرة إلى الحماية.</span>
                 </div>
 
-                <div class="col-lg-5 d-none d-lg-block">
-                    <div class="hero-accreditations">
-                        <div class="ha-item">
-                            <div class="ha-icon"><i class="fas fa-award" aria-hidden="true"></i></div>
-                            <div class="ha-text">
-                                <strong>محكّم معتمد في الملكية الفكرية</strong>
-                                <small>المعهد القومي للملكية الفكرية · 2025</small>
-                            </div>
-                        </div>
-                        <div class="ha-item">
-                            <div class="ha-icon"><i class="fas fa-gavel" aria-hidden="true"></i></div>
-                            <div class="ha-text">
-                                <strong>محكّم معتمد</strong>
-                                <small>الغرفة المصرية للوساطة والتحكيم · منذ 2013</small>
-                            </div>
-                        </div>
-                        <div class="ha-item">
-                            <div class="ha-icon"><i class="fas fa-certificate" aria-hidden="true"></i></div>
-                            <div class="ha-text">
-                                <strong>وكيل براءات مسجّل</strong>
-                                <small>السجل الرسمي · 2023</small>
-                            </div>
-                        </div>
-                        <div class="ha-item">
-                            <div class="ha-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
-                            <div class="ha-text">
-                                <strong>5 شهادات WIPO</strong>
-                                <small>الملكية الفكرية · البراءات · PCT</small>
-                            </div>
-                        </div>
+                <div class="hero-rich-buttons mt-4">
+                    <a href="/ar/contact.html" class="btn-hero-primary">
+                        <span>تواصل معنا</span>
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    </a>
+                    <a href="/ar/consultation.html" class="btn-hero-ghost">
+                        <i class="fas fa-gavel" aria-hidden="true"></i>
+                        <span>احجز استشارة</span>
+                    </a>
+                </div>
+
+                <div class="hero-trust-row">
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                        <span>سرية تامة</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-award" aria-hidden="true"></i>
+                        <span>معتمد</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-globe" aria-hidden="true"></i>
+                        <span>خبرة دولية</span>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="hero-scroll-indicator">
-            <a href="#stats">
-                <span>تابع القراءة</span>
-                <i class="fas fa-chevron-down" aria-hidden="true"></i>
-            </a>
+            <div class="col-lg-5 d-none d-lg-block">
+                <div class="hero-accreditations">
+
+                    <div class="ha-item">
+                        <div class="ha-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
+                        <div class="ha-text">
+                            <strong>حلول للشركات</strong>
+                            <small>من التأسيس إلى التوسع</small>
+                        </div>
+                    </div>
+
+                    <div class="ha-item">
+                        <div class="ha-icon"><i class="fas fa-scale-balanced" aria-hidden="true"></i></div>
+                        <div class="ha-text">
+                            <strong>استشارات متخصصة</strong>
+                            <small>الملكية الفكرية والتحكيم</small>
+                        </div>
+                    </div>
+
+                    <div class="ha-item">
+                        <div class="ha-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
+                        <div class="ha-text">
+                            <strong>حماية الأصول</strong>
+                            <small>علامات، براءات، حقوق</small>
+                        </div>
+                    </div>
+
+                    <div class="ha-item">
+                        <div class="ha-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
+                        <div class="ha-text">
+                            <strong>تغطية دولية</strong>
+                            <small>شبكة شركاء موثوقة</small>
+                        </div>
+                    </div>
+
+                    <div class="ha-item">
+                        <div class="ha-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+                        <div class="ha-text">
+                            <strong>استجابة سريعة</strong>
+                            <small>دعم مباشر خلال ساعات العمل</small>
+                        </div>
+                    </div>
+
+                    <div class="ha-item">
+                        <div class="ha-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
+                        <div class="ha-text">
+                            <strong>شراكة طويلة الأمد</strong>
+                            <small>نجاحك هو نجاحنا</small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-    </header>
+    </div>
+
+    <div class="hero-scroll-indicator">
+        <a href="#stats">
+            <span>تابع القراءة</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </a>
+    </div>
+</header>
 
     <!-- STATS MARQUEE -->
     <section class="stats-marquee" id="stats">
