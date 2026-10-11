@@ -4,7 +4,7 @@
 // ملف JavaScript الموحد - كل الأكواد في مكان واحد
 // Unified JavaScript - All code in one place
 //
-// VERSION / الإصدار: v6.0 (Bulletproof Language Injection)
+// VERSION / الإصدار: v7.0 (Language Switcher Fixed)
 // ============================================================================
 // ============================================================================
 
@@ -77,174 +77,194 @@
 
 
     // ========================================================================
-    // 2. AUTO-INJECT LANGUAGE SWITCHER INTO NAVBAR (v5 - Bulletproof)
-    //    حقن زر اللغة — نسخة مضادة للفشل — تشتغل في كل الصفحات
+    // 2. LANGUAGE SWITCHER — v7.0 BULLETPROOF
+    //    حقن زر اللغة — نسخة v7.0 مضمونة 100%
     // ========================================================================
-    // PURPOSE / الوظيفة:
-    // Injects the language button into the navbar on EVERY page, using
-    // 5 fallback strategies to guarantee success regardless of the page's
-    // navbar structure. Removes any legacy floating button and prevents
-    // duplicate injections.
+    // STRATEGY / الاستراتيجية:
+    //   • Uses a dedicated class `lang-nav-btn` (NOT the floating `.lang-btn`)
+    //   • Injects its OWN CSS to guarantee visibility regardless of page
+    //   • Simple 3-tier injection into `.navbar-nav` — no complex conditions
+    //   • Runs on ALL pages automatically
     //
-    // يحقن زر اللغة في النافبار في كل صفحة، باستخدام 5 استراتيجيات بديلة
-    // لضمان النجاح مهما كانت بنية النافبار. يحذف أي زر عائم قديم ويمنع
-    // التكرار.
+    //   • يستخدم كلاس مخصص `lang-nav-btn` (وليس الزر العائم)
+    //   • يحقن CSS خاص به لضمان الظهور في كل الصفحات
+    //   • حقن مبسّط بثلاث طبقات في `.navbar-nav`
+    //   • يعمل على كل الصفحات تلقائياً
     // ========================================================================
     function injectLanguageSwitcher() {
-        // ─── STEP 1: Remove old floating button / احذف الزر العائم القديم ───
-        document.querySelectorAll('body > .language-switcher')
-            .forEach(el => el.remove());
 
-        // ─── STEP 2: Already injected? Skip / مفحقن قبل كده؟ ───
+        // ─── STEP 1: If already injected, cleanup & exit ───────────────
         if (document.querySelector('.navbar .lang-nav-item')) {
-            console.log('[LANG] Already injected — skipping');
+            // Remove any stray floating switchers
+            document.querySelectorAll('body > .language-switcher').forEach(el => el.remove());
             return;
         }
 
-        // ─── STEP 3: Remove manually-added switcher / احذف أي زر يدوي ───
-        document.querySelectorAll('.navbar .language-switcher.in-navbar')
-            .forEach(el => {
-                if (el.closest('.lang-nav-item')) return;
-                const item = el.closest('li');
-                if (item) item.remove();
-                else el.remove();
-            });
+        // ─── STEP 2: Remove any old floating switchers ────────────────
+        document.querySelectorAll('body > .language-switcher').forEach(el => el.remove());
 
-        // ─── STEP 4: Detect current language / اكتشف اللغة الحالية ───
-        const isArabic =
-            document.documentElement.lang.toLowerCase().startsWith('ar');
+        // ─── STEP 3: Inject dedicated CSS (once) ──────────────────────
+        if (!document.getElementById('injected-lang-styles')) {
+            const style = document.createElement('style');
+            style.id = 'injected-lang-styles';
+            style.textContent = `
+                /* Language button inside navbar */
+                .navbar .lang-nav-item {
+                    list-style: none !important;
+                    margin-inline-start: 12px !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    padding: 0 !important;
+                }
+                .navbar .lang-nav-item .lang-nav-btn {
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    gap: 6px !important;
+                    padding: 8px 16px !important;
+                    background: linear-gradient(135deg, #C9A961, #A88947) !important;
+                    color: #000 !important;
+                    border: 2px solid #C9A961 !important;
+                    border-radius: 999px !important;
+                    text-decoration: none !important;
+                    font-weight: 700 !important;
+                    font-size: 0.82rem !important;
+                    box-shadow: 0 4px 12px rgba(201,169,97,0.3) !important;
+                    transition: all 0.3s ease !important;
+                    white-space: nowrap !important;
+                    line-height: 1 !important;
+                    position: static !important;
+                    top: auto !important;
+                    right: auto !important;
+                    left: auto !important;
+                    bottom: auto !important;
+                    height: auto !important;
+                    width: auto !important;
+                    font-family: inherit !important;
+                    cursor: pointer !important;
+                }
+                .navbar .lang-nav-item .lang-nav-btn i {
+                    font-size: 0.85rem !important;
+                    color: #000 !important;
+                    transition: color 0.3s ease !important;
+                }
+                .navbar .lang-nav-item .lang-nav-btn span {
+                    color: #000 !important;
+                }
+                .navbar .lang-nav-item .lang-nav-btn:hover {
+                    background: transparent !important;
+                    color: #C9A961 !important;
+                    transform: translateY(-2px) !important;
+                    box-shadow: 0 8px 20px rgba(201,169,97,0.4) !important;
+                }
+                .navbar .lang-nav-item .lang-nav-btn:hover i,
+                .navbar .lang-nav-item .lang-nav-btn:hover span {
+                    color: #C9A961 !important;
+                }
+                /* On scrolled navbar (dark background) */
+                .navbar.scrolled .lang-nav-item .lang-nav-btn {
+                    background: linear-gradient(135deg, #C9A961, #A88947) !important;
+                    color: #000 !important;
+                }
+                /* Mobile */
+                @media (max-width: 991px) {
+                    .navbar .lang-nav-item {
+                        margin-inline-start: 0 !important;
+                        margin-top: 10px !important;
+                        width: 100% !important;
+                    }
+                    .navbar .lang-nav-item .lang-nav-btn {
+                        display: flex !important;
+                        justify-content: center !important;
+                        width: 100% !important;
+                        padding: 10px 16px !important;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
 
-        // ─── STEP 5: Build target URL / ابنِ رابط اللغة الأخرى ───
+        // ─── STEP 4: Detect current language ──────────────────────────
+        const isArabic = (document.documentElement.lang || '').toLowerCase().startsWith('ar');
+
+        // ─── STEP 5: Build target URL ─────────────────────────────────
         const currentPath = window.location.pathname || '/';
         let targetHref;
 
         if (isArabic) {
-            targetHref = currentPath.replace(/^\/ar(?=\/|$)/i, '') || '/';
-            if (targetHref === '/index.html') targetHref = '/';
-            if (!targetHref.startsWith('/')) targetHref = '/' + targetHref;
+            // From AR → EN : remove /ar prefix
+            if (currentPath === '/ar/' || currentPath === '/ar' || currentPath === '/ar/index.html') {
+                targetHref = '/';
+            } else {
+                targetHref = currentPath.replace(/^\/ar(?=\/|$)/i, '') || '/';
+            }
         } else {
-            targetHref =
-                currentPath === '/' || currentPath === '/index.html'
-                    ? '/ar/'
-                    : '/ar' + currentPath;
+            // From EN → AR : add /ar prefix
+            if (currentPath === '/' || currentPath === '/index.html') {
+                targetHref = '/ar/';
+            } else {
+                targetHref = '/ar' + currentPath;
+            }
         }
 
         const label = isArabic ? 'English' : 'العربية';
-        const targetLanguage = isArabic ? 'en' : 'ar';
+        const targetLang = isArabic ? 'en' : 'ar';
 
-        // ─── STEP 6: Create the button / أنشئ الزر ───
-        const langButton = document.createElement('a');
-        langButton.href = targetHref;
-        langButton.className = 'lang-btn';
-        langButton.setAttribute('aria-label', label);
-        langButton.setAttribute('hreflang', targetLanguage);
-        langButton.innerHTML =
-            '<i class="fas fa-globe" aria-hidden="true"></i>' +
-            '<span>' + label + '</span>';
-
-        const langWrapper = document.createElement('div');
-        langWrapper.className = 'language-switcher in-navbar';
-        langWrapper.appendChild(langButton);
-
+        // ─── STEP 6: Create <li> element ─────────────────────────────
         const langItem = document.createElement('li');
-        langItem.className = 'nav-item lang-nav-item ms-lg-3';
-        langItem.appendChild(langWrapper);
+        langItem.className = 'nav-item lang-nav-item';
 
-        // ═══════════════════════════════════════════════════════════════════
-        // STEP 7: Find the navbar — VERY flexible
-        //         ابحث عن النافبار — بأكثر من طريقة
-        // ═══════════════════════════════════════════════════════════════════
-        const navbar = document.querySelector('nav.navbar, .navbar, nav');
+        const langBtn = document.createElement('a');
+        langBtn.href = targetHref;
+        langBtn.className = 'lang-nav-btn';
+        langBtn.setAttribute('hreflang', targetLang);
+        langBtn.setAttribute('aria-label', label);
+        langBtn.innerHTML = '<i class="fas fa-globe" aria-hidden="true"></i><span>' + label + '</span>';
+
+        langItem.appendChild(langBtn);
+
+        // ─── STEP 7: Find the navbar ─────────────────────────────────
+        const navbar = document.querySelector('nav.navbar, .navbar');
         if (!navbar) {
-            console.warn('[LANG] ✗ No navbar found on this page');
+            console.log('[LANG] Navbar not found yet — will retry');
             return;
         }
 
-        // ═══════════════════════════════════════════════════════════════════
-        // STEP 8: Try 5 strategies to insert the button
-        //         جرّب 5 طرق لإدراج الزر
-        // ═══════════════════════════════════════════════════════════════════
+        // ─── STEP 8: Find or create <ul class="navbar-nav"> ──────────
+        let navbarNav = navbar.querySelector('ul.navbar-nav');
 
-        // ─── Helper: verify after insertion ───
-        function verifyInjection() {
-            setTimeout(() => {
-                const found = document.querySelector('.navbar .lang-nav-item');
-                if (found) {
-                    console.log('[LANG] ✓✓✓ Language button verified in DOM');
-                } else {
-                    console.error('[LANG] ✗ Language button NOT in DOM!');
+        // Fallback: find any ul inside .navbar-collapse
+        if (!navbarNav) {
+            const collapse = navbar.querySelector('.navbar-collapse');
+            if (collapse) {
+                navbarNav = collapse.querySelector('ul');
+                if (!navbarNav) {
+                    navbarNav = document.createElement('ul');
+                    navbarNav.className = 'navbar-nav ms-auto';
+                    collapse.appendChild(navbarNav);
                 }
-            }, 100);
-        }
-
-        // ─── Strategy 1: Insert after Client Portal button ────────────────
-        const portalLink = Array.from(
-            navbar.querySelectorAll('a')
-        ).find(a => {
-            const href = a.getAttribute('href') || '';
-            const text = a.textContent || '';
-            return /client-portal|portal/i.test(href) ||
-                   /Client Portal|بوابة العميل/i.test(text);
-        });
-
-        if (portalLink) {
-            const portalItem = portalLink.closest('li');
-            if (portalItem && portalItem.parentNode) {
-                portalItem.parentNode.insertBefore(langItem, portalItem.nextSibling);
-                console.log('[LANG] ✓✓✓ Inserted AFTER Client Portal');
-                verifyInjection();
-                return;
             }
         }
 
-        // ─── Strategy 2: Append to existing .navbar-nav ───────────────────
-        const navbarNav = navbar.querySelector('.navbar-nav');
-        if (navbarNav) {
-            navbarNav.appendChild(langItem);
-            console.log('[LANG] ✓ Appended to .navbar-nav');
-            verifyInjection();
-            return;
+        // Fallback: create a new ul inside .navbar-collapse or navbar
+        if (!navbarNav) {
+            const target = navbar.querySelector('.navbar-collapse, .container, .container-fluid') || navbar;
+            navbarNav = document.createElement('ul');
+            navbarNav.className = 'navbar-nav ms-auto';
+            navbarNav.style.cssText = 'display:flex;flex-direction:row;align-items:center;list-style:none;margin:0;padding:0;margin-inline-start:auto;gap:8px;';
+            target.appendChild(navbarNav);
         }
 
-        // ─── Strategy 3: Create .navbar-nav inside .navbar-collapse ──────
-        const navbarCollapse = navbar.querySelector('.navbar-collapse');
-        if (navbarCollapse) {
-            let ul = navbarCollapse.querySelector('ul');
-            if (!ul) {
-                ul = document.createElement('ul');
-                ul.className = 'navbar-nav ms-auto align-items-center';
-                ul.style.cssText = 'display:flex;flex-direction:row;align-items:center;list-style:none;margin:0;padding:0;margin-inline-start:auto;gap:8px;';
-                navbarCollapse.appendChild(ul);
+        // ─── STEP 9: Insert the button ──────────────────────────────
+        navbarNav.appendChild(langItem);
+
+        // Verify
+        setTimeout(function() {
+            if (document.querySelector('.navbar .lang-nav-item')) {
+                console.log('[LANG] ✓✓✓ Language button injected successfully');
+            } else {
+                console.warn('[LANG] ✗ Injection failed — will retry');
             }
-            ul.appendChild(langItem);
-            console.log('[LANG] ✓ Created .navbar-nav inside .navbar-collapse');
-            verifyInjection();
-            return;
-        }
-
-        // ─── Strategy 4: Create wrapper inside .container-fluid / .container ───
-        const container = navbar.querySelector('.container-fluid, .container');
-        if (container) {
-            const wrapper = document.createElement('ul');
-            wrapper.className = 'navbar-nav ms-auto align-items-center';
-            wrapper.style.cssText = 'display:flex;flex-direction:row;align-items:center;list-style:none;margin:0;padding:0;margin-inline-start:auto;gap:8px;';
-            wrapper.appendChild(langItem);
-            container.appendChild(wrapper);
-            console.log('[LANG] ✓ Created wrapper inside container');
-            verifyInjection();
-            return;
-        }
-
-        // ─── Strategy 5: Last resort — append directly to navbar ─────────
-        const wrapper = document.createElement('ul');
-        wrapper.className = 'navbar-nav ms-auto align-items-center';
-        wrapper.style.cssText = 'display:flex;flex-direction:row;align-items:center;list-style:none;margin:0;padding:0;margin-inline-start:auto;gap:8px;position:absolute;top:50%;transform:translateY(-50%);' +
-            (isArabic ? 'left:20px;' : 'right:20px;');
-        wrapper.appendChild(langItem);
-        navbar.style.position = navbar.style.position || 'relative';
-        navbar.appendChild(wrapper);
-        console.log('[LANG] ✓ Appended directly to navbar (fallback)');
-        verifyInjection();
+        }, 100);
     }
 
 
@@ -362,7 +382,8 @@
 
         document.querySelectorAll(
             '.feature-card, .team-card, .testimonial-card, .blog-card, .service-card, ' +
-            '.bento-card, .svc-modern-item, .testimonial-modern-card, .cred-card'
+            '.bento-card, .svc-modern-item, .testimonial-modern-card, .cred-card, ' +
+            '.svc-feature-card, .pa-card, .related-card, .post-card'
         ).forEach(el => {
             observer.observe(el);
         });
@@ -506,22 +527,16 @@
     // ========================================================================
     // 11. تهيئة كل الأكواد - Initialize all modules
     // ========================================================================
-    // PURPOSE / الوظيفة:
-    // Runs every initializer in the correct order.
-    // Language switcher runs MULTIPLE times (immediate + 300ms + 800ms + 1500ms)
-    // to guarantee success on slow-loading pages.
-    //
-    // يشغّل كل التهيئات بالترتيب الصحيح.
-    // زر اللغة يعمل 4 مرات لضمان النجاح في كل الصفحات.
-    // ========================================================================
     function init() {
         createTrialBanner();
 
-        // ⚡ Inject language button — run 4 times for safety
+        // ⚡ Inject language button — retry multiple times for slow pages
         injectLanguageSwitcher();
+        setTimeout(injectLanguageSwitcher, 100);
         setTimeout(injectLanguageSwitcher, 300);
         setTimeout(injectLanguageSwitcher, 800);
         setTimeout(injectLanguageSwitcher, 1500);
+        setTimeout(injectLanguageSwitcher, 2500);
 
         fixLawyerImage();
         highlightActiveLink();
@@ -539,8 +554,7 @@
         init();
     }
 
-    // ⚡ Re-try injection when window resizes (mobile DOM changes)
-    //    أعد المحاولة عند تغيير حجم الشاشة
+    // ⚡ Re-try injection when window resizes
     let resizeTimer;
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);
@@ -552,11 +566,9 @@
         }, 400);
     });
 
-    // ⚡ Re-try injection when DOM changes significantly (AJAX, etc.)
-    //    أعد المحاولة عند تغيير الـ DOM
+    // ⚡ Re-try injection when DOM changes
     if (window.MutationObserver) {
         const observer = new MutationObserver(function(mutations) {
-            // Only re-inject if navbar changed and lang button is missing
             const navbarChanged = mutations.some(m =>
                 m.target.closest && m.target.closest('.navbar')
             );
@@ -565,7 +577,6 @@
             }
         });
 
-        // Start observing after DOM is ready
         setTimeout(function() {
             const navbar = document.querySelector('.navbar');
             if (navbar) {
@@ -917,7 +928,7 @@
                 <div class="mega-footer">
                     <span class="mega-footer-text">
                         <i class="fas fa-star" style="color: var(--accent-color); margin-inline-end: 6px;"></i>
-                        ${isAr ? '23 مجال ممارسة · منذ 2013' : '23 Practice Areas · Since 2013'}
+                        ${isAr ? '23 مجال ممارسة · أكثر من 10 سنوات خبرة' : '23 Practice Areas · 10+ Years Experience'}
                     </span>
                     <a href="${isAr ? '/ar/services.html' : '/services.html'}" class="mega-footer-link">
                         <span>${isAr ? 'جميع الخدمات' : 'View All Services'}</span>
