@@ -2,8 +2,8 @@
    ============================================================================
    WALID ABU ALELA LAW FIRM — MASTER STYLESHEET
    ورقة الأنماط الشاملة - مكتب وليد أبو العلا للمحاماة
-   
-   VERSION / الإصدار: v13.0 (Unified Buttons Edition)
+
+   VERSION / الإصدار: v14.0 (Hero + Mobile Enhanced Edition)
    UPDATED / آخر تحديث: 2026
    ============================================================================
    ============================================================================ */
@@ -80,6 +80,63 @@
     --z-banner: 1010;
     --z-modal: 2000;
     --z-tooltip: 3000;
+
+    /* ═══════════════════════════════════════════════════════════════════════
+       ★ NEW v14.0 — HERO SECTION DIMENSIONS
+       أبعاد قسم الهيرو (مصغّرة ومحسّنة)
+       ═══════════════════════════════════════════════════════════════════════ */
+    --hero-height-desktop: 480px;
+    --hero-height-tablet: 440px;
+    --hero-height-mobile: auto;
+    --hero-padding-desktop: 30px 0;
+    --hero-padding-tablet: 40px 0;
+    --hero-padding-mobile: 35px 0;
+
+    /* ═══════════════════════════════════════════════════════════════════════
+       ★ NEW v14.0 — FLUID SPACING SCALE
+       مقياس مسافات مرن (يتكيّف مع حجم الشاشة)
+       ═══════════════════════════════════════════════════════════════════════ */
+    --space-3xs: clamp(2px, 0.5vw, 4px);
+    --space-2xs: clamp(4px, 0.8vw, 8px);
+    --space-xs: clamp(8px, 1.5vw, 12px);
+    --space-sm: clamp(12px, 2vw, 16px);
+    --space-md: clamp(16px, 2.5vw, 24px);
+    --space-lg: clamp(24px, 3.5vw, 32px);
+    --space-xl: clamp(32px, 5vw, 48px);
+    --space-2xl: clamp(48px, 7vw, 72px);
+    --space-3xl: clamp(64px, 10vw, 96px);
+
+    /* ═══════════════════════════════════════════════════════════════════════
+       ★ NEW v14.0 — FLUID FONT SCALE
+       مقياس خطوط مرن (clamp-based)
+       ═══════════════════════════════════════════════════════════════════════ */
+    --fs-xs: clamp(0.7rem, 0.6rem + 0.3vw, 0.75rem);
+    --fs-sm: clamp(0.8rem, 0.7rem + 0.4vw, 0.875rem);
+    --fs-base: clamp(0.9rem, 0.85rem + 0.3vw, 1rem);
+    --fs-md: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+    --fs-lg: clamp(1.1rem, 1rem + 0.6vw, 1.25rem);
+    --fs-xl: clamp(1.25rem, 1.1rem + 0.8vw, 1.5rem);
+    --fs-2xl: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+    --fs-3xl: clamp(1.75rem, 1.5rem + 1.5vw, 2.25rem);
+    --fs-4xl: clamp(2rem, 1.7rem + 2vw, 2.75rem);
+    --fs-5xl: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
+
+    /* ═══════════════════════════════════════════════════════════════════════
+       ★ NEW v14.0 — CONTAINER PADDING (fluid)
+       حشوة الحاوية المرنة
+       ═══════════════════════════════════════════════════════════════════════ */
+    --container-px-desktop: 20px;
+    --container-px-tablet: 16px;
+    --container-px-mobile: 14px;
+
+    /* ═══════════════════════════════════════════════════════════════════════
+       ★ NEW v14.0 — SAFE AREA INSETS (iPhone notch / Dynamic Island)
+       الحدود الآمنة للشاشات المنحوتة
+       ═══════════════════════════════════════════════════════════════════════ */
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-left: env(safe-area-inset-left, 0px);
+    --safe-right: env(safe-area-inset-right, 0px);
 }
 
 
@@ -95,6 +152,8 @@ html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
+    /* ✅ Fix iOS bounce + horizontal overflow */
+    overflow-x: hidden;
 }
 
 html, body {
@@ -103,6 +162,7 @@ html, body {
     max-width: 100vw;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 body {
@@ -133,6 +193,13 @@ img {
     display: block;
 }
 
+/* ★ NEW v14.0 — Universal media defaults */
+img, video, iframe, svg, canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 a {
     color: var(--accent-color);
     text-decoration: none;
@@ -150,12 +217,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
 }
 
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
-h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
-h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.1rem; }
-h6 { font-size: 1rem; }
+/* ★ Enhanced v14.0 — fluid heading scale */
+h1 { font-size: var(--fs-5xl); }
+h2 { font-size: var(--fs-4xl); }
+h3 { font-size: var(--fs-3xl); }
+h4 { font-size: var(--fs-2xl); }
+h5 { font-size: var(--fs-xl); }
+h6 { font-size: var(--fs-lg); }
 
 p { margin-bottom: 1rem; }
 
@@ -172,12 +240,14 @@ button {
     cursor: pointer;
 }
 
+/* ★ Enhanced v14.0 — fluid container */
 .container {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: var(--container-px-desktop);
+    padding-left: var(--container-px-desktop);
     margin-right: auto;
     margin-left: auto;
     max-width: var(--container-max);
+    width: 100%;
 }
 
 
@@ -202,6 +272,11 @@ button {
 [dir="rtl"] .text-md-end  { text-align: left !important; }
 [dir="rtl"] .text-md-start { text-align: right !important; }
 
+/* ★ NEW v14.0 — RTL arrow flip utilities */
+[dir="rtl"] .arrow-flip { transform: scaleX(-1); }
+[dir="rtl"] .btn i.fa-arrow-right { transform: scaleX(-1); }
+[dir="rtl"] .btn:hover i.fa-arrow-right { transform: scaleX(-1) translateX(4px); }
+
 
 /* ============================================================================
    04. TRIAL BANNER — الشريط التجريبي
@@ -225,6 +300,8 @@ button {
     box-sizing: border-box;
     font-size: 0.9rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    /* ✅ Fix iOS safe area */
+    padding-top: max(10px, calc(var(--safe-top) + 6px));
 }
 
 #trial-banner i {
@@ -310,6 +387,7 @@ button {
     line-height: 1.2;
     align-items: flex-start;
     gap: 3px;
+    min-width: 0;
 }
 
 [dir="rtl"] .navbar-brand > div {
@@ -414,23 +492,9 @@ button {
 /* ═══════════════════════════════════════════════════════════════════════════
    05.5 ★★★ UNIFIED NAVBAR BUTTONS — الزران الموحدان ★★★
         (نقطة الحقيقة الوحيدة — Single Source of Truth)
-   ─────────────────────────────────────────────────────────────────────────
-   DESIGN / التصميم النهائي:
-   ┌──────────────────────────┬──────────────────────────┐
-   │  🌐 Language Button       │  🔒 Client Portal Button │
-   │  SOLID GOLD (ممتلئ)       │  OUTLINED GOLD (مفرّغ)   │
-   │  خلفية ذهبية + نص أسود    │  خلفية شفافة + حد ذهبي    │
-   └──────────────────────────┴──────────────────────────┘
-   
-   Both share IDENTICAL:
-   • Height      : 40px
-   • Padding     : 10px 20px
-   • Radius      : 999px (Pill)
-   • Font-size   : 0.85rem
-   • Alignment   : Center / Middle
-   ═══════════════════════════════════════════════════════════════════════════ */
+   ───────────────────────────────────────────────────────────────────────── */
 
-/* ─── 05.5.1 Shared Base — both buttons have identical size & shape ──── */
+/* ─── 05.5.1 Shared Base ─── */
 html body .navbar .btn-outline-light,
 html body .navbar .btn-outline-light.btn-sm,
 html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
@@ -463,7 +527,7 @@ html body .navbar .language-switcher.in-navbar .lang-btn {
     position: relative !important;
 }
 
-/* ─── 05.5.2 Language Button — SOLID GOLD (ذهبي ممتلئ) ───────────────── */
+/* ─── 05.5.2 Language Button — SOLID GOLD ─── */
 html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
 html body .navbar .lang-nav-item .language-switcher .lang-btn,
 html body .navbar .language-switcher.in-navbar .lang-btn {
@@ -473,7 +537,7 @@ html body .navbar .language-switcher.in-navbar .lang-btn {
     box-shadow: 0 6px 18px rgba(201, 169, 97, 0.40) !important;
 }
 
-/* ─── 05.5.3 Client Portal Button — OUTLINED GOLD (ذهبي مفرّغ) ──────── */
+/* ─── 05.5.3 Client Portal Button — OUTLINED GOLD ─── */
 html body .navbar .btn-outline-light,
 html body .navbar .btn-outline-light.btn-sm {
     background: transparent !important;
@@ -482,7 +546,7 @@ html body .navbar .btn-outline-light.btn-sm {
     box-shadow: 0 4px 15px rgba(201, 169, 97, 0.15) !important;
 }
 
-/* ─── 05.5.4 Hover — BOTH turn gold-filled + black text + lift ──────── */
+/* ─── 05.5.4 Hover ─── */
 html body .navbar .btn-outline-light:hover,
 html body .navbar .btn-outline-light:focus,
 html body .navbar .btn-outline-light.btn-sm:hover,
@@ -499,7 +563,7 @@ html body .navbar .language-switcher.in-navbar .lang-btn:hover {
     outline: none !important;
 }
 
-/* ─── 05.5.5 Icons inside both buttons ──────────────────────────────── */
+/* ─── 05.5.5 Icons ─── */
 html body .navbar .btn-outline-light i,
 html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn i,
 html body .navbar .lang-nav-item .language-switcher .lang-btn i,
@@ -512,13 +576,12 @@ html body .navbar .language-switcher.in-navbar .lang-btn i {
     transition: transform 0.3s ease !important;
 }
 
-/* Language globe rotates on hover */
 html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn:hover i,
 html body .navbar .language-switcher.in-navbar .lang-btn:hover i {
     transform: rotate(180deg) !important;
 }
 
-/* ─── 05.5.6 Text spans inside buttons ──────────────────────────────── */
+/* ─── 05.5.6 Text spans ─── */
 html body .navbar .btn-outline-light span,
 html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn span,
 html body .navbar .lang-nav-item .language-switcher .lang-btn span {
@@ -528,7 +591,7 @@ html body .navbar .lang-nav-item .language-switcher .lang-btn span {
     line-height: inherit !important;
 }
 
-/* ─── 05.5.7 Language Switcher wrapper — must be inline, no fixed pos ─ */
+/* ─── 05.5.7 Language Switcher wrapper ─── */
 html body .navbar .lang-nav-item .language-switcher,
 html body .navbar .lang-nav-item .language-switcher.in-navbar {
     position: static !important;
@@ -552,7 +615,7 @@ html body .navbar .lang-nav-item .language-switcher.in-navbar {
     vertical-align: middle !important;
 }
 
-/* ─── 05.5.8 The <li> wrapper — aligns with Client Portal <li> ──────── */
+/* ─── 05.5.8 The <li> wrapper ─── */
 html body .navbar .nav-item.lang-nav-item,
 html body .navbar .navbar-nav > .nav-item.lang-nav-item {
     display: inline-flex !important;
@@ -573,7 +636,7 @@ html[dir="rtl"] body .navbar .navbar-nav > .nav-item.lang-nav-item {
     margin: 0 8px 0 0 !important;
 }
 
-/* ─── 05.5.9 Hide any legacy floating language button ───────────────── */
+/* ─── 05.5.9 Hide legacy floating language button ─── */
 html body > .language-switcher:not(.in-navbar),
 html body > .language-switcher {
     display: none !important;
@@ -582,7 +645,7 @@ html body > .language-switcher {
     pointer-events: none !important;
 }
 
-/* ─── 05.5.10 Desktop alignment — both buttons sit on same line ─────── */
+/* ─── 05.5.10 Desktop alignment ─── */
 @media (min-width: 992px) {
     html body .navbar .navbar-nav {
         align-items: center !important;
@@ -731,26 +794,119 @@ html body > .language-switcher {
 
 
 /* ============================================================================
+   🖼️ 05.8 ★★★ HERO IMAGE FIX — v14.0 ★★★
+   ─────────────────────────────────────────────────────────────────────────
+   PURPOSE / الوظيفة:
+   Fixes the hero section so the image shows COMPLETELY (not cropped).
+   Uses object-fit: contain + black background + blurred backdrop layer
+   to create a cinematic, letterboxed presentation.
+
+   يصلح قسم الهيرو بحيث تظهر الصورة كاملة (غير مقصوصة)، باستخدام
+   object-fit: contain + خلفية سوداء + طبقة ضبابية خلفية لمظهر سينمائي.
+   ───────────────────────────────────────────────────────────────────────── */
+
+/* ─── 05.8.1 Container — dark background, no overflow ─── */
+html body .hero-rich {
+    background: #000 !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* ─── 05.8.2 Background wrapper — holds blurred backdrop ─── */
+html body .hero-rich .hero-rich-bg {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+    background: #000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* ─── 05.8.3 Blurred backdrop — same image, heavily blurred ─── */
+html body .hero-rich .hero-rich-bg::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: -5% !important;
+    background-image: inherit !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    filter: blur(40px) brightness(0.35) saturate(0.7) !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+    transform: scale(1.1);
+}
+
+/* ─── 05.8.4 Main image — shows FULLY (contain, not crop) ─── */
+html body .hero-rich .hero-rich-bg img {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    display: block !important;
+    z-index: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.6));
+}
+
+/* ─── 05.8.5 Overlay — lighter so image is visible ─── */
+html body .hero-rich .hero-rich-overlay {
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.55) 45%,
+        rgba(0, 0, 0, 0.80) 100%
+    ) !important;
+    z-index: 2 !important;
+}
+
+/* ─── 05.8.6 Content — must stay above image ─── */
+html body .hero-rich .hero-rich-content {
+    position: relative !important;
+    z-index: 3 !important;
+}
+
+/* ─── 05.8.7 Mobile: stack image on top, content below ─── */
+@media (max-width: 768px) {
+    html body .hero-rich .hero-rich-bg {
+        position: absolute !important;
+        inset: 0 !important;
+    }
+    html body .hero-rich .hero-rich-bg img {
+        object-fit: cover !important;
+        object-position: center top !important;
+    }
+    html body .hero-rich .hero-rich-bg::before {
+        filter: blur(25px) brightness(0.30) !important;
+    }
+}
+
+
+/* ============================================================================
    END OF PART 1/5
    نهاية الجزء الأول من 5
    ============================================================================ */
    /* ============================================================================
-   END OF PART 1/5 — نهاية الجزء الأول من 5
-   ============================================================================ */
-
-
-/* ============================================================================
-   06. HERO SECTION — قسم البانر الرئيسي
+   06. HERO SECTION — قسم البانر الرئيسي (v14.0 Improved)
    ============================================================================ */
 .hero-section {
     position: relative;
     margin-top: var(--navbar-height);
-    min-height: 620px;
-    max-height: 85vh;
+    min-height: var(--hero-height-desktop);
+    height: auto;
+    max-height: none;
     display: flex;
     align-items: center;
     color: var(--white);
-    padding: 60px 0 70px;
+    padding: var(--hero-padding-desktop);
     overflow: hidden;
     z-index: var(--z-base);
     background: url('/images/hero-bg.jpg') no-repeat center center;
@@ -844,7 +1000,7 @@ html body > .language-switcher {
 
 
 /* ============================================================================
-   07. PAGE HEADER — رأس الصفحات الداخلية
+   07. PAGE HEADER — رأس الصفحات الداخلية (v14.0 Improved)
    ============================================================================ */
 .page-header {
     position: relative;
@@ -892,9 +1048,31 @@ html body > .language-switcher {
     color: rgba(255, 255, 255, 0.85);
 }
 
+/* ★ Responsive page header */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 45px 0;
+    }
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+    .page-header .lead {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-header {
+        padding: 35px 0;
+    }
+    .page-header h1 {
+        font-size: 1.4rem;
+    }
+}
+
 
 /* ============================================================================
-   08. CARDS — FEATURE / SERVICE / TEAM — البطاقات
+   08. CARDS — FEATURE / SERVICE / TEAM — البطاقات (v14.0 Improved)
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -930,6 +1108,11 @@ html body > .language-switcher {
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s ease;
+}
+
+[dir="rtl"] .feature-card::before {
+    transform-origin: right;
+    background: linear-gradient(270deg, var(--accent-color), var(--accent-dark));
 }
 
 .feature-card:hover::before {
@@ -976,6 +1159,33 @@ html body > .language-switcher {
     color: var(--gray-text);
     margin-bottom: 0;
     font-size: 0.95rem;
+}
+
+/* ★ Responsive feature cards */
+@media (max-width: 768px) {
+    .features-section {
+        padding: 55px 0;
+    }
+    .feature-card {
+        padding: 26px 20px;
+    }
+    .feature-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .feature-card {
+        padding: 22px 18px;
+    }
+    .feature-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+    }
 }
 
 
@@ -1107,9 +1317,30 @@ html body > .language-switcher {
     box-shadow: var(--shadow-gold);
 }
 
+/* ★ Responsive team cards */
+@media (max-width: 768px) {
+    .team-section {
+        padding: 55px 0;
+    }
+    .team-card {
+        padding: 26px 20px;
+    }
+    .team-card img {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-card img {
+        width: 110px;
+        height: 110px;
+    }
+}
+
 
 /* ============================================================================
-   09. BLOG CARDS & TESTIMONIALS — بطاقات المدونة والآراء
+   09. BLOG CARDS & TESTIMONIALS — بطاقات المدونة والآراء (v14.0 Improved)
    ============================================================================ */
 .blog-section,
 .testimonials-section {
@@ -1141,6 +1372,7 @@ html body > .language-switcher {
     width: 100%;
     height: 220px;
     object-fit: cover;
+    object-position: center center;
     transition: var(--transition);
 }
 
@@ -1173,6 +1405,26 @@ html body > .language-switcher {
     color: var(--primary-color) !important;
     font-weight: 600;
     padding: 6px 12px;
+}
+
+/* ★ Responsive blog */
+@media (max-width: 768px) {
+    .blog-section,
+    .testimonials-section {
+        padding: 55px 0;
+    }
+    .blog-card img {
+        height: 180px;
+    }
+    .blog-card .card-body {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .blog-card img {
+        height: 200px;
+    }
 }
 
 
@@ -1272,17 +1524,36 @@ html body > .language-switcher {
     margin-bottom: 0;
 }
 
+/* ★ Responsive CTA */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 45px 0;
+    }
+    .cta-section h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .cta-section {
+        padding: 35px 0;
+    }
+    .cta-section h3 {
+        font-size: 1.15rem;
+    }
+    .cta-section .btn {
+        display: block;
+        width: 100%;
+        margin: 6px 0;
+    }
+}
+
 
 /* ============================================================================
    END OF PART 2/5
    نهاية الجزء الثاني من 5
    ============================================================================ */
    /* ============================================================================
-   END OF PART 2/5 — نهاية الجزء الثاني من 5
-   ============================================================================ */
-
-
-/* ============================================================================
    11. FOOTER (CLASSIC) — التذييل الكلاسيكي
    ============================================================================ */
 .footer-section {
@@ -1361,9 +1632,25 @@ html body > .language-switcher {
     margin: 30px 0 20px;
 }
 
+/* ★ Responsive footer classic */
+@media (max-width: 768px) {
+    .footer-section {
+        padding: 45px 0 15px;
+        margin-top: 40px;
+        text-align: center;
+    }
+    .footer-section .social-links {
+        justify-content: center;
+    }
+    .footer-section a:hover {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 
 /* ============================================================================
-   12. BUTTONS — الأزرار (نظام كامل)
+   12. BUTTONS — الأزرار (نظام كامل) (v14.0 Enhanced)
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -1378,13 +1665,19 @@ html body > .language-switcher {
     letter-spacing: 0.3px;
     cursor: pointer;
     font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    white-space: nowrap;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
    12.2 BOOTSTRAP VARIANTS — متغيرات Bootstrap
    ───────────────────────────────────────────────────────────────────────── */
 
-/* ---------- Primary (Gold) / الأساسي (ذهبي) ---------- */
+/* ---------- Primary (Gold) ---------- */
 .btn-primary {
     background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
     border-color: var(--accent-color);
@@ -1401,7 +1694,7 @@ html body > .language-switcher {
     box-shadow: var(--shadow-gold);
 }
 
-/* ---------- Outline Primary / مفرغ أساسي ---------- */
+/* ---------- Outline Primary ---------- */
 .btn-outline-primary {
     color: var(--accent-dark);
     border-color: var(--accent-color);
@@ -1415,9 +1708,7 @@ html body > .language-switcher {
     transform: translateY(-2px);
 }
 
-/* ---------- Outline Light / مفرغ فاتح ----------
-   ⚠️ NOTE: الشكل النهائي لزر "بوابة العميل" داخل النافبار
-   محدد في القسم 05.5 أعلاه — هذه القاعدة للاستخدامات الأخرى فقط */
+/* ---------- Outline Light ---------- */
 .btn-outline-light {
     color: var(--white);
     border-color: rgba(255, 255, 255, 0.5);
@@ -1431,7 +1722,7 @@ html body > .language-switcher {
     transform: translateY(-2px);
 }
 
-/* ---------- Light / الفاتح ---------- */
+/* ---------- Light ---------- */
 .btn-light {
     background: var(--white);
     color: var(--primary-color);
@@ -1445,7 +1736,7 @@ html body > .language-switcher {
     transform: translateY(-2px);
 }
 
-/* ---------- Link Button / زر الرابط ---------- */
+/* ---------- Link Button ---------- */
 .btn-link {
     color: var(--primary-color);
     text-decoration: none;
@@ -1495,10 +1786,11 @@ html body > .language-switcher {
    12.4 RICH BUTTONS — الأزرار الغنية المخصصة
    ───────────────────────────────────────────────────────────────────────── */
 
-/* ---------- Rich Primary — Filled Gold Pill / الأساسي الغني ---------- */
+/* ---------- Rich Primary — Filled Gold Pill ---------- */
 .btn-rich-primary {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     padding: 14px 32px;
     background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
@@ -1515,6 +1807,7 @@ html body > .language-switcher {
     cursor: pointer;
     font-family: inherit;
     text-align: center;
+    white-space: nowrap;
 }
 
 .btn-rich-primary::before {
@@ -1554,7 +1847,7 @@ html body > .language-switcher {
     transform: translateX(-4px);
 }
 
-/* ---------- Rich Primary Light / الأساسي الغني الفاتح ---------- */
+/* ---------- Rich Primary Light ---------- */
 .btn-rich-primary.light {
     background: #fff;
     color: var(--primary-color);
@@ -1568,10 +1861,11 @@ html body > .language-switcher {
     color: var(--primary-color);
 }
 
-/* ---------- Rich Outline — Gold-Bordered / المفرغ الغني ---------- */
+/* ---------- Rich Outline — Gold-Bordered ---------- */
 .btn-rich-outline {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     padding: 14px 32px;
     background: transparent;
@@ -1585,6 +1879,7 @@ html body > .language-switcher {
     cursor: pointer;
     font-family: inherit;
     text-align: center;
+    white-space: nowrap;
 }
 
 .btn-rich-outline:hover {
@@ -1606,10 +1901,11 @@ html body > .language-switcher {
     transform: translateX(-4px);
 }
 
-/* ---------- Rich Ghost — White Border / الشبح الغني ---------- */
+/* ---------- Rich Ghost — White Border ---------- */
 .btn-rich-ghost {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     padding: 14px 32px;
     background: transparent;
@@ -1623,6 +1919,7 @@ html body > .language-switcher {
     cursor: pointer;
     font-family: inherit;
     text-align: center;
+    white-space: nowrap;
 }
 
 .btn-rich-ghost:hover {
@@ -1630,6 +1927,34 @@ html body > .language-switcher {
     border-color: var(--accent-color);
     color: var(--accent-light);
     transform: translateY(-3px);
+}
+
+/* ★ NEW v14.0 — FULL WIDTH BUTTONS ON MOBILE */
+@media (max-width: 576px) {
+    .btn-rich-primary,
+    .btn-rich-outline,
+    .btn-rich-ghost {
+        width: 100%;
+        padding: 13px 24px;
+        font-size: 0.95rem;
+    }
+
+    .btn-lg {
+        padding: 13px 28px;
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .cta-section .btn,
+    .final-cta-rich .btn {
+        width: 100%;
+        margin: 6px 0;
+    }
 }
 
 
@@ -1666,7 +1991,7 @@ html body > .language-switcher {
 
 
 /* ============================================================================
-   14. FORMS — النماذج
+   14. FORMS — النماذج (v14.0 Enhanced)
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -1682,6 +2007,12 @@ html body > .language-switcher {
     font-family: inherit;
     color: var(--dark-text);
     background: #fff;
+    width: 100%;
+    min-height: 46px;
+    /* ✅ Fix iOS default styles */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .form-control:focus,
@@ -1691,8 +2022,19 @@ html body > .language-switcher {
     outline: none;
 }
 
+/* ✅ Fix iOS zoom on input focus (font-size ≥ 16px) */
+@media (max-width: 768px) {
+    .form-control,
+    .form-select,
+    input,
+    textarea,
+    select {
+        font-size: 16px !important;
+    }
+}
+
 /* ─────────────────────────────────────────────────────────────────────────
-   14.2 LABELS & HELPER TEXT — التسميات والنصوص المساعدة
+   14.2 LABELS & HELPER TEXT
    ───────────────────────────────────────────────────────────────────────── */
 .form-label {
     font-weight: 600;
@@ -1707,7 +2049,7 @@ html body > .language-switcher {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   14.3 STATUS MESSAGES — رسائل الحالة
+   14.3 STATUS MESSAGES
    ───────────────────────────────────────────────────────────────────────── */
 .form-status {
     margin-top: 20px;
@@ -1733,7 +2075,7 @@ html body > .language-switcher {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   14.4 DYNAMIC CONTENT — المحتوى الديناميكي
+   14.4 DYNAMIC CONTENT
    ───────────────────────────────────────────────────────────────────────── */
 .dynamic-content h2 {
     margin-top: 2rem;
@@ -1807,7 +2149,7 @@ html body > .language-switcher {
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.1 GENERIC CARDS — بطاقات عامة
+   15.1 GENERIC CARDS
    ───────────────────────────────────────────────────────────────────────── */
 .card {
     border-radius: var(--radius-lg);
@@ -1826,7 +2168,7 @@ html body > .language-switcher {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.2 BACKGROUND HELPERS — أدوات الخلفية
+   15.2 BACKGROUND HELPERS
    ───────────────────────────────────────────────────────────────────────── */
 .bg-light {
     background-color: var(--light-bg) !important;
@@ -1845,7 +2187,7 @@ html body > .language-switcher {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.3 BADGES — الشارات
+   15.3 BADGES
    ───────────────────────────────────────────────────────────────────────── */
 .badge {
     font-weight: 600;
@@ -1864,7 +2206,7 @@ html body > .language-switcher {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.4 TEXT HELPERS — أدوات النص
+   15.4 TEXT HELPERS
    ───────────────────────────────────────────────────────────────────────── */
 .text-accent {
     color: var(--accent-color) !important;
@@ -1887,7 +2229,7 @@ html body > .language-switcher {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.5 SHADOW HELPERS — أدوات الظل
+   15.5 SHADOW HELPERS
    ───────────────────────────────────────────────────────────────────────── */
 .shadow-gold {
     box-shadow: var(--shadow-gold) !important;
@@ -1910,7 +2252,7 @@ html body > .language-switcher {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.6 OVERFLOW & POSITION HELPERS — أدوات الفائض والتموضع
+   15.6 OVERFLOW & POSITION HELPERS
    ───────────────────────────────────────────────────────────────────────── */
 .overflow-hidden {
     overflow: hidden !important;
@@ -1924,12 +2266,12 @@ html body > .language-switcher {
     position: absolute !important;
 }
 
-.z-1 { z-index: 1 !important; }
-.z-10 { z-index: 10 !important; }
+.z-1   { z-index: 1 !important; }
+.z-10  { z-index: 10 !important; }
 .z-100 { z-index: 100 !important; }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.7 SPACING HELPERS — أدوات المسافات
+   15.7 SPACING HELPERS
    ───────────────────────────────────────────────────────────────────────── */
 .rounded-pill {
     border-radius: var(--radius-pill) !important;
@@ -1944,7 +2286,7 @@ html body > .language-switcher {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.8 DIVIDERS — الفواصل
+   15.8 DIVIDERS
    ───────────────────────────────────────────────────────────────────────── */
 hr.divider-gold {
     border: none;
@@ -1960,7 +2302,7 @@ hr.divider-soft {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
-   15.9 IMAGE HELPERS — أدوات الصور
+   15.9 IMAGE HELPERS
    ───────────────────────────────────────────────────────────────────────── */
 .img-cover {
     width: 100%;
@@ -1984,19 +2326,10 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   END OF PART 3/5
-   نهاية الجزء الثالث من 5
-   ============================================================================ */
-   /* ============================================================================
-   END OF PART 3/5 — نهاية الجزء الثالث من 5
-   ============================================================================ */
-
-
-/* ============================================================================
    16. ANIMATIONS — الحركات (Keyframes)
    ============================================================================ */
 
-/* ---------- Fade In Up — Entrance from bottom / ظهور من الأسفل ---------- */
+/* ---------- Fade In Up ---------- */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -2008,43 +2341,43 @@ hr.divider-soft {
     }
 }
 
-/* ---------- Fade In — Simple opacity / ظهور بسيط ---------- */
+/* ---------- Fade In ---------- */
 @keyframes fadeIn {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
 
-/* ---------- Float Slow — Gentle drifting motion / حركة انسيابية ---------- */
+/* ---------- Float Slow ---------- */
 @keyframes floatSlow {
     0%, 100% { transform: translateY(0) translateX(0); }
     50%      { transform: translateY(-30px) translateX(20px); }
 }
 
-/* ---------- Rotate Slow — Slow infinite rotation / دوران بطيء ---------- */
+/* ---------- Rotate Slow ---------- */
 @keyframes rotateSlow {
     from { transform: rotate(45deg); }
     to   { transform: rotate(405deg); }
 }
 
-/* ---------- Pulse Dot — Expanding ring / حلقة متوسعة ---------- */
+/* ---------- Pulse Dot ---------- */
 @keyframes pulseDot {
     0%, 100% { box-shadow: 0 0 0 0 rgba(201, 169, 97, 0.7); }
     50%      { box-shadow: 0 0 0 10px rgba(201, 169, 97, 0); }
 }
 
-/* ---------- Gradient Shift — Moving gradient / تدرج متحرك ---------- */
+/* ---------- Gradient Shift ---------- */
 @keyframes gradientShift {
     0%, 100% { background-position: 0% 50%; }
     50%      { background-position: 100% 50%; }
 }
 
-/* ---------- Bounce Down — Scroll indicator / مؤشر التمرير ---------- */
+/* ---------- Bounce Down ---------- */
 @keyframes bounceDown {
     0%, 100% { transform: translateY(0); }
     50%      { transform: translateY(8px); }
 }
 
-/* ---------- Pulse Badge — Expanding badge / شارة نابضة ---------- */
+/* ---------- Pulse Badge ---------- */
 @keyframes pulseBadge {
     0%, 100% {
         transform: scale(1);
@@ -2056,25 +2389,25 @@ hr.divider-soft {
     }
 }
 
-/* ---------- Marquee Scroll LTR / حركة الشريط (إنجليزي) ---------- */
+/* ---------- Marquee Scroll LTR ---------- */
 @keyframes marqueeScroll {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
 }
 
-/* ---------- Marquee Scroll RTL / حركة الشريط (عربي) ---------- */
+/* ---------- Marquee Scroll RTL ---------- */
 @keyframes marqueeScrollRTL {
     from { transform: translateX(0); }
     to   { transform: translateX(50%); }
 }
 
-/* ---------- Hero Zoom — Very subtle / تقريب خفيف جداً ---------- */
+/* ---------- Hero Zoom ---------- */
 @keyframes heroZoom {
     from { transform: scale(1); }
     to   { transform: scale(1.03); }
 }
 
-/* ---------- Utility Classes / كلاسات جاهزة ---------- */
+/* ---------- Utility Classes ---------- */
 .fadeInUp {
     animation: fadeInUp 0.7s ease forwards;
 }
@@ -2085,11 +2418,11 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   17. BACK TO TOP — زر العودة للأعلى
+   17. BACK TO TOP — زر العودة للأعلى (v14.0 Enhanced)
    ============================================================================ */
 #backToTop {
     position: fixed;
-    bottom: 30px;
+    bottom: max(30px, calc(var(--safe-bottom) + 20px));
     right: 30px;
     width: 50px;
     height: 50px;
@@ -2105,6 +2438,8 @@ hr.divider-soft {
     font-size: 20px;
     align-items: center;
     justify-content: center;
+    /* ✅ Prevent horizontal overflow on small screens */
+    max-width: calc(100vw - 40px);
 }
 
 #backToTop:hover {
@@ -2117,13 +2452,40 @@ hr.divider-soft {
     left: 30px;
 }
 
+/* ★ Responsive back-to-top */
+@media (max-width: 768px) {
+    #backToTop {
+        width: 44px;
+        height: 44px;
+        font-size: 17px;
+        bottom: max(20px, calc(var(--safe-bottom) + 15px));
+        right: 15px;
+    }
+    [dir="rtl"] #backToTop {
+        right: auto;
+        left: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    #backToTop {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+}
+
 
 /* ============================================================================
-   18. PREMIUM HOMEPAGE — الصفحة الرئيسية الفاخرة
+   END OF PART 3/5
+   نهاية الجزء الثالث من 5
+   ============================================================================ */
+   /* ============================================================================
+   18. PREMIUM HOMEPAGE — الصفحة الرئيسية الفاخرة (v14.0 Enhanced)
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
-   18.1 PREMIUM NAVBAR OVERRIDES — تجاوزات النافبار الفاخر
+   18.1 PREMIUM NAVBAR OVERRIDES
    ───────────────────────────────────────────────────────────────────────── */
 .navbar-brand .firm-name {
     font-size: 1rem;
@@ -2153,19 +2515,19 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   18.2 HERO RICH — البانر الفاخر
+   18.2 HERO RICH — البانر الفاخر (v14.0 Optimized)
    ───────────────────────────────────────────────────────────────────────── */
 .hero-rich {
     position: relative;
     margin-top: 0;
-    height: 620px;
-    min-height: 620px;
-    max-height: 620px;
+    height: var(--hero-height-desktop);
+    min-height: var(--hero-height-desktop);
+    max-height: var(--hero-height-desktop);
     display: flex;
     align-items: center;
     overflow: hidden;
     color: #fff;
-    padding: 40px 0;
+    padding: var(--hero-padding-desktop);
     background: #000;
     isolation: isolate;
 }
@@ -2178,40 +2540,73 @@ hr.divider-soft {
     z-index: 0;
     overflow: hidden;
     pointer-events: none;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero-rich-bg img {
+/* ★ NEW v14.0 — Blurred backdrop for letterbox effect */
+.hero-rich-bg::before {
+    content: '';
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: -5%;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    filter: blur(40px) brightness(0.35) saturate(0.7);
+    z-index: 0;
+    pointer-events: none;
+    transform: scale(1.1);
+}
+
+/* ★ v14.0 — Image shows FULLY (contain, not crop) */
+.hero-rich-bg img {
+    position: relative;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
     object-position: center center;
     display: block;
-    max-width: none;
+    z-index: 1;
     transform: none;
     animation: none;
+    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.6));
 }
 
 .hero-rich-overlay {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: 2;
     pointer-events: none;
     background: linear-gradient(
         135deg,
-        rgba(0, 0, 0, 0.92) 0%,
-        rgba(0, 0, 0, 0.65) 45%,
-        rgba(0, 0, 0, 0.88) 100%
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.55) 45%,
+        rgba(0, 0, 0, 0.80) 100%
     );
 }
 
-/* ---------- Decorative Floating Shapes / الأشكال الزخرفية ---------- */
+/* ★ Mobile: image as background cover, full bleed */
+@media (max-width: 768px) {
+    .hero-rich-bg img {
+        object-fit: cover;
+        object-position: center top;
+    }
+    .hero-rich-bg::before {
+        filter: blur(25px) brightness(0.30);
+    }
+}
+
+
+/* ---------- Decorative Floating Shapes ---------- */
 .hero-decorations {
     position: absolute;
     inset: 0;
-    z-index: 2;
+    z-index: 3;
     pointer-events: none;
     overflow: hidden;
 }
@@ -2275,7 +2670,7 @@ hr.divider-soft {
 
 .hero-rich-content {
     position: relative;
-    z-index: 3;
+    z-index: 4;
 }
 
 .hero-badge-rich {
@@ -2363,6 +2758,7 @@ hr.divider-soft {
 .btn-hero-primary {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     padding: 16px 36px;
     background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
@@ -2376,7 +2772,7 @@ hr.divider-soft {
     transition: var(--transition);
     cursor: pointer;
     text-align: center;
-    justify-content: center;
+    white-space: nowrap;
 }
 
 .btn-hero-primary:hover {
@@ -2400,6 +2796,7 @@ hr.divider-soft {
 .btn-hero-ghost {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     padding: 16px 36px;
     background: transparent;
@@ -2413,7 +2810,7 @@ hr.divider-soft {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     text-align: center;
-    justify-content: center;
+    white-space: nowrap;
 }
 
 .btn-hero-ghost:hover {
@@ -2487,7 +2884,7 @@ hr.divider-soft {
     bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 3;
+    z-index: 4;
 }
 
 .hero-scroll-indicator a {
@@ -2514,7 +2911,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   18.3 STATS MARQUEE — شريط الأرقام المتحرك
+   18.3 STATS MARQUEE
    ───────────────────────────────────────────────────────────────────────── */
 .stats-marquee {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
@@ -2550,6 +2947,7 @@ hr.divider-soft {
     display: flex;
     width: fit-content;
     animation: marqueeScroll 40s linear infinite;
+    will-change: transform;
 }
 
 [dir="rtl"] .marquee-track {
@@ -2590,9 +2988,30 @@ hr.divider-soft {
     text-transform: none;
 }
 
+/* ★ Responsive marquee */
+@media (max-width: 768px) {
+    .stats-marquee {
+        padding: 22px 0;
+    }
+    .mq-num {
+        font-size: 1.6rem;
+    }
+    .mq-txt {
+        font-size: 0.72rem;
+    }
+    .marquee-content {
+        gap: 35px;
+        padding-right: 35px;
+    }
+    .stats-marquee::before,
+    .stats-marquee::after {
+        width: 60px;
+    }
+}
+
 
 /* ─────────────────────────────────────────────────────────────────────────
-   18.4 SECTION HEAD RICH — عناوين الأقسام الفاخرة
+   18.4 SECTION HEAD RICH
    ───────────────────────────────────────────────────────────────────────── */
 .section-head-rich {
     text-align: center;
@@ -2683,7 +3102,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   18.5 BENTO GRID — شبكة Bento
+   18.5 BENTO GRID
    ───────────────────────────────────────────────────────────────────────── */
 .bento-section {
     padding: 60px 0 50px;
@@ -2887,7 +3306,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   19. LOGO SHOWCASE — عرض اللوجو الذهبي
+   19. LOGO SHOWCASE — عرض اللوجو الذهبي (v14.0 Enhanced)
    ============================================================================ */
 .about-asymmetric {
     padding: 40px 0 80px;
@@ -3173,9 +3592,57 @@ hr.divider-soft {
     line-height: 1.3;
 }
 
+/* ★ Responsive logo showcase */
+@media (max-width: 991px) {
+    .logo-showcase {
+        min-height: 420px;
+        padding: 30px 15px;
+    }
+    .logo-showcase__frame {
+        max-width: 380px;
+        padding: 25px;
+    }
+    .about-content-rich {
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 30px;
+    }
+    .credentials-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-showcase {
+        min-height: 360px;
+    }
+    .logo-showcase__frame {
+        max-width: 300px;
+        padding: 20px;
+    }
+    .logo-showcase__badge {
+        padding: 12px 18px;
+        left: 15px;
+        bottom: -5px;
+    }
+    [dir="rtl"] .logo-showcase__badge {
+        left: auto;
+        right: 15px;
+    }
+    .logo-showcase__badge-num {
+        font-size: 1.8rem;
+    }
+    .logo-showcase__badge-txt {
+        font-size: 0.65rem;
+    }
+    .logo-showcase__logo {
+        animation: none;
+    }
+}
+
 
 /* ============================================================================
-   20. SERVICES MODERN (COMPACT) — الخدمات الحديثة (مضغوطة)
+   20. SERVICES MODERN (COMPACT)
    ============================================================================ */
 .services-modern {
     padding: 55px 0;
@@ -3311,18 +3778,32 @@ hr.divider-soft {
     transform: translateX(-3px);
 }
 
+/* ★ Responsive services modern */
+@media (max-width: 991px) {
+    .services-grid-modern {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .services-grid-modern {
+        grid-template-columns: 1fr;
+    }
+    .svc-modern-item {
+        padding: 12px 14px;
+    }
+    .svc-modern-content h6 {
+        white-space: normal;
+        font-size: 0.85rem;
+    }
+    .svc-modern-content small {
+        white-space: normal;
+    }
+}
+
 
 /* ============================================================================
-   END OF PART 4/5
-   نهاية الجزء الرابع من 5
-   ============================================================================ */
-   /* ============================================================================
-   END OF PART 4/5 — نهاية الجزء الرابع من 5
-   ============================================================================ */
-
-
-/* ============================================================================
-   21. PROCESS TIMELINE — خطوات العمل
+   21. PROCESS TIMELINE
    ============================================================================ */
 .process-rich {
     padding: 55px 0;
@@ -3442,9 +3923,25 @@ hr.divider-soft {
     line-height: 1.7;
 }
 
+/* ★ Responsive process timeline */
+@media (max-width: 991px) {
+    .process-timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pt-line {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .process-timeline {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* ============================================================================
-   22. TEAM FEATURED — فريق العمل المميز
+   22. TEAM FEATURED — فريق العمل المميز (v14.0 Enhanced)
    ============================================================================ */
 .team-featured {
     padding: 55px 0;
@@ -3656,9 +4153,61 @@ hr.divider-soft {
     box-shadow: 0 10px 20px rgba(201, 169, 97, 0.3);
 }
 
+/* ★ Responsive team featured */
+@media (max-width: 991px) {
+    .team-featured-card {
+        grid-template-columns: 1fr;
+    }
+    .tfc-portrait {
+        padding: 35px 20px;
+    }
+    .tfc-image-wrap {
+        width: 160px;
+        height: 160px;
+        max-width: 160px;
+        max-height: 160px;
+    }
+    .tfc-badge-top {
+        top: 20px;
+        right: 20px;
+    }
+    .tfc-badge-bottom {
+        bottom: 20px;
+        left: 20px;
+    }
+    .tfc-content {
+        padding: 28px 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tfc-image-wrap {
+        width: 140px;
+        height: 140px;
+        max-width: 140px;
+        max-height: 140px;
+    }
+    .tfc-content {
+        padding: 24px 20px;
+    }
+    .tfc-name {
+        font-size: 1.35rem;
+    }
+    .tfc-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .tfc-actions .btn-rich-primary {
+        width: 100%;
+    }
+    .tfc-social {
+        justify-content: center;
+    }
+}
+
 
 /* ============================================================================
-   23. TESTIMONIALS MODERN — آراء العملاء الحديثة
+   23. TESTIMONIALS MODERN
    ============================================================================ */
 .testimonials-modern {
     padding: 55px 0;
@@ -3775,7 +4324,7 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   24. FAQ ACCORDION — الأسئلة الشائعة
+   24. FAQ ACCORDION
    ============================================================================ */
 .faq-modern {
     padding: 55px 0;
@@ -3836,9 +4385,21 @@ hr.divider-soft {
     font-size: 0.85rem;
 }
 
+/* ★ Responsive FAQ */
+@media (max-width: 576px) {
+    .faq-rich-accordion .accordion-button {
+        font-size: 0.85rem;
+        padding: 14px 16px;
+    }
+    .faq-rich-accordion .accordion-body {
+        padding: 0 16px 14px;
+        font-size: 0.82rem;
+    }
+}
+
 
 /* ============================================================================
-   25. FINAL CTA RICH — الدعوة النهائية
+   25. FINAL CTA RICH
    ============================================================================ */
 .final-cta-rich {
     padding: 60px 0;
@@ -3936,9 +4497,32 @@ hr.divider-soft {
     flex-wrap: wrap;
 }
 
+/* ★ Responsive final CTA */
+@media (max-width: 576px) {
+    .final-cta-rich {
+        padding: 45px 0;
+    }
+    .final-cta-rich h2 {
+        font-size: 1.5rem;
+    }
+    .fcr-badge {
+        width: 65px;
+        height: 65px;
+        font-size: 1.6rem;
+        margin-bottom: 22px;
+    }
+    .fcr-buttons {
+        flex-direction: column;
+    }
+    .fcr-buttons .btn-rich-primary,
+    .fcr-buttons .btn-rich-ghost {
+        width: 100%;
+    }
+}
+
 
 /* ============================================================================
-   26. FOOTER RICH — التذييل الفاخر
+   26. FOOTER RICH
    ============================================================================ */
 .footer-rich {
     background: var(--primary-color);
@@ -4099,23 +4683,45 @@ hr.divider-soft {
     font-size: 0.85rem;
 }
 
+/* ★ Responsive footer rich */
+@media (max-width: 768px) {
+    .footer-rich {
+        padding: 50px 0 20px;
+        text-align: center;
+    }
+    .footer-rich .row > div {
+        margin-bottom: 28px;
+    }
+    .footer-social {
+        justify-content: center;
+    }
+    .footer-contact li {
+        justify-content: center;
+    }
+    .footer-list a:hover {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 
 /* ============================================================================
-   27. SERVICE PAGES — صفحات الخدمات الداخلية
+   27. SERVICE PAGES — صفحات الخدمات الداخلية (v14.0 Enhanced)
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.1 SERVICE HERO — البانر الرئيسي لصفحات الخدمات
+   27.1 SERVICE HERO
    ───────────────────────────────────────────────────────────────────────── */
 .service-hero {
     position: relative;
     margin-top: var(--navbar-height);
-    min-height: 520px;
+    min-height: 480px;
+    height: auto;
     background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
     overflow: hidden;
     display: flex;
     align-items: center;
-    padding: 60px 0;
+    padding: var(--hero-padding-desktop);
 }
 
 .service-hero::before {
@@ -4143,10 +4749,10 @@ hr.divider-soft {
 
 .service-hero h1 {
     font-family: var(--font-serif);
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
     font-weight: 800;
     line-height: 1.15;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
     color: #fff;
     letter-spacing: -0.02em;
 }
@@ -4158,16 +4764,50 @@ hr.divider-soft {
 }
 
 .service-hero p {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.8;
     max-width: 700px;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
+}
+
+/* ★ Responsive service hero */
+@media (max-width: 768px) {
+    .service-hero {
+        min-height: 400px;
+        padding: 45px 0;
+    }
+    .service-hero h1 {
+        font-size: 1.65rem;
+    }
+    .service-hero p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-hero {
+        min-height: auto;
+        padding: 40px 0;
+    }
+    .service-hero h1 {
+        font-size: 1.45rem;
+    }
+    .service-hero p {
+        font-size: 0.9rem;
+    }
+    .service-hero .hero-actions {
+        flex-direction: column;
+    }
+    .service-hero .hero-actions .btn-rich-primary,
+    .service-hero .hero-actions .btn-rich-outline {
+        width: 100%;
+    }
 }
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.2 SH BADGE — شارة صغيرة فوق العناوين
+   27.2 SH BADGE
    ───────────────────────────────────────────────────────────────────────── */
 .sh-badge {
     display: inline-flex;
@@ -4192,7 +4832,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.3 SERVICE FEATURE CARDS — بطاقات الميزات
+   27.3 SERVICE FEATURE CARDS
    ───────────────────────────────────────────────────────────────────────── */
 .features-rich {
     padding: 70px 0;
@@ -4288,7 +4928,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.4 HANDLES LIST — قائمة المجالات المغطاة
+   27.4 HANDLES LIST
    ───────────────────────────────────────────────────────────────────────── */
 .handles-list {
     list-style: none;
@@ -4335,7 +4975,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.5 INFO NOTE / CALLOUT — ملاحظة معلوماتية
+   27.5 INFO NOTE
    ───────────────────────────────────────────────────────────────────────── */
 .info-note {
     display: flex;
@@ -4374,7 +5014,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.6 COMPARISON TABLE — جدول المقارنة
+   27.6 COMPARISON TABLE
    ───────────────────────────────────────────────────────────────────────── */
 .compare-table-wrap {
     overflow-x: auto;
@@ -4430,7 +5070,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.7 PRACTICE AREAS (RELATED) — مجالات ذات صلة
+   27.7 PRACTICE AREAS (RELATED)
    ───────────────────────────────────────────────────────────────────────── */
 .practice-areas-rich {
     padding: 70px 0;
@@ -4515,7 +5155,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.8 LEGAL INFO BOX — صندوق معلومات قانونية
+   27.8 LEGAL INFO BOX
    ───────────────────────────────────────────────────────────────────────── */
 .legal-info-box {
     display: flex;
@@ -4568,7 +5208,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.9 CHECKLIST BLOCK — صندوق قوائم التحقق
+   27.9 CHECKLIST BLOCK
    ───────────────────────────────────────────────────────────────────────── */
 .checklist-block {
     background: #fff;
@@ -4633,7 +5273,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.10 MISTAKE CARDS — بطاقات الأخطاء الشائعة
+   27.10 MISTAKE CARDS
    ───────────────────────────────────────────────────────────────────────── */
 .mistake-card {
     background: #fff;
@@ -4736,7 +5376,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.11 STAGE TIMELINE — الخط الزمني للمراحل
+   27.11 STAGE TIMELINE
    ───────────────────────────────────────────────────────────────────────── */
 .stage-timeline {
     position: relative;
@@ -4817,7 +5457,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.12 TRENDS GRID — شبكة الاتجاهات
+   27.12 TRENDS GRID
    ───────────────────────────────────────────────────────────────────────── */
 .trends-grid {
     display: grid;
@@ -4890,7 +5530,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.13 ROUTE COMPARE — مقارنة المسارات
+   27.13 ROUTE COMPARE
    ───────────────────────────────────────────────────────────────────────── */
 .route-compare {
     display: grid;
@@ -5030,7 +5670,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.14 DECISION GRID — شبكة القرارات
+   27.14 DECISION GRID
    ───────────────────────────────────────────────────────────────────────── */
 .decision-grid {
     display: grid;
@@ -5101,7 +5741,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.15 PCT TIMELINE — الخط الزمني لنظام PCT
+   27.15 PCT TIMELINE
    ───────────────────────────────────────────────────────────────────────── */
 .pct-timeline {
     position: relative;
@@ -5199,7 +5839,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.16 IP ASSETS GRID — شبكة أصول الملكية الفكرية
+   27.16 IP ASSETS GRID
    ───────────────────────────────────────────────────────────────────────── */
 .ip-assets-grid {
     display: grid;
@@ -5270,7 +5910,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.17 RED FLAGS LIST — قائمة العلامات الحمراء
+   27.17 RED FLAGS LIST
    ───────────────────────────────────────────────────────────────────────── */
 .red-flags-list {
     background: linear-gradient(160deg, #FFF5F5 0%, #fff 100%);
@@ -5315,7 +5955,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.18 GROUNDS GRID — شبكة الأسباب
+   27.18 GROUNDS GRID
    ───────────────────────────────────────────────────────────────────────── */
 .grounds-grid {
     display: grid;
@@ -5365,7 +6005,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.19 SECURITY GRID — شبكة الأمان
+   27.19 SECURITY GRID
    ───────────────────────────────────────────────────────────────────────── */
 .security-grid {
     display: grid;
@@ -5412,7 +6052,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.20 PORTAL CARD — بطاقة بوابة العميل
+   27.20 PORTAL CARD
    ───────────────────────────────────────────────────────────────────────── */
 .portal-card {
     background: #fff;
@@ -5558,9 +6198,24 @@ hr.divider-soft {
     color: var(--primary-color);
 }
 
+@media (max-width: 576px) {
+    .portal-card {
+        padding: 30px 22px;
+        border-radius: 18px;
+    }
+    .portal-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    .portal-title {
+        font-size: 1.2rem;
+    }
+}
+
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.21 FEATURED POST — المقال المميز (المدونة)
+   27.21 FEATURED POST (BLOG)
    ───────────────────────────────────────────────────────────────────────── */
 .featured-post {
     display: grid;
@@ -5589,7 +6244,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.22 FILTER TABS — تبويبات الفلترة (المدونة)
+   27.22 FILTER TABS (BLOG)
    ───────────────────────────────────────────────────────────────────────── */
 .filter-tabs {
     display: flex;
@@ -5630,7 +6285,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.23 LEGAL WRAP & TOC — الصفحات القانونية
+   27.23 LEGAL WRAP & TOC
    ───────────────────────────────────────────────────────────────────────── */
 .legal-wrap {
     background: #fff;
@@ -5735,7 +6390,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.24 AUTHOR CARD (BLOG) — بطاقة الكاتب
+   27.24 AUTHOR CARD (BLOG)
    ───────────────────────────────────────────────────────────────────────── */
 .author-card {
     background: linear-gradient(160deg, #fff 0%, #FAFAFA 100%);
@@ -5800,7 +6455,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.25 ARTICLE CONTENT — محتوى المقال
+   27.25 ARTICLE CONTENT
    ───────────────────────────────────────────────────────────────────────── */
 .article-content {
     max-width: 780px;
@@ -5887,7 +6542,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.26 ARTICLE HERO (BLOG) — بانر المقال
+   27.26 ARTICLE HERO (BLOG)
    ───────────────────────────────────────────────────────────────────────── */
 .article-hero {
     position: relative;
@@ -5965,7 +6620,7 @@ hr.divider-soft {
 
 
 /* ─────────────────────────────────────────────────────────────────────────
-   27.27 PAGE HERO RICH (SERVICES PAGE) — بانر صفحة الخدمات
+   27.27 PAGE HERO RICH (SERVICES PAGE)
    ───────────────────────────────────────────────────────────────────────── */
 .page-hero-rich {
     position: relative;
@@ -5990,23 +6645,135 @@ hr.divider-soft {
 
 
 /* ============================================================================
-   28. RESPONSIVE — التجاوب الشامل
+   END OF PART 4/5
+   نهاية الجزء الرابع من 5
+   ============================================================================ */
+   /* ============================================================================
+   28. RESPONSIVE — التجاوب الشامل (v14.0 Enhanced)
+   ─────────────────────────────────────────────────────────────────────────
+   Breakpoints / نقاط التوقف:
+   • 1200px → Small Desktop
+   • 991px  → Tablet (Landscape)
+   • 768px  → Tablet (Portrait) / Large Phone
+   • 576px  → Small Phone
+   • 480px  → Very Small Phone
    ============================================================================ */
 
 /* ─────────────────────────────────────────────────────────────────────────
-   28.1 TABLET (max-width: 991px) — تابلت
+   28.1 SMALL DESKTOP (max-width: 1200px)
+   ───────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1200px) {
+    .bento-grid {
+        gap: 16px;
+    }
+
+    .services-grid-modern {
+        gap: 10px;
+    }
+
+    .process-timeline {
+        gap: 16px;
+    }
+
+    .hero-rich-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   28.2 TABLET LANDSCAPE (max-width: 991px)
    ───────────────────────────────────────────────────────────────────────── */
 @media (max-width: 991px) {
 
     :root {
         --navbar-height: 70px;
+        --hero-height-desktop: 440px;
     }
 
+    /* Container padding */
+    .container {
+        padding-right: var(--container-px-tablet);
+        padding-left: var(--container-px-tablet);
+    }
+
+    /* ─── Navbar ─── */
+    .navbar {
+        padding: 10px 0 !important;
+    }
+
+    .navbar-collapse {
+        background: var(--primary-color);
+        padding: 20px 18px;
+        border-radius: 12px;
+        margin-top: 12px;
+        max-height: 78vh;
+        overflow-y: auto;
+        border: 1px solid rgba(201, 169, 97, 0.25);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-nav .nav-link {
+        padding: 12px 14px !important;
+        margin-bottom: 4px !important;
+        border-radius: 8px !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* Both buttons — full width, stacked */
+    html body .navbar .navbar-nav > .nav-item.lang-nav-item {
+        display: flex !important;
+        width: 100% !important;
+        margin: 6px 0 !important;
+        justify-content: stretch !important;
+    }
+
+    html body .navbar .lang-nav-item .language-switcher,
+    html body .navbar .lang-nav-item .language-switcher.in-navbar {
+        width: 100% !important;
+        justify-content: stretch !important;
+    }
+
+    html body .navbar .btn-outline-light,
+    html body .navbar .btn-outline-light.btn-sm,
+    html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
+    html body .navbar .lang-nav-item .language-switcher .lang-btn {
+        width: 100% !important;
+        min-height: 44px !important;
+        height: auto !important;
+        font-size: 0.9rem !important;
+        justify-content: center !important;
+    }
+
+    /* Dropdown inside mobile */
+    .navbar-nav .dropdown-menu {
+        position: static !important;
+        background: rgba(255, 255, 255, 0.05);
+        border: none;
+        box-shadow: none;
+        padding: 6px;
+        margin-top: 4px;
+    }
+
+    .navbar-nav .dropdown-item {
+        color: rgba(255, 255, 255, 0.9) !important;
+        padding: 10px 18px;
+        border-radius: 6px;
+        font-size: 0.88rem;
+    }
+
+    .navbar-brand img {
+        height: 42px;
+        max-height: 42px;
+        max-width: 140px;
+    }
+
+    /* ─── Hero Rich ─── */
     .hero-rich {
         height: auto !important;
-        min-height: 520px !important;
+        min-height: 440px !important;
         max-height: none !important;
-        padding: 50px 0 40px !important;
+        padding: 50px 0 45px !important;
     }
 
     .hero-rich .hsb-number {
@@ -6017,6 +6784,12 @@ hr.divider-soft {
         font-size: 3rem !important;
     }
 
+    .hero-side-badge {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    /* ─── Service Heroes ─── */
     .service-hero,
     .page-hero-rich,
     .article-hero {
@@ -6024,6 +6797,7 @@ hr.divider-soft {
         padding: 50px 0 !important;
     }
 
+    /* ─── Bento Grid ─── */
     .bento-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
@@ -6034,10 +6808,12 @@ hr.divider-soft {
         min-height: 340px !important;
     }
 
+    /* ─── Services Grid ─── */
     .services-grid-modern {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 
+    /* ─── Team Featured ─── */
     .team-featured-card {
         grid-template-columns: 1fr !important;
     }
@@ -6067,6 +6843,7 @@ hr.divider-soft {
         padding: 28px 24px !important;
     }
 
+    /* ─── Process Timeline ─── */
     .process-timeline {
         grid-template-columns: repeat(2, 1fr) !important;
     }
@@ -6075,16 +6852,19 @@ hr.divider-soft {
         display: none !important;
     }
 
+    /* ─── Credentials ─── */
     .credentials-row {
         grid-template-columns: 1fr !important;
     }
 
+    /* ─── About Content ─── */
     .about-content-rich {
         padding-left: 0 !important;
         padding-right: 0 !important;
         margin-top: 30px;
     }
 
+    /* ─── Logo Showcase ─── */
     .logo-showcase {
         min-height: 420px !important;
         padding: 30px 15px !important;
@@ -6094,26 +6874,51 @@ hr.divider-soft {
         max-width: 380px !important;
         padding: 25px !important;
     }
+
+    /* ─── Featured Post (Blog) ─── */
+    .featured-post {
+        grid-template-columns: 1fr !important;
+    }
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
-   28.2 LARGE PHONE (max-width: 768px) — موبايل كبير
+   28.3 TABLET PORTRAIT / LARGE PHONE (max-width: 768px)
    ───────────────────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
 
     :root {
         --navbar-height: 65px;
+        --hero-height-desktop: auto;
     }
 
+    /* Body & typography */
     body {
         font-size: 15px;
     }
 
+    /* Container */
+    .container {
+        padding-right: var(--container-px-mobile);
+        padding-left: var(--container-px-mobile);
+    }
+
+    /* ─── Hero Rich ─── */
     .hero-rich {
         height: auto !important;
         min-height: auto !important;
         max-height: none !important;
         padding: 55px 0 45px !important;
+    }
+
+    /* Mobile: image as full-bleed cover */
+    html body .hero-rich .hero-rich-bg img {
+        object-fit: cover !important;
+        object-position: center top !important;
+    }
+
+    html body .hero-rich .hero-rich-bg::before {
+        filter: blur(25px) brightness(0.30) !important;
     }
 
     .hero-rich-title {
@@ -6126,6 +6931,7 @@ hr.divider-soft {
         margin-bottom: 22px !important;
     }
 
+    /* Hero buttons stacked */
     .hero-rich-buttons {
         flex-direction: column !important;
         gap: 10px !important;
@@ -6153,6 +6959,7 @@ hr.divider-soft {
         display: none !important;
     }
 
+    /* ─── Stats Marquee ─── */
     .stats-marquee {
         padding: 22px 0 !important;
     }
@@ -6170,6 +6977,16 @@ hr.divider-soft {
         padding-right: 35px !important;
     }
 
+    .stats-marquee::before,
+    .stats-marquee::after {
+        width: 60px !important;
+    }
+
+    /* ─── Section Headers ─── */
+    .section-head-rich {
+        margin-bottom: 30px !important;
+    }
+
     .sh-title {
         font-size: 1.5rem !important;
         line-height: 1.3 !important;
@@ -6179,8 +6996,9 @@ hr.divider-soft {
         font-size: 0.9rem !important;
     }
 
-    .section-head-rich {
-        margin-bottom: 30px !important;
+    /* ─── Bento Grid ─── */
+    .bento-section {
+        padding: 45px 0 40px !important;
     }
 
     .bento-grid {
@@ -6192,6 +7010,21 @@ hr.divider-soft {
         padding: 22px 20px !important;
     }
 
+    /* ─── Services Modern ─── */
+    .services-modern {
+        padding: 40px 0 !important;
+    }
+
+    /* ─── Process Rich ─── */
+    .process-rich {
+        padding: 45px 0 !important;
+    }
+
+    /* ─── Team Featured ─── */
+    .team-featured {
+        padding: 45px 0 !important;
+    }
+
     .team-featured-card {
         border-radius: 16px !important;
     }
@@ -6200,10 +7033,12 @@ hr.divider-soft {
         font-size: 1.35rem !important;
     }
 
+    /* ─── Testimonials ─── */
     .testimonial-modern-card {
         padding: 24px 22px !important;
     }
 
+    /* ─── FAQ ─── */
     .faq-rich-accordion .accordion-button {
         font-size: 0.88rem !important;
         padding: 14px 18px !important;
@@ -6214,9 +7049,15 @@ hr.divider-soft {
         font-size: 0.84rem !important;
     }
 
+    /* ─── Final CTA ─── */
+    .final-cta-rich {
+        padding: 50px 0 !important;
+    }
+
+    /* ─── Footer Rich ─── */
     .footer-rich {
-        text-align: center;
         padding: 50px 0 20px !important;
+        text-align: center;
     }
 
     .footer-social {
@@ -6231,8 +7072,13 @@ hr.divider-soft {
         margin-bottom: 28px !important;
     }
 
+    .footer-contact li {
+        justify-content: center !important;
+    }
+
+    /* ─── Back to Top ─── */
     #backToTop {
-        bottom: 20px !important;
+        bottom: max(20px, calc(var(--safe-bottom) + 15px)) !important;
         right: 15px !important;
         width: 44px !important;
         height: 44px !important;
@@ -6243,18 +7089,142 @@ hr.divider-soft {
         right: auto !important;
         left: 15px !important;
     }
+
+    /* ─── Service Pages ─── */
+    .service-hero {
+        min-height: 400px !important;
+        padding: 45px 0 !important;
+    }
+
+    .service-hero h1 {
+        font-size: 1.65rem !important;
+    }
+
+    .service-hero p {
+        font-size: 0.95rem !important;
+    }
+
+    /* ─── Tables ─── */
+    .compare-table-wrap,
+    .cookie-table-wrap {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .compare-table,
+    .cookie-table {
+        min-width: 560px !important;
+        font-size: 0.82rem !important;
+    }
+
+    .compare-table thead th,
+    .cookie-table thead th {
+        padding: 12px 14px !important;
+        font-size: 0.76rem !important;
+    }
+
+    .compare-table tbody td,
+    .cookie-table tbody td {
+        padding: 12px 14px !important;
+    }
+
+    /* ─── Forms ─── */
+    .consultation-form-wrap,
+    .contact-form-wrap {
+        padding: 28px 22px !important;
+        border-radius: 16px !important;
+    }
+
+    .cf-row,
+    .cn-row {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+    }
+
+    /* ─── Pricing ─── */
+    .pricing-card {
+        padding: 28px 22px !important;
+    }
+
+    .pricing-card.featured::before {
+        font-size: 0.68rem !important;
+        padding: 5px 14px !important;
+    }
+
+    /* ─── Map ─── */
+    .map-wrap {
+        height: 320px !important;
+        padding: 30px 20px !important;
+    }
+
+    .map-content i {
+        font-size: 2.3rem !important;
+    }
+
+    .map-content h4 {
+        font-size: 1.25rem !important;
+    }
+
+    /* ─── Author Card (Blog) ─── */
+    .author-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px !important;
+    }
+
+    /* ─── Legal Wrap ─── */
+    .legal-wrap {
+        padding: 28px 22px !important;
+        border-radius: 16px !important;
+    }
+
+    /* ─── Article Content ─── */
+    .article-content h2 {
+        font-size: 1.35rem !important;
+    }
+
+    .article-content h3 {
+        font-size: 1.1rem !important;
+    }
+
+    /* ─── Article Hero ─── */
+    .article-hero {
+        min-height: 400px !important;
+        padding: 50px 0 !important;
+    }
+
+    .article-hero h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .article-hero-meta {
+        font-size: 0.8rem !important;
+        gap: 14px !important;
+    }
+
+    .article-hero-meta span {
+        font-size: 0.78rem !important;
+    }
 }
 
+
 /* ─────────────────────────────────────────────────────────────────────────
-   28.3 SMALL PHONE (max-width: 576px) — موبايل صغير
+   28.4 SMALL PHONE (max-width: 576px)
    ───────────────────────────────────────────────────────────────────────── */
 @media (max-width: 576px) {
 
+    :root {
+        --navbar-height: 60px;
+        --banner-height: 46px;
+    }
+
+    /* Container */
     .container {
         padding-right: 14px !important;
         padding-left: 14px !important;
     }
 
+    /* ─── Typography scale down ─── */
     h1 { font-size: 1.7rem; }
     h2 { font-size: 1.45rem; }
     h3 { font-size: 1.2rem; }
@@ -6265,6 +7235,11 @@ hr.divider-soft {
     p {
         font-size: 0.92rem;
         line-height: 1.7;
+    }
+
+    /* ─── Navbar ─── */
+    .navbar-brand {
+        gap: 8px !important;
     }
 
     .navbar-brand img {
@@ -6283,10 +7258,7 @@ hr.divider-soft {
         line-height: 1.3 !important;
     }
 
-    .navbar-brand {
-        gap: 8px !important;
-    }
-
+    /* ─── Services Modern ─── */
     .services-grid-modern {
         grid-template-columns: 1fr !important;
     }
@@ -6295,6 +7267,16 @@ hr.divider-soft {
         padding: 12px 14px !important;
     }
 
+    .svc-modern-content h6 {
+        white-space: normal !important;
+        font-size: 0.85rem !important;
+    }
+
+    .svc-modern-content small {
+        white-space: normal !important;
+    }
+
+    /* ─── Bento ─── */
     .bento-card,
     .bento-card.bento-large {
         grid-column: span 1 !important;
@@ -6312,10 +7294,12 @@ hr.divider-soft {
         font-size: 3rem !important;
     }
 
+    /* ─── Process Timeline ─── */
     .process-timeline {
         grid-template-columns: 1fr !important;
     }
 
+    /* ─── Team Featured ─── */
     .tfc-content {
         padding: 24px 20px !important;
     }
@@ -6327,13 +7311,29 @@ hr.divider-soft {
         max-height: 140px !important;
     }
 
+    .tfc-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tfc-actions .btn-rich-primary {
+        width: 100%;
+    }
+
+    .tfc-social {
+        justify-content: center;
+    }
+
+    /* ─── Testimonials ─── */
     .testimonial-modern-card {
         padding: 22px 20px !important;
     }
 
+    /* ─── Trial Banner ─── */
     #trial-banner {
         font-size: 0.72rem !important;
         padding: 8px 10px !important;
+        padding-top: max(8px, calc(var(--safe-top) + 6px)) !important;
         line-height: 1.4 !important;
     }
 
@@ -6341,6 +7341,7 @@ hr.divider-soft {
         display: none !important;
     }
 
+    /* ─── Logo Showcase ─── */
     .logo-showcase {
         min-height: 360px !important;
     }
@@ -6353,6 +7354,7 @@ hr.divider-soft {
     .logo-showcase__badge {
         padding: 12px 18px !important;
         left: 15px !important;
+        bottom: -5px !important;
     }
 
     [dir="rtl"] .logo-showcase__badge {
@@ -6371,13 +7373,351 @@ hr.divider-soft {
     .logo-showcase__logo {
         animation: none !important;
     }
+
+    /* ─── Service Hero ─── */
+    .service-hero {
+        min-height: auto !important;
+        padding: 40px 0 !important;
+    }
+
+    .service-hero h1 {
+        font-size: 1.45rem !important;
+    }
+
+    .service-hero p {
+        font-size: 0.9rem !important;
+    }
+
+    .service-hero .hero-actions {
+        flex-direction: column !important;
+    }
+
+    .service-hero .hero-actions .btn-rich-primary,
+    .service-hero .hero-actions .btn-rich-outline {
+        width: 100% !important;
+    }
+
+    /* ─── Buttons ─── */
+    .btn-rich-primary,
+    .btn-rich-outline,
+    .btn-rich-ghost {
+        width: 100%;
+        padding: 13px 24px;
+        font-size: 0.95rem;
+    }
+
+    .btn-lg {
+        padding: 13px 28px;
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .cta-section .btn,
+    .final-cta-rich .btn {
+        width: 100%;
+        margin: 6px 0;
+    }
+
+    /* ─── Forms ─── */
+    .cf-service-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* ─── Final CTA ─── */
+    .final-cta-rich {
+        padding: 45px 0;
+    }
+
+    .final-cta-rich h2 {
+        font-size: 1.5rem;
+    }
+
+    .fcr-badge {
+        width: 65px;
+        height: 65px;
+        font-size: 1.6rem;
+        margin-bottom: 22px;
+    }
+
+    .fcr-buttons {
+        flex-direction: column;
+    }
+
+    .fcr-buttons .btn-rich-primary,
+    .fcr-buttons .btn-rich-ghost {
+        width: 100%;
+    }
+
+    /* ─── Pricing Cards ─── */
+    .pricing-card .price {
+        font-size: 1.75rem !important;
+    }
+
+    /* ─── Article Content ─── */
+    .article-content .lead {
+        font-size: 1.05rem !important;
+        padding-right: 18px !important;
+        padding-left: 18px !important;
+    }
+
+    /* ─── Legal TOC ─── */
+    .legal-toc {
+        padding: 20px 20px !important;
+    }
+
+    .legal-toc ol {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* ─── Cookie Table ─── */
+    .cookie-table {
+        min-width: 520px !important;
+    }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   28.5 VERY SMALL PHONE (max-width: 480px)
+   ───────────────────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+
+    :root {
+        --banner-height: 44px;
+        --navbar-height: 56px;
+    }
+
+    /* ─── Navbar ─── */
+    .navbar-brand img {
+        height: 28px !important;
+        max-height: 28px !important;
+        max-width: 100px !important;
+    }
+
+    .navbar-brand .firm-name {
+        font-size: 0.72rem !important;
+    }
+
+    .navbar-brand .firm-sub {
+        font-size: 0.52rem !important;
+    }
+
+    /* ─── Hero ─── */
+    .hero-rich-title {
+        font-size: 1.5rem !important;
+    }
+
+    .hero-rich-subtitle {
+        font-size: 0.88rem !important;
+    }
+
+    .hero-badge-rich {
+        font-size: 0.68rem !important;
+        padding: 6px 12px !important;
+    }
+
+    /* ─── Section Headers ─── */
+    .sh-title {
+        font-size: 1.3rem !important;
+    }
+
+    .sh-desc {
+        font-size: 0.85rem !important;
+    }
+
+    /* ─── Cards ─── */
+    .svc-feature-card {
+        padding: 20px 18px !important;
+    }
+
+    .feature-card {
+        padding: 20px 18px !important;
+    }
+
+    /* ─── Team Featured ─── */
+    .tfc-image-wrap {
+        width: 120px !important;
+        height: 120px !important;
+        max-width: 120px !important;
+        max-height: 120px !important;
+    }
+
+    /* ─── Logo Showcase ─── */
+    .logo-showcase__frame {
+        max-width: 260px !important;
+    }
+
+    .logo-showcase__badge {
+        padding: 10px 14px !important;
+    }
+
+    .logo-showcase__badge-num {
+        font-size: 1.5rem !important;
+    }
+
+    .logo-showcase__badge-txt {
+        font-size: 0.58rem !important;
+    }
+
+    /* ─── FAQ ─── */
+    .faq-rich-accordion .accordion-button {
+        font-size: 0.82rem !important;
+        padding: 12px 16px !important;
+    }
+
+    .faq-rich-accordion .accordion-body {
+        font-size: 0.8rem !important;
+        padding: 0 16px 12px !important;
+    }
+
+    /* ─── Trial Banner ─── */
+    #trial-banner {
+        font-size: 0.68rem !important;
+        padding: 7px 8px !important;
+    }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   28.6 LANDSCAPE ORIENTATION FIXES — إصلاحات الوضع الأفقي
+   ───────────────────────────────────────────────────────────────────────── */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-rich {
+        min-height: 400px !important;
+        padding: 40px 0 !important;
+    }
+
+    .hero-rich-title {
+        font-size: 1.75rem !important;
+    }
+
+    .hero-rich-subtitle {
+        font-size: 0.9rem !important;
+    }
+
+    .hero-scroll-indicator {
+        display: none !important;
+    }
+
+    .navbar-collapse {
+        max-height: 70vh !important;
+    }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   28.7 TOUCH DEVICE OPTIMIZATIONS — تحسينات أجهزة اللمس
+   ───────────────────────────────────────────────────────────────────────── */
+@media (hover: none) and (pointer: coarse) {
+    /* Bigger tap targets */
+    .btn,
+    .nav-link,
+    .dropdown-item,
+    .filter-tab,
+    .bc-link,
+    .pa-link {
+        min-height: 44px;
+    }
+
+    /* Disable hover-only animations */
+    .svc-feature-card:hover,
+    .bento-card:hover,
+    .post-card:hover,
+    .feature-card:hover {
+        transform: none;
+    }
+
+    /* Ensure focus states are visible for touch */
+    .btn:focus,
+    .btn:active {
+        outline: 2px solid var(--accent-color);
+        outline-offset: 2px;
+    }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   28.8 PRINT — الطباعة
+   ───────────────────────────────────────────────────────────────────────── */
+@media print {
+
+    .navbar,
+    #trial-banner,
+    .language-switcher,
+    #backToTop,
+    footer,
+    .hero-decorations,
+    .stats-marquee,
+    .final-cta-rich {
+        display: none !important;
+    }
+
+    body {
+        padding-top: 0 !important;
+        color: #000;
+        background: #fff;
+        font-size: 12pt;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .hero-rich,
+    .hero-section,
+    .service-hero,
+    .article-hero {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        padding: 40px 0 !important;
+        margin-top: 0 !important;
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    .hero-rich-overlay,
+    .hero-section::before,
+    .hero-section::after {
+        display: none !important;
+    }
+
+    .hero-rich-title,
+    .hero-rich-subtitle,
+    .service-hero h1,
+    .article-hero h1 {
+        color: #000 !important;
+    }
+
+    .container {
+        max-width: 100% !important;
+    }
+
+    .row {
+        display: block !important;
+    }
+
+    .col-lg-4,
+    .col-lg-6,
+    .col-md-6,
+    .col-lg-3 {
+        width: 100% !important;
+    }
 }
 
 
 /* ============================================================================
-   29. ACCESSIBILITY & PRINT — إمكانية الوصول والطباعة
+   29. ACCESSIBILITY — إمكانية الوصول
    ============================================================================ */
 
+/* ─────────────────────────────────────────────────────────────────────────
+   29.1 REDUCED MOTION — تقليل الحركة
+   ───────────────────────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -6387,6 +7727,31 @@ hr.divider-soft {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+
+    /* Disable continuous animations */
+    .marquee-track,
+    .hero-rich-bg img,
+    .logo-showcase__logo,
+    .logo-showcase__glow,
+    .deco-circle-1,
+    .deco-circle-2,
+    .deco-square-1,
+    .fcr-decoration-1,
+    .fcr-decoration-3,
+    .tfc-badge-top,
+    .tfc-badge-bottom,
+    .fcr-badge,
+    #trial-banner i {
+        animation: none !important;
+    }
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   29.2 FOCUS VISIBLE — إبراز العنصر المركّز عليه
+   ───────────────────────────────────────────────────────────────────────── */
+*:focus {
+    outline: none;
 }
 
 *:focus-visible {
@@ -6395,52 +7760,91 @@ hr.divider-soft {
     border-radius: 4px;
 }
 
-@media print {
-    .navbar,
-    #trial-banner,
-    .language-switcher,
-    #backToTop,
-    footer {
-        display: none !important;
+/* Special focus for buttons */
+.btn-rich-primary:focus-visible,
+.btn-rich-outline:focus-visible,
+.btn-rich-ghost:focus-visible,
+.btn-hero-primary:focus-visible,
+.btn-hero-ghost:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(201, 169, 97, 0.2);
+}
+
+/* Focus for inputs */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   29.3 HIGH CONTRAST MODE — الوضع عالي التباين
+   ───────────────────────────────────────────────────────────────────────── */
+@media (prefers-contrast: high) {
+    :root {
+        --accent-color: #D4B872;
+        --accent-dark: #A88947;
+        --gray-text: #495057;
     }
 
-    body {
-        padding-top: 0;
-        color: #000;
-        background: #fff;
+    .btn-rich-outline {
+        border-width: 3px;
     }
 
-    a {
-        color: #000;
-        text-decoration: underline;
-    }
-
-    .hero-rich,
-    .hero-section {
-        height: auto !important;
-        min-height: auto !important;
-        max-height: none !important;
-        padding: 40px 0 !important;
-        margin-top: 0 !important;
+    .bento-card,
+    .feature-card,
+    .post-card {
+        border-width: 2px;
     }
 }
 
 
+/* ─────────────────────────────────────────────────────────────────────────
+   29.4 DARK MODE SUPPORT (Optional) — دعم الوضع المظلم
+   ───────────────────────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+    /* Only applies if no manual theme toggle exists */
+    /* Currently disabled to preserve brand colors */
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+   29.5 SCREEN READER ONLY — لقارئ الشاشة فقط
+   ───────────────────────────────────────────────────────────────────────── */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
 /* ============================================================================
-   🎯 HERO SIZE ADJUSTMENT v13.0 — تصغير حجم البانر الرئيسي
+   🎯 HERO SIZE ADJUSTMENT v14.0 — تصغير حجم البانر الرئيسي
    ─────────────────────────────────────────────────────────────────────────
    PURPOSE / الوظيفة:
-   Reduces the hero section height from 620px to 520px (desktop) for a
+   Reduces the hero section height from 620px to 480px (desktop) for a
    more balanced, less overwhelming appearance. Includes responsive
    adjustments for tablet and mobile.
+
+   يُقلّص ارتفاع قسم الهيرو من 620px إلى 480px (سطح المكتب) لمظهر
+   أكثر توازناً. يشمل تعديلات متجاوبة للتابلت والموبايل.
    ============================================================================ */
 
 /* ─── Desktop / سطح المكتب ─── */
 html body .hero-rich {
-    height: 520px !important;
-    min-height: 520px !important;
-    max-height: 520px !important;
-    padding: 30px 0 !important;
+    height: var(--hero-height-desktop) !important;
+    min-height: var(--hero-height-desktop) !important;
+    max-height: var(--hero-height-desktop) !important;
+    padding: var(--hero-padding-desktop) !important;
 }
 
 html body .hero-rich .hero-rich-title {
@@ -6487,7 +7891,7 @@ html body .hero-rich .hero-badge-rich {
 @media (max-width: 991px) {
     html body .hero-rich {
         height: auto !important;
-        min-height: 460px !important;
+        min-height: 440px !important;
         max-height: none !important;
         padding: 45px 0 40px !important;
     }
@@ -6512,6 +7916,7 @@ html body .hero-rich .hero-badge-rich {
     }
 }
 
+
 /* ============================================================================
    🎯 NAVBAR FIX — منع التفاف الأزرار (خاصة في العربي)
    ─────────────────────────────────────────────────────────────────────────
@@ -6519,7 +7924,7 @@ html body .hero-rich .hero-badge-rich {
    Prevents navbar links and buttons from wrapping to two lines, especially
    in Arabic (RTL) where text is naturally longer. Forces all navbar items
    into a single row.
-   
+
    يمنع التفاف روابط وأزرار النافبار على سطرين، خاصة في العربي حيث
    النص أطول بطبيعته. يُجبر كل عناصر النافبار على البقاء في سطر واحد.
    ============================================================================ */
@@ -6575,7 +7980,7 @@ html body .navbar .lang-nav-item .lang-btn {
 /* ─── 5) RTL-specific tweaks — smaller padding so everything fits ─── */
 [dir="rtl"] html body .navbar .navbar-nav .nav-link,
 html[dir="rtl"] body .navbar .navbar-nav .nav-link {
-    padding: 8px 11px !important;   /* أقل شوية من 14px */
+    padding: 8px 11px !important;
     font-size: 0.92rem !important;
     margin: 0 1px !important;
 }
@@ -6586,8 +7991,8 @@ html[dir="rtl"] body .navbar .navbar-nav .nav-link {
 html[dir="rtl"] body .navbar .btn-outline-light,
 html[dir="rtl"] body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
 html[dir="rtl"] body .navbar .lang-nav-item .lang-btn {
-    padding: 10px 16px !important;   /* أقل شوية من 20px */
-    font-size: 0.82rem !important;  /* أقل شوية من 0.85rem */
+    padding: 10px 16px !important;
+    font-size: 0.82rem !important;
     gap: 6px !important;
 }
 
@@ -6627,12 +8032,69 @@ html[dir="rtl"] body .navbar .lang-nav-item .lang-btn {
     html body .navbar .navbar-collapse {
         overflow-x: auto !important;
         overflow-y: visible !important;
-        scrollbar-width: none !important;   /* Firefox */
+        scrollbar-width: none !important;
     }
     html body .navbar .navbar-collapse::-webkit-scrollbar {
-        display: none !important;           /* Chrome/Safari */
+        display: none !important;
     }
 }
+
+
+/* ============================================================================
+   🎯 FIXES FOR SPECIFIC ELEMENTS — إصلاحات إضافية v14.0
+   ============================================================================ */
+
+/* ─── FIX: Prevent any element from causing horizontal scroll ─── */
+html body * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+html body img,
+html body video,
+html body iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Exception: allow specific overflow elements */
+html body .compare-table-wrap,
+html body .cookie-table-wrap,
+html body .marquee-track,
+html body .hero-decorations {
+    max-width: none;
+}
+
+/* ─── FIX: iOS Safari address bar 100vh issue ─── */
+html body .hero-rich {
+    /* Fallback for older browsers */
+    min-height: calc(100vh - var(--banner-height) - var(--navbar-height));
+    /* Modern: use dvh if supported */
+    min-height: calc(100dvh - var(--banner-height) - var(--navbar-height));
+    /* Cap at our max */
+    max-height: var(--hero-height-desktop);
+}
+
+@media (max-width: 768px) {
+    html body .hero-rich {
+        min-height: auto;
+        max-height: none;
+    }
+}
+
+/* ─── FIX: Aspect ratio for images to prevent layout shift ─── */
+html body .hero-rich-bg img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    html body .hero-rich-bg img {
+        aspect-ratio: auto;
+    }
+}
+
 
 /* ============================================================================
    ============================================================================
@@ -6641,16 +8103,17 @@ html[dir="rtl"] body .navbar .lang-nav-item .lang-btn {
    ██████████████████████████████████████████████████████████████████████████
    ============================================================================
    ============================================================================
-   
+
    ✅ FINAL CHECKLIST / قائمة التحقق النهائية:
    ─────────────────────────────────────────────────────────────────────────
-   [✓] 01. CSS Variables & Design System
+   [✓] 01. CSS Variables & Design System (Fluid scale v14.0)
    [✓] 02. Reset & Base Styles
    [✓] 03. RTL Support
    [✓] 04. Trial Banner
-   [✓] 05. Navbar + UNIFIED GOLD BUTTONS (Single Source of Truth)
-         • 05.5.1 → 05.5.10 — الحل النهائي لأزرار النافبار
-   [✓] 06. Hero Section
+   [✓] 05. Navbar + UNIFIED GOLD BUTTONS
+         • 05.5.1 → 05.5.10 — Unified navbar buttons
+         • 05.8 — Hero Image Fix (contain + backdrop blur)
+   [✓] 06. Hero Section (Classic)
    [✓] 07. Page Header
    [✓] 08. Feature / Service / Team Cards
    [✓] 09. Blog Cards & Testimonials
@@ -6658,11 +8121,11 @@ html[dir="rtl"] body .navbar .lang-nav-item .lang-btn {
    [✓] 11. Footer (Classic)
    [✓] 12. Buttons (Complete System)
    [✓] 13. Social Links
-   [✓] 14. Forms
+   [✓] 14. Forms (iOS-optimized)
    [✓] 15. Utilities & Helpers
    [✓] 16. Animations
-   [✓] 17. Back to Top
-   [✓] 18. Premium Homepage (Hero Rich + Bento + Marquee)
+   [✓] 17. Back to Top (Safe-area aware)
+   [✓] 18. Premium Homepage
    [✓] 19. Logo Showcase (Gold Frame)
    [✓] 20. Services Modern (Compact)
    [✓] 21. Process Timeline
@@ -6672,31 +8135,116 @@ html[dir="rtl"] body .navbar .lang-nav-item .lang-btn {
    [✓] 25. Final CTA Rich
    [✓] 26. Footer Rich
    [✓] 27. Service Pages Components
-   [✓] 28. Responsive (991px / 768px / 576px)
-   [✓] 29. Accessibility & Print
-   [✓] HERO SIZE ADJUSTMENT v13.0
+   [✓] 28. ★ Responsive (4 breakpoints + landscape + touch)
+   [✓] 29. ★ Accessibility & Print
+   [✓] HERO SIZE ADJUSTMENT v14.0
+   [✓] NAVBAR FIX (RTL wrapping)
+   [✓] iOS Safari Fixes (safe-area, dvh, 16px inputs)
+   [✓] Horizontal Overflow Prevention
    ─────────────────────────────────────────────────────────────────────────
-   
-   🗑️ تم حذف البلوكات المتضاربة التالية:
+
+   🎯 KEY IMPROVEMENTS IN v14.0 / التحسينات الرئيسية:
    ─────────────────────────────────────────────────────────────────────────
-   ❌ FINAL FIX — SHARED LANGUAGE SWITCHER IN THE NAVBAR
-   ❌ LANGUAGE BUTTON — GOLD FILLED (Final Style)
-   ❌ LANGUAGE BUTTON — ALIGNED WITH CLIENT PORTAL
-   ❌ LANGUAGE BUTTON SIZE FIX
-   
-   السبب: الشكل النهائي للأزرار أصبح في القسم 05.5
-          والبلوكات دي كانت متضاربة معاه.
+   ✅ Hero image shows FULLY (not cropped) via object-fit: contain
+   ✅ Blurred backdrop layer creates cinematic letterbox effect
+   ✅ On mobile: hero image switches to cover (full-bleed)
+   ✅ Fluid spacing scale (--space-*)
+   ✅ Fluid font scale (--fs-*)
+   ✅ Safe-area insets for iPhone notch/Dynamic Island
+   ✅ iOS input zoom fix (font-size: 16px on mobile)
+   ✅ prevent horizontal overflow on any screen
+   ✅ RTL-correct transform-origins everywhere
+   ✅ Touch-friendly tap targets (min 44px)
+   ✅ Reduced-motion support
+   ✅ Full print stylesheet
+   ✅ 5 responsive breakpoints (1200/991/768/576/480)
+   ✅ Landscape orientation fixes
+   ✅ Navbar buttons never wrap
    ─────────────────────────────────────────────────────────────────────────
-   
-   🎯 التصميم النهائي لأزرار النافبار:
+
+   🎨 التصميم النهائي لأزرار النافبار:
    ─────────────────────────────────────────────────────────────────────────
    🌐 زر اللغة      = ذهبي ممتلئ (خلفية ذهبية + نص أسود)
    🔒 بوابة العميل = ذهبي مفرّغ (حد ذهبي + نص ذهبي + خلفية شفافة)
-   
+
    • نفس الارتفاع  : 40px
    • نفس الحشو     : 10px 20px
    • نفس الاستدارة : 999px (Pill)
    • نفس حجم الخط  : 0.85rem
    ─────────────────────────────────────────────────────────────────────────
+
+   🖼️ Hero Image Strategy:
+   ─────────────────────────────────────────────────────────────────────────
+   Desktop:  object-fit: contain  → الصورة كاملة + خلفية سوداء + backdrop blur
+   Tablet:   object-fit: contain  → نفس السلوك
+   Mobile:   object-fit: cover    → الصورة تملأ الشاشة (full-bleed)
+   ─────────────────────────────────────────────────────────────────────────
    ============================================================================
    ============================================================================ */
+   /* ============================================================================
+   🖼️ BLOG ARTICLE HERO — IMAGE FALLBACK
+   ─────────────────────────────────────────────────────────────────────────
+   Shows elegant gold-and-black pattern when image is unavailable.
+   يُظهر نمط ذهبي/أسود أنيق عند غياب الصورة.
+   ============================================================================ */
+
+.article-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    opacity: 0.25;
+    z-index: 0;
+    display: block !important;
+}
+
+/* ★ Fallback background when image fails */
+.article-hero {
+    background: 
+        linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+    background-color: #000;
+    position: relative;
+}
+
+.article-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(201,169,97,0.18), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(201,169,97,0.12), transparent 50%),
+        linear-gradient(rgba(201,169,97,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,169,97,0.04) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+    pointer-events: none;
+}
+
+/* ★ Blog card image fallback */
+.post-card .pc-image,
+.related-card-img {
+    background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
+    position: relative;
+}
+
+.post-card .pc-image::before,
+.related-card-img::before {
+    content: '\f15c'; /* fa-file-lines icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(201,169,97,0.3);
+    font-size: 3rem;
+    pointer-events: none;
+}
+
+/* Hide image completely if failed — let background show */
+.post-card img[style*="opacity: 0"],
+.related-card img[style*="opacity: 0"] {
+    display: none !important;
+}
