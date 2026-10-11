@@ -7481,111 +7481,104 @@ body {
     font-size: 0.7rem !important;
 }
 /* ═══════════════════════════════════════════════════════════════ */
-/* HERO RIGHT COLUMN — 12 كارت بتوازن مثالي مع العمود الأيسر */
+/* HERO RIGHT COLUMN — 13 كارت بتوازن تام */
 /* ═══════════════════════════════════════════════════════════════ */
 
-/* 1) عنوان "لماذا تختارنا" */
 .hero-why-title {
-    margin-bottom: 16px !important;
-    padding-bottom: 12px !important;
+    margin-bottom: 14px !important;
+    padding-bottom: 10px !important;
 }
 
 .hero-why-title .hwt-line {
-    width: 38px !important;
+    width: 36px !important;
     height: 3px !important;
 }
 
 .hero-why-title .hwt-text {
-    font-size: 0.95rem !important;
-    letter-spacing: 1.3px !important;
+    font-size: 0.92rem !important;
+    letter-spacing: 1.2px !important;
     font-weight: 800 !important;
 }
 
 .hero-why-title .hwt-icon {
-    font-size: 1.1rem !important;
+    font-size: 1.05rem !important;
 }
 
-/* 2) حاوية الكروت — مسافات مريحة */
 .hero-accreditations {
-    gap: 8px !important;
+    gap: 7px !important;
 }
 
-/* 3) الكارت — مقاس متوازن */
 .ha-item {
-    padding: 11px 16px !important;
-    min-height: 60px !important;
-    border-radius: 12px !important;
-    gap: 13px !important;
-}
-
-/* 4) الأيقونة */
-.ha-icon {
-    width: 40px !important;
-    height: 40px !important;
-    font-size: 1.1rem !important;
+    padding: 10px 15px !important;
+    min-height: 56px !important;
     border-radius: 11px !important;
+    gap: 12px !important;
 }
 
-/* 5) النص الأساسي */
+.ha-icon {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 1.05rem !important;
+    border-radius: 10px !important;
+}
+
 .ha-text strong {
-    font-size: 0.92rem !important;
+    font-size: 0.88rem !important;
     font-weight: 800 !important;
     line-height: 1.25 !important;
     letter-spacing: 0.2px !important;
 }
 
 [dir="rtl"] .ha-text strong {
-    font-size: 0.96rem !important;
+    font-size: 0.92rem !important;
     font-family: 'Cairo', sans-serif !important;
     letter-spacing: 0 !important;
 }
 
-/* 6) النص الفرعي */
 .ha-text small {
-    font-size: 0.75rem !important;
+    font-size: 0.73rem !important;
     line-height: 1.35 !important;
     color: rgba(255, 255, 255, 0.7) !important;
 }
 
 [dir="rtl"] .ha-text small {
-    font-size: 0.78rem !important;
+    font-size: 0.76rem !important;
     font-family: 'Cairo', sans-serif !important;
 }
 
-/* 7) المسافة بين النصين */
 .ha-text {
     gap: 2px !important;
 }
 
-/* 8) ارتفاع الهيرو — يتسع لـ 12 كارت */
+/* ارتفاع الهيرو — يتسع لـ 13 كارت */
 @media (min-width: 992px) {
     .hero-rich {
-        min-height: 820px !important;
+        min-height: 860px !important;
     }
 }
 
-/* 9) على الشاشات المتوسطة (992–1200px) */
+/* الشاشات المتوسطة */
 @media (min-width: 992px) and (max-width: 1200px) {
     .ha-item {
-        padding: 10px 14px !important;
-        min-height: 56px !important;
-        gap: 11px !important;
+        padding: 9px 13px !important;
+        min-height: 52px !important;
+        gap: 10px !important;
     }
     .ha-icon {
-        width: 36px !important;
-        height: 36px !important;
-        font-size: 1rem !important;
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 0.95rem !important;
     }
     .ha-text strong {
-        font-size: 0.86rem !important;
+        font-size: 0.82rem !important;
     }
     [dir="rtl"] .ha-text strong {
-        font-size: 0.9rem !important;
+        font-size: 0.86rem !important;
     }
     .ha-text small {
-        font-size: 0.7rem !important;
+        font-size: 0.68rem !important;
     }
     [dir="rtl"] .ha-text small {
-        font-size: 0.73rem !important;
+        font-size: 0.71rem !important;
     }
 }
