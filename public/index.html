@@ -1,40 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ============================================================
-         PAGE META
-         ============================================================ -->
-    <title>Walid Mohamed Abu Al-Ela Law Firm | Corporate, Arbitration, IP & Technology</title>
-    <meta name="description" content="Walid Mohamed Abu Al-Ela Law Firm — Corporate, Arbitration, IP & Technology Legal Solutions. 10+ years, 500+ cases, 350+ trademarks.">
-    <meta name="keywords" content="law firm Egypt, intellectual property, arbitration, trademark, patent, corporate law, Walid Mohamed Abu Al-Ela">
+    <title>Walid Mohamed Abu Al-Ela Law Firm | Arbitration &amp; Intellectual Property</title>
+    <meta name="description" content="Walid Mohamed Abu Al-Ela Law Firm — legal solutions for corporate, arbitration, intellectual property, and technology. 10+ years of experience, 500+ cases handled.">
+    <meta name="keywords" content="lawyer Egypt, intellectual property, arbitration, trademark, patent, corporate, Walid Abu Al-Ela">
     <meta name="author" content="Walid Mohamed Abu Al-Ela">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://law-arb-ip-walid.vercel.app/">
 
-    <!-- ============================================================
-         OPEN GRAPH
-         ============================================================ -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://law-arb-ip-walid.vercel.app/">
-    <meta property="og:title" content="Walid Mohamed Abu Al-Ela Law Firm | Corporate, Arbitration, IP & Technology">
-    <meta property="og:description" content="Corporate, Arbitration, IP & Technology Legal Solutions.">
+    <meta property="og:title" content="Walid Mohamed Abu Al-Ela Law Firm | Arbitration &amp; Intellectual Property">
+    <meta property="og:description" content="Legal solutions for corporate, arbitration, intellectual property, and technology.">
     <meta property="og:image" content="https://law-arb-ip-walid.vercel.app/images/hero-bg.jpg">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- ============================================================
-         HREFLANG
-         ============================================================ -->
     <link rel="alternate" hreflang="en" href="https://law-arb-ip-walid.vercel.app/">
     <link rel="alternate" hreflang="ar" href="https://law-arb-ip-walid.vercel.app/ar/">
 
-    <!-- ============================================================
-         FAVICON & STYLESHEETS
-         ============================================================ -->
-    <link rel="icon" type="image/png" href="/images/logo arb ip.png">
+    <link rel="icon" type="image/png" href="/images/logo%20arb%20ip.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,9 +30,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 
-    <!-- ============================================================
-         GOOGLE ANALYTICS
-         ============================================================ -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ0CPXRK2F"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -53,213 +38,569 @@
         gtag('config', 'G-WQ0CPXRK2F');
     </script>
 
-    <!-- ============================================================
-         SCHEMA.ORG STRUCTURED DATA
-         ============================================================ -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "LegalService",
         "name": "Walid Mohamed Abu Al-Ela Law Firm",
-        "description": "Corporate, Arbitration, IP & Technology Legal Solutions.",
+        "alternateName": "مكتب وليد محمد أبو العلا للمحاماة",
+        "description": "Law firm specialized in intellectual property, arbitration, corporate services, and litigation.",
         "url": "https://law-arb-ip-walid.vercel.app/",
-        "logo": "https://law-arb-ip-walid.vercel.app/images/logo arb ip.png",
+        "logo": "https://law-arb-ip-walid.vercel.app/images/logo%20arb%20ip.png",
         "founder": {"@type": "Person", "name": "Walid Mohamed Abu Al-Ela"},
         "foundingDate": "2016",
         "telephone": "+20111257219",
         "email": "walidlegal.ippro@gmail.com",
         "address": {
             "@type": "PostalAddress",
-            "addressLocality": "10th of Ramadan",
+            "addressLocality": "10th of Ramadan City",
             "addressRegion": "Cairo",
             "addressCountry": "EG"
         }
     }
     </script>
 
-    <!-- ============================================================
-         INLINE STYLES — LUXURY GOLD FRAME FOR LOGO
-         ============================================================ -->
     <style>
-        .logo-showcase {
-            position: relative;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-            min-height: 560px;
-        }
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* HERO VALUE CARDS */
+    /* ═══════════════════════════════════════════════════════════════ */
 
-        .logo-showcase__frame {
-            position: relative;
-            width: 100%;
-            max-width: 480px;
-            aspect-ratio: 1 / 1;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
-            border-radius: 30px;
-            padding: 30px;
-            box-shadow:
-                0 30px 60px -20px rgba(0, 0, 0, 0.5),
-                0 0 80px rgba(201, 169, 97, 0.15),
-                inset 0 0 60px rgba(201, 169, 97, 0.05);
-            overflow: hidden;
-        }
+    .hero-stats-mini { display: none !important; }
 
+    /* "Why Choose Us" title */
+    .hero-why-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(201, 169, 97, 0.25);
+    }
+
+    .hero-why-title .hwt-line {
+        width: 32px;
+        height: 3px;
+        background: linear-gradient(90deg, #C9A961, #A88947);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .hero-why-title .hwt-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 800;
+        color: #C9A961;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .hero-why-title .hwt-icon {
+        color: #C9A961;
+        font-size: 0.95rem;
+        margin-left: auto;
+        opacity: 0.7;
+    }
+
+    /* Cards container */
+    .hero-accreditations {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    /* Single card */
+    .ha-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 9px 14px;
+        min-height: 54px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.03) 100%);
+        border: 1px solid rgba(201, 169, 97, 0.28);
+        border-radius: 12px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        cursor: default;
+    }
+
+    .ha-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(180deg, #C9A961, #A88947);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.35s ease;
+    }
+
+    .ha-item::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 0% 50%, rgba(201, 169, 97, 0.08), transparent 60%);
+        opacity: 0;
+        transition: opacity 0.35s ease;
+        pointer-events: none;
+    }
+
+    .ha-item:hover {
+        background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.06) 100%);
+        border-color: #C9A961;
+        transform: translateX(6px);
+        box-shadow:
+            0 12px 28px -8px rgba(201, 169, 97, 0.4),
+            0 0 0 1px rgba(201, 169, 97, 0.2) inset;
+    }
+
+    .ha-item:hover::before { transform: scaleY(1); }
+    .ha-item:hover::after  { opacity: 1; }
+
+    /* Icon */
+    .ha-icon {
+        width: 36px;
+        height: 36px;
+        background: linear-gradient(135deg, #C9A961, #A88947);
+        color: #000;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.95rem;
+        flex-shrink: 0;
+        box-shadow: 0 6px 14px rgba(201, 169, 97, 0.35);
+        transition: all 0.35s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    .ha-item:hover .ha-icon {
+        transform: rotate(-8deg) scale(1.1);
+        box-shadow: 0 8px 20px rgba(201, 169, 97, 0.55);
+    }
+
+    /* Text */
+    .ha-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+        flex: 1;
+        position: relative;
+        z-index: 1;
+    }
+
+    .ha-text strong {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.83rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.25;
+        transition: color 0.3s ease;
+    }
+
+    .ha-item:hover .ha-text strong {
+        color: #D4B872;
+    }
+
+    .ha-text small {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.69rem;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.3;
+        transition: color 0.3s ease;
+    }
+
+    .ha-item:hover .ha-text small {
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Mobile: hide cards */
+    @media (max-width: 991px) {
+        .hero-accreditations { display: none; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* SLOGAN EXTRA */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .hero-slogan-extra {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 12px;
+        padding: 8px 18px;
+        background: rgba(201, 169, 97, 0.08);
+        border-left: 3px solid #C9A961;
+        border-radius: 6px;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.86rem;
+        color: rgba(255, 255, 255, 0.92);
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        max-width: fit-content;
+    }
+
+    .hero-slogan-extra i {
+        color: #C9A961;
+        font-size: 0.88rem;
+    }
+
+    @media (max-width: 576px) {
+        .hero-slogan-extra {
+            font-size: 0.8rem;
+            padding: 7px 14px;
+        }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* HERO PROMISES */
+    /* ═══════════════════════════════════════════════════════════════ */
+
+    .hero-promises {
+        margin-top: 22px;
+        padding: 18px 20px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+        border: 1px solid rgba(201, 169, 97, 0.22);
+        border-radius: 18px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-promises::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle, rgba(201, 169, 97, 0.15), transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    .hpr-head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+        position: relative;
+        z-index: 1;
+    }
+
+    .hpr-head-line {
+        width: 30px;
+        height: 3px;
+        background: linear-gradient(90deg, #C9A961, #A88947);
+        border-radius: 2px;
+        flex-shrink: 0;
+    }
+
+    .hpr-head > i:first-of-type {
+        color: #C9A961;
+        font-size: 1rem;
+    }
+
+    .hpr-head-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.88rem;
+        font-weight: 800;
+        color: #C9A961;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+
+    .hpr-head-icon {
+        margin-left: auto;
+        color: #C9A961;
+        font-size: 0.9rem;
+        opacity: 0.7;
+    }
+
+    .hpr-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hpr-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 14px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+        border: 1px solid rgba(201, 169, 97, 0.22);
+        border-radius: 12px;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        cursor: default;
+    }
+
+    .hpr-card::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(180deg, #C9A961, #A88947);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.35s ease;
+    }
+
+    .hpr-card:hover::before {
+        transform: scaleY(1);
+    }
+
+    .hpr-card:hover {
+        background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.05) 100%);
+        border-color: #C9A961;
+        transform: translateX(4px);
+        box-shadow: 0 10px 24px -8px rgba(201, 169, 97, 0.35);
+    }
+
+    .hpr-icon {
+        width: 34px;
+        height: 34px;
+        flex-shrink: 0;
+        background: linear-gradient(135deg, #C9A961, #A88947);
+        color: #000;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.85rem;
+        box-shadow: 0 6px 14px rgba(201, 169, 97, 0.35);
+        transition: all 0.35s ease;
+    }
+
+    .hpr-card:hover .hpr-icon {
+        transform: rotate(-8deg) scale(1.1);
+        box-shadow: 0 8px 20px rgba(201, 169, 97, 0.55);
+    }
+
+    .hpr-body {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+    }
+
+    .hpr-body strong {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.25;
+        transition: color 0.3s ease;
+    }
+
+    .hpr-card:hover .hpr-body strong {
+        color: #D4B872;
+    }
+
+    .hpr-body small {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.62);
+        line-height: 1.4;
+        transition: color 0.3s ease;
+    }
+
+    .hpr-card:hover .hpr-body small {
+        color: rgba(255, 255, 255, 0.88);
+    }
+
+    @media (max-width: 991px) {
+        .hpr-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 576px) {
+        .hpr-grid { grid-template-columns: 1fr; }
+        .hero-promises { padding: 16px 16px; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════ */
+    /* LOGO GOLD FRAME */
+    /* ═══════════════════════════════════════════════════════════════ */
+    .logo-showcase {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        min-height: 560px;
+    }
+    .logo-showcase__frame {
+        position: relative;
+        width: 100%;
+        max-width: 480px;
+        aspect-ratio: 1 / 1;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+        border-radius: 30px;
+        padding: 30px;
+        box-shadow:
+            0 30px 60px -20px rgba(0, 0, 0, 0.5),
+            0 0 80px rgba(201, 169, 97, 0.15),
+            inset 0 0 60px rgba(201, 169, 97, 0.05);
+        overflow: hidden;
+    }
+    .logo-showcase__frame::before,
+    .logo-showcase__frame::after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border: 2px solid #C9A961;
+        z-index: 3;
+    }
+    .logo-showcase__frame::before {
+        top: 15px;
+        left: 15px;
+        border-right: none;
+        border-bottom: none;
+        border-top-left-radius: 20px;
+    }
+    .logo-showcase__frame::after {
+        bottom: 15px;
+        right: 15px;
+        border-left: none;
+        border-top: none;
+        border-bottom-right-radius: 20px;
+    }
+    .logo-showcase__inner-border {
+        position: absolute;
+        inset: 30px;
+        border: 1px solid rgba(201, 169, 97, 0.3);
+        border-radius: 20px;
+        pointer-events: none;
+        z-index: 2;
+    }
+    .logo-showcase__glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        height: 70%;
+        background: radial-gradient(circle, rgba(201, 169, 97, 0.25) 0%, transparent 70%);
+        border-radius: 50%;
+        z-index: 1;
+        animation: glowPulse 4s ease-in-out infinite;
+    }
+    @keyframes glowPulse {
+        0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+        50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+    }
+    .logo-showcase__logo {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 10px 30px rgba(201, 169, 97, 0.5));
+        animation: logoFloat 6s ease-in-out infinite;
+    }
+    @keyframes logoFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+    .logo-showcase__deco {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 2;
+    }
+    .logo-showcase__deco::before,
+    .logo-showcase__deco::after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #C9A961;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(201, 169, 97, 0.8);
+    }
+    .logo-showcase__deco::before { top: 20%; right: 15%; }
+    .logo-showcase__deco::after { bottom: 20%; left: 15%; }
+    .logo-showcase__badge {
+        position: absolute;
+        bottom: -10px;
+        right: 30px;
+        background: linear-gradient(135deg, #C9A961 0%, #A88947 100%);
+        color: #000;
+        padding: 16px 24px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 15px 35px rgba(201, 169, 97, 0.4);
+        z-index: 5;
+        transform: rotate(-3deg);
+    }
+    .logo-showcase__badge-num {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.2rem;
+        font-weight: 900;
+        line-height: 1;
+    }
+    .logo-showcase__badge-txt {
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    @media (max-width: 991px) {
+        .logo-showcase { min-height: 420px; padding: 30px 15px; }
+        .logo-showcase__frame { max-width: 380px; padding: 25px; }
         .logo-showcase__frame::before,
-        .logo-showcase__frame::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            border: 2px solid #C9A961;
-            z-index: 3;
-        }
-        .logo-showcase__frame::before {
-            top: 15px;
-            left: 15px;
-            border-right: none;
-            border-bottom: none;
-            border-top-left-radius: 20px;
-        }
-        .logo-showcase__frame::after {
-            bottom: 15px;
-            right: 15px;
-            border-left: none;
-            border-top: none;
-            border-bottom-right-radius: 20px;
-        }
-
-        .logo-showcase__inner-border {
-            position: absolute;
-            inset: 30px;
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            border-radius: 20px;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .logo-showcase__glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70%;
-            height: 70%;
-            background: radial-gradient(circle, rgba(201, 169, 97, 0.25) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: 1;
-            animation: glowPulse 4s ease-in-out infinite;
-        }
-
-        @keyframes glowPulse {
-            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
-            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
-        }
-
-        .logo-showcase__logo {
-            position: relative;
-            z-index: 3;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 10px 30px rgba(201, 169, 97, 0.5));
-            animation: logoFloat 6s ease-in-out infinite;
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        .logo-showcase__deco {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 2;
-        }
-        .logo-showcase__deco::before,
-        .logo-showcase__deco::after {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: #C9A961;
-            border-radius: 50%;
-            box-shadow: 0 0 15px rgba(201, 169, 97, 0.8);
-        }
-        .logo-showcase__deco::before { top: 20%; right: 15%; }
-        .logo-showcase__deco::after { bottom: 20%; left: 15%; }
-
-        .logo-showcase__badge {
-            position: absolute;
-            bottom: -10px;
-            right: 30px;
-            background: linear-gradient(135deg, #C9A961 0%, #A88947 100%);
-            color: #000;
-            padding: 16px 24px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 15px 35px rgba(201, 169, 97, 0.4);
-            z-index: 5;
-            transform: rotate(-3deg);
-        }
-        .logo-showcase__badge-num {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            font-weight: 900;
-            line-height: 1;
-        }
-        .logo-showcase__badge-txt {
-            font-size: 0.75rem;
-            font-weight: 700;
-            line-height: 1.2;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        @media (max-width: 991px) {
-            .logo-showcase { min-height: 420px; padding: 30px 15px; }
-            .logo-showcase__frame { max-width: 380px; padding: 25px; }
-            .logo-showcase__frame::before,
-            .logo-showcase__frame::after { width: 45px; height: 45px; }
-        }
-
-        @media (max-width: 576px) {
-            .logo-showcase { min-height: 360px; }
-            .logo-showcase__frame { max-width: 300px; padding: 20px; }
-            .logo-showcase__badge { padding: 12px 18px; right: 15px; }
-            .logo-showcase__badge-num { font-size: 1.8rem; }
-            .logo-showcase__badge-txt { font-size: 0.65rem; }
-        }
-    </style>
+        .logo-showcase__frame::after { width: 45px; height: 45px; }
+    }
+    @media (max-width: 576px) {
+        .logo-showcase { min-height: 360px; }
+        .logo-showcase__frame { max-width: 300px; padding: 20px; }
+        .logo-showcase__badge { padding: 12px 18px; right: 15px; }
+        .logo-showcase__badge-num { font-size: 1.8rem; }
+        .logo-showcase__badge-txt { font-size: 0.65rem; }
+    }
+</style>
 </head>
 
 <body>
 
-    <!-- ============================================================
-         TRIAL BANNER
-         ============================================================ -->
+    <!-- TRIAL BANNER -->
     <div id="trial-banner">
         <i class="fas fa-tools" aria-hidden="true"></i>
-        <span>This is a trial version - site under development and updates</span>
+        <span>This is a trial version — site under development and updates</span>
         <i class="fas fa-tools" aria-hidden="true"></i>
     </div>
 
-    <!-- ============================================================
-         NAVIGATION
-         (Language switcher is auto-injected here by main.js)
-         ============================================================ -->
+    <!-- NAVIGATION -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
 
             <a class="navbar-brand" href="/">
-                <img src="/images/logo arb ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm">
+                <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm">
                 <div>
-                    <span class="firm-name">WALID MOHAMED ABU AL-ELA</span>
-                    <small class="firm-sub">Corporate, Arbitration, IP & Technology Legal Solutions</small>
+                    <span class="firm-name">Walid Mohamed Abu Al-Ela</span>
+                    <small class="firm-sub">Legal Solutions for Corporate, Arbitration, IP &amp; Technology</small>
                 </div>
             </a>
 
@@ -281,7 +622,7 @@
                             <li><a class="dropdown-item" href="/patent.html">Patent Protection</a></li>
                             <li><a class="dropdown-item" href="/copyright.html">Copyright</a></li>
                             <li><a class="dropdown-item" href="/litigation.html">IP Litigation</a></li>
-                            <li><a class="dropdown-item" href="/licensing.html">Licensing & Contracts</a></li>
+                            <li><a class="dropdown-item" href="/licensing.html">Licensing &amp; Contracts</a></li>
                             <li><a class="dropdown-item" href="/corporate-formation.html">Corporate Formation</a></li>
                             <li><a class="dropdown-item" href="/criminal-litigation.html">Criminal Litigation</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -293,7 +634,6 @@
                     <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
 
-                    <!-- Client Portal -->
                     <li class="nav-item ms-lg-3">
                         <a class="btn btn-outline-light btn-sm" href="/client-portal.html">
                             <i class="fas fa-lock" aria-hidden="true"></i>
@@ -301,7 +641,7 @@
                         </a>
                     </li>
 
-                    <!-- Language Switcher is auto-injected here by main.js -->
+                    <!-- Language switch button injected here by main.js -->
 
                 </ul>
             </div>
@@ -309,162 +649,291 @@
         </div>
     </nav>
 
-    <!-- ============================================================
-         HERO
-         ============================================================ -->
     <!-- HERO -->
-<header class="hero-rich">
-    <div class="hero-rich-bg">
-        <img src="/images/hero-bg.jpg" alt="Walid Mohamed Abu Al-Ela Law Firm">
-    </div>
-    <div class="hero-rich-overlay"></div>
+    <header class="hero-rich">
+        <div class="hero-rich-bg">
+            <img src="/images/hero-bg.jpg" alt="Walid Mohamed Abu Al-Ela Law Firm">
+        </div>
+        <div class="hero-rich-overlay"></div>
 
-    <div class="hero-decorations">
-        <div class="deco-shape deco-circle-1"></div>
-        <div class="deco-shape deco-circle-2"></div>
-        <div class="deco-shape deco-square-1"></div>
-        <div class="deco-dots"></div>
-        <div class="deco-grid"></div>
-    </div>
+        <div class="hero-decorations">
+            <div class="deco-shape deco-circle-1"></div>
+            <div class="deco-shape deco-circle-2"></div>
+            <div class="deco-shape deco-square-1"></div>
+            <div class="deco-dots"></div>
+            <div class="deco-grid"></div>
+        </div>
 
-    <div class="container hero-rich-content">
-        <div class="row align-items-center g-4">
-            <div class="col-lg-7">
-                <div class="hero-badge-rich">
-                    <span class="badge-dot"></span>
-                    <i class="fas fa-award" aria-hidden="true"></i>
-                    <span>Accredited IP Arbitrator · 10+ Years of Experience</span>
-                </div>
-                <h1 class="hero-rich-title">
-                    Protecting <span class="text-serif">Business.</span><br>
-                    Defending <span class="text-gradient">Innovation.</span>
-                </h1>
-                <p class="hero-rich-subtitle">
-                    A full-service legal practice in <strong>Intellectual Property</strong>,
-                    <strong>Arbitration</strong>, <strong>Corporate Services</strong>, and
-                    <strong>Litigation</strong> — with over a decade of proven results.
-                </p>
-                <div class="hero-rich-buttons">
-                    <a href="/contact.html" class="btn-hero-primary">
-                        <span>Contact Us</span>
-                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    </a>
-                    <a href="/consultation.html" class="btn-hero-ghost">
-                        <i class="fas fa-gavel" aria-hidden="true"></i>
-                        <span>Book Consultation</span>
-                    </a>
-                </div>
-                <div class="hero-trust-row">
-                    <div class="trust-badge">
-                        <i class="fas fa-shield-halved" aria-hidden="true"></i>
-                        <span>Confidential</span>
-                    </div>
-                    <div class="trust-badge">
+        <div class="container hero-rich-content">
+            <div class="row align-items-start g-4">
+
+                <!-- ═══════════════════════════════════════════ -->
+                <!-- LEFT COLUMN: Content + Promises -->
+                <!-- ═══════════════════════════════════════════ -->
+                <div class="col-lg-7">
+
+                    <div class="hero-badge-rich">
+                        <span class="badge-dot"></span>
                         <i class="fas fa-award" aria-hidden="true"></i>
-                        <span>Accredited</span>
+                        <span>Accredited IP Arbitrator · 10+ Years of Experience</span>
                     </div>
-                    <div class="trust-badge">
-                        <i class="fas fa-globe" aria-hidden="true"></i>
-                        <span>Cross-Border</span>
-                    </div>
-                </div>
 
-                <!-- Mini Stats -->
-                <div class="hero-stats-mini">
-                    <div class="hsm-item">
-                        <span class="hsm-num">500+</span>
-                        <span class="hsm-txt">Cases</span>
-                    </div>
-                    <div class="hsm-item">
-                        <span class="hsm-num">350+</span>
-                        <span class="hsm-txt">Trademarks</span>
-                    </div>
-                    <div class="hsm-item">
-                        <span class="hsm-num">50+</span>
-                        <span class="hsm-txt">Companies</span>
-                    </div>
-                    <div class="hsm-item">
-                        <span class="hsm-num">10+</span>
-                        <span class="hsm-txt">Years</span>
-                    </div>
-                </div>
-            </div>
+                    <h1 class="hero-rich-title">
+                        We Protect <span class="text-serif">Your Ideas.</span><br>
+                        We Build <span class="text-gradient">Your Future.</span>
+                    </h1>
 
-            <div class="col-lg-5 d-none d-lg-block">
-                <div class="hero-accreditations">
-                    <div class="ha-item">
-                        <div class="ha-icon"><i class="fas fa-award" aria-hidden="true"></i></div>
-                        <div class="ha-text">
-                            <strong>Accredited IP Arbitrator</strong>
-                            <small>National Institute of IP · 2025</small>
+                    <p class="hero-rich-subtitle">
+                        A full-service law firm specializing in <strong>Intellectual Property</strong>,
+                        <strong>Arbitration</strong>, <strong>Corporate Services</strong>, and
+                        <strong>Litigation</strong> — backed by more than a decade of documented results.
+                    </p>
+
+                    <div class="hero-slogans-stack">
+                        <div class="hero-slogan-extra">
+                            <i class="fas fa-handshake" aria-hidden="true"></i>
+                            <span>Your legal partner at every step — from idea to protection.</span>
+                        </div>
+                        <div class="hero-slogan-extra slogan-gold">
+                            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                            <span>We protect your creativity, defend your rights, and help build your business.</span>
+                        </div>
+                        <div class="hero-slogan-extra slogan-soft">
+                            <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                            <span>Documented experience, tangible results, and strict professional standards.</span>
                         </div>
                     </div>
-                    <div class="ha-item">
-                        <div class="ha-icon"><i class="fas fa-gavel" aria-hidden="true"></i></div>
-                        <div class="ha-text">
-                            <strong>Registered Arbitrator</strong>
-                            <small>Egyptian Chamber · Since 2013</small>
+
+                    <div class="hero-rich-buttons mt-4">
+                        <a href="/contact.html" class="btn-hero-primary">
+                            <span>Contact Us</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a href="/consultation.html" class="btn-hero-ghost">
+                            <i class="fas fa-gavel" aria-hidden="true"></i>
+                            <span>Book a Consultation</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-trust-row">
+                        <div class="trust-badge">
+                            <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                            <span>Strict Confidentiality</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-award" aria-hidden="true"></i>
+                            <span>Accredited</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-user-tie" aria-hidden="true"></i>
+                            <span>Specialist Expertise</span>
                         </div>
                     </div>
-                    <div class="ha-item">
-                        <div class="ha-icon"><i class="fas fa-certificate" aria-hidden="true"></i></div>
-                        <div class="ha-text">
-                            <strong>Registered Patent Agent</strong>
-                            <small>Official Register · 2023</small>
+
+                    <!-- ═══════════════════════════════════════ -->
+                    <!-- OUR COMMITMENTS — inside left column -->
+                    <!-- ═══════════════════════════════════════ -->
+                    <div class="hero-promises">
+                        <div class="hpr-head">
+                            <span class="hpr-head-line"></span>
+                            <i class="fas fa-handshake-angle" aria-hidden="true"></i>
+                            <span class="hpr-head-text">Our Commitments to You</span>
+                            <i class="fas fa-gem hpr-head-icon" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="hpr-grid">
+                            <div class="hpr-card">
+                                <div class="hpr-icon"><i class="fas fa-compass" aria-hidden="true"></i></div>
+                                <div class="hpr-body">
+                                    <strong>Clarity Without Pressure</strong>
+                                    <small>We help you understand your options — never dictate the decision</small>
+                                </div>
+                            </div>
+
+                            <div class="hpr-card">
+                                <div class="hpr-icon"><i class="fas fa-chess-knight" aria-hidden="true"></i></div>
+                                <div class="hpr-body">
+                                    <strong>Tailored Strategy</strong>
+                                    <small>A legal plan built around each client's business</small>
+                                </div>
+                            </div>
+
+                            <div class="hpr-card">
+                                <div class="hpr-icon"><i class="fas fa-comment-dots" aria-hidden="true"></i></div>
+                                <div class="hpr-body">
+                                    <strong>Plain Language</strong>
+                                    <small>Legal interpretation free of unnecessary complexity</small>
+                                </div>
+                            </div>
+
+                            <div class="hpr-card">
+                                <div class="hpr-icon"><i class="fas fa-bell" aria-hidden="true"></i></div>
+                                <div class="hpr-body">
+                                    <strong>Continuous Updates</strong>
+                                    <small>Regular status updates on every development in your file</small>
+                                </div>
+                            </div>
+
+                            <div class="hpr-card">
+                                <div class="hpr-icon"><i class="fas fa-infinity" aria-hidden="true"></i></div>
+                                <div class="hpr-body">
+                                    <strong>Partnership After Closure</strong>
+                                    <small>Ongoing follow-up long after your matter is resolved</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="ha-item">
-                        <div class="ha-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
-                        <div class="ha-text">
-                            <strong>5 WIPO Certifications</strong>
-                            <small>IP · Patents · PCT</small>
-                        </div>
-                    </div>
+
                 </div>
+                <!-- ═══ End left column ═══ -->
+
+                <!-- ═══════════════════════════════════════════ -->
+                <!-- RIGHT COLUMN: "Why Choose Us" cards -->
+                <!-- ═══════════════════════════════════════════ -->
+                <div class="col-lg-5 d-none d-lg-block">
+
+                    <div class="hero-why-title">
+                        <span class="hwt-line"></span>
+                        <span class="hwt-text">Why Choose Us</span>
+                        <i class="fas fa-gem hwt-icon" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="hero-accreditations">
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>Corporate Solutions</strong>
+                                <small>From formation to expansion</small>
+                            </div>
+                        </div>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-scale-balanced" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>Specialist Advisory</strong>
+                                <small>IP &amp; Arbitration</small>
+                            </div>
+                        </div>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>Asset Protection</strong>
+                                <small>Trademarks, patents, rights</small>
+                            </div>
+                        </div>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-file-contract" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>Solid Contracts</strong>
+                                <small>Precision-standard drafting</small>
+                            </div>
+                        </div>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-bullseye" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>Documented Results</strong>
+                                <small>A proven track record</small>
+                            </div>
+                        </div>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-gem" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>High Quality</strong>
+                                <small>Strict professional standards</small>
+                            </div>
+                        </div>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-book-open" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>Specialist Knowledge</strong>
+                                <small>Deep field expertise</small>
+                            </div>
+                        </div>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>Fast Response</strong>
+                                <small>Direct support during business hours</small>
+                            </div>
+                        </div>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>Long-Term Partnership</strong>
+                                <small>Your success is ours</small>
+                            </div>
+                        </div>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-sitemap" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>IP Portfolio Management</strong>
+                                <small>Planning &amp; asset growth</small>
+                            </div>
+                        </div>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>Strategic Advisory</strong>
+                                <small>Advanced legal planning</small>
+                            </div>
+                        </div>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-user-shield" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>Data &amp; Privacy Protection</strong>
+                                <small>Confidentiality &amp; security</small>
+                            </div>
+                        </div>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-clipboard-check" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>Legal Compliance</strong>
+                                <small>Comprehensive regulatory compliance</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ═══ End right column ═══ -->
+
             </div>
         </div>
-    </div>
 
-    <div class="hero-scroll-indicator">
-        <a href="#stats">
-            <span>Scroll</span>
-            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-        </a>
-    </div>
-</header>
+        <div class="hero-scroll-indicator">
+            <a href="#stats">
+                <span>Scroll Down</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </a>
+        </div>
+    </header>
 
-    <!-- ============================================================
-         STATS MARQUEE
-         ============================================================ -->
+    <!-- STATS MARQUEE -->
     <section class="stats-marquee" id="stats">
         <div class="marquee-track">
             <div class="marquee-content">
                 <div class="marquee-item"><span class="mq-num">500+</span><span class="mq-txt">Cases Litigated</span></div>
                 <div class="marquee-item"><span class="mq-num">350+</span><span class="mq-txt">Trademarks Registered</span></div>
-                <div class="marquee-item"><span class="mq-num">50+</span><span class="mq-txt">Companies Founded</span></div>
+                <div class="marquee-item"><span class="mq-num">50+</span><span class="mq-txt">Companies Formed</span></div>
                 <div class="marquee-item"><span class="mq-num">20+</span><span class="mq-txt">Corporate Clients</span></div>
-                <div class="marquee-item"><span class="mq-num">10+</span><span class="mq-txt">Years Experience</span></div>
-                <div class="marquee-item"><span class="mq-num">5</span><span class="mq-txt">WIPO Certifications</span></div>
+                <div class="marquee-item"><span class="mq-num">10+</span><span class="mq-txt">Years of Experience</span></div>
+                <div class="marquee-item"><span class="mq-num">5</span><span class="mq-txt">WIPO Certificates</span></div>
                 <div class="marquee-item"><span class="mq-num">500+</span><span class="mq-txt">Cases Litigated</span></div>
                 <div class="marquee-item"><span class="mq-num">350+</span><span class="mq-txt">Trademarks Registered</span></div>
-                <div class="marquee-item"><span class="mq-num">50+</span><span class="mq-txt">Companies Founded</span></div>
+                <div class="marquee-item"><span class="mq-num">50+</span><span class="mq-txt">Companies Formed</span></div>
                 <div class="marquee-item"><span class="mq-num">20+</span><span class="mq-txt">Corporate Clients</span></div>
-                <div class="marquee-item"><span class="mq-num">10+</span><span class="mq-txt">Years Experience</span></div>
-                <div class="marquee-item"><span class="mq-num">5</span><span class="mq-txt">WIPO Certifications</span></div>
+                <div class="marquee-item"><span class="mq-num">10+</span><span class="mq-txt">Years of Experience</span></div>
+                <div class="marquee-item"><span class="mq-num">5</span><span class="mq-txt">WIPO Certificates</span></div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-         PRACTICE AREAS
-         ============================================================ -->
+    <!-- PRACTICE AREAS -->
     <section class="bento-section">
         <div class="container">
             <div class="section-head-rich">
                 <div class="sh-line"></div>
                 <span class="sh-label">Practice Areas</span>
                 <h2 class="sh-title">Four Areas of Deep Expertise</h2>
-                <p class="sh-desc">A decade of comprehensive legal practice across multiple disciplines.</p>
+                <p class="sh-desc">A full decade of comprehensive legal practice across multiple specialties.</p>
             </div>
 
             <div class="bento-grid">
@@ -473,13 +942,13 @@
                     <div class="bc-num">01</div>
                     <div class="bc-icon"><i class="fas fa-trademark" aria-hidden="true"></i></div>
                     <h3>Intellectual Property</h3>
-                    <p>Trademarks, patents, industrial designs, copyright, and trade secrets — from filing to enforcement.</p>
+                    <p>Trademarks, patents, industrial designs, copyright, and trade secrets — from registration through enforcement.</p>
                     <div class="bc-tags">
                         <span>Trademarks</span>
                         <span>Patents</span>
                         <span>Copyright</span>
                     </div>
-                    <a href="/services.html" class="bc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="/services.html" class="bc-link">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
 
                 <div class="bento-card">
@@ -487,8 +956,8 @@
                     <div class="bc-num">02</div>
                     <div class="bc-icon"><i class="fas fa-gavel" aria-hidden="true"></i></div>
                     <h3>Arbitration</h3>
-                    <p>Accredited arbitrator since 2013, specialized in commercial and investment disputes.</p>
-                    <a href="/arbitration.html" class="bc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    <p>Accredited arbitrator since 2013, specializing in commercial and investment disputes.</p>
+                    <a href="/arbitration.html" class="bc-link">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
 
                 <div class="bento-card">
@@ -496,8 +965,8 @@
                     <div class="bc-num">03</div>
                     <div class="bc-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
                     <h3>Corporate Services</h3>
-                    <p>Formation, M&A, governance, and compliance for businesses of all sizes.</p>
-                    <a href="/corporate-formation.html" class="bc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    <p>Formation, M&amp;A, governance, and legal compliance for companies of all sizes.</p>
+                    <a href="/corporate-formation.html" class="bc-link">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
 
                 <div class="bento-card">
@@ -505,25 +974,21 @@
                     <div class="bc-num">04</div>
                     <div class="bc-icon"><i class="fas fa-scale-balanced" aria-hidden="true"></i></div>
                     <h3>Litigation</h3>
-                    <p>500+ cases before all court levels, including Economic Courts and the State Council.</p>
-                    <a href="/litigation.html" class="bc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    <p>500+ cases before courts at all levels, including Economic Courts and the State Council.</p>
+                    <a href="/litigation.html" class="bc-link">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-         SVG DIVIDER
-         ============================================================ -->
+    <!-- SVG DIVIDER -->
     <div class="svg-divider">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
             <path d="M0,0 C360,100 1080,0 1440,80 L1440,100 L0,100 Z" fill="#F8F9FA"></path>
         </svg>
     </div>
 
-    <!-- ============================================================
-         ABOUT + LOGO SHOWCASE
-         ============================================================ -->
+    <!-- ABOUT + LOGO SHOWCASE -->
     <section class="about-asymmetric">
         <div class="container">
             <div class="row g-5 align-items-center">
@@ -534,7 +999,7 @@
                             <div class="logo-showcase__inner-border"></div>
                             <div class="logo-showcase__glow"></div>
                             <div class="logo-showcase__deco"></div>
-                            <img src="/images/logo arb ip.png"
+                            <img src="/images/logo%20arb%20ip.png"
                                  alt="Walid Mohamed Abu Al-Ela Law Firm Logo"
                                  class="logo-showcase__logo"
                                  loading="lazy">
@@ -552,15 +1017,15 @@
                         <span class="sh-label">About Us</span>
                         <h2 class="sh-title text-start">A Decade of Legal Practice</h2>
                         <p class="about-lead">
-                            <strong>Walid Mohamed Abu Al-Ela</strong> began his independent legal
-                            practice in <strong>2016</strong>, after being admitted to the Egyptian
-                            Bar Association — combining deep legal expertise with a personal approach,
-                            handling every case directly.
+                            <strong>Walid Mohamed Abu Al-Ela</strong> began his independent legal practice
+                            in 2016 after being admitted to the Egyptian Bar Association, combining deep
+                            legal expertise with a personal approach — the founder personally handles
+                            every case.
                         </p>
                         <p class="about-text">
-                            We serve clients ranging from innovative startups to established
-                            corporations across Egypt and beyond, with a proven track record of
-                            delivering results in complex legal matters.
+                            We serve clients ranging from innovative startups to established corporations
+                            in Egypt and abroad, with a track record of delivering tangible results in
+                            complex legal matters.
                         </p>
 
                         <div class="credentials-row">
@@ -574,7 +1039,7 @@
                             <div class="cred-card">
                                 <div class="cc-icon"><i class="fas fa-gavel" aria-hidden="true"></i></div>
                                 <div class="cc-content">
-                                    <h5>Registered Arbitrator</h5>
+                                    <h5>Accredited Arbitrator</h5>
                                     <span>Egyptian Chamber · Since 2013</span>
                                 </div>
                             </div>
@@ -595,8 +1060,8 @@
                             <div class="cred-card">
                                 <div class="cc-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
                                 <div class="cc-content">
-                                    <h5>5 WIPO Courses</h5>
-                                    <span>IP, Patents & PCT</span>
+                                    <h5>5 WIPO Certificates</h5>
+                                    <span>IP &amp; Patents</span>
                                 </div>
                             </div>
                             <div class="cred-card">
@@ -619,15 +1084,13 @@
         </div>
     </section>
 
-    <!-- ============================================================
-         SERVICES
-         ============================================================ -->
+    <!-- SERVICES -->
     <section class="services-modern">
         <div class="container">
             <div class="section-head-rich">
                 <div class="sh-line"></div>
-                <span class="sh-label">Services</span>
-                <h2 class="sh-title">Complete Legal Solutions</h2>
+                <span class="sh-label">Our Services</span>
+                <h2 class="sh-title">Integrated Legal Solutions</h2>
                 <p class="sh-desc">Comprehensive services across IP, arbitration, corporate, and litigation.</p>
             </div>
 
@@ -636,22 +1099,22 @@
                     <div class="svc-modern-icon"><i class="fas fa-gavel" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
                         <h6>Arbitration</h6>
-                        <small>Commercial & investment</small>
+                        <small>Commercial &amp; investment</small>
                     </div>
                     <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
                 <a href="/trademark.html" class="svc-modern-item">
                     <div class="svc-modern-icon"><i class="fas fa-trademark" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
-                        <h6>Trademark</h6>
-                        <small>Local & international</small>
+                        <h6>Trademarks</h6>
+                        <small>Local &amp; international</small>
                     </div>
                     <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
                 <a href="/patent.html" class="svc-modern-item">
                     <div class="svc-modern-icon"><i class="fas fa-microchip" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
-                        <h6>Patent</h6>
+                        <h6>Patents</h6>
                         <small>Full lifecycle</small>
                     </div>
                     <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
@@ -660,7 +1123,7 @@
                     <div class="svc-modern-icon"><i class="fas fa-copyright" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
                         <h6>Copyright</h6>
-                        <small>Authors' rights</small>
+                        <small>Creative protection</small>
                     </div>
                     <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
@@ -668,7 +1131,7 @@
                     <div class="svc-modern-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
                         <h6>Corporate</h6>
-                        <small>Formation & M&A</small>
+                        <small>Formation &amp; M&amp;A</small>
                     </div>
                     <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
@@ -676,7 +1139,7 @@
                     <div class="svc-modern-icon"><i class="fas fa-file-signature" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
                         <h6>Contracts</h6>
-                        <small>Draft & negotiate</small>
+                        <small>Drafting &amp; negotiation</small>
                     </div>
                     <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
@@ -684,15 +1147,15 @@
                     <div class="svc-modern-icon"><i class="fas fa-scale-balanced" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
                         <h6>IP Litigation</h6>
-                        <small>Enforce & defend</small>
+                        <small>Enforcement &amp; defense</small>
                     </div>
                     <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
                 <a href="/criminal-litigation.html" class="svc-modern-item">
                     <div class="svc-modern-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
                     <div class="svc-modern-content">
-                        <h6>Criminal</h6>
-                        <small>White-collar</small>
+                        <h6>Criminal Litigation</h6>
+                        <small>White-collar crime</small>
                     </div>
                     <div class="svc-modern-arrow"><i class="fas fa-arrow-right" aria-hidden="true"></i></div>
                 </a>
@@ -700,24 +1163,22 @@
 
             <div class="text-center mt-5">
                 <a href="/services.html" class="btn-rich-outline">
-                    <span>View All Services</span>
+                    <span>All Services</span>
                     <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-         PROCESS
-         ============================================================ -->
+    <!-- PROCESS -->
     <section class="process-rich">
         <div class="process-rich-pattern"></div>
         <div class="container">
             <div class="section-head-rich light">
                 <div class="sh-line"></div>
-                <span class="sh-label">Process</span>
+                <span class="sh-label">Our Methodology</span>
                 <h2 class="sh-title">How We Work</h2>
-                <p class="sh-desc">A structured approach to every case.</p>
+                <p class="sh-desc">A structured approach for every case.</p>
             </div>
 
             <div class="process-timeline">
@@ -729,7 +1190,7 @@
                         <i class="fas fa-comments" aria-hidden="true"></i>
                     </div>
                     <h6>Consultation</h6>
-                    <p>Discuss case & goals</p>
+                    <p>Discussing the case and objectives</p>
                 </div>
 
                 <div class="pt-step">
@@ -738,7 +1199,7 @@
                         <i class="fas fa-search" aria-hidden="true"></i>
                     </div>
                     <h6>Analysis</h6>
-                    <p>Review & strategy</p>
+                    <p>Review and strategy design</p>
                 </div>
 
                 <div class="pt-step">
@@ -747,7 +1208,7 @@
                         <i class="fas fa-chess" aria-hidden="true"></i>
                     </div>
                     <h6>Execution</h6>
-                    <p>File, negotiate, litigate</p>
+                    <p>Filing, negotiation, litigation</p>
                 </div>
 
                 <div class="pt-step">
@@ -755,23 +1216,21 @@
                         <div class="pt-num">04</div>
                         <i class="fas fa-flag-checkered" aria-hidden="true"></i>
                     </div>
-                    <h6>Resolution</h6>
-                    <p>Closed with follow-up</p>
+                    <h6>Closure</h6>
+                    <p>Finalization and follow-up</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-         TEAM
-         ============================================================ -->
+    <!-- TEAM -->
     <section class="team-featured">
         <div class="container">
             <div class="section-head-rich">
                 <div class="sh-line"></div>
                 <span class="sh-label">Our Team</span>
                 <h2 class="sh-title">Meet Our Lead Attorney</h2>
-                <p class="sh-desc">Every case handled personally with dedication and expertise.</p>
+                <p class="sh-desc">Every case personally handled with dedication and expertise.</p>
             </div>
 
             <div class="team-featured-card">
@@ -787,22 +1246,23 @@
                 </div>
 
                 <div class="tfc-content">
-                    <span class="tfc-role">Founder & Lead Attorney</span>
+                    <span class="tfc-role">Founder &amp; Lead Attorney</span>
                     <h3 class="tfc-name">Walid Mohamed Abu Al-Ela</h3>
                     <div class="tfc-tags">
                         <span><i class="fas fa-check" aria-hidden="true"></i> IP Arbitrator</span>
-                        <span><i class="fas fa-check" aria-hidden="true"></i> Arbitrator</span>
+                        <span><i class="fas fa-check" aria-hidden="true"></i> Accredited Arbitrator</span>
                         <span><i class="fas fa-check" aria-hidden="true"></i> Patent Agent</span>
                         <span><i class="fas fa-check" aria-hidden="true"></i> Master's Researcher</span>
                     </div>
                     <p class="tfc-bio">
-                        Accredited IP Arbitrator (2025), Registered Arbitrator since 2013,
-                        and Registered Patent Agent (2023). Master's researcher in Intellectual
-                        Property. Every case handled personally with dedication and expertise.
+                        Accredited IP Arbitrator (2025), accredited arbitrator since 2013,
+                        and registered patent agent (2023). A master's researcher in Intellectual
+                        Property, he personally handles every case with dedication and specialist
+                        legal expertise.
                     </p>
                     <div class="tfc-actions">
                         <a href="/lawyers.html" class="btn-rich-primary">
-                            <span>View Full Profile</span>
+                            <span>Full Profile</span>
                             <i class="fas fa-arrow-right" aria-hidden="true"></i>
                         </a>
                         <div class="tfc-social">
@@ -817,31 +1277,29 @@
         </div>
     </section>
 
-    <!-- ============================================================
-         TESTIMONIALS
-         ============================================================ -->
+    <!-- TESTIMONIALS -->
     <section class="testimonials-modern">
         <div class="container">
             <div class="section-head-rich">
                 <div class="sh-line"></div>
                 <span class="sh-label">Client Feedback</span>
                 <h2 class="sh-title">What Our Clients Say</h2>
-                <p class="sh-desc">Feedback from clients across our different practice areas.</p>
+                <p class="sh-desc">Feedback from clients across our practice areas.</p>
             </div>
 
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="testimonial-modern-card">
-                        <div class="tmc-quote"><i class="fas fa-quote-left" aria-hidden="true"></i></div>
+                        <div class="tmc-quote"><i class="fas fa-quote-right" aria-hidden="true"></i></div>
                         <div class="tmc-stars">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p>"Excellent IP service — trademark portfolio handled professionally from filing through registration."</p>
+                        <p>"Excellent IP service — a trademark portfolio managed professionally from filing to completion."</p>
                         <div class="tmc-author">
                             <div class="tmc-avatar"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
                             <div>
                                 <strong>Corporate Client</strong>
-                                <small>Trademark Portfolio</small>
+                                <small>Trademark portfolio</small>
                             </div>
                         </div>
                     </div>
@@ -849,7 +1307,7 @@
 
                 <div class="col-md-4">
                     <div class="testimonial-modern-card">
-                        <div class="tmc-quote"><i class="fas fa-quote-left" aria-hidden="true"></i></div>
+                        <div class="tmc-quote"><i class="fas fa-quote-right" aria-hidden="true"></i></div>
                         <div class="tmc-stars">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
@@ -858,7 +1316,7 @@
                             <div class="tmc-avatar"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
                             <div>
                                 <strong>Commercial Client</strong>
-                                <small>Arbitration Advisory</small>
+                                <small>Arbitration advisory</small>
                             </div>
                         </div>
                     </div>
@@ -866,7 +1324,7 @@
 
                 <div class="col-md-4">
                     <div class="testimonial-modern-card">
-                        <div class="tmc-quote"><i class="fas fa-quote-left" aria-hidden="true"></i></div>
+                        <div class="tmc-quote"><i class="fas fa-quote-right" aria-hidden="true"></i></div>
                         <div class="tmc-stars">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
@@ -875,7 +1333,7 @@
                             <div class="tmc-avatar"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
                             <div>
                                 <strong>Business Client</strong>
-                                <small>Corporate Formation</small>
+                                <small>Company formation</small>
                             </div>
                         </div>
                     </div>
@@ -883,14 +1341,12 @@
             </div>
 
             <p class="text-center text-muted small mt-4">
-                <em>Client identities are confidential per attorney-client privilege.</em>
+                <em>Client identities are kept confidential in line with attorney–client privilege.</em>
             </p>
         </div>
     </section>
 
-    <!-- ============================================================
-         FAQ
-         ============================================================ -->
+    <!-- FAQ -->
     <section class="faq-modern">
         <div class="container">
             <div class="section-head-rich">
@@ -905,12 +1361,12 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
-                                    What areas do you specialize in?
+                                    What are your areas of specialization?
                                 </button>
                             </h2>
                             <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faq1">
                                 <div class="accordion-body">
-                                    Four main areas: Intellectual Property, Arbitration, Corporate Services, and Commercial Litigation.
+                                    Four core areas: Intellectual Property, Arbitration, Corporate Services, and Commercial Litigation.
                                 </div>
                             </div>
                         </div>
@@ -948,12 +1404,12 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
-                                    How can I schedule a consultation?
+                                    How can I book a consultation?
                                 </button>
                             </h2>
                             <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faq2">
                                 <div class="accordion-body">
-                                    Via contact form, email, or phone. Free initial inquiries and paid in-depth consultations available.
+                                    Through the contact form, email, or phone. Free initial inquiries and in-depth paid consultations.
                                 </div>
                             </div>
                         </div>
@@ -966,7 +1422,7 @@
                             </h2>
                             <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faq2">
                                 <div class="accordion-body">
-                                    Absolutely. All communications are protected by attorney-client privilege.
+                                    Absolutely. All communications are protected by attorney–client privilege.
                                 </div>
                             </div>
                         </div>
@@ -989,9 +1445,7 @@
         </div>
     </section>
 
-    <!-- ============================================================
-         FINAL CTA
-         ============================================================ -->
+    <!-- FINAL CTA -->
     <section class="final-cta-rich">
         <div class="fcr-decoration-1"></div>
         <div class="fcr-decoration-2"></div>
@@ -1001,7 +1455,7 @@
             <div class="fcr-content">
                 <div class="fcr-badge"><i class="fas fa-handshake" aria-hidden="true"></i></div>
                 <h2>Ready to Protect Your Business?</h2>
-                <p>Schedule a confidential consultation with our expert attorney today.</p>
+                <p>Book a confidential consultation with our expert attorney today.</p>
                 <div class="fcr-buttons">
                     <a href="/contact.html" class="btn-rich-primary light">
                         <span>Contact Us</span>
@@ -1009,25 +1463,23 @@
                     </a>
                     <a href="/consultation.html" class="btn-rich-ghost">
                         <i class="fas fa-gavel" aria-hidden="true"></i>
-                        <span>Book Consultation</span>
+                        <span>Book a Consultation</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-         FOOTER
-         ============================================================ -->
+    <!-- FOOTER -->
     <footer class="footer-rich">
         <div class="footer-rich-pattern"></div>
         <div class="container">
             <div class="row g-4">
 
                 <div class="col-lg-4">
-                    <img src="/images/logo arb ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm" class="footer-logo" onerror="this.style.display='none';">
-                    <h5 class="mt-3">WALID MOHAMED ABU AL-ELA</h5>
-                    <p class="footer-desc">Corporate, Arbitration, IP & Technology Legal Solutions. Serving clients with dedication since 2016.</p>
+                    <img src="/images/logo%20arb%20ip.png" alt="Walid Mohamed Abu Al-Ela Law Firm" class="footer-logo" onerror="this.style.display='none';">
+                    <h5 class="mt-3">Walid Mohamed Abu Al-Ela</h5>
+                    <p class="footer-desc">Legal solutions for corporate, arbitration, intellectual property, and technology. Serving clients with dedication since 2016.</p>
                     <div class="footer-social">
                         <a href="https://www.facebook.com/profile.php?id=100066712755475" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
                         <a href="https://www.linkedin.com/in/walid-abu-al-ela-a23062128/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
@@ -1049,13 +1501,13 @@
                 </div>
 
                 <div class="col-lg-3 col-6">
-                    <h6 class="footer-heading">Contact</h6>
+                    <h6 class="footer-heading">Contact Info</h6>
                     <ul class="footer-list footer-contact">
                         <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 10th of Ramadan, Cairo, Egypt</li>
                         <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+20111257219">+20 111257219</a></li>
                         <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+201018437396">+20 1018437396</a></li>
                         <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:walidlegal.ippro@gmail.com">walidlegal.ippro@gmail.com</a></li>
-                        <li><i class="fas fa-clock" aria-hidden="true"></i> Sat - Thu: 9am - 8pm</li>
+                        <li><i class="fas fa-clock" aria-hidden="true"></i> Sat – Thu: 9 AM – 8 PM</li>
                     </ul>
                 </div>
 
@@ -1063,7 +1515,7 @@
                     <h6 class="footer-heading">Legal</h6>
                     <ul class="footer-list">
                         <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="/terms-of-service.html">Terms of Use</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
                         <li><a href="/cookie-policy.html">Cookie Policy</a></li>
                     </ul>
                 </div>
