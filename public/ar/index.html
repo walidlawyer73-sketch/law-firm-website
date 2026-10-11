@@ -62,31 +62,28 @@
 
     <style>
     /* ═══════════════════════════════════════════════════════════════ */
-    /* HERO VALUE CARDS — كروت القيم (تخدم الشغل، مش شخصية) */
+    /* HERO VALUE CARDS — كروت القيم */
     /* ═══════════════════════════════════════════════════════════════ */
 
-    /* إخفاء أي أرقام مضافة */
-    .hero-stats-mini {
-        display: none !important;
-    }
+    .hero-stats-mini { display: none !important; }
 
     /* حاوية الكروت */
     .hero-accreditations {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 7px;
     }
 
     /* البطاقة الواحدة */
     .ha-item {
         display: flex;
         align-items: center;
-        gap: 12px;
-        padding: 10px 14px;
-        min-height: 60px;
+        gap: 11px;
+        padding: 8px 13px;
+        min-height: 52px;
         background: rgba(255, 255, 255, 0.06);
         border: 1px solid rgba(201, 169, 97, 0.35);
-        border-radius: 12px;
+        border-radius: 11px;
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         transition: all 0.35s ease;
@@ -114,42 +111,38 @@
         box-shadow: 0 10px 25px -8px rgba(201, 169, 97, 0.35);
     }
 
-    .ha-item:hover::before {
-        transform: scaleY(1);
-    }
+    .ha-item:hover::before { transform: scaleY(1); }
 
     /* الأيقونة */
     .ha-icon {
-        width: 38px;
-        height: 38px;
+        width: 34px;
+        height: 34px;
         background: linear-gradient(135deg, #C9A961, #A88947);
         color: #000;
-        border-radius: 10px;
+        border-radius: 9px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1rem;
+        font-size: 0.9rem;
         flex-shrink: 0;
         box-shadow: 0 6px 14px rgba(201, 169, 97, 0.35);
         transition: transform 0.35s ease;
     }
 
-    .ha-item:hover .ha-icon {
-        transform: rotate(8deg) scale(1.08);
-    }
+    .ha-item:hover .ha-icon { transform: rotate(8deg) scale(1.08); }
 
     /* النص */
     .ha-text {
         display: flex;
         flex-direction: column;
-        gap: 2px;
+        gap: 1px;
         min-width: 0;
         flex: 1;
     }
 
     .ha-text strong {
         font-family: 'Cairo', sans-serif;
-        font-size: 0.86rem;
+        font-size: 0.82rem;
         font-weight: 700;
         color: #fff;
         line-height: 1.25;
@@ -157,32 +150,30 @@
 
     .ha-text small {
         font-family: 'Cairo', sans-serif;
-        font-size: 0.72rem;
+        font-size: 0.68rem;
         color: rgba(255, 255, 255, 0.65);
         line-height: 1.3;
     }
 
     /* على الموبايل: الكروت تختفي */
     @media (max-width: 991px) {
-        .hero-accreditations {
-            display: none;
-        }
+        .hero-accreditations { display: none; }
     }
 
     /* ═══════════════════════════════════════════════════════════════ */
-    /* SLOGAN — سطر إضافي تحت الوصف */
+    /* SLOGAN EXTRA */
     /* ═══════════════════════════════════════════════════════════════ */
     .hero-slogan-extra {
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        margin-top: 14px;
+        margin-top: 12px;
         padding: 8px 18px;
         background: rgba(201, 169, 97, 0.08);
         border-right: 3px solid #C9A961;
         border-radius: 6px;
         font-family: 'Cairo', sans-serif;
-        font-size: 0.88rem;
+        font-size: 0.86rem;
         color: rgba(255, 255, 255, 0.92);
         font-weight: 600;
         letter-spacing: 0.3px;
@@ -191,12 +182,12 @@
 
     .hero-slogan-extra i {
         color: #C9A961;
-        font-size: 0.9rem;
+        font-size: 0.88rem;
     }
 
     @media (max-width: 576px) {
         .hero-slogan-extra {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             padding: 7px 14px;
         }
     }
@@ -419,134 +410,160 @@
     </nav>
 
     <!-- HERO -->
-<header class="hero-rich">
-    <div class="hero-rich-bg">
-        <img src="/images/hero-bg.jpg" alt="مكتب وليد محمد أبو العلا للمحاماة">
-    </div>
-    <div class="hero-rich-overlay"></div>
+    <header class="hero-rich">
+        <div class="hero-rich-bg">
+            <img src="/images/hero-bg.jpg" alt="مكتب وليد محمد أبو العلا للمحاماة">
+        </div>
+        <div class="hero-rich-overlay"></div>
 
-    <div class="hero-decorations">
-        <div class="deco-shape deco-circle-1"></div>
-        <div class="deco-shape deco-circle-2"></div>
-        <div class="deco-shape deco-square-1"></div>
-        <div class="deco-dots"></div>
-        <div class="deco-grid"></div>
-    </div>
+        <div class="hero-decorations">
+            <div class="deco-shape deco-circle-1"></div>
+            <div class="deco-shape deco-circle-2"></div>
+            <div class="deco-shape deco-square-1"></div>
+            <div class="deco-dots"></div>
+            <div class="deco-grid"></div>
+        </div>
 
-    <div class="container hero-rich-content">
-        <div class="row align-items-center g-4">
-            <div class="col-lg-7">
-                <div class="hero-badge-rich">
-                    <span class="badge-dot"></span>
-                    <i class="fas fa-award" aria-hidden="true"></i>
-                    <span>محكّم معتمد في الملكية الفكرية · خبرة تتجاوز 10 سنوات</span>
-                </div>
-                <h1 class="hero-rich-title">
-                    نحمي <span class="text-serif">أعمالك.</span><br>
-                    ندافع عن <span class="text-gradient">ابتكارك.</span>
-                </h1>
-                <p class="hero-rich-subtitle">
-                    مكتب محاماة متكامل في <strong>الملكية الفكرية</strong>،
-                    <strong>التحكيم</strong>، <strong>خدمات الشركات</strong>، و
-                    <strong>التقاضي</strong> — بخبرة تتجاوز عقداً من النتائج الموثقة.
-                </p>
-
-                <!-- سلوجان إضافي -->
-                <div class="hero-slogan-extra">
-                    <i class="fas fa-handshake" aria-hidden="true"></i>
-                    <span>شريكك القانوني في كل خطوة — من الفكرة إلى الحماية.</span>
-                </div>
-
-                <div class="hero-rich-buttons mt-4">
-                    <a href="/ar/contact.html" class="btn-hero-primary">
-                        <span>تواصل معنا</span>
-                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
-                    </a>
-                    <a href="/ar/consultation.html" class="btn-hero-ghost">
-                        <i class="fas fa-gavel" aria-hidden="true"></i>
-                        <span>احجز استشارة</span>
-                    </a>
-                </div>
-
-                <div class="hero-trust-row">
-                    <div class="trust-badge">
-                        <i class="fas fa-shield-halved" aria-hidden="true"></i>
-                        <span>سرية تامة</span>
-                    </div>
-                    <div class="trust-badge">
+        <div class="container hero-rich-content">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <div class="hero-badge-rich">
+                        <span class="badge-dot"></span>
                         <i class="fas fa-award" aria-hidden="true"></i>
-                        <span>معتمد</span>
+                        <span>محكّم معتمد في الملكية الفكرية · خبرة تتجاوز 10 سنوات</span>
                     </div>
-                    <div class="trust-badge">
-                        <i class="fas fa-globe" aria-hidden="true"></i>
-                        <span>خبرة دولية</span>
+
+                    <h1 class="hero-rich-title">
+                        نحمي <span class="text-serif">إبداعك.</span><br>
+                        نبني <span class="text-gradient">مستقبلك.</span>
+                    </h1>
+
+                    <p class="hero-rich-subtitle">
+                        مكتب محاماة متكامل في <strong>الملكية الفكرية</strong>،
+                        <strong>التحكيم</strong>، <strong>خدمات الشركات</strong>، و
+                        <strong>التقاضي</strong> — بخبرة تتجاوز عقداً من النتائج الموثقة.
+                    </p>
+
+                    <!-- سلوجان إضافي -->
+                    <div class="hero-slogan-extra">
+                        <i class="fas fa-handshake" aria-hidden="true"></i>
+                        <span>شريكك القانوني في كل خطوة — من الفكرة إلى الحماية.</span>
+                    </div>
+
+                    <div class="hero-rich-buttons mt-4">
+                        <a href="/ar/contact.html" class="btn-hero-primary">
+                            <span>تواصل معنا</span>
+                            <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                        </a>
+                        <a href="/ar/consultation.html" class="btn-hero-ghost">
+                            <i class="fas fa-gavel" aria-hidden="true"></i>
+                            <span>احجز استشارة</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-trust-row">
+                        <div class="trust-badge">
+                            <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                            <span>سرية تامة</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-award" aria-hidden="true"></i>
+                            <span>معتمد</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-globe" aria-hidden="true"></i>
+                            <span>خبرة دولية</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-lg-5 d-none d-lg-block">
-                <div class="hero-accreditations">
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="hero-accreditations">
 
-                    <div class="ha-item">
-                        <div class="ha-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
-                        <div class="ha-text">
-                            <strong>حلول للشركات</strong>
-                            <small>من التأسيس إلى التوسع</small>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>حلول للشركات</strong>
+                                <small>من التأسيس إلى التوسع</small>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="ha-item">
-                        <div class="ha-icon"><i class="fas fa-scale-balanced" aria-hidden="true"></i></div>
-                        <div class="ha-text">
-                            <strong>استشارات متخصصة</strong>
-                            <small>الملكية الفكرية والتحكيم</small>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-scale-balanced" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>استشارات متخصصة</strong>
+                                <small>الملكية الفكرية والتحكيم</small>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="ha-item">
-                        <div class="ha-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
-                        <div class="ha-text">
-                            <strong>حماية الأصول</strong>
-                            <small>علامات، براءات، حقوق</small>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>حماية الأصول</strong>
+                                <small>علامات، براءات، حقوق</small>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="ha-item">
-                        <div class="ha-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
-                        <div class="ha-text">
-                            <strong>تغطية دولية</strong>
-                            <small>شبكة شركاء موثوقة</small>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-file-contract" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>عقود محكمة</strong>
+                                <small>صياغة بمعايير دقيقة</small>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="ha-item">
-                        <div class="ha-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
-                        <div class="ha-text">
-                            <strong>استجابة سريعة</strong>
-                            <small>دعم مباشر خلال ساعات العمل</small>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-bullseye" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>نتائج موثقة</strong>
+                                <small>سجل حافل بالنتائج</small>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="ha-item">
-                        <div class="ha-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
-                        <div class="ha-text">
-                            <strong>شراكة طويلة الأمد</strong>
-                            <small>نجاحك هو نجاحنا</small>
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-gem" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>جودة عالية</strong>
+                                <small>معايير مهنية صارمة</small>
+                            </div>
                         </div>
-                    </div>
 
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-book-open" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>معرفة متخصصة</strong>
+                                <small>خبرة في المجال</small>
+                            </div>
+                        </div>
+
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>استجابة سريعة</strong>
+                                <small>دعم مباشر خلال ساعات العمل</small>
+                            </div>
+                        </div>
+
+                        <div class="ha-item">
+                            <div class="ha-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
+                            <div class="ha-text">
+                                <strong>شراكة طويلة الأمد</strong>
+                                <small>نجاحك هو نجاحنا</small>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="hero-scroll-indicator">
-        <a href="#stats">
-            <span>تابع القراءة</span>
-            <i class="fas fa-chevron-down" aria-hidden="true"></i>
-        </a>
-    </div>
-</header>
+        <div class="hero-scroll-indicator">
+            <a href="#stats">
+                <span>تابع القراءة</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </a>
+        </div>
+    </header>
 
     <!-- STATS MARQUEE -->
     <section class="stats-marquee" id="stats">
