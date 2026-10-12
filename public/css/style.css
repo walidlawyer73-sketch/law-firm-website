@@ -7945,3 +7945,328 @@ body {
         font-size: 0.86rem !important;
     }
 }
+/* ============================================================================
+   🚨 NAVBAR EMERGENCY FIX — إصلاح طارئ للنافبار
+   ─────────────────────────────────────────────────────────────────────────
+   يصلح: النافبار الشفاف + الموقع في نص الصفحة + زر اللغة المخفي
+   ============================================================================ */
+
+/* ═══ 1) NAVBAR — أسود صلب، ثابت فوق تحت الشريط التجريبي ═══ */
+html body .navbar,
+html body nav.navbar {
+    position: fixed !important;
+    top: var(--banner-height, 50px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    width: 100% !important;
+    background: #000000 !important;
+    background-color: #000000 !important;
+    background-image: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    z-index: 1000 !important;
+    display: block !important;
+}
+
+/* عند التمرير */
+html body .navbar.scrolled {
+    background: #000000 !important;
+    background-color: #000000 !important;
+    background-image: none !important;
+}
+
+/* ═══ 2) BODY — تأكد إن فيه مساحة للنافبار ═══ */
+html body {
+    padding-top: calc(var(--banner-height, 50px) + 80px) !important;
+}
+
+/* ═══ 3) CONTAINER — تأكد إن النافبار في السطر الصح ═══ */
+html body .navbar > .container,
+html body .navbar > .container-fluid {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+}
+
+/* ═══ 4) NAVBAR-NAV — الترتيب الأفقي ═══ */
+html body .navbar .navbar-collapse {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex-wrap: nowrap !important;
+    flex: 1 1 auto !important;
+}
+
+html body .navbar .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex-wrap: nowrap !important;
+    gap: 4px !important;
+    margin: 0 !important;
+    margin-inline-start: auto !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+html body .navbar .navbar-nav > li,
+html body .navbar .navbar-nav > .nav-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+}
+
+/* ═══ 5) LANGUAGE BUTTON — يظهر !! ═══ */
+html body .navbar .lang-nav-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 0 0 8px !important;
+    padding: 0 !important;
+    position: relative !important;
+}
+
+[dir="rtl"] html body .navbar .lang-nav-item {
+    margin: 0 8px 0 0 !important;
+}
+
+html body .navbar .lang-nav-item .language-switcher,
+html body .navbar .lang-nav-item .language-switcher.in-navbar {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    transform: none !important;
+}
+
+/* ═══ 6) زر اللغة — الذهبي الممتلئ ═══ */
+html body .navbar .lang-nav-item .lang-btn,
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 10px 20px !important;
+    min-height: 40px !important;
+    height: 40px !important;
+    border: 2px solid #C9A961 !important;
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.40) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+}
+
+html body .navbar .lang-nav-item .lang-btn:hover {
+    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+    color: #000000 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55) !important;
+}
+
+html body .navbar .lang-nav-item .lang-btn i {
+    color: inherit !important;
+    font-size: 0.9rem !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+html body .navbar .lang-nav-item .lang-btn span {
+    color: inherit !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* ═══ 7) زر بوابة العميل — الذهبي المفرّغ ═══ */
+html body .navbar .btn-outline-light,
+html body .navbar .btn-outline-light.btn-sm {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 10px 20px !important;
+    min-height: 40px !important;
+    height: 40px !important;
+    border: 2px solid #C9A961 !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+    color: #C9A961 !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.15) !important;
+    transition: all 0.3s ease !important;
+    margin: 0 !important;
+}
+
+html body .navbar .btn-outline-light:hover {
+    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+    color: #000000 !important;
+    border-color: #D4B872 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ═══ 8) LOGO — حجمه الطبيعي ═══ */
+html body .navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+html body .navbar-brand img {
+    height: 50px !important;
+    max-height: 50px !important;
+    width: auto !important;
+    max-width: 160px !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* ═══ 9) روابط النافبار — حجم طبيعي ═══ */
+html body .navbar .navbar-nav .nav-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 8px 14px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    margin: 0 2px !important;
+    line-height: 1.2 !important;
+    text-decoration: none !important;
+}
+
+html body .navbar .navbar-nav .nav-link:hover,
+html body .navbar .navbar-nav .nav-link.active {
+    color: #C9A961 !important;
+    background: rgba(201, 169, 97, 0.1) !important;
+}
+
+/* ═══ 10) إخفاء أي زر عائم قديم ═══ */
+html body > .language-switcher:not(.in-navbar) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* ═══ 11) MOBILE — النافبار يبقى سطر واحد مضغوط ═══ */
+@media (max-width: 991.98px) {
+    html body .navbar,
+    html body nav.navbar {
+        padding: 8px 0 !important;
+        min-height: 60px !important;
+    }
+
+    html body .navbar-brand img {
+        height: 36px !important;
+        max-height: 36px !important;
+        max-width: 110px !important;
+    }
+
+    html body .navbar-brand .firm-name {
+        font-size: 0.82rem !important;
+    }
+
+    html body .navbar-brand .firm-sub {
+        font-size: 0.58rem !important;
+    }
+
+    /* القائمة المنسدلة */
+    html body .navbar .navbar-collapse {
+        background: #000 !important;
+        padding: 12px 14px !important;
+        border-radius: 12px !important;
+        margin-top: 8px !important;
+        max-height: 75vh !important;
+        overflow-y: auto !important;
+        border: 1px solid rgba(201, 169, 97, 0.25) !important;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5) !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    html body .navbar .navbar-nav {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 2px !important;
+    }
+
+    html body .navbar .navbar-nav > li {
+        width: 100% !important;
+        display: block !important;
+    }
+
+    html body .navbar .navbar-nav .nav-link {
+        display: flex !important;
+        width: 100% !important;
+        justify-content: space-between !important;
+        padding: 10px 14px !important;
+        font-size: 0.9rem !important;
+        border-radius: 8px !important;
+    }
+
+    /* الأزرار بعرض كامل */
+    html body .navbar .lang-nav-item {
+        display: flex !important;
+        width: 100% !important;
+        margin: 6px 0 0 !important;
+    }
+
+    html body .navbar .lang-nav-item .language-switcher,
+    html body .navbar .lang-nav-item .language-switcher.in-navbar {
+        width: 100% !important;
+        display: block !important;
+    }
+
+    html body .navbar .lang-nav-item .lang-btn,
+    html body .navbar .btn-outline-light {
+        width: 100% !important;
+        min-height: 42px !important;
+        height: auto !important;
+        padding: 11px 16px !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ═══ 12) Body padding for mobile too ═══ */
+@media (max-width: 991.98px) {
+    html body {
+        padding-top: calc(var(--banner-height, 50px) + 60px) !important;
+    }
+}
