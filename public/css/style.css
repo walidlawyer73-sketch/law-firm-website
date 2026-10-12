@@ -8270,3 +8270,222 @@ html body > .language-switcher:not(.in-navbar) {
         padding-top: calc(var(--banner-height, 50px) + 60px) !important;
     }
 }
+/* ============================================================================
+   🚨 v14.2 — LANGUAGE BUTTON + NAVBAR ROOT FIX
+   إصلاح جذري: زر اللغة + ثبات النافبار
+   ─────────────────────────────────────────────────────────────────────────
+   ⚠️ هذا البلوك يجب أن يكون في آخر style.css تماماً — لا شيء بعده
+   ============================================================================ */
+
+/* ═══ 1) إزالة أي transform على أي أب للنافبار (السبب الجذري) ═══ */
+html body,
+html body > *,
+html body .main-wrapper,
+html body .page-wrapper,
+html body .wrapper,
+html body .site-wrapper,
+html body #app,
+html body #root {
+    transform: none !important;
+    filter: none !important;
+    perspective: none !important;
+    will-change: auto !important;
+    contain: none !important;
+}
+
+/* ═══ 2) NAVBAR — مثبت فوق مهما حصل ═══ */
+html body .navbar,
+html body nav.navbar {
+    position: fixed !important;
+    top: var(--banner-height, 50px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    background: #000000 !important;
+    background-color: #000000 !important;
+    background-image: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    filter: none !important;
+    z-index: 9999 !important;
+    display: block !important;
+    isolation: auto !important;
+    contain: none !important;
+    will-change: auto !important;
+}
+
+html body .navbar.scrolled,
+html body nav.navbar.scrolled {
+    background: #000000 !important;
+    background-color: #000000 !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* ═══ 3) BODY — مساحة كافية للنافبار + الشريط التجريبي ═══ */
+html body {
+    padding-top: 130px !important;
+    margin-top: 0 !important;
+    overflow-x: hidden !important;
+}
+
+/* ═══ 4) زر اللغة — يظهر مهما كان ═══ */
+html body .navbar .lang-nav-item,
+html body .navbar .lang-nav-item * {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+html body .navbar .lang-nav-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 0 0 8px !important;
+    padding: 0 !important;
+    position: relative !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+}
+
+[dir="rtl"] html body .navbar .lang-nav-item {
+    margin: 0 8px 0 0 !important;
+}
+
+html body .navbar .lang-nav-item .language-switcher,
+html body .navbar .lang-nav-item .language-switcher.in-navbar {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    transform: none !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+}
+
+html body .navbar .lang-nav-item .lang-btn,
+html body .navbar .lang-nav-item .language-switcher .lang-btn,
+html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 10px 20px !important;
+    min-height: 40px !important;
+    height: 40px !important;
+    border: 2px solid #C9A961 !important;
+    border-radius: 999px !important;
+    background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.40) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+    transform: none !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+}
+
+html body .navbar .lang-nav-item .lang-btn i,
+html body .navbar .lang-nav-item .lang-btn span {
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: inherit !important;
+}
+
+html body .navbar .lang-nav-item .lang-btn:hover {
+    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+    color: #000000 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ═══ 5) زر بوابة العميل — يظهر بنفس الحجم ═══ */
+html body .navbar .btn-outline-light,
+html body .navbar .btn-outline-light.btn-sm {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 10px 20px !important;
+    min-height: 40px !important;
+    height: 40px !important;
+    border: 2px solid #C9A961 !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+    color: #C9A961 !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: all 0.3s ease !important;
+    margin: 0 !important;
+    transform: none !important;
+    z-index: 10 !important;
+}
+
+html body .navbar .btn-outline-light:hover {
+    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+    color: #000000 !important;
+    border-color: #D4B872 !important;
+}
+
+/* ═══ 6) إخفاء أي زر عائم قديم نهائياً ═══ */
+html body > .language-switcher:not(.in-navbar),
+html body > .language-switcher {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* ═══ 7) على الموبايل — النافبار يبقى فوق وثابت ═══ */
+@media (max-width: 991.98px) {
+    html body .navbar,
+    html body nav.navbar {
+        position: fixed !important;
+        top: 50px !important;
+        background: #000000 !important;
+        z-index: 9999 !important;
+    }
+    html body {
+        padding-top: 120px !important;
+    }
+    html body .navbar-brand img {
+        height: 36px !important;
+        max-height: 36px !important;
+        max-width: 110px !important;
+    }
+}
+
+/* ═══ 8) على الموبايل الصغير — نفس الشيء ═══ */
+@media (max-width: 576px) {
+    html body .navbar,
+    html body nav.navbar {
+        top: 45px !important;
+    }
+    html body {
+        padding-top: 110px !important;
+    }
+}
