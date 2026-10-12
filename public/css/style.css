@@ -6487,1331 +6487,242 @@ hr.divider-soft {
     }
 }
 
-
-/* ============================================================================
-   ============================================================================
-   ██████████████████████████████████████████████████████████████████████████
-   END OF STYLESHEET — نهاية ورقة الأنماط
-   ██████████████████████████████████████████████████████████████████████████
-   ============================================================================
-   ============================================================================
    
-   ✅ FINAL CHECKLIST / قائمة التحقق النهائية:
-   ─────────────────────────────────────────────────────────────────────────
-   [✓] 01. CSS Variables & Design System
-   [✓] 02. Reset & Base Styles
-   [✓] 03. RTL Support
-   [✓] 04. Trial Banner
-   [✓] 05. Navbar + Language Switcher (single-row layout)
-   [✓] 06. Hero Section (Classic)
-   [✓] 07. Page Header
-   [✓] 08. Feature / Service / Team Cards
-   [✓] 09. Blog Cards & Testimonials
-   [✓] 10. CTA Section
-   [✓] 11. Footer (Classic)
-   [✓] 12. Buttons (Complete System)
-   [✓] 13. Social Links
-   [✓] 14. Forms
-   [✓] 15. Utilities & Helpers
-   [✓] 16. Animations
-   [✓] 17. Back to Top
-   [✓] 18. Premium Homepage (Hero Rich — reduced height, no side bars)
-   [✓] 19. Logo Showcase (Gold Frame)
-   [✓] 20. Services Modern (Compact)
-   [✓] 21. Process Timeline
-   [✓] 22. Team Featured
-   [✓] 23. Testimonials Modern
-   [✓] 24. FAQ Accordion
-   [✓] 25. Final CTA Rich
-   [✓] 26. Footer Rich
-   [✓] 27. Service Pages Components
-   [✓] 28. Responsive (991px / 768px / 576px)
-   [✓] 29. Accessibility & Print
-   ─────────────────────────────────────────────────────────────────────────
-   ============================================================================
-   ============================================================================ */
    /* ============================================================================
-   v14.1 — FOCUSED ADJUSTMENTS
-   تعديلات محددة — تُضاف في نهاية ورقة الأنماط
+   v15.0 — FINAL UNIFIED BLOCK
+   البلوك النهائي الموحد — حل كل المشاكل في مكان واحد
    ─────────────────────────────────────────────────────────────────────────
-   1. Hero image: show from the top (no top crop).
-   2. Language button: match Client Portal button size.
-   3. Client Portal border: thicker gold border.
-   4. Cards: slightly reduced size.
+   يغطي: النافبار + زر اللغة + بوابة العميل + الموبايل + الهيرو + الكروت
+   ⚠️ هذا هو البلوك الأخير في style.css — لا شيء بعده
    ============================================================================ */
 
-
-/* ─────────────────────────────────────────────────────────────────────────
-   1) HERO IMAGE — anchor from the top so the upper part stays visible
-   ───────────────────────────────────────────────────────────────────────── */
-.hero-rich-bg img {
-    object-position: center top !important;
+/* ═══════════════════════════════════════════════════════════════════════════
+   1) NAVBAR — أسود صلب + ثابت فوق
+   ═══════════════════════════════════════════════════════════════════════════ */
+html body .navbar,
+html body nav.navbar {
+    position: fixed !important;
+    top: var(--banner-height, 50px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background: #000000 !important;
+    background-color: #000000 !important;
+    background-image: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    z-index: 9999 !important;
+    padding: 12px 0 !important;
 }
 
-/* Slightly reduce the hero height so more of the image shows */
-.hero-rich {
-    height: 460px !important;
-    min-height: 440px !important;
-    max-height: 460px !important;
+html body .navbar.scrolled {
+    background: #000000 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
-@media (max-width: 991px) {
-    .hero-rich {
-        height: auto !important;
-        min-height: 440px !important;
-        max-height: none !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-rich {
-        min-height: auto !important;
-    }
-}
-
-
-/* ─────────────────────────────────────────────────────────────────────────
-   2) NAVBAR BUTTONS — Language button = Client Portal button size
-   ───────────────────────────────────────────────────────────────────────── */
-
-/* Language button — bigger, matching Client Portal */
-.navbar .lang-btn,
-.language-switcher.in-navbar .lang-btn {
-    padding: 10px 22px !important;
-    min-height: 42px !important;
-    height: 42px !important;
-    font-size: 0.88rem !important;
-    gap: 8px !important;
-}
-
-/* Client Portal button — matching Language button */
-.navbar .btn-outline-light,
-.navbar .btn-outline-light.btn-sm {
-    padding: 10px 22px !important;
-    min-height: 42px !important;
-    height: 42px !important;
-    font-size: 0.88rem !important;
-    gap: 8px !important;
-}
-
-/* Icons inside both buttons */
-.navbar .lang-btn i,
-.navbar .btn-outline-light i {
-    font-size: 0.92rem !important;
-}
-
-/* RTL — keep them the same size */
-[dir="rtl"] .navbar .lang-btn,
-[dir="rtl"] .navbar .btn-outline-light {
-    padding: 10px 20px !important;
-    font-size: 0.86rem !important;
+html body {
+    padding-top: calc(var(--banner-height, 50px) + 80px) !important;
 }
 
 
-/* ─────────────────────────────────────────────────────────────────────────
-   3) CLIENT PORTAL BUTTON — thicker gold border
-   ───────────────────────────────────────────────────────────────────────── */
-.navbar .btn-outline-light,
-.navbar .btn-outline-light.btn-sm {
-    border: 3px solid #C9A961 !important;
-    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.25) !important;
-}
-
-.navbar .btn-outline-light:hover,
-.navbar .btn-outline-light:focus {
-    border-width: 3px !important;
-    border-color: #D4B872 !important;
-}
-
-
-/* ─────────────────────────────────────────────────────────────────────────
-   4) CARDS — slightly smaller size across the site
-   ───────────────────────────────────────────────────────────────────────── */
-
-/* Bento cards (homepage) */
-.bento-card {
-    padding: 20px 18px !important;
-    min-height: 175px !important;
-}
-
-.bento-card.bento-large {
-    padding: 26px 24px !important;
-    min-height: 370px !important;
-}
-
-.bento-card h3 {
-    font-size: 1.02rem !important;
-    margin-bottom: 6px !important;
-}
-
-.bento-card.bento-large h3 {
-    font-size: 1.25rem !important;
-}
-
-.bento-card p {
-    font-size: 0.82rem !important;
-    line-height: 1.55 !important;
-}
-
-/* Service feature cards (service pages) */
-.svc-feature-card {
-    padding: 22px 20px !important;
-}
-
-.svc-feature-card h3 {
-    font-size: 1.02rem !important;
-}
-
-.svc-feature-card p {
-    font-size: 0.85rem !important;
-}
-
-.svc-feature-icon {
-    width: 48px !important;
-    height: 48px !important;
-    font-size: 1.15rem !important;
-    margin-bottom: 14px !important;
-}
-
-/* Modern service items (compact grid) */
-.svc-modern-item {
-    padding: 12px 14px !important;
-}
-
-.svc-modern-content h6 {
-    font-size: 0.86rem !important;
-}
-
-.svc-modern-content small {
-    font-size: 0.7rem !important;
-}
-
-/* Practice area cards (related services) */
-.pa-card-head {
-    padding: 18px 18px 14px !important;
-}
-
-.pa-card-head i.pa-icon {
-    font-size: 1.4rem !important;
-    margin-bottom: 8px !important;
-}
-
-.pa-card-head h3 {
-    font-size: 1rem !important;
-}
-
-.pa-card-body {
-    padding: 16px 18px 18px !important;
-}
-
-.pa-card-body p {
-    font-size: 0.85rem !important;
-    margin-bottom: 12px !important;
-}
-
-/* Feature cards */
-.feature-card {
-    padding: 26px 20px !important;
-}
-
-.feature-card h4,
-.feature-card h5 {
-    font-size: 1.08rem !important;
-}
-
-.feature-icon {
-    width: 65px !important;
-    height: 65px !important;
-    font-size: 24px !important;
-    margin-bottom: 18px !important;
-}
-
-/* Testimonial modern cards */
-.testimonial-modern-card {
-    padding: 22px 20px !important;
-}
-
-.testimonial-modern-card p {
-    font-size: 0.86rem !important;
-}
-
-/* Security cards (client portal) */
-.security-card {
-    padding: 20px 18px !important;
-}
-
-.security-card i {
-    font-size: 1.4rem !important;
-    margin-bottom: 10px !important;
-}
-
-.security-card h4 {
-    font-size: 0.9rem !important;
-}
-
-.security-card p {
-    font-size: 0.78rem !important;
-}
-
-
-/* ─────────────────────────────────────────────────────────────────────────
-   END OF ADJUSTMENTS v14.1
-   ─────────────────────────────────────────────────────────────────────────
-   📌 ملاحظة: كل قاعدة محدودة بنطاق واضح، ولا تُلغي أي قاعدة أخرى.
-   ============================================================================ */
-   /* ═══════════════════════════════════════════════════════════════════════
-   التعديلات النهائية — Final Adjustments
-   ═══════════════════════════════════════════════════════════════════════ */
-
-/* 1) صورة الهيرو — تظهر كاملة من فوق لتحت */
-.hero-rich {
-    height: 400px !important;
-    min-height: 400px !important;
-    max-height: 400px !important;
-}
-
-.hero-rich-bg img {
-    object-fit: cover !important;
-    object-position: center center !important;
-}
-
-/* 2) زر اللغة — نفس حجم زر بوابة العميل بالظبط */
-.navbar .lang-btn {
-    padding: 12px 26px !important;
-    min-height: 46px !important;
-    height: 46px !important;
-    font-size: 0.95rem !important;
-    font-weight: 700 !important;
-}
-
-/* 3) زر بوابة العميل — نفس الحجم + إطار ذهبي سميك */
-.navbar .btn-outline-light,
-.navbar .btn-outline-light.btn-sm {
-    padding: 12px 26px !important;
-    min-height: 46px !important;
-    height: 46px !important;
-    font-size: 0.95rem !important;
-    font-weight: 700 !important;
-    border: 3px solid #C9A961 !important;
-}
-
-/* 4) أيقونات الأزرار */
-.navbar .lang-btn i,
-.navbar .btn-outline-light i {
-    font-size: 1rem !important;
-}
-
-/* 5) على الموبايل */
-@media (max-width: 991px) {
-    .hero-rich {
-        height: auto !important;
-        min-height: 380px !important;
-        max-height: none !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-rich {
-        min-height: auto !important;
-    }
-}
-/* ══════════════════════════════════════════════════════════════════════ */
-/* زر اللغة العربية — أكبر + نفس حجم بوابة العميل + خلفية ذهبية */
-/* ══════════════════════════════════════════════════════════════════════ */
-.navbar .lang-btn,
-.navbar .language-switcher .lang-btn,
-.navbar .language-switcher.in-navbar .lang-btn,
-.navbar .nav-item .lang-btn,
-.language-switcher .lang-btn,
-a.lang-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 10px !important;
-    padding: 14px 34px !important;
-    min-height: 52px !important;
-    height: 52px !important;
-    font-size: 1.05rem !important;
-    font-weight: 700 !important;
-    background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
-    color: #000000 !important;
-    border: 2px solid #C9A961 !important;
-    border-radius: 999px !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-    box-shadow: 0 6px 20px rgba(201, 169, 97, 0.40) !important;
-}
-
-.navbar .lang-btn i,
-.navbar .language-switcher .lang-btn i,
-a.lang-btn i {
-    font-size: 1.15rem !important;
-}
-
-.navbar .lang-btn:hover,
-.navbar .lang-btn:focus {
-    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
-    color: #000000 !important;
-    border-color: #D4B872 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55) !important;
-}
-
-/* ══════════════════════════════════════════════════════════════════════ */
-/* زر بوابة العميل — نفس الحجم + إطار ذهبي سميك */
-/* ══════════════════════════════════════════════════════════════════════ */
-.navbar .btn-outline-light,
-.navbar .btn-outline-light.btn-sm {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    padding: 12px 28px !important;
-    min-height: 48px !important;
-    height: 48px !important;
-    font-size: 1rem !important;
-    font-weight: 700 !important;
-    background: transparent !important;
-    color: #C9A961 !important;
-    border: 3px solid #C9A961 !important;
-    border-radius: 999px !important;
-    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.2) !important;
-}
-
-.navbar .btn-outline-light i {
-    font-size: 1.1rem !important;
-}
-
-/* عند المرور بالماوس */
-.navbar .lang-btn:hover,
-.navbar .btn-outline-light:hover {
-    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
-    color: #000 !important;
-    border-color: #D4B872 !important;
-    transform: translateY(-2px) !important;
-}
-
-/* ══════════════════════════════════════════════════════════════════════ */
-/* الكروت — أصغر شوية */
-/* ══════════════════════════════════════════════════════════════════════ */
-.bento-card {
-    padding: 18px 16px !important;
-    min-height: 160px !important;
-}
-
-.bento-card.bento-large {
-    padding: 24px 22px !important;
-    min-height: 340px !important;
-}
-
-.bento-card h3 { font-size: 1rem !important; }
-.bento-card.bento-large h3 { font-size: 1.2rem !important; }
-.bento-card p { font-size: 0.8rem !important; line-height: 1.5 !important; }
-
-.svc-feature-card { padding: 22px 20px !important; }
-.svc-feature-card h3 { font-size: 1rem !important; }
-.svc-feature-card p { font-size: 0.84rem !important; }
-
-.feature-card { padding: 24px 18px !important; }
-.pa-card-head { padding: 18px 18px 14px !important; }
-.pa-card-body { padding: 16px 18px 18px !important; }
-
-.testimonial-modern-card { padding: 20px 18px !important; }
-.security-card { padding: 20px 18px !important; }
-/* ══════════════════════════════════════════════════════════════════════ */
-/* البانر الرئيسي — أطول عشان الصورة تبان كاملة */
-/* ══════════════════════════════════════════════════════════════════════ */
-
-.hero-rich {
-    height: 620px !important;
-    min-height: 620px !important;
-    max-height: 620px !important;
-    padding: 70px 0 60px !important;
-}
-
-/* الصورة تبدأ من فوق مباشرة */
-.hero-rich-bg img {
-    object-fit: cover !important;
-    object-position: center top !important;
-}
-
-/* على التابلت */
-@media (max-width: 991px) {
-    .hero-rich {
-        height: auto !important;
-        min-height: 560px !important;
-        max-height: none !important;
-    }
-}
-
-/* على الموبايل */
-@media (max-width: 576px) {
-    .hero-rich {
-        min-height: auto !important;
-        padding: 50px 0 40px !important;
-    }
-}
-/* ══════════════════════════════════════════════════════════════════════ */
-/* البانر — يتبع نسبة أبعاد الصورة تلقائياً */
-/* ══════════════════════════════════════════════════════════════════════ */
-
-.hero-rich {
-    height: auto !important;
-    min-height: auto !important;
-    max-height: none !important;
-    aspect-ratio: 16 / 9 !important;    /* ← غيّر النسبة حسب صورتك */
-    padding: 60px 0 !important;
-}
-
-.hero-rich-bg img {
-    object-fit: cover !important;
-    object-position: center center !important;
-}
-
-/* على الموبايل — نسبة أطول عشان المحتوى */
-@media (max-width: 768px) {
-    .hero-rich {
-        aspect-ratio: auto !important;
-        min-height: 480px !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-rich {
-        min-height: 420px !important;
-    }
-}
-/* ═══════════════════════════════════════════════════════════════ */
-/* HERO v4.0 — معاينة الخدمات (تحل محل الاعتمادات) */
-/* ═══════════════════════════════════════════════════════════════ */
-
-/* 1) الهيرو — ارتفاع حسب المحتوى، بلا فراغات */
-.hero-rich {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    aspect-ratio: auto !important;
-    padding: 45px 0 !important;
-    margin-top: var(--navbar-height) !important;
-    display: flex !important;
-    align-items: center !important;
-    overflow: hidden !important;
-}
-
+/* ═══════════════════════════════════════════════════════════════════════════
+   2) DESKTOP — القائمة أفقية، زر اللغة + بوابة العميل بنفس الحجم
+   ═══════════════════════════════════════════════════════════════════════════ */
 @media (min-width: 992px) {
-    .hero-rich {
-        min-height: 500px !important;
-        padding: 50px 0 !important;
+
+    html body .navbar .container,
+    html body .navbar .container-fluid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
     }
-}
 
-@media (max-width: 991px) {
-    .hero-rich {
-        min-height: 0 !important;
-        padding: 38px 0 !important;
+    html body .navbar .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto !important;
+        flex-grow: 1 !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        flex-wrap: nowrap !important;
+        max-height: none !important;
+        overflow: visible !important;
     }
-}
 
-@media (max-width: 576px) {
-    .hero-rich {
-        padding: 30px 0 !important;
+    html body .navbar .navbar-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 4px !important;
+        width: auto !important;
+        margin-inline-start: auto !important;
     }
-}
 
-/* 2) إخفاء أي بقايا أرقام قديمة (أمان إضافي) */
-.hero-stats-mini {
-    display: none !important;
-}
-
-/* 3) شبكة معاينة الخدمات في الهيرو */
-.hero-services-preview {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 0;
-}
-
-/* بطاقة خدمة واحدة */
-.hsp-card {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 16px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(201, 169, 97, 0.30);
-    border-radius: 14px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.35s ease;
-    position: relative;
-    overflow: hidden;
-    min-height: 72px;
-}
-
-.hsp-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, #C9A961, #A88947);
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.35s ease;
-}
-
-[dir="rtl"] .hsp-card::before {
-    left: auto;
-    right: 0;
-}
-
-.hsp-card:hover {
-    background: rgba(201, 169, 97, 0.14);
-    border-color: #C9A961;
-    transform: translateX(6px);
-    box-shadow: 0 14px 32px -8px rgba(201, 169, 97, 0.4);
-    color: inherit;
-}
-
-[dir="rtl"] .hsp-card:hover {
-    transform: translateX(-6px);
-}
-
-.hsp-card:hover::before {
-    transform: scaleY(1);
-}
-
-/* أيقونة البطاقة */
-.hsp-icon {
-    width: 46px;
-    height: 46px;
-    background: linear-gradient(135deg, #C9A961, #A88947);
-    color: #000;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-    box-shadow: 0 8px 18px rgba(201, 169, 97, 0.35);
-    transition: transform 0.35s ease;
-}
-
-.hsp-card:hover .hsp-icon {
-    transform: rotate(-8deg) scale(1.08);
-}
-
-[dir="rtl"] .hsp-card:hover .hsp-icon {
-    transform: rotate(8deg) scale(1.08);
-}
-
-/* النص */
-.hsp-text {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    flex: 1;
-    min-width: 0;
-}
-
-.hsp-text strong {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.3;
-    letter-spacing: 0.2px;
-}
-
-[dir="rtl"] .hsp-text strong {
-    font-family: 'Cairo', sans-serif;
-    font-size: 0.93rem;
-    letter-spacing: 0;
-}
-
-.hsp-text small {
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.68);
-    line-height: 1.35;
-}
-
-[dir="rtl"] .hsp-text small {
-    font-family: 'Cairo', sans-serif;
-    font-size: 0.78rem;
-}
-
-/* سهم صغير في نهاية البطاقة */
-.hsp-arrow {
-    color: #C9A961;
-    font-size: 0.8rem;
-    opacity: 0.45;
-    flex-shrink: 0;
-    transition: all 0.35s ease;
-}
-
-.hsp-card:hover .hsp-arrow {
-    opacity: 1;
-    transform: translateX(4px);
-}
-
-[dir="rtl"] .hsp-card:hover .hsp-arrow {
-    transform: translateX(-4px);
-}
-
-/* على الموبايل والتابلت */
-@media (max-width: 991px) {
-    .hero-services-preview {
+    html body .navbar .navbar-toggler {
         display: none !important;
     }
-}
-/* ═══════════════════════════════════════════════════════════════ */
-/* HERO FINAL v3.0 — إنهاء التضاربات وضبط المسافات */
-/* ═══════════════════════════════════════════════════════════════ */
 
-/* 1) الهيرو — ارتفاع حسب المحتوى، بدون فراغ فوق أو تحت */
-.hero-rich {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-    aspect-ratio: auto !important;
-    padding: 40px 0 !important;
-    margin-top: var(--navbar-height) !important;
-    display: flex !important;
-    align-items: center !important;
-    overflow: hidden !important;
-}
+    /* زر اللغة + بوابة العميل — نفس الحجم */
+    html body .navbar .lang-btn,
+    html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
+    html body .navbar .btn-outline-light,
+    html body .navbar .btn-outline-light.btn-sm {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        padding: 10px 20px !important;
+        min-height: 42px !important;
+        height: 42px !important;
+        border-radius: 999px !important;
+        font-weight: 700 !important;
+        font-size: 0.88rem !important;
+        line-height: 1 !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        transition: all 0.3s ease !important;
+        margin: 0 !important;
+    }
 
-/* على الشاشات الكبيرة */
-@media (min-width: 992px) {
-    .hero-rich {
-        min-height: 480px !important;
-        padding: 45px 0 !important;
+    /* زر اللغة — ذهبي ممتلئ */
+    html body .navbar .lang-btn,
+    html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
+        background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
+        color: #000000 !important;
+        border: 2px solid #C9A961 !important;
+        box-shadow: 0 6px 18px rgba(201, 169, 97, 0.40) !important;
+    }
+
+    html body .navbar .lang-btn:hover {
+        background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+        color: #000000 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55) !important;
+    }
+
+    /* بوابة العميل — ذهبي مفرّغ */
+    html body .navbar .btn-outline-light,
+    html body .navbar .btn-outline-light.btn-sm {
+        background: transparent !important;
+        color: #C9A961 !important;
+        border: 2px solid #C9A961 !important;
+        box-shadow: 0 4px 15px rgba(201, 169, 97, 0.15) !important;
+    }
+
+    html body .navbar .btn-outline-light:hover {
+        background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+        color: #000000 !important;
+        transform: translateY(-2px) !important;
+    }
+
+    /* زر اللغة wrapper */
+    html body .navbar .lang-nav-item {
+        display: inline-flex !important;
+        align-items: center !important;
+        margin: 0 0 0 8px !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+
+    [dir="rtl"] html body .navbar .lang-nav-item {
+        margin: 0 8px 0 0 !important;
+    }
+
+    html body .navbar .lang-nav-item .language-switcher,
+    html body .navbar .lang-nav-item .language-switcher.in-navbar {
+        display: inline-flex !important;
+        position: static !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
     }
 }
 
-/* على التابلت والموبايل */
-@media (max-width: 991px) {
-    .hero-rich {
-        min-height: 0 !important;
-        padding: 35px 0 !important;
-    }
-}
 
-@media (max-width: 576px) {
-    .hero-rich {
-        padding: 30px 0 !important;
-    }
-}
-
-/* 2) إخفاء الأرقام المضافة (بدل حذفها من HTML) */
-.hero-stats-mini {
-    display: none !important;
-}
-
-/* 3) تكبير الاعتمادات لملء العمود الأيمن */
-.hero-accreditations {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 14px !important;
-    padding: 0 !important;
-}
-
-.ha-item {
-    padding: 16px 20px !important;
-    min-height: 74px !important;
-    border-radius: 14px !important;
-}
-
-.ha-icon {
-    width: 48px !important;
-    height: 48px !important;
-    font-size: 1.25rem !important;
-    border-radius: 12px !important;
-}
-
-.ha-text strong {
-    font-size: 0.92rem !important;
-}
-
-.ha-text small {
-    font-size: 0.77rem !important;
-}
-
-[dir="rtl"] .ha-text strong {
-    font-size: 0.95rem !important;
-    font-family: 'Cairo', sans-serif !important;
-}
-
-[dir="rtl"] .ha-text small {
-    font-size: 0.79rem !important;
-    font-family: 'Cairo', sans-serif !important;
-}
-
-/* 4) التخلص من أي margin-top وهمي من النافبار */
-body {
-    padding-top: var(--banner-height) !important;
-}
-
-/* 5) على الموبايل — الاعتمادات تختفي والهيرو يبقى مضبوط */
-@media (max-width: 991px) {
-    .hero-accreditations {
-        display: none !important;
-    }
-}
-/* ═══════════════════════════════════════════════════════════════ */
-/* HERO EXTRA v4.0 — شعارات مصغّرة + بلوك دعائي */
-/* ═══════════════════════════════════════════════════════════════ */
-
-/* ─────────────────────────────────────────────
-   1) شعارات مصغّرة أسفل slogan (العمود الأيسر)
-   ───────────────────────────────────────────── */
-.hero-mini-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 14px;
-}
-
-.hmb-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 7px 15px;
-    background: rgba(201, 169, 97, 0.08);
-    border: 1px solid rgba(201, 169, 97, 0.30);
-    border-radius: 999px;
-    color: rgba(255, 255, 255, 0.92);
-    font-size: 0.76rem;
-    font-weight: 600;
-    font-family: 'Cairo', sans-serif;
-    letter-spacing: 0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: default;
-    white-space: nowrap;
-}
-
-.hmb-item i {
-    color: #C9A961;
-    font-size: 0.8rem;
-    transition: transform 0.3s ease;
-}
-
-.hmb-item:hover {
-    background: rgba(201, 169, 97, 0.18);
-    border-color: #C9A961;
-    color: #D4B872;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px -4px rgba(201, 169, 97, 0.4);
-}
-
-.hmb-item:hover i {
-    transform: rotate(-10deg) scale(1.15);
-}
-
-/* ─────────────────────────────────────────────
-   2) بلوك دعائي في أسفل العمود الأيمن
-   ───────────────────────────────────────────── */
-.hero-promo-block {
-    margin-top: 10px;
-    padding: 15px 18px;
-    background: linear-gradient(135deg, rgba(201, 169, 97, 0.14) 0%, rgba(201, 169, 97, 0.05) 100%);
-    border: 1px solid rgba(201, 169, 97, 0.35);
-    border-radius: 12px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: all 0.35s ease;
-}
-
-.hero-promo-block::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #C9A961, transparent);
-}
-
-.hero-promo-block:hover {
-    background: linear-gradient(135deg, rgba(201, 169, 97, 0.20) 0%, rgba(201, 169, 97, 0.08) 100%);
-    border-color: #C9A961;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px -8px rgba(201, 169, 97, 0.45);
-}
-
-.hero-promo-block .hpb-number {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    font-weight: 900;
-    color: #C9A961;
-    line-height: 1;
-    display: block;
-    margin-bottom: 4px;
-}
-
-.hero-promo-block .hpb-text {
-    font-family: 'Cairo', sans-serif;
-    font-size: 0.74rem;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: 600;
-    line-height: 1.35;
-    display: block;
-}
-
-/* ─────────────────────────────────────────────
-   3) التوازن العمودي — محاذاة من الأعلى
-   ───────────────────────────────────────────── */
-.hero-rich-content .row {
-    align-items: stretch !important;
-}
-
-.hero-rich-content .row > [class*="col-"] {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-/* ─────────────────────────────────────────────
-   4) استجابة الجوال
-   ───────────────────────────────────────────── */
-@media (max-width: 991px) {
-    .hero-mini-badges {
-        gap: 6px;
-        margin-top: 12px;
-    }
-    .hmb-item {
-        padding: 6px 12px;
-        font-size: 0.72rem;
-    }
-    .hmb-item i {
-        font-size: 0.75rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-mini-badges {
-        gap: 5px;
-    }
-    .hmb-item {
-        padding: 5px 10px;
-        font-size: 0.68rem;
-        gap: 5px;
-    }
-}
-/* ═══════════════════════════════════════════════════════════════ */
-/* HERO SLOGANS STACK — شعارات متعددة تحت بعض */
-/* ═══════════════════════════════════════════════════════════════ */
-
-.hero-slogans-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 14px;
-    margin-bottom: 8px;
-}
-
-.hero-slogans-stack .hero-slogan-extra {
-    margin-top: 0 !important;
-    width: 100%;
-    max-width: 100%;
-}
-
-/* Slogan 2 — مميز بخلفية ذهبية خفيفة */
-.hero-slogan-extra.slogan-gold {
-    background: linear-gradient(135deg, rgba(201, 169, 97, 0.18) 0%, rgba(201, 169, 97, 0.06) 100%);
-    border-right-color: #D4B872;
-}
-
-.hero-slogan-extra.slogan-gold i {
-    color: #D4B872;
-}
-
-/* Slogan 3 — أيقونة مختلفة */
-.hero-slogan-extra.slogan-soft {
-    background: rgba(255, 255, 255, 0.05);
-    border-right-color: rgba(201, 169, 97, 0.6);
-}
-
-.hero-slogan-extra.slogan-soft i {
-    color: rgba(201, 169, 97, 0.85);
-}
-
-/* على الموبايل */
-@media (max-width: 576px) {
-    .hero-slogans-stack { gap: 8px; }
-    .hero-slogans-stack .hero-slogan-extra {
-        font-size: 0.78rem;
-        padding: 6px 12px;
-    }
-}
-
-/* ═══════════════════════════════════════════════════════════════ */
-/* ACCREDITATION CARDS — تكبير بسيط للتناسق مع ارتفاع اليمين */
-/* ═══════════════════════════════════════════════════════════════ */
-
-/* ارتفاع الهيرو لاستيعاب الكروت الإضافية */
-@media (min-width: 992px) {
-    .hero-rich {
-        min-height: 720px !important;
-    }
-}
-
-/* الكارت الواحد أكبر قليلاً */
-.ha-item {
-    padding: 10px 16px !important;
-    min-height: 58px !important;
-}
-
-.ha-icon {
-    width: 38px !important;
-    height: 38px !important;
-    font-size: 1rem !important;
-}
-
-.ha-text strong {
-    font-size: 0.85rem !important;
-}
-
-.ha-text small {
-    font-size: 0.7rem !important;
-}
-/* ═══════════════════════════════════════════════════════════════ */
-/* HERO RIGHT COLUMN — 13 كارت بتوازن تام */
-/* ═══════════════════════════════════════════════════════════════ */
-
-.hero-why-title {
-    margin-bottom: 14px !important;
-    padding-bottom: 10px !important;
-}
-
-.hero-why-title .hwt-line {
-    width: 36px !important;
-    height: 3px !important;
-}
-
-.hero-why-title .hwt-text {
-    font-size: 0.92rem !important;
-    letter-spacing: 1.2px !important;
-    font-weight: 800 !important;
-}
-
-.hero-why-title .hwt-icon {
-    font-size: 1.05rem !important;
-}
-
-.hero-accreditations {
-    gap: 7px !important;
-}
-
-.ha-item {
-    padding: 10px 15px !important;
-    min-height: 56px !important;
-    border-radius: 11px !important;
-    gap: 12px !important;
-}
-
-.ha-icon {
-    width: 38px !important;
-    height: 38px !important;
-    font-size: 1.05rem !important;
-    border-radius: 10px !important;
-}
-
-.ha-text strong {
-    font-size: 0.88rem !important;
-    font-weight: 800 !important;
-    line-height: 1.25 !important;
-    letter-spacing: 0.2px !important;
-}
-
-[dir="rtl"] .ha-text strong {
-    font-size: 0.92rem !important;
-    font-family: 'Cairo', sans-serif !important;
-    letter-spacing: 0 !important;
-}
-
-.ha-text small {
-    font-size: 0.73rem !important;
-    line-height: 1.35 !important;
-    color: rgba(255, 255, 255, 0.7) !important;
-}
-
-[dir="rtl"] .ha-text small {
-    font-size: 0.76rem !important;
-    font-family: 'Cairo', sans-serif !important;
-}
-
-.ha-text {
-    gap: 2px !important;
-}
-
-/* ارتفاع الهيرو — يتسع لـ 13 كارت */
-@media (min-width: 992px) {
-    .hero-rich {
-        min-height: 860px !important;
-    }
-}
-
-/* الشاشات المتوسطة */
-@media (min-width: 992px) and (max-width: 1200px) {
-    .ha-item {
-        padding: 9px 13px !important;
-        min-height: 52px !important;
-        gap: 10px !important;
-    }
-    .ha-icon {
-        width: 34px !important;
-        height: 34px !important;
-        font-size: 0.95rem !important;
-    }
-    .ha-text strong {
-        font-size: 0.82rem !important;
-    }
-    [dir="rtl"] .ha-text strong {
-        font-size: 0.86rem !important;
-    }
-    .ha-text small {
-        font-size: 0.68rem !important;
-    }
-    [dir="rtl"] .ha-text small {
-        font-size: 0.71rem !important;
-    }
-}
-    /* ═══════════════════════════════════════════════════════════════ */
-    /* HERO PROMISES — التزاماتنا تجاهك */
-    /* ═══════════════════════════════════════════════════════════════ */
-
-    .hero-promises {
-        margin-top: 22px;
-        padding: 18px 20px;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-        border: 1px solid rgba(201, 169, 97, 0.22);
-        border-radius: 18px;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .hero-promises::before {
-        content: '';
-        position: absolute;
-        top: -50px;
-        left: -50px;
-        width: 150px;
-        height: 150px;
-        background: radial-gradient(circle, rgba(201, 169, 97, 0.15), transparent 70%);
-        border-radius: 50%;
-        pointer-events: none;
-    }
-
-    .hpr-head {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 14px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid rgba(201, 169, 97, 0.2);
-        position: relative;
-        z-index: 1;
-    }
-
-    .hpr-head-line {
-        width: 30px;
-        height: 3px;
-        background: linear-gradient(90deg, #C9A961, #A88947);
-        border-radius: 2px;
-        flex-shrink: 0;
-    }
-
-    .hpr-head > i:first-of-type {
-        color: #C9A961;
-        font-size: 1rem;
-    }
-
-    .hpr-head-text {
-        font-family: 'Cairo', sans-serif;
-        font-size: 0.88rem;
-        font-weight: 800;
-        color: #C9A961;
-        letter-spacing: 0.5px;
-    }
-
-    .hpr-head-icon {
-        margin-inline-start: auto;
-        color: #C9A961;
-        font-size: 0.9rem;
-        opacity: 0.7;
-    }
-
-    .hpr-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 10px;
-        position: relative;
-        z-index: 1;
-    }
-
-    .hpr-card {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 12px 14px;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
-        border: 1px solid rgba(201, 169, 97, 0.22);
-        border-radius: 12px;
-        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-        cursor: default;
-    }
-
-    .hpr-card::before {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 3px;
-        background: linear-gradient(180deg, #C9A961, #A88947);
-        transform: scaleY(0);
-        transform-origin: top;
-        transition: transform 0.35s ease;
-    }
-
-    .hpr-card:hover::before {
-        transform: scaleY(1);
-    }
-
-    .hpr-card:hover {
-        background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.05) 100%);
-        border-color: #C9A961;
-        transform: translateX(-4px);
-        box-shadow: 0 10px 24px -8px rgba(201, 169, 97, 0.35);
-    }
-
-    .hpr-icon {
-        width: 34px;
-        height: 34px;
-        flex-shrink: 0;
-        background: linear-gradient(135deg, #C9A961, #A88947);
-        color: #000;
-        border-radius: 9px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.85rem;
-        box-shadow: 0 6px 14px rgba(201, 169, 97, 0.35);
-        transition: all 0.35s ease;
-    }
-
-    .hpr-card:hover .hpr-icon {
-        transform: rotate(8deg) scale(1.1);
-        box-shadow: 0 8px 20px rgba(201, 169, 97, 0.55);
-    }
-
-    .hpr-body {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        min-width: 0;
-    }
-
-    .hpr-body strong {
-        font-family: 'Cairo', sans-serif;
-        font-size: 0.82rem;
-        font-weight: 700;
-        color: #fff;
-        line-height: 1.25;
-        transition: color 0.3s ease;
-    }
-
-    .hpr-card:hover .hpr-body strong {
-        color: #D4B872;
-    }
-
-    .hpr-body small {
-        font-family: 'Cairo', sans-serif;
-        font-size: 0.7rem;
-        color: rgba(255, 255, 255, 0.62);
-        line-height: 1.4;
-        transition: color 0.3s ease;
-    }
-
-    .hpr-card:hover .hpr-body small {
-        color: rgba(255, 255, 255, 0.88);
-    }
-
-    @media (max-width: 991px) {
-        .hpr-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 576px) {
-        .hpr-grid { grid-template-columns: 1fr; }
-        .hero-promises { padding: 16px 16px; }
-    }
-    /* ============================================================================
-   📱 MOBILE NAVBAR FIX — إصلاح النافبار على الموبايل
-   ============================================================================ */
-
+/* ═══════════════════════════════════════════════════════════════════════════
+   3) MOBILE (≤991px) — القائمة مخفية، تفتح بالضغط فقط
+   ═══════════════════════════════════════════════════════════════════════════ */
 @media (max-width: 991.98px) {
 
-    /* ─── Navbar overall ─── */
-    html body .navbar {
+    html body .navbar,
+    html body nav.navbar {
+        top: 50px !important;
         padding: 8px 0 !important;
         min-height: 60px !important;
-        max-height: 70px !important;
+        max-height: 68px !important;
     }
 
-    /* ─── Brand (logo) smaller ─── */
+    html body {
+        padding-top: 118px !important;
+    }
+
+    /* اللوجو أصغر */
     html body .navbar-brand img {
         height: 36px !important;
         max-height: 36px !important;
-        max-width: 120px !important;
+        max-width: 110px !important;
     }
     html body .navbar-brand .firm-name {
-        font-size: 0.85rem !important;
+        font-size: 0.82rem !important;
     }
     html body .navbar-brand .firm-sub {
-        font-size: 0.6rem !important;
+        font-size: 0.58rem !important;
     }
 
-    /* ─── Collapsed menu — make it scrollable & compact ─── */
+    /* زر التوجلر — ظاهر وواضح */
+    html body .navbar .navbar-toggler {
+        display: inline-flex !important;
+        padding: 8px 12px !important;
+        border: 2px solid #C9A961 !important;
+        border-radius: 8px !important;
+        background: transparent !important;
+        margin-inline-start: auto !important;
+        z-index: 10001 !important;
+    }
+
+    /* القائمة — مخفية افتراضياً */
     html body .navbar .navbar-collapse {
+        display: none !important;
+        flex-basis: 100% !important;
         background: #000 !important;
-        padding: 12px 14px !important;
+        padding: 14px !important;
         border-radius: 12px !important;
-        margin-top: 8px !important;
-        max-height: 70vh !important;
+        margin-top: 10px !important;
+        max-height: 72vh !important;
         overflow-y: auto !important;
         overflow-x: hidden !important;
-        border: 1px solid rgba(201, 169, 97, 0.25) !important;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+        border: 1px solid rgba(201, 169, 97, 0.3) !important;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.6) !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
         -webkit-overflow-scrolling: touch !important;
     }
 
-    /* ─── Nav items — compact, full width ─── */
+    /* عند الفتح — Bootstrap بيضيف .show */
+    html body .navbar .navbar-collapse.show,
+    html body .navbar .navbar-collapse.collapsing {
+        display: flex !important;
+    }
+
+    /* القائمة — عمودية بعرض كامل */
     html body .navbar .navbar-nav {
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
         gap: 2px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
     }
 
-    html body .navbar .navbar-nav > li,
-    html body .navbar .navbar-nav > .nav-item {
+    html body .navbar .navbar-nav > li {
         width: 100% !important;
         display: block !important;
         margin: 0 !important;
-        padding: 0 !important;
     }
 
-    /* ─── Nav links — smaller & tighter ─── */
     html body .navbar .navbar-nav .nav-link {
         display: flex !important;
         align-items: center !important;
@@ -7820,9 +6731,7 @@ body {
         padding: 10px 14px !important;
         font-size: 0.9rem !important;
         border-radius: 8px !important;
-        margin: 0 !important;
-        line-height: 1.3 !important;
-        color: rgba(255,255,255,0.9) !important;
+        color: rgba(255,255,255,0.92) !important;
     }
 
     html body .navbar .navbar-nav .nav-link:hover,
@@ -7831,12 +6740,11 @@ body {
         color: #C9A961 !important;
     }
 
-    /* ─── Dropdowns / Mega menu — compact ─── */
+    /* القوائم المنسدلة الداخلية */
     html body .navbar .navbar-nav .dropdown-menu,
     html body .navbar .mega-menu {
         position: static !important;
-        background: rgba(255,255,255,0.04) !important;
-        border: none !important;
+        background: rgba(255,255,255,0.05) !important;
         box-shadow: none !important;
         padding: 6px 8px !important;
         margin: 4px 0 !important;
@@ -7845,11 +6753,9 @@ body {
         max-width: 100% !important;
     }
 
-    /* ─── Mega menu — single column ─── */
     html body .mega-menu-inner {
         grid-template-columns: 1fr !important;
         padding: 8px 4px !important;
-        gap: 4px !important;
     }
 
     html body .mega-col {
@@ -7862,386 +6768,11 @@ body {
         border-bottom: none !important;
     }
 
-    html body .mega-col-title {
-        margin-bottom: 8px !important;
-        padding-bottom: 6px !important;
-    }
-
-    html body .mega-col-title i {
-        width: 26px !important;
-        height: 26px !important;
-        font-size: 0.75rem !important;
-    }
-
-    html body .mega-col-title span {
-        font-size: 0.85rem !important;
-    }
-
-    html body .mega-list a {
-        padding: 6px 10px !important;
-        font-size: 0.82rem !important;
-    }
-
-    /* ─── Mega footer hide on mobile ─── */
     html body .mega-footer {
         display: none !important;
     }
 
-    /* ─── Language button + Client Portal — full width ─── */
-    html body .navbar .nav-item.lang-nav-item {
-        display: flex !important;
-        width: 100% !important;
-        margin: 6px 0 0 !important;
-        padding: 0 !important;
-    }
-
-    html body .navbar .lang-nav-item .language-switcher,
-    html body .navbar .lang-nav-item .language-switcher.in-navbar {
-        width: 100% !important;
-        display: block !important;
-        margin: 0 !important;
-    }
-
-    html body .navbar .lang-nav-item .lang-btn,
-    html body .navbar .btn-outline-light,
-    html body .navbar .btn-outline-light.btn-sm {
-        width: 100% !important;
-        min-height: 42px !important;
-        height: auto !important;
-        padding: 11px 16px !important;
-        font-size: 0.9rem !important;
-        justify-content: center !important;
-        display: flex !important;
-        align-items: center !important;
-    }
-
-    /* ─── Toggler — smaller & visible ─── */
-    html body .navbar-toggler {
-        padding: 6px 10px !important;
-        border: 2px solid #C9A961 !important;
-        border-radius: 8px !important;
-    }
-}
-
-/* ─── Very small phones ─── */
-@media (max-width: 576px) {
-    html body .navbar-brand img {
-        height: 32px !important;
-        max-height: 32px !important;
-        max-width: 100px !important;
-    }
-    html body .navbar-brand .firm-name {
-        font-size: 0.78rem !important;
-    }
-    html body .navbar-brand .firm-sub {
-        font-size: 0.55rem !important;
-    }
-    html body .navbar .navbar-collapse {
-        max-height: 75vh !important;
-        padding: 10px 12px !important;
-    }
-    html body .navbar .navbar-nav .nav-link {
-        padding: 9px 12px !important;
-        font-size: 0.86rem !important;
-    }
-}
-/* ============================================================================
-   🚨 NAVBAR EMERGENCY FIX — إصلاح طارئ للنافبار
-   ─────────────────────────────────────────────────────────────────────────
-   يصلح: النافبار الشفاف + الموقع في نص الصفحة + زر اللغة المخفي
-   ============================================================================ */
-
-/* ═══ 1) NAVBAR — أسود صلب، ثابت فوق تحت الشريط التجريبي ═══ */
-html body .navbar,
-html body nav.navbar {
-    position: fixed !important;
-    top: var(--banner-height, 50px) !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: auto !important;
-    margin: 0 !important;
-    width: 100% !important;
-    background: #000000 !important;
-    background-color: #000000 !important;
-    background-image: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    z-index: 1000 !important;
-    display: block !important;
-}
-
-/* عند التمرير */
-html body .navbar.scrolled {
-    background: #000000 !important;
-    background-color: #000000 !important;
-    background-image: none !important;
-}
-
-/* ═══ 2) BODY — تأكد إن فيه مساحة للنافبار ═══ */
-html body {
-    padding-top: calc(var(--banner-height, 50px) + 80px) !important;
-}
-
-/* ═══ 3) CONTAINER — تأكد إن النافبار في السطر الصح ═══ */
-html body .navbar > .container,
-html body .navbar > .container-fluid {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    flex-wrap: nowrap !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 0 15px !important;
-}
-
-/* ═══ 4) NAVBAR-NAV — الترتيب الأفقي ═══ */
-html body .navbar .navbar-collapse {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    flex-wrap: nowrap !important;
-    flex: 1 1 auto !important;
-}
-
-html body .navbar .navbar-nav {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    flex-wrap: nowrap !important;
-    gap: 4px !important;
-    margin: 0 !important;
-    margin-inline-start: auto !important;
-    padding: 0 !important;
-    list-style: none !important;
-}
-
-html body .navbar .navbar-nav > li,
-html body .navbar .navbar-nav > .nav-item {
-    display: inline-flex !important;
-    align-items: center !important;
-    flex-shrink: 0 !important;
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    white-space: nowrap !important;
-}
-
-/* ═══ 5) LANGUAGE BUTTON — يظهر !! ═══ */
-html body .navbar .lang-nav-item {
-    display: inline-flex !important;
-    align-items: center !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    width: auto !important;
-    height: auto !important;
-    margin: 0 0 0 8px !important;
-    padding: 0 !important;
-    position: relative !important;
-}
-
-[dir="rtl"] html body .navbar .lang-nav-item {
-    margin: 0 8px 0 0 !important;
-}
-
-html body .navbar .lang-nav-item .language-switcher,
-html body .navbar .lang-nav-item .language-switcher.in-navbar {
-    display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: static !important;
-    width: auto !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    transform: none !important;
-}
-
-/* ═══ 6) زر اللغة — الذهبي الممتلئ ═══ */
-html body .navbar .lang-nav-item .lang-btn,
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
-    display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    padding: 10px 20px !important;
-    min-height: 40px !important;
-    height: 40px !important;
-    border: 2px solid #C9A961 !important;
-    border-radius: 999px !important;
-    background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
-    color: #000000 !important;
-    font-weight: 700 !important;
-    font-size: 0.85rem !important;
-    line-height: 1 !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.40) !important;
-    transition: all 0.3s ease !important;
-    cursor: pointer !important;
-    margin: 0 !important;
-}
-
-html body .navbar .lang-nav-item .lang-btn:hover {
-    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
-    color: #000000 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55) !important;
-}
-
-html body .navbar .lang-nav-item .lang-btn i {
-    color: inherit !important;
-    font-size: 0.9rem !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-html body .navbar .lang-nav-item .lang-btn span {
-    color: inherit !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-/* ═══ 7) زر بوابة العميل — الذهبي المفرّغ ═══ */
-html body .navbar .btn-outline-light,
-html body .navbar .btn-outline-light.btn-sm {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    padding: 10px 20px !important;
-    min-height: 40px !important;
-    height: 40px !important;
-    border: 2px solid #C9A961 !important;
-    border-radius: 999px !important;
-    background: transparent !important;
-    color: #C9A961 !important;
-    font-weight: 700 !important;
-    font-size: 0.85rem !important;
-    line-height: 1 !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.15) !important;
-    transition: all 0.3s ease !important;
-    margin: 0 !important;
-}
-
-html body .navbar .btn-outline-light:hover {
-    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
-    color: #000000 !important;
-    border-color: #D4B872 !important;
-    transform: translateY(-2px) !important;
-}
-
-/* ═══ 8) LOGO — حجمه الطبيعي ═══ */
-html body .navbar-brand {
-    display: flex !important;
-    align-items: center !important;
-    gap: 12px !important;
-    flex-shrink: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-html body .navbar-brand img {
-    height: 50px !important;
-    max-height: 50px !important;
-    width: auto !important;
-    max-width: 160px !important;
-    object-fit: contain !important;
-    display: block !important;
-}
-
-/* ═══ 9) روابط النافبار — حجم طبيعي ═══ */
-html body .navbar .navbar-nav .nav-link {
-    display: inline-flex !important;
-    align-items: center !important;
-    padding: 8px 14px !important;
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-size: 0.95rem !important;
-    font-weight: 500 !important;
-    white-space: nowrap !important;
-    margin: 0 2px !important;
-    line-height: 1.2 !important;
-    text-decoration: none !important;
-}
-
-html body .navbar .navbar-nav .nav-link:hover,
-html body .navbar .navbar-nav .nav-link.active {
-    color: #C9A961 !important;
-    background: rgba(201, 169, 97, 0.1) !important;
-}
-
-/* ═══ 10) إخفاء أي زر عائم قديم ═══ */
-html body > .language-switcher:not(.in-navbar) {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-}
-
-/* ═══ 11) MOBILE — النافبار يبقى سطر واحد مضغوط ═══ */
-@media (max-width: 991.98px) {
-    html body .navbar,
-    html body nav.navbar {
-        padding: 8px 0 !important;
-        min-height: 60px !important;
-    }
-
-    html body .navbar-brand img {
-        height: 36px !important;
-        max-height: 36px !important;
-        max-width: 110px !important;
-    }
-
-    html body .navbar-brand .firm-name {
-        font-size: 0.82rem !important;
-    }
-
-    html body .navbar-brand .firm-sub {
-        font-size: 0.58rem !important;
-    }
-
-    /* القائمة المنسدلة */
-    html body .navbar .navbar-collapse {
-        background: #000 !important;
-        padding: 12px 14px !important;
-        border-radius: 12px !important;
-        margin-top: 8px !important;
-        max-height: 75vh !important;
-        overflow-y: auto !important;
-        border: 1px solid rgba(201, 169, 97, 0.25) !important;
-        box-shadow: 0 20px 50px rgba(0,0,0,0.5) !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-    }
-
-    html body .navbar .navbar-nav {
-        flex-direction: column !important;
-        width: 100% !important;
-        gap: 2px !important;
-    }
-
-    html body .navbar .navbar-nav > li {
-        width: 100% !important;
-        display: block !important;
-    }
-
-    html body .navbar .navbar-nav .nav-link {
-        display: flex !important;
-        width: 100% !important;
-        justify-content: space-between !important;
-        padding: 10px 14px !important;
-        font-size: 0.9rem !important;
-        border-radius: 8px !important;
-    }
-
-    /* الأزرار بعرض كامل */
+    /* زر اللغة + بوابة العميل — عرض كامل */
     html body .navbar .lang-nav-item {
         display: flex !important;
         width: 100% !important;
@@ -8254,430 +6785,7 @@ html body > .language-switcher:not(.in-navbar) {
         display: block !important;
     }
 
-    html body .navbar .lang-nav-item .lang-btn,
-    html body .navbar .btn-outline-light {
-        width: 100% !important;
-        min-height: 42px !important;
-        height: auto !important;
-        padding: 11px 16px !important;
-        font-size: 0.9rem !important;
-    }
-}
-
-/* ═══ 12) Body padding for mobile too ═══ */
-@media (max-width: 991.98px) {
-    html body {
-        padding-top: calc(var(--banner-height, 50px) + 60px) !important;
-    }
-}
-/* ============================================================================
-   🚨 v14.2 — LANGUAGE BUTTON + NAVBAR ROOT FIX
-   إصلاح جذري: زر اللغة + ثبات النافبار
-   ─────────────────────────────────────────────────────────────────────────
-   ⚠️ هذا البلوك يجب أن يكون في آخر style.css تماماً — لا شيء بعده
-   ============================================================================ */
-
-/* ═══ 1) إزالة أي transform على أي أب للنافبار (السبب الجذري) ═══ */
-html body,
-html body > *,
-html body .main-wrapper,
-html body .page-wrapper,
-html body .wrapper,
-html body .site-wrapper,
-html body #app,
-html body #root {
-    transform: none !important;
-    filter: none !important;
-    perspective: none !important;
-    will-change: auto !important;
-    contain: none !important;
-}
-
-/* ═══ 2) NAVBAR — مثبت فوق مهما حصل ═══ */
-html body .navbar,
-html body nav.navbar {
-    position: fixed !important;
-    top: var(--banner-height, 50px) !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: auto !important;
-    margin: 0 !important;
-    width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    background: #000000 !important;
-    background-color: #000000 !important;
-    background-image: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    filter: none !important;
-    z-index: 9999 !important;
-    display: block !important;
-    isolation: auto !important;
-    contain: none !important;
-    will-change: auto !important;
-}
-
-html body .navbar.scrolled,
-html body nav.navbar.scrolled {
-    background: #000000 !important;
-    background-color: #000000 !important;
-    background-image: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-}
-
-/* ═══ 3) BODY — مساحة كافية للنافبار + الشريط التجريبي ═══ */
-html body {
-    padding-top: 130px !important;
-    margin-top: 0 !important;
-    overflow-x: hidden !important;
-}
-
-/* ═══ 4) زر اللغة — يظهر مهما كان ═══ */
-html body .navbar .lang-nav-item,
-html body .navbar .lang-nav-item * {
-    visibility: visible !important;
-    opacity: 1 !important;
-    transform: none !important;
-}
-
-html body .navbar .lang-nav-item {
-    display: inline-flex !important;
-    align-items: center !important;
-    width: auto !important;
-    height: auto !important;
-    margin: 0 0 0 8px !important;
-    padding: 0 !important;
-    position: relative !important;
-    z-index: 10 !important;
-    pointer-events: auto !important;
-}
-
-[dir="rtl"] html body .navbar .lang-nav-item {
-    margin: 0 8px 0 0 !important;
-}
-
-html body .navbar .lang-nav-item .language-switcher,
-html body .navbar .lang-nav-item .language-switcher.in-navbar {
-    display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: static !important;
-    width: auto !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    transform: none !important;
-    z-index: 10 !important;
-    pointer-events: auto !important;
-}
-
-html body .navbar .lang-nav-item .lang-btn,
-html body .navbar .lang-nav-item .language-switcher .lang-btn,
-html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
-    display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    padding: 10px 20px !important;
-    min-height: 40px !important;
-    height: 40px !important;
-    border: 2px solid #C9A961 !important;
-    border-radius: 999px !important;
-    background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
-    color: #000000 !important;
-    font-weight: 700 !important;
-    font-size: 0.85rem !important;
-    line-height: 1 !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.40) !important;
-    transition: all 0.3s ease !important;
-    cursor: pointer !important;
-    margin: 0 !important;
-    transform: none !important;
-    z-index: 10 !important;
-    pointer-events: auto !important;
-}
-
-html body .navbar .lang-nav-item .lang-btn i,
-html body .navbar .lang-nav-item .lang-btn span {
-    visibility: visible !important;
-    opacity: 1 !important;
-    color: inherit !important;
-}
-
-html body .navbar .lang-nav-item .lang-btn:hover {
-    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
-    color: #000000 !important;
-    transform: translateY(-2px) !important;
-}
-
-/* ═══ 5) زر بوابة العميل — يظهر بنفس الحجم ═══ */
-html body .navbar .btn-outline-light,
-html body .navbar .btn-outline-light.btn-sm {
-    display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    padding: 10px 20px !important;
-    min-height: 40px !important;
-    height: 40px !important;
-    border: 2px solid #C9A961 !important;
-    border-radius: 999px !important;
-    background: transparent !important;
-    color: #C9A961 !important;
-    font-weight: 700 !important;
-    font-size: 0.85rem !important;
-    line-height: 1 !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-    transition: all 0.3s ease !important;
-    margin: 0 !important;
-    transform: none !important;
-    z-index: 10 !important;
-}
-
-html body .navbar .btn-outline-light:hover {
-    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
-    color: #000000 !important;
-    border-color: #D4B872 !important;
-}
-
-/* ═══ 6) إخفاء أي زر عائم قديم نهائياً ═══ */
-html body > .language-switcher:not(.in-navbar),
-html body > .language-switcher {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-}
-
-/* ═══ 7) على الموبايل — النافبار يبقى فوق وثابت ═══ */
-@media (max-width: 991.98px) {
-    html body .navbar,
-    html body nav.navbar {
-        position: fixed !important;
-        top: 50px !important;
-        background: #000000 !important;
-        z-index: 9999 !important;
-    }
-    html body {
-        padding-top: 120px !important;
-    }
-    html body .navbar-brand img {
-        height: 36px !important;
-        max-height: 36px !important;
-        max-width: 110px !important;
-    }
-}
-
-/* ═══ 8) على الموبايل الصغير — نفس الشيء ═══ */
-@media (max-width: 576px) {
-    html body .navbar,
-    html body nav.navbar {
-        top: 45px !important;
-    }
-    html body {
-        padding-top: 110px !important;
-    }
-}
-/* ============================================================================
-   🚨 v15.0 — MOBILE NAVBAR HARD FIX (الحل النهائي)
-   ─────────────────────────────────────────────────────────────────────────
-   يمسح كل التعارضات السابقة ويفرض السلوك الصح على الموبايل
-   ⚠️ يجب أن يكون في آخر style.css — لا شيء بعده
-   ============================================================================ */
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   1) DESKTOP (992px+): القائمة ظاهرة أفقية دائماً
-   ═══════════════════════════════════════════════════════════════════════════ */
-@media (min-width: 992px) {
-    html body .navbar .navbar-collapse {
-        display: flex !important;
-        flex-basis: auto !important;
-        flex-grow: 1 !important;
-        align-items: center !important;
-        justify-content: flex-end !important;
-        flex-wrap: nowrap !important;
-        max-height: none !important;
-        overflow: visible !important;
-        height: auto !important;
-    }
-
-    html body .navbar .navbar-nav {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        gap: 4px !important;
-        width: auto !important;
-    }
-
-    html body .navbar .navbar-toggler {
-        display: none !important;
-    }
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   2) MOBILE (≤991px): القائمة مخفية افتراضياً + تظهر عند الضغط فقط
-   ═══════════════════════════════════════════════════════════════════════════ */
-@media (max-width: 991.98px) {
-
-    /* النافبار الرئيسي — ثابت فوق، عرض كامل، ارتفاع مضغوط */
-    html body .navbar,
-    html body nav.navbar {
-        position: fixed !important;
-        top: 50px !important;
-        left: 0 !important;
-        right: 0 !important;
-        padding: 8px 0 !important;
-        min-height: 60px !important;
-        max-height: 68px !important;
-        background: #000 !important;
-        z-index: 9999 !important;
-        display: block !important;
-    }
-
-    /* زر التوجلر — ظاهر وواضح */
-    html body .navbar .navbar-toggler {
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 8px 12px !important;
-        border: 2px solid #C9A961 !important;
-        border-radius: 8px !important;
-        background: transparent !important;
-        margin-left: auto !important;
-        z-index: 10001 !important;
-        position: relative !important;
-    }
-
-    /* القائمة المنسدلة — مخفية افتراضياً */
-    html body .navbar .navbar-collapse {
-        display: none !important;                 /* ← الأهم: مخفية */
-        flex-basis: 100% !important;
-        flex-grow: 1 !important;
-        background: #000 !important;
-        padding: 14px 14px !important;
-        border-radius: 12px !important;
-        margin-top: 10px !important;
-        max-height: 70vh !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        border: 1px solid rgba(201, 169, 97, 0.3) !important;
-        box-shadow: 0 20px 50px rgba(0,0,0,0.6) !important;
-        -webkit-overflow-scrolling: touch !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        position: relative !important;
-        z-index: 10000 !important;
-    }
-
-    /* عند الفتح — Bootstrap بيضيف .show */
-    html body .navbar .navbar-collapse.show,
-    html body .navbar .navbar-collapse.collapsing {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-
-    /* قائمة الروابط — عمودية بعرض كامل */
-    html body .navbar .navbar-nav {
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
-        gap: 2px !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        list-style: none !important;
-        align-items: stretch !important;
-    }
-
-    html body .navbar .navbar-nav > li,
-    html body .navbar .navbar-nav > .nav-item {
-        width: 100% !important;
-        display: block !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* روابط النافبار — عرض كامل، حجم مضغوط */
-    html body .navbar .navbar-nav .nav-link {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        width: 100% !important;
-        padding: 10px 14px !important;
-        font-size: 0.9rem !important;
-        border-radius: 8px !important;
-        color: rgba(255,255,255,0.92) !important;
-        line-height: 1.3 !important;
-        margin: 0 !important;
-        text-decoration: none !important;
-    }
-
-    html body .navbar .navbar-nav .nav-link:hover,
-    html body .navbar .navbar-nav .nav-link.active {
-        background: rgba(201, 169, 97, 0.15) !important;
-        color: #C9A961 !important;
-    }
-
-    /* القوائم المنسدلة الداخلية — مضغوطة */
-    html body .navbar .navbar-nav .dropdown-menu,
-    html body .navbar .mega-menu {
-        position: static !important;
-        background: rgba(255,255,255,0.05) !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 6px 8px !important;
-        margin: 4px 0 !important;
-        border-radius: 10px !important;
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    html body .mega-menu-inner {
-        grid-template-columns: 1fr !important;
-        padding: 8px 4px !important;
-        gap: 4px !important;
-    }
-
-    html body .mega-col {
-        padding: 8px 10px !important;
-        border-inline-end: none !important;
-        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
-    }
-
-    html body .mega-col:last-child {
-        border-bottom: none !important;
-    }
-
-    html body .mega-footer {
-        display: none !important;
-    }
-
-    /* ═══ زر اللغة + بوابة العميل — عرض كامل ═══ */
-    html body .navbar .nav-item.lang-nav-item {
-        display: flex !important;
-        width: 100% !important;
-        margin: 6px 0 0 !important;
-        padding: 0 !important;
-    }
-
-    html body .navbar .lang-nav-item .language-switcher,
-    html body .navbar .lang-nav-item .language-switcher.in-navbar {
-        width: 100% !important;
-        display: block !important;
-        margin: 0 !important;
-    }
-
-    html body .navbar .lang-nav-item .lang-btn,
+    html body .navbar .lang-btn,
     html body .navbar .btn-outline-light,
     html body .navbar .btn-outline-light.btn-sm {
         width: 100% !important;
@@ -8685,60 +6793,153 @@ html body > .language-switcher {
         height: auto !important;
         padding: 11px 16px !important;
         font-size: 0.9rem !important;
-        justify-content: center !important;
         display: flex !important;
         align-items: center !important;
+        justify-content: center !important;
     }
 
-    /* اللوجو أصغر */
-    html body .navbar-brand img {
-        height: 36px !important;
-        max-height: 36px !important;
-        max-width: 110px !important;
+    /* زر اللغة ذهبي ممتلئ */
+    html body .navbar .lang-btn {
+        background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
+        color: #000000 !important;
+        border: 2px solid #C9A961 !important;
     }
 
-    html body .navbar-brand .firm-name {
-        font-size: 0.82rem !important;
-    }
-
-    html body .navbar-brand .firm-sub {
-        font-size: 0.58rem !important;
-    }
-
-    /* body padding — مساحة كافية */
-    html body {
-        padding-top: 118px !important;
+    /* بوابة العميل ذهبي مفرّغ */
+    html body .navbar .btn-outline-light {
+        background: transparent !important;
+        color: #C9A961 !important;
+        border: 2px solid #C9A961 !important;
     }
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   3) SMALL PHONE (≤576px)
-   ═══════════════════════════════════════════════════════════════════════════ */
 @media (max-width: 576px) {
-    html body .navbar,
-    html body nav.navbar {
+    html body .navbar {
         top: 45px !important;
         padding: 6px 0 !important;
         max-height: 62px !important;
     }
-
-    html body .navbar .navbar-collapse {
-        max-height: 72vh !important;
-        padding: 12px 12px !important;
+    html body {
+        padding-top: 110px !important;
     }
-
-    html body .navbar .navbar-nav .nav-link {
-        padding: 9px 12px !important;
-        font-size: 0.86rem !important;
-    }
-
     html body .navbar-brand img {
         height: 32px !important;
         max-height: 32px !important;
         max-width: 100px !important;
     }
+}
 
-    html body {
-        padding-top: 110px !important;
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   4) HERO RICH — ارتفاع مناسب
+   ═══════════════════════════════════════════════════════════════════════════ */
+.hero-rich {
+    height: auto !important;
+    min-height: 480px !important;
+    max-height: none !important;
+    padding: 50px 0 !important;
+    margin-top: var(--navbar-height) !important;
+}
+
+.hero-rich-bg img {
+    object-fit: cover !important;
+    object-position: center top !important;
+}
+
+@media (max-width: 991px) {
+    .hero-rich {
+        min-height: 420px !important;
+        padding: 40px 0 !important;
     }
 }
+
+@media (max-width: 576px) {
+    .hero-rich {
+        min-height: auto !important;
+        padding: 35px 0 !important;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   5) CARDS — حجم مضغوط
+   ═══════════════════════════════════════════════════════════════════════════ */
+.bento-card {
+    padding: 20px 18px !important;
+    min-height: 175px !important;
+}
+.bento-card.bento-large {
+    padding: 26px 24px !important;
+    min-height: 370px !important;
+}
+.bento-card h3 { font-size: 1.02rem !important; }
+.bento-card.bento-large h3 { font-size: 1.25rem !important; }
+.bento-card p { font-size: 0.82rem !important; line-height: 1.55 !important; }
+
+.svc-feature-card { padding: 22px 20px !important; }
+.svc-feature-card h3 { font-size: 1.02rem !important; }
+.svc-feature-card p { font-size: 0.85rem !important; }
+.svc-feature-icon {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 1.15rem !important;
+}
+
+.svc-modern-item { padding: 12px 14px !important; }
+.svc-modern-content h6 { font-size: 0.86rem !important; }
+.svc-modern-content small { font-size: 0.7rem !important; }
+
+.pa-card-head { padding: 18px 18px 14px !important; }
+.pa-card-body { padding: 16px 18px 18px !important; }
+.pa-card-body p { font-size: 0.85rem !important; }
+
+.feature-card { padding: 26px 20px !important; }
+.feature-icon {
+    width: 65px !important;
+    height: 65px !important;
+    font-size: 24px !important;
+}
+
+.testimonial-modern-card { padding: 22px 20px !important; }
+.testimonial-modern-card p { font-size: 0.86rem !important; }
+
+.security-card { padding: 20px 18px !important; }
+.security-card i { font-size: 1.4rem !important; }
+.security-card h4 { font-size: 0.9rem !important; }
+.security-card p { font-size: 0.78rem !important; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   6) HPR PROMISES — 3×2 layout
+   ═══════════════════════════════════════════════════════════════════════════ */
+.hpr-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+}
+
+@media (max-width: 991px) {
+    .hpr-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 576px) {
+    .hpr-grid { grid-template-columns: 1fr !important; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   7) إخفاء أي زر عائم قديم
+   ═══════════════════════════════════════════════════════════════════════════ */
+html body > .language-switcher:not(.in-navbar) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+/* ============================================================================
+   ============================================================================
+   ██████████████████████████████████████████████████████████████████████████
+   END OF STYLESHEET — نهاية ورقة الأنماط
+   ██████████████████████████████████████████████████████████████████████████
+   ============================================================================
+   ============================================================================
