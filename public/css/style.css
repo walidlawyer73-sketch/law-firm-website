@@ -6630,6 +6630,199 @@ hr.divider-soft {
     }
 }
 
+/* ============================================================================
+   🎯 HERO PROMISES — التزاماتنا تجاهك (البلوك المسترجع)
+   ─────────────────────────────────────────────────────────────────────────
+   بلوك كان موجود في النسخة الأصلية — تم استرجاعه
+   ⚠️ يُضاف في آخر style.css (بعد الجزء 5/5)
+   ============================================================================ */
+
+.hero-promises {
+    margin-top: 22px;
+    padding: 18px 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(201, 169, 97, 0.22);
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-promises::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(201, 169, 97, 0.15), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* ─── رأس البلوك ─── */
+.hpr-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.hpr-head-line {
+    width: 30px;
+    height: 3px;
+    background: linear-gradient(90deg, #C9A961, #A88947);
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.hpr-head > i:first-of-type {
+    color: #C9A961;
+    font-size: 1rem;
+}
+
+.hpr-head-text {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #C9A961;
+    letter-spacing: 0.5px;
+}
+
+.hpr-head-icon {
+    margin-inline-start: auto;
+    color: #C9A961;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ─── شبكة الكروت ─── */
+.hpr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ─── الكارت الواحد ─── */
+.hpr-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(201, 169, 97, 0.22);
+    border-radius: 12px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+}
+
+.hpr-card::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #C9A961, #A88947);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.35s ease;
+}
+
+.hpr-card:hover::before {
+    transform: scaleY(1);
+}
+
+.hpr-card:hover {
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(201, 169, 97, 0.05) 100%);
+    border-color: #C9A961;
+    transform: translateX(-4px);
+    box-shadow: 0 10px 24px -8px rgba(201, 169, 97, 0.35);
+}
+
+[dir="rtl"] .hpr-card:hover {
+    transform: translateX(4px);
+}
+
+/* ─── الأيقونة ─── */
+.hpr-icon {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #C9A961, #A88947);
+    color: #000;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    box-shadow: 0 6px 14px rgba(201, 169, 97, 0.35);
+    transition: all 0.35s ease;
+}
+
+.hpr-card:hover .hpr-icon {
+    transform: rotate(8deg) scale(1.1);
+    box-shadow: 0 8px 20px rgba(201, 169, 97, 0.55);
+}
+
+/* ─── النص ─── */
+.hpr-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.hpr-body strong {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.25;
+    transition: color 0.3s ease;
+}
+
+.hpr-card:hover .hpr-body strong {
+    color: #D4B872;
+}
+
+.hpr-body small {
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.hpr-card:hover .hpr-body small {
+    color: rgba(255, 255, 255, 0.88);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 991px) {
+    .hpr-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .hpr-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-promises {
+        padding: 16px 16px;
+    }
+}
+
 
 /* ============================================================================
    ============================================================================
