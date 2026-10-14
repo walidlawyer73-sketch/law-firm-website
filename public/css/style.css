@@ -6489,60 +6489,54 @@ hr.divider-soft {
 
    
    /* ============================================================================
-   v16.0 — MOBILE-FIRST RESET
-   حل شامل لمشاكل الموبايل
+   v15.0 — FINAL UNIFIED BLOCK
+   البلوك النهائي الموحد — حل كل المشاكل في مكان واحد
    ─────────────────────────────────────────────────────────────────────────
-   ⚠️ يجب أن يكون آخر بلوك في style.css
+   يغطي: النافبار + زر اللغة + بوابة العميل + الموبايل + الهيرو + الكروت
+   ⚠️ هذا هو البلوك الأخير في style.css — لا شيء بعده
    ============================================================================ */
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   1) منع الـ overflow الأفقي — أهم قاعدة
+   1) NAVBAR — أسود صلب + ثابت فوق
    ═══════════════════════════════════════════════════════════════════════════ */
-html, body {
-    overflow-x: hidden !important;
+html body .navbar,
+html body nav.navbar {
+    position: fixed !important;
+    top: var(--banner-height, 50px) !important;
+    left: 0 !important;
+    right: 0 !important;
     width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    background: #000000 !important;
+    background-color: #000000 !important;
+    background-image: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    z-index: 9999 !important;
+    padding: 12px 0 !important;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box !important;
+html body .navbar.scrolled {
+    background: #000000 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
-/* كل الصور والـ iframes والفيديوهات */
-img, iframe, video, svg, canvas {
-    max-width: 100% !important;
-    height: auto !important;
-}
-
-/* كل الـ rows والـ containers */
-.container,
-.container-fluid,
-.row,
-[class*="col-"] {
-    max-width: 100% !important;
+html body {
+    padding-top: calc(var(--banner-height, 50px) + 80px) !important;
 }
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   2) DESKTOP (992px+) — كل شيء طبيعي
+   2) DESKTOP — القائمة أفقية، زر اللغة + بوابة العميل بنفس الحجم
    ═══════════════════════════════════════════════════════════════════════════ */
 @media (min-width: 992px) {
 
-    /* النافبار أفقي */
-    html body .navbar {
-        background: #000 !important;
-        position: fixed !important;
-        top: var(--banner-height, 50px) !important;
-        width: 100% !important;
-        z-index: 9999 !important;
-    }
-
-    html body .navbar .container {
+    html body .navbar .container,
+    html body .navbar .container-fluid {
         display: flex !important;
         flex-wrap: nowrap !important;
         align-items: center !important;
+        justify-content: space-between !important;
     }
 
     html body .navbar .navbar-collapse {
@@ -6552,6 +6546,8 @@ img, iframe, video, svg, canvas {
         align-items: center !important;
         justify-content: flex-end !important;
         flex-wrap: nowrap !important;
+        max-height: none !important;
+        overflow: visible !important;
     }
 
     html body .navbar .navbar-nav {
@@ -6559,6 +6555,7 @@ img, iframe, video, svg, canvas {
         flex-direction: row !important;
         align-items: center !important;
         gap: 4px !important;
+        width: auto !important;
         margin-inline-start: auto !important;
     }
 
@@ -6566,8 +6563,9 @@ img, iframe, video, svg, canvas {
         display: none !important;
     }
 
-    /* زر اللغة + بوابة العميل */
+    /* زر اللغة + بوابة العميل — نفس الحجم */
     html body .navbar .lang-btn,
+    html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn,
     html body .navbar .btn-outline-light,
     html body .navbar .btn-outline-light.btn-sm {
         display: inline-flex !important;
@@ -6580,126 +6578,119 @@ img, iframe, video, svg, canvas {
         border-radius: 999px !important;
         font-weight: 700 !important;
         font-size: 0.88rem !important;
+        line-height: 1 !important;
+        text-decoration: none !important;
         white-space: nowrap !important;
-        flex-shrink: 0 !important;
+        transition: all 0.3s ease !important;
+        margin: 0 !important;
     }
 
-    html body .navbar .lang-btn {
+    /* زر اللغة — ذهبي ممتلئ */
+    html body .navbar .lang-btn,
+    html body .navbar .lang-nav-item .language-switcher.in-navbar .lang-btn {
         background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
-        color: #000 !important;
+        color: #000000 !important;
         border: 2px solid #C9A961 !important;
+        box-shadow: 0 6px 18px rgba(201, 169, 97, 0.40) !important;
     }
 
-    html body .navbar .btn-outline-light {
+    html body .navbar .lang-btn:hover {
+        background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+        color: #000000 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55) !important;
+    }
+
+    /* بوابة العميل — ذهبي مفرّغ */
+    html body .navbar .btn-outline-light,
+    html body .navbar .btn-outline-light.btn-sm {
         background: transparent !important;
         color: #C9A961 !important;
         border: 2px solid #C9A961 !important;
+        box-shadow: 0 4px 15px rgba(201, 169, 97, 0.15) !important;
     }
 
+    html body .navbar .btn-outline-light:hover {
+        background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+        color: #000000 !important;
+        transform: translateY(-2px) !important;
+    }
+
+    /* زر اللغة wrapper */
     html body .navbar .lang-nav-item {
         display: inline-flex !important;
         align-items: center !important;
         margin: 0 0 0 8px !important;
+        padding: 0 !important;
+        list-style: none !important;
     }
 
     [dir="rtl"] html body .navbar .lang-nav-item {
         margin: 0 8px 0 0 !important;
     }
+
+    html body .navbar .lang-nav-item .language-switcher,
+    html body .navbar .lang-nav-item .language-switcher.in-navbar {
+        display: inline-flex !important;
+        position: static !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+    }
 }
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   3) MOBILE (≤991px) — إعادة ضبط شاملة
+   3) MOBILE (≤991px) — القائمة مخفية، تفتح بالضغط فقط
    ═══════════════════════════════════════════════════════════════════════════ */
 @media (max-width: 991.98px) {
 
-    /* ───────── 3.1 النافبار الأساسي ───────── */
-    html body .navbar {
-        position: fixed !important;
-        top: var(--banner-height, 50px) !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
+    html body .navbar,
+    html body nav.navbar {
+        top: 50px !important;
         padding: 8px 0 !important;
         min-height: 60px !important;
-        background: #000 !important;
-        z-index: 9999 !important;
-        display: block !important;
+        max-height: 68px !important;
     }
 
     html body {
-        padding-top: calc(var(--banner-height, 50px) + 68px) !important;
-        overflow-x: hidden !important;
+        padding-top: 118px !important;
     }
 
-    /* ───────── 3.2 الـ container — عرض كامل ───────── */
-    html body .navbar .container,
-    html body .navbar .container-fluid {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 12px !important;
-    }
-
-    /* ───────── 3.3 اللوجو ───────── */
-    html body .navbar-brand {
-        display: flex !important;
-        align-items: center !important;
-        gap: 8px !important;
-        flex-shrink: 0 !important;
-        max-width: 65% !important;
-    }
-
+    /* اللوجو أصغر */
     html body .navbar-brand img {
-        height: 34px !important;
-        max-height: 34px !important;
-        width: auto !important;
-        max-width: 100px !important;
-        object-fit: contain !important;
+        height: 36px !important;
+        max-height: 36px !important;
+        max-width: 110px !important;
     }
-
     html body .navbar-brand .firm-name {
-        font-size: 0.78rem !important;
-        line-height: 1.1 !important;
+        font-size: 0.82rem !important;
     }
-
     html body .navbar-brand .firm-sub {
-        font-size: 0.55rem !important;
-        line-height: 1.1 !important;
+        font-size: 0.58rem !important;
     }
 
-    /* ───────── 3.4 زر القائمة ───────── */
+    /* زر التوجلر — ظاهر وواضح */
     html body .navbar .navbar-toggler {
         display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 8px 10px !important;
+        padding: 8px 12px !important;
         border: 2px solid #C9A961 !important;
         border-radius: 8px !important;
         background: transparent !important;
-        flex-shrink: 0 !important;
+        margin-inline-start: auto !important;
         z-index: 10001 !important;
-        cursor: pointer !important;
     }
 
-    html body .navbar-toggler-icon {
-        width: 22px !important;
-        height: 22px !important;
-    }
-
-    /* ───────── 3.5 القائمة المنسدلة — مخفية افتراضياً ───────── */
+    /* القائمة — مخفية افتراضياً */
     html body .navbar .navbar-collapse {
-        display: none !important;                     /* ⚠️ الأهم */
+        display: none !important;
         flex-basis: 100% !important;
-        width: 100% !important;
         background: #000 !important;
-        padding: 12px !important;
+        padding: 14px !important;
         border-radius: 12px !important;
-        margin-top: 8px !important;
-        max-height: 75vh !important;
+        margin-top: 10px !important;
+        max-height: 72vh !important;
         overflow-y: auto !important;
         overflow-x: hidden !important;
         border: 1px solid rgba(201, 169, 97, 0.3) !important;
@@ -6709,32 +6700,27 @@ img, iframe, video, svg, canvas {
         -webkit-overflow-scrolling: touch !important;
     }
 
-    /* عند الفتح */
+    /* عند الفتح — Bootstrap بيضيف .show */
     html body .navbar .navbar-collapse.show,
     html body .navbar .navbar-collapse.collapsing {
         display: flex !important;
-        flex-direction: column !important;
     }
 
-    /* ───────── 3.6 روابط القائمة — عمودية بعرض كامل ───────── */
+    /* القائمة — عمودية بعرض كامل */
     html body .navbar .navbar-nav {
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
-        gap: 3px !important;
+        gap: 2px !important;
         margin: 0 !important;
         padding: 0 !important;
         list-style: none !important;
-        align-items: stretch !important;
     }
 
-    html body .navbar .navbar-nav > li,
-    html body .navbar .navbar-nav > .nav-item {
-        display: block !important;
+    html body .navbar .navbar-nav > li {
         width: 100% !important;
+        display: block !important;
         margin: 0 !important;
-        padding: 0 !important;
-        flex-shrink: 0 !important;
     }
 
     html body .navbar .navbar-nav .nav-link {
@@ -6742,14 +6728,10 @@ img, iframe, video, svg, canvas {
         align-items: center !important;
         justify-content: space-between !important;
         width: 100% !important;
-        padding: 11px 14px !important;
+        padding: 10px 14px !important;
         font-size: 0.9rem !important;
         border-radius: 8px !important;
         color: rgba(255,255,255,0.92) !important;
-        white-space: normal !important;
-        line-height: 1.3 !important;
-        margin: 0 !important;
-        text-decoration: none !important;
     }
 
     html body .navbar .navbar-nav .nav-link:hover,
@@ -6758,28 +6740,21 @@ img, iframe, video, svg, canvas {
         color: #C9A961 !important;
     }
 
-    /* ───────── 3.7 القوائم المنسدلة الداخلية ───────── */
+    /* القوائم المنسدلة الداخلية */
     html body .navbar .navbar-nav .dropdown-menu,
     html body .navbar .mega-menu {
         position: static !important;
         background: rgba(255,255,255,0.05) !important;
-        border: none !important;
         box-shadow: none !important;
         padding: 6px 8px !important;
         margin: 4px 0 !important;
         border-radius: 10px !important;
         width: 100% !important;
         max-width: 100% !important;
-        display: none !important;
-    }
-
-    html body .nav-item.mega-menu-item.open > .mega-menu,
-    html body .navbar .navbar-nav .nav-item.show > .dropdown-menu {
-        display: block !important;
     }
 
     html body .mega-menu-inner {
-        display: block !important;
+        grid-template-columns: 1fr !important;
         padding: 8px 4px !important;
     }
 
@@ -6797,238 +6772,169 @@ img, iframe, video, svg, canvas {
         display: none !important;
     }
 
-    /* ───────── 3.8 زر اللغة + بوابة العميل — عرض كامل، تحت بعض ───────── */
-    html body .navbar .lang-nav-item,
-    html body .navbar .navbar-nav > .lang-nav-item {
+    /* زر اللغة + بوابة العميل — عرض كامل */
+    html body .navbar .lang-nav-item {
         display: flex !important;
         width: 100% !important;
         margin: 6px 0 0 !important;
-        padding: 0 !important;
     }
 
     html body .navbar .lang-nav-item .language-switcher,
     html body .navbar .lang-nav-item .language-switcher.in-navbar {
         width: 100% !important;
         display: block !important;
-        margin: 0 !important;
-        padding: 0 !important;
     }
 
     html body .navbar .lang-btn,
     html body .navbar .btn-outline-light,
     html body .navbar .btn-outline-light.btn-sm {
-        display: flex !important;
         width: 100% !important;
-        min-height: 44px !important;
+        min-height: 42px !important;
         height: auto !important;
-        padding: 12px 16px !important;
+        padding: 11px 16px !important;
         font-size: 0.9rem !important;
+        display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        gap: 8px !important;
-        border-radius: 999px !important;
-        margin: 6px 0 0 !important;
-        white-space: nowrap !important;
     }
 
+    /* زر اللغة ذهبي ممتلئ */
     html body .navbar .lang-btn {
         background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
-        color: #000 !important;
+        color: #000000 !important;
         border: 2px solid #C9A961 !important;
     }
 
+    /* بوابة العميل ذهبي مفرّغ */
     html body .navbar .btn-outline-light {
         background: transparent !important;
         color: #C9A961 !important;
         border: 2px solid #C9A961 !important;
     }
-
-    /* ───────── 3.9 الهيرو — إصلاح الصورة ───────── */
-    html body .hero-rich {
-        height: auto !important;
-        min-height: 440px !important;
-        max-height: none !important;
-        padding: 40px 0 !important;
-        margin-top: var(--navbar-height, 80px) !important;
-        overflow: hidden !important;
-        width: 100% !important;
-        max-width: 100vw !important;
-    }
-
-    html body .hero-rich-bg {
-        position: absolute !important;
-        inset: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        overflow: hidden !important;
-    }
-
-    html body .hero-rich-bg img {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        object-position: center center !important;
-        max-width: none !important;
-    }
-
-    /* الـ container جوه الهيرو */
-    html body .hero-rich .container {
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    /* ───────── 3.10 المحتوى — أعمدة عمودية ───────── */
-    html body .hero-rich .row {
-        display: block !important;
-        width: 100% !important;
-        margin: 0 !important;
-    }
-
-    html body .hero-rich [class*="col-"] {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 !important;
-        margin: 0 0 20px 0 !important;
-        flex: none !important;
-    }
-
-    html body .hero-rich-title {
-        font-size: 1.6rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 12px !important;
-        word-wrap: break-word !important;
-    }
-
-    html body .hero-rich-subtitle {
-        font-size: 0.9rem !important;
-        margin-bottom: 16px !important;
-    }
-
-    /* ───────── 3.11 الأزرار في الهيرو ───────── */
-    html body .hero-rich-buttons {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 10px !important;
-        width: 100% !important;
-    }
-
-    html body .hero-rich-buttons .btn-hero-primary,
-    html body .hero-rich-buttons .btn-hero-ghost {
-        width: 100% !important;
-        justify-content: center !important;
-        padding: 12px 20px !important;
-        font-size: 0.9rem !important;
-    }
-
-    /* ───────── 3.12 الشبكات (grids) — عمود واحد ───────── */
-    html body .bento-grid,
-    html body .services-grid-modern,
-    html body .process-timeline,
-    html body .credentials-row,
-    html body .trends-grid,
-    html body .decision-grid,
-    html body .ip-assets-grid,
-    html body .security-grid,
-    html body .route-compare,
-    html body .hpr-grid,
-    html body .grounds-grid {
-        grid-template-columns: 1fr !important;
-        gap: 12px !important;
-    }
-
-    html body .bento-card.bento-large {
-        grid-column: span 1 !important;
-        grid-row: span 1 !important;
-        min-height: auto !important;
-    }
-
-    /* ───────── 3.13 الكروت ───────── */
-    html body .bento-card,
-    html body .bento-card.bento-large {
-        padding: 18px 16px !important;
-        min-height: auto !important;
-    }
-
-    html body .svc-feature-card { padding: 18px 16px !important; }
-    html body .feature-card { padding: 20px 16px !important; }
-    html body .pa-card-head { padding: 16px !important; }
-    html body .pa-card-body { padding: 14px 16px 16px !important; }
-    html body .testimonial-modern-card { padding: 18px 16px !important; }
-    html body .security-card { padding: 18px 16px !important; }
-
-    /* ───────── 3.14 إخفاء أي عنصر عائم ───────── */
-    html body > .language-switcher:not(.in-navbar) {
-        display: none !important;
-    }
 }
 
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   4) SMALL PHONE (≤576px)
-   ═══════════════════════════════════════════════════════════════════════════ */
 @media (max-width: 576px) {
-
     html body .navbar {
         top: 45px !important;
         padding: 6px 0 !important;
-        min-height: 56px !important;
+        max-height: 62px !important;
     }
-
     html body {
-        padding-top: calc(45px + 62px) !important;
+        padding-top: 110px !important;
     }
-
     html body .navbar-brand img {
-        height: 30px !important;
-        max-height: 30px !important;
-        max-width: 90px !important;
-    }
-
-    html body .navbar-brand .firm-name {
-        font-size: 0.72rem !important;
-    }
-
-    html body .navbar-brand .firm-sub {
-        font-size: 0.5rem !important;
-    }
-
-    html body .hero-rich {
-        min-height: auto !important;
-        padding: 35px 0 !important;
-    }
-
-    html body .hero-rich-title {
-        font-size: 1.4rem !important;
-    }
-
-    html body .hero-rich-subtitle {
-        font-size: 0.85rem !important;
-    }
-
-    html body .navbar .navbar-collapse {
-        padding: 10px !important;
-        max-height: 75vh !important;
+        height: 32px !important;
+        max-height: 32px !important;
+        max-width: 100px !important;
     }
 }
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   5) إخفاء أي بلوكات قديمة متعارضة
+   4) HERO RICH — ارتفاع مناسب
    ═══════════════════════════════════════════════════════════════════════════ */
-html body .navbar {
-    transform: none !important;
-    filter: none !important;
-    perspective: none !important;
+.hero-rich {
+    height: auto !important;
+    min-height: 480px !important;
+    max-height: none !important;
+    padding: 50px 0 !important;
+    margin-top: var(--navbar-height) !important;
 }
 
-html body * {
-    max-width: 100vw;
+.hero-rich-bg img {
+    object-fit: cover !important;
+    object-position: center top !important;
+}
+
+@media (max-width: 991px) {
+    .hero-rich {
+        min-height: 420px !important;
+        padding: 40px 0 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-rich {
+        min-height: auto !important;
+        padding: 35px 0 !important;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   5) CARDS — حجم مضغوط
+   ═══════════════════════════════════════════════════════════════════════════ */
+.bento-card {
+    padding: 20px 18px !important;
+    min-height: 175px !important;
+}
+.bento-card.bento-large {
+    padding: 26px 24px !important;
+    min-height: 370px !important;
+}
+.bento-card h3 { font-size: 1.02rem !important; }
+.bento-card.bento-large h3 { font-size: 1.25rem !important; }
+.bento-card p { font-size: 0.82rem !important; line-height: 1.55 !important; }
+
+.svc-feature-card { padding: 22px 20px !important; }
+.svc-feature-card h3 { font-size: 1.02rem !important; }
+.svc-feature-card p { font-size: 0.85rem !important; }
+.svc-feature-icon {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 1.15rem !important;
+}
+
+.svc-modern-item { padding: 12px 14px !important; }
+.svc-modern-content h6 { font-size: 0.86rem !important; }
+.svc-modern-content small { font-size: 0.7rem !important; }
+
+.pa-card-head { padding: 18px 18px 14px !important; }
+.pa-card-body { padding: 16px 18px 18px !important; }
+.pa-card-body p { font-size: 0.85rem !important; }
+
+.feature-card { padding: 26px 20px !important; }
+.feature-icon {
+    width: 65px !important;
+    height: 65px !important;
+    font-size: 24px !important;
+}
+
+.testimonial-modern-card { padding: 22px 20px !important; }
+.testimonial-modern-card p { font-size: 0.86rem !important; }
+
+.security-card { padding: 20px 18px !important; }
+.security-card i { font-size: 1.4rem !important; }
+.security-card h4 { font-size: 0.9rem !important; }
+.security-card p { font-size: 0.78rem !important; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   6) HPR PROMISES — 3×2 layout
+   ═══════════════════════════════════════════════════════════════════════════ */
+.hpr-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+}
+
+@media (max-width: 991px) {
+    .hpr-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 576px) {
+    .hpr-grid { grid-template-columns: 1fr !important; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   7) إخفاء أي زر عائم قديم
+   ═══════════════════════════════════════════════════════════════════════════ */
+html body > .language-switcher:not(.in-navbar) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 /* ============================================================================
    ============================================================================
