@@ -7275,3 +7275,90 @@ hr.divider-soft {
         background-color: #0a0a0a !important;
     }
 }
+/* ============================================================================
+   ✅ HERO IMG — عرض الصورة كاملة (بدون قص)
+   ============================================================================ */
+
+@media (max-width: 991.98px) {
+
+    html body .hero-rich {
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        /* ⚡ الارتفاع يتبع نسبة أبعاد الصورة تلقائياً */
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        padding: 30px 0 !important;
+        background: #0a0a0a !important;
+        overflow: hidden !important;
+    }
+
+    /* ⚡ الحاوية = نفس نسبة أبعاد الصورة (16:9 تقريباً) */
+    html body .hero-rich-bg {
+        position: relative !important;   /* ← relative مش absolute */
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9 !important;  /* ← نسبة الصورة */
+        background: #0a0a0a !important;
+        overflow: hidden !important;
+        z-index: 0 !important;
+    }
+
+    /* ⚡ الصورة كاملة 100% */
+    html body .hero-rich-bg img {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        object-fit: contain !important;   /* ← كاملة بدون قص */
+        object-position: center center !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* ⚡ طبقة التعتيم فوق الصورة */
+    html body .hero-rich-overlay {
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 1 !important;
+        background: linear-gradient(
+            180deg,
+            rgba(0,0,0,0.45) 0%,
+            rgba(0,0,0,0.25) 50%,
+            rgba(0,0,0,0.55) 100%
+        ) !important;
+        pointer-events: none !important;
+    }
+
+    /* ⚡ المحتوى فوق الصورة */
+    html body .hero-rich-content {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        z-index: 3 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        padding: 20px 15px !important;
+        overflow-y: auto !important;
+    }
+}
+
+@media (max-width: 576px) {
+    html body .hero-rich-bg {
+        aspect-ratio: 16 / 9 !important;
+    }
+    html body .hero-rich {
+        padding: 20px 0 !important;
+    }
+}
