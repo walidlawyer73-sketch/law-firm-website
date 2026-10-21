@@ -995,3 +995,24 @@
     })();
 
 })();
+/* ============================================================================
+   🚀 MOBILE MEGA MENU FIX — حل مشكلة عدم استجابة قائمة الخدمات
+   ============================================================================ */
+document.addEventListener('click', function(e) {
+    // البحث عن زر الخدمات اللي اتضغط عليه
+    var toggle = e.target.closest('.mega-menu-item > .dropdown-toggle');
+    
+    if (toggle) {
+        // لو إحنا على الموبايل
+        if (window.innerWidth <= 991) {
+            e.preventDefault(); // نمنع إن الصفحة تروح لرابط تاني
+            e.stopPropagation(); // نمنع أي تداخل
+            
+            var parentLi = toggle.closest('.mega-menu-item');
+            if (parentLi) {
+                // نضيف أو نشيل كلاس open عشان نفتح ونقفل القائمة
+                parentLi.classList.toggle('open');
+            }
+        }
+    }
+});
