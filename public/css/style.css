@@ -7176,10 +7176,10 @@ hr.divider-soft {
     }
 }
 /* ============================================================================
-   🚀 THE ULTIMATE HERO FIX — لا تضيف أي حاجة بعده
+   🚀 FINAL BULLETPROOF HERO — لا تضيف أي حاجة بعده
    ============================================================================ */
 
-/* 1. على الكمبيوتر: نظهر صورة الديسكتوب ونخفي صورة الموبايل */
+/* 1. الكمبيوتر: نظهر صورة الديسكتوب ونخفي الموبايل */
 .hero-rich-bg .hero-img-desktop {
     display: block !important;
 }
@@ -7187,7 +7187,7 @@ hr.divider-soft {
     display: none !important;
 }
 
-/* 2. على الموبايل (أي مقاس أقل من 992px) */
+/* 2. الموبايل (أقل من 992px) */
 @media (max-width: 991.98px) {
     
     /* نخفي صورة الديسكتوب */
@@ -7204,52 +7204,50 @@ hr.divider-soft {
         width: 100% !important;
         height: 100% !important;
         
-        /* 🌟 السر كله هنا: cover بتخلي الصورة تغطي أي شاشة مهما كان مقاسها */
+        /* 🌟 السحر كله هنا: cover بتخلي الصورة تغطي أي شاشة مهما كان مقاسها بدون سواد */
         object-fit: cover !important; 
-        object-position: center center !important; /* تتمركز في النص */
+        object-position: center center !important; 
         z-index: 0 !important;
     }
     
-    /* 3. ضبط شكل الهيرو نفسه عشان ياخد الشاشة كلها */
+    /* 3. إعدادات الهيرو الأساسية (مهم جداً: height auto عشان المحتوى يظهر) */
     html body .hero-rich {
         position: relative !important;
-        height: 100vh !important; /* ارتفاع الشاشة بالكامل */
-        min-height: 100vh !important;
-        max-height: 100vh !important;
-        display: flex !important;
-        align-items: center !important;
-        padding: 0 !important;
-        margin: 0 !important;
+        height: auto !important; 
+        min-height: 100vh !important; /* تاخد ارتفاع الشاشة على الأقل */
+        padding: 80px 0 40px !important; /* مساحة للنافبار */
+        display: block !important; 
         overflow: hidden !important;
         background-color: #000 !important;
     }
     
+    /* 4. حاوية الصورة */
     html body .hero-rich-bg {
         position: absolute !important;
-        inset: 0 !important;
+        top: 0; left: 0; right: 0; bottom: 0;
         width: 100% !important;
         height: 100% !important;
         z-index: 0 !important;
         overflow: hidden !important;
     }
     
-    /* طبقة تعتيم خفيفة عشان الكلام يبان */
+    /* 5. طبقة التعتيم عشان النص يبان فوق الصورة */
     html body .hero-rich-overlay {
         position: absolute !important;
-        inset: 0 !important;
+        top: 0; left: 0; right: 0; bottom: 0;
         z-index: 1 !important;
         background: linear-gradient(
             180deg,
-            rgba(0,0,0,0.6) 0%,
-            rgba(0,0,0,0.3) 50%,
-            rgba(0,0,0,0.7) 100%
+            rgba(0,0,0,0.7) 0%,
+            rgba(0,0,0,0.4) 50%,
+            rgba(0,0,0,0.8) 100%
         ) !important;
     }
     
+    /* 6. المحتوى (النص والكروت) */
     html body .hero-rich-content {
         position: relative !important;
-        z-index: 3 !important;
-        width: 100% !important;
-        padding: 20px 15px !important;
+        z-index: 10 !important; /* فوق الصورة وفوق التعتيم */
+        padding: 0 15px !important;
     }
 }
