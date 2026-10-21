@@ -7486,80 +7486,95 @@ hr.divider-soft {
     }
 }
 /* ============================================================================
-   ✅ FIX ARTICLE HERO IMAGE (Show full image without cropping)
+   🚀 ARTICLE HERO ULTIMATE FIX — الحل النهائي المضمون
    ============================================================================ */
-.article-hero-img {
-    object-fit: contain !important;
-    object-position: center center !important;
-    opacity: 0.45 !important; /* زيادة الشفافية شوية عشان الصورة تبان */
-    background-color: #0a0a0a !important; /* لون خلفية الصورة (أسود) */
+
+/* 1. الحاوية الرئيسية */
+html body .article-hero {
+    position: relative !important;
+    min-height: 500px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #050505 !important;
+    overflow: hidden !important;
+    margin-top: 0 !important;
+    padding: 120px 15px 80px 15px !important; /* مساحة فوق عشان النافبار */
 }
+
+/* 2. الصورة في الخلف */
+html body .article-hero .article-hero-img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    z-index: 1 !important;
+}
+
+/* 3. طبقة التعتيم عشان الكلام يبان */
+html body .article-hero .article-hero-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(180deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.85) 100%) !important;
+    z-index: 2 !important;
+}
+
+/* 4. المحتوى (العنوان في المنتصف) */
+html body .article-hero .article-hero-content {
+    position: relative !important;
+    z-index: 3 !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+}
+
+/* 5. تنسيق العنوان */
+html body .article-hero .article-hero-content h1 {
+    font-family: 'Cairo', sans-serif !important;
+    font-size: clamp(1.8rem, 4vw, 3rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.3 !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8) !important;
+}
+
+[dir="rtl"] html body .article-hero .article-hero-content h1 {
+    font-family: 'Cairo', sans-serif !important;
+}
+
+/* 6. تنسيق التفاصيل (التاريخ والقراءة) */
+html body .article-hero .article-hero-meta {
+    display: flex !important;
+    gap: 20px !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    font-size: 0.9rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 600 !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    padding: 10px 20px !important;
+    border-radius: 50px !important;
+    display: inline-flex !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+html body .article-hero .article-hero-meta i {
+    color: #C9A961 !important; /* اللون الذهبي */
+    margin-inline-end: 5px !important;
+}
+
 /* ============================================================================
-   🚀 ARTICLE HERO FIX — ضبط صورة الهيدر والعنوان فوقها
+   🛡️ حماية زر اللغة من أي تأثير
    ============================================================================ */
-.article-hero {
-    position: relative;
-    min-height: 450px; /* ارتفاع الهيدر */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #050505; /* لون غامق لو الصورة مش موجودة */
-    overflow: hidden;
-    margin-top: 0;
-    padding: 100px 0 60px; /* مساحة فوق عشان النافبار */
-}
-
-/* الصورة الخلفية */
-.article-hero-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1; /* طبقة 1 */
-}
-
-/* طبقة التعتيم عشان النص يبان */
-.article-hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%);
-    z-index: 2; /* طبقة 2 - فوق الصورة */
-}
-
-/* المحتوى (العنوان والتفاصيل) */
-.article-hero-content {
-    position: relative;
-    z-index: 3; /* طبقة 3 - فوق كل حاجة */
-    text-align: center;
-    color: #fff;
-}
-
-.article-hero-content h1 {
-    font-family: 'Cairo', sans-serif; /* أو Playfair Display للإنجليزي */
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    font-weight: 800;
-    line-height: 1.3;
-    color: #fff;
-    margin-bottom: 20px;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
-}
-
-.article-hero-meta {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.85);
-    font-weight: 600;
-}
-
-.article-hero-meta i {
-    color: #C9A961; /* اللون الذهبي */
-    margin-left: 5px;
+html body .language-switcher,
+html body .navbar .lang-nav-item {
+    z-index: 9999 !important;
 }
