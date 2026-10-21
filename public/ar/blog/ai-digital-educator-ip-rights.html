@@ -530,11 +530,36 @@
             box-shadow: 0 25px 50px -20px rgba(0,0,0,0.12);
             color: inherit;
         }
+                /* حاوية الصورة في الروابط السريعة */
         .related-card-img {
             height: 160px;
-            background: linear-gradient(135deg, #000, #1A1A1A);
+            background: linear-gradient(135deg, #111, #000); /* خلفية داكنة */
             overflow: hidden;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* أيقونة تظهر في النص لو الصورة مش موجودة */
+        .related-card-img::before {
+            content: '\f1ea'; /* أيقونة ورقة */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 3rem;
+            color: rgba(201, 169, 97, 0.2); /* لون ذهبي شفاف */
+            position: absolute;
+            z-index: 1;
+        }
+
+        /* الصورة الحقيقية تظهر فوق الأيقونة */
+        .related-card-img img {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
         .related-card-img img {
             width: 100%;
@@ -1000,8 +1025,7 @@
                 <div class="col-md-6 col-lg-4">
                     <a href="/ar/blog/protecting-software-patents.html" class="related-card">
                         <div class="related-card-img">
-                            <img src="/images/blog/software-patents.jpg" alt="حماية البرمجيات في مصر" loading="lazy" onerror="this.style.opacity=0;">
-                        </div>
+<img src="/images/blog/software-patents.png" alt="Software Patents" class="article-hero-img" onerror="this.style.display='none';">                        </div>
                         <div class="related-card-body">
                             <span class="related-card-cat">الملكية الفكرية</span>
                             <h4>حماية البرمجيات في مصر: حقوق المؤلف أم براءات الاختراع أم الأسرار التجارية؟</h4>
@@ -1013,8 +1037,7 @@
                 <div class="col-md-6 col-lg-4">
                     <a href="/ar/blog/trademark-opposition-strategy.html" class="related-card">
                         <div class="related-card-img">
-                            <img src="/images/blog/trademark-opposition.jpg" alt="الرد على معارضات العلامات التجارية" loading="lazy" onerror="this.style.opacity=0;">
-                        </div>
+<img src="/images/blog/trademark-opposition.png" alt="Trademark Opposition" class="article-hero-img" onerror="this.style.display='none';">                        </div>
                         <div class="related-card-body">
                             <span class="related-card-cat">الملكية الفكرية</span>
                             <h4>الرد على معارضات العلامات التجارية: دليل عملي</h4>
