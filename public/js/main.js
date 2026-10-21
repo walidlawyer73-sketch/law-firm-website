@@ -942,18 +942,6 @@
                 toggle.removeAttribute('data-bs-toggle');
                 toggle.setAttribute('aria-haspopup', 'true');
                 toggle.setAttribute('aria-expanded', 'false');
-
-                toggle.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 991) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        const isOpen = servicesItem.classList.toggle('open');
-                        this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                    } else {
-                        e.preventDefault();
-                        window.location.href = isAr ? '/ar/services.html' : '/services.html';
-                    }
-                });
             }
 
             servicesItem.appendChild(megaMenu);
@@ -1015,4 +1003,58 @@ document.addEventListener('click', function(e) {
             }
         }
     }
+});
+/* ============================================================================
+   🚀 ULTIMATE MOBILE MENU FIX — لا تحذف هذا الكود
+   ============================================================================ */
+document.addEventListener('DOMContentLoaded', function () {
+    // نمسك بكل أزرار القوائم المنسدلة (الخدمات، المدونة، إلخ)
+    var dropdownToggles = document.querySelectorAll('.navbar-nav .dropdown-toggle, .navbar-nav .mega-menu-item > a');
+
+    dropdownToggles.forEach(function (toggle) {
+        toggle.addEventListener('click', function (e) {
+            // نطبق الحل ده فقط على الموبايل
+            if (window.innerWidth <= 991.98) {
+                e.preventDefault(); // نمنع الرابط من العمل
+                e.stopPropagation(); // نمنع البوتستراب من إغلاق القائمة
+
+                var parentLi = this.closest('.nav-item');
+                var menu = parentLi.querySelector('.dropdown-menu, .mega-menu');
+                
+                // نقفل أي قوائم تانية مفتوحة
+                document.querySelectorAll('.navbar-nav .dropdown-menu, .navbar-nav .mega-menu').forEach(function(m) {
+                    if (m !== menu) m.classList.remove('show');
+                });
+                document.querySelectorAll('.navbar-nav .nav-item').forEach(function(n) {
+                    if (n !== parentLi) n.classList.remove('open');
+                });
+
+                // نفتح أو نقفل القائمة الحالية
+                if (menu) {
+                    var isOpen = menu.classList.contains('show') || parentLi.classList.contains('open');
+                    if (isOpen) {
+                        menu.classList.remove('show');
+                        parentLi.classList.remove('open');
+                    } else {
+                        menu.classList.add('show');
+                        parentLi.classList.add('open');
+                    }
+                }
+            }
+        });
+    });
+
+    // إغلاق القائمة عند الضغط في أي مكان خارجها
+    document.addEventListener('click', function (e) {
+        if (window.innerWidth <= 991.98) {
+            if (!e.target.closest('.navbar-nav')) {
+                document.querySelectorAll('.navbar-nav .dropdown-menu, .navbar-nav .mega-menu').forEach(function(m) {
+                    m.classList.remove('show');
+                });
+                document.querySelectorAll('.navbar-nav .nav-item').forEach(function(n) {
+                    n.classList.remove('open');
+                });
+            }
+        }
+    });
 });

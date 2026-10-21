@@ -7348,3 +7348,56 @@ hr.divider-soft {
     position: relative;
     z-index: 5;
 }
+/* ============================================================================
+   🚀 ULTIMATE MOBILE MENU CSS FIX
+   ============================================================================ */
+@media (max-width: 991.98px) {
+    
+    /* 1. قائمة الخدمات العادية (Dropdown) */
+    html body .navbar .navbar-nav .dropdown-menu.show {
+        display: block !important;
+        position: static !important;
+        width: 100% !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 0 0 15px !important; /* إزاحة بسيطة للداخل */
+        margin: 5px 0 !important;
+    }
+
+    /* 2. الميجا منيو (Mega Menu) */
+    html body .navbar .mega-menu {
+        display: none !important; /* مخفية افتراضياً */
+        position: static !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: none !important;
+        box-shadow: none !important;
+        border-radius: 10px !important;
+        margin-top: 5px !important;
+        padding: 10px !important;
+        max-height: 50vh !important; /* السماح بالتمرير لو الخدمات كتير */
+        overflow-y: auto !important;
+    }
+
+    /* إظهار الميجا منيو عند الفتح */
+    html body .navbar .nav-item.mega-menu-item.open > .mega-menu,
+    html body .navbar .nav-item.mega-menu-item .mega-menu.show {
+        display: block !important;
+    }
+
+    /* 3. تنسيق الروابط داخل الميجا منيو */
+    html body .navbar .mega-menu .mega-list a {
+        display: block !important;
+        padding: 12px 15px !important;
+        color: #fff !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* إخفاء الأيقونات الجانبية في الموبايل لتوفير مساحة */
+    html body .navbar .mega-menu .mega-col-title i {
+        display: none !important; 
+    }
+}
