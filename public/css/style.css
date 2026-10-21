@@ -7176,59 +7176,64 @@ hr.divider-soft {
     }
 }
 /* ============================================================================
-   🚀 THE END — الحل النهائي المضمون 100%
+   🚀 FINAL HERO + WOOD FADE
    ============================================================================ */
 
-/* 1. على الكمبيوتر: نخفي صورة الموبايل ونظهر العادية */
+/* الكمبيوتر */
 .hero-rich-bg .hero-img-mobile { display: none !important; }
 .hero-rich-bg .hero-img-desktop { display: block !important; }
 
-/* 2. على الموبايل (أقل من 992px) */
 @media (max-width: 991.98px) {
     
-    /* نخفي صورة الكمبيوتر */
     .hero-rich-bg .hero-img-desktop { display: none !important; }
-    
-    /* نظهر صورة الموبايل */
     .hero-rich-bg .hero-img-mobile { display: block !important; }
 
-    /* 3. الهيرو: نخليه ياخد مساحة المحتوى اللي جواه بدون ما يتقص */
+    /* 1. الهيرو: هنخليه ياخد الخلفية الخشبية */
     html body .hero-rich {
         position: relative !important;
         height: auto !important;
         min-height: 100vh !important;
         padding: 80px 0 40px !important;
-        background: #0a0a0a !important; /* لون سودة للباقي */
+        
+        /* ⚠️ غير اسم الصورة دي لاسم صورة الخلفية الخشبية اللي عندك */
+        background-image: url('/images/wood-bg.jpg') !important; 
+        background-size: cover !important;
+        background-position: center !important;
+        background-attachment: fixed !important; /* تأثير ثابت فخم */
         display: block !important;
     }
 
-    /* 4. حاوية الصورة: نثبتها على قد الشاشة بس عشان متتمطش */
+    /* 2. حاوية الصورة: تاخد قد الشاشة */
     html body .hero-rich-bg {
         position: absolute !important;
         top: 0 !important;
         left: 0 !important;
         width: 100% !important;
-        height: 100vh !important; /* تاخد قد الشاشة الأولى بالظبط ومتكبرش */
+        height: 100vh !important; 
         z-index: 0 !important;
     }
 
-    /* 5. الصورة: تغطي المساحة بتاعتها بدون تشوه */
     html body .hero-rich-bg .hero-img-mobile {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important; 
-        object-position: center top !important; /* تبدأ من فوق */
+        object-position: center top !important; 
     }
     
-    /* 6. تظبيط المحتوى فوق الصورة */
+    /* 3. المحتوى فوق كل حاجة */
     html body .hero-rich-content {
         position: relative !important;
         z-index: 10 !important;
     }
     
-    /* 7. تعتيم بسيط جداً عشان الصورة تبان والنص يبان */
+    /* 4. ✨ السر هنا: طبقة تعتيم متدرجة تنتهي بالخشب بدل الأسود */
     html body .hero-rich-overlay {
         height: 100vh !important;
-        background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(10,10,10,1) 100%) !important;
+        background: linear-gradient(
+            180deg, 
+            rgba(0,0,0,0.6) 0%, 
+            rgba(0,0,0,0.4) 60%, 
+            rgba(20, 15, 10, 0.95) 100% /* لون خشبي غامق جداً في الآخر */
+        ) !important;
     }
 }
