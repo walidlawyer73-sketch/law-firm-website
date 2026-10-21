@@ -938,33 +938,11 @@
             `;
 
             const toggle = servicesItem.querySelector('.dropdown-toggle');
-if (toggle) {
-    toggle.removeAttribute('data-bs-toggle');
-    toggle.setAttribute('aria-haspopup', 'true');
-    toggle.setAttribute('aria-expanded', 'false');
-
-    // ✅ الحل النهائي: إضافة حدث النقر هنا لضمان عمله في كل الصفحات
-    toggle.addEventListener('click', function(e) {
-        if (window.innerWidth <= 991.98) {
-            e.preventDefault();
-            e.stopPropagation(); // منع البوتستراب من إغلاق النافبار
-            
-            // فتح / قفل القائمة
-            servicesItem.classList.toggle('open');
-            const isOpen = servicesItem.classList.contains('open');
-            this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            
-            // إغلاق أي قوائم أخرى مفتوحة
-            document.querySelectorAll('.navbar-nav .nav-item.open').forEach(item => {
-                if (item !== servicesItem) {
-                    item.classList.remove('open');
-                    const otherToggle = item.querySelector('.dropdown-toggle');
-                    if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
-        }
-    });
-}
+            if (toggle) {
+                toggle.removeAttribute('data-bs-toggle');
+                toggle.setAttribute('aria-haspopup', 'true');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
 
             servicesItem.appendChild(megaMenu);
 
@@ -1005,3 +983,48 @@ if (toggle) {
     })();
 
 })();
+/* ============================================================================
+   🚀 FINAL BULLETPROOF MOBILE MENU TOGGLE
+   ============================================================================ */
+document.addEventListener("DOMContentLoaded", function() {
+    // نمسك بكل أزرار القوائم المنسدلة
+    const dropdownToggles = document.querySelectorAll('.navbar-nav .dropdown-toggle');
+    
+    dropdownToggles.forEach(toggle => {
+        // بننسخ الزرار ونستبدله عشان نمسح أي أحداث قديمة مرتبطة بيه (زي البوتستراب)
+        const newToggle = toggle.cloneNode(true);
+        toggle.parentNode.replaceChild(newToggle, toggle);
+        
+        // نضيف الحدث الجديد بتاعنا
+        newToggle.addEventListener('click', function(e) {
+            // نطبق ده على الموبايل بس
+            if (window.innerWidth <= 991.98) {
+                e.preventDefault(); // نمنع أي سلوك افتراضي
+                e.stopPropagation(); // نمنع البوتستراب من التدخل
+                
+                const parentItem = this.closest('.nav-item');
+                const menu = parentItem.querySelector('.dropdown-menu, .mega-menu');
+                
+                // نقفل أي قوائم تانية مفتوحة
+                document.querySelectorAll('.navbar-nav .nav-item').forEach(item => {
+                    if (item !== parentItem) {
+                        item.classList.remove('open', 'show');
+                        const m = item.querySelector('.dropdown-menu, .mega-menu');
+                        if (m) m.classList.remove('show');
+                    }
+                });
+                
+                // نفتح أو نقفل القائمة الحالية
+                if (parentItem.classList.contains('open')) {
+                    parentItem.classList.remove('open', 'show');
+                    if (menu) menu.classList.remove('show');
+                    this.setAttribute('aria-expanded', 'false');
+                } else {
+                    parentItem.classList.add('open', 'show');
+                    if (menu) menu.classList.add('show');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            }
+        });
+    });
+});
