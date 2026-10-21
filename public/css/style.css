@@ -7685,3 +7685,110 @@ html body .navbar .lang-nav-item a:hover {
         padding: 12px 16px !important;
     }
 }
+/* ============================================================================
+   🚀 FINAL ARTICLE & NAVBAR FIX — لا تحذف هذا الكود
+   ============================================================================ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   1. إصلاح هيدر المقال (العنوان فوق الصورة في المنتصف)
+   ───────────────────────────────────────────────────────────────────────── */
+.article-hero {
+    position: relative !important;
+    min-height: 520px !important; /* ارتفاع ثابت وفخم */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #0a0a0a !important;
+    overflow: hidden !important;
+    margin-top: 0 !important;
+    padding: 120px 0 80px !important; /* مساحة للنافبار */
+    text-align: center !important;
+}
+
+.article-hero-img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    z-index: 1 !important; /* الصورة في الخلف */
+}
+
+.article-hero-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.9) 100%) !important;
+    z-index: 2 !important; /* التعتيم فوق الصورة */
+}
+
+.article-hero-content {
+    position: relative !important;
+    z-index: 3 !important; /* العنوان فوق كل حاجة */
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+}
+
+.article-hero-content h1 {
+    color: #ffffff !important;
+    font-size: clamp(1.6rem, 4vw, 2.8rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.3 !important;
+    margin-bottom: 25px !important;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   2. إصلاح زر اللغة (تثبيته في النافبار مهما حصل)
+   ───────────────────────────────────────────────────────────────────────── */
+/* إخفاء الزر العائم القديم */
+html body > .language-switcher:not(.in-navbar) {
+    display: none !important;
+}
+
+/* تثبيت الزر الجديد في النافبار */
+html body .navbar .navbar-nav .lang-nav-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin: 0 0 0 8px !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+[dir="rtl"] html body .navbar .navbar-nav .lang-nav-item {
+    margin: 0 8px 0 0 !important;
+}
+
+/* شكل الزر الذهبي */
+html body .navbar .lang-nav-item .lang-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 10px 20px !important;
+    background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
+    color: #000000 !important;
+    border: 2px solid #C9A961 !important;
+    border-radius: 999px !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: 0 6px 18px rgba(201,169,97,0.4) !important;
+}
+
+/* على الموبايل: عرض كامل تحت بعض */
+@media (max-width: 991.98px) {
+    html body .navbar .navbar-nav .lang-nav-item {
+        width: 100% !important;
+        margin: 10px 0 0 0 !important;
+    }
+    html body .navbar .lang-nav-item .lang-btn {
+        width: 100% !important;
+        min-height: 44px !important;
+    }
+}
