@@ -7237,3 +7237,114 @@ hr.divider-soft {
         ) !important;
     }
 }
+/* ============================================================================
+   🚀 PREMIUM BLOG & ARTICLE DESIGN — تصميم فخم للمقالات
+   ============================================================================ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   1. غلاف المقال في صفحة المدونة (لو مفيش صورة)
+   ───────────────────────────────────────────────────────────────────────── */
+.blog-card {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid var(--gray-200);
+    display: flex;
+    flex-direction: column;
+}
+
+/* الحاوية بتاعة الصورة */
+.blog-card .blog-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%); /* خلفية داكنة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* لمسة ذهبية ونمط هندسي لو مفيش صورة */
+.blog-card .blog-img-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 80% 20%, rgba(201, 169, 97, 0.15) 0%, transparent 50%),
+        linear-gradient(rgba(201, 169, 97, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 169, 97, 0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 20px 20px, 20px 20px;
+    z-index: 1;
+}
+
+/* أيقونة كبيرة في النص لو مفيش صورة */
+.blog-card .blog-img-wrap::after {
+    content: '\f0f6'; /* كود أيقونة الورقة من FontAwesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 3.5rem;
+    color: rgba(201, 169, 97, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+/* لو فيه صورة حقيقية، هنخليها هي اللي تبان وتغطي الأيقونة */
+.blog-card .blog-img-wrap img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 3; /* فوق الخلفية */
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-img-wrap img {
+    transform: scale(1.08); /* زووم خفيف عند الماوس */
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   2. هيدر صفحة المقال نفسه (اللي كان أسود سادة)
+   ───────────────────────────────────────────────────────────────────────── */
+.article-hero {
+    position: relative;
+    background: linear-gradient(135deg, #050505 0%, #1a1a1a 50%, #0a0a0a 100%) !important;
+    overflow: hidden;
+    padding: 100px 0 60px !important; /* مساحة فخمة */
+    border-bottom: 2px solid rgba(201, 169, 97, 0.3);
+}
+
+/* نقشة هندسية فخمة في الخلفية */
+.article-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(201, 169, 97, 0.15) 0%, transparent 60%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* لو فيه صورة للمقال، هتظهر خلف النص بتعتيم خفيف */
+.article-hero .article-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4; /* تعتيم عشان الكلام يبان */
+    z-index: 1;
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.article-hero-content {
+    position: relative;
+    z-index: 5;
+}

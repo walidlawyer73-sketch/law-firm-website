@@ -57,7 +57,51 @@
     </script>
 
     <style>
-        /* المقال المميز */
+        /* ============================================================
+           تصميم الغلاف الافتراضي الفخم للمقالات (عند غياب الصورة)
+           ============================================================ */
+        .fp-image, .pc-image {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #111, #000); /* خلفية داكنة فخمة */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* نمط هندسي ذهبي خفيف يظهر عند غياب الصورة */
+        .fp-image::before, .pc-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 80% 20%, rgba(201, 169, 97, 0.15) 0%, transparent 50%),
+                linear-gradient(rgba(201, 169, 97, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201, 169, 97, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 20px 20px, 20px 20px;
+            z-index: 1;
+        }
+
+        /* أيقونة ورقة/مقال تظهر في المنتصف عند غياب الصورة */
+        .fp-image::after, .pc-image::after {
+            content: '\f1ea'; /* كود أيقونة الصحيفة */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 3.5rem;
+            color: rgba(201, 169, 97, 0.3);
+            position: absolute;
+            z-index: 2;
+        }
+
+        /* الصورة الحقيقية تظهر فوق الخلفية الافتراضية */
+        .fp-image img, .pc-image img {
+            position: relative;
+            z-index: 3;
+        }
+
+        /* ============================================================
+           المقال المميز
+           ============================================================ */
         .featured-post {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -76,11 +120,10 @@
             border-color: #C9A961;
         }
         .fp-image {
-            position: relative;
-            overflow: hidden;
             min-height: 420px;
-            background: linear-gradient(135deg, #000, #1A1A1A);
         }
+        
+        /* تنسيقات صورة المقال المميز الأصلية */
         .fp-image img {
             width: 100%;
             height: 100%;
@@ -91,6 +134,7 @@
         .featured-post:hover .fp-image img {
             transform: scale(1.05);
         }
+
         .fp-badge {
             position: absolute;
             top: 25px;
@@ -103,7 +147,7 @@
             font-weight: 800;
             letter-spacing: 1.5px;
             box-shadow: 0 10px 25px rgba(201,169,97,0.4);
-            z-index: 2;
+            z-index: 4; /* فوق الصورة */
         }
         .fp-content {
             padding: 50px 45px;
@@ -125,15 +169,8 @@
             align-items: center;
             gap: 6px;
         }
-        .fp-meta i {
-            color: #C9A961;
-            font-size: 0.85rem;
-        }
-        .fp-category {
-            color: #A88947;
-            letter-spacing: 1px;
-            font-weight: 800;
-        }
+        .fp-meta i { color: #C9A961; font-size: 0.85rem; }
+        .fp-category { color: #A88947; letter-spacing: 1px; font-weight: 800; }
         .fp-title {
             font-family: 'Cairo', sans-serif;
             font-size: clamp(1.4rem, 2.5vw, 1.9rem);
@@ -159,10 +196,7 @@
             transition: all 0.3s ease;
             align-self: flex-start;
         }
-        .fp-read-more:hover {
-            color: #000;
-            gap: 15px;
-        }
+        .fp-read-more:hover { color: #000; gap: 15px; }
 
         @media (max-width: 900px) {
             .featured-post { grid-template-columns: 1fr; }
@@ -170,7 +204,9 @@
             .fp-content { padding: 35px 28px; }
         }
 
-        /* تابات الفلترة */
+        /* ============================================================
+           تابات الفلترة
+           ============================================================ */
         .filter-tabs {
             display: flex;
             gap: 10px;
@@ -204,11 +240,11 @@
             border-color: #C9A961;
             box-shadow: 0 10px 25px -8px rgba(201,169,97,0.4);
         }
-        .filter-tab i {
-            font-size: 0.8rem;
-        }
+        .filter-tab i { font-size: 0.8rem; }
 
-        /* بطاقة المقال */
+        /* ============================================================
+           بطاقة المقال
+           ============================================================ */
         .post-card {
             background: #fff;
             border: 1px solid #E9ECEF;
@@ -228,11 +264,10 @@
             color: inherit;
         }
         .pc-image {
-            position: relative;
             height: 210px;
-            overflow: hidden;
-            background: linear-gradient(135deg, #000, #1A1A1A);
         }
+        
+        /* تنسيقات صورة بطاقة المقال الأصلية */
         .pc-image img {
             width: 100%;
             height: 100%;
@@ -242,6 +277,7 @@
         .post-card:hover .pc-image img {
             transform: scale(1.08);
         }
+
         .pc-category {
             position: absolute;
             top: 15px;
@@ -254,7 +290,7 @@
             font-weight: 700;
             letter-spacing: 0.5px;
             backdrop-filter: blur(8px);
-            z-index: 2;
+            z-index: 4; /* فوق الصورة */
         }
         .pc-category.ip { background: rgba(201,169,97,0.95); color: #000; }
         .pc-category.arb { background: rgba(30,144,255,0.9); color: #fff; }
@@ -276,11 +312,7 @@
             color: #ADB5BD;
             font-weight: 600;
         }
-        .pc-meta span {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
+        .pc-meta span { display: inline-flex; align-items: center; gap: 5px; }
         .pc-title {
             font-family: 'Cairo', sans-serif;
             font-size: 1.05rem;
@@ -290,9 +322,7 @@
             margin-bottom: 12px;
             transition: color 0.3s ease;
         }
-        .post-card:hover .pc-title {
-            color: #A88947;
-        }
+        .post-card:hover .pc-title { color: #A88947; }
         .pc-excerpt {
             font-size: 0.86rem;
             color: #6C757D;
@@ -320,11 +350,11 @@
             font-size: 0.95rem;
             transition: transform 0.3s ease;
         }
-        .post-card:hover .pc-arrow {
-            transform: translateX(-5px);
-        }
+        .post-card:hover .pc-arrow { transform: translateX(-5px); }
 
-        /* صندوق النشرة البريدية */
+        /* ============================================================
+           صندوق النشرة البريدية
+           ============================================================ */
         .newsletter-box {
             background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
             border-radius: 24px;
@@ -336,20 +366,16 @@
         .newsletter-box::before {
             content: '';
             position: absolute;
-            top: -80px;
-            left: -80px;
-            width: 300px;
-            height: 300px;
+            top: -80px; left: -80px;
+            width: 300px; height: 300px;
             background: radial-gradient(circle, rgba(201,169,97,0.18), transparent 70%);
             border-radius: 50%;
         }
         .newsletter-box::after {
             content: '';
             position: absolute;
-            bottom: -60px;
-            right: -60px;
-            width: 200px;
-            height: 200px;
+            bottom: -60px; right: -60px;
+            width: 200px; height: 200px;
             background: radial-gradient(circle, rgba(201,169,97,0.12), transparent 70%);
             border-radius: 50%;
         }
@@ -362,81 +388,54 @@
             color: #fff;
         }
         .newsletter-content i.nl-icon {
-            font-size: 2.5rem;
-            color: #C9A961;
-            margin-bottom: 20px;
-            display: inline-block;
+            font-size: 2.5rem; color: #C9A961;
+            margin-bottom: 20px; display: inline-block;
         }
         .newsletter-content h3 {
             font-family: 'Cairo', sans-serif;
             font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 12px;
-            line-height: 1.4;
+            font-weight: 800; color: #fff;
+            margin-bottom: 12px; line-height: 1.4;
         }
         .newsletter-content p {
             color: rgba(255,255,255,0.75);
-            font-size: 0.95rem;
-            margin-bottom: 30px;
-            line-height: 1.8;
+            font-size: 0.95rem; margin-bottom: 30px; line-height: 1.8;
         }
         .newsletter-form {
-            display: flex;
-            gap: 12px;
-            max-width: 500px;
-            margin: 0 auto;
+            display: flex; gap: 12px;
+            max-width: 500px; margin: 0 auto;
         }
         .newsletter-form input {
-            flex: 1;
-            padding: 14px 20px;
+            flex: 1; padding: 14px 20px;
             border: 2px solid rgba(201,169,97,0.3);
             border-radius: 999px;
             background: rgba(255,255,255,0.05);
-            color: #fff;
-            font-size: 0.9rem;
-            font-family: inherit;
-            transition: all 0.3s ease;
+            color: #fff; font-size: 0.9rem;
+            font-family: inherit; transition: all 0.3s ease;
         }
-        .newsletter-form input::placeholder {
-            color: rgba(255,255,255,0.4);
-        }
+        .newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
         .newsletter-form input:focus {
-            outline: none;
-            border-color: #C9A961;
+            outline: none; border-color: #C9A961;
             background: rgba(255,255,255,0.1);
             box-shadow: 0 0 0 4px rgba(201,169,97,0.15);
         }
         .newsletter-form button {
             padding: 14px 28px;
             background: linear-gradient(135deg, #C9A961, #A88947);
-            color: #000;
-            border: none;
-            border-radius: 999px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            white-space: nowrap;
-            font-family: inherit;
+            color: #000; border: none; border-radius: 999px;
+            font-weight: 700; font-size: 0.9rem;
+            cursor: pointer; transition: all 0.3s ease;
+            display: inline-flex; align-items: center; gap: 8px;
+            white-space: nowrap; font-family: inherit;
         }
         .newsletter-form button:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 30px rgba(201,169,97,0.4);
         }
         .newsletter-form button:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
+            opacity: 0.7; cursor: not-allowed; transform: none;
         }
-        .nl-status {
-            margin-top: 15px;
-            font-size: 0.85rem;
-            display: none;
-        }
+        .nl-status { margin-top: 15px; font-size: 0.85rem; display: none; }
         .nl-status.success { color: #6EE7B7; display: block; }
         .nl-status.error { color: #FCA5A5; display: block; }
 
@@ -455,16 +454,19 @@
 </head>
 
 <body>
+    <!-- شريط النسخة التجريبية -->
     <div id="trial-banner">
         <i class="fas fa-tools"></i>
         <span>هذا إصدار تجريبي للموقع - جاري التطوير والتحديث</span>
         <i class="fas fa-tools"></i>
     </div>
 
+    <!-- زر اللغة العائم (يتم استبداله بواسطة main.js) -->
     <div class="language-switcher">
         <a href="/blog.html" class="lang-btn"><i class="fas fa-globe"></i> English</a>
     </div>
 
+    <!-- شريط التنقل -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="/ar/">
@@ -509,6 +511,7 @@
         </div>
     </nav>
 
+    <!-- هيدر الصفحة -->
     <header class="page-header">
         <div class="container text-center">
             <h1 class="display-4">رؤى قانونية</h1>
@@ -521,7 +524,6 @@
          ============================================================ -->
     <section class="py-5">
         <div class="container">
-
             <div class="section-head-rich">
                 <div class="sh-line"></div>
                 <span class="sh-label">مقال مميز</span>
@@ -531,10 +533,8 @@
             <article class="featured-post">
                 <div class="fp-image">
                     <span class="fp-badge">مميز</span>
-                    <img src="/images/blog/ai-ip-cover.jpg"
-                         alt="الذكاء الاصطناعي والملكية الفكرية - بحث علمي"
-                         loading="lazy"
-                         onerror="this.onerror=null; this.style.opacity=0;">
+                    <!-- تم تعديل onerror لإخفاء الصورة المكسورة وإظهار الغلاف الافتراضي -->
+                    <img src="/images/blog/ai-ip-cover.jpg" alt="الذكاء الاصطناعي والملكية الفكرية - بحث علمي" loading="lazy" onerror="this.style.display='none';">
                 </div>
                 <div class="fp-content">
                     <div class="fp-meta">
@@ -550,12 +550,10 @@
                         حصل على موافقة النشر بمجلة المعهد القومي للملكية الفكرية.
                     </p>
                     <a href="/ar/blog/ai-digital-educator-ip-rights.html" class="fp-read-more">
-                        اقرأ المقال
-                        <i class="fas fa-arrow-left"></i>
+                        اقرأ المقال <i class="fas fa-arrow-left"></i>
                     </a>
                 </div>
             </article>
-
         </div>
     </section>
 
@@ -564,7 +562,6 @@
          ============================================================ -->
     <section class="py-5 bg-light">
         <div class="container">
-
             <div class="section-head-rich">
                 <div class="sh-line"></div>
                 <span class="sh-label">جميع المقالات</span>
@@ -583,13 +580,12 @@
 
             <!-- شبكة المقالات -->
             <div class="row g-4">
-
-                <!-- 1 — تعديلات قانون الملكية الفكرية -->
+                <!-- 1 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/ar/blog/egyptian-ip-law-amendments-2026.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category ip">ملكية فكرية</span>
-                            <img src="/images/blog/ip-law-amendments.jpg" alt="تعديلات قانون الملكية الفكرية المصري" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/ip-law-amendments.jpg" alt="تعديلات قانون الملكية الفكرية المصري" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -597,10 +593,7 @@
                                 <span><i class="fas fa-clock"></i> 6 دقائق</span>
                             </div>
                             <h4 class="pc-title">التعديلات الحديثة على قانون الملكية الفكرية المصري: ما يجب أن يعرفه أصحاب الأعمال</h4>
-                            <p class="pc-excerpt">
-                                نظرة عملية على آخر التعديلات على إطار الملكية الفكرية في مصر —
-                                وما تعنيه لحاملي العلامات التجارية ومقدّمي طلبات البراءات وأصحاب الحقوق.
-                            </p>
+                            <p class="pc-excerpt">نظرة عملية على آخر التعديلات على إطار الملكية الفكرية في مصر — وما تعنيه لحاملي العلامات التجارية ومقدّمي طلبات البراءات وأصحاب الحقوق.</p>
                             <div class="pc-footer">
                                 <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
                                 <i class="fas fa-arrow-left pc-arrow"></i>
@@ -609,12 +602,12 @@
                     </a>
                 </div>
 
-                <!-- 2 — اتجاهات التحكيم -->
+                <!-- 2 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/ar/blog/arbitration-trends-2026.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category arb">تحكيم</span>
-                            <img src="/images/blog/arbitration-trends.jpg" alt="اتجاهات التحكيم 2026" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/arbitration-trends.jpg" alt="اتجاهات التحكيم 2026" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -622,11 +615,7 @@
                                 <span><i class="fas fa-clock"></i> 7 دقائق</span>
                             </div>
                             <h4 class="pc-title">اتجاهات التحكيم التي يجب متابعتها في 2026: مصر والمنطقة</h4>
-                            <p class="pc-excerpt">
-                                كيف تتطور ممارسة التحكيم في مصر ومنطقة الشرق الأوسط — بما في
-                                ذلك منازعات الملكية الفكرية، والتحكيم الاستثماري، والدور المتزايد
-                                للتقنية.
-                            </p>
+                            <p class="pc-excerpt">كيف تتطور ممارسة التحكيم في مصر ومنطقة الشرق الأوسط — بما في ذلك منازعات الملكية الفكرية، والتحكيم الاستثماري، والدور المتزايد للتقنية.</p>
                             <div class="pc-footer">
                                 <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
                                 <i class="fas fa-arrow-left pc-arrow"></i>
@@ -635,12 +624,12 @@
                     </a>
                 </div>
 
-                <!-- 3 — حماية البرمجيات -->
+                <!-- 3 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/ar/blog/protecting-software-patents.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category ip">ملكية فكرية</span>
-                            <img src="/images/blog/software-patents.jpg" alt="حماية البرمجيات في مصر" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/software-patents.jpg" alt="حماية البرمجيات في مصر" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -648,10 +637,7 @@
                                 <span><i class="fas fa-clock"></i> 8 دقائق</span>
                             </div>
                             <h4 class="pc-title">حماية البرمجيات في مصر: حقوق المؤلف أم براءات الاختراع أم الأسرار التجارية؟</h4>
-                            <p class="pc-excerpt">
-                                تفصيل للمسارات القانونية الثلاثة الرئيسية لحماية البرمجيات
-                                ومنتجات SaaS في مصر — وكيف تختار الاستراتيجية المناسبة لعملك.
-                            </p>
+                            <p class="pc-excerpt">تفصيل للمسارات القانونية الثلاثة الرئيسية لحماية البرمجيات ومنتجات SaaS في مصر — وكيف تختار الاستراتيجية المناسبة لعملك.</p>
                             <div class="pc-footer">
                                 <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
                                 <i class="fas fa-arrow-left pc-arrow"></i>
@@ -660,12 +646,12 @@
                     </a>
                 </div>
 
-                <!-- 4 — معارضات العلامات -->
+                <!-- 4 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/ar/blog/trademark-opposition-strategy.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category ip">ملكية فكرية</span>
-                            <img src="/images/blog/trademark-opposition.jpg" alt="معارضات العلامات التجارية" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/trademark-opposition.jpg" alt="معارضات العلامات التجارية" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -673,10 +659,7 @@
                                 <span><i class="fas fa-clock"></i> 5 دقائق</span>
                             </div>
                             <h4 class="pc-title">الرد على معارضات العلامات التجارية: دليل عملي</h4>
-                            <p class="pc-excerpt">
-                                ماذا يحدث عندما يُعارض على طلب تسجيل علامتك التجارية — والخطوات
-                                التي يمكنك اتخاذها للدفاع عن علامتك بموقف قانوني قوي.
-                            </p>
+                            <p class="pc-excerpt">ماذا يحدث عندما يُعارض على طلب تسجيل علامتك التجارية — والخطوات التي يمكنك اتخاذها للدفاع عن علامتك بموقف قانوني قوي.</p>
                             <div class="pc-footer">
                                 <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
                                 <i class="fas fa-arrow-left pc-arrow"></i>
@@ -685,12 +668,12 @@
                     </a>
                 </div>
 
-                <!-- 5 — حوكمة الشركات -->
+                <!-- 5 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/ar/blog/corporate-governance-checklist.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category corp">شركات</span>
-                            <img src="/images/blog/corporate-governance.jpg" alt="قائمة فحص حوكمة الشركات" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/corporate-governance.jpg" alt="قائمة فحص حوكمة الشركات" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -698,11 +681,7 @@
                                 <span><i class="fas fa-clock"></i> 6 دقائق</span>
                             </div>
                             <h4 class="pc-title">قائمة فحص حوكمة الشركات للشركات المصرية</h4>
-                            <p class="pc-excerpt">
-                                قائمة عملية تُغطّي متطلبات الجمعية العمومية، وإجراءات مجلس
-                                الإدارة، والالتزامات التنظيمية للشركات ذات المسؤولية المحدودة
-                                والمساهمة في مصر.
-                            </p>
+                            <p class="pc-excerpt">قائمة عملية تُغطّي متطلبات الجمعية العمومية، وإجراءات مجلس الإدارة، والالتزامات التنظيمية للشركات ذات المسؤولية المحدودة والمساهمة في مصر.</p>
                             <div class="pc-footer">
                                 <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
                                 <i class="fas fa-arrow-left pc-arrow"></i>
@@ -711,12 +690,12 @@
                     </a>
                 </div>
 
-                <!-- 6 — أخطاء NDA -->
+                <!-- 6 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/ar/blog/nda-drafting-mistakes.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category corp">شركات</span>
-                            <img src="/images/blog/nda-drafting.jpg" alt="أخطاء صياغة اتفاقيات عدم الإفصاح" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/nda-drafting.jpg" alt="أخطاء صياغة اتفاقيات عدم الإفصاح" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -724,10 +703,7 @@
                                 <span><i class="fas fa-clock"></i> 5 دقائق</span>
                             </div>
                             <h4 class="pc-title">خمسة أخطاء شائعة في صياغة اتفاقيات عدم الإفصاح — وكيف تتجنبها</h4>
-                            <p class="pc-excerpt">
-                                كثيراً ما تُعامَل اتفاقيات NDA كإجراء شكلي. إليك لماذا تُهم —
-                                وأكثر أخطاء الصياغة الشائعة التي قد تعرّض معلوماتك السرية للخطر.
-                            </p>
+                            <p class="pc-excerpt">كثيراً ما تُعامَل اتفاقيات NDA كإجراء شكلي. إليك لماذا تُهم — وأكثر أخطاء الصياغة الشائعة التي قد تعرّض معلوماتك السرية للخطر.</p>
                             <div class="pc-footer">
                                 <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
                                 <i class="fas fa-arrow-left pc-arrow"></i>
@@ -736,12 +712,12 @@
                     </a>
                 </div>
 
-                <!-- 7 — التحضير للتقاضي -->
+                <!-- 7 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/ar/blog/preparing-commercial-litigation.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category lit">تقاضي</span>
-                            <img src="/images/blog/litigation-prep.jpg" alt="التحضير للتقاضي التجاري" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/litigation-prep.jpg" alt="التحضير للتقاضي التجاري" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -749,10 +725,7 @@
                                 <span><i class="fas fa-clock"></i> 7 دقائق</span>
                             </div>
                             <h4 class="pc-title">التحضير للتقاضي التجاري: قائمة فحص عملية لأصحاب الأعمال</h4>
-                            <p class="pc-excerpt">
-                                ما يجب تحضيره قبل رفع دعوى تجارية أو الدفاع عن نفسك — المستندات،
-                                والأدلة، والجدول الزمني، وما يمكن توقّعه خلال العملية.
-                            </p>
+                            <p class="pc-excerpt">ما يجب تحضيره قبل رفع دعوى تجارية أو الدفاع عن نفسك — المستندات، والأدلة، والجدول الزمني، وما يمكن توقّعه خلال العملية.</p>
                             <div class="pc-footer">
                                 <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
                                 <i class="fas fa-arrow-left pc-arrow"></i>
@@ -761,12 +734,12 @@
                     </a>
                 </div>
 
-                <!-- 8 — العناية الواجبة -->
+                <!-- 8 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/ar/blog/ip-due-diligence-ma.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category ip">ملكية فكرية</span>
-                            <img src="/images/blog/ip-due-diligence.jpg" alt="العناية الواجبة للملكية الفكرية في الاندماج" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/ip-due-diligence.jpg" alt="العناية الواجبة للملكية الفكرية في الاندماج" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -774,10 +747,7 @@
                                 <span><i class="fas fa-clock"></i> 8 دقائق</span>
                             </div>
                             <h4 class="pc-title">العناية الواجبة للملكية الفكرية في صفقات الاندماج والاستحواذ: ما يُغفله المشترون</h4>
-                            <p class="pc-excerpt">
-                                في صفقات الاندماج والاستحواذ، غالباً ما تكون أصول الملكية
-                                الفكرية الأكثر قيمة — والأكثر إغفالاً. إليك ما يجب فحصه قبل التوقيع.
-                            </p>
+                            <p class="pc-excerpt">في صفقات الاندماج والاستحواذ، غالباً ما تكون أصول الملكية الفكرية الأكثر قيمة — والأكثر إغفالاً. إليك ما يجب فحصه قبل التوقيع.</p>
                             <div class="pc-footer">
                                 <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
                                 <i class="fas fa-arrow-left pc-arrow"></i>
@@ -786,12 +756,12 @@
                     </a>
                 </div>
 
-                <!-- 9 — استراتيجية إيداع البراءات -->
+                <!-- 9 -->
                 <div class="col-md-6 col-lg-4">
                     <a href="/ar/blog/patent-filing-strategy-egypt.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category ip">ملكية فكرية</span>
-                            <img src="/images/blog/patent-filing.jpg" alt="استراتيجية إيداع البراءات في مصر" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/patent-filing.jpg" alt="استراتيجية إيداع البراءات في مصر" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -799,10 +769,7 @@
                                 <span><i class="fas fa-clock"></i> 7 دقائق</span>
                             </div>
                             <h4 class="pc-title">استراتيجية إيداع البراءات في مصر: المسار المحلي مقابل PCT</h4>
-                            <p class="pc-excerpt">
-                                متى تُودع محلياً، ومتى تسلك مسار PCT، وكيف تبني استراتيجية براءات
-                                تدعم الحماية طويلة المدى والتوسع الدولي.
-                            </p>
+                            <p class="pc-excerpt">متى تُودع محلياً، ومتى تسلك مسار PCT، وكيف تبني استراتيجية براءات تدعم الحماية طويلة المدى والتوسع الدولي.</p>
                             <div class="pc-footer">
                                 <span class="pc-read-time"><i class="fas fa-book-open"></i> اقرأ المقال</span>
                                 <i class="fas fa-arrow-left pc-arrow"></i>
@@ -810,9 +777,7 @@
                         </div>
                     </a>
                 </div>
-
             </div>
-
         </div>
     </section>
 
@@ -825,10 +790,7 @@
                 <div class="newsletter-content">
                     <i class="fas fa-envelope-open-text nl-icon"></i>
                     <h3>ابقَ على اطّلاع بآخر تطورات الملكية الفكرية والقانون في مصر</h3>
-                    <p>
-                        استلم تحديثات دورية من مكتبنا — مقالات جديدة، تغييرات تنظيمية،
-                        ورؤى قانونية عملية. بدون إزعاج أو رسائل غير مرغوبة.
-                    </p>
+                    <p>استلم تحديثات دورية من مكتبنا — مقالات جديدة، تغييرات تنظيمية، ورؤى قانونية عملية. بدون إزعاج أو رسائل غير مرغوبة.</p>
                     <form class="newsletter-form" id="newsletterForm" novalidate>
                         <input type="email" id="nlEmail" name="email" required placeholder="your@email.com" dir="ltr">
                         <button type="submit" id="nlBtn">
@@ -855,7 +817,6 @@
 
             <div class="faq-rich-accordion mx-auto" style="max-width: 900px;">
                 <div class="accordion" id="blogFaq">
-
                     <div class="accordion-item">
                         <h3 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bf1">
@@ -864,9 +825,7 @@
                         </h3>
                         <div id="bf1" class="accordion-collapse collapse" data-bs-parent="#blogFaq">
                             <div class="accordion-body">
-                                لا. المقالات المنشورة في هذه المدونة لأغراض معلوماتية عامة فقط
-                                ولا تُعدّ استشارة قانونية. للحصول على استشارة خاصة بحالتك،
-                                يُرجى حجز استشارة.
+                                لا. المقالات المنشورة في هذه المدونة لأغراض معلوماتية عامة فقط ولا تُعدّ استشارة قانونية. للحصول على استشارة خاصة بحالتك، يُرجى حجز استشارة.
                             </div>
                         </div>
                     </div>
@@ -879,8 +838,7 @@
                         </h3>
                         <div id="bf2" class="accordion-collapse collapse" data-bs-parent="#blogFaq">
                             <div class="accordion-body">
-                                ننشر بشكل دوري، بتركيز على الجودة لا الكم — عادةً عند وجود
-                                تطوّر قانوني مهم أو موضوع يستحق التحليل لعملائنا.
+                                ننشر بشكل دوري، بتركيز على الجودة لا الكم — عادةً عند وجود تطوّر قانوني مهم أو موضوع يستحق التحليل لعملائنا.
                             </div>
                         </div>
                     </div>
@@ -893,8 +851,7 @@
                         </h3>
                         <div id="bf3" class="accordion-collapse collapse" data-bs-parent="#blogFaq">
                             <div class="accordion-body">
-                                نعم — يسعدنا استقبال اقتراحاتك. أرسل لنا رسالة عبر صفحة
-                                التواصل مع الموضوع المقترح.
+                                نعم — يسعدنا استقبال اقتراحاتك. أرسل لنا رسالة عبر صفحة التواصل مع الموضوع المقترح.
                             </div>
                         </div>
                     </div>
@@ -907,12 +864,10 @@
                         </h3>
                         <div id="bf4" class="accordion-collapse collapse" data-bs-parent="#blogFaq">
                             <div class="accordion-body">
-                                يمكنك مشاركة الروابط واقتباسات قصيرة مع الإشارة للمصدر.
-                                إعادة النشر الكامل تتطلب إذناً كتابياً مسبقاً — يُرجى التواصل معنا.
+                                يمكنك مشاركة الروابط واقتباسات قصيرة مع الإشارة للمصدر. إعادة النشر الكامل تتطلب إذناً كتابياً مسبقاً — يُرجى التواصل معنا.
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -1001,6 +956,7 @@
     <button id="backToTop" title="العودة إلى الأعلى"><i class="fas fa-arrow-up"></i></button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- تم حذف السطر المكرر لملف main.js من هنا -->
     <script src="/js/main.js"></script>
 
     <!-- ============================================================
@@ -1060,7 +1016,5 @@
         });
     })();
     </script>
-
-<script src="/js/main.js"></script>
 </body>
 </html>
