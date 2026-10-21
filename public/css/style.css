@@ -7401,3 +7401,86 @@ hr.divider-soft {
         display: none !important; 
     }
 }
+/* ============================================================================
+   🚀 ULTIMATE MOBILE MENU OVERRIDE — الحل النهائي المضمون
+   ============================================================================ */
+@media (max-width: 991.98px) {
+    
+    /* 1. إخفاء القائمة تماماً افتراضياً */
+    html body .navbar .nav-item.mega-menu-item > .mega-menu {
+        display: none !important;
+        position: static !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+
+    /* 2. إظهار القائمة فقط عند إضافة كلاس open */
+    html body .navbar .nav-item.mega-menu-item.open > .mega-menu {
+        display: block !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 10px !important;
+        padding: 10px !important;
+        margin-top: 5px !important;
+        max-height: 50vh !important; /* عشان تسمح بالتمرير لو الخدمات كتير */
+        overflow-y: auto !important;
+    }
+
+    /* 3. تدوير السهم عند الفتح */
+    html body .navbar .nav-item.mega-menu-item > .dropdown-toggle::after {
+        display: inline-block !important;
+        transform: rotate(0deg);
+        transition: transform 0.3s ease;
+    }
+    
+    html body .navbar .nav-item.mega-menu-item.open > .dropdown-toggle::after {
+        transform: rotate(180deg);
+    }
+
+    /* 4. تنسيق المحتوى الداخلي */
+    html body .navbar .mega-menu-inner {
+        display: block !important;
+        padding: 0 !important;
+    }
+
+    html body .navbar .mega-col {
+        padding: 10px 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-inline-end: none !important;
+    }
+    
+    html body .navbar .mega-col:last-child {
+        border-bottom: none !important;
+    }
+
+    /* 5. تنسيق الروابط */
+    html body .navbar .mega-list a {
+        color: rgba(255, 255, 255, 0.8) !important;
+        padding: 10px 12px !important;
+        display: flex !important;
+        border-radius: 8px !important;
+    }
+
+    html body .navbar .mega-list a:hover {
+        background: rgba(201, 169, 97, 0.2) !important;
+        color: #fff !important;
+    }
+
+    /* 6. إخفاء الأيقونات لتوفير مساحة */
+    html body .navbar .mega-col-title i {
+        display: none !important;
+    }
+    
+    html body .navbar .mega-col-title span {
+        color: #C9A961 !important;
+        font-size: 0.9rem !important;
+        font-weight: 800 !important;
+    }
+}
