@@ -7494,3 +7494,72 @@ hr.divider-soft {
     opacity: 0.45 !important; /* زيادة الشفافية شوية عشان الصورة تبان */
     background-color: #0a0a0a !important; /* لون خلفية الصورة (أسود) */
 }
+/* ============================================================================
+   🚀 ARTICLE HERO FIX — ضبط صورة الهيدر والعنوان فوقها
+   ============================================================================ */
+.article-hero {
+    position: relative;
+    min-height: 450px; /* ارتفاع الهيدر */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #050505; /* لون غامق لو الصورة مش موجودة */
+    overflow: hidden;
+    margin-top: 0;
+    padding: 100px 0 60px; /* مساحة فوق عشان النافبار */
+}
+
+/* الصورة الخلفية */
+.article-hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* طبقة 1 */
+}
+
+/* طبقة التعتيم عشان النص يبان */
+.article-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%);
+    z-index: 2; /* طبقة 2 - فوق الصورة */
+}
+
+/* المحتوى (العنوان والتفاصيل) */
+.article-hero-content {
+    position: relative;
+    z-index: 3; /* طبقة 3 - فوق كل حاجة */
+    text-align: center;
+    color: #fff;
+}
+
+.article-hero-content h1 {
+    font-family: 'Cairo', sans-serif; /* أو Playfair Display للإنجليزي */
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.3;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+.article-hero-meta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+}
+
+.article-hero-meta i {
+    color: #C9A961; /* اللون الذهبي */
+    margin-left: 5px;
+}
