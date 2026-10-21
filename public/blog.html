@@ -55,6 +55,45 @@
     </script>
 
     <style>
+        /* ============================================================
+           Fallback Image Design (when images are missing)
+           ============================================================ */
+        .fp-image, .pc-image {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #111, #000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .fp-image::before, .pc-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(201, 169, 97, 0.15) 0%, transparent 50%),
+                linear-gradient(rgba(201, 169, 97, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201, 169, 97, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 20px 20px, 20px 20px;
+            z-index: 1;
+        }
+
+        .fp-image::after, .pc-image::after {
+            content: '\f1ea';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 3.5rem;
+            color: rgba(201, 169, 97, 0.3);
+            position: absolute;
+            z-index: 2;
+        }
+
+        .fp-image img, .pc-image img {
+            position: relative;
+            z-index: 3;
+        }
+
         /* Featured Post */
         .featured-post {
             display: grid;
@@ -74,10 +113,7 @@
             border-color: #C9A961;
         }
         .fp-image {
-            position: relative;
-            overflow: hidden;
             min-height: 420px;
-            background: linear-gradient(135deg, #000, #1A1A1A);
         }
         .fp-image img {
             width: 100%;
@@ -102,7 +138,7 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
             box-shadow: 0 10px 25px rgba(201,169,97,0.4);
-            z-index: 2;
+            z-index: 4;
         }
         .fp-content {
             padding: 50px 45px;
@@ -229,10 +265,7 @@
             color: inherit;
         }
         .pc-image {
-            position: relative;
             height: 210px;
-            overflow: hidden;
-            background: linear-gradient(135deg, #000, #1A1A1A);
         }
         .pc-image img {
             width: 100%;
@@ -256,7 +289,7 @@
             letter-spacing: 0.8px;
             text-transform: uppercase;
             backdrop-filter: blur(8px);
-            z-index: 2;
+            z-index: 4;
         }
         .pc-category.ip { background: rgba(201,169,97,0.95); color: #000; }
         .pc-category.arb { background: rgba(30,144,255,0.9); color: #fff; }
@@ -531,7 +564,7 @@
                     <img src="/images/blog/ai-ip-cover.jpg"
                          alt="AI and Intellectual Property - research article cover"
                          loading="lazy"
-                         onerror="this.onerror=null; this.style.opacity=0;">
+                         onerror="this.style.display='none';">
                 </div>
                 <div class="fp-content">
                     <div class="fp-meta">
@@ -587,7 +620,7 @@
                     <a href="/blog/egyptian-ip-law-amendments-2026.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category ip">Intellectual Property</span>
-                            <img src="/images/blog/ip-law-amendments.jpg" alt="Egyptian IP law amendments 2026" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/ip-law-amendments.jpg" alt="Egyptian IP law amendments 2026" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -613,7 +646,7 @@
                     <a href="/blog/arbitration-trends-2026.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category arb">Arbitration</span>
-                            <img src="/images/blog/arbitration-trends.jpg" alt="Arbitration trends 2026" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/arbitration-trends.jpg" alt="Arbitration trends 2026" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -639,7 +672,7 @@
                     <a href="/blog/protecting-software-patents.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category ip">Intellectual Property</span>
-                            <img src="/images/blog/software-patents.jpg" alt="Protecting software patents" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/software-patents.jpg" alt="Protecting software patents" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -665,7 +698,7 @@
                     <a href="/blog/trademark-opposition-strategy.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category ip">Intellectual Property</span>
-                            <img src="/images/blog/trademark-opposition.jpg" alt="Trademark opposition strategy" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/trademark-opposition.jpg" alt="Trademark opposition strategy" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -691,7 +724,7 @@
                     <a href="/blog/corporate-governance-checklist.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category corp">Corporate</span>
-                            <img src="/images/blog/corporate-governance.jpg" alt="Corporate governance checklist" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/corporate-governance.jpg" alt="Corporate governance checklist" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -717,7 +750,7 @@
                     <a href="/blog/nda-drafting-mistakes.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category corp">Corporate</span>
-                            <img src="/images/blog/nda-drafting.jpg" alt="NDA drafting mistakes" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/nda-drafting.jpg" alt="NDA drafting mistakes" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -743,7 +776,7 @@
                     <a href="/blog/preparing-commercial-litigation.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category lit">Litigation</span>
-                            <img src="/images/blog/litigation-prep.jpg" alt="Preparing for commercial litigation" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/litigation-prep.jpg" alt="Preparing for commercial litigation" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -769,7 +802,7 @@
                     <a href="/blog/ip-due-diligence-ma.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category ip">Intellectual Property</span>
-                            <img src="/images/blog/ip-due-diligence.jpg" alt="IP due diligence in M&A" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/ip-due-diligence.jpg" alt="IP due diligence in M&A" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -794,7 +827,7 @@
                     <a href="/blog/patent-filing-strategy-egypt.html" class="post-card">
                         <div class="pc-image">
                             <span class="pc-category ip">Intellectual Property</span>
-                            <img src="/images/blog/patent-filing.jpg" alt="Patent filing strategy Egypt" loading="lazy" onerror="this.onerror=null; this.style.opacity=0;">
+                            <img src="/images/blog/patent-filing.jpg" alt="Patent filing strategy Egypt" loading="lazy" onerror="this.style.display='none';">
                         </div>
                         <div class="pc-body">
                             <div class="pc-meta">
@@ -1066,7 +1099,5 @@
         });
     })();
     </script>
-
-<script src="/js/main.js"></script>
 </body>
 </html>
