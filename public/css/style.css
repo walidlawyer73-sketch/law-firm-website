@@ -7484,3 +7484,12 @@ hr.divider-soft {
         font-weight: 800 !important;
     }
 }
+/* ============================================================================
+   ✅ FIX ARTICLE HERO IMAGE (Show full image without cropping)
+   ============================================================================ */
+.article-hero-img {
+    object-fit: contain !important;
+    object-position: center center !important;
+    opacity: 0.45 !important; /* زيادة الشفافية شوية عشان الصورة تبان */
+    background-color: #0a0a0a !important; /* لون خلفية الصورة (أسود) */
+}
