@@ -7362,3 +7362,86 @@ hr.divider-soft {
         padding: 20px 0 !important;
     }
 }
+/* ============================================================================
+   ✅ HERO — صورة منفصلة لكل مقاس
+   ============================================================================ */
+
+/* ═══ افتراضي (كمبيوتر) — الصورة العرضية ═══ */
+.hero-rich-bg .hero-img-desktop {
+    display: block;
+}
+.hero-rich-bg .hero-img-mobile {
+    display: none;
+}
+
+/* ═══ على الموبايل (≤ 991px) — الصورة الطولية ═══ */
+@media (max-width: 991.98px) {
+
+    /* تبديل الصورة */
+    .hero-rich-bg .hero-img-desktop {
+        display: none !important;
+    }
+    .hero-rich-bg .hero-img-mobile {
+        display: block !important;
+    }
+
+    /* الهيرو — ارتفاع حسب المحتوى */
+    html body .hero-rich {
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        padding: 40px 0 !important;
+        background: #0a0a0a !important;
+        overflow: hidden !important;
+    }
+
+    /* الصورة — تغطي كامل (object-fit: cover) */
+    html body .hero-rich-bg {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 0 !important;
+        overflow: hidden !important;
+    }
+
+    html body .hero-rich-bg .hero-img-mobile {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 100% !important;
+        height: 100% !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    /* تعتيم خفيف */
+    html body .hero-rich-overlay {
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 1 !important;
+        background: linear-gradient(
+            180deg,
+            rgba(0,0,0,0.55) 0%,
+            rgba(0,0,0,0.30) 50%,
+            rgba(0,0,0,0.60) 100%
+        ) !important;
+        pointer-events: none !important;
+    }
+
+    html body .hero-rich-content {
+        position: relative !important;
+        z-index: 3 !important;
+        width: 100% !important;
+    }
+}
