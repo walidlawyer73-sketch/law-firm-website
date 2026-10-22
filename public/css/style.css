@@ -7772,3 +7772,213 @@ html body[dir="rtl"] .article-hero .article-hero-content > h1,
 html body[dir="rtl"] .navbar ul.navbar-nav > li.lang-nav-item {
     margin: 0 8px 0 0 !important;
 }
+/* ============================================================================
+   🎯 ARTICLE HERO — GLOBAL FIX (v22 — Final)
+   ————————————————————————————————————————————————————————————
+   يُطبق على كل الصفحات التي تحتوي على:
+     <header class="article-hero">
+       <img class="article-hero-img">
+       <div class="article-hero-overlay"></div>
+       <div class="container">
+         <div class="article-hero-content">
+           <span class="ah-badge">...</span>
+           <h1>...</h1>
+           <div class="article-hero-meta">...</div>
+         </div>
+       </div>
+     </header>
+   ————————————————————————————————————————————————————————————
+   النتيجة: عنوان المقال في منتصف الصورة بالضبط،
+   الـ badge أعلى، والـ meta أسفل، والصورة تغطي المساحة كاملة.
+   ============================================================================ */
+
+/* ─── الحاوية الرئيسية ─── */
+html body .article-hero {
+    position: relative !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 560px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #050505 !important;
+    overflow: hidden !important;
+    isolation: isolate;
+}
+
+/* ─── الصورة الخلفية ─── */
+html body .article-hero > .article-hero-img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    opacity: 0.45 !important;
+    z-index: 0 !important;
+    display: block !important;
+    max-width: none !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+}
+
+/* ─── طبقة التعتيم ─── */
+html body .article-hero > .article-hero-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.55) 0%,
+        rgba(0,0,0,0.70) 50%,
+        rgba(0,0,0,0.85) 100%
+    ) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+/* ─── حاوية المحتوى ─── */
+html body .article-hero > .container {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 60px 15px !important;
+    margin: 0 auto !important;
+}
+
+/* ─── الحل الجوهري: Grid بثلاث صفوف ─── */
+html body .article-hero .article-hero-content {
+    position: relative !important;
+    display: grid !important;
+    grid-template-rows: auto 1fr auto !important;
+    align-items: center !important;
+    justify-items: center !important;
+    text-align: center !important;
+    color: #fff !important;
+    width: 100% !important;
+    max-width: 850px !important;
+    margin: 0 auto !important;
+    min-height: 440px !important;
+    gap: 0 !important;
+}
+
+/* ─── الـ badge (الصف العلوي) ─── */
+html body .article-hero .article-hero-content > .ah-badge {
+    grid-row: 1 !important;
+    align-self: start !important;
+    justify-self: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 8px 20px !important;
+    background: rgba(201,169,97,0.15) !important;
+    border: 1px solid rgba(201,169,97,0.4) !important;
+    border-radius: 999px !important;
+    color: #C9A961 !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    margin: 0 !important;
+}
+
+html body .article-hero .article-hero-content > .ah-badge i {
+    font-size: 0.85rem !important;
+    color: #C9A961 !important;
+}
+
+/* ─── الـ h1 (الصف الأوسط — متمركز في منتصف الصورة) ─── */
+html body .article-hero .article-hero-content > h1 {
+    grid-row: 2 !important;
+    align-self: center !important;
+    justify-self: center !important;
+    font-family: 'Playfair Display', serif !important;
+    font-size: clamp(1.5rem, 3.2vw, 2.4rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.02em !important;
+    color: #fff !important;
+    margin: 0 !important;
+    padding: 20px 15px !important;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.85) !important;
+    width: 100% !important;
+    max-width: 850px !important;
+    text-align: center !important;
+}
+
+/* ─── الـ meta (الصف السفلي) ─── */
+html body .article-hero .article-hero-content > .article-hero-meta {
+    grid-row: 3 !important;
+    align-self: end !important;
+    justify-self: center !important;
+    display: flex !important;
+    gap: 20px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    font-size: 0.86rem !important;
+    color: rgba(255,255,255,0.85) !important;
+    padding-top: 20px !important;
+    border-top: 1px solid rgba(255,255,255,0.18) !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+html body .article-hero .article-hero-content > .article-hero-meta span {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+html body .article-hero .article-hero-content > .article-hero-meta i {
+    color: #C9A961 !important;
+}
+
+/* ─── RTL (النسخة العربية) ─── */
+html body[dir="rtl"] .article-hero .article-hero-content > h1,
+[dir="rtl"] html body .article-hero .article-hero-content > h1 {
+    font-family: 'Cairo', sans-serif !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0 !important;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 991px) {
+    html body .article-hero {
+        min-height: 500px !important;
+    }
+    html body .article-hero .article-hero-content {
+        min-height: 400px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html body .article-hero {
+        min-height: 480px !important;
+    }
+    html body .article-hero .article-hero-content {
+        min-height: 380px !important;
+    }
+    html body .article-hero .article-hero-content > h1 {
+        font-size: clamp(1.3rem, 5vw, 1.7rem) !important;
+        padding: 15px 12px !important;
+    }
+    html body .article-hero .article-hero-content > .article-hero-meta {
+        font-size: 0.75rem !important;
+        gap: 12px !important;
+    }
+    html body .article-hero .article-hero-content > .ah-badge {
+        font-size: 0.7rem !important;
+        padding: 6px 14px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    html body .article-hero {
+        min-height: 440px !important;
+    }
+    html body .article-hero .article-hero-content {
+        min-height: 340px !important;
+    }
+}
