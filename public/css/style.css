@@ -7982,3 +7982,123 @@ html body[dir="rtl"] .article-hero .article-hero-content > h1,
         min-height: 340px !important;
     }
 }
+/* ============================================================================
+   🎯 v23 GLOBAL FIX — Article Hero Image (No Class) + Unified Language Button
+   ————————————————————————————————————————————————————————————
+   يُلحق في نهاية style.css — يحل:
+   1. صورة الهيرو التي ليس لها كلاس (كل المقالات غير المُصلحة)
+   2. توحيد شكل زر اللغة بين النسخة اليدوية والنسخة المحقونة من main.js
+   3. إصلاح صور البطاقات المرتبطة التي تستخدم كلاس article-hero-img خطأً
+   ============================================================================ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   1) أي <img> مباشر داخل .article-hero (بغض النظر عن الكلاس)
+      → يصبح خلفية مطلقة تغطي المساحة بالكامل
+   ───────────────────────────────────────────────────────────────────────── */
+html body .article-hero > img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    opacity: 0.45 !important;
+    z-index: 0 !important;
+    display: block !important;
+    pointer-events: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   2) تحييد تأثير .article-hero-img على صور البطاقات المرتبطة
+      (لأنها كانت تحمل الكلاس خطأً فتصبح شبه شفافة وخلفيتها سوداء)
+   ───────────────────────────────────────────────────────────────────────── */
+html body .related-card-img .article-hero-img,
+html body .related-card-img > img {
+    position: relative !important;
+    inset: auto !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    z-index: 1 !important;
+    pointer-events: auto !important;
+    display: block !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   3) توحيد زر اللغة — .lang-btn (اليدوي) و .lang-nav-btn (المحقون)
+      نفس الحجم، نفس الألوان، نفس الشكل — أينما ظهرا
+   ───────────────────────────────────────────────────────────────────────── */
+html body .navbar .lang-nav-item .lang-btn,
+html body .navbar .lang-nav-item .lang-nav-btn,
+html body .navbar ul.navbar-nav > li.lang-nav-item > a.lang-btn,
+html body .navbar ul.navbar-nav > li.lang-nav-item > a.lang-nav-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 10px 20px !important;
+    min-height: 42px !important;
+    height: 42px !important;
+    background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
+    color: #000000 !important;
+    border: 2px solid #C9A961 !important;
+    border-radius: 999px !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    box-shadow: 0 6px 18px rgba(201, 169, 97, 0.40) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+}
+
+html body .navbar .lang-nav-item .lang-btn:hover,
+html body .navbar .lang-nav-item .lang-nav-btn:hover {
+    background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+    color: #000000 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55) !important;
+}
+
+html body .navbar .lang-nav-item .lang-btn i,
+html body .navbar .lang-nav-item .lang-nav-btn i {
+    font-size: 0.9rem !important;
+    color: inherit !important;
+}
+
+/* توحيد الهامش الجانبي */
+html body .navbar ul.navbar-nav > li.lang-nav-item {
+    margin: 0 0 0 8px !important;
+}
+html body[dir="rtl"] .navbar ul.navbar-nav > li.lang-nav-item,
+[dir="rtl"] html body .navbar ul.navbar-nav > li.lang-nav-item {
+    margin: 0 8px 0 0 !important;
+}
+
+/* موبايل — عرض كامل */
+@media (max-width: 991.98px) {
+    html body .navbar .lang-nav-item,
+    html body .navbar ul.navbar-nav > li.lang-nav-item {
+        display: flex !important;
+        width: 100% !important;
+        margin: 8px 0 0 !important;
+    }
+    html body .navbar .lang-nav-item .lang-btn,
+    html body .navbar .lang-nav-item .lang-nav-btn {
+        display: flex !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 44px !important;
+        padding: 12px 16px !important;
+        font-size: 0.9rem !important;
+    }
+}

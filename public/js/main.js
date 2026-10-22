@@ -1,13 +1,7 @@
 // ============================================================================
-// ============================================================================
 // main.js - Walid Abu AlEla Law Firm
-// ملف JavaScript الموحد - كل الأكواد في مكان واحد
-// Unified JavaScript - All code in one place
-//
-// VERSION / الإصدار: v7.0 (Language Switcher Fixed)
+// VERSION / الإصدار: v8.0 (Unified Language Button + Insert Before Client Portal)
 // ============================================================================
-// ============================================================================
-
 
 (function() {
     'use strict';
@@ -77,128 +71,115 @@
 
 
     // ========================================================================
-    // 2. LANGUAGE SWITCHER — v7.0 BULLETPROOF
-    //    حقن زر اللغة — نسخة v7.0 مضمونة 100%
-    // ========================================================================
-    // STRATEGY / الاستراتيجية:
-    //   • Uses a dedicated class `lang-nav-btn` (NOT the floating `.lang-btn`)
-    //   • Injects its OWN CSS to guarantee visibility regardless of page
-    //   • Simple 3-tier injection into `.navbar-nav` — no complex conditions
-    //   • Runs on ALL pages automatically
-    //
-    //   • يستخدم كلاس مخصص `lang-nav-btn` (وليس الزر العائم)
-    //   • يحقن CSS خاص به لضمان الظهور في كل الصفحات
-    //   • حقن مبسّط بثلاث طبقات في `.navbar-nav`
-    //   • يعمل على كل الصفحات تلقائياً
+    // 2. LANGUAGE SWITCHER — v8.0
+    //    • يستخدم كلاس .lang-nav-btn (متوافق مع شكل .lang-btn)
+    //    • يُحقن قبل Client Portal (تطابق الموضع مع المقالات المُصلحة يدويًا)
+    //    • يحذف أي زر عائم قديم
     // ========================================================================
     function injectLanguageSwitcher() {
 
-        // ─── STEP 1: If already injected, cleanup & exit ───────────────
+        // STEP 1: If already injected, cleanup & exit
         if (document.querySelector('.navbar .lang-nav-item')) {
-            // Remove any stray floating switchers
             document.querySelectorAll('body > .language-switcher').forEach(el => el.remove());
             return;
         }
 
-        // ─── STEP 2: Remove any old floating switchers ────────────────
+        // STEP 2: Remove any old floating switchers
         document.querySelectorAll('body > .language-switcher').forEach(el => el.remove());
 
-        // ─── STEP 3: Inject dedicated CSS (once) ──────────────────────
+        // STEP 3: Inject dedicated CSS (matches .lang-btn exactly)
         if (!document.getElementById('injected-lang-styles')) {
             const style = document.createElement('style');
             style.id = 'injected-lang-styles';
             style.textContent = `
-                /* Language button inside navbar */
                 .navbar .lang-nav-item {
                     list-style: none !important;
-                    margin-inline-start: 12px !important;
-                    display: flex !important;
+                    margin: 0 0 0 8px !important;
+                    display: inline-flex !important;
                     align-items: center !important;
                     padding: 0 !important;
                 }
                 .navbar .lang-nav-item .lang-nav-btn {
                     display: inline-flex !important;
                     align-items: center !important;
-                    gap: 6px !important;
-                    padding: 8px 16px !important;
+                    justify-content: center !important;
+                    gap: 8px !important;
+                    padding: 10px 20px !important;
+                    min-height: 42px !important;
+                    height: 42px !important;
                     background: linear-gradient(135deg, #C9A961, #A88947) !important;
                     color: #000 !important;
                     border: 2px solid #C9A961 !important;
                     border-radius: 999px !important;
                     text-decoration: none !important;
                     font-weight: 700 !important;
-                    font-size: 0.82rem !important;
-                    box-shadow: 0 4px 12px rgba(201,169,97,0.3) !important;
+                    font-size: 0.85rem !important;
+                    line-height: 1 !important;
+                    box-shadow: 0 6px 18px rgba(201,169,97,0.40) !important;
                     transition: all 0.3s ease !important;
                     white-space: nowrap !important;
-                    line-height: 1 !important;
                     position: static !important;
                     top: auto !important;
                     right: auto !important;
                     left: auto !important;
                     bottom: auto !important;
-                    height: auto !important;
                     width: auto !important;
                     font-family: inherit !important;
                     cursor: pointer !important;
+                    margin: 0 !important;
                 }
                 .navbar .lang-nav-item .lang-nav-btn i {
-                    font-size: 0.85rem !important;
-                    color: #000 !important;
-                    transition: color 0.3s ease !important;
+                    font-size: 0.9rem !important;
+                    color: inherit !important;
                 }
                 .navbar .lang-nav-item .lang-nav-btn span {
-                    color: #000 !important;
+                    color: inherit !important;
                 }
                 .navbar .lang-nav-item .lang-nav-btn:hover {
-                    background: transparent !important;
-                    color: #C9A961 !important;
+                    background: linear-gradient(135deg, #D4B872, #C9A961) !important;
+                    color: #000 !important;
                     transform: translateY(-2px) !important;
-                    box-shadow: 0 8px 20px rgba(201,169,97,0.4) !important;
+                    box-shadow: 0 10px 28px rgba(201,169,97,0.55) !important;
                 }
-                .navbar .lang-nav-item .lang-nav-btn:hover i,
-                .navbar .lang-nav-item .lang-nav-btn:hover span {
-                    color: #C9A961 !important;
-                }
-                /* On scrolled navbar (dark background) */
                 .navbar.scrolled .lang-nav-item .lang-nav-btn {
                     background: linear-gradient(135deg, #C9A961, #A88947) !important;
                     color: #000 !important;
                 }
-                /* Mobile */
                 @media (max-width: 991px) {
                     .navbar .lang-nav-item {
                         margin-inline-start: 0 !important;
                         margin-top: 10px !important;
                         width: 100% !important;
+                        display: flex !important;
                     }
                     .navbar .lang-nav-item .lang-nav-btn {
                         display: flex !important;
                         justify-content: center !important;
                         width: 100% !important;
-                        padding: 10px 16px !important;
+                        padding: 12px 16px !important;
+                        min-height: 44px !important;
+                        height: auto !important;
+                        font-size: 0.9rem !important;
                     }
                 }
             `;
             document.head.appendChild(style);
         }
 
-        // ─── STEP 4: Detect current language ──────────────────────────
+        // STEP 4: Detect current language
         const isArabic = (document.documentElement.lang || '').toLowerCase().startsWith('ar');
 
-        // ─── STEP 5: Build target URL ─────────────────────────────────
+        // STEP 5: Build target URL
         const currentPath = window.location.pathname || '/';
         let targetHref;
 
         if (isArabic) {
-            // From AR → EN : remove /ar prefix
             if (currentPath === '/ar/' || currentPath === '/ar' || currentPath === '/ar/index.html') {
                 targetHref = '/';
             } else {
                 targetHref = currentPath.replace(/^\/ar(?=\/|$)/i, '') || '/';
             }
         } else {
-            // From EN → AR : add /ar prefix
             if (currentPath === '/' || currentPath === '/index.html') {
                 targetHref = '/ar/';
             } else {
@@ -209,7 +190,7 @@
         const label = isArabic ? 'English' : 'العربية';
         const targetLang = isArabic ? 'en' : 'ar';
 
-        // ─── STEP 6: Create <li> element ─────────────────────────────
+        // STEP 6: Create <li> element
         const langItem = document.createElement('li');
         langItem.className = 'nav-item lang-nav-item';
 
@@ -222,17 +203,16 @@
 
         langItem.appendChild(langBtn);
 
-        // ─── STEP 7: Find the navbar ─────────────────────────────────
+        // STEP 7: Find the navbar
         const navbar = document.querySelector('nav.navbar, .navbar');
         if (!navbar) {
             console.log('[LANG] Navbar not found yet — will retry');
             return;
         }
 
-        // ─── STEP 8: Find or create <ul class="navbar-nav"> ──────────
+        // STEP 8: Find or create <ul class="navbar-nav">
         let navbarNav = navbar.querySelector('ul.navbar-nav');
 
-        // Fallback: find any ul inside .navbar-collapse
         if (!navbarNav) {
             const collapse = navbar.querySelector('.navbar-collapse');
             if (collapse) {
@@ -245,7 +225,6 @@
             }
         }
 
-        // Fallback: create a new ul inside .navbar-collapse or navbar
         if (!navbarNav) {
             const target = navbar.querySelector('.navbar-collapse, .container, .container-fluid') || navbar;
             navbarNav = document.createElement('ul');
@@ -254,13 +233,20 @@
             target.appendChild(navbarNav);
         }
 
-        // ─── STEP 9: Insert the button ──────────────────────────────
-        navbarNav.appendChild(langItem);
+        // STEP 9: Insert BEFORE Client Portal button (to match manually-fixed articles)
+        const clientPortalLi = navbarNav.querySelector('.btn-outline-light')
+            ? navbarNav.querySelector('.btn-outline-light').closest('li')
+            : null;
 
-        // Verify
+        if (clientPortalLi) {
+            clientPortalLi.parentNode.insertBefore(langItem, clientPortalLi);
+        } else {
+            navbarNav.appendChild(langItem);
+        }
+
         setTimeout(function() {
             if (document.querySelector('.navbar .lang-nav-item')) {
-                console.log('[LANG] ✓✓✓ Language button injected successfully');
+                console.log('[LANG] ✓ Language button injected (unified v8.0)');
             } else {
                 console.warn('[LANG] ✗ Injection failed — will retry');
             }
@@ -269,7 +255,7 @@
 
 
     // ========================================================================
-    // 3. إصلاح صورة المحامي - Lawyer Profile Image Fix
+    // 3. إصلاح صورة المحامي
     // ========================================================================
     function fixLawyerImage() {
         const correctPath = '/images/team/walid-profile.jpg';
@@ -296,7 +282,7 @@
 
 
     // ========================================================================
-    // 4. الرابط النشط - Active Link Highlight
+    // 4. الرابط النشط
     // ========================================================================
     function highlightActiveLink() {
         const currentPath = window.location.pathname;
@@ -311,7 +297,7 @@
 
 
     // ========================================================================
-    // 5. تأثير التمرير على النافبار - Navbar Scroll Effect
+    // 5. تأثير التمرير على النافبار
     // ========================================================================
     function setupNavbarScroll() {
         const navbar = document.getElementById('mainNav') || document.querySelector('.navbar');
@@ -328,7 +314,7 @@
 
 
     // ========================================================================
-    // 6. التمرير السلس - Smooth Scroll
+    // 6. التمرير السلس
     // ========================================================================
     function setupSmoothScroll() {
         document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
@@ -350,7 +336,7 @@
 
 
     // ========================================================================
-    // 7. أنيميشن البطاقات - Card Animations
+    // 7. أنيميشن البطاقات
     // ========================================================================
     function setupCardAnimations() {
         if (!document.querySelector('#dynamic-animation-styles')) {
@@ -391,7 +377,7 @@
 
 
     // ========================================================================
-    // 8. زر العودة للأعلى - Back to Top Button
+    // 8. زر العودة للأعلى
     // ========================================================================
     function setupBackToTop() {
         if (document.getElementById('backToTop')) {
@@ -446,7 +432,7 @@
 
 
     // ========================================================================
-    // 9. إضافة اللوجو إلى الفوتر تلقائياً - Auto-add footer logo
+    // 9. اللوجو في الفوتر
     // ========================================================================
     function addFooterLogo() {
         const footers = document.querySelectorAll('.footer-section, .footer-rich');
@@ -500,7 +486,7 @@
 
 
     // ========================================================================
-    // 10. إصلاح حجم لوجو النافبار - Fix navbar logo size (fallback)
+    // 10. إصلاح حجم لوجو النافبار
     // ========================================================================
     function fixNavbarLogoSize() {
         const logos = document.querySelectorAll('.navbar-brand img');
@@ -525,12 +511,11 @@
 
 
     // ========================================================================
-    // 11. تهيئة كل الأكواد - Initialize all modules
+    // 11. التهيئة
     // ========================================================================
     function init() {
         createTrialBanner();
 
-        // ⚡ Inject language button — retry multiple times for slow pages
         injectLanguageSwitcher();
         setTimeout(injectLanguageSwitcher, 100);
         setTimeout(injectLanguageSwitcher, 300);
@@ -554,19 +539,18 @@
         init();
     }
 
-    // ⚡ Re-try injection when window resizes
+    // Re-try on resize
     let resizeTimer;
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
             if (!document.querySelector('.navbar .lang-nav-item')) {
-                console.log('[LANG] Re-injecting after resize...');
                 injectLanguageSwitcher();
             }
         }, 400);
     });
 
-    // ⚡ Re-try injection when DOM changes
+    // Re-try on DOM change
     if (window.MutationObserver) {
         const observer = new MutationObserver(function(mutations) {
             const navbarChanged = mutations.some(m =>
@@ -586,19 +570,15 @@
     }
 
 
-    // ============================================================================
-    // ============================================================================
+    // ========================================================================
     // MEGA MENU - Dynamic Navbar Upgrade
-    // قائمة ضخمة - ترقية تلقائية للنافبار
-    // ============================================================================
-    // ============================================================================
+    // ========================================================================
     (function buildMegaMenu() {
         'use strict';
 
         const lang = document.documentElement.lang === 'ar' ? 'ar' : 'en';
         const isAr = lang === 'ar';
 
-        /* ---------- DATA ---------- */
         const categories = [
             {
                 id: 'ip',
@@ -653,7 +633,6 @@
             }
         ];
 
-        /* ---------- INJECT CSS ---------- */
         function injectCSS() {
             if (document.getElementById('mega-menu-styles')) return;
             const style = document.createElement('style');
@@ -662,7 +641,6 @@
                 .navbar-nav .nav-item.mega-menu-item {
                     position: static !important;
                 }
-
                 .mega-menu {
                     position: absolute !important;
                     top: 100% !important;
@@ -685,33 +663,26 @@
                     display: block !important;
                     direction: ${isAr ? 'rtl' : 'ltr'};
                 }
-
                 .nav-item.mega-menu-item:hover > .mega-menu,
                 .nav-item.mega-menu-item.show > .mega-menu {
                     opacity: 1 !important;
                     visibility: visible !important;
                     transform: translateY(0) !important;
                 }
-
                 .nav-item.mega-menu-item > .dropdown-menu {
                     display: none !important;
                 }
-
                 .mega-menu-inner {
                     display: grid;
                     grid-template-columns: repeat(4, 1fr);
                     gap: 0;
                     padding: 30px 24px 20px;
                 }
-
                 .mega-col {
                     padding: 0 18px;
                     border-inline-end: 1px solid #F1F3F5;
                 }
-                .mega-col:last-child {
-                    border-inline-end: none;
-                }
-
+                .mega-col:last-child { border-inline-end: none; }
                 .mega-col-title {
                     display: flex;
                     align-items: center;
@@ -739,12 +710,7 @@
                     color: var(--dark-text);
                     letter-spacing: -0.01em;
                 }
-
-                .mega-list {
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                }
+                .mega-list { list-style: none; padding: 0; margin: 0; }
                 .mega-list li { margin-bottom: 2px; }
                 .mega-list a {
                     display: flex;
@@ -770,20 +736,9 @@
                 .mega-list a:hover {
                     background: rgba(201,169,97,0.1);
                     color: var(--primary-color);
-                    padding-inline-start: ${isAr ? '12px' : '18px'};
-                    padding-inline-end: ${isAr ? '18px' : '12px'};
                 }
-                .mega-list a:hover i {
-                    color: var(--accent-color);
-                    transform: scale(1.15);
-                }
-                .mega-list a.active {
-                    background: rgba(201,169,97,0.15);
-                    color: var(--primary-color);
-                    font-weight: 700;
-                }
-                .mega-list a.active i { color: var(--accent-color); }
-
+                .mega-list a:hover i { color: var(--accent-color); transform: scale(1.15); }
+                .mega-list a.active { background: rgba(201,169,97,0.15); color: var(--primary-color); font-weight: 700; }
                 .mega-footer {
                     background: linear-gradient(90deg, #F8F9FA 0%, #fff 50%, #F8F9FA 100%);
                     border-top: 1px solid #F1F3F5;
@@ -794,11 +749,7 @@
                     gap: 15px;
                     flex-wrap: wrap;
                 }
-                .mega-footer-text {
-                    font-size: 0.82rem;
-                    color: #6C757D;
-                    font-weight: 500;
-                }
+                .mega-footer-text { font-size: 0.82rem; color: #6C757D; font-weight: 500; }
                 .mega-footer-link {
                     display: inline-flex;
                     align-items: center;
@@ -813,16 +764,7 @@
                     box-shadow: 0 6px 15px rgba(201,169,97,0.3);
                     transition: all 0.25s ease;
                 }
-                .mega-footer-link:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 10px 22px rgba(201,169,97,0.45);
-                    color: var(--primary-color);
-                }
-                .mega-footer-link i { transition: transform 0.25s ease; }
-                .mega-footer-link:hover i {
-                    transform: translateX(${isAr ? '-4px' : '4px'});
-                }
-
+                .mega-footer-link:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(201,169,97,0.45); color: var(--primary-color); }
                 @media (max-width: 991px) {
                     .mega-menu {
                         position: static !important;
@@ -840,38 +782,20 @@
                     .nav-item.mega-menu-item.open > .mega-menu {
                         display: block !important;
                     }
-                    .mega-menu-inner {
-                        grid-template-columns: 1fr;
-                        padding: 12px 6px;
-                        gap: 8px;
-                    }
-                    .mega-col {
-                        padding: 10px 12px;
-                        border-inline-end: none;
-                        border-bottom: 1px solid rgba(255,255,255,0.08);
-                    }
+                    .mega-menu-inner { grid-template-columns: 1fr; padding: 12px 6px; gap: 8px; }
+                    .mega-col { padding: 10px 12px; border-inline-end: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
                     .mega-col:last-child { border-bottom: none; }
-                    .mega-col-title {
-                        border-bottom-color: rgba(201,169,97,0.35);
-                    }
+                    .mega-col-title { border-bottom-color: rgba(201,169,97,0.35); }
                     .mega-col-title span { color: #fff; }
                     .mega-list a { color: rgba(255,255,255,0.85); }
-                    .mega-list a:hover {
-                        background: rgba(201,169,97,0.2);
-                        color: #fff;
-                    }
-                    .mega-footer {
-                        background: rgba(0,0,0,0.2);
-                        border-top-color: rgba(255,255,255,0.1);
-                        padding: 12px 16px;
-                    }
+                    .mega-list a:hover { background: rgba(201,169,97,0.2); color: #fff; }
+                    .mega-footer { background: rgba(0,0,0,0.2); border-top-color: rgba(255,255,255,0.1); padding: 12px 16px; }
                     .mega-footer-text { color: rgba(255,255,255,0.6); }
                 }
             `;
             document.head.appendChild(style);
         }
 
-        /* ---------- BUILD MEGA MENU ---------- */
         function buildMegaMenu() {
             const navItems = document.querySelectorAll('.navbar-nav .nav-item.dropdown');
             let servicesItem = null;
@@ -969,7 +893,6 @@
             });
         }
 
-        /* ---------- INIT ---------- */
         function init() {
             injectCSS();
             buildMegaMenu();
@@ -983,29 +906,26 @@
     })();
 
 })();
-/* ============================================================================
-   🚀 FINAL BULLETPROOF MOBILE MENU TOGGLE
-   ============================================================================ */
+
+
+// ============================================================================
+// FINAL BULLETPROOF MOBILE MENU TOGGLE
+// ============================================================================
 document.addEventListener("DOMContentLoaded", function() {
-    // نمسك بكل أزرار القوائم المنسدلة
     const dropdownToggles = document.querySelectorAll('.navbar-nav .dropdown-toggle');
-    
+
     dropdownToggles.forEach(toggle => {
-        // بننسخ الزرار ونستبدله عشان نمسح أي أحداث قديمة مرتبطة بيه (زي البوتستراب)
         const newToggle = toggle.cloneNode(true);
         toggle.parentNode.replaceChild(newToggle, toggle);
-        
-        // نضيف الحدث الجديد بتاعنا
+
         newToggle.addEventListener('click', function(e) {
-            // نطبق ده على الموبايل بس
             if (window.innerWidth <= 991.98) {
-                e.preventDefault(); // نمنع أي سلوك افتراضي
-                e.stopPropagation(); // نمنع البوتستراب من التدخل
-                
+                e.preventDefault();
+                e.stopPropagation();
+
                 const parentItem = this.closest('.nav-item');
                 const menu = parentItem.querySelector('.dropdown-menu, .mega-menu');
-                
-                // نقفل أي قوائم تانية مفتوحة
+
                 document.querySelectorAll('.navbar-nav .nav-item').forEach(item => {
                     if (item !== parentItem) {
                         item.classList.remove('open', 'show');
@@ -1013,8 +933,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         if (m) m.classList.remove('show');
                     }
                 });
-                
-                // نفتح أو نقفل القائمة الحالية
+
                 if (parentItem.classList.contains('open')) {
                     parentItem.classList.remove('open', 'show');
                     if (menu) menu.classList.remove('show');
