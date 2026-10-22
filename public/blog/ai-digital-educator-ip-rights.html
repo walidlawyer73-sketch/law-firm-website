@@ -86,7 +86,9 @@
     </script>
 
     <style>
-        /* Reading Progress Bar */
+        /* ============================================================
+           Reading Progress Bar
+           ============================================================ */
         #reading-progress {
             position: fixed;
             top: var(--banner-height);
@@ -99,125 +101,195 @@
             box-shadow: 0 0 10px rgba(201,169,97,0.5);
         }
 
-        /* Article Hero */
-        .article-hero {
-            position: relative;
-            margin-top: calc(var(--banner-height) + var(--navbar-height));
-            min-height: 520px;
-            background: linear-gradient(135deg, #000 0%, #1A1A1A 100%);
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            padding: 80px 0;
-        }
-        .article-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 20% 30%, rgba(201,169,97,0.15), transparent 55%),
-                radial-gradient(circle at 80% 70%, rgba(201,169,97,0.10), transparent 55%);
-            pointer-events: none;
-        }
-        .article-hero-img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.25;
-            z-index: 0;
-        }
-        .article-hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 100%);
-            z-index: 1;
-        }
-        .article-hero-content {
-            position: relative;
-            z-index: 2;
-            color: #fff;
-            max-width: 850px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .ah-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 20px;
-            background: rgba(201,169,97,0.15);
-            border: 1px solid rgba(201,169,97,0.4);
-            border-radius: 999px;
-            color: #C9A961;
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
-            backdrop-filter: blur(10px);
-        }
-        .ah-badge i { font-size: 0.85rem; }
+        /* ============================================================
+           ARTICLE HERO — نسخة نظيفة نهائية (عالية الأولوية)
+           ————————————————————————————————————————————
+           • الصورة تغطي المساحة بالكامل (object-fit: cover)
+           • الـ h1 متمركز في المنتصف تمامًا عبر CSS Grid
+           • الـ badge في الأعلى، الـ meta في الأسفل
+           • لا يوجد margin-top يدفع الهيرو للأسفل
+           ============================================================ */
 
-        .article-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-            font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            margin-bottom: 25px;
-            color: #fff;
+        html body .article-hero {
+            position: relative !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            min-height: 560px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            background-color: #050505 !important;
+            overflow: hidden !important;
+            isolation: isolate;
         }
 
-        .article-hero-meta {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-            justify-content: center;
-            font-size: 0.88rem;
-            color: rgba(255,255,255,0.75);
-            padding-top: 25px;
-            border-top: 1px solid rgba(255,255,255,0.15);
-            margin-top: 25px;
+        /* الصورة الخلفية — تغطي المساحة بالكامل */
+        html body .article-hero > .article-hero-img {
+            position: absolute !important;
+            inset: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: center center !important;
+            opacity: 0.45 !important;
+            z-index: 0 !important;
+            display: block !important;
+            max-width: none !important;
         }
-        .article-hero-meta span {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .article-hero-meta i { color: #C9A961; }
 
-        /* Breadcrumbs */
+        /* طبقة تعتيم متدرجة لضمان وضوح النص */
+        html body .article-hero > .article-hero-overlay {
+            position: absolute !important;
+            inset: 0 !important;
+            background: linear-gradient(
+                180deg,
+                rgba(0,0,0,0.55) 0%,
+                rgba(0,0,0,0.70) 50%,
+                rgba(0,0,0,0.85) 100%
+            ) !important;
+            z-index: 1 !important;
+            pointer-events: none !important;
+        }
+
+        /* حاوية المحتوى — تملأ المساحة، z-index فوق الصورة */
+        html body .article-hero > .container {
+            position: relative !important;
+            z-index: 2 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 60px 15px !important;
+        }
+
+        /* === الحل الأساسي لتمركز العنوان في المنتصف بالضبط === */
+        html body .article-hero .article-hero-content {
+            position: relative !important;
+            display: grid !important;
+            grid-template-rows: auto 1fr auto !important;
+            align-items: center !important;
+            justify-items: center !important;
+            text-align: center !important;
+            color: #fff !important;
+            width: 100% !important;
+            max-width: 850px !important;
+            margin: 0 auto !important;
+            min-height: 440px !important; /* يضمن أن الصف الأوسط يتمركز في منتصف الصورة */
+            gap: 0 !important;
+        }
+
+        /* الـ badge — الصف العلوي */
+        html body .article-hero .article-hero-content > .ah-badge {
+            grid-row: 1 !important;
+            align-self: start !important;
+            justify-self: center !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            padding: 8px 20px !important;
+            background: rgba(201,169,97,0.15) !important;
+            border: 1px solid rgba(201,169,97,0.4) !important;
+            border-radius: 999px !important;
+            color: #C9A961 !important;
+            font-size: 0.78rem !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 2px !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            margin: 0 !important;
+        }
+
+        html body .article-hero .article-hero-content > .ah-badge i {
+            font-size: 0.85rem !important;
+            color: #C9A961 !important;
+        }
+
+        /* الـ h1 — الصف الأوسط (متمركز في المنتصف تمامًا) */
+        html body .article-hero .article-hero-content > h1 {
+            grid-row: 2 !important;
+            align-self: center !important;
+            justify-self: center !important;
+            font-family: 'Playfair Display', serif !important;
+            font-size: clamp(1.5rem, 3.2vw, 2.4rem) !important;
+            font-weight: 800 !important;
+            line-height: 1.25 !important;
+            letter-spacing: -0.02em !important;
+            color: #fff !important;
+            margin: 0 !important;
+            padding: 20px 0 !important;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.85) !important;
+        }
+
+        /* الـ meta — الصف السفلي */
+        html body .article-hero .article-hero-content > .article-hero-meta {
+            grid-row: 3 !important;
+            align-self: end !important;
+            justify-self: center !important;
+            display: flex !important;
+            gap: 20px !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            font-size: 0.86rem !important;
+            color: rgba(255,255,255,0.85) !important;
+            padding-top: 20px !important;
+            border-top: 1px solid rgba(255,255,255,0.18) !important;
+            margin: 0 !important;
+        }
+
+        html body .article-hero .article-hero-content > .article-hero-meta span {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+        }
+
+        html body .article-hero .article-hero-content > .article-hero-meta i {
+            color: #C9A961 !important;
+        }
+
+        /* === Responsive === */
+        @media (max-width: 768px) {
+            html body .article-hero {
+                min-height: 480px !important;
+            }
+            html body .article-hero .article-hero-content {
+                min-height: 380px !important;
+            }
+            html body .article-hero .article-hero-content > h1 {
+                font-size: clamp(1.3rem, 5vw, 1.7rem) !important;
+                padding: 15px 0 !important;
+            }
+            html body .article-hero .article-hero-content > .article-hero-meta {
+                font-size: 0.75rem !important;
+                gap: 12px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            html body .article-hero {
+                min-height: 440px !important;
+            }
+            html body .article-hero .article-hero-content {
+                min-height: 340px !important;
+            }
+        }
+
+        /* ============================================================
+           Breadcrumbs
+           ============================================================ */
         .breadcrumb-bar {
             background: #F8F9FA;
             padding: 16px 0;
             border-bottom: 1px solid #E9ECEF;
         }
-        .breadcrumb-bar nav {
-            font-size: 0.85rem;
-            color: #6C757D;
-        }
-        .breadcrumb-bar a {
-            color: #6C757D;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+        .breadcrumb-bar nav { font-size: 0.85rem; color: #6C757D; }
+        .breadcrumb-bar a { color: #6C757D; text-decoration: none; transition: color 0.3s ease; }
         .breadcrumb-bar a:hover { color: #A88947; }
-        .breadcrumb-bar .separator {
-            margin: 0 10px;
-            color: #ADB5BD;
-        }
-        .breadcrumb-bar .current {
-            color: #212529;
-            font-weight: 600;
-        }
+        .breadcrumb-bar .separator { margin: 0 10px; color: #ADB5BD; }
+        .breadcrumb-bar .current { color: #212529; font-weight: 600; }
 
-        /* Article Layout */
-        .article-wrap {
-            padding: 70px 0;
-        }
-
+        /* ============================================================
+           Article Layout
+           ============================================================ */
+        .article-wrap { padding: 70px 0; }
         .article-content {
             max-width: 780px;
             margin: 0 auto;
@@ -225,7 +297,6 @@
             line-height: 1.85;
             color: #212529;
         }
-
         .article-content .lead {
             font-size: 1.2rem;
             color: #495057;
@@ -242,7 +313,6 @@
             border-left: none;
             border-right: 4px solid #C9A961;
         }
-
         .article-content h2 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(1.5rem, 2.5vw, 1.9rem);
@@ -266,11 +336,9 @@
             background: linear-gradient(90deg, #C9A961, #A88947);
         }
         [dir="rtl"] .article-content h2::after {
-            left: auto;
-            right: 0;
+            left: auto; right: 0;
             background: linear-gradient(270deg, #C9A961, #A88947);
         }
-
         .article-content h3 {
             font-size: 1.25rem;
             font-weight: 700;
@@ -278,17 +346,8 @@
             margin-top: 35px;
             margin-bottom: 15px;
         }
-
-        .article-content p {
-            margin-bottom: 20px;
-            color: #343A40;
-        }
-
-        .article-content strong {
-            color: #000;
-            font-weight: 700;
-        }
-
+        .article-content p { margin-bottom: 20px; color: #343A40; }
+        .article-content strong { color: #000; font-weight: 700; }
         .article-content a {
             color: #A88947;
             text-decoration: underline;
@@ -296,26 +355,12 @@
             text-underline-offset: 3px;
             transition: all 0.3s ease;
         }
-        .article-content a:hover {
-            color: #000;
-            text-decoration-thickness: 2px;
+        .article-content a:hover { color: #000; text-decoration-thickness: 2px; }
+        .article-content ul, .article-content ol { padding-left: 25px; margin-bottom: 22px; }
+        [dir="rtl"] .article-content ul, [dir="rtl"] .article-content ol {
+            padding-left: 0; padding-right: 25px;
         }
-
-        .article-content ul,
-        .article-content ol {
-            padding-left: 25px;
-            margin-bottom: 22px;
-        }
-        [dir="rtl"] .article-content ul,
-        [dir="rtl"] .article-content ol {
-            padding-left: 0;
-            padding-right: 25px;
-        }
-        .article-content li {
-            margin-bottom: 10px;
-            line-height: 1.8;
-        }
-
+        .article-content li { margin-bottom: 10px; line-height: 1.8; }
         .article-content blockquote {
             margin: 30px 0;
             padding: 24px 30px;
@@ -328,8 +373,7 @@
             line-height: 1.8;
         }
         [dir="rtl"] .article-content blockquote {
-            border-left: none;
-            border-right: 4px solid #C9A961;
+            border-left: none; border-right: 4px solid #C9A961;
         }
         .article-content blockquote p { margin: 0; }
 
@@ -344,8 +388,7 @@
             margin: 30px 0;
         }
         [dir="rtl"] .article-callout {
-            border-left: none;
-            border-right: 4px solid #C9A961;
+            border-left: none; border-right: 4px solid #C9A961;
         }
         .article-callout i {
             color: #C9A961;
@@ -354,10 +397,7 @@
             margin-top: 4px;
         }
         .article-callout div p:first-child {
-            font-weight: 700;
-            color: #212529;
-            margin-bottom: 6px;
-            font-size: 1rem;
+            font-weight: 700; color: #212529; margin-bottom: 6px; font-size: 1rem;
         }
         .article-callout div p { margin: 0; font-size: 0.95rem; }
 
@@ -370,49 +410,24 @@
             margin: 35px 0;
         }
         .article-toc h4 {
-            font-size: 1rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-            color: #212529;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-size: 1rem; font-weight: 800; margin-bottom: 16px;
+            color: #212529; display: flex; align-items: center; gap: 10px;
         }
         .article-toc h4 i { color: #C9A961; }
         .article-toc ol {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+            list-style: none; padding: 0; margin: 0;
             counter-reset: atoc;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 8px 22px;
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 22px;
         }
-        @media (max-width: 600px) {
-            .article-toc ol { grid-template-columns: 1fr; }
-        }
-        .article-toc li {
-            counter-increment: atoc;
-            font-size: 0.88rem;
-            line-height: 1.6;
-        }
+        @media (max-width: 600px) { .article-toc ol { grid-template-columns: 1fr; } }
+        .article-toc li { counter-increment: atoc; font-size: 0.88rem; line-height: 1.6; }
         .article-toc li::before {
             content: counter(atoc, decimal-leading-zero) ".";
-            color: #C9A961;
-            font-weight: 800;
-            margin-right: 8px;
+            color: #C9A961; font-weight: 800; margin-right: 8px;
             font-family: 'Playfair Display', serif;
         }
-        [dir="rtl"] .article-toc li::before {
-            margin-right: 0;
-            margin-left: 8px;
-        }
-        .article-toc a {
-            color: #495057;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+        [dir="rtl"] .article-toc li::before { margin-right: 0; margin-left: 8px; }
+        .article-toc a { color: #495057; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
         .article-toc a:hover { color: #A88947; }
 
         /* Author Card */
@@ -427,217 +442,174 @@
             align-items: center;
         }
         .author-card-avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            flex-shrink: 0;
+            width: 90px; height: 90px; border-radius: 50%; flex-shrink: 0;
             background: linear-gradient(135deg, #C9A961, #A88947);
-            padding: 4px;
-            box-shadow: 0 10px 25px rgba(201,169,97,0.3);
+            padding: 4px; box-shadow: 0 10px 25px rgba(201,169,97,0.3);
         }
         .author-card-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid #fff;
+            width: 100%; height: 100%; object-fit: cover;
+            border-radius: 50%; border: 3px solid #fff;
         }
         .author-card-info h5 {
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: #212529;
-            margin-bottom: 4px;
+            font-size: 1.1rem; font-weight: 800; color: #212529; margin-bottom: 4px;
         }
         .author-card-info .role {
-            font-size: 0.82rem;
-            color: #A88947;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            display: block;
+            font-size: 0.82rem; color: #A88947; font-weight: 700;
+            letter-spacing: 0.5px; text-transform: uppercase;
+            margin-bottom: 10px; display: block;
         }
-        .author-card-info p {
-            font-size: 0.9rem;
-            color: #6C757D;
-            line-height: 1.7;
-            margin: 0;
-        }
+        .author-card-info p { font-size: 0.9rem; color: #6C757D; line-height: 1.7; margin: 0; }
         @media (max-width: 600px) {
-            .author-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 26px 22px;
-            }
+            .author-card { flex-direction: column; text-align: center; padding: 26px 22px; }
         }
 
         /* Share Buttons */
         .share-row {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-            padding: 22px 0;
-            border-top: 1px solid #E9ECEF;
-            border-bottom: 1px solid #E9ECEF;
-            margin: 30px 0;
+            display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+            padding: 22px 0; border-top: 1px solid #E9ECEF;
+            border-bottom: 1px solid #E9ECEF; margin: 30px 0;
         }
-        .share-row strong {
-            font-size: 0.88rem;
-            color: #495057;
-            margin-right: 8px;
-        }
+        .share-row strong { font-size: 0.88rem; color: #495057; margin-right: 8px; }
         .share-btn {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: #F8F9FA;
-            border: 1px solid #E9ECEF;
-            color: #495057;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1rem;
+            width: 42px; height: 42px; border-radius: 50%;
+            background: #F8F9FA; border: 1px solid #E9ECEF;
+            color: #495057; display: inline-flex;
+            align-items: center; justify-content: center;
+            text-decoration: none; transition: all 0.3s ease; font-size: 1rem;
         }
         .share-btn:hover {
             background: linear-gradient(135deg, #C9A961, #A88947);
-            color: #000;
-            transform: translateY(-3px);
+            color: #000; transform: translateY(-3px);
             border-color: transparent;
             box-shadow: 0 10px 20px rgba(201,169,97,0.3);
         }
 
         /* Citation Box */
         .citation-box {
-            background: #F8F9FA;
-            border: 1px solid #E9ECEF;
-            border-radius: 12px;
-            padding: 22px 26px;
-            margin: 40px 0;
-            font-size: 0.88rem;
-            color: #495057;
-            line-height: 1.75;
+            background: #F8F9FA; border: 1px solid #E9ECEF;
+            border-radius: 12px; padding: 22px 26px; margin: 40px 0;
+            font-size: 0.88rem; color: #495057; line-height: 1.75;
         }
         .citation-box strong {
-            color: #212529;
-            display: block;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
+            color: #212529; display: block; margin-bottom: 10px; font-size: 0.95rem;
         }
         .citation-box code {
-            background: #fff;
-            padding: 10px 14px;
-            border-radius: 6px;
-            display: block;
-            font-family: 'Inter', monospace;
-            font-size: 0.82rem;
-            color: #495057;
-            border: 1px solid #E9ECEF;
-            white-space: pre-wrap;
-            word-break: break-word;
-            line-height: 1.6;
+            background: #fff; padding: 10px 14px; border-radius: 6px;
+            display: block; font-family: 'Inter', monospace;
+            font-size: 0.82rem; color: #495057; border: 1px solid #E9ECEF;
+            white-space: pre-wrap; word-break: break-word; line-height: 1.6;
         }
 
         /* Related Articles */
-        .related-section {
-            padding: 70px 0;
-            background: #F8F9FA;
-        }
+        .related-section { padding: 70px 0; background: #F8F9FA; }
         .related-card {
-            background: #fff;
-            border: 1px solid #E9ECEF;
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            background: #fff; border: 1px solid #E9ECEF;
+            border-radius: 16px; overflow: hidden;
+            transition: all 0.4s ease; text-decoration: none; color: inherit;
+            display: flex; flex-direction: column; height: 100%;
         }
         .related-card:hover {
-            transform: translateY(-6px);
-            border-color: #C9A961;
-            box-shadow: 0 25px 50px -20px rgba(0,0,0,0.12);
-            color: inherit;
+            transform: translateY(-6px); border-color: #C9A961;
+            box-shadow: 0 25px 50px -20px rgba(0,0,0,0.12); color: inherit;
         }
-                /* حاوية الصورة في الروابط السريعة */
         .related-card-img {
             height: 160px;
-            background: linear-gradient(135deg, #111, #000); /* خلفية داكنة */
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: linear-gradient(135deg, #111, #000);
+            overflow: hidden; position: relative;
+            display: flex; align-items: center; justify-content: center;
         }
-
-        /* أيقونة تظهر في النص لو الصورة مش موجودة */
         .related-card-img::before {
-            content: '\f1ea'; /* أيقونة ورقة */
+            content: '\f1ea';
             font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            font-size: 3rem;
-            color: rgba(201, 169, 97, 0.2); /* لون ذهبي شفاف */
-            position: absolute;
-            z-index: 1;
-        }
-
-        /* الصورة الحقيقية تظهر فوق الأيقونة */
-        .related-card-img img {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
+            font-weight: 900; font-size: 3rem;
+            color: rgba(201, 169, 97, 0.2);
+            position: absolute; z-index: 1;
         }
         .related-card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            position: relative; z-index: 2;
+            width: 100%; height: 100%; object-fit: cover;
             transition: transform 0.5s ease;
         }
-        .related-card:hover .related-card-img img {
-            transform: scale(1.08);
-        }
+        .related-card:hover .related-card-img img { transform: scale(1.08); }
         .related-card-body {
-            padding: 22px 22px 24px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
+            padding: 22px 22px 24px; flex: 1;
+            display: flex; flex-direction: column;
         }
         .related-card-cat {
-            font-size: 0.72rem;
-            color: #A88947;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
+            font-size: 0.72rem; color: #A88947; font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px;
         }
         .related-card h4 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: #212529;
-            line-height: 1.4;
-            margin-bottom: 10px;
-            transition: color 0.3s ease;
+            font-size: 1.05rem; font-weight: 800; color: #212529;
+            line-height: 1.4; margin-bottom: 10px; transition: color 0.3s ease;
         }
         .related-card:hover h4 { color: #A88947; }
         .related-card .meta {
-            font-size: 0.75rem;
-            color: #ADB5BD;
-            margin-top: auto;
-            padding-top: 12px;
-            border-top: 1px solid #F1F3F5;
+            font-size: 0.75rem; color: #ADB5BD;
+            margin-top: auto; padding-top: 12px; border-top: 1px solid #F1F3F5;
         }
 
-        /* RTL */
-        [dir="rtl"] .language-switcher { right: auto; left: 20px; }
-        [dir="rtl"] .share-row strong { margin-right: 0; margin-left: 8px; }
+        /* ============================================================
+           Language button — تأكيد إضافي بمحدد أكثر تحديدًا
+           (احتياط لو تعارض style.css مع الـ inline)
+           ============================================================ */
+        html body .navbar ul.navbar-nav > li.lang-nav-item {
+            display: inline-flex !important;
+            align-items: center !important;
+            margin: 0 0 0 8px !important;
+            padding: 0 !important;
+            list-style: none !important;
+            flex-shrink: 0 !important;
+        }
+        [dir="rtl"] html body .navbar ul.navbar-nav > li.lang-nav-item,
+        html body[dir="rtl"] .navbar ul.navbar-nav > li.lang-nav-item {
+            margin: 0 8px 0 0 !important;
+        }
+        html body .navbar ul.navbar-nav > li.lang-nav-item > a.lang-btn {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 8px !important;
+            padding: 10px 20px !important;
+            min-height: 42px !important;
+            height: 42px !important;
+            background: linear-gradient(135deg, #C9A961 0%, #A88947 100%) !important;
+            color: #000000 !important;
+            border: 2px solid #C9A961 !important;
+            border-radius: 999px !important;
+            font-weight: 700 !important;
+            font-size: 0.85rem !important;
+            line-height: 1 !important;
+            text-decoration: none !important;
+            white-space: nowrap !important;
+            box-shadow: 0 6px 18px rgba(201, 169, 97, 0.40) !important;
+            transition: all 0.3s ease !important;
+            cursor: pointer !important;
+            margin: 0 !important;
+        }
+        html body .navbar ul.navbar-nav > li.lang-nav-item > a.lang-btn:hover {
+            background: linear-gradient(135deg, #D4B872 0%, #C9A961 100%) !important;
+            color: #000 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 10px 28px rgba(201, 169, 97, 0.55) !important;
+        }
+
+        @media (max-width: 991.98px) {
+            html body .navbar ul.navbar-nav > li.lang-nav-item {
+                display: flex !important;
+                width: 100% !important;
+                margin: 8px 0 0 !important;
+            }
+            html body .navbar ul.navbar-nav > li.lang-nav-item > a.lang-btn {
+                display: flex !important;
+                width: 100% !important;
+                height: auto !important;
+                min-height: 44px !important;
+                padding: 12px 16px !important;
+                font-size: 0.9rem !important;
+            }
+        }
     </style>
 </head>
 
@@ -651,9 +623,7 @@
         <i class="fas fa-tools"></i>
     </div>
 
-    <div class="language-switcher">
-        <a href="/ar/blog/ai-digital-educator-ip-rights.html" class="lang-btn"><i class="fas fa-globe"></i> العربية</a>
-    </div>
+    <!-- ❌ تم حذف الزر العائم القديم .language-switcher -->
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
@@ -689,12 +659,23 @@
                     <li class="nav-item"><a class="nav-link" href="/lawyers.html">Our Team</a></li>
                     <li class="nav-item"><a class="nav-link active" href="/blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+
+                    <!-- ✅ زر اللغة — الآن داخل النافبار في مكانه الطبيعي -->
+                    <li class="nav-item lang-nav-item">
+                        <a href="/ar/blog/ai-digital-educator-ip-rights.html"
+                           class="lang-btn"
+                           hreflang="ar"
+                           aria-label="Switch to العربية">
+                            <i class="fas fa-globe" aria-hidden="true"></i>
+                            <span>العربية</span>
+                        </a>
+                    </li>
+
                     <li class="nav-item ms-lg-3">
                         <a class="btn btn-outline-light btn-sm" href="/client-portal.html">
                             <i class="fas fa-lock me-1"></i>Client Portal
                         </a>
                     </li>
-  
                 </ul>
             </div>
         </div>
@@ -715,8 +696,10 @@
 
     <!-- Article Hero -->
     <header class="article-hero">
-        <!-- ✅ تم إضافة كلاس الصورة لضمان التنسيق الصحيح -->
-        <img src="/images/blog/ai-ip-cover.png" alt="AI and IP" class="article-hero-img" onerror="this.style.display='none';">
+        <img src="/images/blog/ai-ip-cover.png"
+             alt="AI and IP"
+             class="article-hero-img"
+             onerror="this.style.display='none';">
         <div class="article-hero-overlay"></div>
         <div class="container">
             <div class="article-hero-content">
@@ -747,7 +730,6 @@
                     intellectual property rights of the content creators whose works form the foundation of these systems.
                 </p>
 
-                <!-- Inline TOC -->
                 <div class="article-toc">
                     <h4><i class="fas fa-list-ul"></i> In This Article</h4>
                     <ol>
@@ -761,7 +743,6 @@
                     </ol>
                 </div>
 
-                <!-- Section 1 -->
                 <h2 id="introduction">Introduction</h2>
                 <p>
                     The rapid expansion of generative artificial intelligence has introduced a legal paradox. AI
@@ -783,7 +764,6 @@
                     continue.
                 </p>
 
-                <!-- Section 2 -->
                 <h2 id="digital-educator">The "Digital Educator" Paradigm</h2>
                 <p>
                     The term "digital educator" is used here to describe AI systems that are trained on large
@@ -821,7 +801,6 @@
                     </div>
                 </div>
 
-                <!-- Section 3 -->
                 <h2 id="ip-challenges">IP Challenges Posed by AI Training</h2>
 
                 <h3>3.1 The Reproduction Question</h3>
@@ -860,16 +839,13 @@
                     has been released — by which point retraction is impossible.
                 </p>
 
-                <!-- Section 4 -->
                 <h2 id="egyptian-context">The Egyptian Legal Context</h2>
                 <p>
                     Egyptian intellectual property law — primarily Law No. 82 of 2002 — was drafted in an era before
                     generative AI existed. It contains no explicit provisions addressing AI training or AI-generated
                     content.
                 </p>
-                <p>
-                    However, several existing provisions of Egyptian law are relevant:
-                </p>
+                <p>However, several existing provisions of Egyptian law are relevant:</p>
                 <ul>
                     <li><strong>Article 148</strong> — grants authors the exclusive right to reproduce their works.</li>
                     <li><strong>Article 149</strong> — grants authors the right to authorize or prohibit derivative works.</li>
@@ -889,11 +865,8 @@
                     </p>
                 </blockquote>
 
-                <!-- Section 5 -->
                 <h2 id="international-frameworks">International Frameworks</h2>
-                <p>
-                    Different jurisdictions have begun to address these issues in different ways:
-                </p>
+                <p>Different jurisdictions have begun to address these issues in different ways:</p>
 
                 <h3>European Union</h3>
                 <p>
@@ -929,7 +902,6 @@
                     </div>
                 </div>
 
-                <!-- Section 6 -->
                 <h2 id="proposed-solutions">Proposed Solutions</h2>
                 <p>
                     A balanced approach is needed — one that protects creators while allowing innovation to
@@ -983,7 +955,6 @@
                     </div>
                 </div>
 
-                <!-- Section 7 -->
                 <h2 id="conclusion">Conclusion</h2>
                 <p>
                     The rise of AI as a "digital educator" is not a temporary phenomenon — it is a structural
@@ -1008,13 +979,11 @@
                     and with respect for the people whose work made it possible.
                 </p>
 
-                <!-- Citation Box -->
                 <div class="citation-box">
                     <strong>How to cite this paper:</strong>
                     <code>Abu Al-Ela, W. M. (2026). "The Impact of the Expanding Use of Artificial Intelligence as a Digital Educator on the Intellectual Property Rights of Content Creators Whose Work Is Used." Presented at the 9th Scientific Conference on Intellectual Property, National Institute of Intellectual Property. Approved for publication.</code>
                 </div>
 
-                <!-- Share Row -->
                 <div class="share-row">
                     <strong>Share this article:</strong>
                     <a href="#" class="share-btn" onclick="shareArticle('twitter'); return false;" title="Share on Twitter">
@@ -1034,7 +1003,6 @@
                     </a>
                 </div>
 
-                <!-- Author Card -->
                 <div class="author-card">
                     <div class="author-card-avatar">
                         <img src="/images/team/walid-profile.jpg" alt="Walid Mohamed Abu Al-Ela" onerror="this.src='/images/team/walid-profile.png';">
@@ -1054,8 +1022,7 @@
             </div>
         </div>
     </article>
-
-    <!-- Related Articles -->
+        <!-- Related Articles -->
     <section class="related-section">
         <div class="container">
             <div class="section-head-rich">
@@ -1068,8 +1035,8 @@
                 <div class="col-md-6 col-lg-4">
                     <a href="/blog/egyptian-ip-law-amendments-2026.html" class="related-card">
                         <div class="related-card-img">
-                            <!-- ✅ تم إصلاح مسار الصورة وإزالة الكلاس الخاطئ -->
-<img src="/images/blog/ip-law-amendments.png" alt="IP Law Amendments" class="article-hero-img" onerror="this.style.display='none';">                        </div>
+                            <img src="/images/blog/ip-law-amendments.png" alt="IP Law Amendments" onerror="this.style.display='none';">
+                        </div>
                         <div class="related-card-body">
                             <span class="related-card-cat">Intellectual Property</span>
                             <h4>Recent Amendments to the Egyptian IP Law: What Business Owners Should Know</h4>
@@ -1081,8 +1048,8 @@
                 <div class="col-md-6 col-lg-4">
                     <a href="/blog/protecting-software-patents.html" class="related-card">
                         <div class="related-card-img">
-                            <!-- ✅ تم إصلاح الامتداد من jpg إلى png -->
-<img src="/images/blog/software-patents.png" alt="Software Patents" class="article-hero-img" onerror="this.style.display='none';">                        </div>
+                            <img src="/images/blog/software-patents.png" alt="Software Patents" onerror="this.style.display='none';">
+                        </div>
                         <div class="related-card-body">
                             <span class="related-card-cat">Intellectual Property</span>
                             <h4>Protecting Software in Egypt: Copyright, Patents, or Trade Secrets?</h4>
@@ -1094,8 +1061,8 @@
                 <div class="col-md-6 col-lg-4">
                     <a href="/blog/trademark-opposition-strategy.html" class="related-card">
                         <div class="related-card-img">
-                            <!-- ✅ تم إصلاح الامتداد من jpg إلى png -->
-<img src="/images/blog/trademark-opposition.png" alt="Trademark Opposition" class="article-hero-img" onerror="this.style.display='none';">                        </div>
+                            <img src="/images/blog/trademark-opposition.png" alt="Trademark Opposition" onerror="this.style.display='none';">
+                        </div>
                         <div class="related-card-body">
                             <span class="related-card-cat">Intellectual Property</span>
                             <h4>Responding to Trademark Oppositions: A Practical Guide</h4>
@@ -1186,8 +1153,6 @@
     <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- ✅ تم مسح سكريبت main.js المكرر من هنا -->
 
     <!-- Reading Progress + Share -->
     <script>
@@ -1223,6 +1188,17 @@
                 alert('Could not copy link. Please copy manually.');
             });
         };
+
+        // Back to top
+        const backBtn = document.getElementById('backToTop');
+        if (backBtn) {
+            window.addEventListener('scroll', function() {
+                backBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+            });
+            backBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
     })();
     </script>
 </body>
