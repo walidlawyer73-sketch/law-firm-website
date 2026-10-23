@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -902,7 +902,7 @@
                     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>جاري الإرسال...</span>';
 
                     try {
-                        const response = await fetch('/api/contact', {
+                        const response = await fetch('/data/contact', {
                             method: 'POST',
                             body: payload,
                             headers: { 'Accept': 'application/json' }

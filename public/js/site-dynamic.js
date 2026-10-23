@@ -27,7 +27,7 @@
   // ─── تطبيق الإعدادات ───
   async function applySettings() {
     try {
-      const r = await fetch('/api/settings', { cache: 'no-store' });
+      const r = await fetch('/data/settings', { cache: 'no-store' });
       const d = await r.json();
       if (!d.success) return;
       const s = d.settings;
@@ -55,7 +55,7 @@
     const grid = document.getElementById('dynamic-team-grid');
     if (!grid) return;
     try {
-      const r = await fetch('/api/team', { cache: 'no-store' });
+      const r = await fetch('/data/team', { cache: 'no-store' });
       const d = await r.json();
       if (!d.success) return;
       const team = d.team || [];
@@ -95,7 +95,7 @@
     const grid = document.getElementById('dynamic-faq-grid');
     if (!grid) return;
     try {
-      const r = await fetch('/api/faqs', { cache: 'no-store' });
+      const r = await fetch('/data/faqs', { cache: 'no-store' });
       const d = await r.json();
       if (!d.success) return;
       const faqs = d.faqs || [];

@@ -1043,7 +1043,7 @@
     <script src="/js/main.js"></script>
 
     <!-- ============================================================
-         NEWSLETTER HANDLER (Simple — sends via /api/contact)
+         NEWSLETTER HANDLER (Simple — sends via /data/contact)
          ============================================================ -->
     <script>
     (function() {
@@ -1068,7 +1068,7 @@
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Sending...</span>';
 
             try {
-                const res = await fetch('/api/contact', {
+                const res = await fetch('/data/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

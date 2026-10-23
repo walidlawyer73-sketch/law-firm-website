@@ -983,7 +983,7 @@
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>جارٍ الإرسال...</span>';
 
             try {
-                const res = await fetch('/api/contact', {
+                const res = await fetch('/data/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

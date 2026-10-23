@@ -10,7 +10,7 @@
   async function getServices() {
     if (cached) return cached;
     try {
-      var r = await fetch('/api/services?v=' + Date.now());
+      var r = await fetch('/data/services?v=' + Date.now());
       var d = await r.json();
       if (d.success) {
         cached = d.services;
