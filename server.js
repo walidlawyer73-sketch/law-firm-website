@@ -13,7 +13,6 @@ const path = require('path');
 const methodOverride = require('method-override');
 const nodemailer = require('nodemailer');
 const { marked } = require('marked');
-const MongoStore = require('connect-mongo');
 const rateLimit = require('express-rate-limit');
 
 // ─── Custom Modules ──────────────────────────────────────────────────────────
@@ -198,10 +197,7 @@ const sessionConfig = {
 };
 if (process.env.MONGODB_URI) {
   try {
-    sessionConfig.store = MongoStore.create({ mongoUrl: process.env.MONGODB_URI, ttl: 24 * 60 * 60 });
-    console.log('[SESSION] MongoStore initialized');
   } catch (err) {
-    console.error('[SESSION] MongoStore failed:', err.message);
     console.warn('[SESSION] Using MemoryStore — sessions will not persist');
   }
 } else {
