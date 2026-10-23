@@ -50,13 +50,9 @@ if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
   });
 }
 
-if (process.env.MONGODB_URI) {
-  mongoose.connect(process.env.MONGODB_URI)
-    .then(() => console.log('DB Connected'))
-    .catch((err) => console.error('DB Error:', err.message));
-} else {
-  console.error('[DB] MONGODB_URI is not defined — database operations will fail');
-}
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('DB Connected'))
+  .catch((err) => console.error('DB Error:', err.message));
 
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -136,30 +132,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
-// ✅ نسخة دفاعية: تعمل حتى لو المتغيرات مفقودة (للتشخيص)
-const sessionConfig = {
+app.use(session({
   secret: process.env.SESSION_SECRET || 'fallback-secret-change-me',
   resave: false,
   saveUninitialized: false,
+  store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI, ttl: 24 * 60 * 60 }),
   cookie: {
     secure: process.env.NODE_ENV === 'production',
     httpOnly: true,
     maxAge: 24 * 60 * 60 * 1000,
     sameSite: 'lax'
   }
-};
-if (process.env.MONGODB_URI) {
-  try {
-    sessionConfig.store = MongoStore.create({ mongoUrl: process.env.MONGODB_URI, ttl: 24 * 60 * 60 });
-    console.log('[SESSION] MongoStore initialized');
-  } catch (err) {
-    console.error('[SESSION] MongoStore failed:', err.message);
-    console.warn('[SESSION] Falling back to MemoryStore — sessions will NOT persist');
-  }
-} else {
-  console.warn('[SESSION] MONGODB_URI not set — using MemoryStore');
-}
-app.use(session(sessionConfig));
+}));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -623,9 +607,7 @@ async function createDefaultAdmin() {
 app.use(notFoundHandler);
 app.use(globalErrorHandler);
 
-// ✅ لا تستدعِ app.listen على Vercel (VERCEL env var موجود تلقائياً هناك)
-const IS_VERCEL = !!process.env.VERCEL;
-if (!IS_VERCEL && process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production') {
   app.listen(port, async () => {
     await createDefaultAdmin();
     console.log('');
@@ -637,7 +619,6 @@ if (!IS_VERCEL && process.env.NODE_ENV !== 'production') {
     console.log('========================================');
   });
 } else {
-  console.log('[STARTUP] Running on Vercel (serverless) — skipping app.listen');
   createDefaultAdmin().catch(console.error);
 }
 
