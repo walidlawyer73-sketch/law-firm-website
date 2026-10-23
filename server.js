@@ -1,4 +1,4 @@
-﻿// ============================================================================
+// ============================================================================
 // server.js — Walid Abo Al-Ela Law Firm
 // Complete, production-ready server (works on Vercel + local)
 // ============================================================================
@@ -690,7 +690,10 @@ async function createDefaultAdmin() {
 
 // ─── 404 + Error Handlers ────────────────────────────────────────────────────
 app.use(notFoundHandler);
-app.use(globalErrorHandler);
+app.use((err, req, res, next) => {
+  console.error('GLOBAL ERROR:', err.message, err.stack);
+  globalErrorHandler(err, req, res, next);
+});
 
 // ─── Start Server (only locally, not on Vercel) ──────────────────────────────
 const IS_VERCEL = !!process.env.VERCEL;
