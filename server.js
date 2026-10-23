@@ -1,5 +1,11 @@
+﻿// ============================================================================
+// server.js — Walid Abo Al-Ela Law Firm
+// Complete, production-ready server (works on Vercel + local)
+// ============================================================================
+
 require('dotenv').config();
 
+// ─── Core Imports ────────────────────────────────────────────────────────────
 const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
@@ -10,11 +16,13 @@ const { marked } = require('marked');
 const MongoStore = require('connect-mongo');
 const rateLimit = require('express-rate-limit');
 
+// ─── Custom Modules ──────────────────────────────────────────────────────────
 const { notFoundHandler, globalErrorHandler } = require('./middleware/errorHandler');
 const { requireAuth } = require('./middleware/auth');
 const { upload } = require('./config/multer');
-require('./config/cloudinary');
+try { require('./config/cloudinary'); } catch (e) { console.warn('Cloudinary init skipped:', e.message); }
 
+// ─── Models ──────────────────────────────────────────────────────────────────
 const Page = require('./models/Page');
 const BlogPost = require('./models/BlogPost');
 const Testimonial = require('./models/Testimonial');
@@ -26,137 +34,183 @@ const TeamMember = require('./models/TeamMember');
 const FAQ = require('./models/FAQ');
 const Media = require('./models/Media');
 
+// ─── Admin Routes ────────────────────────────────────────────────────────────
 const adminRoutes = require('./routes/admin');
-const contactHandler = require('./api/contact');
 
+// ─── Express App ─────────────────────────────────────────────────────────────
 const app = express();
 const port = process.env.PORT || 3000;
-
 app.set('trust proxy', 1);
+
+// ─── Marked Config ───────────────────────────────────────────────────────────
 marked.setOptions({ breaks: true, gfm: true });
 
+// ─── Email Setup (non-fatal) ─────────────────────────────────────────────────
 let emailReady = false;
 if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
-  const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST || 'smtp.gmail.com',
-    port: Number(process.env.EMAIL_PORT) || 587,
-    secure: process.env.EMAIL_SECURE === 'true',
-    auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
-    tls: { rejectUnauthorized: false }
-  });
-  transporter.verify((error) => {
-    if (error) console.error('Email config error:', error.message);
-    else { emailReady = true; console.log('Email ready to send'); }
-  });
+  try {
+    const transporter = nodemailer.createTransport({
+      host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+      port: Number(process.env.EMAIL_PORT) || 587,
+      secure: process.env.EMAIL_SECURE === 'true',
+      auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
+      tls: { rejectUnauthorized: false }
+    });
+    transporter.verify((err) => {
+      if (err) console.error('Email verify error:', err.message);
+      else { emailReady = true; console.log('Email ready to send'); }
+    });
+  } catch (err) {
+    console.error('Email setup failed:', err.message);
+  }
 }
 
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('DB Connected'))
-  .catch((err) => console.error('DB Error:', err.message));
+// ─── MongoDB Connection (guarded) ────────────────────────────────────────────
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI)
+    .then(() => console.log('DB Connected'))
+    .catch((err) => console.error('DB Error:', err.message));
+} else {
+  console.error('[DB] MONGODB_URI is not defined — DB operations will fail');
+}
 
-
-// ═══════════════════════════════════════════════════════════════════════════
-// Dynamic main.js — الميجا منيو من DB (bulletproof)
-// ═══════════════════════════════════════════════════════════════════════════
-const fs = require('fs');
-app.get('/js/main.js', async (req, res, next) => {
-  try {
-    const services = await Service.find({
-      published: true,
-      showInMegaMenu: true
-    }).sort({ category: 1, order: 1 }).lean();
-
-    const grouped = { ip: [], disputes: [], corporate: [], contracts: [] };
-    services.forEach(s => { if (grouped[s.category]) grouped[s.category].push(s); });
-
-    const labelsMap = {
-      ip:        { en: 'Intellectual Property', ar: 'الملكية الفكرية', icon: 'fa-trademark' },
-      disputes:  { en: 'Litigation & Arbitration', ar: 'التقاضي والتحكيم', icon: 'fa-scale-balanced' },
-      corporate: { en: 'Corporate Services', ar: 'خدمات الشركات', icon: 'fa-building' },
-      contracts: { en: 'Contracts & Agreements', ar: 'العقود والاتفاقيات', icon: 'fa-file-signature' }
-    };
-
-    const categoriesData = ['ip', 'disputes', 'corporate', 'contracts']
-      .filter(k => grouped[k].length > 0)
-      .map(k => ({
-        id: k,
-        labelEn: labelsMap[k].en,
-        labelAr: labelsMap[k].ar,
-        icon: labelsMap[k].icon,
-        services: grouped[k].map(s => ({
-          nameEn: s.titleEn,
-          nameAr: s.titleAr || s.titleEn,
-          slug: s.slug,
-          icon: s.icon || 'fa-circle'
-        }))
-      }));
-
-    const jsPath = require('path').join(__dirname, 'public', 'js', 'main.js');
-    let js = fs.readFileSync(jsPath, 'utf8');
-
-    const dynamicCode = 'const categories = ' + JSON.stringify(categoriesData) + '.map(function(cat) {\n' +
-      '      return {\n' +
-      '        id: cat.id,\n' +
-      '        label: isAr ? cat.labelAr : cat.labelEn,\n' +
-      '        icon: cat.icon,\n' +
-      '        services: cat.services.map(function(s) {\n' +
-      '          return { name: isAr ? s.nameAr : s.nameEn, href: (isAr ? "/ar/" : "/") + s.slug, icon: s.icon };\n' +
-      '        })\n' +
-      '      };\n' +
-      '    });';
-
-    const before = js.length;
-    js = js.replace(/const categories = \[[\s\S]*?\n\s*\];/, dynamicCode);
-
-    res.type('application/javascript');
-    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
-    res.setHeader('Pragma', 'no-cache');
-    console.log('[mega] Served /js/main.js with ' + services.length + ' services (' + before + '->' + js.length + ' bytes)');
-    res.send(js);
-  } catch (err) {
-    console.error('[mega] Dynamic main.js error:', err.message);
-    next();
-  }
-});
+// ─── Static Files ────────────────────────────────────────────────────────────
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
 
-app.post('/data/contact', contactHandler);
+// ─── Health Check (for debugging) ────────────────────────────────────────────
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    env: {
+      nodeEnv: process.env.NODE_ENV || 'undefined',
+      vercel: !!process.env.VERCEL,
+      mongodb: !!process.env.MONGODB_URI,
+      cloudinary: !!process.env.CLOUDINARY_CLOUD_NAME,
+      sessionSecret: !!process.env.SESSION_SECRET,
+      email: !!process.env.EMAIL_USER
+    },
+    dbState: mongoose.connection.readyState // 0=disconnected, 1=connected
+  });
+});
 
-app.use('/data/services', require('./routes/public/services'));
-app.use('/data/team', require('./routes/public/team'));
-app.use('/data/faqs', require('./routes/public/faqs'));
-app.use('/data/settings', require('./routes/public/settings'));
-
+// ─── Body Parsers ────────────────────────────────────────────────────────────
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
-app.use(session({
+// ─── Contact Form Handlers ───────────────────────────────────────────────────
+const handleContact = async (req, res) => {
+  try {
+    if (mongoose.connection.readyState !== 1) {
+      if (!process.env.MONGODB_URI) {
+        return res.status(503).json({ error: 'Database not configured' });
+      }
+      await mongoose.connect(process.env.MONGODB_URI);
+    }
+    const { name, email, phone, service, message } = req.body;
+    if (!name || !email || !message) {
+      return res.status(400).json({ error: 'Name, email, and message are required' });
+    }
+    const contact = await Contact.create({
+      name: String(name).trim(),
+      email: String(email).trim().toLowerCase(),
+      phone: phone ? String(phone).trim() : '',
+      service: service || 'general',
+      message: String(message)
+    });
+
+    // Optional email notification (non-blocking)
+    if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
+      try {
+        const transporter = nodemailer.createTransport({
+          host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+          port: Number(process.env.EMAIL_PORT) || 587,
+          secure: process.env.EMAIL_SECURE === 'true',
+          auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS }
+        });
+        transporter.sendMail({
+          from: `"Website" <${process.env.EMAIL_USER}>`,
+          to: process.env.ADMIN_EMAIL || process.env.EMAIL_USER,
+          replyTo: contact.email,
+          subject: `New message from ${contact.name}`,
+          html: `<h2>New Contact Message</h2>
+            <p><strong>Name:</strong> ${contact.name}</p>
+            <p><strong>Email:</strong> ${contact.email}</p>
+            <p><strong>Phone:</strong> ${contact.phone || 'N/A'}</p>
+            <p><strong>Service:</strong> ${contact.service}</p>
+            <hr><p>${contact.message.replace(/\n/g, '<br>')}</p>`
+        }).catch((e) => console.error('Email send error:', e.message));
+      } catch (e) { /* ignore */ }
+    }
+
+    res.json({ success: true, id: contact._id });
+  } catch (err) {
+    console.error('Contact handler error:', err);
+    res.status(500).json({ error: 'Server error: ' + err.message });
+  }
+};
+
+app.post('/data/contact', handleContact);
+app.post('/api/contact', handleContact); // backward compatibility
+
+// ─── Public APIs (/data/*) ───────────────────────────────────────────────────
+try { app.use('/data/services', require('./routes/public/services')); } catch (e) { console.warn('services route skipped:', e.message); }
+try { app.use('/data/team', require('./routes/public/team')); } catch (e) { console.warn('team route skipped:', e.message); }
+try { app.use('/data/faqs', require('./routes/public/faqs')); } catch (e) { console.warn('faqs route skipped:', e.message); }
+try { app.use('/data/settings', require('./routes/public/settings')); } catch (e) { console.warn('settings route skipped:', e.message); }
+
+// ─── Sitemap & Robots ────────────────────────────────────────────────────────
+try { app.use('/', require('./routes/public/sitemap')); } catch (e) { console.warn('sitemap skipped:', e.message); }
+try { app.use('/', require('./routes/public/robots')); } catch (e) { console.warn('robots skipped:', e.message); }
+
+// ─── Session (guarded) ───────────────────────────────────────────────────────
+const sessionConfig = {
   secret: process.env.SESSION_SECRET || 'fallback-secret-change-me',
   resave: false,
   saveUninitialized: false,
-  store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI, ttl: 24 * 60 * 60 }),
   cookie: {
     secure: process.env.NODE_ENV === 'production',
     httpOnly: true,
     maxAge: 24 * 60 * 60 * 1000,
     sameSite: 'lax'
   }
-}));
+};
+if (process.env.MONGODB_URI) {
+  try {
+    sessionConfig.store = MongoStore.create({ mongoUrl: process.env.MONGODB_URI, ttl: 24 * 60 * 60 });
+    console.log('[SESSION] MongoStore initialized');
+  } catch (err) {
+    console.error('[SESSION] MongoStore failed:', err.message);
+    console.warn('[SESSION] Using MemoryStore — sessions will not persist');
+  }
+} else {
+  console.warn('[SESSION] No MONGODB_URI — using MemoryStore');
+}
+app.use(session(sessionConfig));
 
+// ─── View Engine ─────────────────────────────────────────────────────────────
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-const loginLimiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 10, message: 'Too many login attempts.' });
+// ─── Rate Limiter (login only) ───────────────────────────────────────────────
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 10,
+  message: 'Too many login attempts. Try again in 15 minutes.',
+  skip: (req) => process.env.NODE_ENV !== 'production' // disabled locally
+});
 app.use('/admin/login', loginLimiter);
 
+// ─── Admin Language Middleware ───────────────────────────────────────────────
 app.use('/admin', (req, res, next) => {
   if (req.query.lang) req.session.adminLang = req.query.lang;
   res.locals.lang = req.session.adminLang || 'en';
   next();
 });
 
+// ─── Render Helpers ──────────────────────────────────────────────────────────
 function renderPageHTML(page, htmlContent, lang) {
   const isAr = lang === 'ar';
   const dir = isAr ? 'rtl' : 'ltr';
@@ -165,26 +219,29 @@ function renderPageHTML(page, htmlContent, lang) {
   const switchUrl = isAr ? '/' + slug : '/ar/' + slug;
   const switchLang = isAr ? 'English' : 'العربية';
   const brandName = isAr ? 'وليد أبوالعلا للمحاماة' : 'Walid Abo Al-Ela Law Firm';
-  return '<!DOCTYPE html>\n<html lang="' + lang + '" dir="' + dir + '">\n<head>\n' +
-    '<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
-    '<title>' + (page.metaTitle || page.title) + '</title>\n' +
-    '<meta name="description" content="' + (page.metaDescription || '') + '">\n' +
-    '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">\n' +
-    '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">\n' +
-    '<link rel="stylesheet" href="/css/style.css">\n' +
-    '</head>\n<body>\n' +
-    '<div class="language-switcher"><a href="' + switchUrl + '" class="lang-btn"><i class="fas fa-globe"></i> ' + switchLang + '</a></div>\n' +
-    '<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#000;">\n' +
-    '<div class="container"><a class="navbar-brand" href="' + (base || '/') + '"><img src="/images/logo arb ip.png" alt="' + brandName + '" style="height:45px;"></a></div>\n' +
-    '</nav>\n' +
-    '<header style="margin-top:78px;background:linear-gradient(135deg,#000,#1a1a1a);color:#fff;padding:60px 0;text-align:center;">\n' +
-    '<div class="container"><h1>' + page.title + '</h1></div>\n' +
-    '</header>\n' +
-    '<section style="padding:60px 0;"><div class="container"><div class="row"><div class="col-lg-8 mx-auto">' +
-    htmlContent + '</div></div></div></section>\n' +
-    '<footer style="background:#000;color:#fff;padding:40px 0;text-align:center;"><p>&copy; ' + new Date().getFullYear() + ' ' + brandName + '</p></footer>\n' +
-    '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>\n' +
-    '<script src="/js/main.js"></script>\n</body>\n</html>';
+  return `<!DOCTYPE html>
+<html lang="${lang}" dir="${dir}">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${page.metaTitle || page.title}</title>
+<meta name="description" content="${page.metaDescription || ''}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="language-switcher"><a href="${switchUrl}" class="lang-btn"><i class="fas fa-globe"></i> ${switchLang}</a></div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#000;">
+<div class="container"><a class="navbar-brand" href="${base || '/'}"><img src="/images/logo arb ip.png" alt="${brandName}" style="height:45px;"></a></div>
+</nav>
+<header style="margin-top:78px;background:linear-gradient(135deg,#000,#1a1a1a);color:#fff;padding:60px 0;text-align:center;">
+<div class="container"><h1>${page.title}</h1></div>
+</header>
+<section style="padding:60px 0;"><div class="container"><div class="row"><div class="col-lg-8 mx-auto">${htmlContent}</div></div></div></section>
+<footer style="background:#000;color:#fff;padding:40px 0;text-align:center;"><p>&copy; ${new Date().getFullYear()} ${brandName}</p></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/main.js"></script>
+</body></html>`;
 }
 
 function renderBlogHTML(post, htmlContent, lang) {
@@ -197,27 +254,31 @@ function renderBlogHTML(post, htmlContent, lang) {
   const brandName = isAr ? 'وليد أبوالعلا للمحاماة' : 'Walid Abo Al-Ela Law Firm';
   const dateLocale = isAr ? 'ar-EG' : 'en-US';
   const formattedDate = new Date(post.createdAt).toLocaleDateString(dateLocale, { year: 'numeric', month: 'long', day: 'numeric' });
-  return '<!DOCTYPE html>\n<html lang="' + lang + '" dir="' + dir + '">\n<head>\n' +
-    '<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
-    '<title>' + post.title + ' - ' + brandName + '</title>\n' +
-    '<meta name="description" content="' + (post.excerpt || '') + '">\n' +
-    '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">\n' +
-    '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">\n' +
-    '<link rel="stylesheet" href="/css/style.css">\n</head>\n<body>\n' +
-    '<div class="language-switcher"><a href="' + switchUrl + '" class="lang-btn"><i class="fas fa-globe"></i> ' + switchLang + '</a></div>\n' +
-    '<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#000;">\n' +
-    '<div class="container"><a class="navbar-brand" href="' + (base || '/') + '"><img src="/images/logo arb ip.png" alt="' + brandName + '" style="height:45px;"></a></div>\n' +
-    '</nav>\n' +
-    '<header style="margin-top:78px;background:linear-gradient(135deg,#000,#1a1a1a);color:#fff;padding:60px 0;text-align:center;">\n' +
-    '<div class="container"><h1>' + post.title + '</h1><p>' + formattedDate + '</p></div>\n' +
-    '</header>\n' +
-    '<section style="padding:60px 0;"><div class="container"><div class="row"><div class="col-lg-8 mx-auto">' +
-    htmlContent +
-    '<hr style="margin:40px 0;"><a href="' + base + '/blog.html">&larr; Back to Blog</a>' +
-    '</div></div></div></section>\n' +
-    '<footer style="background:#000;color:#fff;padding:40px 0;text-align:center;"><p>&copy; ' + new Date().getFullYear() + ' ' + brandName + '</p></footer>\n' +
-    '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>\n' +
-    '<script src="/js/main.js"></script>\n</body>\n</html>';
+  return `<!DOCTYPE html>
+<html lang="${lang}" dir="${dir}">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${post.title} - ${brandName}</title>
+<meta name="description" content="${post.excerpt || ''}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="language-switcher"><a href="${switchUrl}" class="lang-btn"><i class="fas fa-globe"></i> ${switchLang}</a></div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#000;">
+<div class="container"><a class="navbar-brand" href="${base || '/'}"><img src="/images/logo arb ip.png" alt="${brandName}" style="height:45px;"></a></div>
+</nav>
+<header style="margin-top:78px;background:linear-gradient(135deg,#000,#1a1a1a);color:#fff;padding:60px 0;text-align:center;">
+<div class="container"><h1>${post.title}</h1><p>${formattedDate}</p></div>
+</header>
+<section style="padding:60px 0;"><div class="container"><div class="row"><div class="col-lg-8 mx-auto">${htmlContent}
+<hr style="margin:40px 0;"><a href="${base}/blog.html">&larr; Back to Blog</a>
+</div></div></div></section>
+<footer style="background:#000;color:#fff;padding:40px 0;text-align:center;"><p>&copy; ${new Date().getFullYear()} ${brandName}</p></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/main.js"></script>
+</body></html>`;
 }
 
 function renderServiceHTML(service, lang) {
@@ -232,76 +293,73 @@ function renderServiceHTML(service, lang) {
   const switchLang = isAr ? 'English' : 'العربية';
   const brandName = isAr ? 'وليد أبوالعلا للمحاماة' : 'Walid Abo Al-Ela Law Firm';
   const iconClass = service.icon || 'fa-scale-balanced';
-  return '<!DOCTYPE html>\n<html lang="' + lang + '" dir="' + dir + '">\n<head>\n' +
-    '<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
-    '<title>' + title + ' - ' + brandName + '</title>\n' +
-    '<meta name="description" content="' + (shortDesc || '') + '">\n' +
-    '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">\n' +
-    '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">\n' +
-    '<link rel="stylesheet" href="/css/style.css">\n</head>\n<body>\n' +
-    '<div class="language-switcher"><a href="' + switchUrl + '" class="lang-btn"><i class="fas fa-globe"></i> ' + switchLang + '</a></div>\n' +
-    '<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#000;">\n' +
-    '<div class="container"><a class="navbar-brand" href="' + (base || '/') + '"><img src="/images/logo arb ip.png" alt="' + brandName + '" style="height:45px;"></a></div>\n' +
-    '</nav>\n' +
-    '<header style="margin-top:78px;background:linear-gradient(135deg,#000,#1a1a1a);color:#fff;padding:80px 0;text-align:center;">\n' +
-    '<div class="container">\n' +
-    '<div style="width:80px;height:80px;background:linear-gradient(135deg,#C9A961,#A88947);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 25px;"><i class="fas ' + iconClass + '"></i></div>\n' +
-    '<h1>' + title + '</h1>\n' +
-    (shortDesc ? '<p style="color:rgba(255,255,255,0.85);font-size:1.1rem;max-width:650px;margin:15px auto 0;">' + shortDesc + '</p>\n' : '') +
-    '</div>\n</header>\n' +
-    '<section style="padding:60px 0;"><div class="container"><div class="row"><div class="col-lg-8 mx-auto">\n' +
-    (service.image ? '<img src="' + service.image + '" alt="' + title + '" style="max-width:100%;border-radius:12px;margin-bottom:30px;">\n' : '') +
-    (htmlContent || '<p>' + (isAr ? 'المحتوى قيد الإعداد.' : 'Content coming soon.') + '</p>') +
-    '<hr style="margin:40px 0;"><a href="' + base + '/services.html">&larr; Back to Services</a>\n' +
-    '</div></div></div></section>\n' +
-    '<footer style="background:#000;color:#fff;padding:40px 0;text-align:center;"><p>&copy; ' + new Date().getFullYear() + ' ' + brandName + '</p></footer>\n' +
-    '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>\n' +
-    '<script src="/js/main.js"></script>\n</body>\n</html>';
+  return `<!DOCTYPE html>
+<html lang="${lang}" dir="${dir}">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${title} - ${brandName}</title>
+<meta name="description" content="${shortDesc || ''}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="language-switcher"><a href="${switchUrl}" class="lang-btn"><i class="fas fa-globe"></i> ${switchLang}</a></div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#000;">
+<div class="container"><a class="navbar-brand" href="${base || '/'}"><img src="/images/logo arb ip.png" alt="${brandName}" style="height:45px;"></a></div>
+</nav>
+<header style="margin-top:78px;background:linear-gradient(135deg,#000,#1a1a1a);color:#fff;padding:80px 0;text-align:center;">
+<div class="container">
+<div style="width:80px;height:80px;background:linear-gradient(135deg,#C9A961,#A88947);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 25px;"><i class="fas ${iconClass}"></i></div>
+<h1>${title}</h1>
+${shortDesc ? `<p style="color:rgba(255,255,255,0.85);max-width:650px;margin:15px auto 0;">${shortDesc}</p>` : ''}
+</div>
+</header>
+<section style="padding:60px 0;"><div class="container"><div class="row"><div class="col-lg-8 mx-auto">
+${service.image ? `<img src="${service.image}" alt="${title}" style="max-width:100%;border-radius:12px;margin-bottom:30px;">` : ''}
+${htmlContent || '<p>Content coming soon.</p>'}
+<hr style="margin:40px 0;"><a href="${base}/services.html">&larr; Back to Services</a>
+</div></div></div></section>
+<footer style="background:#000;color:#fff;padding:40px 0;text-align:center;"><p>&copy; ${new Date().getFullYear()} ${brandName}</p></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/main.js"></script>
+</body></html>`;
 }
 
+// ─── Static Page Slugs (bypass dynamic routing) ──────────────────────────────
 const staticPageSlugs = [
   'about', 'services', 'arbitration', 'trademark', 'patent', 'copyright',
   'litigation', 'licensing', 'lawyers', 'blog', 'contact', 'client-portal',
   'consultation', 'success', 'cancel', 'admin', 'ar', 'images', 'css', 'js',
-  'uploads', 'api', 'favicon.ico', 'robots.txt', 'sitemap.xml'
+  'uploads', 'api', 'data', 'health', 'favicon.ico', 'robots.txt', 'sitemap.xml',
+  'privacy-policy', 'terms-of-service', 'cookie-policy'
 ];
 
+// ─── Static Routes (EN) ──────────────────────────────────────────────────────
+const staticPagesEN = ['about', 'services', 'arbitration', 'trademark', 'patent', 'copyright',
+  'litigation', 'licensing', 'lawyers', 'blog', 'contact', 'client-portal',
+  'consultation', 'success', 'cancel', 'privacy-policy', 'terms-of-service', 'cookie-policy'];
+staticPagesEN.forEach((slug) => {
+  app.get('/' + slug, (req, res, next) => {
+    const fp = path.join(__dirname, 'public', slug + '.html');
+    res.sendFile(fp, (err) => { if (err) next(); });
+  });
+});
+
+// ─── Static Routes (AR) ──────────────────────────────────────────────────────
+staticPagesEN.forEach((slug) => {
+  app.get('/ar/' + slug, (req, res, next) => {
+    const fp = path.join(__dirname, 'public', 'ar', slug + '.html');
+    res.sendFile(fp, (err) => { if (err) next(); });
+  });
+});
+
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
-app.get('/about', (req, res) => res.sendFile(path.join(__dirname, 'public', 'about.html')));
-app.get('/services', (req, res) => res.sendFile(path.join(__dirname, 'public', 'services.html')));
-app.get('/arbitration', (req, res) => res.sendFile(path.join(__dirname, 'public', 'arbitration.html')));
-app.get('/trademark', (req, res) => res.sendFile(path.join(__dirname, 'public', 'trademark.html')));
-app.get('/patent', (req, res) => res.sendFile(path.join(__dirname, 'public', 'patent.html')));
-app.get('/copyright', (req, res) => res.sendFile(path.join(__dirname, 'public', 'copyright.html')));
-app.get('/litigation', (req, res) => res.sendFile(path.join(__dirname, 'public', 'litigation.html')));
-app.get('/licensing', (req, res) => res.sendFile(path.join(__dirname, 'public', 'licensing.html')));
-app.get('/lawyers', (req, res) => res.sendFile(path.join(__dirname, 'public', 'lawyers.html')));
-app.get('/blog', (req, res) => res.sendFile(path.join(__dirname, 'public', 'blog.html')));
-app.get('/contact', (req, res) => res.sendFile(path.join(__dirname, 'public', 'contact.html')));
-app.get('/client-portal', (req, res) => res.sendFile(path.join(__dirname, 'public', 'client-portal.html')));
-app.get('/consultation', (req, res) => res.sendFile(path.join(__dirname, 'public', 'consultation.html')));
-app.get('/success', (req, res) => res.sendFile(path.join(__dirname, 'public', 'success.html')));
-app.get('/cancel', (req, res) => res.sendFile(path.join(__dirname, 'public', 'cancel.html')));
-
 app.get('/ar', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'index.html')));
-app.get('/ar/about', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'about.html')));
-app.get('/ar/services', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'services.html')));
-app.get('/ar/arbitration', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'arbitration.html')));
-app.get('/ar/trademark', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'trademark.html')));
-app.get('/ar/patent', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'patent.html')));
-app.get('/ar/copyright', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'copyright.html')));
-app.get('/ar/litigation', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'litigation.html')));
-app.get('/ar/licensing', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'licensing.html')));
-app.get('/ar/lawyers', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'lawyers.html')));
-app.get('/ar/blog', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'blog.html')));
-app.get('/ar/contact', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'contact.html')));
-app.get('/ar/client-portal', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'client-portal.html')));
-app.get('/ar/consultation', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'consultation.html')));
-app.get('/ar/success', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'success.html')));
-app.get('/ar/cancel', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'cancel.html')));
 
+// ─── Dynamic Service/Page Route (EN) ─────────────────────────────────────────
 app.get('/:page', async (req, res, next) => {
-  if (staticPageSlugs.indexOf(req.params.page) !== -1) return next();
+  if (staticPageSlugs.includes(req.params.page)) return next();
   try {
     const service = await Service.findOne({ slug: req.params.page, published: true });
     if (service) return res.send(renderServiceHTML(service, 'en'));
@@ -311,14 +369,15 @@ app.get('/:page', async (req, res, next) => {
       return res.send(renderPageHTML(page, htmlContent, 'en'));
     }
     next();
-  } catch (error) {
-    console.error('Dynamic page error:', error);
-    res.status(500).send('Server Error');
+  } catch (err) {
+    console.error('Dynamic page error:', err.message);
+    next();
   }
 });
 
+// ─── Dynamic Service/Page Route (AR) ─────────────────────────────────────────
 app.get('/ar/:page', async (req, res, next) => {
-  if (staticPageSlugs.indexOf(req.params.page) !== -1) return next();
+  if (staticPageSlugs.includes(req.params.page)) return next();
   try {
     const service = await Service.findOne({ slug: req.params.page, published: true });
     if (service) return res.send(renderServiceHTML(service, 'ar'));
@@ -328,44 +387,42 @@ app.get('/ar/:page', async (req, res, next) => {
       return res.send(renderPageHTML(page, htmlContent, 'ar'));
     }
     next();
-  } catch (error) {
-    console.error('Dynamic Arabic page error:', error);
-    res.status(500).send('Server Error');
+  } catch (err) {
+    console.error('Dynamic AR page error:', err.message);
+    next();
   }
 });
 
+// ─── Blog Routes ─────────────────────────────────────────────────────────────
 app.get('/blog/:slug', async (req, res, next) => {
   try {
     const post = await BlogPost.findOne({ slug: req.params.slug, language: 'en', published: true });
-    if (post) {
-      post.views = (post.views || 0) + 1;
-      await post.save();
-      const htmlContent = marked.parse(post.content || '');
-      return res.send(renderBlogHTML(post, htmlContent, 'en'));
-    }
+    if (!post) return next();
+    post.views = (post.views || 0) + 1;
+    await post.save();
+    const htmlContent = marked.parse(post.content || '');
+    res.send(renderBlogHTML(post, htmlContent, 'en'));
+  } catch (err) {
+    console.error('Blog error:', err.message);
     next();
-  } catch (error) {
-    console.error('Blog error:', error);
-    res.status(500).send('Server Error');
   }
 });
 
 app.get('/ar/blog/:slug', async (req, res, next) => {
   try {
     const post = await BlogPost.findOne({ slug: req.params.slug + '-ar', language: 'ar', published: true });
-    if (post) {
-      post.views = (post.views || 0) + 1;
-      await post.save();
-      const htmlContent = marked.parse(post.content || '');
-      return res.send(renderBlogHTML(post, htmlContent, 'ar'));
-    }
+    if (!post) return next();
+    post.views = (post.views || 0) + 1;
+    await post.save();
+    const htmlContent = marked.parse(post.content || '');
+    res.send(renderBlogHTML(post, htmlContent, 'ar'));
+  } catch (err) {
+    console.error('Blog AR error:', err.message);
     next();
-  } catch (error) {
-    console.error('Blog error:', error);
-    res.status(500).send('Server Error');
   }
 });
 
+// ─── Admin: Login ────────────────────────────────────────────────────────────
 app.get('/admin/login', (req, res) => {
   res.render('login', { error: null, lang: req.query.lang || 'en' });
 });
@@ -383,8 +440,8 @@ app.post('/admin/login', async (req, res) => {
       return res.redirect('/admin/dashboard');
     }
     res.render('login', { error: 'Invalid credentials', lang: req.body.lang || 'en' });
-  } catch (error) {
-    res.render('login', { error: 'Login error: ' + error.message, lang: req.body.lang || 'en' });
+  } catch (err) {
+    res.render('login', { error: 'Login error: ' + err.message, lang: req.body.lang || 'en' });
   }
 });
 
@@ -393,6 +450,7 @@ app.get('/admin/logout', (req, res) => {
   res.redirect('/admin/login');
 });
 
+// ─── Admin: Dashboard ────────────────────────────────────────────────────────
 app.get('/admin/dashboard', requireAuth, async (req, res) => {
   try {
     const results = await Promise.all([
@@ -408,25 +466,20 @@ app.get('/admin/dashboard', requireAuth, async (req, res) => {
       User.countDocuments()
     ]);
     res.render('dashboard', {
-      pages: results[0],
-      posts: results[1],
-      testimonials: results[2],
-      messages: results[3],
-      newMessages: results[4],
-      services: results[5],
-      team: results[6],
-      faqs: results[7],
-      media: results[8],
-      users: results[9],
+      pages: results[0], posts: results[1], testimonials: results[2],
+      messages: results[3], newMessages: results[4],
+      services: results[5], team: results[6], faqs: results[7],
+      media: results[8], users: results[9],
       user: req.session.username,
       lang: req.session.adminLang || 'en'
     });
-  } catch (error) {
-    console.error('Dashboard error:', error);
-    res.status(500).send('Dashboard error: ' + error.message);
+  } catch (err) {
+    console.error('Dashboard error:', err.message);
+    res.status(500).send('Dashboard error: ' + err.message);
   }
 });
 
+// ─── Admin: Messages ─────────────────────────────────────────────────────────
 app.get('/admin/messages', requireAuth, async (req, res) => {
   const messages = await Contact.find().sort('-createdAt');
   res.render('messages/index', { messages, lang: req.session.adminLang || 'en' });
@@ -444,6 +497,7 @@ app.delete('/admin/messages/:id', requireAuth, async (req, res) => {
   res.redirect('/admin/messages');
 });
 
+// ─── Admin: Pages CRUD ───────────────────────────────────────────────────────
 app.get('/admin/pages', requireAuth, async (req, res) => {
   const pages = await Page.find().sort('-createdAt');
   res.render('pages/index', { pages, lang: req.session.adminLang || 'en' });
@@ -458,7 +512,7 @@ app.post('/admin/pages', requireAuth, upload.single('image'), async (req, res) =
     const page = new Page(req.body);
     await page.save();
     res.redirect('/admin/pages');
-  } catch (error) { res.status(400).send(error.message); }
+  } catch (err) { res.status(400).send(err.message); }
 });
 
 app.get('/admin/pages/:id/edit', requireAuth, async (req, res) => {
@@ -470,7 +524,7 @@ app.put('/admin/pages/:id', requireAuth, upload.single('image'), async (req, res
   try {
     await Page.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.redirect('/admin/pages');
-  } catch (error) { res.status(400).send(error.message); }
+  } catch (err) { res.status(400).send(err.message); }
 });
 
 app.delete('/admin/pages/:id', requireAuth, async (req, res) => {
@@ -478,6 +532,7 @@ app.delete('/admin/pages/:id', requireAuth, async (req, res) => {
   res.redirect('/admin/pages');
 });
 
+// ─── Admin: Posts CRUD ───────────────────────────────────────────────────────
 app.get('/admin/posts', requireAuth, async (req, res) => {
   const posts = await BlogPost.find().sort('-createdAt');
   res.render('posts/index', { posts, lang: req.session.adminLang || 'en' });
@@ -492,7 +547,7 @@ app.post('/admin/posts', requireAuth, upload.single('image'), async (req, res) =
     const post = new BlogPost(req.body);
     await post.save();
     res.redirect('/admin/posts');
-  } catch (error) { res.status(400).send(error.message); }
+  } catch (err) { res.status(400).send(err.message); }
 });
 
 app.get('/admin/posts/:id/edit', requireAuth, async (req, res) => {
@@ -504,7 +559,7 @@ app.put('/admin/posts/:id', requireAuth, upload.single('image'), async (req, res
   try {
     await BlogPost.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.redirect('/admin/posts');
-  } catch (error) { res.status(400).send(error.message); }
+  } catch (err) { res.status(400).send(err.message); }
 });
 
 app.delete('/admin/posts/:id', requireAuth, async (req, res) => {
@@ -512,6 +567,7 @@ app.delete('/admin/posts/:id', requireAuth, async (req, res) => {
   res.redirect('/admin/posts');
 });
 
+// ─── Admin: Testimonials CRUD ────────────────────────────────────────────────
 app.get('/admin/testimonials', requireAuth, async (req, res) => {
   const testimonials = await Testimonial.find().sort('-createdAt');
   res.render('testimonials/index', { testimonials, lang: req.session.adminLang || 'en' });
@@ -526,7 +582,7 @@ app.post('/admin/testimonials', requireAuth, upload.single('image'), async (req,
     const t = new Testimonial(req.body);
     await t.save();
     res.redirect('/admin/testimonials');
-  } catch (error) { res.status(400).send(error.message); }
+  } catch (err) { res.status(400).send(err.message); }
 });
 
 app.get('/admin/testimonials/:id/edit', requireAuth, async (req, res) => {
@@ -538,7 +594,7 @@ app.put('/admin/testimonials/:id', requireAuth, upload.single('image'), async (r
   try {
     await Testimonial.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.redirect('/admin/testimonials');
-  } catch (error) { res.status(400).send(error.message); }
+  } catch (err) { res.status(400).send(err.message); }
 });
 
 app.delete('/admin/testimonials/:id', requireAuth, async (req, res) => {
@@ -546,6 +602,7 @@ app.delete('/admin/testimonials/:id', requireAuth, async (req, res) => {
   res.redirect('/admin/testimonials');
 });
 
+// ─── Admin: Contact Info ─────────────────────────────────────────────────────
 app.get('/admin/contact', requireAuth, async (req, res) => {
   let contactEn = await ContactInfo.findOne({ language: 'en' });
   let contactAr = await ContactInfo.findOne({ language: 'ar' });
@@ -559,9 +616,10 @@ app.post('/admin/contact', requireAuth, async (req, res) => {
     await ContactInfo.findOneAndUpdate({ language: 'en' }, req.body.en, { upsert: true, new: true });
     await ContactInfo.findOneAndUpdate({ language: 'ar' }, req.body.ar, { upsert: true, new: true });
     res.redirect('/admin/contact');
-  } catch (error) { res.status(400).send(error.message); }
+  } catch (err) { res.status(400).send(err.message); }
 });
 
+// ─── Admin: Change Password ──────────────────────────────────────────────────
 app.get('/admin/settings', requireAuth, (req, res) => {
   res.render('settings', { error: null, success: null, lang: req.session.adminLang || 'en' });
 });
@@ -578,15 +636,24 @@ app.post('/admin/settings', requireAuth, async (req, res) => {
     }
     user.password = newPassword;
     await user.save();
-    res.render('settings', { success: 'Password updated successfully', error: null, lang: req.session.adminLang || 'en' });
-  } catch (error) { res.status(400).send(error.message); }
+    res.render('settings', { success: 'Password updated', error: null, lang: req.session.adminLang || 'en' });
+  } catch (err) { res.status(400).send(err.message); }
 });
 
-app.use('/admin', adminRoutes);
+// ─── Admin Router (services, team, faqs, site, media, users, activity) ───────
+try {
+  app.use('/admin', adminRoutes);
+} catch (err) {
+  console.error('Admin router error:', err.message);
+}
 
+// ─── Create Default Admin ────────────────────────────────────────────────────
 async function createDefaultAdmin() {
   try {
-    if (!process.env.ADMIN_USERNAME || !process.env.ADMIN_PASSWORD) return;
+    if (!process.env.ADMIN_USERNAME || !process.env.ADMIN_PASSWORD) {
+      console.warn('ADMIN_USERNAME/PASSWORD not set — skipping admin creation');
+      return;
+    }
     const exists = await User.findOne({ username: process.env.ADMIN_USERNAME });
     if (!exists) {
       const admin = new User({
@@ -596,30 +663,35 @@ async function createDefaultAdmin() {
       });
       await admin.save();
       console.log('Default admin created:', process.env.ADMIN_USERNAME);
-    } else {
-      console.log('Admin user already exists');
     }
-  } catch (error) {
-    console.error('Error creating admin:', error.message);
+  } catch (err) {
+    console.error('Error creating admin:', err.message);
   }
 }
 
+// ─── 404 + Error Handlers ────────────────────────────────────────────────────
 app.use(notFoundHandler);
 app.use(globalErrorHandler);
 
-if (process.env.NODE_ENV !== 'production') {
+// ─── Start Server (only locally, not on Vercel) ──────────────────────────────
+const IS_VERCEL = !!process.env.VERCEL;
+if (!IS_VERCEL && process.env.NODE_ENV !== 'production') {
   app.listen(port, async () => {
     await createDefaultAdmin();
     console.log('');
     console.log('========================================');
     console.log('Server:      http://localhost:' + port);
     console.log('Admin:       http://localhost:' + port + '/admin/login');
+    console.log('Health:      http://localhost:' + port + '/health');
     console.log('Email:       ' + (emailReady ? 'Ready' : 'Not configured'));
     console.log('Cloudinary:  ' + (process.env.CLOUDINARY_CLOUD_NAME ? 'Configured' : 'Not configured'));
     console.log('========================================');
   });
 } else {
+  console.log('[STARTUP] Serverless mode (Vercel) — app exported, no listen');
+  // Fire-and-forget admin creation (runs on first cold start)
   createDefaultAdmin().catch(console.error);
 }
 
+// ─── Export for Vercel ───────────────────────────────────────────────────────
 module.exports = app;
