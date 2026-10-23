@@ -65,13 +65,32 @@ if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
   }
 }
 
-// ─── MongoDB Connection (guarded) ────────────────────────────────────────────
+// ─── MongoDB Connection (lazy, non-blocking) ──────────────────────────────
+let dbConnectPromise = null;
+
+function connectDB() {
+  if (!process.env.MONGODB_URI) {
+    console.error('[DB] MONGODB_URI is not defined — DB operations will fail');
+    return Promise.reject(new Error('MONGODB_URI is not defined'));
+  }
+  if (!dbConnectPromise) {
+    dbConnectPromise = mongoose.connect(process.env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 5000, // فشل سريع بدلاً من التعليق
+      bufferCommands: false           // لا تخزين مؤقت للأوامر قبل الاتصال
+    }).then(() => {
+      console.log('DB Connected');
+    }).catch((err) => {
+      console.error('DB Error:', err.message);
+      dbConnectPromise = null; // السماح بإعادة المحاولة في الطلب التالي
+      throw err;
+    });
+  }
+  return dbConnectPromise;
+}
+
+// الاتصال الأولي (اختياري، للمساعدة في تسخين الدالة)
 if (process.env.MONGODB_URI) {
-  mongoose.connect(process.env.MONGODB_URI)
-    .then(() => console.log('DB Connected'))
-    .catch((err) => console.error('DB Error:', err.message));
-} else {
-  console.error('[DB] MONGODB_URI is not defined — DB operations will fail');
+  connectDB().catch(() => {});
 }
 
 // ─── Static Files ────────────────────────────────────────────────────────────
