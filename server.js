@@ -1,4 +1,4 @@
-﻿require('dotenv').config();
+require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -121,12 +121,12 @@ app.get('/js/main.js', async (req, res, next) => {
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
 
-app.post('/api/contact', contactHandler);
+app.post('/data/contact', contactHandler);
 
-app.use('/api/services', require('./routes/public/services'));
-app.use('/api/team', require('./routes/public/team'));
-app.use('/api/faqs', require('./routes/public/faqs'));
-app.use('/api/settings', require('./routes/public/settings'));
+app.use('/data/services', require('./routes/public/services'));
+app.use('/data/team', require('./routes/public/team'));
+app.use('/data/faqs', require('./routes/public/faqs'));
+app.use('/data/settings', require('./routes/public/settings'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
