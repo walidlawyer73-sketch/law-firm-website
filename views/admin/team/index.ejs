@@ -1,0 +1,43 @@
+﻿<%- include("../_partials/head", { pageTitle: "Team" }) %>
+<div class="container">
+  <div class="card">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2><i class="fas fa-users me-2"></i>Team Members (<%= team.length %>)</h2>
+      <div>
+        <a href="/admin/team/new" class="btn btn-primary"><i class="fas fa-plus me-1"></i>Add Member</a>
+        <a href="/admin/dashboard" class="btn btn-secondary">Back</a>
+      </div>
+    </div>
+    <% if (team.length === 0) { %>
+      <div class="alert alert-info">No team members yet. <a href="/admin/team/new">Create one</a>.</div>
+    <% } else { %>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+          <thead class="table-dark">
+            <tr><th>Photo</th><th>Name EN</th><th>Name AR</th><th>Role EN</th><th>Order</th><th>Featured</th><th>Active</th><th>Actions</th></tr>
+          </thead>
+          <tbody>
+          <% team.forEach(m => { %>
+            <tr>
+              <td><% if (m.image) { %><img src="<%= m.image %>" style="width:50px;height:50px;border-radius:50%;object-fit:cover"><% } else { %><i class="fas fa-user-circle fa-2x text-muted"></i><% } %></td>
+              <td><%= m.nameEn %></td>
+              <td dir="rtl"><%= m.nameAr %></td>
+              <td><%= m.roleEn || "-" %></td>
+              <td><%= m.order %></td>
+              <td><% if (m.isFeatured) { %><span class="badge bg-warning text-dark">Featured</span><% } else { %>-<% } %></td>
+              <td><% if (m.isActive) { %><span class="badge bg-success">Yes</span><% } else { %><span class="badge bg-secondary">No</span><% } %></td>
+              <td>
+                <a href="/admin/team/<%= m._id %>/edit" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                <form method="POST" action="/admin/team/<%= m._id %>?_method=DELETE" style="display:inline" onsubmit="return confirm('Delete this member?')">
+                  <button class="btn btn-sm btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+</div>
+</body></html>

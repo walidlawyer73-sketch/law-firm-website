@@ -1,0 +1,21 @@
+﻿require('dotenv').config();
+const m = require('mongoose');
+m.connect(process.env.MONGODB_URI).then(async () => {
+  console.log('\n════════════════════════════════════════');
+  console.log('📊 FINAL COUNTS');
+  console.log('════════════════════════════════════════');
+  const S = await require('../models/Service').countDocuments();
+  const P = await require('../models/Page').countDocuments();
+  const B = await require('../models/BlogPost').countDocuments();
+  const T = await require('../models/TeamMember').countDocuments();
+  const F = await require('../models/FAQ').countDocuments();
+  console.log('   Services: ' + S);
+  console.log('   Pages:    ' + P);
+  console.log('   Posts:    ' + B);
+  console.log('   Team:     ' + T);
+  console.log('   FAQs:     ' + F);
+  console.log('   ─────────────────────');
+  console.log('   المجموع:  ' + (S + P + B));
+  console.log('════════════════════════════════════════');
+  process.exit(0);
+});

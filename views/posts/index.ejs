@@ -1,114 +1,51 @@
-<!DOCTYPE html>
-<html lang="<%= lang %>" dir="<%= lang === 'ar' ? 'rtl' : 'ltr' %>">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= lang === 'ar' ? 'إدارة المقالات - لوحة التحكم' : 'Manage Blog Posts - Admin Panel' %></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        .table img { width: 50px; height: 50px; object-fit: cover; border-radius: 5px; }
-        .navbar {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .lang-switch {
-            margin-right: 15px;
-        }
-        .lang-switch a {
-            color: white;
-            text-decoration: none;
-            background: rgba(255,255,255,0.2);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-        .lang-switch a:hover {
-            background: rgba(255,255,255,0.3);
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="/admin/dashboard">
-                <%= lang === 'ar' ? 'لوحة التحكم' : 'Admin Panel' %>
-            </a>
-            <div class="navbar-nav ms-auto d-flex align-items-center">
-                <div class="lang-switch">
-                    <% if (lang === 'ar') { %>
-                        <a href="/admin/posts?lang=en">English</a>
-                    <% } else { %>
-                        <a href="/admin/posts?lang=ar">العربية</a>
-                    <% } %>
-                </div>
-                <a class="nav-link" href="/admin/dashboard">
-                    <i class="fas fa-tachometer-alt me-1"></i> <%= lang === 'ar' ? 'لوحة التحكم' : 'Dashboard' %>
-                </a>
-                <a class="nav-link" href="/admin/logout">
-                    <i class="fas fa-sign-out-alt me-1"></i> <%= lang === 'ar' ? 'تسجيل الخروج' : 'Logout' %>
-                </a>
-            </div>
-        </div>
-    </nav>
-    
-    <div class="container mt-4">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1><%= lang === 'ar' ? 'إدارة المقالات' : 'Manage Blog Posts' %></h1>
-            <a href="/admin/posts/new" class="btn btn-primary">
-                <i class="fas fa-plus me-2"></i> <%= lang === 'ar' ? 'إضافة مقال جديد' : 'Add New Post' %>
-            </a>
-        </div>
-        
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th><%= lang === 'ar' ? 'الصورة' : 'Image' %></th>
-                    <th><%= lang === 'ar' ? 'العنوان' : 'Title' %></th>
-                    <th><%= lang === 'ar' ? 'التصنيف' : 'Category' %></th>
-                    <th><%= lang === 'ar' ? 'الكاتب' : 'Author' %></th>
-                    <th><%= lang === 'ar' ? 'اللغة' : 'Language' %></th>
-                    <th><%= lang === 'ar' ? 'منشور' : 'Published' %></th>
-                    <th><%= lang === 'ar' ? 'المشاهدات' : 'Views' %></th>
-                    <th><%= lang === 'ar' ? 'الإجراءات' : 'Actions' %></th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for (var i = 0; i < posts.length; i++) { %>
-                <tr>
-                    <td>
-                        <% if (posts[i].image) { %>
-                            <img src="<%= posts[i].image %>" alt="<%= posts[i].title %>">
-                        <% } else { %>
-                            <span class="text-muted"><%= lang === 'ar' ? 'لا توجد صورة' : 'No image' %></span>
-                        <% } %>
-                    </td>
-                    <td><%= posts[i].title %></td>
-                    <td><%= posts[i].category || (lang === 'ar' ? 'غير مصنف' : 'Uncategorized') %></td>
-                    <td><%= posts[i].author %></td>
-                    <td>
-                        <% if (posts[i].language === 'en') { %>
-                            <%= lang === 'ar' ? 'إنجليزي' : 'English' %>
-                        <% } else { %>
-                            <%= lang === 'ar' ? 'عربي' : 'Arabic' %>
-                        <% } %>
-                    </td>
-                    <td><%= posts[i].published ? '✅' : '❌' %></td>
-                    <td><%= posts[i].views || 0 %></td>
-                    <td>
-                        <a href="/admin/posts/<%= posts[i]._id %>/edit" class="btn btn-sm btn-warning">
-                            <i class="fas fa-edit"></i> <%= lang === 'ar' ? 'تعديل' : 'Edit' %>
-                        </a>
-                        <form action="/admin/posts/<%= posts[i]._id %>?_method=DELETE" method="POST" style="display:inline;">
-                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('<%= lang === 'ar' ? 'هل أنت متأكد؟' : 'Are you sure?' %>')">
-                                <i class="fas fa-trash"></i> <%= lang === 'ar' ? 'حذف' : 'Delete' %>
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-                <% } %>
-            </tbody>
-        </table>
+﻿<%- include("../admin/_partials/head", { pageTitle: "Blog Posts" }) %>
+<div class="container">
+  <div class="card">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2><i class="fas fa-newspaper me-2"></i>Blog Posts (<%= posts.length %>)</h2>
+      <div>
+        <a href="/admin/posts/new" class="btn btn-primary"><i class="fas fa-plus me-1"></i>Add Post</a>
+        <a href="/admin/dashboard" class="btn btn-secondary">Back</a>
+      </div>
     </div>
-<script src="/js/main.js"></script>
-</body>
-</html>
+    <% if (posts.length === 0) { %>
+      <div class="alert alert-info">لا توجد مقالات حتى الآن. <a href="/admin/posts/new">أنشئ مقالاً</a>.</div>
+    <% } else { %>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>Title</th>
+              <th>Slug</th>
+              <th style="width:100px;">Category</th>
+              <th style="width:80px;">Lang</th>
+              <th style="width:100px;">Published</th>
+              <th style="width:80px;">Views</th>
+              <th style="width:140px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% posts.forEach(function(p) { %>
+            <tr>
+              <td><strong><%= p.title %></strong></td>
+              <td><code>/blog/<%= p.slug %></code></td>
+              <td><%= p.category || '—' %></td>
+              <td><span class="badge <%= p.language === 'ar' ? 'bg-success' : 'bg-info' %>"><%= (p.language || 'en').toUpperCase() %></span></td>
+              <td><% if (p.published) { %><span class="badge bg-success">Yes</span><% } else { %><span class="badge bg-secondary">No</span><% } %></td>
+              <td><%= p.views || 0 %></td>
+              <td>
+                <a href="<%= p.language === 'ar' ? '/ar/blog/' : '/blog/' %><%= p.slug.replace(/-ar$/, '') %>" target="_blank" class="btn btn-sm btn-info" title="Preview"><i class="fas fa-eye"></i></a>
+                <a href="/admin/posts/<%= p._id %>/edit" class="btn btn-sm btn-warning" title="Edit"><i class="fas fa-edit"></i></a>
+                <form method="POST" action="/admin/posts/<%= p._id %>?_method=DELETE" style="display:inline" onsubmit="return confirm('Delete this post?')">
+                  <button class="btn btn-sm btn-danger" type="submit" title="Delete"><i class="fas fa-trash"></i></button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+</div>
+</body></html>

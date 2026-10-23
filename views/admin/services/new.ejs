@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8"><title>New Service</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>body{background:#f5f5f5;padding:20px} .card{background:#fff;border-radius:12px;padding:25px;box-shadow:0 2px 10px rgba(0,0,0,0.08)}</style>
+</head><body>
+<div class="container">
+  <div class="card">
+    <h2>Add New Service</h2>
+    <form method="POST" action="/admin/services" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Title (English)</label><input class="form-control" name="titleEn" required></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Title (Arabic)</label><input class="form-control" name="titleAr" required dir="rtl"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Slug</label><input class="form-control" name="slug" placeholder="auto-generated"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Category</label>
+          <select class="form-control" name="category">
+            <option value="ip">Intellectual Property</option>
+            <option value="disputes">Disputes</option>
+            <option value="corporate">Corporate</option>
+            <option value="contracts">Contracts</option>
+          </select>
+        </div>
+        <div class="col-md-6 mb-3"><label class="form-label">Icon (fontawesome)</label><input class="form-control" name="icon" value="fa-scale-balanced"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Order</label><input type="number" class="form-control" name="order" value="0"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Short Desc (EN)</label><textarea class="form-control" name="shortDescEn" rows="2"></textarea></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Short Desc (AR)</label><textarea class="form-control" name="shortDescAr" rows="2" dir="rtl"></textarea></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Content (EN - Markdown)</label><textarea class="form-control" name="contentEn" rows="6"></textarea></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Content (AR - Markdown)</label><textarea class="form-control" name="contentAr" rows="6" dir="rtl"></textarea></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Image</label><input type="file" class="form-control" name="image" accept="image/*"></div>
+        <div class="col-md-6 mb-3 pt-4">
+          <label class="form-check form-check-inline"><input class="form-check-input" type="checkbox" name="published" checked><span class="form-check-label">Published</span></label>
+          <label class="form-check form-check-inline"><input class="form-check-input" type="checkbox" name="showInMegaMenu" checked><span class="form-check-label">Mega Menu</span></label>
+          <label class="form-check form-check-inline"><input class="form-check-input" type="checkbox" name="showInHomepage" checked><span class="form-check-label">Homepage</span></label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Create</button>
+      <a href="/admin/services" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+</div>
+</body></html>

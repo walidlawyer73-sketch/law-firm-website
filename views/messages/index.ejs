@@ -1,0 +1,60 @@
+﻿<%- include("../admin/_partials/head", { pageTitle: "Messages" }) %>
+<div class="container">
+  <div class="card">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2><i class="fas fa-envelope me-2"></i>Messages (<%= messages.length %>)</h2>
+      <a href="/admin/dashboard" class="btn btn-secondary">Back</a>
+    </div>
+    <% if (messages.length === 0) { %>
+      <div class="alert alert-info">
+        <i class="fas fa-inbox fa-2x me-2"></i>
+        لا توجد رسائل حتى الآن. الرسائل تُستقبل من نموذج التواصل في الموقع.
+      </div>
+    <% } else { %>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th style="width:140px;">Status</th>
+              <th>From</th>
+              <th>Subject / Service</th>
+              <th style="width:140px;">Date</th>
+              <th style="width:150px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% messages.forEach(function(m) { %>
+            <tr>
+              <td>
+                <% if (m.status === 'new') { %><span class="badge bg-danger">NEW</span>
+                <% } else if (m.status === 'read') { %><span class="badge bg-warning text-dark">Read</span>
+                <% } else if (m.status === 'replied') { %><span class="badge bg-success">Replied</span>
+                <% } else { %><span class="badge bg-secondary"><%= m.status %></span><% } %>
+              </td>
+              <td>
+                <strong><%= m.name %></strong><br>
+                <small style="color:#6C757D;"><%= m.email %></small>
+                <% if (m.phone) { %><br><small style="color:#6C757D;"><i class="fas fa-phone fa-xs"></i> <%= m.phone %></small><% } %>
+              </td>
+              <td>
+                <span class="badge bg-info"><%= m.service || 'general' %></span><br>
+                <small style="color:#6C757D;"><%= (m.message || '').substring(0, 60) %><%= (m.message || '').length > 60 ? '...' : '' %></small>
+              </td>
+              <td style="font-size:0.8rem;">
+                <%= new Date(m.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) %>
+              </td>
+              <td>
+                <a href="/admin/messages/<%= m._id %>" class="btn btn-sm btn-primary" title="View"><i class="fas fa-eye"></i></a>
+                <form method="POST" action="/admin/messages/<%= m._id %>?_method=DELETE" style="display:inline" onsubmit="return confirm('Delete this message?')">
+                  <button class="btn btn-sm btn-danger" type="submit" title="Delete"><i class="fas fa-trash"></i></button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+</div>
+</body></html>

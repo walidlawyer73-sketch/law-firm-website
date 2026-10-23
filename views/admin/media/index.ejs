@@ -1,0 +1,77 @@
+﻿<%- include("../_partials/head", { pageTitle: "Media Library" }) %>
+<style>
+  .media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;margin-top:20px}
+  .media-item{background:#fff;border:1px solid #E9ECEF;border-radius:12px;overflow:hidden;transition:all 0.3s}
+  .media-item:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(0,0,0,0.1);border-color:#C9A961}
+  .media-thumb{width:100%;height:140px;object-fit:cover;background:#f1f3f5;display:block}
+  .media-info{padding:10px;font-size:0.75rem;color:#6C757D}
+  .media-info strong{display:block;color:#212529;font-size:0.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:4px}
+  .media-delete{position:absolute;top:8px;right:8px;background:rgba(220,53,69,0.9);color:#fff;border:none;border-radius:50%;width:28px;height:28px;cursor:pointer;opacity:0;transition:opacity 0.3s}
+  .media-item:hover .media-delete{opacity:1}
+  .upload-zone{border:2px dashed #C9A961;border-radius:12px;padding:24px;text-align:center;background:#FAF6EC;margin-bottom:24px}
+  .upload-zone input[type=file]{display:none}
+  .upload-zone label{cursor:pointer;display:inline-block;background:linear-gradient(135deg,#C9A961,#A88947);color:#000;padding:10px 24px;border-radius:999px;font-weight:700;margin-top:10px}
+  .folder-tab{display:inline-block;padding:6px 14px;border:1px solid #E9ECEF;border-radius:999px;margin:0 4px 8px 0;text-decoration:none;color:#495057;font-size:0.82rem;font-weight:600;transition:all 0.2s}
+  .folder-tab:hover{border-color:#C9A961;color:#A88947}
+  .folder-tab.active{background:linear-gradient(135deg,#C9A961,#A88947);color:#000;border-color:#C9A961}
+  .copy-btn{background:#f1f3f5;border:none;padding:4px 8px;border-radius:6px;font-size:0.7rem;cursor:pointer;margin-top:6px}
+</style>
+
+<div class="container">
+  <div class="card">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2><i class="fas fa-images me-2"></i>Media Library (<%= media.length %>)</h2>
+      <a href="/admin/dashboard" class="btn btn-secondary">Back</a>
+    </div>
+
+    <!-- رفع ملفات -->
+    <div class="upload-zone">
+      <i class="fas fa-cloud-upload-alt fa-3x" style="color:#C9A961;"></i>
+      <h4 class="mt-3">Drag & Drop or Click to Upload</h4>
+      <p style="color:#6C757D;margin:8px 0;">حتى 20 صورة · الحد الأقصى 10MB لكل صورة</p>
+      <form method="POST" action="/admin/media/upload" enctype="multipart/form-data" id="uploadForm">
+        <label for="imageInput">اختر صوراً</label>
+        <input type="file" id="imageInput" name="images" multiple accept="image/*" onchange="document.getElementById('uploadForm').submit()">
+        <select name="folder" style="display:inline-block;width:auto;margin:10px 0;padding:8px;border-radius:6px;border:1px solid #ddd;">
+          <option value="law-firm/general">📁 general</option>
+          <option value="law-firm/blog">📁 blog</option>
+          <option value="law-firm/team">📁 team</option>
+          <option value="law-firm/services">📁 services</option>
+          <option value="law-firm/settings">📁 settings</option>
+        </select>
+      </form>
+    </div>
+
+    <!-- فلاتر -->
+    <div class="mb-3">
+      <a href="/admin/media" class="folder-tab <%= !currentFolder ? 'active' : '' %>">📂 All (<%= media.length %>)</a>
+      <% folders.forEach(f => { %>
+        <a href="/admin/media?folder=<%= encodeURIComponent(f) %>" class="folder-tab <%= currentFolder === f ? 'active' : '' %>">📁 <%= f.replace('law-firm/','') %></a>
+      <% }) %>
+    </div>
+
+    <!-- الشبكة -->
+    <% if (media.length === 0) { %>
+      <div class="alert alert-info">لا توجد صور حتى الآن. ارفع أول صورة.</div>
+    <% } else { %>
+      <div class="media-grid">
+        <% media.forEach(m => { %>
+          <div class="media-item" style="position:relative;">
+            <a href="<%= m.url %>" target="_blank">
+              <img src="<%= m.url %>" alt="<%= m.originalName %>" class="media-thumb" onerror="this.style.background='#ddd'">
+            </a>
+            <form method="POST" action="/admin/media/<%= m._id %>?_method=DELETE" style="display:inline" onsubmit="return confirm('حذف هذه الصورة نهائياً من Cloudinary؟')">
+              <button type="submit" class="media-delete" title="Delete"><i class="fas fa-times"></i></button>
+            </form>
+            <div class="media-info">
+              <strong title="<%= m.originalName %>"><%= m.originalName || m.filename %></strong>
+              <div style="font-size:0.7rem;color:#ADB5BD;"><%= Math.round((m.size||0)/1024) %> KB · <%= m.width || '?' %>×<%= m.height || '?' %></div>
+              <button class="copy-btn" onclick="navigator.clipboard.writeText('<%= m.url %>');this.textContent='✓ Copied';setTimeout(()=>this.textContent='Copy URL',1500)">Copy URL</button>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,54 @@
+﻿<%- include("../_partials/head", { pageTitle: "Edit Team Member" }) %>
+<div class="container">
+  <div class="card">
+    <h2><i class="fas fa-user-edit me-2"></i>Edit Team Member</h2>
+    <form method="POST" action="/admin/team/<%= member._id %>?_method=PUT" enctype="multipart/form-data">
+      <div class="section-title">Basic Info</div>
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Name (English) *</label><input class="form-control" name="nameEn" value="<%= member.nameEn %>" required></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Name (Arabic) *</label><input class="form-control" name="nameAr" value="<%= member.nameAr %>" required dir="rtl"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Slug</label><input class="form-control" name="slug" value="<%= member.slug %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Order</label><input type="number" class="form-control" name="order" value="<%= member.order %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Role (English)</label><input class="form-control" name="roleEn" value="<%= member.roleEn %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Role (Arabic)</label><input class="form-control" name="roleAr" value="<%= member.roleAr %>" dir="rtl"></div>
+      </div>
+      <div class="section-title">Bio</div>
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Bio (English)</label><textarea class="form-control" name="bioEn" rows="4"><%= member.bioEn %></textarea></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Bio (Arabic)</label><textarea class="form-control" name="bioAr" rows="4" dir="rtl"><%= member.bioAr %></textarea></div>
+      </div>
+      <div class="section-title">Contact</div>
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Email</label><input type="email" class="form-control" name="email" value="<%= member.email %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Phone</label><input class="form-control" name="phone" value="<%= member.phone %>"></div>
+      </div>
+      <div class="section-title">Specialties (comma-separated)</div>
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Specialties (EN)</label><input class="form-control" name="specialtiesEn" value="<%= (member.specialtiesEn || []).join(', ') %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Specialties (AR)</label><input class="form-control" name="specialtiesAr" value="<%= (member.specialtiesAr || []).join(', ') %>" dir="rtl"></div>
+      </div>
+      <div class="section-title">Social</div>
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">LinkedIn</label><input class="form-control" name="social_linkedin" value="<%= member.social && member.social.linkedin ? member.social.linkedin : '' %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Twitter</label><input class="form-control" name="social_twitter" value="<%= member.social && member.social.twitter ? member.social.twitter : '' %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Facebook</label><input class="form-control" name="social_facebook" value="<%= member.social && member.social.facebook ? member.social.facebook : '' %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">WhatsApp</label><input class="form-control" name="social_whatsapp" value="<%= member.social && member.social.whatsapp ? member.social.whatsapp : '' %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Telegram</label><input class="form-control" name="social_telegram" value="<%= member.social && member.social.telegram ? member.social.telegram : '' %>"></div>
+      </div>
+      <div class="section-title">Photo & Status</div>
+      <% if (member.image) { %>
+        <div class="mb-3"><label class="form-label">Current Photo</label><br><img src="<%= member.image %>" class="img-preview"></div>
+      <% } %>
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Replace Photo</label><input type="file" class="form-control" name="image" accept="image/*"></div>
+        <div class="col-md-6 mb-3 pt-4">
+          <label class="form-check form-check-inline"><input class="form-check-input" type="checkbox" name="isFeatured" <%= member.isFeatured ? 'checked' : '' %>><span class="form-check-label">Featured</span></label>
+          <label class="form-check form-check-inline"><input class="form-check-input" type="checkbox" name="isActive" <%= member.isActive ? 'checked' : '' %>><span class="form-check-label">Active</span></label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+      <a href="/admin/team" class="btn btn-secondary mt-3">Cancel</a>
+    </form>
+  </div>
+</div>
+</body></html>

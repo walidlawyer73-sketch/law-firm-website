@@ -24,6 +24,7 @@ const testimonialSchema = new mongoose.Schema({
     image: {
         type: String
     },
+    imagePublicId: { type: String },
     language: { 
         type: String, 
         enum: ['en', 'ar'], 

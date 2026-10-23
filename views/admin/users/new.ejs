@@ -1,0 +1,37 @@
+﻿<%- include("../_partials/head", { pageTitle: "New User" }) %>
+<div class="container">
+  <div class="card">
+    <h2><i class="fas fa-user-plus me-2"></i>Add User</h2>
+    <form method="POST" action="/admin/users">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Username *</label>
+          <input class="form-control" name="username" required minlength="3" placeholder="lowercase, no spaces">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Password *</label>
+          <input type="password" class="form-control" name="password" required minlength="8" placeholder="min 8 characters">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Display Name</label>
+          <input class="form-control" name="displayName" placeholder="e.g. Ahmed Mohamed">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" placeholder="user@example.com">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Role *</label>
+          <select class="form-control" name="role" required>
+            <option value="editor">Editor (manage content)</option>
+            <option value="viewer">Viewer (read only)</option>
+            <option value="admin">Admin (full access)</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Create User</button>
+      <a href="/admin/users" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+</div>
+</body></html>

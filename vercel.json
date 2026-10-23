@@ -1,1 +1,13 @@
-{"version":2}
+﻿{
+  "version": 2,
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/(.*)", "destination": "/server.js" }
+  ],
+  "functions": {
+    "api/contact.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  }
+}

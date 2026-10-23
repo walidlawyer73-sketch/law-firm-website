@@ -8102,3 +8102,64 @@ html body[dir="rtl"] .navbar ul.navbar-nav > li.lang-nav-item,
         font-size: 0.9rem !important;
     }
 }
+/* ============================================================================
+   🎯 v24 — UNIFIED ARTICLE HERO OVERLAY (Consistency Fix)
+   ————————————————————————————————————————————————————————————
+   المشكلة: تفاوت درجة التعتيم بين المقالات بسبب:
+   • تعريفات متعددة لـ .article-hero-overlay داخل كل مقال
+   • تباين opacity الصورة (0.25 → 0.45)
+
+   الحل:
+   • إلغاء تأثير أي .article-hero-overlay قديم (أياً كانت قيمه)
+   • تطبيق طبقة موحّدة عبر ::after — تعمل على كل مقال تلقائياً
+   • توحيد opacity الصورة على كل المقالات
+   ============================================================================ */
+
+/* 1) إلغاء أي overlay قديم داخل العنصر */
+html body .article-hero > .article-hero-overlay {
+    background: transparent !important;
+    opacity: 0 !important;
+    display: none !important;
+}
+
+/* 2) طبقة تعتيم موحّدة عبر ::after — لا تعتمد على أي عنصر */
+html body .article-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.40) 0%,
+        rgba(0, 0, 0, 0.50) 50%,
+        rgba(0, 0, 0, 0.70) 100%
+    ) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+/* 3) المحتوى فوق الـ overlay */
+html body .article-hero > .container {
+    position: relative !important;
+    z-index: 3 !important;
+}
+
+/* 4) توحيد opacity الصورة (أفتح قليلًا من السابق) */
+html body .article-hero > img,
+html body .article-hero > .article-hero-img {
+    opacity: 0.55 !important;
+    z-index: 0 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+}
+
+/* 5) خلفية موحّدة عند فشل تحميل الصورة */
+html body .article-hero {
+    background-color: #0a0a0a !important;
+}
+
+/* 6) ضمان ظهور النص بتباين كافٍ */
+html body .article-hero .article-hero-content > h1,
+html body .article-hero .article-hero-content > .ah-badge,
+html body .article-hero .article-hero-content > .article-hero-meta {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85) !important;
+}

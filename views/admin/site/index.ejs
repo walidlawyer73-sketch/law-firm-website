@@ -1,0 +1,65 @@
+﻿<%- include("../_partials/head", { pageTitle: "Site Settings" }) %>
+<div class="container">
+  <div class="card">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2><i class="fas fa-cog me-2"></i>Site Settings</h2>
+      <a href="/admin/dashboard" class="btn btn-secondary">Back</a>
+    </div>
+    <% if (success) { %><div class="alert alert-success">Settings saved successfully.</div><% } %>
+    <% if (error) { %><div class="alert alert-danger"><%= error %></div><% } %>
+
+    <form method="POST" action="/admin/site" enctype="multipart/form-data">
+
+      <div class="section-title">Site Identity</div>
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Site Name (English)</label><input class="form-control" name="siteNameEn" value="<%= settings.siteNameEn %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Site Name (Arabic)</label><input class="form-control" name="siteNameAr" value="<%= settings.siteNameAr %>" dir="rtl"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Tagline (English)</label><input class="form-control" name="taglineEn" value="<%= settings.taglineEn %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Tagline (Arabic)</label><input class="form-control" name="taglineAr" value="<%= settings.taglineAr %>" dir="rtl"></div>
+      </div>
+
+      <div class="section-title">Branding</div>
+      <% if (settings.logo) { %><div class="mb-3"><label class="form-label">Current Logo</label><br><img src="<%= settings.logo %>" class="img-preview"></div><% } %>
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Upload Logo</label><input type="file" class="form-control" name="logo" accept="image/*"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Upload Favicon</label><input type="file" class="form-control" name="favicon" accept="image/*"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Primary Color</label><input type="color" class="form-control" name="primaryColor" value="<%= settings.primaryColor %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Accent Color</label><input type="color" class="form-control" name="accentColor" value="<%= settings.accentColor %>"></div>
+      </div>
+
+      <div class="section-title">SEO Defaults</div>
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Default Meta Title (EN)</label><input class="form-control" name="defaultMetaTitleEn" value="<%= settings.defaultMetaTitleEn %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Default Meta Title (AR)</label><input class="form-control" name="defaultMetaTitleAr" value="<%= settings.defaultMetaTitleAr %>" dir="rtl"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Default Meta Description (EN)</label><textarea class="form-control" name="defaultMetaDescEn" rows="2"><%= settings.defaultMetaDescEn %></textarea></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Default Meta Description (AR)</label><textarea class="form-control" name="defaultMetaDescAr" rows="2" dir="rtl"><%= settings.defaultMetaDescAr %></textarea></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Google Analytics ID</label><input class="form-control" name="googleAnalyticsId" value="<%= settings.googleAnalyticsId %>" placeholder="G-XXXXXXXXXX"></div>
+      </div>
+
+      <div class="section-title">Contact Information</div>
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Contact Email</label><input type="email" class="form-control" name="contactEmail" value="<%= settings.contactEmail %>"></div>
+        <div class="col-md-3 mb-3"><label class="form-label">Phone 1</label><input class="form-control" name="contactPhone1" value="<%= settings.contactPhone1 %>"></div>
+        <div class="col-md-3 mb-3"><label class="form-label">Phone 2</label><input class="form-control" name="contactPhone2" value="<%= settings.contactPhone2 %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Address (English)</label><input class="form-control" name="addressEn" value="<%= settings.addressEn %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Address (Arabic)</label><input class="form-control" name="addressAr" value="<%= settings.addressAr %>" dir="rtl"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Working Hours (EN)</label><input class="form-control" name="workingHoursEn" value="<%= settings.workingHoursEn %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Working Hours (AR)</label><input class="form-control" name="workingHoursAr" value="<%= settings.workingHoursAr %>" dir="rtl"></div>
+      </div>
+
+      <div class="section-title">Social Media</div>
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Facebook</label><input class="form-control" name="social_facebook" value="<%= settings.social && settings.social.facebook ? settings.social.facebook : '' %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">LinkedIn</label><input class="form-control" name="social_linkedin" value="<%= settings.social && settings.social.linkedin ? settings.social.linkedin : '' %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Twitter</label><input class="form-control" name="social_twitter" value="<%= settings.social && settings.social.twitter ? settings.social.twitter : '' %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">YouTube</label><input class="form-control" name="social_youtube" value="<%= settings.social && settings.social.youtube ? settings.social.youtube : '' %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Instagram</label><input class="form-control" name="social_instagram" value="<%= settings.social && settings.social.instagram ? settings.social.instagram : '' %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">WhatsApp</label><input class="form-control" name="social_whatsapp" value="<%= settings.social && settings.social.whatsapp ? settings.social.whatsapp : '' %>"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Telegram</label><input class="form-control" name="social_telegram" value="<%= settings.social && settings.social.telegram ? settings.social.telegram : '' %>"></div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg mt-3">Save All Settings</button>
+    </form>
+  </div>
+</div>
+</body></html>

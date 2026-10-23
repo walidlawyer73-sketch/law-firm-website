@@ -1,0 +1,28 @@
+﻿<%- include("../_partials/head", { pageTitle: "New FAQ" }) %>
+<div class="container">
+  <div class="card">
+    <h2><i class="fas fa-plus-circle me-2"></i>Add FAQ</h2>
+    <form method="POST" action="/admin/faqs">
+      <div class="row">
+        <div class="col-md-6 mb-3"><label class="form-label">Question (English) *</label><input class="form-control" name="questionEn" required></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Question (Arabic) *</label><input class="form-control" name="questionAr" required dir="rtl"></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Answer (English) *</label><textarea class="form-control" name="answerEn" rows="5" required placeholder="Markdown supported"></textarea></div>
+        <div class="col-md-6 mb-3"><label class="form-label">Answer (Arabic) *</label><textarea class="form-control" name="answerAr" rows="5" required dir="rtl" placeholder="يدعم Markdown"></textarea></div>
+        <div class="col-md-4 mb-3"><label class="form-label">Category</label>
+          <select class="form-control" name="category">
+            <option value="general">General</option>
+            <option value="ip">Intellectual Property</option>
+            <option value="arbitration">Arbitration</option>
+            <option value="corporate">Corporate</option>
+            <option value="contracts">Contracts</option>
+          </select>
+        </div>
+        <div class="col-md-4 mb-3"><label class="form-label">Order</label><input type="number" class="form-control" name="order" value="0"></div>
+        <div class="col-md-4 mb-3 pt-4"><label class="form-check"><input class="form-check-input" type="checkbox" name="published" checked><span class="form-check-label">Published</span></label></div>
+      </div>
+      <button type="submit" class="btn btn-primary">Create</button>
+      <a href="/admin/faqs" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+</div>
+</body></html>

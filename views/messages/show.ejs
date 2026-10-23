@@ -1,0 +1,61 @@
+﻿<%- include("../admin/_partials/head", { pageTitle: "Message" }) %>
+<div class="container">
+  <div class="card">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2><i class="fas fa-envelope-open me-2"></i>Message Details</h2>
+      <div>
+        <a href="/admin/messages" class="btn btn-secondary"><i class="fas fa-arrow-left me-1"></i>Back</a>
+        <form method="POST" action="/admin/messages/<%= message._id %>?_method=DELETE" style="display:inline" onsubmit="return confirm('Delete this message?')">
+          <button class="btn btn-danger" type="submit"><i class="fas fa-trash me-1"></i>Delete</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row g-3 mb-4">
+      <div class="col-md-6">
+        <label class="form-label">From</label>
+        <p class="form-control-plaintext" style="font-size:1.05rem;"><strong><%= message.name %></strong></p>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Email</label>
+        <p class="form-control-plaintext"><a href="mailto:<%= message.email %>"><%= message.email %></a></p>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Phone</label>
+        <p class="form-control-plaintext"><%= message.phone || '—' %></p>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Service</label>
+        <p class="form-control-plaintext"><span class="badge bg-info"><%= message.service || 'general' %></span></p>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Date</label>
+        <p class="form-control-plaintext"><%= new Date(message.createdAt).toLocaleString("en-US") %></p>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Status</label>
+        <p class="form-control-plaintext">
+          <% if (message.status === 'new') { %><span class="badge bg-danger">NEW</span>
+          <% } else if (message.status === 'read') { %><span class="badge bg-warning text-dark">Read</span>
+          <% } else { %><span class="badge bg-success"><%= message.status %></span><% } %>
+        </p>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="form-label">Message</label>
+      <div style="background:#f8f9fa;border:1px solid #e9ecef;border-radius:10px;padding:20px;font-size:1rem;line-height:1.8;white-space:pre-wrap;"><%= message.message %></div>
+    </div>
+
+    <div class="d-flex gap-2">
+      <a href="mailto:<%= message.email %>?subject=Reply to your inquiry" class="btn btn-success">
+        <i class="fas fa-reply me-1"></i>Reply via Email
+      </a>
+      <% if (message.phone) { %>
+        <a href="tel:<%= message.phone %>" class="btn btn-primary"><i class="fas fa-phone me-1"></i>Call</a>
+        <a href="https://wa.me/<%= message.phone.replace(/\D/g,'') %>" target="_blank" class="btn btn-success"><i class="fab fa-whatsapp me-1"></i>WhatsApp</a>
+      <% } %>
+    </div>
+  </div>
+</div>
+</body></html>

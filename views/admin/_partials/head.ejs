@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title><%= typeof pageTitle !== "undefined" ? pageTitle : "Admin" %></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+:root { --sb-width: 260px; }
+html body {
+  background: #f5f5f5;
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0 !important;
+  padding: 20px 20px 20px calc(var(--sb-width) + 30px) !important;
+}
+.admin-sidebar {
+  position: fixed; left: 0; top: 0; bottom: 0;
+  width: var(--sb-width); background: #0a0a0a; color: #fff;
+  overflow-y: auto; z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  display: flex; flex-direction: column;
+}
+.sb-brand {
+  padding: 22px 20px; border-bottom: 1px solid rgba(201,169,97,0.3);
+  display: flex; align-items: center; gap: 12px;
+  color: #C9A961 !important; text-decoration: none;
+  font-weight: 700; font-size: 0.95rem;
+}
+.sb-brand i { font-size: 1.6rem; }
+.sb-brand small { display: block; font-size: 0.68rem; color: rgba(255,255,255,0.6); font-weight: 400; margin-top: 2px; letter-spacing: 0; }
+.sb-nav { flex: 1; padding: 10px 0; overflow-y: auto; }
+.sb-section { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.4); padding: 14px 20px 6px; font-weight: 700; }
+.sb-link { display: flex; align-items: center; gap: 12px; padding: 11px 20px; color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.9rem; transition: all 0.2s; border-left: 3px solid transparent; }
+.sb-link:hover { background: rgba(201,169,97,0.1); color: #C9A961; border-left-color: #C9A961; }
+.sb-link.active { background: rgba(201,169,97,0.15); color: #C9A961; border-left-color: #C9A961; font-weight: 600; }
+.sb-link i { width: 18px; text-align: center; font-size: 0.95rem; }
+.sb-footer { padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.78rem; color: rgba(255,255,255,0.6); background: #0a0a0a; }
+.sb-footer strong { color: #C9A961; }
+.sb-footer a { color: #dc3545; text-decoration: none; display: inline-block; margin-top: 6px; }
+.sb-footer a:hover { text-decoration: underline; }
+.card { background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); margin-bottom: 20px; }
+.section-title { margin-top: 24px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #C9A961; color: #212529; font-size: 1.1rem; font-weight: 700; }
+.img-preview { max-height: 120px; border-radius: 8px; border: 1px solid #ddd; }
+.form-label { font-weight: 600; font-size: 0.9rem; color: #495057; }
+.sb-toggle { display: none; position: fixed; top: 12px; left: 12px; z-index: 1100; background: #0a0a0a; color: #C9A961; border: 2px solid #C9A961; padding: 8px 12px; border-radius: 8px; font-size: 1.1rem; cursor: pointer; }
+@media (max-width: 991px) {
+  html body { padding: 70px 15px 15px 15px !important; }
+  .admin-sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+  .admin-sidebar.open { transform: translateX(0); }
+  .sb-toggle { display: block; }
+}
+</style>
+</head>
+<body>
+
+<button class="sb-toggle" onclick="document.querySelector('.admin-sidebar').classList.toggle('open')"><i class="fas fa-bars"></i></button>
+
+<aside class="admin-sidebar">
+  <a href="/admin/dashboard" class="sb-brand">
+    <i class="fas fa-balance-scale"></i>
+    <div>Walid Abu Al-Ela<small>Admin Panel</small></div>
+  </a>
+  <nav class="sb-nav">
+    <div class="sb-section">Overview</div>
+    <a href="/admin/dashboard" class="sb-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <div class="sb-section">Content</div>
+    <a href="/admin/services" class="sb-link"><i class="fas fa-briefcase"></i> Services</a>
+    <a href="/admin/team" class="sb-link"><i class="fas fa-users"></i> Team</a>
+    <a href="/admin/faqs" class="sb-link"><i class="fas fa-question-circle"></i> FAQs</a>
+    <a href="/admin/pages" class="sb-link"><i class="fas fa-file-alt"></i> Pages</a>
+    <a href="/admin/posts" class="sb-link"><i class="fas fa-newspaper"></i> Blog Posts</a>
+    <a href="/admin/testimonials" class="sb-link"><i class="fas fa-quote-right"></i> Testimonials</a>
+    <div class="sb-section">Media</div>
+    <a href="/admin/media" class="sb-link"><i class="fas fa-images"></i> Media Library</a>
+    <div class="sb-section">Inbox</div>
+    <a href="/admin/messages" class="sb-link"><i class="fas fa-envelope"></i> Messages</a>
+    <div class="sb-section">System</div>
+    <a href="/admin/site" class="sb-link"><i class="fas fa-cog"></i> Site Settings</a>
+    <a href="/admin/users" class="sb-link"><i class="fas fa-user-shield"></i> Users</a>
+    <a href="/admin/activity" class="sb-link"><i class="fas fa-history"></i> Activity Log</a>
+    <a href="/admin/settings" class="sb-link"><i class="fas fa-lock"></i> Change Password</a>
+    <a href="/" target="_blank" class="sb-link"><i class="fas fa-external-link-alt"></i> View Site</a>
+  </nav>
+  <div class="sb-footer">
+    Logged in as <strong><%= typeof user !== 'undefined' && user ? user : 'admin' %></strong>
+    <br><a href="/admin/logout"><i class="fas fa-sign-out-alt me-1"></i> Logout</a>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var path = window.location.pathname;
+  document.querySelectorAll('.sb-link').forEach(function(link){
+    var href = link.getAttribute('href');
+    if (href && href !== '/' && path.indexOf(href) === 0) link.classList.add('active');
+  });
+})();
+</script>

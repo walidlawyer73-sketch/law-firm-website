@@ -1,11 +1,40 @@
+﻿# Dependencies
 node_modules/
+
+# Environment
 .env
 .env.local
 .env.*.local
-.DS_Store
+.env.production
+.env.staging
+
+# Uploads (temporary - Cloudinary handles real uploads)
+uploads/
+
+# Logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Vercel
 .vercel
-*.rar
-*.zip
-.env*
+
+# Backups
+*.backup
+*.CORRUPT-*
+server.js.CORRUPT-*
+server.js.backup*
+
+# Temp files
+server-new.js
+tmp/
