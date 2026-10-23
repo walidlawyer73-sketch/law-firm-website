@@ -1,4 +1,4 @@
-// ============================================================================
+﻿// ============================================================================
 // server.js — Walid Abo Al-Ela Law Firm
 // Complete, production-ready server (works on Vercel + local)
 // ============================================================================
@@ -95,6 +95,27 @@ if (process.env.MONGODB_URI) {
 // ─── Static Files ────────────────────────────────────────────────────────────
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
+
+// ─── DB Connection Middleware ──────────────────────────────────────────────
+let dbConnected = false;
+app.use(async (req, res, next) => {
+  if (dbConnected && mongoose.connection.readyState === 1) return next();
+  try {
+    if (mongoose.connection.readyState !== 1) {
+      await mongoose.connect(process.env.MONGODB_URI, {
+        serverSelectionTimeoutMS: 10000,
+        socketTimeoutMS: 45000,
+        maxPoolSize: 10
+      });
+    }
+    dbConnected = true;
+    next();
+  } catch (err) {
+    console.error('[DB] Connection failed:', err.message);
+    return res.status(503).json({ error: 'Database unavailable', details: err.message });
+  }
+});
+// ───────────────────────────────────────────────────────────────────────────
 
 // ─── Health Check (for debugging) ────────────────────────────────────────────
 app.get('/health', (req, res) => {
