@@ -1,63 +1,80 @@
-﻿// scripts/create-admin.js — إصدار بسيط بدون setRawMode
+﻿// ============================================================================
+// scripts/create-admin.js
+// ⚠️  عدّل البيانات في السطور 9-10، ثم شغّل: node scripts/create-admin.js
+// ============================================================================
 require('dotenv').config();
 const mongoose = require('mongoose');
-const readline = require('readline');
 const User = require('../models/User');
 
+// ═══════════════════════════════════════════════════════════════════════════
+// 🔴🔴🔴 عدّل هنا — اسم المستخدم وكلمة المرور 🔴🔴🔴
+// ═══════════════════════════════════════════════════════════════════════════
+const ADMIN_USERNAME = 'admin';              // ← غيّر اسم المستخدم هنا
+const ADMIN_PASSWORD = 'Admin@2026!Strong';  // ← غيّر كلمة المرور هنا (8+ أحرف)
+// ═══════════════════════════════════════════════════════════════════════════
+
+// ─── التحقق من المتطلبات ──────────────────────────────────────────────────
 if (!process.env.MONGODB_URI) {
-  console.error('MONGODB_URI missing in .env');
-  process.exit(0);
+  console.error('❌ MONGODB_URI مفقود في .env');
+  process.exit(1);
 }
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+if (ADMIN_PASSWORD.length < 8) {
+  console.error('❌ كلمة المرور يجب أن تكون 8 أحرف على الأقل');
+  process.exit(1);
+}
 
+// ─── التنفيذ ──────────────────────────────────────────────────────────────
 (async () => {
   try {
-    console.log('\n========================================');
-    console.log('  Setup Admin Account');
-    console.log('========================================\n');
+    console.log('\n════════════════════════════════════════');
+    console.log('  إنشاء / تحديث حساب الأدمن');
+    console.log('════════════════════════════════════════\n');
 
-    await mongoose.connect(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 10000 });
-    console.log('DB Connected\n');
+    console.log('📌 البيانات التي ستُحفظ:');
+    console.log('   Username:', ADMIN_USERNAME);
+    console.log('   Password:', '*'.repeat(ADMIN_PASSWORD.length), `(${ADMIN_PASSWORD.length} أحرف)`);
+    console.log('');
 
-    const username = await new Promise(r => rl.question('Username (default: admin): ', a => r(a.trim() || 'admin')));
-    const password = await new Promise(r => rl.question('Password (min 8 chars, visible): ', a => r(a.trim())));
+    await mongoose.connect(process.env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 15000
+    });
+    console.log('✅ متصل بقاعدة البيانات\n');
 
-    if (password.length < 8) {
-      console.log('Password too short');
-      rl.close();
-      await mongoose.connection.close();
-      return;
-    }
+    let user = await User.findOne({ username: ADMIN_USERNAME });
 
-    const exists = await User.findOne({ username });
-    if (exists) {
-      exists.password = password;
-      exists.role = 'admin';
-      exists.isActive = true;
-      await exists.save();
-      console.log('\n✅ Admin UPDATED:', username);
+    if (user) {
+      user.password = ADMIN_PASSWORD;
+      user.role = 'admin';
+      user.isActive = true;
+      await user.save();
+      console.log('✅ تم تحديث حساب الأدمن:', ADMIN_USERNAME);
     } else {
-      const admin = new User({ username, password, role: 'admin', isActive: true });
-      await admin.save();
-      console.log('\n✅ Admin CREATED:', username);
+      user = new User({
+        username: ADMIN_USERNAME,
+        password: ADMIN_PASSWORD,
+        role: 'admin',
+        isActive: true
+      });
+      await user.save();
+      console.log('✅ تم إنشاء حساب أدمن جديد:', ADMIN_USERNAME);
     }
 
     console.log('\n════════════════════════════════════════');
-    console.log('  Login at:');
-    console.log('  Local:  http://localhost:3000/admin/login');
-    console.log('  Vercel: https://law-arb-ip-walid.vercel.app/admin/login');
+    console.log('🎉 جاهز للدخول:');
+    console.log('   محلياً:  http://localhost:3000/admin/login');
+    console.log('   Vercel: https://law-arb-ip-walid.vercel.app/admin/login');
+    console.log('   Username:', ADMIN_USERNAME);
+    console.log('   Password:', ADMIN_PASSWORD);
     console.log('════════════════════════════════════════\n');
 
-    rl.close();
     await mongoose.connection.close();
-    // لا نستخدم process.exit — يترك الترمنال مفتوحاً
+    process.exit(0);
   } catch (err) {
-    console.error('\nError:', err.message);
-    if (rl) rl.close();
-    if (mongoose.connection.readyState === 1) await mongoose.connection.close();
+    console.error('\n❌ خطأ:', err.message);
+    if (mongoose.connection.readyState === 1) {
+      await mongoose.connection.close();
+    }
+    process.exit(1);
   }
 })();

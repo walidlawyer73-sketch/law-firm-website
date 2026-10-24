@@ -995,6 +995,123 @@ try {
 }
 
 // ============================================================================
+// قسم 24.5: نسيت بيانات الدخول — إرسال كلمة مرور جديدة عبر البريد
+// ============================================================================
+
+// ─── 24.5.1: صفحة "نسيت البيانات" ─────────────────────────────────────────
+app.get('/admin/forgot-password', (req, res) => {
+  res.render('forgot-password', { error: null, success: null, info: null });
+});
+
+// ─── 24.5.2: معالجة الطلب — إنشاء كلمة مرور جديدة وإرسالها ───────────────
+app.post('/admin/forgot-password', async (req, res) => {
+  const { username } = req.body;
+  
+  try {
+    if (!username) {
+      return res.render('forgot-password', {
+        error: 'يرجى إدخال اسم المستخدم',
+        success: null, info: null
+      });
+    }
+
+    // البحث عن المستخدم
+    const user = await User.findOne({ username: String(username).trim() });
+    
+    // لأسباب أمنية: لا نكشف إن كان المستخدم موجوداً أم لا
+    // نُظهر نفس الرسالة في كل الحالات
+    if (!user) {
+      return res.render('forgot-password', {
+        success: 'إذا كان اسم المستخدم موجوداً، سيتم إرسال كلمة مرور جديدة إلى بريد المكتب.',
+        error: null, info: null
+      });
+    }
+
+    // التحقق من إعدادات البريد
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      return res.render('forgot-password', {
+        error: 'إعدادات البريد غير مكتملة. تواصل مع المسؤول.',
+        success: null, info: null
+      });
+    }
+
+    // توليد كلمة مرور عشوائية آمنة
+    const crypto = require('crypto');
+    const newPassword = crypto.randomBytes(8).toString('hex') + 'Aa1!';
+    // مثال: "3f8a2b1cAa1!" — 15 حرفاً، يحتوي أحرفاً وأرقاماً ورموزاً
+
+    // تحديث كلمة المرور
+    user.password = newPassword;
+    user.isActive = true;
+    await user.save();
+
+    // إرسال البريد
+    const transporter = nodemailer.createTransport({
+      host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+      port: Number(process.env.EMAIL_PORT) || 587,
+      secure: process.env.EMAIL_SECURE === 'true',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+      },
+      tls: { rejectUnauthorized: false }
+    });
+
+    const adminEmail = process.env.ADMIN_EMAIL || process.env.EMAIL_USER;
+    const siteUrl = process.env.SITE_URL || 'https://law-arb-ip-walid.vercel.app';
+
+    await transporter.sendMail({
+      from: `"Walid Law Firm Admin" <${process.env.EMAIL_USER}>`,
+      to: adminEmail,
+      subject: '🔐 بيانات الدخول الجديدة للوحة التحكم',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <div style="background: linear-gradient(135deg, #000, #1a1a1a); color: #C9A961; padding: 30px; text-align: center; border-radius: 12px 12px 0 0;">
+            <h1 style="margin: 0; font-size: 22px;">🔐 بيانات دخول جديدة</h1>
+          </div>
+          <div style="background: #fff; border: 1px solid #E9ECEF; padding: 30px; border-radius: 0 0 12px 12px;">
+            <p style="color: #212529; font-size: 15px;">مرحباً،</p>
+            <p style="color: #212529; font-size: 15px;">
+              تم طلب كلمة مرور جديدة لحسابك في لوحة التحكم. هذه هي بيانات الدخول:
+            </p>
+            <div style="background: #F8F9FA; border-left: 4px solid #C9A961; padding: 16px 20px; margin: 20px 0; border-radius: 6px;">
+              <p style="margin: 0 0 8px 0; color: #495057; font-size: 13px;">اسم المستخدم:</p>
+              <p style="margin: 0 0 16px 0; font-family: monospace; font-size: 18px; font-weight: bold; color: #000;">${user.username}</p>
+              <p style="margin: 0 0 8px 0; color: #495057; font-size: 13px;">كلمة المرور الجديدة:</p>
+              <p style="margin: 0; font-family: monospace; font-size: 18px; font-weight: bold; color: #000;">${newPassword}</p>
+            </div>
+            <p style="color: #DC3545; font-size: 14px; font-weight: bold;">
+              ⚠️ يجب تغيير كلمة المرور فوراً بعد الدخول من صفحة الإعدادات.
+            </p>
+            <div style="text-align: center; margin: 25px 0;">
+              <a href="${siteUrl}/admin/login" style="background: linear-gradient(135deg, #C9A961, #A88947); color: #000; padding: 12px 30px; border-radius: 999px; text-decoration: none; font-weight: bold; display: inline-block;">
+                الدخول إلى لوحة التحكم
+              </a>
+            </div>
+            <p style="color: #6C757D; font-size: 12px; text-align: center; margin-top: 20px; border-top: 1px solid #E9ECEF; padding-top: 15px;">
+              إذا لم تطلب هذه التغييرات، تواصل مع المسؤول فوراً.
+            </p>
+          </div>
+        </div>
+      `
+    });
+
+    console.log('[FORGOT] New password sent to:', adminEmail, 'for user:', user.username);
+
+    res.render('forgot-password', {
+      success: '✅ تم إرسال كلمة مرور جديدة إلى بريد المكتب. تحقق من بريدك الإلكتروني.',
+      error: null, info: null
+    });
+
+  } catch (err) {
+    console.error('خطأ في استعادة كلمة المرور:', err.message);
+    res.render('forgot-password', {
+      error: 'حدث خطأ: ' + err.message,
+      success: null, info: null
+    });
+  }
+});
+// ============================================================================
 // قسم 26: إنشاء حساب الأدمن الافتراضي
 // ============================================================================
 
