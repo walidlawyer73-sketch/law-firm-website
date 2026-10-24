@@ -1,4 +1,4 @@
-﻿// ============================================================================
+// ============================================================================
 // server.js — Walid Abo Al-Ela Law Firm
 // Complete, production-ready server (works on Vercel + local)
 // ============================================================================
@@ -7,30 +7,318 @@ require('dotenv').config();
 
 // ─── Core Imports ────────────────────────────────────────────────────────────
 const express = require('express');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const mongoose = require('mongoose');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const session = require('express-session');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const path = require('path');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const methodOverride = require('method-override');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const nodemailer = require('nodemailer');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const { marked } = require('marked');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const rateLimit = require('express-rate-limit');
 
 // ─── Custom Modules ──────────────────────────────────────────────────────────
 const { notFoundHandler, globalErrorHandler } = require('./middleware/errorHandler');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const { requireAuth } = require('./middleware/auth');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const { upload } = require('./config/multer');
 try { require('./config/cloudinary'); } catch (e) { console.warn('Cloudinary init skipped:', e.message); }
 
 // ─── Models ──────────────────────────────────────────────────────────────────
 const Page = require('./models/Page');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const BlogPost = require('./models/BlogPost');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const Testimonial = require('./models/Testimonial');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const ContactInfo = require('./models/ContactInfo');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const Contact = require('./models/Contact');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const User = require('./models/User');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const Service = require('./models/Service');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const TeamMember = require('./models/TeamMember');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const FAQ = require('./models/FAQ');
+
+// ═══════════════════════════════════════════════════════════════════════════
+// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
+// ═══════════════════════════════════════════════════════════════════════════
+function getMongoUri() {
+  var raw = process.env.MONGODB_URI || '';
+  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] Length:', cleaned.length);
+    return null;
+  }
+  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
+  return cleaned;
+}
+// ═══════════════════════════════════════════════════════════════════════════
 const Media = require('./models/Media');
 
 // ─── Admin Routes ────────────────────────────────────────────────────────────
@@ -73,7 +361,7 @@ function connectDB() {
     return Promise.reject(new Error('MONGODB_URI is not defined'));
   }
   if (!dbConnectPromise) {
-    dbConnectPromise = mongoose.connect(process.env.MONGODB_URI, {
+    dbConnectPromise = mongoose.connect(getMongoUri(), {
       serverSelectionTimeoutMS: 5000, // فشل سريع بدلاً من التعليق
       bufferCommands: false           // لا تخزين مؤقت للأوامر قبل الاتصال
     }).then(() => {
@@ -102,7 +390,7 @@ app.use(async (req, res, next) => {
   if (dbConnected && mongoose.connection.readyState === 1) return next();
   try {
     if (mongoose.connection.readyState !== 1) {
-      await mongoose.connect(process.env.MONGODB_URI, {
+      await mongoose.connect(getMongoUri(), {
         serverSelectionTimeoutMS: 10000,
         socketTimeoutMS: 45000,
         maxPoolSize: 10
@@ -146,7 +434,7 @@ const handleContact = async (req, res) => {
       if (!process.env.MONGODB_URI) {
         return res.status(503).json({ error: 'Database not configured' });
       }
-      await mongoose.connect(process.env.MONGODB_URI);
+      await mongoose.connect(getMongoUri());
     }
     const { name, email, phone, service, message } = req.body;
     if (!name || !email || !message) {
@@ -712,11 +1000,26 @@ app.use((err, req, res, next) => {
   globalErrorHandler(err, req, res, next);
 });
 
-// ─── Start Server (only locally, not on Vercel) ──────────────────────────────
-const IS_VERCEL = !!process.env.VERCEL;
-if (!IS_VERCEL && process.env.NODE_ENV !== 'production') {
-  app.listen(port, async () => {
+// ─── Startup: create admin + listen (or export for Vercel) ───────────────────
+// Only treat as Vercel when actually running on Vercel's infra
+const IS_VERCEL = process.env.VERCEL === '1' || !!process.env.VERCEL_ENV;
+
+async function onReady() {
+  try {
     await createDefaultAdmin();
+    console.log('✅ Admin bootstrap complete');
+  } catch (err) {
+    console.error('❌ Admin bootstrap failed:', err.message);
+  }
+}
+
+if (IS_VERCEL) {
+  console.log('[STARTUP] Vercel serverless mode — exporting app');
+  // Trigger after DB ready — mongoose buffers if not yet connected
+  onReady().catch(console.error);
+} else {
+  const server = app.listen(port, async () => {
+    await onReady();
     console.log('');
     console.log('========================================');
     console.log('Server:      http://localhost:' + port);
@@ -726,11 +1029,7 @@ if (!IS_VERCEL && process.env.NODE_ENV !== 'production') {
     console.log('Cloudinary:  ' + (process.env.CLOUDINARY_CLOUD_NAME ? 'Configured' : 'Not configured'));
     console.log('========================================');
   });
-} else {
-  console.log('[STARTUP] Serverless mode (Vercel) — app exported, no listen');
-  // Fire-and-forget admin creation (runs on first cold start)
-  createDefaultAdmin().catch(console.error);
+  server.on('error', (err) => console.error('[SERVER] Error:', err.message));
 }
 
-// ─── Export for Vercel ───────────────────────────────────────────────────────
 module.exports = app;
