@@ -1,540 +1,254 @@
-// ============================================================================
-// server.js — Walid Abo Al-Ela Law Firm
-// Complete, production-ready server (works on Vercel + local)
+﻿// ============================================================================
+// server.js — مكتب وليد أبو العلا للمحاماة
+// الخادم الرئيسي — يعمل محلياً وعلى Vercel
+// الإصدار: 2.1 (مفروض — مع تعليقات عربية)
 // ============================================================================
 
+// ─── تحميل المتغيرات البيئية من .env ─────────────────────────────────────
 require('dotenv').config();
 
-// ─── Core Imports ────────────────────────────────────────────────────────────
+// ─── الاستيرادات الأساسية ────────────────────────────────────────────────
 const express = require('express');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const mongoose = require('mongoose');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const session = require('express-session');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const path = require('path');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const methodOverride = require('method-override');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const nodemailer = require('nodemailer');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const { marked } = require('marked');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const rateLimit = require('express-rate-limit');
 
-// ─── Custom Modules ──────────────────────────────────────────────────────────
+// ─── الاستيرادات المخصصة (Middleware & Config) ───────────────────────────
 const { notFoundHandler, globalErrorHandler } = require('./middleware/errorHandler');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const { requireAuth } = require('./middleware/auth');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const { upload } = require('./config/multer');
-try { require('./config/cloudinary'); } catch (e) { console.warn('Cloudinary init skipped:', e.message); }
 
-// ─── Models ──────────────────────────────────────────────────────────────────
+// ─── تهيئة Cloudinary (اختياري — لا يوقف السيرفر عند الفشل) ──────────────
+try {
+  require('./config/cloudinary');
+} catch (e) {
+  console.warn('⚠️  تخطي تهيئة Cloudinary:', e.message);
+}
+
+// ─── استيراد نماذج قاعدة البيانات (Models) ───────────────────────────────
 const Page = require('./models/Page');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const BlogPost = require('./models/BlogPost');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const Testimonial = require('./models/Testimonial');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const ContactInfo = require('./models/ContactInfo');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const Contact = require('./models/Contact');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const User = require('./models/User');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const Service = require('./models/Service');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const TeamMember = require('./models/TeamMember');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const FAQ = require('./models/FAQ');
-
-// ═══════════════════════════════════════════════════════════════════════════
-// MONGODB_URI sanitizer — يزيل علامات الاقتباس والمسافات
-// ═══════════════════════════════════════════════════════════════════════════
-function getMongoUri() {
-  var raw = process.env.MONGODB_URI || '';
-  var cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
-  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] MONGODB_URI format invalid. First 20 chars:', JSON.stringify(cleaned.substring(0, 20)));
-    console.error('[DB] Length:', cleaned.length);
-    return null;
-  }
-  console.log('[DB] URI valid, length:', cleaned.length, 'starts with:', cleaned.substring(0, 14));
-  return cleaned;
-}
-// ═══════════════════════════════════════════════════════════════════════════
 const Media = require('./models/Media');
 
-// ─── Admin Routes ────────────────────────────────────────────────────────────
+// ─── مسارات لوحة التحكم ──────────────────────────────────────────────────
 const adminRoutes = require('./routes/admin');
 
-// ─── Express App ─────────────────────────────────────────────────────────────
+// ─── تهيئة تطبيق Express ─────────────────────────────────────────────────
 const app = express();
 const port = process.env.PORT || 3000;
-app.set('trust proxy', 1);
+app.set('trust proxy', 1); // ضروري على Vercel للحصول على IP الصحيح
 
-// ─── Marked Config ───────────────────────────────────────────────────────────
-marked.setOptions({ breaks: true, gfm: true });
+// ─── إعداد محول Markdown إلى HTML ────────────────────────────────────────
+marked.setOptions({
+  breaks: true,  // تحويل السطور الجديدة إلى <br>
+  gfm: true      // تفعيل GitHub Flavored Markdown
+});
 
-// ─── Email Setup (non-fatal) ─────────────────────────────────────────────────
+// ============================================================================
+// قسم 1: الاتصال بقاعدة البيانات MongoDB
+// ============================================================================
+// ملاحظة: نحتفظ بمتغير cachedConnection لإعادة استخدام الاتصال
+// على Vercel (Serverless) يتم استدعاء الدالة عند كل cold start
+// ============================================================================
+
+let cachedConnection = null;
+
+// ─── دالة تنظيف رابط الاتصال من علامات الاقتباس والمسافات ────────────────
+// السبب: عند نسخ الرابط من .env إلى Vercel، قد تُلصق علامات اقتباس خطأ
+function getMongoUri() {
+  const raw = process.env.MONGODB_URI || '';
+  const cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
+    console.error('[DB] رابط MONGODB_URI غير صالح. يبدأ بـ:', JSON.stringify(cleaned.substring(0, 20)));
+    return null;
+  }
+  console.log('[DB] الرابط صالح، الطول:', cleaned.length);
+  return cleaned;
+}
+
+// ─── دالة الاتصال بقاعدة البيانات (تدعم إعادة الاستخدام) ─────────────────
+async function connectDB() {
+  if (cachedConnection && mongoose.connection.readyState === 1) {
+    return cachedConnection;
+  }
+  const uri = getMongoUri();
+  if (!uri) {
+    throw new Error('MONGODB_URI مفقود أو غير صالح');
+  }
+  try {
+    cachedConnection = await mongoose.connect(uri, {
+      serverSelectionTimeoutMS: 8000, // فشل سريع بدلاً من التعليق
+      socketTimeoutMS: 45000,
+      maxPoolSize: 10,
+      bufferCommands: false // لا نخزن أوامر قبل الاتصال
+    });
+    console.log('✅ تم الاتصال بقاعدة البيانات');
+    return cachedConnection;
+  } catch (err) {
+    cachedConnection = null;
+    console.error('❌ خطأ في الاتصال بقاعدة البيانات:', err.message);
+    throw err;
+  }
+}
+
+// ============================================================================
+// قسم 2: إعداد البريد الإلكتروني (اختياري — لا يوقف السيرفر)
+// ============================================================================
+
 let emailReady = false;
+
 if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
   try {
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST || 'smtp.gmail.com',
       port: Number(process.env.EMAIL_PORT) || 587,
       secure: process.env.EMAIL_SECURE === 'true',
-      auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+      },
       tls: { rejectUnauthorized: false }
     });
     transporter.verify((err) => {
-      if (err) console.error('Email verify error:', err.message);
-      else { emailReady = true; console.log('Email ready to send'); }
+      if (err) {
+        console.error('خطأ في التحقق من البريد:', err.message);
+      } else {
+        emailReady = true;
+        console.log('✅ البريد جاهز للإرسال');
+      }
     });
   } catch (err) {
-    console.error('Email setup failed:', err.message);
+    console.error('فشل إعداد البريد:', err.message);
   }
 }
 
-// ─── MongoDB Connection (lazy, non-blocking) ──────────────────────────────
-let dbConnectPromise = null;
+// ============================================================================
+// قسم 3: خدمة الملفات الثابتة (يجب أن تكون قبل Middleware قاعدة البيانات)
+// ============================================================================
+// لماذا قبل؟ حتى لا تنتظر الصور وCSS وJS اتصال قاعدة البيانات
+// ============================================================================
 
-function connectDB() {
-  if (!process.env.MONGODB_URI) {
-    console.error('[DB] MONGODB_URI is not defined — DB operations will fail');
-    return Promise.reject(new Error('MONGODB_URI is not defined'));
-  }
-  if (!dbConnectPromise) {
-    dbConnectPromise = mongoose.connect(getMongoUri(), {
-      serverSelectionTimeoutMS: 5000, // فشل سريع بدلاً من التعليق
-      bufferCommands: false           // لا تخزين مؤقت للأوامر قبل الاتصال
-    }).then(() => {
-      console.log('DB Connected');
-    }).catch((err) => {
-      console.error('DB Error:', err.message);
-      dbConnectPromise = null; // السماح بإعادة المحاولة في الطلب التالي
-      throw err;
-    });
-  }
-  return dbConnectPromise;
-}
-
-// الاتصال الأولي (اختياري، للمساعدة في تسخين الدالة)
-if (process.env.MONGODB_URI) {
-  connectDB().catch(() => {});
-}
-
-// ─── Static Files ────────────────────────────────────────────────────────────
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
 
-// ─── DB Connection Middleware ──────────────────────────────────────────────
-let dbConnected = false;
-app.use(async (req, res, next) => {
-  if (dbConnected && mongoose.connection.readyState === 1) return next();
-  try {
-    if (mongoose.connection.readyState !== 1) {
-      await mongoose.connect(getMongoUri(), {
-        serverSelectionTimeoutMS: 10000,
-        socketTimeoutMS: 45000,
-        maxPoolSize: 10
-      });
-    }
-    dbConnected = true;
-    next();
-  } catch (err) {
-    console.error('[DB] Connection failed:', err.message);
-    return res.status(503).json({ error: 'Database unavailable', details: err.message });
-  }
-});
-// ───────────────────────────────────────────────────────────────────────────
+// ============================================================================
+// قسم 4: فحص صحة السيرفر (Health Check)
+// ============================================================================
+// هذا المسار لا يعتمد على قاعدة البيانات — يعرض حالة الاتصال فقط
+// مفيد جداً لتشخيص مشاكل Vercel
+// ============================================================================
 
-// ─── Health Check (for debugging) ────────────────────────────────────────────
 app.get('/health', (req, res) => {
   res.json({
     status: 'ok',
     timestamp: new Date().toISOString(),
+    dbState: mongoose.connection.readyState, // 0=غير متصل، 1=متصل، 2=يتصل، 3=ينفصل
     env: {
       nodeEnv: process.env.NODE_ENV || 'undefined',
-      vercel: !!process.env.VERCEL,
+      vercel: process.env.VERCEL === '1',
       mongodb: !!process.env.MONGODB_URI,
       cloudinary: !!process.env.CLOUDINARY_CLOUD_NAME,
       sessionSecret: !!process.env.SESSION_SECRET,
       email: !!process.env.EMAIL_USER
-    },
-    dbState: mongoose.connection.readyState // 0=disconnected, 1=connected
+    }
   });
 });
 
-// ─── Body Parsers ────────────────────────────────────────────────────────────
+// ============================================================================
+// قسم 5: تحليل أجسام الطلبات (Body Parsers)
+// ============================================================================
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride('_method'));
+app.use(methodOverride('_method')); // لاستخدام PUT/DELETE من نماذج HTML
 
-// ─── Contact Form Handlers ───────────────────────────────────────────────────
-const handleContact = async (req, res) => {
-  try {
-    if (mongoose.connection.readyState !== 1) {
-      if (!process.env.MONGODB_URI) {
-        return res.status(503).json({ error: 'Database not configured' });
-      }
-      await mongoose.connect(getMongoUri());
-    }
-    const { name, email, phone, service, message } = req.body;
-    if (!name || !email || !message) {
-      return res.status(400).json({ error: 'Name, email, and message are required' });
-    }
-    const contact = await Contact.create({
-      name: String(name).trim(),
-      email: String(email).trim().toLowerCase(),
-      phone: phone ? String(phone).trim() : '',
-      service: service || 'general',
-      message: String(message)
-    });
+// ============================================================================
+// قسم 6: إعداد الجلسات (Sessions)
+// ============================================================================
+// نستخدم MemoryStore للبساطة (لن تُحفظ الجلسات بين عمليات إعادة النشر)
+// في الإنتاج يمكن استبدالها بـ connect-mongo أو redis
+// ============================================================================
 
-    // Optional email notification (non-blocking)
-    if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
-      try {
-        const transporter = nodemailer.createTransport({
-          host: process.env.EMAIL_HOST || 'smtp.gmail.com',
-          port: Number(process.env.EMAIL_PORT) || 587,
-          secure: process.env.EMAIL_SECURE === 'true',
-          auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS }
-        });
-        transporter.sendMail({
-          from: `"Website" <${process.env.EMAIL_USER}>`,
-          to: process.env.ADMIN_EMAIL || process.env.EMAIL_USER,
-          replyTo: contact.email,
-          subject: `New message from ${contact.name}`,
-          html: `<h2>New Contact Message</h2>
-            <p><strong>Name:</strong> ${contact.name}</p>
-            <p><strong>Email:</strong> ${contact.email}</p>
-            <p><strong>Phone:</strong> ${contact.phone || 'N/A'}</p>
-            <p><strong>Service:</strong> ${contact.service}</p>
-            <hr><p>${contact.message.replace(/\n/g, '<br>')}</p>`
-        }).catch((e) => console.error('Email send error:', e.message));
-      } catch (e) { /* ignore */ }
-    }
-
-    res.json({ success: true, id: contact._id });
-  } catch (err) {
-    console.error('Contact handler error:', err);
-    res.status(500).json({ error: 'Server error: ' + err.message });
-  }
-};
-
-app.post('/data/contact', handleContact);
-app.post('/api/contact', handleContact); // backward compatibility
-
-// ─── Public APIs (/data/*) ───────────────────────────────────────────────────
-try { app.use('/data/services', require('./routes/public/services')); } catch (e) { console.warn('services route skipped:', e.message); }
-try { app.use('/data/team', require('./routes/public/team')); } catch (e) { console.warn('team route skipped:', e.message); }
-try { app.use('/data/faqs', require('./routes/public/faqs')); } catch (e) { console.warn('faqs route skipped:', e.message); }
-try { app.use('/data/settings', require('./routes/public/settings')); } catch (e) { console.warn('settings route skipped:', e.message); }
-
-// ─── Sitemap & Robots ────────────────────────────────────────────────────────
-try { app.use('/', require('./routes/public/sitemap')); } catch (e) { console.warn('sitemap skipped:', e.message); }
-try { app.use('/', require('./routes/public/robots')); } catch (e) { console.warn('robots skipped:', e.message); }
-
-// ─── Session (guarded) ───────────────────────────────────────────────────────
-const sessionConfig = {
-  secret: process.env.SESSION_SECRET || 'fallback-secret-change-me',
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'change-this-secret-in-production',
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: process.env.NODE_ENV === 'production',
+    secure: process.env.NODE_ENV === 'production' && process.env.VERCEL === '1',
     httpOnly: true,
-    maxAge: 24 * 60 * 60 * 1000,
+    maxAge: 24 * 60 * 60 * 1000, // 24 ساعة
     sameSite: 'lax'
   }
-};
-if (process.env.MONGODB_URI) {
-  try {
-  } catch (err) {
-    console.warn('[SESSION] Using MemoryStore — sessions will not persist');
-  }
-} else {
-  console.warn('[SESSION] No MONGODB_URI — using MemoryStore');
-}
-app.use(session(sessionConfig));
+}));
 
-// ─── View Engine ─────────────────────────────────────────────────────────────
+// ============================================================================
+// قسم 7: Middleware الاتصال بقاعدة البيانات (يستثني الملفات الثابتة)
+// ============================================================================
+// كل طلب يحتاج قاعدة بيانات يجب أن ينتظر الاتصال (أو إعادة استخدامه)
+// ============================================================================
+
+app.use(async (req, res, next) => {
+  // تخطي مسار الصحة والملفات الثابتة
+  if (req.path === '/health') return next();
+  if (req.path.match(/\.(css|js|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf|map)$/)) return next();
+
+  try {
+    await connectDB();
+    next();
+  } catch (err) {
+    console.error('[DB Middleware]', err.message);
+    return res.status(503).json({
+      error: 'قاعدة البيانات غير متاحة',
+      details: err.message
+    });
+  }
+});
+
+// ============================================================================
+// قسم 8: إعداد محرك القوالب (EJS)
+// ============================================================================
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// ─── Rate Limiter (login only) ───────────────────────────────────────────────
+// ============================================================================
+// قسم 9: الحد من محاولات تسجيل الدخول (Rate Limiting)
+// ============================================================================
+
 const loginLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 10,
-  message: 'Too many login attempts. Try again in 15 minutes.',
-  skip: (req) => process.env.NODE_ENV !== 'production' // disabled locally
+  windowMs: 15 * 60 * 1000, // 15 دقيقة
+  max: 20,                    // 20 محاولة
+  message: 'محاولات دخول كثيرة. حاول بعد 15 دقيقة.',
+  skip: (req) => process.env.NODE_ENV !== 'production' // معطل محلياً
 });
 app.use('/admin/login', loginLimiter);
 
-// ─── Admin Language Middleware ───────────────────────────────────────────────
+// ============================================================================
+// قسم 10: Middleware اللغة في لوحة التحكم
+// ============================================================================
+
 app.use('/admin', (req, res, next) => {
   if (req.query.lang) req.session.adminLang = req.query.lang;
   res.locals.lang = req.session.adminLang || 'en';
   next();
 });
 
-// ─── Render Helpers ──────────────────────────────────────────────────────────
+// ============================================================================
+// قسم 11: دوال عرض HTML للصفحات الديناميكية
+// ============================================================================
+
+// ─── 11.1: عرض صفحة عادية (Page) ─────────────────────────────────────────
 function renderPageHTML(page, htmlContent, lang) {
   const isAr = lang === 'ar';
   const dir = isAr ? 'rtl' : 'ltr';
@@ -543,31 +257,65 @@ function renderPageHTML(page, htmlContent, lang) {
   const switchUrl = isAr ? '/' + slug : '/ar/' + slug;
   const switchLang = isAr ? 'English' : 'العربية';
   const brandName = isAr ? 'وليد أبوالعلا للمحاماة' : 'Walid Abo Al-Ela Law Firm';
+
   return `<!DOCTYPE html>
 <html lang="${lang}" dir="${dir}">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${page.metaTitle || page.title}</title>
-<meta name="description" content="${page.metaDescription || ''}">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${page.metaTitle || page.title}</title>
+  <meta name="description" content="${page.metaDescription || ''}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<div class="language-switcher"><a href="${switchUrl}" class="lang-btn"><i class="fas fa-globe"></i> ${switchLang}</a></div>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#000;">
-<div class="container"><a class="navbar-brand" href="${base || '/'}"><img src="/images/logo arb ip.png" alt="${brandName}" style="height:45px;"></a></div>
-</nav>
-<header style="margin-top:78px;background:linear-gradient(135deg,#000,#1a1a1a);color:#fff;padding:60px 0;text-align:center;">
-<div class="container"><h1>${page.title}</h1></div>
-</header>
-<section style="padding:60px 0;"><div class="container"><div class="row"><div class="col-lg-8 mx-auto">${htmlContent}</div></div></div></section>
-<footer style="background:#000;color:#fff;padding:40px 0;text-align:center;"><p>&copy; ${new Date().getFullYear()} ${brandName}</p></footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/js/main.js"></script>
-</body></html>`;
+  <!-- زر تبديل اللغة -->
+  <div class="language-switcher">
+    <a href="${switchUrl}" class="lang-btn">
+      <i class="fas fa-globe"></i> ${switchLang}
+    </a>
+  </div>
+
+  <!-- شريط التنقل -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#000;">
+    <div class="container">
+      <a class="navbar-brand" href="${base || '/'}">
+        <img src="/images/logo arb ip.png" alt="${brandName}" style="height:45px;">
+      </a>
+    </div>
+  </nav>
+
+  <!-- رأس الصفحة -->
+  <header style="margin-top:78px;background:linear-gradient(135deg,#000,#1a1a1a);color:#fff;padding:60px 0;text-align:center;">
+    <div class="container">
+      <h1>${page.title}</h1>
+    </div>
+  </header>
+
+  <!-- محتوى الصفحة -->
+  <section style="padding:60px 0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          ${htmlContent}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- التذييل -->
+  <footer style="background:#000;color:#fff;padding:40px 0;text-align:center;">
+    <p>&copy; ${new Date().getFullYear()} ${brandName}</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>`;
 }
 
+// ─── 11.2: عرض مقال مدونة (Blog Post) ────────────────────────────────────
 function renderBlogHTML(post, htmlContent, lang) {
   const isAr = lang === 'ar';
   const dir = isAr ? 'rtl' : 'ltr';
@@ -577,34 +325,73 @@ function renderBlogHTML(post, htmlContent, lang) {
   const switchLang = isAr ? 'English' : 'العربية';
   const brandName = isAr ? 'وليد أبوالعلا للمحاماة' : 'Walid Abo Al-Ela Law Firm';
   const dateLocale = isAr ? 'ar-EG' : 'en-US';
-  const formattedDate = new Date(post.createdAt).toLocaleDateString(dateLocale, { year: 'numeric', month: 'long', day: 'numeric' });
+  const formattedDate = new Date(post.createdAt).toLocaleDateString(dateLocale, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
   return `<!DOCTYPE html>
 <html lang="${lang}" dir="${dir}">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${post.title} - ${brandName}</title>
-<meta name="description" content="${post.excerpt || ''}">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${post.title} - ${brandName}</title>
+  <meta name="description" content="${post.excerpt || ''}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<div class="language-switcher"><a href="${switchUrl}" class="lang-btn"><i class="fas fa-globe"></i> ${switchLang}</a></div>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#000;">
-<div class="container"><a class="navbar-brand" href="${base || '/'}"><img src="/images/logo arb ip.png" alt="${brandName}" style="height:45px;"></a></div>
-</nav>
-<header style="margin-top:78px;background:linear-gradient(135deg,#000,#1a1a1a);color:#fff;padding:60px 0;text-align:center;">
-<div class="container"><h1>${post.title}</h1><p>${formattedDate}</p></div>
-</header>
-<section style="padding:60px 0;"><div class="container"><div class="row"><div class="col-lg-8 mx-auto">${htmlContent}
-<hr style="margin:40px 0;"><a href="${base}/blog.html">&larr; Back to Blog</a>
-</div></div></div></section>
-<footer style="background:#000;color:#fff;padding:40px 0;text-align:center;"><p>&copy; ${new Date().getFullYear()} ${brandName}</p></footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/js/main.js"></script>
-</body></html>`;
+  <!-- زر تبديل اللغة -->
+  <div class="language-switcher">
+    <a href="${switchUrl}" class="lang-btn">
+      <i class="fas fa-globe"></i> ${switchLang}
+    </a>
+  </div>
+
+  <!-- شريط التنقل -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#000;">
+    <div class="container">
+      <a class="navbar-brand" href="${base || '/'}">
+        <img src="/images/logo arb ip.png" alt="${brandName}" style="height:45px;">
+      </a>
+    </div>
+  </nav>
+
+  <!-- رأس المقال -->
+  <header style="margin-top:78px;background:linear-gradient(135deg,#000,#1a1a1a);color:#fff;padding:60px 0;text-align:center;">
+    <div class="container">
+      <h1>${post.title}</h1>
+      <p>${formattedDate}</p>
+    </div>
+  </header>
+
+  <!-- محتوى المقال -->
+  <section style="padding:60px 0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          ${htmlContent}
+          <hr style="margin:40px 0;">
+          <a href="${base}/blog.html">&larr; العودة إلى المدونة</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- التذييل -->
+  <footer style="background:#000;color:#fff;padding:40px 0;text-align:center;">
+    <p>&copy; ${new Date().getFullYear()} ${brandName}</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>`;
 }
 
+// ─── 11.3: عرض خدمة (Service) ────────────────────────────────────────────
 function renderServiceHTML(service, lang) {
   const isAr = lang === 'ar';
   const dir = isAr ? 'rtl' : 'ltr';
@@ -617,40 +404,152 @@ function renderServiceHTML(service, lang) {
   const switchLang = isAr ? 'English' : 'العربية';
   const brandName = isAr ? 'وليد أبوالعلا للمحاماة' : 'Walid Abo Al-Ela Law Firm';
   const iconClass = service.icon || 'fa-scale-balanced';
+  const backText = isAr ? 'العودة إلى الخدمات' : 'Back to Services';
+
   return `<!DOCTYPE html>
 <html lang="${lang}" dir="${dir}">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${title} - ${brandName}</title>
-<meta name="description" content="${shortDesc || ''}">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${title} - ${brandName}</title>
+  <meta name="description" content="${shortDesc || ''}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<div class="language-switcher"><a href="${switchUrl}" class="lang-btn"><i class="fas fa-globe"></i> ${switchLang}</a></div>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#000;">
-<div class="container"><a class="navbar-brand" href="${base || '/'}"><img src="/images/logo arb ip.png" alt="${brandName}" style="height:45px;"></a></div>
-</nav>
-<header style="margin-top:78px;background:linear-gradient(135deg,#000,#1a1a1a);color:#fff;padding:80px 0;text-align:center;">
-<div class="container">
-<div style="width:80px;height:80px;background:linear-gradient(135deg,#C9A961,#A88947);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 25px;"><i class="fas ${iconClass}"></i></div>
-<h1>${title}</h1>
-${shortDesc ? `<p style="color:rgba(255,255,255,0.85);max-width:650px;margin:15px auto 0;">${shortDesc}</p>` : ''}
-</div>
-</header>
-<section style="padding:60px 0;"><div class="container"><div class="row"><div class="col-lg-8 mx-auto">
-${service.image ? `<img src="${service.image}" alt="${title}" style="max-width:100%;border-radius:12px;margin-bottom:30px;">` : ''}
-${htmlContent || '<p>Content coming soon.</p>'}
-<hr style="margin:40px 0;"><a href="${base}/services.html">&larr; Back to Services</a>
-</div></div></div></section>
-<footer style="background:#000;color:#fff;padding:40px 0;text-align:center;"><p>&copy; ${new Date().getFullYear()} ${brandName}</p></footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/js/main.js"></script>
-</body></html>`;
+  <!-- زر تبديل اللغة -->
+  <div class="language-switcher">
+    <a href="${switchUrl}" class="lang-btn">
+      <i class="fas fa-globe"></i> ${switchLang}
+    </a>
+  </div>
+
+  <!-- شريط التنقل -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#000;">
+    <div class="container">
+      <a class="navbar-brand" href="${base || '/'}">
+        <img src="/images/logo arb ip.png" alt="${brandName}" style="height:45px;">
+      </a>
+    </div>
+  </nav>
+
+  <!-- رأس الخدمة -->
+  <header style="margin-top:78px;background:linear-gradient(135deg,#000,#1a1a1a);color:#fff;padding:80px 0;text-align:center;">
+    <div class="container">
+      <div style="width:80px;height:80px;background:linear-gradient(135deg,#C9A961,#A88947);color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 25px;">
+        <i class="fas ${iconClass}"></i>
+      </div>
+      <h1>${title}</h1>
+      ${shortDesc ? `<p style="color:rgba(255,255,255,0.85);max-width:650px;margin:15px auto 0;">${shortDesc}</p>` : ''}
+    </div>
+  </header>
+
+  <!-- محتوى الخدمة -->
+  <section style="padding:60px 0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          ${service.image ? `<img src="${service.image}" alt="${title}" style="max-width:100%;border-radius:12px;margin-bottom:30px;">` : ''}
+          ${htmlContent || '<p>المحتوى قيد الإعداد.</p>'}
+          <hr style="margin:40px 0;">
+          <a href="${base}/services.html">&larr; ${backText}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- التذييل -->
+  <footer style="background:#000;color:#fff;padding:40px 0;text-align:center;">
+    <p>&copy; ${new Date().getFullYear()} ${brandName}</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>`;
 }
 
-// ─── Static Page Slugs (bypass dynamic routing) ──────────────────────────────
+// ============================================================================
+// قسم 12: نموذج التواصل (POST /data/contact)
+// ============================================================================
+
+const handleContact = async (req, res) => {
+  try {
+    const { name, email, phone, service, message } = req.body;
+
+    // التحقق من الحقول المطلوبة
+    if (!name || !email || !message) {
+      return res.status(400).json({
+        error: 'الاسم والبريد والرسالة مطلوبة'
+      });
+    }
+
+    // حفظ الرسالة في قاعدة البيانات
+    const contact = await Contact.create({
+      name: String(name).trim(),
+      email: String(email).trim().toLowerCase(),
+      phone: phone ? String(phone).trim() : '',
+      service: service || 'general',
+      message: String(message)
+    });
+
+    res.json({ success: true, id: contact._id });
+  } catch (err) {
+    console.error('خطأ في نموذج التواصل:', err.message);
+    res.status(500).json({ error: 'خطأ في السيرفر: ' + err.message });
+  }
+};
+
+// مساران: واحد جديد (/data) وآخر للتوافق (/api)
+app.post('/data/contact', handleContact);
+app.post('/api/contact', handleContact);
+
+// ============================================================================
+// قسم 13: واجهات API العامة
+// ============================================================================
+
+try { app.use('/data/services', require('./routes/public/services')); } catch (e) { console.warn('تخطي مسار services:', e.message); }
+try { app.use('/data/team', require('./routes/public/team')); } catch (e) { console.warn('تخطي مسار team:', e.message); }
+try { app.use('/data/faqs', require('./routes/public/faqs')); } catch (e) { console.warn('تخطي مسار faqs:', e.message); }
+try { app.use('/data/settings', require('./routes/public/settings')); } catch (e) { console.warn('تخطي مسار settings:', e.message); }
+try { app.use('/', require('./routes/public/sitemap')); } catch (e) { console.warn('تخطي sitemap:', e.message); }
+try { app.use('/', require('./routes/public/robots')); } catch (e) { console.warn('تخطي robots:', e.message); }
+
+// ============================================================================
+// قسم 14: المسارات الثابتة للصفحات (EN + AR)
+// ============================================================================
+
+const staticPagesEN = [
+  'about', 'services', 'arbitration', 'trademark', 'patent', 'copyright',
+  'litigation', 'licensing', 'lawyers', 'blog', 'contact', 'client-portal',
+  'consultation', 'success', 'cancel', 'privacy-policy', 'terms-of-service', 'cookie-policy'
+];
+
+staticPagesEN.forEach((slug) => {
+  // النسخة الإنجليزية
+  app.get('/' + slug, (req, res, next) => {
+    res.sendFile(path.join(__dirname, 'public', slug + '.html'), (err) => {
+      if (err) next();
+    });
+  });
+
+  // النسخة العربية
+  app.get('/ar/' + slug, (req, res, next) => {
+    res.sendFile(path.join(__dirname, 'public', 'ar', slug + '.html'), (err) => {
+      if (err) next();
+    });
+  });
+});
+
+// الصفحة الرئيسية
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
+app.get('/ar', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'index.html')));
+
+// ============================================================================
+// قسم 15: المسارات الديناميكية (Services & Pages)
+// ============================================================================
+
 const staticPageSlugs = [
   'about', 'services', 'arbitration', 'trademark', 'patent', 'copyright',
   'litigation', 'licensing', 'lawyers', 'blog', 'contact', 'client-portal',
@@ -659,124 +558,147 @@ const staticPageSlugs = [
   'privacy-policy', 'terms-of-service', 'cookie-policy'
 ];
 
-// ─── Static Routes (EN) ──────────────────────────────────────────────────────
-const staticPagesEN = ['about', 'services', 'arbitration', 'trademark', 'patent', 'copyright',
-  'litigation', 'licensing', 'lawyers', 'blog', 'contact', 'client-portal',
-  'consultation', 'success', 'cancel', 'privacy-policy', 'terms-of-service', 'cookie-policy'];
-staticPagesEN.forEach((slug) => {
-  app.get('/' + slug, (req, res, next) => {
-    const fp = path.join(__dirname, 'public', slug + '.html');
-    res.sendFile(fp, (err) => { if (err) next(); });
-  });
-});
-
-// ─── Static Routes (AR) ──────────────────────────────────────────────────────
-staticPagesEN.forEach((slug) => {
-  app.get('/ar/' + slug, (req, res, next) => {
-    const fp = path.join(__dirname, 'public', 'ar', slug + '.html');
-    res.sendFile(fp, (err) => { if (err) next(); });
-  });
-});
-
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
-app.get('/ar', (req, res) => res.sendFile(path.join(__dirname, 'public', 'ar', 'index.html')));
-
-// ─── Dynamic Service/Page Route (EN) ─────────────────────────────────────────
+// ─── 15.1: صفحة ديناميكية إنجليزية ──────────────────────────────────────
 app.get('/:page', async (req, res, next) => {
   if (staticPageSlugs.includes(req.params.page)) return next();
+
   try {
+    // البحث في الخدمات أولاً
     const service = await Service.findOne({ slug: req.params.page, published: true });
     if (service) return res.send(renderServiceHTML(service, 'en'));
+
+    // ثم في الصفحات
     const page = await Page.findOne({ slug: req.params.page, language: 'en', published: true });
-    if (page) {
-      const htmlContent = marked.parse(page.content || '');
-      return res.send(renderPageHTML(page, htmlContent, 'en'));
-    }
+    if (page) return res.send(renderPageHTML(page, marked.parse(page.content || ''), 'en'));
+
     next();
   } catch (err) {
-    console.error('Dynamic page error:', err.message);
+    console.error('خطأ في الصفحة الديناميكية:', err.message);
     next();
   }
 });
 
-// ─── Dynamic Service/Page Route (AR) ─────────────────────────────────────────
+// ─── 15.2: صفحة ديناميكية عربية ─────────────────────────────────────────
 app.get('/ar/:page', async (req, res, next) => {
   if (staticPageSlugs.includes(req.params.page)) return next();
+
   try {
     const service = await Service.findOne({ slug: req.params.page, published: true });
     if (service) return res.send(renderServiceHTML(service, 'ar'));
-    const page = await Page.findOne({ slug: req.params.page + '-ar', language: 'ar', published: true });
-    if (page) {
-      const htmlContent = marked.parse(page.content || '');
-      return res.send(renderPageHTML(page, htmlContent, 'ar'));
-    }
+
+    const page = await Page.findOne({
+      slug: req.params.page + '-ar',
+      language: 'ar',
+      published: true
+    });
+    if (page) return res.send(renderPageHTML(page, marked.parse(page.content || ''), 'ar'));
+
     next();
   } catch (err) {
-    console.error('Dynamic AR page error:', err.message);
+    console.error('خطأ في الصفحة العربية الديناميكية:', err.message);
     next();
   }
 });
 
-// ─── Blog Routes ─────────────────────────────────────────────────────────────
+// ============================================================================
+// قسم 16: مسارات المدونة
+// ============================================================================
+
+// ─── 16.1: مقال إنجليزي ─────────────────────────────────────────────────
 app.get('/blog/:slug', async (req, res, next) => {
   try {
-    const post = await BlogPost.findOne({ slug: req.params.slug, language: 'en', published: true });
+    const post = await BlogPost.findOne({
+      slug: req.params.slug,
+      language: 'en',
+      published: true
+    });
     if (!post) return next();
+
+    // زيادة عدد المشاهدات
     post.views = (post.views || 0) + 1;
     await post.save();
-    const htmlContent = marked.parse(post.content || '');
-    res.send(renderBlogHTML(post, htmlContent, 'en'));
+
+    res.send(renderBlogHTML(post, marked.parse(post.content || ''), 'en'));
   } catch (err) {
-    console.error('Blog error:', err.message);
+    console.error('خطأ في مقال المدونة:', err.message);
     next();
   }
 });
 
+// ─── 16.2: مقال عربي ────────────────────────────────────────────────────
 app.get('/ar/blog/:slug', async (req, res, next) => {
   try {
-    const post = await BlogPost.findOne({ slug: req.params.slug + '-ar', language: 'ar', published: true });
+    const post = await BlogPost.findOne({
+      slug: req.params.slug + '-ar',
+      language: 'ar',
+      published: true
+    });
     if (!post) return next();
+
     post.views = (post.views || 0) + 1;
     await post.save();
-    const htmlContent = marked.parse(post.content || '');
-    res.send(renderBlogHTML(post, htmlContent, 'ar'));
+
+    res.send(renderBlogHTML(post, marked.parse(post.content || ''), 'ar'));
   } catch (err) {
-    console.error('Blog AR error:', err.message);
+    console.error('خطأ في المقال العربي:', err.message);
     next();
   }
 });
 
-// ─── Admin: Login ────────────────────────────────────────────────────────────
+// ============================================================================
+// قسم 17: لوحة التحكم — تسجيل الدخول والخروج
+// ============================================================================
+
+// ─── 17.1: صفحة تسجيل الدخول ────────────────────────────────────────────
 app.get('/admin/login', (req, res) => {
   res.render('login', { error: null, lang: req.query.lang || 'en' });
 });
 
+// ─── 17.2: معالجة تسجيل الدخول ──────────────────────────────────────────
 app.post('/admin/login', async (req, res) => {
   const { username, password } = req.body;
+
   try {
     const user = await User.findOne({ username });
+
     if (user && await user.comparePassword(password)) {
+      // حفظ بيانات المستخدم في الجلسة
       req.session.userId = user._id;
       req.session.username = user.username;
       req.session.role = user.role || 'admin';
+
+      // تحديث وقت آخر دخول
       user.lastLoginAt = new Date();
       await user.save();
+
       return res.redirect('/admin/dashboard');
     }
-    res.render('login', { error: 'Invalid credentials', lang: req.body.lang || 'en' });
+
+    res.render('login', {
+      error: 'بيانات الدخول غير صحيحة',
+      lang: req.body.lang || 'en'
+    });
   } catch (err) {
-    res.render('login', { error: 'Login error: ' + err.message, lang: req.body.lang || 'en' });
+    res.render('login', {
+      error: 'خطأ في تسجيل الدخول: ' + err.message,
+      lang: req.body.lang || 'en'
+    });
   }
 });
 
+// ─── 17.3: تسجيل الخروج ─────────────────────────────────────────────────
 app.get('/admin/logout', (req, res) => {
   req.session.destroy();
   res.redirect('/admin/login');
 });
 
-// ─── Admin: Dashboard ────────────────────────────────────────────────────────
+// ============================================================================
+// قسم 18: لوحة التحكم — الصفحة الرئيسية (Dashboard)
+// ============================================================================
+
 app.get('/admin/dashboard', requireAuth, async (req, res) => {
   try {
+    // جلب الإحصائيات بالتوازي (أسرع)
     const results = await Promise.all([
       Page.countDocuments(),
       BlogPost.countDocuments(),
@@ -789,196 +711,319 @@ app.get('/admin/dashboard', requireAuth, async (req, res) => {
       Media.countDocuments(),
       User.countDocuments()
     ]);
+
     res.render('dashboard', {
-      pages: results[0], posts: results[1], testimonials: results[2],
-      messages: results[3], newMessages: results[4],
-      services: results[5], team: results[6], faqs: results[7],
-      media: results[8], users: results[9],
+      pages: results[0],
+      posts: results[1],
+      testimonials: results[2],
+      messages: results[3],
+      newMessages: results[4],
+      services: results[5],
+      team: results[6],
+      faqs: results[7],
+      media: results[8],
+      users: results[9],
       user: req.session.username,
       lang: req.session.adminLang || 'en'
     });
   } catch (err) {
-    console.error('Dashboard error:', err.message);
-    res.status(500).send('Dashboard error: ' + err.message);
+    console.error('خطأ في الداشبورد:', err.message);
+    res.status(500).send('خطأ في الداشبورد: ' + err.message);
   }
 });
 
-// ─── Admin: Messages ─────────────────────────────────────────────────────────
+// ============================================================================
+// قسم 19: لوحة التحكم — إدارة الرسائل
+// ============================================================================
+
+// ─── 19.1: قائمة الرسائل ────────────────────────────────────────────────
 app.get('/admin/messages', requireAuth, async (req, res) => {
   const messages = await Contact.find().sort('-createdAt');
   res.render('messages/index', { messages, lang: req.session.adminLang || 'en' });
 });
 
+// ─── 19.2: عرض رسالة واحدة ──────────────────────────────────────────────
 app.get('/admin/messages/:id', requireAuth, async (req, res) => {
   const message = await Contact.findById(req.params.id);
-  if (!message) return res.status(404).send('Message not found');
-  if (message.status === 'new') { message.status = 'read'; await message.save(); }
+  if (!message) return res.status(404).send('الرسالة غير موجودة');
+
+  // تحويل الحالة إلى "مقروءة"
+  if (message.status === 'new') {
+    message.status = 'read';
+    await message.save();
+  }
+
   res.render('messages/show', { message, lang: req.session.adminLang || 'en' });
 });
 
+// ─── 19.3: حذف رسالة ────────────────────────────────────────────────────
 app.delete('/admin/messages/:id', requireAuth, async (req, res) => {
   await Contact.findByIdAndDelete(req.params.id);
   res.redirect('/admin/messages');
 });
 
-// ─── Admin: Pages CRUD ───────────────────────────────────────────────────────
+// ============================================================================
+// قسم 20: لوحة التحكم — إدارة الصفحات (CRUD)
+// ============================================================================
+
+// ─── 20.1: قائمة الصفحات ────────────────────────────────────────────────
 app.get('/admin/pages', requireAuth, async (req, res) => {
   const pages = await Page.find().sort('-createdAt');
   res.render('pages/index', { pages, lang: req.session.adminLang || 'en' });
 });
 
+// ─── 20.2: صفحة إضافة جديدة ─────────────────────────────────────────────
 app.get('/admin/pages/new', requireAuth, (req, res) => {
   res.render('pages/new', { page: null, lang: req.session.adminLang || 'en' });
 });
 
+// ─── 20.3: إنشاء صفحة جديدة ─────────────────────────────────────────────
 app.post('/admin/pages', requireAuth, upload.single('image'), async (req, res) => {
   try {
     const page = new Page(req.body);
     await page.save();
     res.redirect('/admin/pages');
-  } catch (err) { res.status(400).send(err.message); }
+  } catch (err) {
+    res.status(400).send(err.message);
+  }
 });
 
+// ─── 20.4: صفحة تعديل ───────────────────────────────────────────────────
 app.get('/admin/pages/:id/edit', requireAuth, async (req, res) => {
   const page = await Page.findById(req.params.id);
   res.render('pages/edit', { page, lang: req.session.adminLang || 'en' });
 });
 
+// ─── 20.5: تحديث صفحة ───────────────────────────────────────────────────
 app.put('/admin/pages/:id', requireAuth, upload.single('image'), async (req, res) => {
   try {
     await Page.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.redirect('/admin/pages');
-  } catch (err) { res.status(400).send(err.message); }
+  } catch (err) {
+    res.status(400).send(err.message);
+  }
 });
 
+// ─── 20.6: حذف صفحة ─────────────────────────────────────────────────────
 app.delete('/admin/pages/:id', requireAuth, async (req, res) => {
   await Page.findByIdAndDelete(req.params.id);
   res.redirect('/admin/pages');
 });
 
-// ─── Admin: Posts CRUD ───────────────────────────────────────────────────────
+// ============================================================================
+// قسم 21: لوحة التحكم — إدارة المقالات (CRUD)
+// ============================================================================
+
+// ─── 21.1: قائمة المقالات ───────────────────────────────────────────────
 app.get('/admin/posts', requireAuth, async (req, res) => {
   const posts = await BlogPost.find().sort('-createdAt');
   res.render('posts/index', { posts, lang: req.session.adminLang || 'en' });
 });
 
+// ─── 21.2: صفحة إضافة جديدة ─────────────────────────────────────────────
 app.get('/admin/posts/new', requireAuth, (req, res) => {
   res.render('posts/new', { post: null, lang: req.session.adminLang || 'en' });
 });
 
+// ─── 21.3: إنشاء مقال جديد ──────────────────────────────────────────────
 app.post('/admin/posts', requireAuth, upload.single('image'), async (req, res) => {
   try {
     const post = new BlogPost(req.body);
     await post.save();
     res.redirect('/admin/posts');
-  } catch (err) { res.status(400).send(err.message); }
+  } catch (err) {
+    res.status(400).send(err.message);
+  }
 });
 
+// ─── 21.4: صفحة تعديل ───────────────────────────────────────────────────
 app.get('/admin/posts/:id/edit', requireAuth, async (req, res) => {
   const post = await BlogPost.findById(req.params.id);
   res.render('posts/edit', { post, lang: req.session.adminLang || 'en' });
 });
 
+// ─── 21.5: تحديث مقال ───────────────────────────────────────────────────
 app.put('/admin/posts/:id', requireAuth, upload.single('image'), async (req, res) => {
   try {
     await BlogPost.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.redirect('/admin/posts');
-  } catch (err) { res.status(400).send(err.message); }
+  } catch (err) {
+    res.status(400).send(err.message);
+  }
 });
 
+// ─── 21.6: حذف مقال ─────────────────────────────────────────────────────
 app.delete('/admin/posts/:id', requireAuth, async (req, res) => {
   await BlogPost.findByIdAndDelete(req.params.id);
   res.redirect('/admin/posts');
 });
 
-// ─── Admin: Testimonials CRUD ────────────────────────────────────────────────
+// ============================================================================
+// قسم 22: لوحة التحكم — إدارة آراء العملاء (Testimonials)
+// ============================================================================
+
+// ─── 22.1: قائمة الآراء ─────────────────────────────────────────────────
 app.get('/admin/testimonials', requireAuth, async (req, res) => {
   const testimonials = await Testimonial.find().sort('-createdAt');
   res.render('testimonials/index', { testimonials, lang: req.session.adminLang || 'en' });
 });
 
+// ─── 22.2: صفحة إضافة جديدة ─────────────────────────────────────────────
 app.get('/admin/testimonials/new', requireAuth, (req, res) => {
   res.render('testimonials/new', { testimonial: null, lang: req.session.adminLang || 'en' });
 });
 
+// ─── 22.3: إنشاء رأي جديد ───────────────────────────────────────────────
 app.post('/admin/testimonials', requireAuth, upload.single('image'), async (req, res) => {
   try {
     const t = new Testimonial(req.body);
     await t.save();
     res.redirect('/admin/testimonials');
-  } catch (err) { res.status(400).send(err.message); }
+  } catch (err) {
+    res.status(400).send(err.message);
+  }
 });
 
+// ─── 22.4: صفحة تعديل ───────────────────────────────────────────────────
 app.get('/admin/testimonials/:id/edit', requireAuth, async (req, res) => {
   const testimonial = await Testimonial.findById(req.params.id);
   res.render('testimonials/edit', { testimonial, lang: req.session.adminLang || 'en' });
 });
 
+// ─── 22.5: تحديث رأي ────────────────────────────────────────────────────
 app.put('/admin/testimonials/:id', requireAuth, upload.single('image'), async (req, res) => {
   try {
     await Testimonial.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.redirect('/admin/testimonials');
-  } catch (err) { res.status(400).send(err.message); }
+  } catch (err) {
+    res.status(400).send(err.message);
+  }
 });
 
+// ─── 22.6: حذف رأي ──────────────────────────────────────────────────────
 app.delete('/admin/testimonials/:id', requireAuth, async (req, res) => {
   await Testimonial.findByIdAndDelete(req.params.id);
   res.redirect('/admin/testimonials');
 });
 
-// ─── Admin: Contact Info ─────────────────────────────────────────────────────
+// ============================================================================
+// قسم 23: لوحة التحكم — معلومات الاتصال
+// ============================================================================
+
+// ─── 23.1: عرض معلومات الاتصال ──────────────────────────────────────────
 app.get('/admin/contact', requireAuth, async (req, res) => {
-  let contactEn = await ContactInfo.findOne({ language: 'en' });
-  let contactAr = await ContactInfo.findOne({ language: 'ar' });
-  if (!contactEn) contactEn = new ContactInfo({ language: 'en' });
-  if (!contactAr) contactAr = new ContactInfo({ language: 'ar' });
+  let contactEn = await ContactInfo.findOne({ language: 'en' }) || new ContactInfo({ language: 'en' });
+  let contactAr = await ContactInfo.findOne({ language: 'ar' }) || new ContactInfo({ language: 'ar' });
   res.render('contact', { contactEn, contactAr, lang: req.session.adminLang || 'en' });
 });
 
+// ─── 23.2: تحديث معلومات الاتصال ────────────────────────────────────────
 app.post('/admin/contact', requireAuth, async (req, res) => {
   try {
-    await ContactInfo.findOneAndUpdate({ language: 'en' }, req.body.en, { upsert: true, new: true });
-    await ContactInfo.findOneAndUpdate({ language: 'ar' }, req.body.ar, { upsert: true, new: true });
+    await ContactInfo.findOneAndUpdate(
+      { language: 'en' },
+      req.body.en,
+      { upsert: true, new: true }
+    );
+    await ContactInfo.findOneAndUpdate(
+      { language: 'ar' },
+      req.body.ar,
+      { upsert: true, new: true }
+    );
     res.redirect('/admin/contact');
-  } catch (err) { res.status(400).send(err.message); }
+  } catch (err) {
+    res.status(400).send(err.message);
+  }
 });
 
-// ─── Admin: Change Password ──────────────────────────────────────────────────
+// ============================================================================
+// قسم 24: لوحة التحكم — تغيير كلمة المرور
+// ============================================================================
+
+// ─── 24.1: صفحة تغيير كلمة المرور ───────────────────────────────────────
 app.get('/admin/settings', requireAuth, (req, res) => {
   res.render('settings', { error: null, success: null, lang: req.session.adminLang || 'en' });
 });
 
+// ─── 24.2: معالجة تغيير كلمة المرور ─────────────────────────────────────
 app.post('/admin/settings', requireAuth, async (req, res) => {
   try {
     const user = await User.findById(req.session.userId);
     const { currentPassword, newPassword, confirmPassword } = req.body;
+
+    // التحقق من كلمة المرور الحالية
     if (!await user.comparePassword(currentPassword)) {
-      return res.render('settings', { error: 'Current password is incorrect', success: null, lang: req.session.adminLang || 'en' });
+      return res.render('settings', {
+        error: 'كلمة المرور الحالية غير صحيحة',
+        success: null,
+        lang: req.session.adminLang || 'en'
+      });
     }
+
+    // التحقق من تطابق كلمتي المرور الجديدتين
     if (newPassword !== confirmPassword) {
-      return res.render('settings', { error: 'New passwords do not match', success: null, lang: req.session.adminLang || 'en' });
+      return res.render('settings', {
+        error: 'كلمتا المرور الجديدتان غير متطابقتين',
+        success: null,
+        lang: req.session.adminLang || 'en'
+      });
     }
+
     user.password = newPassword;
     await user.save();
-    res.render('settings', { success: 'Password updated', error: null, lang: req.session.adminLang || 'en' });
-  } catch (err) { res.status(400).send(err.message); }
+
+    res.render('settings', {
+      success: 'تم تحديث كلمة المرور بنجاح',
+      error: null,
+      lang: req.session.adminLang || 'en'
+    });
+  } catch (err) {
+    res.status(400).send(err.message);
+  }
 });
 
-// ─── Admin Router (services, team, faqs, site, media, users, activity) ───────
+// ============================================================================
+// قسم 25: راوتر لوحة التحكم (الخدمات، الفريق، FAQ، الإعدادات، الوسائط، المستخدمين)
+// ============================================================================
+
 try {
   app.use('/admin', adminRoutes);
 } catch (err) {
-  console.error('Admin router error:', err.message);
+  console.error('خطأ في راوتر الأدمن:', err.message);
 }
 
-// ─── Create Default Admin ────────────────────────────────────────────────────
+// ============================================================================
+// قسم 26: إنشاء حساب الأدمن الافتراضي
+// ============================================================================
+
 async function createDefaultAdmin() {
   try {
     if (!process.env.ADMIN_USERNAME || !process.env.ADMIN_PASSWORD) {
-      console.warn('ADMIN_USERNAME/PASSWORD not set — skipping admin creation');
+      console.warn('ADMIN_USERNAME أو ADMIN_PASSWORD غير مضبوط — تخطي إنشاء الأدمن');
       return;
     }
+
+    // ننتظر حتى يجهز الاتصال بقاعدة البيانات
+    if (mongoose.connection.readyState !== 1) {
+      await new Promise((resolve, reject) => {
+        const timer = setTimeout(() => reject(new Error('مهلة الاتصال بقاعدة البيانات')), 15000);
+        if (mongoose.connection.readyState === 1) {
+          clearTimeout(timer);
+          return resolve();
+        }
+        mongoose.connection.once('connected', () => {
+          clearTimeout(timer);
+          resolve();
+        });
+        mongoose.connection.once('error', (e) => {
+          clearTimeout(timer);
+          reject(e);
+        });
+      });
+    }
+
     const exists = await User.findOne({ username: process.env.ADMIN_USERNAME });
+
     if (!exists) {
       const admin = new User({
         username: process.env.ADMIN_USERNAME,
@@ -986,50 +1031,57 @@ async function createDefaultAdmin() {
         role: 'admin'
       });
       await admin.save();
-      console.log('Default admin created:', process.env.ADMIN_USERNAME);
+      console.log('✅ تم إنشاء حساب الأدمن الافتراضي:', process.env.ADMIN_USERNAME);
+    } else {
+      console.log('ℹ️  حساب الأدمن موجود بالفعل');
     }
   } catch (err) {
-    console.error('Error creating admin:', err.message);
+    console.error('خطأ في إنشاء الأدمن:', err.message);
   }
 }
 
-// ─── 404 + Error Handlers ────────────────────────────────────────────────────
+// ============================================================================
+// قسم 27: معالجات 404 والأخطاء
+// ============================================================================
+
 app.use(notFoundHandler);
+
 app.use((err, req, res, next) => {
-  console.error('GLOBAL ERROR:', err.message, err.stack);
+  console.error('❌ خطأ عام:', err.message);
   globalErrorHandler(err, req, res, next);
 });
 
-// ─── Startup: create admin + listen (or export for Vercel) ───────────────────
-// Only treat as Vercel when actually running on Vercel's infra
+// ============================================================================
+// قسم 28: بدء التشغيل
+// ============================================================================
+// نتحقق من Vercel عبر متغيرات البيئة الرسمية
+// (VERCEL=1 مضبوط تلقائياً على Vercel فقط)
+// ============================================================================
+
 const IS_VERCEL = process.env.VERCEL === '1' || !!process.env.VERCEL_ENV;
 
-async function onReady() {
-  try {
-    await createDefaultAdmin();
-    console.log('✅ Admin bootstrap complete');
-  } catch (err) {
-    console.error('❌ Admin bootstrap failed:', err.message);
-  }
-}
+// محاولة تسخين الاتصال بقاعدة البيانات (غير حاجزة)
+connectDB()
+  .then(() => createDefaultAdmin())
+  .catch((err) => console.error('[بدء التشغيل] فشل تسخين الاتصال:', err.message));
 
 if (IS_VERCEL) {
-  console.log('[STARTUP] Vercel serverless mode — exporting app');
-  // Trigger after DB ready — mongoose buffers if not yet connected
-  onReady().catch(console.error);
+  console.log('[بدء التشغيل] وضع Vercel Serverless');
+  // على Vercel، نُصدّر التطبيق فقط ولا نستدعي app.listen
 } else {
-  const server = app.listen(port, async () => {
-    await onReady();
+  const server = app.listen(port, () => {
     console.log('');
     console.log('========================================');
-    console.log('Server:      http://localhost:' + port);
-    console.log('Admin:       http://localhost:' + port + '/admin/login');
-    console.log('Health:      http://localhost:' + port + '/health');
-    console.log('Email:       ' + (emailReady ? 'Ready' : 'Not configured'));
-    console.log('Cloudinary:  ' + (process.env.CLOUDINARY_CLOUD_NAME ? 'Configured' : 'Not configured'));
+    console.log('السيرفر:    http://localhost:' + port);
+    console.log('الأدمن:     http://localhost:' + port + '/admin/login');
+    console.log('الصحة:      http://localhost:' + port + '/health');
+    console.log('البريد:     ' + (emailReady ? 'جاهز' : 'غير مضبوط'));
+    console.log('Cloudinary: ' + (process.env.CLOUDINARY_CLOUD_NAME ? 'مضبوط' : 'غير مضبوط'));
     console.log('========================================');
+    console.log('');
   });
-  server.on('error', (err) => console.error('[SERVER] Error:', err.message));
+  server.on('error', (err) => console.error('[السيرفر] خطأ:', err.message));
 }
 
+// تصدير التطبيق لـ Vercel
 module.exports = app;
