@@ -1,133 +1,101 @@
 ﻿// ============================================================================
-// scripts/create-admin.js — إنشاء/تحديث حساب الأدمن بشكل آمن
+// scripts/create-admin.js — إنشاء/تحديث حساب الأدمن بشكل تفاعلي آمن
 // التشغيل: node scripts/create-admin.js
 // ============================================================================
 require('dotenv').config();
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
 const readline = require('readline');
-
 const User = require('../models/User');
 
-// التحقق من تطابق متغيرات البيئة أولاً
 if (!process.env.MONGODB_URI) {
-  console.error('❌ MONGODB_URI غير موجود في .env');
+  console.error('MONGODB_URI missing in .env');
   process.exit(1);
 }
 
-// إعداد readline للأسئلة التفاعلية
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
-function ask(question) {
-  return new Promise((resolve) => {
-    rl.question(question, (answer) => resolve(answer.trim()));
-  });
+function ask(q) {
+  return new Promise(r => rl.question(q, a => r(a.trim())));
 }
 
-function askPassword(question) {
-  return new Promise((resolve) => {
+function askPassword(q) {
+  return new Promise(resolve => {
+    process.stdout.write(q);
     const stdin = process.stdin;
-    const stdout = process.stdout;
-    
-    stdout.write(question);
     stdin.setRawMode(true);
     stdin.resume();
     stdin.setEncoding('utf8');
-    
-    let password = '';
-    const onData = (char) => {
-      if (char === '\n' || char === '\r' || char === '\u0004') {
+    let pwd = '';
+    const onData = (ch) => {
+      if (ch === '\n' || ch === '\r' || ch === '\u0004') {
         stdin.setRawMode(false);
         stdin.pause();
         stdin.removeListener('data', onData);
-        stdout.write('\n');
-        resolve(password);
-      } else if (char === '\u0003') {
+        process.stdout.write('\n');
+        resolve(pwd);
+      } else if (ch === '\u0003') {
         process.exit();
-      } else if (char === '\u007f') {
-        if (password.length > 0) {
-          password = password.slice(0, -1);
-          stdout.write('\b \b');
-        }
+      } else if (ch === '\u007f' || ch === '\b') {
+        if (pwd.length > 0) { pwd = pwd.slice(0, -1); process.stdout.write('\b \b'); }
       } else {
-        password += char;
-        stdout.write('*');
+        pwd += ch;
+        process.stdout.write('*');
       }
     };
     stdin.on('data', onData);
   });
 }
 
-async function main() {
+(async () => {
   try {
-    console.log('\n════════════════════════════════════════');
-    console.log('   إنشاء / تحديث حساب الأدمن');
-    console.log('════════════════════════════════════════\n');
-    
-    await mongoose.connect(process.env.MONGODB_URI, {
-      serverSelectionTimeoutMS: 10000
-    });
-    console.log('✅ اتصل بقاعدة البيانات\n');
-    
-    const username = await ask('اسم المستخدم (افتراضي: admin): ') || 'admin';
+    console.log('\n========================================');
+    console.log('  Setup Admin Account');
+    console.log('========================================\n');
+
+    await mongoose.connect(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 10000 });
+    console.log('DB Connected\n');
+
+    const username = (await ask('Username (default: admin): ')) || 'admin';
     console.log('');
-    
+
     let password = '';
     while (password.length < 8) {
-      password = await askPassword('كلمة المرور (8 أحرف على الأقل): ');
-      if (password.length < 8) {
-        console.log('❌ كلمة المرور قصيرة جداً — حاول مرة أخرى\n');
-      }
+      password = await askPassword('Password (min 8 chars): ');
+      if (password.length < 8) console.log('Too short, try again\n');
     }
-    
-    const confirm = await askPassword('تأكيد كلمة المرور: ');
+
+    const confirm = await askPassword('Confirm password: ');
     if (password !== confirm) {
-      console.log('\n❌ كلمتا المرور غير متطابقتين');
+      console.log('\nPasswords do not match');
       process.exit(1);
     }
-    
+
     rl.close();
-    
-    // البحث عن المستخدم أو إنشاؤه
+
     let user = await User.findOne({ username });
-    
     if (user) {
       user.password = password;
       user.role = 'admin';
       user.isActive = true;
       await user.save();
-      console.log('\n✅ تم تحديث حساب الأدمن:', username);
+      console.log('\nAdmin UPDATED:', username);
     } else {
-      user = new User({
-        username,
-        password,
-        role: 'admin',
-        isActive: true
-      });
+      user = new User({ username, password, role: 'admin', isActive: true });
       await user.save();
-      console.log('\n✅ تم إنشاء حساب أدمن جديد:', username);
+      console.log('\nAdmin CREATED:', username);
     }
-    
-    console.log('\n════════════════════════════════════════');
-    console.log('   بيانات الدخول:');
-    console.log('   Username:', username);
-    console.log('   Password: ******** (التي أدخلتها)');
-    console.log('════════════════════════════════════════');
-    console.log('\n📌 استخدم هذه البيانات في:');
-    console.log('   محلياً:  http://localhost:3000/admin/login');
-    console.log('   Vercel:  https://law-arb-ip-walid.vercel.app/admin/login');
-    console.log('\n');
-    
+
+    console.log('\n========================================');
+    console.log('Login at:');
+    console.log('  Local:  http://localhost:3000/admin/login');
+    console.log('  Vercel: https://law-arb-ip-walid.vercel.app/admin/login');
+    console.log('========================================\n');
+
     await mongoose.connection.close();
     process.exit(0);
   } catch (err) {
-    console.error('\n❌ خطأ:', err.message);
+    console.error('\nError:', err.message);
     if (rl) rl.close();
     process.exit(1);
   }
-}
-
-main();
+})();
