@@ -88,16 +88,16 @@ async function connectDB() {
   }
   try {
     cachedConnection = await mongoose.connect(uri, {
-      serverSelectionTimeoutMS: 8000, // فشل سريع بدلاً من التعليق
+      serverSelectionTimeoutMS: 30000, // فشل سريع بدلاً من التعليق
       socketTimeoutMS: 45000,
-      maxPoolSize: 10,
-      bufferCommands: false, family: 4 // لا نخزن أوامر قبل الاتصال
+      maxPoolSize: 10 // لا نخزن أوامر قبل الاتصال
     });
     console.log('✅ تم الاتصال بقاعدة البيانات');
     return cachedConnection;
   } catch (err) {
     cachedConnection = null;
-    console.error('❌ خطأ في الاتصال بقاعدة البيانات:', err.message);
+    global.__dbLastError = err.message + ' | code: ' + (err.code || 'no-code');
+    console.error('❌ خطأ في الاتصال بقاعدة البيانات:', global.__dbLastError);
     throw err;
   }
 }
