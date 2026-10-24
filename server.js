@@ -10,7 +10,7 @@ require('dotenv').config();
 // ─── الاستيرادات الأساسية ────────────────────────────────────────────────
 const express = require('express');
 const mongoose = require('mongoose');
-const session = require('express-session');
+const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const path = require('path');
 const methodOverride = require('method-override');
