@@ -91,7 +91,7 @@ async function connectDB() {
       serverSelectionTimeoutMS: 8000, // فشل سريع بدلاً من التعليق
       socketTimeoutMS: 45000,
       maxPoolSize: 10,
-      bufferCommands: false // لا نخزن أوامر قبل الاتصال
+      bufferCommands: false, family: 4 // لا نخزن أوامر قبل الاتصال
     });
     console.log('✅ تم الاتصال بقاعدة البيانات');
     return cachedConnection;
@@ -153,7 +153,9 @@ app.get('/health', (req, res) => {
   res.json({
     status: 'ok',
     timestamp: new Date().toISOString(),
-    dbState: mongoose.connection.readyState, // 0=غير متصل، 1=متصل، 2=يتصل، 3=ينفصل
+    dbState: mongoose.connection.readyState,
+    dbStateLabel: ['disconnected','connected','connecting','disconnecting'][mongoose.connection.readyState] || 'unknown',
+    dbError: global.__dbLastError || null, // 0=غير متصل، 1=متصل، 2=يتصل، 3=ينفصل
     env: {
       nodeEnv: process.env.NODE_ENV || 'undefined',
       vercel: process.env.VERCEL === '1',
