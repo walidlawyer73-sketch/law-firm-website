@@ -1,4 +1,4 @@
-﻿// ============================================================================
+// ============================================================================
 // server.js — مكتب وليد أبو العلا للمحاماة
 // الخادم الرئيسي — يعمل محلياً وعلى Vercel
 // الإصدار: 2.1 (مفروض — مع تعليقات عربية)
@@ -996,49 +996,7 @@ try {
 // قسم 26: إنشاء حساب الأدمن الافتراضي
 // ============================================================================
 
-async function createDefaultAdmin() {
-  try {
-    if (!process.env.ADMIN_USERNAME || !process.env.ADMIN_PASSWORD) {
-      console.warn('ADMIN_USERNAME أو ADMIN_PASSWORD غير مضبوط — تخطي إنشاء الأدمن');
-      return;
-    }
-
-    // ننتظر حتى يجهز الاتصال بقاعدة البيانات
-    if (mongoose.connection.readyState !== 1) {
-      await new Promise((resolve, reject) => {
-        const timer = setTimeout(() => reject(new Error('مهلة الاتصال بقاعدة البيانات')), 15000);
-        if (mongoose.connection.readyState === 1) {
-          clearTimeout(timer);
-          return resolve();
-        }
-        mongoose.connection.once('connected', () => {
-          clearTimeout(timer);
-          resolve();
-        });
-        mongoose.connection.once('error', (e) => {
-          clearTimeout(timer);
-          reject(e);
-        });
-      });
-    }
-
-    const exists = await User.findOne({ username: process.env.ADMIN_USERNAME });
-
-    if (!exists) {
-      const admin = new User({
-        username: process.env.ADMIN_USERNAME,
-        password: process.env.ADMIN_PASSWORD,
-        role: 'admin'
-      });
-      await admin.save();
-      console.log('✅ تم إنشاء حساب الأدمن الافتراضي:', process.env.ADMIN_USERNAME);
-    } else {
-      console.log('ℹ️  حساب الأدمن موجود بالفعل');
-    }
-  } catch (err) {
-    console.error('خطأ في إنشاء الأدمن:', err.message);
-  }
-}
+// تمت إزالة createDefaultAdmin — يديرها السكربت المحلي scripts/create-admin.js
 
 // ============================================================================
 // قسم 27: معالجات 404 والأخطاء
@@ -1062,7 +1020,7 @@ const IS_VERCEL = process.env.VERCEL === '1' || !!process.env.VERCEL_ENV;
 
 // محاولة تسخين الاتصال بقاعدة البيانات (غير حاجزة)
 connectDB()
-  .then(() => createDefaultAdmin())
+  
   .catch((err) => console.error('[بدء التشغيل] فشل تسخين الاتصال:', err.message));
 
 if (IS_VERCEL) {
