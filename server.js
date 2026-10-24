@@ -1,4 +1,4 @@
-// ============================================================================
+﻿// ============================================================================
 // server.js — مكتب وليد أبو العلا للمحاماة
 // الخادم الرئيسي — يعمل محلياً وعلى Vercel
 // الإصدار: 2.1 (مفروض — مع تعليقات عربية)
@@ -652,6 +652,115 @@ app.get('/ar/blog/:slug', async (req, res, next) => {
 // ============================================================================
 
 // ─── 17.1: صفحة تسجيل الدخول ────────────────────────────────────────────
+// ─── توليد كلمة مرور عشوائية ───
+function generateRandomPassword() {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789';
+  let password = '';
+  for (let i = 0; i < 10; i++) {
+    password += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return password + '!A1'; // نضيف لاحقة لضمان التعقيد
+}
+// ─── صفحة نسيت كلمة المرور ───
+app.get('/admin/forgot-password', (req, res) => {
+  res.render('forgot-password', { error: null, success: null });
+});
+// ─── معالجة نسيت كلمة المرور ───
+app.post('/admin/forgot-password', async (req, res) => {
+  const { identifier } = req.body;
+
+  try {
+    if (!identifier) {
+      return res.render('forgot-password', { 
+        error: 'أدخل اسم المستخدم أو البريد الإلكتروني', 
+        success: null 
+      });
+    }
+
+    // البحث بالـ username أو email
+    const user = await User.findOne({
+      $or: [
+        { username: identifier },
+        { email: identifier.toLowerCase() }
+      ]
+    });
+
+    if (!user) {
+      return res.render('forgot-password', { 
+        error: 'لا يوجد حساب بهذه البيانات', 
+        success: null 
+      });
+    }
+
+    if (!user.email) {
+      return res.render('forgot-password', { 
+        error: 'لا يوجد بريد إلكتروني مسجل لهذا الحساب. راجع المسؤول', 
+        success: null 
+      });
+    }
+
+    // التحقق من إعدادات البريد
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      return res.render('forgot-password', { 
+        error: 'البريد الإلكتروني غير مضبوط على السيرفر', 
+        success: null 
+      });
+    }
+
+    // توليد كلمة مرور جديدة
+    const newPassword = generateRandomPassword();
+
+    // تحديث كلمة المرور في قاعدة البيانات
+    user.password = newPassword;
+    await user.save();
+
+    // إرسال البريد
+    const transporter = nodemailer.createTransport({
+      host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+      port: Number(process.env.EMAIL_PORT) || 587,
+      secure: process.env.EMAIL_SECURE === 'true',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+      }
+    });
+
+    await transporter.sendMail({
+      from: `"مكتب وليد أبو العلا" <${process.env.EMAIL_USER}>`,
+      to: user.email,
+      subject: 'بيانات الدخول الجديدة - لوحة التحكم',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <h2 style="color: #C9A961;">بيانات الدخول الجديدة</h2>
+          <p>تم إعادة تعيين كلمة المرور الخاصة بحسابك.</p>
+          <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <p style="margin: 0 0 10px;"><strong>اسم المستخدم:</strong></p>
+            <p style="margin: 0; font-size: 18px; color: #C9A961;">${user.username}</p>
+            <p style="margin: 20px 0 10px;"><strong>كلمة المرور الجديدة:</strong></p>
+            <p style="margin: 0; font-size: 18px; font-family: monospace; background: #fff; padding: 10px; border-radius: 4px; border: 1px solid #ddd;">${newPassword}</p>
+          </div>
+          <p style="color: #dc3545;"><strong>⚠️ غيّر كلمة المرور بعد الدخول مباشرة من:</strong></p>
+          <p><a href="https://law-arb-ip-walid.vercel.app/admin/settings" style="color: #C9A961;">صفحة الإعدادات</a></p>
+          <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
+          <p><a href="https://law-arb-ip-walid.vercel.app/admin/login" style="display: inline-block; background: #C9A961; color: #000; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">تسجيل الدخول الآن</a></p>
+        </div>
+      `
+    });
+
+    return res.render('forgot-password', { 
+      error: null,
+      success: `✅ تم إرسال كلمة المرور الجديدة إلى ${user.email}. افحص صندوق الوارد والبريد المزعج (Spam).`
+    });
+
+  } catch (err) {
+    console.error('Forgot password error:', err.message);
+    return res.render('forgot-password', { 
+      error: 'حدث خطأ: ' + err.message, 
+      success: null 
+    });
+  }
+});
+
 app.get('/admin/login', (req, res) => {
   res.render('login', { error: null, lang: req.query.lang || 'en' });
 });
