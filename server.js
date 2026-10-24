@@ -1,4 +1,4 @@
-﻿// ============================================================================
+// ============================================================================
 // server.js — مكتب وليد أبو العلا للمحاماة
 // الخادم الرئيسي — يعمل محلياً وعلى Vercel
 // الإصدار: 2.1 (مفروض — مع تعليقات عربية)
@@ -186,10 +186,16 @@ app.use(session({
   secret: process.env.SESSION_SECRET || 'change-this-secret-in-production',
   resave: false,
   saveUninitialized: false,
+  store: MongoStore.create({
+    mongoUrl: getMongoUri(),
+    ttl: 24 * 60 * 60,
+    autoRemove: 'native',
+    touchAfter: 24 * 3600
+  }),
   cookie: {
-    secure: process.env.NODE_ENV === 'production' && process.env.VERCEL === '1',
+    secure: process.env.VERCEL === '1',
     httpOnly: true,
-    maxAge: 24 * 60 * 60 * 1000, // 24 ساعة
+    maxAge: 24 * 60 * 60 * 1000,
     sameSite: 'lax'
   }
 }));
