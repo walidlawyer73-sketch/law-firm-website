@@ -774,10 +774,14 @@ app.get('/admin/login', (req, res) => {
 
 // ─── 17.2: معالجة تسجيل الدخول ──────────────────────────────────────────
 app.post('/admin/login', async (req, res) => {
-  const { username, password } = req.body;
+  const username = (req.body.username || '').trim();
+  const password = (req.body.password || '').trim();
 
   try {
-    const user = await User.findOne({ username });
+    const safe = username.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const user = await User.findOne({
+      username: { $regex: `^${safe}$`, $options: 'i' }
+    });
 
     if (user && await user.comparePassword(password)) {
       // حفظ بيانات المستخدم في الجلسة
@@ -789,7 +793,7 @@ app.post('/admin/login', async (req, res) => {
       user.lastLoginAt = new Date();
       await user.save();
 
-      return res.redirect('/admin/dashboard');
+      return req.session.save(() => res.redirect('/admin/dashboard'));
     }
 
     res.render('login', {
