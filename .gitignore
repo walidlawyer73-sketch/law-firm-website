@@ -38,3 +38,5 @@ server.js.backup*
 # Temp files
 server-new.js
 tmp/
+.vercel
+.env*
