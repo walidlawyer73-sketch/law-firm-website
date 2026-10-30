@@ -40,3 +40,6 @@ server-new.js
 tmp/
 .vercel
 .env*
+
+.env.local
+.vercel
