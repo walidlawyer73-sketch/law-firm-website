@@ -69,12 +69,19 @@ let cachedConnection = null;
 // السبب: عند نسخ الرابط من .env إلى Vercel، قد تُلصق علامات اقتباس خطأ
 function getMongoUri() {
   const raw = process.env.MONGODB_URI || '';
-  const cleaned = raw.trim().replace(/^["'`]+|["'`]+$/g, '').trim();
+  // إزالة BOM, zero-width chars, أسطر جديدة, ثم علامات اقتباس ومسافات من الأطراف
+  const cleaned = raw
+    .replace(/^\uFEFF/, '')
+    .replace(/[\u200B-\u200D\uFEFF]/g, '')
+    .replace(/[\r\n]/g, '')
+    .replace(/^["'`\s]+|["'`\s]+$/g, '')
+    .trim();
   if (!/^mongodb(\+srv)?:\/\//.test(cleaned)) {
-    console.error('[DB] رابط MONGODB_URI غير صالح. يبدأ بـ:', JSON.stringify(cleaned.substring(0, 20)));
+    console.error('[DB] MONGODB_URI غير صالح. أول 80 حرف hex:',
+      raw ? Buffer.from(raw.substring(0, 80), 'utf8').toString('hex') : 'MISSING');
     return null;
   }
-  console.log('[DB] الرابط صالح، الطول:', cleaned.length);
+  console.log('[DB] MONGODB_URI صالح، الطول:', cleaned.length);
   return cleaned;
 }
 
@@ -156,7 +163,11 @@ app.get('/health', (req, res) => {
     timestamp: new Date().toISOString(),
     dbState: mongoose.connection.readyState,
     dbStateLabel: ['disconnected','connected','connecting','disconnecting'][mongoose.connection.readyState] || 'unknown',
-    dbError: global.__dbLastError || null, // 0=غير متصل، 1=متصل، 2=يتصل، 3=ينفصل
+    dbError: global.__dbLastError || null,
+    mongoUriDiag: process.env.MONGODB_URI ? {
+      len: process.env.MONGODB_URI.length,
+      first80Hex: Buffer.from(process.env.MONGODB_URI.substring(0, 80), 'utf8').toString('hex')
+    } : null, // 0=غير متصل، 1=متصل، 2=يتصل، 3=ينفصل
     env: {
       nodeEnv: process.env.NODE_ENV || 'undefined',
       vercel: process.env.VERCEL === '1',
