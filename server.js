@@ -194,23 +194,32 @@ app.use(methodOverride('_method')); // لاستخدام PUT/DELETE من نماذ
 // في الإنتاج يمكن استبدالها بـ connect-mongo أو redis
 // ============================================================================
 
-app.use(session({
+const sessionOptions = {
   secret: process.env.SESSION_SECRET || 'change-this-secret-in-production',
   resave: false,
   saveUninitialized: false,
-  store: MongoStore.create({
-    mongoUrl: getMongoUri(),
-    ttl: 24 * 60 * 60,
-    autoRemove: 'native',
-    touchAfter: 24 * 3600
-  }),
   cookie: {
     secure: process.env.VERCEL === '1',
     httpOnly: true,
     maxAge: 24 * 60 * 60 * 1000,
     sameSite: 'lax'
   }
-}));
+};
+
+const sessionUri = getMongoUri();
+if (sessionUri) {
+  sessionOptions.store = MongoStore.create({
+    mongoUrl: sessionUri,
+    ttl: 24 * 60 * 60,
+    autoRemove: 'native',
+    touchAfter: 24 * 3600
+  });
+  console.log('[SESSION] using MongoStore');
+} else {
+  console.error('[SESSION] MONGODB_URI missing/invalid — falling back to MemoryStore (sessions will NOT persist across requests)');
+}
+
+app.use(session(sessionOptions));
 
 // ============================================================================
 // قسم 7: Middleware الاتصال بقاعدة البيانات (يستثني الملفات الثابتة)
